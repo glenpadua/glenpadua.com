@@ -110,8 +110,17 @@ def home():
 @app.route('/api/v1/users', methods=['GET', 'POST'])
 def api_users():
     if request.method == 'GET':
+        response = User.get_all_users_details()
+        return jsonify(response)
+    else:
         pass
-        User.get_all_users_details()
+
+@app.route('/api/v1/users/<int:id>', methods=['GET'])
+def api_user(id):
+    user = User.query.get_or_404(id)
+    if request.method == 'GET':
+        response = user.get_details()
+        return jsonify(response)
     else:
         pass
 

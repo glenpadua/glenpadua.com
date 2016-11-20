@@ -38,7 +38,16 @@ class User(BaseModel):
 
     def get_all_users_details():
         users = User.query.all()
-        print(users)
+        user_list = []
+        for user in users:
+            print('----')
+            print(user.name)
+            user_list.append(user.get_details()['data'])
+        return {
+            'status': 'success',
+            'data': user_list,
+            'message': None
+        }
 
     def get_details(self):
         return {
