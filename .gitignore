@@ -1,0 +1,21 @@
+# Common files
+*.backup
+*.pyc
+*.swp
+*.swo
+*~
+*.log*
+*.pid
+
+# Directories
+__pycache__
+venv
+venv*
+instance
+junk
+app/__pycache__
+models/__pychache__
+test.py
+
+# Config
+dev_config.py
