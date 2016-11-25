@@ -40,8 +40,6 @@ class User(BaseModel):
         users = User.query.all()
         user_list = []
         for user in users:
-            print('----')
-            print(user.name)
             user_list.append(user.get_details()['data'])
         return {
             'status': 'success',
