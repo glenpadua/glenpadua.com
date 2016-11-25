@@ -1,6 +1,7 @@
 import logging
 
 DEBUG = True
+DEBUG_TB_INTERCEPT_REDIRECTS = False
 SECRET_KEY = 'fasdhbf@#$240Fa-234242'
 
 # If set to True, Flask-SQLAlchemy will track modifications of objects and
