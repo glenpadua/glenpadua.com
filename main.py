@@ -3,26 +3,12 @@ import logging
 from logging.config import dictConfig
 from sqlalchemy.sql import func
 
-# Defining the logger
-# logger = logging.getLogger(__name__)
-# logger.setLevel(logging.INFO)
-
-# Create a file handler
-# handler = logging.FileHandler('app.log')
-# handler.setLevel(logging.INFO)
-
-# Create a logging format
-# formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-# handler.setFormatter(formatter)
-
-# Add the handler to the logger
-# logger.addHandler(handler)
-
 from datetime import datetime
 from flask import (
     Flask, request, render_template, redirect, url_for, abort,
     send_from_directory, g, flash, jsonify, abort
 )
+from flask_bcrypt import Bcrypt
 from flask_debugtoolbar import DebugToolbarExtension
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import (
@@ -35,22 +21,30 @@ app = Flask(__name__)
 app.config.from_object('config')
 
 try:
+    # Initializing the logger
+    dictConfig(app.config['LOGGING'])
+    logger = logging.getLogger(__name__)
+
+    # Importing the developer configuration settings
     app.config.from_object('dev_config')
 except ImportError:
     pass
-    # print('[WARNING] There is no dev_config.py file. Create that file',
-    #         'to add developer specific configuration options.')
+    logger.warning('''There is no dev_config.py file. Create that file to add
+        developer specific configuration options.''')
+else:
+    # Initializing the logger
+    dictConfig(app.config['LOGGING'])
+    logger = logging.getLogger(__name__)
 
-app.debug = True
-toolbar = DebugToolbarExtension(app)
-
-# Initializing the logger
-dictConfig(app.config['LOGGING'])
-logger = logging.getLogger()
 logger.debug('Logger initialized.')
+
+toolbar = DebugToolbarExtension(app)
 
 ## Initializing the database
 db = SQLAlchemy(app)
+
+## Setting up flask-bcrypt
+bcrypt = Bcrypt(app)
 
 class BaseModel(db.Model):
     __abstract__ = True
@@ -69,7 +63,7 @@ login_manager.init_app(app)
 login_manager.login_view = '/login'
 
 # Importing the models now (after config)
-# from models.category import *
+from models.user import *
 
 # Import the decorator functions
 from decorators import *
@@ -109,9 +103,26 @@ def load_user(user_id):
 
 ## Home route
 @app.route('/')
-@login_required
 def home():
     return render_template("index.html")
+
+@app.route('/api/v1/users', methods=['GET', 'POST'])
+def api_users():
+    if request.method == 'GET':
+        response = User.get_all_users_details()
+        return jsonify(response)
+    else:
+        pass
+
+@app.route('/api/v1/users/<int:id>', methods=['GET'])
+def api_user(id):
+    user = User.query.get_or_404(id)
+    if request.method == 'GET':
+        response = user.get_details()
+        return jsonify(response)
+    else:
+        pass
+
 
 # Auth
 # @app.route("/register", methods=['GET', 'POST'])
