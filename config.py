@@ -8,7 +8,7 @@ SECRET_KEY = 'fasdhbf@#$240Fa-234242'
 # warning that it will be disabled by default in the future. This requires
 # extra memory and should be disabled if not needed.
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-
+DEBUG_TB_INTERCEPT_REDIRECTS = False
 # Configuration for the python logging module
 LOGGING = {
     'version': 1,
