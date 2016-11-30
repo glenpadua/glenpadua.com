@@ -19,7 +19,7 @@
     });
 
     // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function(){ 
+    $('.navbar-collapse ul li a').click(function(){
             $('.navbar-toggle:visible').click();
     });
 
@@ -28,6 +28,23 @@
         offset: {
             top: 100
         }
-    })
+    });
+
+    // jQuery Typed plugin
+    $('#typed').typed({
+        stringsElement: $('#typed-strings'),
+        typeSpeed: 100,
+        cursorChar: '|',
+        backDelay: 500,
+        contentType: 'html',
+        callback: function() {
+            callHeading();
+        }
+    });
 
 })(jQuery); // End of use strict
+
+    function callHeading() {
+        console.log('Callback!');
+        $('.intro-heading').show(500);
+    }
