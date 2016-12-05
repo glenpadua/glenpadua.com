@@ -1,7 +1,6 @@
 import logging
 
 from logging.config import dictConfig
-from sqlalchemy.sql import func
 
 from datetime import datetime
 from flask import (
@@ -45,17 +44,6 @@ db = SQLAlchemy(app)
 ## Setting up flask-bcrypt
 bcrypt = Bcrypt(app)
 
-class BaseModel(db.Model):
-    __abstract__ = True
-
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    status = db.Column(db.Integer, default=0, nullable=False)
-    # Possible values
-    # 1. 'active' - default value
-    # 2. 'deleted'
-    created_at = db.Column(db.DateTime, server_default=func.now())
-    deleted_at = db.Column(db.DateTime)
-
 # Flask login stuff
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -66,7 +54,8 @@ from .api_routes import *
 
 
 ## Admin routes
-if __name__ == 'app':
+if __name__ == '__main__':
+    logger.debug('Starting the app..')
     app.run()
 
 logger.info('The application has started.')

@@ -6,6 +6,7 @@ from flask_login import (
     current_user, login_required, login_user, logout_user
 )
 from . import app
+from .models.user import *
 
 @app.route('/api/v1/users', methods=['GET', 'POST'])
 def api_users():
@@ -13,6 +14,8 @@ def api_users():
         response = User.get_all_users_details()
         return jsonify(response)
     else:
+        payload = request.json
+        response = User.add(payload)
         pass
 
 @app.route('/api/v1/users/<int:id>', methods=['GET'])

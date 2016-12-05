@@ -4,11 +4,11 @@ by default.
 """
 import logging
 
-from main import app, bcrypt, db
+from . import app, bcrypt, db
 
 db.init_app(app)
 
-from models.user import *
+from .models.user import *
 
 def seed_users():
     u = User(

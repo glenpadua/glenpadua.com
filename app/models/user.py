@@ -1,4 +1,5 @@
-from .. import db, BaseModel
+from .. import db
+from .basemodel import BaseModel
 from datetime import datetime
 
 class User(BaseModel):
@@ -35,6 +36,12 @@ class User(BaseModel):
 
     def is_anonymous(self):
         return False
+
+    def add(data=None):
+        """
+        Adds user to the database
+        """
+        pass
 
     def get_all_users_details():
         users = User.query.all()

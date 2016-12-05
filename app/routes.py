@@ -52,7 +52,8 @@ def load_user(user_id):
 ## Home route
 @app.route('/')
 def home():
-    return render_template("index.html")
+    return "Home Page"
+    #return render_template("index.html")
 
 
 # Auth
