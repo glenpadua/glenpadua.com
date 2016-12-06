@@ -1,5 +1,4 @@
 import logging
-
 from logging.config import dictConfig
 
 from datetime import datetime
@@ -14,7 +13,7 @@ from flask_login import (
     LoginManager, UserMixin, current_user, login_required
 )
 
-# Setting up the app object1
+# Setting up the app object
 app = Flask(__name__)
 app.config.from_object('app.config')
 
@@ -51,11 +50,3 @@ login_manager.login_view = '/login'
 
 from .routes import *
 from .api_routes import *
-
-
-## Admin routes
-if __name__ == '__main__':
-    logger.debug('Starting the app..')
-    app.run()
-
-logger.info('The application has started.')

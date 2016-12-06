@@ -14,10 +14,10 @@ Create and activate the python virtual environment (Python 3.5 preferred). Insta
 
 ## Step 4
 
-Add the developer specific configurations. Define the variables that are asked to be defined in the `config.py` file inside the `dev_config.py` file.
+Add the developer specific configuration file (inside `app/`). Define the variables that are asked to be defined in the `config.py` file inside the `dev_config.py` file.
 
 ## Step 5
 
-Run the application by typing the command : `python main.py`
+Run the application by typing the command : `python run.py`
 
 Now, go to `localhost:5000` in the browser.
