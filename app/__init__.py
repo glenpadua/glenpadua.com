@@ -34,8 +34,11 @@ else:
     logger = logging.getLogger(__name__)
 
 logger.debug('Logger initialized.')
-
 toolbar = DebugToolbarExtension(app)
+
+# Setting directories
+app.static_folder = '../static'
+app.template_folder = '../templates'
 
 ## Initializing the database
 db = SQLAlchemy(app)
