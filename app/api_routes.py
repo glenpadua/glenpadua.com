@@ -7,6 +7,18 @@ from flask_login import (
 )
 from . import app
 from .models.user import *
+from .mail import send_email
+
+@app.route('/ajax/contact-zephony', methods=['POST'])
+def contact_zephony():
+    payload = request.get_json()
+    print(payload)
+    print('____________')
+    send_email('kevin.isaac70@gmail.com')
+    response = {
+        'status': 'success'
+    }
+    return jsonify(response)
 
 @app.route('/api/v1/users', methods=['GET', 'POST'])
 def api_users():
@@ -16,7 +28,6 @@ def api_users():
     else:
         payload = request.json
         response = User.add(payload)
-        pass
 
 @app.route('/api/v1/users/<int:id>', methods=['GET'])
 def api_user(id):
