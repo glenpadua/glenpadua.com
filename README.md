@@ -18,6 +18,10 @@ Add the developer specific configuration file (inside `app/`). Define the variab
 
 ## Step 5
 
+To seed the database, type: `python -c "from app.seed import rebuild;rebuild()"`.
+
+## Step 6
+
 Run the application by typing the command : `python run.py`
 
 Now, go to `localhost:5000` in the browser.
