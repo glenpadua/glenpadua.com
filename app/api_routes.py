@@ -14,7 +14,7 @@ def contact_zephony():
     payload = request.get_json()
     print(payload)
     print('____________')
-    send_email('kevin.isaac70@gmail.com')
+    send_email('glenpadua01@gmail.com')
     response = {
         'status': 'success'
     }
