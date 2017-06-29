@@ -6,12 +6,12 @@ from flask import (
     Flask, request, render_template, redirect, url_for, abort,
     send_from_directory, g, flash, jsonify, abort
 )
-from flask_bcrypt import Bcrypt
+# from flask_bcrypt import Bcrypt
 from flask_debugtoolbar import DebugToolbarExtension
-from flask_sqlalchemy import SQLAlchemy
-from flask_login import (
-    LoginManager, UserMixin, current_user, login_required
-)
+# from flask_sqlalchemy import SQLAlchemy
+# from flask_login import (
+#     LoginManager, UserMixin, current_user, login_required
+# )
 
 # Setting up the app object
 app = Flask(__name__)
@@ -41,15 +41,15 @@ app.static_folder = '../static'
 app.template_folder = '../templates'
 
 ## Initializing the database
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 
-## Setting up flask-bcrypt
-bcrypt = Bcrypt(app)
+# ## Setting up flask-bcrypt
+# bcrypt = Bcrypt(app)
 
-# Flask login stuff
-login_manager = LoginManager()
-login_manager.init_app(app)
-login_manager.login_view = '/login'
+# # Flask login stuff
+# login_manager = LoginManager()
+# login_manager.init_app(app)
+# login_manager.login_view = '/login'
 
 from .routes import *
 from .api_routes import *
