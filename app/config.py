@@ -50,3 +50,7 @@ LOGGING = {
 #SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://user:pass@server/db'
 
 # Override any configuration value by redefining them in dev_config.py
+try:
+    from .dev_config import *
+except:
+    pass
