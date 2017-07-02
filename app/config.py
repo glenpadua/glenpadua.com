@@ -2,6 +2,7 @@
 
 import logging
 
+APP_ENV = 'development'
 DEBUG = True
 DEBUG_TB_INTERCEPT_REDIRECTS = False
 SECRET_KEY = 'fasdhbf@#$240Fa-234242'
