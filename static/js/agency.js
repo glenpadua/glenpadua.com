@@ -37,14 +37,16 @@
         cursorChar: '|',
         backDelay: 500,
         contentType: 'html',
-        callback: function() {
-            callHeading();
-        }
+        loop: true,
+        loopCount: Infinity,
+        // callback: function() {
+        //     callHeading();
+        // }
     });
 
 })(jQuery); // End of use strict
 
-    function callHeading() {
-        console.log('Callback!');
-        $('.intro-heading').show(500);
-    }
+    // function callHeading() {
+    //     console.log('Callback!');
+    //     $('.intro-heading').show(500);
+    // }
