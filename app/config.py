@@ -1,8 +1,11 @@
+# All common configurations go in this file
+
 import logging
 
 DEBUG = True
 DEBUG_TB_INTERCEPT_REDIRECTS = False
 SECRET_KEY = 'fasdhbf@#$240Fa-234242'
+TEMPLATES_AUTO_RELOAD = True
 
 # If set to True, Flask-SQLAlchemy will track modifications of objects and
 # emit signals. The default is None, which enables tracking but issues a
