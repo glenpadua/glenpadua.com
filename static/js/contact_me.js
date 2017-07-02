@@ -11,7 +11,6 @@ $(function() {
             // get values from FORM
             var name = $("input#name").val();
             var email = $("input#email").val();
-            var phone = $("input#phone").val();
             var message = $("textarea#message").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
@@ -20,16 +19,15 @@ $(function() {
             }
             var data = {
                 name: name,
-                phone: phone,
                 email: email,
                 message: message
             };
             $.ajax({
                 url: "/ajax/contact-zephony",
                 type: "POST",
-				// contentType: "application/json; charset=utf-8",
-                data: data,
-                cache: false,
+				contentType: "application/json",
+                dataType: 'json',
+                data: JSON.stringify(data),
                 success: function() {
                     // Success message
                     $('#success').html("<div class='alert alert-success'>");
@@ -41,6 +39,8 @@ $(function() {
                     $('#success > .alert-success')
                         .append('</div>');
 
+                    // Hide contact button
+                    $('#contact-button').hide();
                     //clear all fields
                     // $('#contactForm').trigger("reset");
                 },
@@ -53,6 +53,9 @@ $(function() {
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
+
+                    // enable contact button
+                    $('#contact-button').css('pointer-events', '');
                 },
             });
         },
@@ -65,6 +68,11 @@ $(function() {
         e.preventDefault();
         $(this).tab("show");
     });
+});
+
+$('#contact-button').click(function(e) {
+    console.log(this);
+    $(this).css('pointer-events', 'none');
 });
 
 
