@@ -7,7 +7,7 @@ request_url = 'https://api.mailgun.net/v3/mg.zephony.com/messages'
 
 def send_email(recipient):
     request = requests.post(request_url, auth=('api', key), data={
-        'from': 'glen@zephony.com',
+        'from': 'kevin@zephony.com',
         'to': recipient,
         'subject': 'Hello',
         'text': 'We received your email'
@@ -15,3 +15,7 @@ def send_email(recipient):
 
     print('Status: {0}'.format(request.status_code))
     print('Body:   {0}'.format(request.text))
+
+    return {
+        'status': 'success'
+    }
