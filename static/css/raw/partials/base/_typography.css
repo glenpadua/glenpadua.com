@@ -1,11 +1,27 @@
 /* Fonts
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css?family=Dosis');
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Bangers');
 
-/* Font Families */
-$primary-font: 'Dosis', sans-serif;
-$logo-font: 'Pacifico', cursive;
+$font-1: 'DigitalStripBB', cursive;
+$font-1-ital: 'DigitalStripBB_Ital', cursive;
+$font-1-bi: 'DigitalStripBB_BoldItal', cursive;
+
+$font-2: 'Bangers', sans-serif;
+
+@font-face {
+    font-family: 'DigitalStripBB';
+    src: url('../fonts/DigitalStripBB_Reg.ttf');
+}
+
+@font-face {
+    font-family: 'DigitalStripBB_Ital';
+    src: url('../fonts/DigitalStripBB_Ital.ttf');
+}
+
+@font-face {
+    font-family: 'DigitalStripBB_BoldItal';
+    src: url('../fonts/DigitalStripBB_BoldItal.ttf');
+}
 
 /* Font Weights */
 $light: 300;

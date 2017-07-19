@@ -2,7 +2,7 @@
    ========================================================================== */
 
 body {
-    font-family: $primary-font;
+    font-family: $font-1;
     font-weight: $normal;
     color: $secondary-color;
     background-color: #333;
@@ -16,10 +16,6 @@ h1 {
 .welcome {
     text-align:center;
     margin: 100px 0 50px 0;
-}
-
-.qanda-howto {
-    text-align: center;
 }
 
 .divider {
