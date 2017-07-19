@@ -5,20 +5,19 @@
   "homepage": "http://zephony.com",
   "author": "Zephony",
   "devDependencies": {
-    "bootstrap": "^3.3.7",
-    "browser-sync": "^2.13.0",
-    "font-awesome": "^4.6.3",
+    "autoprefixer": "^6.7.6",
+    "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.10",
-    "gulp-header": "^1.8.7",
-    "gulp-less": "^3.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.3.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^1.5.4",
-    "jquery": "^1.11.3"
+    "gulp-uglify": "^2.0.1",
+    "gulp-util": "^3.0.8",
+    "precss": "^1.4.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/terminus-in/terminology"
+    "url": "https://bitbucket.org/zephony/zephony"
   }
 }

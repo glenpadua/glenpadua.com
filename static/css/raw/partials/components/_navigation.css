@@ -1,0 +1,8 @@
+/* Bootstrap navbar overrides */
+
+.navbar {
+    /*background: #333;*/
+    /*border: none;*/
+    font-size: 1.5em;
+    height: 60px;
+}

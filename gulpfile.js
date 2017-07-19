@@ -1,107 +1,98 @@
-var gulp = require('gulp');
-//var less = require('gulp-less');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
-var header = require('gulp-header');
-var cleanCSS = require('gulp-clean-css');
-var rename = require("gulp-rename");
-var uglify = require('gulp-uglify');
-var pkg = require('./package.json');
+//////////////////////////////
+// REQUIRE MODULES
+//////////////////////////////
 
-// Set the banner content
-var banner = ['/*!\n',
-    ' * Terminology - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-    ' * Copyright 2016-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-    //' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n',
-    ' */\n',
-    ''
-].join('');
+var gulp = require('gulp'),
+    rename = require('gulp-rename'),    // Methods for renaming files
+    uglify = require('gulp-uglify'),    // Minifies JS
+    browserSync = require('browser-sync'), // Auto reload website
+    reload = browserSync.reload,
+    plumber = require('gulp-plumber'), // Prevents pipe from breaking when errors occur
+    postcss = require('gulp-postcss'), // API for everything PostCSS
+    precss = require('precss'), // Allows SASS like syntax inside CSS (PostCSS plugin)
+    autoprefixer = require('autoprefixer'), // Adds browser prefixes automatically (PostCSS plugin)
+    exec = require('child_process').exec; // To run flask process
 
-// Compile LESS files from /less into /css
-// gulp.task('less', function() {
-//     return gulp.src('less/agency.less')
-//         .pipe(less())
-//         .pipe(header(banner, { pkg: pkg }))
-//         .pipe(gulp.dest('css'))
-//         .pipe(browserSync.reload({
-//             stream: true
-//         }))
-// });
+//////////////////////////////
+// TASKS
+//////////////////////////////
 
-// Compiles SCSS files from /scss into /css
-// NOTE: This theme uses LESS by default. To swtich to SCSS you will need to update this gulpfile by changing the 'less' tasks to run 'sass'!
-gulp.task('sass', function() {
-    return gulp.src('static/scss/agency.scss')
-        .pipe(sass())
-        .pipe(header(banner, { pkg: pkg }))
-        .pipe(gulp.dest('static/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+// Styles Task - for all the awesome CSS
+gulp.task('styles', function() {
+    var processors = [
+        //autoprefixer({browsers: ['last 2 version']}),
+        precss({}),
+        autoprefixer({})
+    ];
+
+    gulp.src('./static/css/raw/styles.css')
+        .pipe(plumber())
+        .pipe(postcss(processors))
+        .pipe(gulp.dest('./static/css/'))
+        .pipe(reload({stream: true}));
 });
 
-// Minify compiled CSS
-gulp.task('minify-css', ['sass'], function() {
-    return gulp.src('static/css/agency.css')
-        .pipe(cleanCSS({ compatibility: 'ie8' }))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('static/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
-});
-
-// Minify JS
-gulp.task('minify-js', function() {
-    return gulp.src('static/js/agency.js')
+// Scripts Task - for everything JavaScript
+gulp.task('scripts', function() {
+    gulp.src(['./static/js/main.js', '!app/js/**/*.min.js'])
+        .pipe(plumber())
+        .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
-        .pipe(header(banner, { pkg: pkg }))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('static/js'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+        .pipe(gulp.dest('./static/js/'))
+        .pipe(reload({stream: true}));
 });
 
-// Copy vendor libraries from /node_modules into /vendor
-gulp.task('copy', function() {
-    gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
-        .pipe(gulp.dest('static/vendor/bootstrap'))
+// HTML Task
+gulp.task('html', function() {
+    gulp.src('./static/**/*.html')
+    .pipe(reload({stream: true}));
+});
 
-    gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
-        .pipe(gulp.dest('static/vendor/jquery'))
+//////////////////////////////
+// BROWSER SYNC TASKS
+//////////////////////////////
 
-    gulp.src([
-            'node_modules/font-awesome/**',
-            '!node_modules/font-awesome/**/*.map',
-            '!node_modules/font-awesome/.npmignore',
-            '!node_modules/font-awesome/*.txt',
-            '!node_modules/font-awesome/*.md',
-            '!node_modules/font-awesome/*.json'
-        ])
-        .pipe(gulp.dest('static/vendor/font-awesome'))
-})
+// Run Flask server
+gulp.task('runserver', function() {
+    var proc = exec('python run.py');
+});
 
-// Run everything
-gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
-
-// Configure the browserSync task
-gulp.task('browserSync', function() {
-    browserSync.init({
-        server: {
-            baseDir: ''
-        },
+gulp.task('browser-sync', function() {
+    browserSync({
+        notify: false,
+        proxy: '127.0.0.1:5003'
     })
-})
-
-// Dev task with browserSync
-gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
-    gulp.watch('static/scss/*.scss', ['sass']);
-    gulp.watch('static/css/*.css', ['minify-css']);
-    gulp.watch('static/js/*.js', ['minify-js']);
-    // Reloads the browser whenever HTML or JS files change
-    gulp.watch('*.html', browserSync.reload);
-    gulp.watch('static/js/**/*.js', browserSync.reload);
 });
 
 
+//////////////////////////////
+// WATCH TASKS
+//////////////////////////////
+
+gulp.task('watch', function() {
+    gulp.watch('./static/css/raw/**/*.css', ['styles']);
+    gulp.watch('./static/js/main.js', ['scripts']);
+    gulp.watch('./static/**/*.html', ['html']);
+});
+
+//////////////////////////////
+// DIST TASKS
+//////////////////////////////
+
+gulp.task('dist', function() {
+    gulp.src('./static/**/*.html')
+    .pipe(gulp.dest('./dist/'));
+
+    gulp.src('./static/js/**/*min.js')
+    .pipe(gulp.dest('./dist/js/'));
+
+    gulp.src('./static/css/styles.css')
+    .pipe(gulp.dest('./dist/css'));
+});
+
+
+//////////////////////////////
+// DEFAULT TASKS
+//////////////////////////////
+
+gulp.task('default', ['styles', 'scripts', 'html', 'runserver', 'browser-sync', 'watch']);

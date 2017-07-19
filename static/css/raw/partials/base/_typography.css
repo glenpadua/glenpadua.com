@@ -1,0 +1,14 @@
+/* Fonts
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+/* Font Families */
+$primary-font: 'Dosis', sans-serif;
+$logo-font: 'Pacifico', cursive;
+
+/* Font Weights */
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;

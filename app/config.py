@@ -1,5 +1,11 @@
-import logging
+import os, logging
 
+APP_PORT = 5003
+try:
+    # Tries to import from the server config file
+    from .server_config import *
+except:
+    APP_ENV = 'development'
 DEBUG = True
 DEBUG_TB_INTERCEPT_REDIRECTS = False
 SECRET_KEY = 'fasdhbf@#$240Fa-234242'
@@ -8,6 +14,7 @@ SECRET_KEY = 'fasdhbf@#$240Fa-234242'
 # emit signals. The default is None, which enables tracking but issues a
 # warning that it will be disabled by default in the future. This requires
 # extra memory and should be disabled if not needed.
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://kevin:bennette@localhost/qanda'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 DEBUG_TB_INTERCEPT_REDIRECTS = False
 # Configuration for the python logging module
@@ -47,3 +54,32 @@ LOGGING = {
 #SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://user:pass@server/db'
 
 # Override any configuration value by redefining them in dev_config.py
+
+# Staging config
+if APP_ENV == 'staging':
+    try:
+        from .server_config import *
+    except:
+        pass
+
+# Live config
+if APP_ENV == 'live':
+    MONGO_IP = '127.0.0.1'
+    MONGO_DB = 'terminology'
+    MONGO_USER = 'terminology'
+    MONGO_PW = 'terminology'
+    try:
+        print('Live Environment is detected.')
+        from .server_config import *
+    except:
+        pass
+
+# Now, override the default config variables with the developer
+# specific config variables.
+# Environment variable is not required for development.
+if APP_ENV == 'development':
+    try:
+        print('Development Environment is detected.')
+        from .dev_config import *
+    except:
+        pass

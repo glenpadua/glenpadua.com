@@ -8,17 +8,10 @@ from . import app, bcrypt, db
 
 db.init_app(app)
 
-from .models.user import *
+from .models.questionnaire import *
 
 def seed_users():
-    u = User(
-        name = 'Kevin Isaac',
-        email = 'kevin.isaac70@gmail.com',
-        password = bcrypt.generate_password_hash('password'),
-        account_type = 2
-    )
-    db.session.add(u)
-    db.session.commit()
+    pass
 
 def drop_tables():
     db.drop_all()
