@@ -60,7 +60,7 @@ gulp.task('runserver', function() {
 gulp.task('browser-sync', function() {
     browserSync({
         notify: false,
-        proxy: '127.0.0.1:5003'
+        proxy: '127.0.0.1:5000'
     })
 });
 
