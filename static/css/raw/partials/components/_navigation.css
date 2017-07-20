@@ -1,8 +1,126 @@
-/* Bootstrap navbar overrides */
+// Custom Navigation Bar
 
-.navbar {
-    /*background: #333;*/
-    /*border: none;*/
-    font-size: 1.5em;
-    height: 60px;
+
+.navbar-custom {
+    background-color: $fifth-color;
+    border-color: transparent;
+    .navbar-brand {
+        color: $third-color;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: darken($third-color, 10%);
+        }
+    }
+    .navbar-collapse {
+        border-color: fade-out(white, .02);
+    }
+    .navbar-toggle {
+        background-color: $third-color;
+        border-color: $third-color;
+        color: white;
+        font-size: 12px;
+        &:hover,
+        &:focus {
+            background-color: $third-color;
+        }
+    }
+    .nav {
+        li {
+            a {
+                font-weight: 400;
+                letter-spacing: 1px;
+                color: white;
+                &:hover,
+                &:focus {
+                    color: $third-color;
+                    outline: none;
+                }
+            }
+        }
+    }
+    .navbar-nav>.active>a {
+        border-radius: 0;
+        color: white;
+        background-color: $third-color;
+    }
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus {
+        color: white;
+        background-color: darken($third-color, 10%);
+    }
 }
+
+/* Bootstrap Override */
+.navbar-fixed-top {
+    background-color: $fifth-color;
+}
+
+@media(min-width:768px) {
+    .navbar-custom {
+        background-color: $fifth-color;
+        margin-top: 40px;
+        -webkit-transition: margin 0.3s;
+        -moz-transition: margin 0.3s;
+        transition: margin 0.3s;
+        border: none;
+        .navbar-brand {
+            font-size: 2em;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+        .navbar-nav>.active>a {
+            border-radius: 3px;
+            -webkit-text-fill-color: $fourth-color;
+        }
+
+        .nav {
+            li {
+                a {
+                    font-weight: 800;
+                    font-size: 2em;
+                    letter-spacing: 1px;
+                    color: white;
+                    -webkit-text-fill-color: white;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: black;
+                    text-shadow:
+                       3px 3px 0 #000,
+                     -1px -1px 0 #000,
+                      1px -1px 0 #000,
+                      -1px 1px 0 #000,
+                       1px 1px 0 #000;
+                    &:hover,
+                    &:focus {
+                        -webkit-text-fill-color: $fourth-color;
+                        background-color: transparent;
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Navbar Change on Scroll
+
+@media(min-width:768px) {
+    .navbar-custom.affix {
+        background-color: $third-color;
+        padding: 10px 0;
+        .navbar-brand {
+            font-size: 1.5em;
+        }
+    }
+}
+
+.navbar-custom.affix {
+        background-color: $fifth-color;
+        margin: 0;
+        padding: 10px 0;
+        .navbar-brand {
+            font-size: 1.5em;
+        }
+    }

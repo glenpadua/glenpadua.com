@@ -395,6 +395,7 @@ template {
 
 body {
     font-family: 'DigitalStripBB',cursive;
+    overflow-x: hidden;
     font-weight: 400;
     color: #34be5c;
     background-color: #333;
@@ -427,9 +428,50 @@ h1 {
 .footer p:last-child {
     margin-bottom: 0;
 }
-.logo {
-    font-family: $logo-font;
-    font-size: 1.5em;
+header {
+    background-image: url('../images/header-bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+header .intro-text {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+header .intro-text .intro-lead-in {
+    font-style: italic;
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 25px;
+}
+header .intro-text .intro-heading {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 50px;
+    margin-bottom: 25px;
+}
+@media(min-width:768px) {
+    header .intro-text {
+        padding-top: 300px;
+        padding-bottom: 200px;
+    }
+    header .intro-text .intro-lead-in {
+        @include serif-font;
+        font-style: italic;
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: 25px;
+    }
+    header .intro-text .intro-heading {
+        @include heading-font;
+        font-weight: 700;
+        font-size: 75px;
+        line-height: 75px;
+        margin-bottom: 50px;
+    }
 }
 
 /* Question add and remove buttons */
@@ -690,10 +732,149 @@ h1 {
 .modal-styles .inputButton:focus {
     outline: none;
 }
-/* Bootstrap navbar overrides */
-.navbar {
-    /*background: #333;*/
-    /*border: none;*/
+// Custom Navigation Bar
+
+
+.navbar-custom {
+    background-color: #fff000;
+    border-color: transparent;
+}
+// Custom Navigation Bar
+
+
+.navbar-custom .navbar-brand {
+    color: #fff;
+}
+// Custom Navigation Bar
+
+
+.navbar-custom .navbar-brand:hover, // Custom Navigation Bar
+
+
+.navbar-custom .navbar-brand:focus, // Custom Navigation Bar
+
+
+.navbar-custom .navbar-brand:active, // Custom Navigation Bar
+
+
+.navbar-custom .navbar-brand.active {
+    color: darken(#fff, 10%);
+}
+// Custom Navigation Bar
+
+
+.navbar-custom .navbar-collapse {
+    border-color: fade-out(white, .02);
+}
+// Custom Navigation Bar
+
+
+.navbar-custom .navbar-toggle {
+    background-color: #fff;
+    border-color: #fff;
+    color: white;
+    font-size: 12px;
+}
+// Custom Navigation Bar
+
+
+.navbar-custom .navbar-toggle:hover, // Custom Navigation Bar
+
+
+.navbar-custom .navbar-toggle:focus {
+    background-color: #fff;
+}
+// Custom Navigation Bar
+
+
+.navbar-custom .nav li a {
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: white;
+}
+// Custom Navigation Bar
+
+
+.navbar-custom .nav li a:hover, // Custom Navigation Bar
+
+
+.navbar-custom .nav li a:focus {
+    color: #fff;
+    outline: none;
+}
+// Custom Navigation Bar
+
+
+.navbar-custom .navbar-nav>.active>a {
+    border-radius: 0;
+    color: white;
+    background-color: #fff;
+}
+// Custom Navigation Bar
+
+
+.navbar-custom .navbar-nav>.active>a:hover, // Custom Navigation Bar
+
+
+.navbar-custom .navbar-nav>.active>a:focus {
+    color: white;
+    background-color: darken(#fff, 10%);
+}
+/* Bootstrap Override */
+.navbar-fixed-top {
+    background-color: #fff000;
+}
+@media(min-width:768px) {
+    .navbar-custom {
+        background-color: #fff000;
+        margin-top: 40px;
+        transition: margin 0.3s;
+        border: none;
+    }
+    .navbar-custom .navbar-brand {
+        font-size: 2em;
+        transition: all 0.3s;
+    }
+    .navbar-custom .navbar-nav>.active>a {
+        border-radius: 3px;
+        -webkit-text-fill-color: #ccc;
+    }
+    .navbar-custom .nav li a {
+        font-weight: 800;
+        font-size: 2em;
+        letter-spacing: 1px;
+        color: white;
+        -webkit-text-fill-color: white;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        text-shadow: 3px 3px 0 #000,
+                     -1px -1px 0 #000,
+                      1px -1px 0 #000,
+                      -1px 1px 0 #000,
+                       1px 1px 0 #000;
+    }
+    .navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus {
+        -webkit-text-fill-color: #ccc;
+        background-color: transparent;
+        outline: none;
+    }
+}
+// Navbar Change on Scroll
+
+@media(min-width:768px) .navbar-custom.affix {
+    background-color: #fff;
+    padding: 10px 0;
+}
+// Navbar Change on Scroll
+
+@media(min-width:768px) .navbar-custom.affix .navbar-brand {
     font-size: 1.5em;
-    height: 60px;
+}
+.navbar-custom.affix {
+    background-color: #fff000;
+    margin: 0;
+    padding: 10px 0;
+}
+.navbar-custom.affix .navbar-brand {
+    font-size: 1.5em;
 }
