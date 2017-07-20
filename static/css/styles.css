@@ -437,15 +437,81 @@ header {
     text-align: center;
     color: white;
 }
+header .intro-stats {
+    position: absolute;
+    margin-top: 20px;
+    width: 200px;
+    height: 300px;
+    left: 20px;
+    background-color: white;
+    border: 5px solid black;
+    text-align: center;
+    color: black;
+}
+header .intro-stats p.stats-date {
+    margin-top: 95px;
+    font-size: 2.5em;
+}
+header .intro-stats p.stats-price {
+    color: black;
+    font-size: 2em;
+    font-family: 'DigitalStripBB_BoldItal',cursive;
+}
+header .intro-stats p.more-stats {
+    font-size: 2em;
+}
+header .intro-cta {
+    position: absolute;
+}
+header .intro-cta img {
+    height: 200px;
+    width: 400px;
+}
+header .cta-1 {
+    right: 2%;
+    top: 20%;
+}
+header .cta-1 p {
+    position: absolute;
+    width: 200px;
+    font-weight: 800;
+    font-size: 1.2em;
+    color: black;
+    right: 25%;
+    top: 29%;
+}
+header .cta-2 {
+    left: 1%;
+    top: 80%;
+}
+header .cta-2 p {
+    position: absolute;
+    width: 200px;
+    font-weight: 800;
+    font-size: 1.2em;
+    color: black;
+    right: 25%;
+    top: 29%;
+}
+header .intro-ribbon {
+    position: absolute;
+    right: 0;
+    top: 85%;
+}
+header .intro-ribbon img {
+    height: 200px;
+}
 header .intro-text {
-    padding-top: 100px;
+    padding-top: 200px;
     padding-bottom: 50px;
 }
 header .intro-text .intro-lead-in {
-    font-style: italic;
-    font-size: 22px;
-    line-height: 22px;
     margin-bottom: 25px;
+}
+header .intro-text .intro-lead-in img {
+    height: 120px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
 }
 header .intro-text .intro-heading {
     font-weight: 700;
@@ -455,7 +521,7 @@ header .intro-text .intro-heading {
 }
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 300px;
+        padding-top: 200px;
         padding-bottom: 200px;
     }
     header .intro-text .intro-lead-in {
@@ -467,8 +533,9 @@ header .intro-text .intro-heading {
     }
     header .intro-text .intro-heading {
         @include heading-font;
-        font-weight: 700;
-        font-size: 75px;
+        font-family: 'DigitalStripBB_Ital',cursive;
+        font-weight: 500;
+        font-size: 42px;
         line-height: 75px;
         margin-bottom: 50px;
     }
@@ -769,42 +836,6 @@ header .intro-text .intro-heading {
 // Custom Navigation Bar
 
 
-.navbar-custom .navbar-toggle {
-    background-color: #fff;
-    border-color: #fff;
-    color: white;
-    font-size: 12px;
-}
-// Custom Navigation Bar
-
-
-.navbar-custom .navbar-toggle:hover, // Custom Navigation Bar
-
-
-.navbar-custom .navbar-toggle:focus {
-    background-color: #fff;
-}
-// Custom Navigation Bar
-
-
-.navbar-custom .nav li a {
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: white;
-}
-// Custom Navigation Bar
-
-
-.navbar-custom .nav li a:hover, // Custom Navigation Bar
-
-
-.navbar-custom .nav li a:focus {
-    color: #fff;
-    outline: none;
-}
-// Custom Navigation Bar
-
-
 .navbar-custom .navbar-nav>.active>a {
     border-radius: 0;
     color: white;
@@ -820,6 +851,41 @@ header .intro-text .intro-heading {
     color: white;
     background-color: darken(#fff, 10%);
 }
+.nav-logo > img {
+    height: 50px;
+    margin-left: 20px;
+}
+.navbar-custom {
+    padding: 10px 0;
+}
+.navbar-toggle {
+    background: transparent;
+    border: none;
+    color: #5b80df;
+    font-family: 'DigitalStripBB',cursive;
+    font-size: 12px;
+}
+.navbar-toggle:hover, .navbar-toggle:focus {
+    background-color: #fff;
+}
+.nav li a {
+    font-weight: 800;
+    font-size: 2em;
+    letter-spacing: 1px;
+    color: white;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-color: black;
+    text-shadow: 3px 3px 0 #000,
+                     -1px -1px 0 #000,
+                      1px -1px 0 #000,
+                      -1px 1px 0 #000,
+                       1px 1px 0 #000;
+}
+.nav li a:hover, .nav li a:focus {
+    -webkit-text-fill-color: #5b80df;
+    background-color: transparent;
+    outline: none;
+}
 /* Bootstrap Override */
 .navbar-fixed-top {
     background-color: #fff000;
@@ -829,34 +895,16 @@ header .intro-text .intro-heading {
         background-color: #fff000;
         margin-top: 40px;
         transition: margin 0.3s;
-        border: none;
+        border-top: 5px solid black;
+        border-bottom: 5px solid black;
     }
-    .navbar-custom .navbar-brand {
-        font-size: 2em;
-        transition: all 0.3s;
+    .navbar-custom .nav-logo  > img {
+        height: 50px;
+        margin-left: -50px;
     }
     .navbar-custom .navbar-nav>.active>a {
         border-radius: 3px;
-        -webkit-text-fill-color: #ccc;
-    }
-    .navbar-custom .nav li a {
-        font-weight: 800;
-        font-size: 2em;
-        letter-spacing: 1px;
-        color: white;
-        -webkit-text-fill-color: white;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: black;
-        text-shadow: 3px 3px 0 #000,
-                     -1px -1px 0 #000,
-                      1px -1px 0 #000,
-                      -1px 1px 0 #000,
-                       1px 1px 0 #000;
-    }
-    .navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus {
-        -webkit-text-fill-color: #ccc;
-        background-color: transparent;
-        outline: none;
+        -webkit-text-fill-color: #5b80df;
     }
 }
 // Navbar Change on Scroll
@@ -874,7 +922,8 @@ header .intro-text .intro-heading {
     background-color: #fff000;
     margin: 0;
     padding: 10px 0;
+    border: none;
 }
-.navbar-custom.affix .navbar-brand {
+.navbar-custom.affix .nav-logo {
     font-size: 1.5em;
 }

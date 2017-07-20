@@ -6,14 +6,88 @@ header {
     background-size: cover;
     text-align: center;
     color: white;
+    .intro-stats {
+        position: absolute;
+        margin-top: 20px;
+        width: 200px;
+        height: 300px;
+        left: 20px;
+        background-color: white;
+        border: 5px solid black;
+        text-align:center;
+        color: black;
+
+        p.stats-date {
+            margin-top: 95px;
+            font-size: 2.5em;
+        }
+        p.stats-price {
+            color: black;
+            font-size: 2em;
+            font-family: $font-1-bi;
+        }
+        p.more-stats {
+            font-size: 2em;
+        }
+    }
+
+    .intro-cta {
+        position: absolute;
+        img {
+            height: 200px;
+            width: 400px;
+        }
+    }
+
+    .cta-1 {
+        right: 2%;
+        top: 20%;
+
+        p {
+            position: absolute;
+            width: 200px;
+            font-weight: 800;
+            font-size: 1.2em;
+            color: black;
+            right: 25%;
+            top:29%;
+        }
+    }
+
+    .cta-2 {
+        left: 1%;
+        top: 80%;
+
+        p {
+            position: absolute;
+            width: 200px;
+            font-weight: 800;
+            font-size: 1.2em;
+            color: black;
+            right: 25%;
+            top:29%;
+        }
+    }
+
+    .intro-ribbon {
+        position: absolute;
+        right: 0;
+        top: 85%;
+        img {
+            height: 200px;
+        }
+    }
+
     .intro-text {
-        padding-top: 100px;
+        padding-top: 200px;
         padding-bottom: 50px;
         .intro-lead-in {
-            font-style: italic;
-            font-size: 22px;
-            line-height: 22px;
             margin-bottom: 25px;
+            img {
+                height: 120px;
+                -webkit-filter: drop-shadow(5px 5px 5px #222);
+                filter: drop-shadow(5px 5px 5px #222);
+            }
         }
         .intro-heading {
             font-weight: 700;
@@ -27,7 +101,7 @@ header {
 @media(min-width:768px) {
     header {
         .intro-text {
-            padding-top: 300px;
+            padding-top: 200px;
             padding-bottom: 200px;
             .intro-lead-in {
                 @include serif-font;
@@ -38,8 +112,9 @@ header {
             }
             .intro-heading {
                 @include heading-font;
-                font-weight: 700;
-                font-size: 75px;
+                font-family: $font-1-ital;
+                font-weight: 500;
+                font-size: 42px;
                 line-height: 75px;
                 margin-bottom: 50px;
             }

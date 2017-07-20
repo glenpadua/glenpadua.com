@@ -16,30 +16,6 @@
     .navbar-collapse {
         border-color: fade-out(white, .02);
     }
-    .navbar-toggle {
-        background-color: $third-color;
-        border-color: $third-color;
-        color: white;
-        font-size: 12px;
-        &:hover,
-        &:focus {
-            background-color: $third-color;
-        }
-    }
-    .nav {
-        li {
-            a {
-                font-weight: 400;
-                letter-spacing: 1px;
-                color: white;
-                &:hover,
-                &:focus {
-                    color: $third-color;
-                    outline: none;
-                }
-            }
-        }
-    }
     .navbar-nav>.active>a {
         border-radius: 0;
         color: white;
@@ -51,6 +27,53 @@
         background-color: darken($third-color, 10%);
     }
 }
+
+.nav-logo > img {
+    height: 50px;
+    margin-left: 20px;
+}
+
+.navbar-custom {
+    padding: 10px 0;
+}
+
+.navbar-toggle {
+        background: transparent;
+        border: none;
+        color: $primary-color;
+        font-family: $font-1;
+        font-size: 12px;
+        &:hover,
+        &:focus {
+            background-color: $third-color;
+        }
+    }
+
+.nav {
+            li {
+                a {
+                    font-weight: 800;
+                    font-size: 2em;
+                    letter-spacing: 1px;
+                    color: white;
+                    -webkit-text-fill-color: white;
+
+                    -webkit-text-stroke-color: black;
+                    text-shadow:
+                       3px 3px 0 #000,
+                     -1px -1px 0 #000,
+                      1px -1px 0 #000,
+                      -1px 1px 0 #000,
+                       1px 1px 0 #000;
+                    &:hover,
+                    &:focus {
+                        -webkit-text-fill-color: $primary-color;
+                        background-color: transparent;
+                        outline: none;
+                    }
+                }
+            }
+        }
 
 /* Bootstrap Override */
 .navbar-fixed-top {
@@ -64,42 +87,15 @@
         -webkit-transition: margin 0.3s;
         -moz-transition: margin 0.3s;
         transition: margin 0.3s;
-        border: none;
-        .navbar-brand {
-            font-size: 2em;
-            -webkit-transition: all 0.3s;
-            -moz-transition: all 0.3s;
-            transition: all 0.3s;
+        border-top: 5px solid black;
+        border-bottom: 5px solid black;
+        .nav-logo  > img{
+            height: 50px;
+            margin-left: -50px;
         }
         .navbar-nav>.active>a {
             border-radius: 3px;
-            -webkit-text-fill-color: $fourth-color;
-        }
-
-        .nav {
-            li {
-                a {
-                    font-weight: 800;
-                    font-size: 2em;
-                    letter-spacing: 1px;
-                    color: white;
-                    -webkit-text-fill-color: white;
-                    -webkit-text-stroke-width: 1px;
-                    -webkit-text-stroke-color: black;
-                    text-shadow:
-                       3px 3px 0 #000,
-                     -1px -1px 0 #000,
-                      1px -1px 0 #000,
-                      -1px 1px 0 #000,
-                       1px 1px 0 #000;
-                    &:hover,
-                    &:focus {
-                        -webkit-text-fill-color: $fourth-color;
-                        background-color: transparent;
-                        outline: none;
-                    }
-                }
-            }
+            -webkit-text-fill-color: $primary-color;
         }
     }
 }
@@ -120,7 +116,8 @@
         background-color: $fifth-color;
         margin: 0;
         padding: 10px 0;
-        .navbar-brand {
+        border:none;
+        .nav-logo {
             font-size: 1.5em;
         }
     }
