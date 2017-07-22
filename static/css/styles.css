@@ -823,80 +823,9 @@ header .intro-text .intro-heading {
 .option .input__label--ruri {
     font-size: 1.5em;
 }
-.modal-styles {
-    color: #34be5c;
-}
-.modal-styles ::-moz-selection {
-    background-color: #b5e2e7;
-}
-.modal-styles ::selection {
-    background-color: #b5e2e7;
-}
-.modal-styles ::-moz-selection {
-    background-color: #8ac7d8;
-}
-.modal-styles #logbox {
-    padding: 10px;
-    margin: 50px auto;
-    width: 340px;
-    background-color: #fff;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-    color: #fff;
-}
-.modal-styles h1 {
-    text-align: center;
-    font-size: 200%;
-    color: #757575;
-    font-weight: 300;
-}
-.modal-styles h1, .modal-styles input {
-    font-family: $primary-font;
-}
-.modal-styles .input {
-    width: 75%;
-    height: 50px;
-    display: block;
-    margin: 0 auto 15px;
-    padding: 0 15px;
-    border: none;
-    border-bottom: 2px solid #ebebeb;
-    font-size: 120%;
-    color: #fff;
-}
-.modal-styles .input:focus {
-    outline: none;
-    border-bottom-color: #5b80df !important;
-}
-.modal-styles .input:hover {
-    border-bottom-color: #dcdcdc;
-}
-.modal-styles .input:invalid {
-    box-shadow: none;
-}
-.modal-styles .pass:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px white inset;
-}
-.modal-styles .inputButton {
-    position: relative;
-    width: 85%;
-    height: 50px;
-    display: block;
-    margin: 30px auto 30px;
-    color: white;
-    background-color: #5b80df;
-    border: none;
-    box-shadow: 0 5px 0 #5b80df;
-}
-.modal-styles .inputButton:hover {
-    top: 2px;
-    box-shadow: 0 3px 0 #5b80df;
-}
-.modal-styles .inputButton:active {
-    top: 5px;
-    box-shadow: none;
-}
-.modal-styles .inputButton:focus {
-    outline: none;
+.comic-caption {
+    color: black;
+    border: 3px solid black;
 }
 /*Custom Navigation Bar */
 .navbar-custom {
@@ -990,7 +919,7 @@ header .intro-text .intro-heading {
 .navbar-custom.affix {
     background-color: #fff000;
     margin: 0;
-    padding: 10px 0;
+    padding: 5px 0;
     border: none;
 }
 .navbar-custom.affix .nav-logo {
