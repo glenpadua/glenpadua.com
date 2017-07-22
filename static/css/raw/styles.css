@@ -7,6 +7,7 @@
 @import "partials/layout/base";
 @import "partials/layout/header";
 @import "partials/layout/team";
+@import "partials/layout/services";
 
 @import "partials/components/buttons";
 @import "partials/components/inputs";

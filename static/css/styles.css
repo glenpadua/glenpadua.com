@@ -402,7 +402,11 @@ body {
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 3.5em;
+}
+
+section {
+    margin-bottom: 10px;
 }
 
 .box-left {
@@ -411,6 +415,14 @@ h1 {
 
 .box-right {
     padding-left: 5px;
+}
+
+.color-blue {
+    color: #5b80df;
+}
+
+.color-green {
+    color: #34be5c;
 }
 
 .footer {
@@ -665,6 +677,44 @@ header .intro-text .intro-heading {
 }
 .team-member .social-buttons li {
     padding-right: 16px;
+}
+.service {
+    border: 2px solid black;
+    background: black;
+}
+.service .service-name {
+    text-align: center;
+    font-family: 'Bangers',sans-serif;
+}
+.service .service-details {
+    color: white;
+}
+.service .service-details ul {
+    margin: 0;
+}
+.service .service-details ul.dashed {
+    list-style-type: none;
+}
+.service .service-details ul.dashed > li {
+    text-indent: -5px;
+}
+.service .service-details ul.dashed > li:before {
+    content: "-  ";
+    text-indent: -5px;
+}
+.service .service-image {
+    margin-top: 20px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: contain;
+    height: 400px;
+}
+.service .service-1 {
+    background-image: url('../images/web-logo.png');
+}
+.service .service-2 {
+    background-image: url('../images/wordpress-logo.png');
+    background-position: right;
 }
 
 /* Question add and remove buttons */
