@@ -405,13 +405,12 @@ h1 {
     font-size: 4em;
 }
 
-.welcome {
-    text-align: center;
-    margin: 100px 0 50px 0;
+.box-left {
+    padding-right: 5px;
 }
 
-.divider {
-    border-top: 2px dashed #fff;
+.box-right {
+    padding-left: 5px;
 }
 
 .footer {
@@ -571,8 +570,101 @@ header .intro-text .intro-heading {
         color: #fff000;
     }
 }
+#team {
+    margin-top: 10px;
+}
 .team-member {
     border: 2px solid black;
+}
+.team-member .team-banner {
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    color: black;
+    height: 140px;
+}
+.team-member .team-banner .team-name {
+    font-family: 'Bangers',sans-serif;
+    font-size: 2.5em;
+}
+.team-member .team-banner .team-tagline {
+    margin-top: -15px;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+.team-member .banner-1 {
+    background-image: url('../images/banner-1.png');
+}
+.team-member .banner-2 {
+    background-image: url('../images/banner-2.png');
+}
+.team-member .team-bottom {
+    margin-bottom: 25px;
+}
+.team-member .stat-card {
+    padding: 0;
+    background-color: black;
+    min-height: 300px;
+    border: 3px solid #5b80df;
+    margin: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
+}
+.team-member .stat-card .stat-title {
+    text-align: center;
+    font-family: 'Bangers',sans-serif;
+    font-size: 1.8em;
+    color: white;
+    border-bottom: 4px dotted white;
+}
+.team-member .stat-card .stat-values {
+    padding: 5px 8px;
+    color: white;
+}
+.team-member .stat-card .stat-values .stat-blue {
+    font-family: 'DigitalStripBB_BoldItal',cursive;
+    color: #5b80df;
+}
+.team-member .stat-card .stat-values .stat-green {
+    font-family: 'DigitalStripBB_BoldItal',cursive;
+    color: #34be5c;
+}
+.team-member .stat-card .stat-icons {
+    text-align: center;
+    word-spacing: 12px;
+    font-size: 2.5em;
+}
+.team-member .stat-card .stat-icon-blue {
+    color: #5b80df;
+}
+.team-member .stat-card .stat-icon-green {
+    color: #34be5c;
+}
+.team-member .stat-right {
+    margin: 5px 0 0 20px;
+}
+.team-member .stat-pic-border {
+    border: 3px solid black;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.team-member .stat-pic {
+    background-image: url('../images/face.png');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    height: 280px;
+}
+.team-member .social-buttons {
+    font-size: 3em;
+    text-align: center;
+}
+.team-member .social-buttons li {
+    padding-right: 16px;
 }
 
 /* Question add and remove buttons */

@@ -1,3 +1,112 @@
+#team {
+    margin-top: 10px;
+}
+
 .team-member {
     border: 2px solid black;
+    .team-banner {
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+        text-align: center;
+        color: black;
+        height: 140px;
+        .team-name {
+            font-family: $font-2;
+            font-size: 2.5em;
+        }
+        .team-tagline {
+            margin-top: -15px;
+            font-size: 1.3em;
+            letter-spacing: 1px;
+            word-spacing: 2px;
+        }
+    }
+
+    .banner-1 {
+        background-image: url('../images/banner-1.png');
+    }
+
+    .banner-2 {
+        background-image: url('../images/banner-2.png');
+    }
+
+    .team-bottom {
+        margin-bottom: 25px;
+    }
+
+    .stat-card {
+        padding: 0;
+        background-color: black;
+        min-height: 300px;
+        border: 3px solid $primary-color;
+        margin: 5px 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
+        -moz-box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
+        box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
+
+        .stat-title {
+            text-align: center;
+            font-family: $font-2;
+            font-size: 1.8em;
+            color: white;
+            border-bottom: 4px dotted white;
+        }
+
+        .stat-values {
+            padding: 5px 8px;
+            .stat-blue {
+                font-family: $font-1-bi;
+                color: $primary-color;
+            }
+            .stat-green {
+                font-family: $font-1-bi;
+                color: $secondary-color;
+            }
+            color: white;
+        }
+
+        .stat-icons {
+            text-align:center;
+            word-spacing: 12px;
+            font-size: 2.5em;
+        }
+
+        .stat-icon-blue {
+            color: $primary-color;
+        }
+
+        .stat-icon-green {
+            color: $secondary-color;
+        }
+    }
+
+    .stat-right {
+        margin: 5px 0 0 20px;
+    }
+
+    .stat-pic-border {
+        border: 3px solid black;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .stat-pic {
+        background-image: url('../images/face.png');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+        height: 280px;
+    }
+
+    .social-buttons {
+        font-size: 3em;
+        text-align:center;
+        li {
+            padding-right: 16px;
+        }
+    }
 }

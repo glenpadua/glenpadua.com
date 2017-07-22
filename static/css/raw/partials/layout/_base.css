@@ -13,13 +13,12 @@ h1 {
     font-size: 4em;
 }
 
-.welcome {
-    text-align:center;
-    margin: 100px 0 50px 0;
+.box-left {
+  padding-right: 5px;
 }
 
-.divider {
-  border-top: 2px dashed $third-color;
+.box-right {
+  padding-left:5px;
 }
 
 .footer {
@@ -34,3 +33,5 @@ h1 {
 .footer p:last-child {
   margin-bottom: 0;
 }
+
+
