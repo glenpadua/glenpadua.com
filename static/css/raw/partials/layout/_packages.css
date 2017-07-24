@@ -1,0 +1,21 @@
+.packages {
+    border: 2px solid black;
+
+    .package-title {
+        font-family: $font-2;
+        color: black;
+        text-align: center;
+    }
+
+    .process-block {
+        padding: 0;
+    }
+
+     .process-text {
+        color: black;
+        font-size: 12px;
+        margin: 15px 0;
+        padding: 0;
+    }
+
+}

@@ -417,14 +417,6 @@ section {
     padding-left: 5px;
 }
 
-.color-blue {
-    color: #5b80df;
-}
-
-.color-green {
-    color: #34be5c;
-}
-
 .footer {
     padding: 20px 0;
     color: #fff;
@@ -616,45 +608,6 @@ header .intro-text .intro-heading {
 .team-member .team-bottom {
     margin-bottom: 25px;
 }
-.team-member .stat-card {
-    padding: 0;
-    background-color: black;
-    min-height: 300px;
-    border: 3px solid #5b80df;
-    margin: 5px 10px;
-    border-radius: 10px;
-    box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
-}
-.team-member .stat-card .stat-title {
-    text-align: center;
-    font-family: 'Bangers',sans-serif;
-    font-size: 1.8em;
-    color: white;
-    border-bottom: 4px dotted white;
-}
-.team-member .stat-card .stat-values {
-    padding: 5px 8px;
-    color: white;
-}
-.team-member .stat-card .stat-values .stat-blue {
-    font-family: 'DigitalStripBB_BoldItal',cursive;
-    color: #5b80df;
-}
-.team-member .stat-card .stat-values .stat-green {
-    font-family: 'DigitalStripBB_BoldItal',cursive;
-    color: #34be5c;
-}
-.team-member .stat-card .stat-icons {
-    text-align: center;
-    word-spacing: 12px;
-    font-size: 2.5em;
-}
-.team-member .stat-card .stat-icon-blue {
-    color: #5b80df;
-}
-.team-member .stat-card .stat-icon-green {
-    color: #34be5c;
-}
 .team-member .stat-right {
     margin: 5px 0 0 20px;
 }
@@ -715,6 +668,90 @@ header .intro-text .intro-heading {
 .service .service-2 {
     background-image: url('../images/wordpress-logo.png');
     background-position: right;
+}
+.process {
+    border: 2px solid black;
+    background-image: url('../images/process-bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+.process .process-title {
+    font-family: 'Bangers',sans-serif;
+    color: black;
+    text-align: center;
+}
+.process .process-block {
+    padding: 0;
+}
+.process .process-text {
+    color: black;
+    font-size: 12px;
+    margin: 15px 0;
+    padding: 0;
+}
+.ptext-1 p {
+    margin-left: 10px;
+}
+.process-down {
+    margin-top: 250px;
+}
+.circle {
+    margin-left: 30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    font-family: 'DigitalStripBB_BoldItal',cursive;
+    font-size: 15px;
+    color: black;
+    line-height: 120px;
+    text-align: center;
+    border: 2px solid black;
+}
+.circle-down {
+    background: #5b80df;
+}
+.circle-top {
+    background: #34be5c;
+}
+.arrow {
+    color: black;
+    position: absolute;
+    right: 0;
+}
+.arrow-top {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: -50px;
+}
+.arrow-down {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    bottom: -50px;
+}
+@media (max-width: 767px) {
+    /* CSS goes here */
+    .process-down {
+        margin-top: 50px;
+    }
+}
+.packages {
+    border: 2px solid black;
+}
+.packages .package-title {
+    font-family: 'Bangers',sans-serif;
+    color: black;
+    text-align: center;
+}
+.packages .process-block {
+    padding: 0;
+}
+.packages .process-text {
+    color: black;
+    font-size: 12px;
+    margin: 15px 0;
+    padding: 0;
 }
 
 /* Question add and remove buttons */
@@ -1052,3 +1089,91 @@ header .intro-text .intro-heading {
         display: block !important;
     }
 }
+.stat-card {
+    padding: 0;
+    background-color: black;
+    min-height: 300px;
+    border: 3px solid #5b80df;
+    margin: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
+}
+.stat-card .stat-title {
+    text-align: center;
+    font-family: 'Bangers',sans-serif;
+    font-size: 1.8em;
+    color: white;
+    border-bottom: 4px dotted white;
+    padding: 5px 0;
+}
+.stat-card .stat-values {
+    padding: 5px 8px;
+    color: white;
+}
+.stat-card .stat-values .stat-blue {
+    font-family: 'DigitalStripBB_BoldItal',cursive;
+    color: #5b80df;
+}
+.stat-card .stat-values .stat-green {
+    font-family: 'DigitalStripBB_BoldItal',cursive;
+    color: #34be5c;
+}
+.stat-card .feature-blue {
+    color: #5b80df;
+}
+.stat-card .stat-features {
+    padding: 10px;
+    font-size: 1.2em;
+}
+.stat-card .stat-features ul {
+    padding: 0;
+}
+.stat-card .main-features {
+    list-style: none;
+}
+.stat-card .optional-features {
+    color: white;
+    margin-left: 20px;
+}
+.stat-card .additional-features {
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+}
+.stat-card .add-feat-blue {
+    border: 2px solid #5b80df;
+    color: #5b80df;
+}
+.stat-card .base-price {
+    text-align: center;
+}
+.stat-card .base-price .price-title {
+    color: white;
+    font-size: 1.2em;
+}
+.stat-card .base-price .price-value-blue {
+    color: #5b80df;
+    font-family: 'Bangers',sans-serif;
+    font-size: 2.5em;
+}
+.stat-card .stat-icons {
+    text-align: center;
+    word-spacing: 12px;
+    font-size: 2.5em;
+}
+.stat-card .stat-icon-blue {
+    color: #5b80df;
+}
+.stat-card .stat-icon-green {
+    color: #34be5c;
+}
+.color-blue {
+    color: #5b80df !important;
+}
+.color-green {
+    color: #34be5c;
+}
+
