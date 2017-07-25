@@ -416,20 +416,6 @@ section {
 .box-right {
     padding-left: 5px;
 }
-
-.footer {
-    padding: 20px 0;
-    color: #fff;
-    text-align: center;
-    background-color: #222222;
-    border-top: 1px solid #222222;
-    font-size: 1.2em;
-    margin-top: 50px;
-}
-
-.footer p:last-child {
-    margin-bottom: 0;
-}
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     /* Styles */
@@ -631,6 +617,9 @@ header .intro-text .intro-heading {
 .team-member .social-buttons li {
     padding-right: 16px;
 }
+.team-stat-card {
+    margin: 5px 10px;
+}
 .service {
     border: 2px solid black;
     background: black;
@@ -752,6 +741,84 @@ header .intro-text .intro-heading {
     font-size: 12px;
     margin: 15px 0;
     padding: 0;
+}
+.package-stat-card {
+    margin-left: 80px;
+    margin-bottom: 40px;
+}
+footer {
+    background-image: url('../images/footer-bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    height: 750px;
+}
+footer .contact-cta {
+    background-image: url(../images/contact-cta.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: contain;
+    height: 220px;
+    width: 400px;
+    position: absolute;
+    left: 14%;
+}
+footer .contact-box {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 3px solid #5b80df;
+    border-radius: 10px;
+    color: #5b80df;
+    width: 50%;
+    margin: 0 auto;
+    font-family: 'Bangers',sans-serif;
+    padding: 5px 12px;
+    margin-top: 12%;
+}
+footer .contact-section {
+    margin-bottom: 15px;
+}
+footer .contact-title {
+    font-size: 3em;
+}
+footer .contact-form {
+    font-size: 2em;
+    text-align: left;
+}
+footer .contact-input {
+    float: right;
+    border: 3px solid rgba(91, 128, 223, 0.5);
+    background: transparent;
+    border-radius: 10px;
+    outline: none;
+    padding: 5px;
+}
+footer .contact-input:focus {
+    border: 3px solid rgba(91, 128, 223, 1);
+}
+footer .contact-button-container {
+    text-align: center;
+    margin: 15px 0;
+}
+footer .contact-button-container .contact-button {
+    background: transparent;
+    font-family: 'Bangers',sans-serif;
+    border: 3px solid rgba(91, 128, 223, 0.5);
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 100px;
+    outline: none;
+}
+footer .contact-button-container .contact-button:focus, footer .contact-button-container .contact-button:hover {
+    color: white;
+    background: rgba(91, 128, 223, 1);
+}
+footer .footer {
+    font-family: 'DigitalStripBB_BoldItal',cursive;
+    color: white;
+    font-size: 2em;
+    margin-top: 100px;
 }
 
 /* Question add and remove buttons */
@@ -1094,7 +1161,6 @@ header .intro-text .intro-heading {
     background-color: black;
     min-height: 300px;
     border: 3px solid #5b80df;
-    margin: 5px 10px;
     border-radius: 10px;
     box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
 }
@@ -1118,11 +1184,8 @@ header .intro-text .intro-heading {
     font-family: 'DigitalStripBB_BoldItal',cursive;
     color: #34be5c;
 }
-.stat-card .feature-blue {
-    color: #5b80df;
-}
 .stat-card .stat-features {
-    padding: 10px;
+    padding: 10px 0 0 10px;
     font-size: 1.2em;
 }
 .stat-card .stat-features ul {
@@ -1142,10 +1205,15 @@ header .intro-text .intro-heading {
     width: 90%;
     padding: 10px;
     margin: 0 auto;
+    margin-bottom: 5px;
 }
 .stat-card .add-feat-blue {
     border: 2px solid #5b80df;
     color: #5b80df;
+}
+.stat-card .add-feat-green {
+    border: 2px solid #34be5c;
+    color: #34be5c;
 }
 .stat-card .base-price {
     text-align: center;
@@ -1154,8 +1222,7 @@ header .intro-text .intro-heading {
     color: white;
     font-size: 1.2em;
 }
-.stat-card .base-price .price-value-blue {
-    color: #5b80df;
+.stat-card .base-price .price-value {
     font-family: 'Bangers',sans-serif;
     font-size: 2.5em;
 }
@@ -1170,10 +1237,13 @@ header .intro-text .intro-heading {
 .stat-card .stat-icon-green {
     color: #34be5c;
 }
+.stat-card-green {
+    border: 3px solid #34be5c;
+}
 .color-blue {
     color: #5b80df !important;
 }
 .color-green {
-    color: #34be5c;
+    color: #34be5c !important;
 }
 

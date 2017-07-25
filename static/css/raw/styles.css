@@ -10,6 +10,7 @@
 @import "partials/layout/services";
 @import "partials/layout/process";
 @import "partials/layout/packages";
+@import "partials/layout/footer";
 
 @import "partials/components/buttons";
 @import "partials/components/inputs";

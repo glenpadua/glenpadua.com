@@ -3,7 +3,6 @@
         background-color: black;
         min-height: 300px;
         border: 3px solid $primary-color;
-        margin: 5px 10px;
         border-radius: 10px;
         -webkit-box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
         -moz-box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
@@ -32,7 +31,7 @@
         }
 
         .stat-features {
-            padding: 10px;
+            padding: 10px 0 0 10px;
             font-size: 1.2em;
             ul {
                 padding: 0;
@@ -55,11 +54,17 @@
             width: 90%;
             padding: 10px;
             margin: 0 auto;
+            margin-bottom: 5px;
         }
 
         .add-feat-blue {
             border: 2px solid $primary-color;
             color: $primary-color;
+        }
+
+        .add-feat-green {
+            border: 2px solid $secondary-color;
+            color: $secondary-color;
         }
 
         .base-price {
@@ -68,8 +73,7 @@
                 color: white;
                 font-size: 1.2em;
             }
-            .price-value-blue {
-                color: $primary-color;
+            .price-value {
                 font-family: $font-2;
                 font-size: 2.5em;
             }
@@ -90,8 +94,8 @@
         }
     }
 
-.stat-card-blue {
-    color: $primary-color;
+.stat-card-green{
+    border: 3px solid $secondary-color;
 }
 
 .color-blue {
@@ -99,5 +103,5 @@
 }
 
 .color-green {
-  color: $secondary-color;
+  color: $secondary-color !important;
 }

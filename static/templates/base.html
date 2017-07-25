@@ -68,11 +68,41 @@
 
       {% block body%} {% endblock %}
 
-    <footer class="footer">
-      <p>Copyright 2017 <a href="https://zephony.com">Zephony</a></p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-cta">
+                </div>
+                <div class="contact-box">
+                    <div class="contact-title">Get in Touch</div>
+                    <form action="" class="contact-form">
+                        <div class="contact-name contact-section">
+                            <label for="name" class="name-title">Name</label>
+                            <input type="text" class="contact-input contact-name" name="name">
+                        </div>
+
+                        <div class="contact-email contact-section">
+                            <label for="email" class="email-title">Email</label>
+                            <input type="text" class="contact-input contact-email" name="email">
+                        </div>
+
+                        <div class="contact-email contact-section">
+                            <label for="message" class="message-title">Message</label>
+                            <textarea name="message" class="contact-input contact-message" cols="20" rows="5"></textarea>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="contact-button-container">
+                            <button class="contact-button">Send</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="footer">
+                        &copy; Copyright Zephony 2017
+                    </div>
+            </div>
+        </div>
     </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
