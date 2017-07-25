@@ -25,8 +25,20 @@
 
 }
 
-.ptext-1 p{
+.process-text-1 p{
     margin-left: 10px;
+}
+
+ /* Smartphones (portrait and landscape) ----------- */
+ @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Styles */
+    .ptext-1 p{
+        margin-left: 10px;
+    }
+
+    .ptext-2 p {
+        margin-left: 20px;
+    }
 }
 
 .process-down {
@@ -52,6 +64,14 @@
 
 .circle-top {
     background:$secondary-color;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+ @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Styles */
+   .circle-top {
+       margin-left: 10px;
+    }
 }
 
 .arrow {

@@ -416,6 +416,18 @@ section {
 .box-right {
     padding-left: 5px;
 }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .box-left {
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
+    .box-right {
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
+}
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     /* Styles */
@@ -574,6 +586,7 @@ header .intro-text .intro-heading {
     text-align: center;
     color: black;
     height: 140px;
+    /* Smartphones (portrait and landscape) ----------- */
 }
 .team-member .team-banner .team-name {
     font-family: 'Bangers',sans-serif;
@@ -597,6 +610,7 @@ header .intro-text .intro-heading {
 .team-member .stat-right {
     margin: 5px 0 0 20px;
 }
+/* Smartphones (portrait and landscape) ----------- */
 .team-member .stat-pic-border {
     border: 3px solid black;
     padding: 0;
@@ -616,6 +630,18 @@ header .intro-text .intro-heading {
 }
 .team-member .social-buttons li {
     padding-right: 16px;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .team-member .team-banner .team-tagline {
+        font-size: 1.1em;
+    }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .team-member .stat-right {
+        margin: 0;
+    }
 }
 .team-stat-card {
     margin: 5px 10px;
@@ -651,12 +677,19 @@ header .intro-text .intro-heading {
     background-size: contain;
     height: 400px;
 }
+/* Smartphones (portrait and landscape) ----------- */
 .service .service-1 {
     background-image: url('../images/web-logo.png');
 }
 .service .service-2 {
     background-image: url('../images/wordpress-logo.png');
     background-position: right;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .service .service-image {
+        height: 275px;
+    }
 }
 .process {
     border: 2px solid black;
@@ -680,8 +713,18 @@ header .intro-text .intro-heading {
     margin: 15px 0;
     padding: 0;
 }
-.ptext-1 p {
+.process-text-1 p {
     margin-left: 10px;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .ptext-1 p {
+        margin-left: 10px;
+    }
+    .ptext-2 p {
+        margin-left: 20px;
+    }
 }
 .process-down {
     margin-top: 250px;
@@ -703,6 +746,13 @@ header .intro-text .intro-heading {
 }
 .circle-top {
     background: #34be5c;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .circle-top {
+        margin-left: 10px;
+    }
 }
 .arrow {
     color: black;
@@ -745,6 +795,15 @@ header .intro-text .intro-heading {
 .package-stat-card {
     margin-left: 80px;
     margin-bottom: 40px;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .package-stat-card {
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 40px;
+    }
 }
 footer {
     background-image: url('../images/footer-bg.jpg');
@@ -993,6 +1052,19 @@ footer .footer {
     position: absolute;
     bottom: 0;
     left: 5px;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .service-cap-1 {
+        left: initial;
+    }
+    .service-cap-2 {
+        position: absolute;
+        bottom: 0;
+        width: 91.5%;
+        left: initial;
+    }
 }
 /*Custom Navigation Bar */
 .navbar-custom {

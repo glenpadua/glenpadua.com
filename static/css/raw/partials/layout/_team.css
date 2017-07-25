@@ -22,6 +22,16 @@
             letter-spacing: 1px;
             word-spacing: 2px;
         }
+
+        /* Smartphones (portrait and landscape) ----------- */
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        /* Styles */
+            .team-tagline {
+                    font-size: 1.1em;
+                }
+        }
+
+
     }
 
     .banner-1 {
@@ -39,6 +49,14 @@
     .stat-right {
         margin: 5px 0 0 20px;
     }
+
+    /* Smartphones (portrait and landscape) ----------- */
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        /* Styles */
+           .stat-right {
+                margin: 0;
+            }
+        }
 
     .stat-pic-border {
         border: 3px solid black;
@@ -67,3 +85,5 @@
 .team-stat-card {
     margin: 5px 10px;
 }
+
+
