@@ -30,6 +30,18 @@ footer {
         margin-top: 12%;
     }
 
+     /* Smartphones (portrait and landscape) ----------- */
+     @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      /* Styles */
+      .contact-box {
+            border-radius: initial;
+            width: initial;
+            padding: 5px 12px;
+            margin-top: initial;
+        }
+
+    }
+
     .contact-section {
         margin-bottom: 15px;
     }
@@ -54,6 +66,15 @@ footer {
         &:focus {
             border: 3px solid rgba(91, 128, 223, 1);
         }
+    }
+
+     /* Smartphones (portrait and landscape) ----------- */
+     @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      /* Styles */
+      .contact-input {
+        width:70%;
+    }
+
     }
 
     .contact-button-container {

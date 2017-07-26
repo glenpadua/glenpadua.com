@@ -835,6 +835,7 @@ footer .contact-box {
     padding: 5px 12px;
     margin-top: 12%;
 }
+/* Smartphones (portrait and landscape) ----------- */
 footer .contact-section {
     margin-bottom: 15px;
 }
@@ -856,6 +857,7 @@ footer .contact-input {
 footer .contact-input:focus {
     border: 3px solid rgba(91, 128, 223, 1);
 }
+/* Smartphones (portrait and landscape) ----------- */
 footer .contact-button-container {
     text-align: center;
     margin: 15px 0;
@@ -878,6 +880,21 @@ footer .footer {
     color: white;
     font-size: 2em;
     margin-top: 100px;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    footer .contact-box {
+        border-radius: initial;
+        width: initial;
+        padding: 5px 12px;
+        margin-top: initial;
+    }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    footer .contact-input {
+        width: 70%;
+    }
 }
 
 /* Question add and remove buttons */
