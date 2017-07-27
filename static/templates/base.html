@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/static/vendor/font-awesome/css/font-awesome.min.css">
     <!-- Dev Icons -->
     <link rel="stylesheet" href="/static/vendor/devicons/devicon.min.css">
+    <link rel="stylesheet" href="/static/vendor/animate.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,7 +26,7 @@
  <body id="page-top" class="index">
 
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-custom navbar-fixed-top">
+    <nav id="mainNav" class="navbar navbar-custom navbar-fixed-top wow slideInRight">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -71,9 +72,9 @@
     <footer id="contact">
         <div class="container">
             <div class="row">
-                <div class="contact-cta hidden-xs">
+                <div class="contact-cta hidden-xs wow rollIn" data-wow-delay="1s">
                 </div>
-                <div class="contact-box">
+                <div class="contact-box wow slideInLeft">
                     <div class="contact-title">Get in Touch</div>
                     <form action="" class="contact-form">
                         <div class="contact-name contact-section">
@@ -98,7 +99,7 @@
                     </form>
                 </div>
 
-                <div class="footer col-md-12">
+                <div class="footer col-md-12 wow fadeIn" data-wow-delay="1s">
                         &copy; Copyright Zephony 2017
                     </div>
             </div>
@@ -112,9 +113,10 @@
     <!-- Plugin JavaScript -->
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
-  <script src="static/js/libs/hammerjs/hammer.min.js"></script>
-  <script src="static/js/libs/fastclick/lib/fastclick.js"></script>
+    <script src="/static/js/libs/wowjs/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
     <!-- Main JS file -->
     <script src="/static/js/main.js"></script>
   </body>
