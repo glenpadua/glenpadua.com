@@ -617,12 +617,17 @@ header .intro-text .intro-heading {
     margin-bottom: 20px;
 }
 .team-member .stat-pic {
-    background-image: url('../images/face.png');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
     height: 280px;
+}
+.team-member .pic-1 {
+    background-image: url('../images/kevin.png');
+}
+.team-member .pic-2 {
+    background-image: url('../images/glen.png');
 }
 .team-member .social-buttons {
     font-size: 3em;
@@ -1128,7 +1133,7 @@ footer .footer {
 }
 .stat-card .stat-features {
     padding: 10px 0 0 10px;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 .stat-card .stat-features ul {
     padding: 0;
