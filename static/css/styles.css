@@ -626,8 +626,14 @@ header .intro-text .intro-heading {
 .team-member .pic-1 {
     background-image: url('../images/kevin.png');
 }
+.team-member .pic-1:hover {
+    background-image: url('../images/kevin_real.png');
+}
 .team-member .pic-2 {
     background-image: url('../images/glen.png');
+}
+.team-member .pic-2:hover {
+    background-image: url('../images/glen_real.png');
 }
 .team-member .social-buttons {
     font-size: 3em;
@@ -650,6 +656,7 @@ header .intro-text .intro-heading {
 }
 .team-stat-card {
     margin: 5px 10px;
+    height: 400px;
 }
 .service {
     border: 2px solid black;
@@ -661,6 +668,7 @@ header .intro-text .intro-heading {
 }
 .service .service-details {
     color: white;
+    min-height: 200px;
 }
 .service .service-details ul {
     margin: 0;
@@ -1177,6 +1185,9 @@ footer .footer {
     text-align: center;
     word-spacing: 12px;
     font-size: 2.5em;
+    position: absolute;
+    bottom: 1%;
+    left: 5%;
 }
 .stat-card .stat-icon-blue {
     color: #5b80df;
