@@ -451,6 +451,7 @@ header {
     background-size: cover;
     text-align: center;
     color: white;
+    position: relative;
 }
 header .intro-stats {
     position: absolute;
@@ -484,7 +485,7 @@ header .intro-cta img {
 }
 header .cta-1 {
     right: 2%;
-    top: 20%;
+    top: 15%;
 }
 header .cta-1 p {
     position: absolute;
@@ -497,7 +498,7 @@ header .cta-1 p {
 }
 header .cta-2 {
     left: 1%;
-    top: 80%;
+    top: 60%;
 }
 header .cta-2 p {
     position: absolute;
@@ -591,10 +592,12 @@ header .intro-text .intro-heading {
 .team-member .team-banner .team-name {
     font-family: 'Bangers',sans-serif;
     font-size: 2.5em;
+    font-size: 2.5vw;
 }
 .team-member .team-banner .team-tagline {
     margin-top: -15px;
     font-size: 1.3em;
+    font-size: 1.3vw;
     letter-spacing: 1px;
     word-spacing: 2px;
 }
@@ -646,6 +649,11 @@ header .intro-text .intro-heading {
     /* Styles */
     .team-member .team-banner .team-tagline {
         font-size: 1.1em;
+    }
+}
+@media only screen and (max-device-width: 1600px) {
+    .team-member .team-banner .team-banner {
+        height: 180px;
     }
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -974,6 +982,11 @@ footer .footer {
 .nav-logo > img {
     height: 40px;
     margin-left: 20px;
+    position: absolute;
+    left: 70px;
+}
+.navbar-right {
+    padding-right: 15px;
 }
 .navbar-custom {
     padding: 10px 0;

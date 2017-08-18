@@ -25,6 +25,7 @@ header {
     background-size: cover;
     text-align: center;
     color: white;
+    position: relative;
     .intro-stats {
         position: absolute;
         margin-top: 20px;
@@ -60,7 +61,7 @@ header {
 
     .cta-1 {
         right: 2%;
-        top: 20%;
+        top: 15%;
 
         p {
             position: absolute;
@@ -75,7 +76,7 @@ header {
 
     .cta-2 {
         left: 1%;
-        top: 80%;
+        top: 60%;
 
         p {
             position: absolute;
