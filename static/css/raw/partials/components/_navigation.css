@@ -30,6 +30,12 @@
 .nav-logo > img {
     height: 40px;
     margin-left: 20px;
+    position: absolute;
+    left:70px;
+}
+
+.navbar-right {
+    padding-right: 15px;
 }
 
 .navbar-custom {

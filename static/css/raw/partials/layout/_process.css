@@ -1,0 +1,99 @@
+.process {
+    border: 2px solid black;
+    background-image: url('../images/process-bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+
+    .process-title {
+        font-family: $font-2;
+        color: black;
+        text-align: center;
+    }
+
+    .process-block {
+        padding: 0;
+    }
+
+     .process-text {
+        color: black;
+        font-size: 12px;
+        margin: 15px 0;
+        padding: 0;
+    }
+
+}
+
+.process-text-1 p{
+    margin-left: 10px;
+}
+
+ /* Smartphones (portrait and landscape) ----------- */
+ @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Styles */
+    .ptext-1 p{
+        margin-left: 10px;
+    }
+
+    .ptext-2 p {
+        margin-left: 20px;
+    }
+}
+
+.process-down {
+    margin-top: 250px;
+}
+
+.circle {
+    margin-left: 30px;
+    width:120px;
+    height:120px;
+    border-radius:60px;
+    font-family: $font-1-bi;
+    font-size:15px;
+    color:black;
+    line-height:120px;
+    text-align:center;
+    border: 2px solid black;
+}
+
+.circle-down {
+    background:$primary-color;
+}
+
+.circle-top {
+    background:$secondary-color;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+ @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Styles */
+   .circle-top {
+       margin-left: 10px;
+    }
+}
+
+.arrow {
+    color: black;
+    position: absolute;
+    right: 0;
+}
+
+.arrow-top {
+    transform: rotate(45deg);
+    top:-50px;
+}
+
+.arrow-down {
+    transform: rotate(-45deg);
+    bottom:-50px;
+}
+
+@media (max-width: 767px) {
+    /* CSS goes here */
+    .process-down {
+        margin-top: 50px;
+    }
+}
+

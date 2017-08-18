@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/static/vendor/font-awesome/css/font-awesome.min.css">
     <!-- Dev Icons -->
     <link rel="stylesheet" href="/static/vendor/devicons/devicon.min.css">
+    <link rel="stylesheet" href="/static/vendor/animate.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,8 +26,8 @@
 
  <body id="page-top" class="index">
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-custom navbar-fixed-top">
-        <div class="container">
+    <nav id="mainNav" class="navbar navbar-custom navbar-fixed-top wow slideInRight">
+        <div>
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -54,10 +55,10 @@
                         <a class="page-scroll" href="#packages">Packages</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a href="/portfolio" target="_blank">Portfolio</a>
                     </li>
                 </ul>
             </div>
@@ -68,11 +69,41 @@
 
       {% block body%} {% endblock %}
 
-    <footer class="footer">
-      <p>Copyright 2017 <a href="https://zephony.com">Zephony</a></p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-cta hidden-xs wow rollIn" data-wow-delay="1s">
+                </div>
+                <div class="contact-box wow slideInLeft">
+                    <div class="contact-title">Get in Touch</div>
+                    <form action="" class="contact-form">
+                        <div class="contact-name contact-section">
+                            <label for="name" class="name-title">Name</label>
+                            <input type="text" class="contact-input contact-name" name="name">
+                        </div>
+
+                        <div class="contact-email contact-section">
+                            <label for="email" class="email-title">Email</label>
+                            <input type="text" class="contact-input contact-email" name="email">
+                        </div>
+
+                        <div class="contact-email contact-section">
+                            <label for="message" class="message-title">Message</label>
+                            <textarea name="message" class="contact-input contact-message" cols="20" rows="5"></textarea>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="contact-button-container">
+                            <button class="contact-button">Send</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="footer col-md-12 wow fadeIn" data-wow-delay="1s">
+                        &copy; Copyright Zephony 2017
+                    </div>
+            </div>
+        </div>
     </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -82,7 +113,10 @@
     <!-- Plugin JavaScript -->
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
+    <script src="/static/js/libs/wowjs/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
     <!-- Main JS file -->
     <script src="/static/js/main.js"></script>
 

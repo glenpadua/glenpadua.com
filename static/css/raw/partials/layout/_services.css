@@ -9,6 +9,7 @@
 
     .service-details {
         color: white;
+        min-height: 200px;
         ul {
           margin: 0;
         }
@@ -31,6 +32,14 @@
         background-size: contain;
         height: 400px;
     }
+
+    /* Smartphones (portrait and landscape) ----------- */
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        /* Styles */
+            .service-image {
+                height: 275px;
+            }
+        }
 
     .service-1 {
         background-image: url('../images/web-logo.png');

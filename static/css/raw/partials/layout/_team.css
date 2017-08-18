@@ -15,13 +15,33 @@
         .team-name {
             font-family: $font-2;
             font-size: 2.5em;
+            font-size: 2.5vw;
         }
         .team-tagline {
             margin-top: -15px;
             font-size: 1.3em;
+            font-size: 1.3vw;
             letter-spacing: 1px;
             word-spacing: 2px;
         }
+
+
+
+        /* Smartphones (portrait and landscape) ----------- */
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        /* Styles */
+            .team-tagline {
+                    font-size: 1.1em;
+                }
+        }
+
+        @media only screen and (max-device-width: 1600px) {
+            .team-banner {
+                height: 180px;
+            }
+        }
+
+
     }
 
     .banner-1 {
@@ -36,56 +56,17 @@
         margin-bottom: 25px;
     }
 
-    .stat-card {
-        padding: 0;
-        background-color: black;
-        min-height: 300px;
-        border: 3px solid $primary-color;
-        margin: 5px 10px;
-        border-radius: 10px;
-        -webkit-box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
-        -moz-box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
-        box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
-
-        .stat-title {
-            text-align: center;
-            font-family: $font-2;
-            font-size: 1.8em;
-            color: white;
-            border-bottom: 4px dotted white;
-        }
-
-        .stat-values {
-            padding: 5px 8px;
-            .stat-blue {
-                font-family: $font-1-bi;
-                color: $primary-color;
-            }
-            .stat-green {
-                font-family: $font-1-bi;
-                color: $secondary-color;
-            }
-            color: white;
-        }
-
-        .stat-icons {
-            text-align:center;
-            word-spacing: 12px;
-            font-size: 2.5em;
-        }
-
-        .stat-icon-blue {
-            color: $primary-color;
-        }
-
-        .stat-icon-green {
-            color: $secondary-color;
-        }
-    }
-
     .stat-right {
         margin: 5px 0 0 20px;
     }
+
+    /* Smartphones (portrait and landscape) ----------- */
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        /* Styles */
+           .stat-right {
+                margin: 0;
+            }
+        }
 
     .stat-pic-border {
         border: 3px solid black;
@@ -94,12 +75,25 @@
     }
 
     .stat-pic {
-        background-image: url('../images/face.png');
         background-repeat: no-repeat;
         background-attachment: scroll;
         background-position: center center;
         background-size: cover;
         height: 280px;
+    }
+
+    .pic-1 {
+        background-image: url('../images/kevin.png');
+        &:hover {
+            background-image: url('../images/kevin_real.png');
+        }
+    }
+
+    .pic-2 {
+        background-image: url('../images/glen.png');
+        &:hover {
+            background-image: url('../images/glen_real.png');
+        }
     }
 
     .social-buttons {
@@ -110,3 +104,10 @@
         }
     }
 }
+
+.team-stat-card {
+    margin: 5px 10px;
+    height: 400px;
+}
+
+

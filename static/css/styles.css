@@ -417,26 +417,16 @@ section {
     padding-left: 5px;
 }
 
-.color-blue {
-    color: #5b80df;
-}
-
-.color-green {
-    color: #34be5c;
-}
-
-.footer {
-    padding: 20px 0;
-    color: #fff;
-    text-align: center;
-    background-color: #222222;
-    border-top: 1px solid #222222;
-    font-size: 1.2em;
-    margin-top: 50px;
-}
-
-.footer p:last-child {
-    margin-bottom: 0;
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .box-left {
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
+    .box-right {
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
 }
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
@@ -461,6 +451,7 @@ header {
     background-size: cover;
     text-align: center;
     color: white;
+    position: relative;
 }
 header .intro-stats {
     position: absolute;
@@ -494,7 +485,7 @@ header .intro-cta img {
 }
 header .cta-1 {
     right: 2%;
-    top: 20%;
+    top: 15%;
 }
 header .cta-1 p {
     position: absolute;
@@ -507,7 +498,7 @@ header .cta-1 p {
 }
 header .cta-2 {
     left: 1%;
-    top: 80%;
+    top: 60%;
 }
 header .cta-2 p {
     position: absolute;
@@ -596,14 +587,17 @@ header .intro-text .intro-heading {
     text-align: center;
     color: black;
     height: 140px;
+    /* Smartphones (portrait and landscape) ----------- */
 }
 .team-member .team-banner .team-name {
     font-family: 'Bangers',sans-serif;
     font-size: 2.5em;
+    font-size: 2.5vw;
 }
 .team-member .team-banner .team-tagline {
     margin-top: -15px;
     font-size: 1.3em;
+    font-size: 1.3vw;
     letter-spacing: 1px;
     word-spacing: 2px;
 }
@@ -616,60 +610,33 @@ header .intro-text .intro-heading {
 .team-member .team-bottom {
     margin-bottom: 25px;
 }
-.team-member .stat-card {
-    padding: 0;
-    background-color: black;
-    min-height: 300px;
-    border: 3px solid #5b80df;
-    margin: 5px 10px;
-    border-radius: 10px;
-    box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
-}
-.team-member .stat-card .stat-title {
-    text-align: center;
-    font-family: 'Bangers',sans-serif;
-    font-size: 1.8em;
-    color: white;
-    border-bottom: 4px dotted white;
-}
-.team-member .stat-card .stat-values {
-    padding: 5px 8px;
-    color: white;
-}
-.team-member .stat-card .stat-values .stat-blue {
-    font-family: 'DigitalStripBB_BoldItal',cursive;
-    color: #5b80df;
-}
-.team-member .stat-card .stat-values .stat-green {
-    font-family: 'DigitalStripBB_BoldItal',cursive;
-    color: #34be5c;
-}
-.team-member .stat-card .stat-icons {
-    text-align: center;
-    word-spacing: 12px;
-    font-size: 2.5em;
-}
-.team-member .stat-card .stat-icon-blue {
-    color: #5b80df;
-}
-.team-member .stat-card .stat-icon-green {
-    color: #34be5c;
-}
 .team-member .stat-right {
     margin: 5px 0 0 20px;
 }
+/* Smartphones (portrait and landscape) ----------- */
 .team-member .stat-pic-border {
     border: 3px solid black;
     padding: 0;
     margin-bottom: 20px;
 }
 .team-member .stat-pic {
-    background-image: url('../images/face.png');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
     height: 280px;
+}
+.team-member .pic-1 {
+    background-image: url('../images/kevin.png');
+}
+.team-member .pic-1:hover {
+    background-image: url('../images/kevin_real.png');
+}
+.team-member .pic-2 {
+    background-image: url('../images/glen.png');
+}
+.team-member .pic-2:hover {
+    background-image: url('../images/glen_real.png');
 }
 .team-member .social-buttons {
     font-size: 3em;
@@ -677,6 +644,27 @@ header .intro-text .intro-heading {
 }
 .team-member .social-buttons li {
     padding-right: 16px;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .team-member .team-banner .team-tagline {
+        font-size: 1.1em;
+    }
+}
+@media only screen and (max-device-width: 1600px) {
+    .team-member .team-banner .team-banner {
+        height: 180px;
+    }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .team-member .stat-right {
+        margin: 0;
+    }
+}
+.team-stat-card {
+    margin: 5px 10px;
+    height: 400px;
 }
 .service {
     border: 2px solid black;
@@ -688,6 +676,7 @@ header .intro-text .intro-heading {
 }
 .service .service-details {
     color: white;
+    min-height: 200px;
 }
 .service .service-details ul {
     margin: 0;
@@ -709,6 +698,7 @@ header .intro-text .intro-heading {
     background-size: contain;
     height: 400px;
 }
+/* Smartphones (portrait and landscape) ----------- */
 .service .service-1 {
     background-image: url('../images/web-logo.png');
 }
@@ -716,50 +706,218 @@ header .intro-text .intro-heading {
     background-image: url('../images/wordpress-logo.png');
     background-position: right;
 }
-
-/* Question add and remove buttons */
-
-.question-del, .result-del {
-    margin-top: 1em;
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .service .service-image {
+        height: 275px;
+    }
 }
-
-.question-del i:hover, .result-del i:hover {
-    cursor: pointer;
-    color: #fff;
+.process {
+    border: 2px solid black;
+    background-image: url('../images/process-bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
 }
-
-.question-add, .result-add {
-    margin-top: 1em;
+.process .process-title {
+    font-family: 'Bangers',sans-serif;
+    color: black;
+    text-align: center;
+}
+.process .process-block {
+    padding: 0;
+}
+.process .process-text {
+    color: black;
+    font-size: 12px;
+    margin: 15px 0;
+    padding: 0;
+}
+.process-text-1 p {
+    margin-left: 10px;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .ptext-1 p {
+        margin-left: 10px;
+    }
+    .ptext-2 p {
+        margin-left: 20px;
+    }
+}
+.process-down {
+    margin-top: 250px;
+}
+.circle {
+    margin-left: 30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    font-family: 'DigitalStripBB_BoldItal',cursive;
+    font-size: 15px;
+    color: black;
+    line-height: 120px;
+    text-align: center;
+    border: 2px solid black;
+}
+.circle-down {
+    background: #5b80df;
+}
+.circle-top {
+    background: #34be5c;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .circle-top {
+        margin-left: 10px;
+    }
+}
+.arrow {
+    color: black;
+    position: absolute;
+    right: 0;
+}
+.arrow-top {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: -50px;
+}
+.arrow-down {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    bottom: -50px;
+}
+@media (max-width: 767px) {
+    /* CSS goes here */
+    .process-down {
+        margin-top: 50px;
+    }
+}
+.packages {
+    border: 2px solid black;
+}
+.packages .package-title {
+    font-family: 'Bangers',sans-serif;
+    color: black;
+    text-align: center;
+}
+.packages .process-block {
+    padding: 0;
+}
+.packages .process-text {
+    color: black;
+    font-size: 12px;
+    margin: 15px 0;
+    padding: 0;
+}
+.package-stat-card {
+    margin-left: 80px;
+    margin-bottom: 40px;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .package-stat-card {
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 40px;
+    }
+}
+footer {
+    background-image: url('../images/footer-bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    height: 750px;
+}
+footer .contact-cta {
+    background-image: url(../images/contact-cta.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: contain;
+    height: 220px;
+    width: 400px;
+    position: absolute;
+    left: 14%;
+}
+footer .contact-box {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 3px solid #5b80df;
+    border-radius: 10px;
+    color: #5b80df;
+    width: 50%;
+    margin: 0 auto;
+    font-family: 'Bangers',sans-serif;
+    padding: 5px 12px;
+    margin-top: 12%;
+}
+/* Smartphones (portrait and landscape) ----------- */
+footer .contact-section {
+    margin-bottom: 15px;
+}
+footer .contact-title {
+    font-size: 3em;
+}
+footer .contact-form {
     font-size: 2em;
-    color: #fff;
+    text-align: left;
+}
+footer .contact-input {
+    float: right;
+    border: 3px solid rgba(91, 128, 223, 0.5);
+    background: transparent;
+    border-radius: 10px;
+    outline: none;
+    padding: 5px;
+}
+footer .contact-input:focus {
+    border: 3px solid rgba(91, 128, 223, 1);
+}
+/* Smartphones (portrait and landscape) ----------- */
+footer .contact-button-container {
+    text-align: center;
+    margin: 15px 0;
+}
+footer .contact-button-container .contact-button {
+    background: transparent;
+    font-family: 'Bangers',sans-serif;
+    border: 3px solid rgba(91, 128, 223, 0.5);
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 100px;
+    outline: none;
+}
+footer .contact-button-container .contact-button:focus, footer .contact-button-container .contact-button:hover {
+    color: white;
+    background: rgba(91, 128, 223, 1);
+}
+footer .footer {
+    font-family: 'DigitalStripBB_BoldItal',cursive;
+    color: white;
+    font-size: 2em;
+    margin-top: 100px;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    footer .contact-box {
+        border-radius: initial;
+        width: initial;
+        padding: 5px 12px;
+        margin-top: initial;
+    }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    footer .contact-input {
+        width: 70%;
+    }
 }
 
-.question-add:hover, .result-add:hover {
-    cursor: pointer;
-    color: #5b80df;
-}
-
-/* Question options add and remove buttons */
-
-.option-del {
-    margin-top: 1em;
-}
-
-.option-del i:hover {
-    cursor: pointer;
-    color: #fff;
-}
-
-.option-add {
-    margin-top: 1em;
-    font-size: 1.5em;
-    color: #fff;
-}
-
-.option-add:hover {
-    cursor: pointer;
-    color: #5b80df;
-}
 .input {
     position: relative;
     z-index: 1;
@@ -769,113 +927,35 @@ header .intro-text .intro-heading {
     width: 100%;
     vertical-align: top;
 }
-.input__field {
-    position: relative;
-    display: block;
-    float: right;
-    padding: 0.8em;
-    width: 60%;
-    border: none;
-    border-radius: 0;
-    background: #f0f0f0;
-    color: #aaa;
-    font-weight: 400;
-    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    -webkit-appearance: none;
-    /* for box shadows to show on iOS */
-    font-size: 2em;
-}
-.input__field:focus {
-    outline: none;
-}
-.input__label {
-    display: inline-block;
-    float: right;
-    padding: 0 1em;
-    width: 40%;
-    color: #696969;
-    font-weight: bold;
-    font-size: 70.25%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.input__label-content {
-    position: relative;
-    display: block;
-    padding: 1.6em 0;
-    width: 100%;
-}
-.graphic {
-    position: absolute;
-    top: 0;
-    left: 0;
-    fill: none;
-}
-.icon {
-    color: #ddd;
-    font-size: 150%;
-}
-.input__field--ruri {
-    width: 100%;
-    background: transparent;
-    padding: 0.5em 0;
-    margin-bottom: 0.5em;
-    color: #fff;
-}
-.input__label--ruri {
-    width: 100%;
-    position: absolute;
-    text-align: left;
-    font-size: 2em;
-    padding: 10px 0 5px;
-    pointer-events: none;
-}
-.input__label--ruri::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    background: #B7C3AC;
-    left: 0;
-    top: 100%;
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    transition: background-color 0.3s, -webkit-transform 0.3s;
-    transition: transform 0.3s, background-color 0.3s;
-    transition: transform 0.3s, background-color 0.3s, -webkit-transform 0.3s;
-}
-.input__label-content--ruri {
-    padding: 0;
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    transition: color 0.3s, -webkit-transform 0.3s;
-    transition: transform 0.3s, color 0.3s;
-    transition: transform 0.3s, color 0.3s, -webkit-transform 0.3s;
-}
-.input__field--ruri:focus + .input__label--ruri::after, .input--filled .input__label--ruri::after {
-    background: #5b80df;
-    -webkit-transform: scale3d(1, 0.25, 1);
-    transform: scale3d(1, 0.25, 1);
-}
-.input__field--ruri:focus + .input__label--ruri .input__label-content--ruri, .input--filled .input__label--ruri .input__label-content--ruri {
-    color: #5b80df;
-    -webkit-transform: translate3d(0, 2em, 0) scale3d(0.655, 0.655, 1);
-    transform: translate3d(0, 2em, 0) scale3d(0.655, 0.655, 1);
-}
-.option .input__field {
-    font-size: 1.5em;
-}
-.option .input__label--ruri {
-    font-size: 1.5em;
-}
 .comic-caption {
     color: black;
     border: 3px solid black;
+    background-color: white;
+}
+.service-cap-1 {
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    font-size: 1.3em;
+    height: 45px;
+}
+.service-cap-2 {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .service-cap-1 {
+        left: initial;
+    }
+    .service-cap-2 {
+        position: absolute;
+        bottom: 0;
+        width: 91.5%;
+        left: initial;
+    }
 }
 /*Custom Navigation Bar */
 .navbar-custom {
@@ -902,6 +982,11 @@ header .intro-text .intro-heading {
 .nav-logo > img {
     height: 40px;
     margin-left: 20px;
+    position: absolute;
+    left: 70px;
+}
+.navbar-right {
+    padding-right: 15px;
 }
 .navbar-custom {
     padding: 10px 0;
@@ -1039,3 +1124,97 @@ header .intro-text .intro-heading {
         display: block !important;
     }
 }
+.stat-card {
+    padding: 0;
+    background-color: black;
+    min-height: 300px;
+    border: 3px solid #5b80df;
+    border-radius: 10px;
+    box-shadow: 6px 6px 19px -1px rgba(0,0,0,0.61);
+}
+.stat-card .stat-title {
+    text-align: center;
+    font-family: 'Bangers',sans-serif;
+    font-size: 1.8em;
+    color: white;
+    border-bottom: 4px dotted white;
+    padding: 5px 0;
+}
+.stat-card .stat-values {
+    padding: 5px 8px;
+    color: white;
+}
+.stat-card .stat-values .stat-blue {
+    font-family: 'DigitalStripBB_BoldItal',cursive;
+    color: #5b80df;
+}
+.stat-card .stat-values .stat-green {
+    font-family: 'DigitalStripBB_BoldItal',cursive;
+    color: #34be5c;
+}
+.stat-card .stat-features {
+    padding: 10px 0 0 10px;
+    font-size: 1em;
+}
+.stat-card .stat-features ul {
+    padding: 0;
+}
+.stat-card .main-features {
+    list-style: none;
+}
+.stat-card .optional-features {
+    color: white;
+    margin-left: 20px;
+}
+.stat-card .additional-features {
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+.stat-card .add-feat-blue {
+    border: 2px solid #5b80df;
+    color: #5b80df;
+}
+.stat-card .add-feat-green {
+    border: 2px solid #34be5c;
+    color: #34be5c;
+}
+.stat-card .base-price {
+    text-align: center;
+}
+.stat-card .base-price .price-title {
+    color: white;
+    font-size: 1.2em;
+}
+.stat-card .base-price .price-value {
+    font-family: 'Bangers',sans-serif;
+    font-size: 2.5em;
+}
+.stat-card .stat-icons {
+    text-align: center;
+    word-spacing: 12px;
+    font-size: 2.5em;
+    position: absolute;
+    bottom: 1%;
+    left: 5%;
+}
+.stat-card .stat-icon-blue {
+    color: #5b80df;
+}
+.stat-card .stat-icon-green {
+    color: #34be5c;
+}
+.stat-card-green {
+    border: 3px solid #34be5c;
+}
+.color-blue {
+    color: #5b80df !important;
+}
+.color-green {
+    color: #34be5c !important;
+}
+

@@ -8,8 +8,13 @@
 @import "partials/layout/header";
 @import "partials/layout/team";
 @import "partials/layout/services";
+@import "partials/layout/process";
+@import "partials/layout/packages";
+@import "partials/layout/footer";
+@import "partials/layout/portfolio";
 
-@import "partials/components/buttons";
 @import "partials/components/inputs";
 @import "partials/components/caption";
 @import "partials/components/navigation";
+@import "partials/components/card";
+
