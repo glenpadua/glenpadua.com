@@ -433,7 +433,7 @@ section {
         bottom center;
     background-size: 40px 60px;
     background-repeat: repeat-x;
-    padding: 120px 0;
+    padding: 100px 0;
     position: relative;
 }
 
@@ -652,12 +652,14 @@ header .intro-text .intro-heading {
 }
 .team-member .pic-1 {
     background-image: url('../images/kevin.png');
+    transition: background-image 1s;
 }
 .team-member .pic-1:hover {
     background-image: url('../images/kevin_real.png');
 }
 .team-member .pic-2 {
     background-image: url('../images/glen.png');
+    transition: background-image 1s;
 }
 .team-member .pic-2:hover {
     background-image: url('../images/glen_real.png');
