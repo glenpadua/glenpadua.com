@@ -417,6 +417,26 @@ section {
     padding-left: 5px;
 }
 
+.jagged {
+    background-color: #F9E8B2;
+    background-image: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%),
+        linear-gradient(-135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%),
+        /* Bottom jagged */
+        linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%),
+        linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+    background-position: top center, top center,
+        /* Bottom jagged */
+        bottom center, bottom center,
+        /* Top fade */
+        top center,
+        /* Bottom fade */
+        bottom center;
+    background-size: 40px 60px;
+    background-repeat: repeat-x;
+    padding: 60px 0;
+    position: relative;
+}
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
     .box-left {
@@ -575,7 +595,11 @@ header .intro-text .intro-heading {
 }
 #team {
     margin-top: 10px;
+    /*background-color: #E0E0E0;*/
 }
+/* Top and bottom fade  */
+/*linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%),
+        linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%)*/
 .team-member {
     border: 2px solid black;
 }
@@ -666,6 +690,9 @@ header .intro-text .intro-heading {
     margin: 5px 10px;
     height: 400px;
 }
+#services {
+    /*background-color: #E0E0E0;*/
+}
 .service {
     border: 2px solid black;
     background: black;
@@ -711,6 +738,9 @@ header .intro-text .intro-heading {
     .service .service-image {
         height: 275px;
     }
+}
+#process {
+    /*background-color: #E0E0E0;*/
 }
 .process {
     border: 2px solid black;
@@ -795,6 +825,9 @@ header .intro-text .intro-heading {
     .process-down {
         margin-top: 50px;
     }
+}
+#packages {
+    /*background-color: #E0E0E0;*/
 }
 .packages {
     border: 2px solid black;
