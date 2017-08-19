@@ -26,7 +26,7 @@ section {
 }
 
 .jagged {
-    background-color:#F9E8B2;
+    background-color:#f5f5f5;
     background-image:
         /* Top jagged */
         linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%),
@@ -46,7 +46,7 @@ section {
     background-size:
         40px 60px;
     background-repeat: repeat-x;
-    padding: 60px 0;
+    padding: 120px 0;
     position: relative;
   }
 
