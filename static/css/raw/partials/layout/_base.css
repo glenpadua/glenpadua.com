@@ -25,6 +25,10 @@ section {
   padding-left:5px;
 }
 
+#preload {
+  display: none;
+}
+
 .jagged {
     background-color:#f7f7f7;
     background-image:

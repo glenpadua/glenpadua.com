@@ -98,6 +98,7 @@
     .pic-2 {
         background-image: url('../images/glen.png');
         transition: background-image 1s;
+
         &:hover {
             background-image: url('../images/glen_real.png');
         }
