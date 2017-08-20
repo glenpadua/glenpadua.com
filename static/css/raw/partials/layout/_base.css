@@ -19,10 +19,17 @@ section {
 
 .box-left {
   padding-right: 5px;
+  padding-left: 0;
 }
 
 .box-right {
   padding-left:5px;
+  padding-right: 0;
+}
+
+.box-full {
+  padding-left:0;
+  padding-right:0;
 }
 
 #preload {
@@ -50,7 +57,7 @@ section {
     background-size:
         40px 60px;
     background-repeat: repeat-x;
-    padding: 100px 0;
+    padding: 60px 0;
     position: relative;
   }
 

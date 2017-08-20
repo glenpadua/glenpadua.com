@@ -1,6 +1,6 @@
 #team {
     margin-top: 10px;
-    /*background-color: #E0E0E0;*/
+    background-color: #eaeaea;
 }
 
   /* Top and bottom fade  */
@@ -8,7 +8,7 @@
         linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%)*/
 
 .team-member {
-    border: 2px solid black;
+    /*border: 2px solid black;*/
     .team-banner {
         background-repeat: no-repeat;
         background-attachment: scroll;
