@@ -1,4 +1,4 @@
-footer {
+/*footer {
     background-image: url('../images/footer-bg.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -30,9 +30,9 @@ footer {
         margin-top: 12%;
     }
 
-     /* Smartphones (portrait and landscape) ----------- */
+
      @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-      /* Styles */
+
       .contact-box {
             border-radius: initial;
             width: initial;
@@ -68,9 +68,9 @@ footer {
         }
     }
 
-     /* Smartphones (portrait and landscape) ----------- */
+
      @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-      /* Styles */
+
       .contact-input {
         width:70%;
     }
@@ -103,4 +103,22 @@ footer {
         margin-top: 100px;
     }
 
+}
+*/
+
+footer {
+    background-image: url('../images/footer-bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    height: 100px;
+}
+
+footer .footer {
+    font-family: 'DigitalStripBB_BoldItal',cursive;
+    color: white;
+    font-size: 2em;
+    margin-top: 40px;
 }
