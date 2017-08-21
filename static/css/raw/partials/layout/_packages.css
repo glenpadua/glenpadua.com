@@ -1,5 +1,9 @@
+#packages {
+    background-color: #A8E6A4;
+}
+
 .packages {
-    border: 2px solid black;
+    /*border: 2px solid black;*/
 
     .package-title {
         font-family: $font-2;

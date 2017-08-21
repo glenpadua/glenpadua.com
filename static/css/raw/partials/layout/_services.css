@@ -1,5 +1,9 @@
+#services {
+    background-color: #000;
+}
+
 .service {
-    border: 2px solid black;
+    /*border: 2px solid black;*/
     background: black;
 
     .service-name {

@@ -1,9 +1,14 @@
 #team {
     margin-top: 10px;
+    background-color: #eaeaea;
 }
 
+  /* Top and bottom fade  */
+        /*linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%),
+        linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%)*/
+
 .team-member {
-    border: 2px solid black;
+    /*border: 2px solid black;*/
     .team-banner {
         background-repeat: no-repeat;
         background-attachment: scroll;
@@ -84,6 +89,7 @@
 
     .pic-1 {
         background-image: url('../images/kevin.png');
+        transition: background-image 1s;
         &:hover {
             background-image: url('../images/kevin_real.png');
         }
@@ -91,6 +97,8 @@
 
     .pic-2 {
         background-image: url('../images/glen.png');
+        transition: background-image 1s;
+
         &:hover {
             background-image: url('../images/glen_real.png');
         }

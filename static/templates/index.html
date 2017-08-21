@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% block body%}
+    <!-- Preload Images -->
+    <div id="preload">
+       <img src="/static/images/kevin_real.png"  alt="Image 01" />
+       <img src="/static/images/glen_real.png" alt="Image 02" />
+    </div>
     <!-- Header -->
    <header>
         <div class="container">
@@ -32,7 +37,7 @@
     </header>
 
     <!-- Team Section -->
-    <section id="team">
+    <section id="team" class="jagged">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-md-6 box-left">
@@ -162,7 +167,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services">
+    <section id="services" class="jagged">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-md-6 box-left">
@@ -216,17 +221,17 @@
     </section>
 
     <!-- Process Section -->
-    <section id="process">
+    <section id="process" class="jagged">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-12 col-md-12">
+                <div class="col-sm-12 col-md-12 box-full">
                     <div class="process">
                         <div class="process-title wow slideInLeft">
                             <h1>Our Creative Process</h1>
                         </div>
                         <div class="process-container">
                             <div class="process-block process-down col-md-2 col-sm-2">
-                                <div class="arrow arrow-1 arrow-top hidden-sm hidden-xs wow fadeIn" data-wow-delay="2s">
+                                <div class="arrow arrow-1 arrow-top hidden-sm hidden-xs wow fadeIn" data-wow-delay="1.5s">
                                     <i class="fa fa-long-arrow-up fa-4x"></i>
                                 </div>
                                 <div class="circle circle-down col-md-12 col-xs-6 wow bounceInDown" data-wow-delay="1s">
@@ -241,28 +246,28 @@
                             <div class="clearfix visible-xs "></div>
 
                             <div class="process-block process-top col-md-2 col-sm-2">
-                                <div class="process-text ptext-2 col-md-12 col-xs-6 wow fadeIn" data-wow-delay="3s">
+                                <div class="process-text ptext-2 col-md-12 col-xs-6 wow fadeIn" data-wow-delay="2s">
                                     <p>
                                         - Come up with a plan of action<br>- Define the app architecture<br>- Agreement of terms and  deadlines
                                     </p>
                                 </div>
-                                <div class="circle circle-top col-md-12 col-xs-6 wow bounceInDown" data-wow-delay="3s">
+                                <div class="circle circle-top col-md-12 col-xs-6 wow bounceInDown" data-wow-delay="2s">
                                     Define
                                 </div>
-                                <div class="arrow arrow-1 arrow-down hidden-sm hidden-xs wow fadeIn" data-wow-delay="4s">
+                                <div class="arrow arrow-1 arrow-down hidden-sm hidden-xs wow fadeIn" data-wow-delay="2.5s">
                                     <i class="fa fa-long-arrow-down fa-4x"></i>
                                 </div>
                             </div>
                             <div class="clearfix visible-xs "></div>
 
                             <div class="process-block process-down col-md-2 col-sm-2">
-                                <div class="arrow arrow-1 arrow-top hidden-sm hidden-xs wow fadeIn" data-wow-delay="6s">
+                                <div class="arrow arrow-1 arrow-top hidden-sm hidden-xs wow fadeIn" data-wow-delay="3.5s">
                                     <i class="fa fa-long-arrow-up fa-4x"></i>
                                 </div>
-                                <div class="circle circle-down col-md-12 col-xs-6 wow bounceInDown" data-wow-delay="5s">
+                                <div class="circle circle-down col-md-12 col-xs-6 wow bounceInDown" data-wow-delay="3s">
                                     Design
                                 </div>
-                                <div class="process-text ptext-1  col-md-12 col-xs-6 wow fadeIn" data-wow-delay="5s">
+                                <div class="process-text ptext-1  col-md-12 col-xs-6 wow fadeIn" data-wow-delay="3s">
                                     <p>
                                         - Come up with the basic layout<br>- Mockup on Photoshop if needed<br>- Or choose and customize a theme
                                     </p>
@@ -271,28 +276,28 @@
                             <div class="clearfix visible-xs "></div>
 
                             <div class="process-block process-top col-md-2 col-sm-2">
-                                <div class="process-text ptext-2 col-md-12 col-xs-6 wow fadeIn" data-wow-delay="7s">
+                                <div class="process-text ptext-2 col-md-12 col-xs-6 wow fadeIn" data-wow-delay="4s">
                                     <p>
                                         - Write neat modular code<br>- Deployment to test environment on regular basis<br>- Continuous Integration and Deployment
                                     </p>
                                 </div>
-                                <div class="circle circle-top  col-md-12 col-xs-6 wow bounceInDown" data-wow-delay="7s">
+                                <div class="circle circle-top  col-md-12 col-xs-6 wow bounceInDown" data-wow-delay="4s">
                                     Develop
                                 </div>
-                                <div class="arrow arrow-1 arrow-down hidden-sm hidden-xs wow fadeIn" data-wow-delay="8s">
+                                <div class="arrow arrow-1 arrow-down hidden-sm hidden-xs wow fadeIn" data-wow-delay="4.5s">
                                     <i class="fa fa-long-arrow-down fa-4x"></i>
                                 </div>
                             </div>
                             <div class="clearfix visible-xs "></div>
 
                             <div class="process-block  process-down col-md-2 col-sm-2">
-                                <div class="arrow arrow-1 arrow-top hidden-sm hidden-xs wow fadeIn" data-wow-delay="10s">
+                                <div class="arrow arrow-1 arrow-top hidden-sm hidden-xs wow fadeIn" data-wow-delay="5.5s">
                                     <i class="fa fa-long-arrow-up fa-4x"></i>
                                 </div>
-                                <div class="circle circle-down  col-md-12 col-xs-6 wow bounceInDown" data-wow-delay="9s">
+                                <div class="circle circle-down  col-md-12 col-xs-6 wow bounceInDown" data-wow-delay="5s">
                                     Test
                                 </div>
-                                <div class="process-text ptext-1 col-md-12 col-xs-6 wow fadeIn" data-wow-delay="9s">
+                                <div class="process-text ptext-1 col-md-12 col-xs-6 wow fadeIn" data-wow-delay="5s">
                                     <p>
                                         - User Acceptance Testing<br>- A/B Testing<br>- Performance Testing
                                     </p>
@@ -301,12 +306,12 @@
                             <div class="clearfix visible-xs "></div>
 
                             <div class="process-block process-top col-md-2 col-sm-2">
-                                <div class="process-text ptext-2 col-md-12 col-xs-6 wow fadeIn" data-wow-delay="11s">
+                                <div class="process-text ptext-2 col-md-12 col-xs-6 wow fadeIn" data-wow-delay="6s">
                                     <p>
                                         - Bug free website/webapp<br>- Watch the users pour in<br>- Pop a bottle of champagne
                                     </p>
                                 </div>
-                                <div class="circle circle-top  col-md-12 col-xs-6 wow bounceInDown" data-wow-delay="11s">
+                                <div class="circle circle-top  col-md-12 col-xs-6 wow bounceInDown" data-wow-delay="6s">
                                     Launch
                                 </div>
                             </div>
@@ -323,10 +328,10 @@
     </section>
 
     <!-- Process Section -->
-    <section id="packages">
+    <section id="packages" class="jagged">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-12 col-md-12">
+                <div class="col-sm-12 col-md-12 box-full">
                     <div class="packages">
                         <div class="package-title wow slideInLeft">
                             <h1>Packages and Pricing</h1>

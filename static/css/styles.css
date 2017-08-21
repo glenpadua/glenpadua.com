@@ -411,10 +411,41 @@ section {
 
 .box-left {
     padding-right: 5px;
+    padding-left: 0;
 }
 
 .box-right {
     padding-left: 5px;
+    padding-right: 0;
+}
+
+.box-full {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#preload {
+    display: none;
+}
+
+.jagged {
+    background-color: #f7f7f7;
+    background-image: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%),
+        linear-gradient(-135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%),
+        /* Bottom jagged */
+        linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%),
+        linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+    background-position: top center, top center,
+        /* Bottom jagged */
+        bottom center, bottom center,
+        /* Top fade */
+        top center,
+        /* Bottom fade */
+        bottom center;
+    background-size: 40px 60px;
+    background-repeat: repeat-x;
+    padding: 60px 0;
+    position: relative;
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -575,10 +606,12 @@ header .intro-text .intro-heading {
 }
 #team {
     margin-top: 10px;
+    background-color: #eaeaea;
 }
-.team-member {
-    border: 2px solid black;
-}
+/* Top and bottom fade  */
+/*linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%),
+        linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%)*/
+/*border: 2px solid black;*/
 .team-member .team-banner {
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -628,12 +661,14 @@ header .intro-text .intro-heading {
 }
 .team-member .pic-1 {
     background-image: url('../images/kevin.png');
+    transition: background-image 1s;
 }
 .team-member .pic-1:hover {
     background-image: url('../images/kevin_real.png');
 }
 .team-member .pic-2 {
     background-image: url('../images/glen.png');
+    transition: background-image 1s;
 }
 .team-member .pic-2:hover {
     background-image: url('../images/glen_real.png');
@@ -666,8 +701,11 @@ header .intro-text .intro-heading {
     margin: 5px 10px;
     height: 400px;
 }
+#services {
+    background-color: #000;
+}
 .service {
-    border: 2px solid black;
+    /*border: 2px solid black;*/
     background: black;
 }
 .service .service-name {
@@ -712,9 +750,13 @@ header .intro-text .intro-heading {
         height: 275px;
     }
 }
+#process {
+    background-color: #91AEF4;
+}
 .process {
-    border: 2px solid black;
-    background-image: url('../images/process-bg.jpg');
+    /*border: 2px solid black;*/
+    padding: inherit 0;
+    /*background-image: url('../images/process-bg.jpg');*/
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -796,9 +838,10 @@ header .intro-text .intro-heading {
         margin-top: 50px;
     }
 }
-.packages {
-    border: 2px solid black;
+#packages {
+    background-color: #A8E6A4;
 }
+/*border: 2px solid black;*/
 .packages .package-title {
     font-family: 'Bangers',sans-serif;
     color: black;

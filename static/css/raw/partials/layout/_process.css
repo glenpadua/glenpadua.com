@@ -1,6 +1,11 @@
+#process {
+    background-color: #91AEF4;
+}
+
 .process {
-    border: 2px solid black;
-    background-image: url('../images/process-bg.jpg');
+    /*border: 2px solid black;*/
+    padding: inherit 0;
+    /*background-image: url('../images/process-bg.jpg');*/
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
