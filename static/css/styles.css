@@ -680,6 +680,13 @@ header .intro-text .intro-heading {
 .team-member .social-buttons li {
     padding-right: 16px;
 }
+.team-member .social-buttons li.email-btn {
+    color: #337ab7;
+    cursor: pointer;
+}
+.team-member .social-buttons li.email-btn:hover {
+    color: #23527c;
+}
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
     .team-member .team-banner .team-tagline {

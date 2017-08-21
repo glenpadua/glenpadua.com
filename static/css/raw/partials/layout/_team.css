@@ -110,6 +110,14 @@
         li {
             padding-right: 16px;
         }
+
+        li.email-btn {
+            color: #337ab7;
+            cursor: pointer;
+            &:hover {
+                color: #23527c;
+            }
+        }
     }
 }
 
