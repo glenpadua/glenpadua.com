@@ -75,6 +75,13 @@ section {
       }
 }
 
+.beta-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+}
+
 .email-alert {
   position: fixed;
   bottom: 10px;

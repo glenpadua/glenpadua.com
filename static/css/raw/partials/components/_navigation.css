@@ -29,7 +29,7 @@
 
 .nav-logo > img {
     height: 40px;
-    margin-left: 20px;
+    margin-left: 50px;
     position: absolute;
     left:70px;
 }
@@ -96,7 +96,7 @@
         border-bottom: 5px solid black;
         .nav-logo  > img{
             height: 50px;
-            margin-left: -50px;
+            margin-left: 10px;
         }
         .navbar-nav>.active>a {
             border-radius: 3px;

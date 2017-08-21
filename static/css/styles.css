@@ -460,6 +460,13 @@ section {
     }
 }
 
+.beta-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+}
+
 .email-alert {
     position: fixed;
     bottom: 10px;
@@ -500,7 +507,7 @@ header .intro-stats {
     margin-top: 20px;
     width: 200px;
     height: 300px;
-    left: 20px;
+    left: 80px;
     background-color: white;
     border: 5px solid black;
     text-align: center;
@@ -1073,7 +1080,7 @@ footer .footer {
 }
 .nav-logo > img {
     height: 40px;
-    margin-left: 20px;
+    margin-left: 50px;
     position: absolute;
     left: 70px;
 }
@@ -1125,7 +1132,7 @@ footer .footer {
     }
     .navbar-custom .nav-logo  > img {
         height: 50px;
-        margin-left: -50px;
+        margin-left: 10px;
     }
     .navbar-custom .navbar-nav>.active>a {
         border-radius: 3px;
