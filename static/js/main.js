@@ -1,5 +1,6 @@
 console.log('Main.js loaded');
 
+$('.email-alert').hide();
 // Function to copy email IDs to clipboard
 function copyTextToClipboard(text) {
   var textArea = document.createElement("textarea");
@@ -51,6 +52,7 @@ function copyTextToClipboard(text) {
     var successful = document.execCommand('copy');
     var msg = successful ? 'successful' : 'unsuccessful';
     console.log('Copying text command was ' + msg);
+    $('.parent').append('<div class="email-alert alert alert-success alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Copied!</strong> Email ID has been copied to the clipboard.</div>');
   } catch (err) {
     console.log('Oops, unable to copy');
   }
