@@ -1169,21 +1169,20 @@ footer .footer {
         -webkit-text-fill-color: #5b80df;
     }
 }
-// Navbar Change on Scroll
-
-@media(min-width:1224px) .navbar-custom.affix {
-    background-color: #fff;
-    padding: 10px 0;
-}
-// Navbar Change on Scroll
-
-@media(min-width:1224px) .navbar-custom.affix .navbar-brand {
-    font-size: 1.5em;
+/* Navbar Change on Scroll*/
+@media(min-width:1224px) {
+    .navbar-custom.affix {
+        background-color: #fff;
+        padding: 10px 0;
+    }
+    .navbar-custom.affix .navbar-brand {
+        font-size: 1.5em;
+    }
 }
 .navbar-custom.affix {
     background-color: #fff000;
     margin: 0;
-    padding: 5px 0;
+    padding: 15px 0;
     border: none;
 }
 .navbar-custom.affix .nav-logo {

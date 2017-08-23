@@ -105,7 +105,7 @@
     }
 }
 
-// Navbar Change on Scroll
+/* Navbar Change on Scroll*/
 
 @media(min-width:1224px) {
     .navbar-custom.affix {
@@ -120,7 +120,7 @@
 .navbar-custom.affix {
         background-color: $fifth-color;
         margin: 0;
-        padding: 5px 0;
+        padding: 15px 0;
         border:none;
         .nav-logo {
             font-size: 1.5em;
