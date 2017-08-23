@@ -461,10 +461,10 @@ section {
 }
 
 .beta-img {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    height: 80px;
+    height: 75px;
 }
 
 .email-alert {
