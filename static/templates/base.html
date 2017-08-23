@@ -25,6 +25,10 @@
   </head>
 
  <body id="page-top" class="index">
+     <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-custom navbar-fixed-top wow slideInRight">
         <div>
@@ -124,5 +128,16 @@
 
     <!-- Purechat -->
     <script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({c: '5a072c5a-4643-4b5a-813a-6ee58b435a9e', f: true }); done = true; } }; })();</script>
+
+    <!-- Preloader -->
+    <script type="text/javascript">
+        //<![CDATA[
+            $(window).on('load', function() { // makes sure the whole site is loaded
+                $('#status').fadeOut(); // will first fade out the loading animation
+                $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+                $('body').delay(350).css({'overflow':'visible'});
+              })
+        //]]>
+    </script>
   </body>
 </html>
