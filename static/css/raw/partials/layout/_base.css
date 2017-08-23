@@ -3,7 +3,7 @@
 
 body {
     font-family: $font-1;
-    overflow-x: hidden;
+    overflow: hidden;
     font-weight: $normal;
     color: $secondary-color;
     height: 100%;
@@ -101,7 +101,7 @@ section {
   right:0;
   bottom:0;
   background-color:#fff; /* change if the mask should have another color then white */
-  z-index:99; /* makes sure it stays on top */
+  z-index:9999; /* makes sure it stays on top */
 }
 
 #status {
