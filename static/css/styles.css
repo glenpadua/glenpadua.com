@@ -557,10 +557,17 @@ header .intro-stats p.more-stats {
 }
 header .intro-cta {
     position: absolute;
-}
-header .intro-cta img {
+    background-image: url('../images/speech_bubble_1.png');
     height: 200px;
     width: 400px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    /*img {
+            height: 200px;
+            width: 400px;
+        }*/
 }
 header .cta-1 {
     right: 2%;
