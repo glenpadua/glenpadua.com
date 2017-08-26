@@ -31,7 +31,7 @@ header {
         margin-top: 20px;
         width: 200px;
         height: 300px;
-        left: 20px;
+        left: 80px;
         background-color: white;
         border: 5px solid black;
         text-align:center;
@@ -53,10 +53,17 @@ header {
 
     .intro-cta {
         position: absolute;
-        img {
+        background-image: url('../images/speech_bubble_1.png');
+        height:200px;
+        width: 400px;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+        /*img {
             height: 200px;
             width: 400px;
-        }
+        }*/
     }
 
     .cta-1 {

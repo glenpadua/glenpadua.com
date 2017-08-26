@@ -395,7 +395,7 @@ template {
 
 body {
     font-family: 'DigitalStripBB',cursive;
-    overflow-x: hidden;
+    overflow: hidden;
     font-weight: 400;
     color: #34be5c;
     height: 100%;
@@ -459,6 +459,54 @@ section {
         margin-bottom: 10px;
     }
 }
+
+.beta-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 75px;
+}
+
+.email-alert {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    width: 400px;
+    height: 50px;
+    margin-top: -25px;
+    margin-left: -200px;
+    text-align: center;
+}
+
+/* Preloader */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    /* change if the mask should have another color then white */
+    z-index: 9999;
+    /* makes sure it stays on top */
+}
+
+#status {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    /* centers the loading animation horizontally one the screen */
+    top: 50%;
+    /* centers the loading animation vertically one the screen */
+    background-image: url('../images/status.gif');
+    /* path to your loading animation */
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -100px 0 0 -100px;
+    /* is width and height divided by two */
+}
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     /* Styles */
@@ -489,7 +537,7 @@ header .intro-stats {
     margin-top: 20px;
     width: 200px;
     height: 300px;
-    left: 20px;
+    left: 80px;
     background-color: white;
     border: 5px solid black;
     text-align: center;
@@ -509,10 +557,17 @@ header .intro-stats p.more-stats {
 }
 header .intro-cta {
     position: absolute;
-}
-header .intro-cta img {
+    background-image: url('../images/speech_bubble_1.png');
     height: 200px;
     width: 400px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    /*img {
+            height: 200px;
+            width: 400px;
+        }*/
 }
 header .cta-1 {
     right: 2%;
@@ -679,6 +734,13 @@ header .intro-text .intro-heading {
 }
 .team-member .social-buttons li {
     padding-right: 16px;
+}
+.team-member .social-buttons li.email-btn {
+    color: #337ab7;
+    cursor: pointer;
+}
+.team-member .social-buttons li.email-btn:hover {
+    color: #23527c;
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
@@ -869,7 +931,7 @@ header .intro-text .intro-heading {
         margin-bottom: 40px;
     }
 }
-footer {
+/*footer {
     background-image: url('../images/footer-bg.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -877,88 +939,119 @@ footer {
     background-size: cover;
     text-align: center;
     height: 750px;
+
+    .contact-cta {
+            background-image: url(../images/contact-cta.png);
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-size: contain;
+            height: 220px;
+            width: 400px;
+            position: absolute;
+            left: 14%;
+    }
+
+    .contact-box {
+        background-color: rgba(255, 255, 255, 0.85);
+        border: 3px solid $primary-color;
+        border-radius: 10px;
+        color: #5b80df;
+        width: 50%;
+        margin: 0 auto;
+        font-family: $font-2;
+        padding: 5px 12px;
+        margin-top: 12%;
+    }
+
+
+     @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+      .contact-box {
+            border-radius: initial;
+            width: initial;
+            padding: 5px 12px;
+            margin-top: initial;
+        }
+
+    }
+
+    .contact-section {
+        margin-bottom: 15px;
+    }
+
+    .contact-title {
+        font-size: 3em;
+    }
+
+    .contact-form {
+        font-size: 2em;
+        text-align:left;
+    }
+
+    .contact-input {
+        float: right;
+        border: 3px solid rgba(91, 128, 223, 0.5);
+        background: transparent;
+        border-radius: 10px;
+        outline: none;
+        padding: 5px;
+
+        &:focus {
+            border: 3px solid rgba(91, 128, 223, 1);
+        }
+    }
+
+
+     @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+      .contact-input {
+        width:70%;
+    }
+
+    }
+
+    .contact-button-container {
+        text-align: center;
+        margin: 15px 0;
+        .contact-button {
+            background: transparent;
+            font-family: $font-2;
+            border: 3px solid rgba(91, 128, 223, 0.5);
+            border-radius: 10px;
+            padding: 5px 10px;
+            width:100px;
+            outline: none;
+
+            &:focus,&:hover {
+                color: white;
+                background: rgba(91, 128, 223, 1);
+            }
+        }
+    }
+
+    .footer {
+        font-family: $font-1-bi;
+        color: white;
+        font-size: 2em;
+        margin-top: 100px;
+    }
+
 }
-footer .contact-cta {
-    background-image: url(../images/contact-cta.png);
+*/
+footer {
+    background-image: url('../images/footer-bg.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-size: contain;
-    height: 220px;
-    width: 400px;
-    position: absolute;
-    left: 14%;
-}
-footer .contact-box {
-    background-color: rgba(255, 255, 255, 0.85);
-    border: 3px solid #5b80df;
-    border-radius: 10px;
-    color: #5b80df;
-    width: 50%;
-    margin: 0 auto;
-    font-family: 'Bangers',sans-serif;
-    padding: 5px 12px;
-    margin-top: 12%;
-}
-/* Smartphones (portrait and landscape) ----------- */
-footer .contact-section {
-    margin-bottom: 15px;
-}
-footer .contact-title {
-    font-size: 3em;
-}
-footer .contact-form {
-    font-size: 2em;
-    text-align: left;
-}
-footer .contact-input {
-    float: right;
-    border: 3px solid rgba(91, 128, 223, 0.5);
-    background: transparent;
-    border-radius: 10px;
-    outline: none;
-    padding: 5px;
-}
-footer .contact-input:focus {
-    border: 3px solid rgba(91, 128, 223, 1);
-}
-/* Smartphones (portrait and landscape) ----------- */
-footer .contact-button-container {
+    background-position: center center;
+    background-size: cover;
     text-align: center;
-    margin: 15px 0;
-}
-footer .contact-button-container .contact-button {
-    background: transparent;
-    font-family: 'Bangers',sans-serif;
-    border: 3px solid rgba(91, 128, 223, 0.5);
-    border-radius: 10px;
-    padding: 5px 10px;
-    width: 100px;
-    outline: none;
-}
-footer .contact-button-container .contact-button:focus, footer .contact-button-container .contact-button:hover {
-    color: white;
-    background: rgba(91, 128, 223, 1);
+    height: 100px;
 }
 footer .footer {
     font-family: 'DigitalStripBB_BoldItal',cursive;
     color: white;
     font-size: 2em;
-    margin-top: 100px;
-}
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    /* Styles */
-    footer .contact-box {
-        border-radius: initial;
-        width: initial;
-        padding: 5px 12px;
-        margin-top: initial;
-    }
-}
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    /* Styles */
-    footer .contact-input {
-        width: 70%;
-    }
+    margin-top: 40px;
 }
 
 .input {
@@ -1024,7 +1117,7 @@ footer .footer {
 }
 .nav-logo > img {
     height: 40px;
-    margin-left: 20px;
+    margin-left: 50px;
     position: absolute;
     left: 70px;
 }
@@ -1076,28 +1169,27 @@ footer .footer {
     }
     .navbar-custom .nav-logo  > img {
         height: 50px;
-        margin-left: -50px;
+        margin-left: 10px;
     }
     .navbar-custom .navbar-nav>.active>a {
         border-radius: 3px;
         -webkit-text-fill-color: #5b80df;
     }
 }
-// Navbar Change on Scroll
-
-@media(min-width:1224px) .navbar-custom.affix {
-    background-color: #fff;
-    padding: 10px 0;
-}
-// Navbar Change on Scroll
-
-@media(min-width:1224px) .navbar-custom.affix .navbar-brand {
-    font-size: 1.5em;
+/* Navbar Change on Scroll*/
+@media(min-width:1224px) {
+    .navbar-custom.affix {
+        background-color: #fff;
+        padding: 10px 0;
+    }
+    .navbar-custom.affix .navbar-brand {
+        font-size: 1.5em;
+    }
 }
 .navbar-custom.affix {
     background-color: #fff000;
     margin: 0;
-    padding: 5px 0;
+    padding: 15px 0;
     border: none;
 }
 .navbar-custom.affix .nav-logo {

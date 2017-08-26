@@ -3,7 +3,7 @@
 
 body {
     font-family: $font-1;
-    overflow-x: hidden;
+    overflow: hidden;
     font-weight: $normal;
     color: $secondary-color;
     height: 100%;
@@ -73,4 +73,45 @@ section {
         padding: 0 15px;
         margin-bottom: 10px;
       }
+}
+
+.beta-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 75px;
+}
+
+.email-alert {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  width: 400px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -200px;
+  text-align: center;
+}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#fff; /* change if the mask should have another color then white */
+  z-index:9999; /* makes sure it stays on top */
+}
+
+#status {
+  width:200px;
+  height:200px;
+  position:absolute;
+  left:50%; /* centers the loading animation horizontally one the screen */
+  top:50%; /* centers the loading animation vertically one the screen */
+  background-image: url('../images/status.gif'); /* path to your loading animation */
+  background-repeat:no-repeat;
+  background-position:center;
+  margin:-100px 0 0 -100px; /* is width and height divided by two */
 }

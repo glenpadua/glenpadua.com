@@ -1132,3 +1132,10 @@ footer .footer {
     font-size: 2em;
     margin-top: 50px;
 }
+
+.beta-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+}
