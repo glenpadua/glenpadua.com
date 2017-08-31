@@ -38,7 +38,7 @@ toolbar = DebugToolbarExtension(app)
 
 # Setting directories
 app.static_folder = '../static'
-app.template_folder = '../static/templates'
+app.template_folder = '../templates'
 
 ## Initializing the database
 # db = SQLAlchemy(app)
