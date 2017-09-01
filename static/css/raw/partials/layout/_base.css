@@ -9,6 +9,22 @@ body {
     height: 100%;
 }
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* Styles */
+    body {
+      font-size: 16px;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+    body {
+      font-size: 16px;
+    }
+}
+
 h1 {
     font-size: 3.5em;
 }
@@ -74,6 +90,21 @@ section {
         margin-bottom: 10px;
       }
 }
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+        /* Styles */
+      .box-left {
+        padding: 0 15px;
+        margin-bottom: 10px;
+      }
+
+      .box-right {
+        padding: 0 15px;
+        margin-bottom: 10px;
+      }
+}
+
 
 .beta-img {
   position: absolute;

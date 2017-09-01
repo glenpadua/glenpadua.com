@@ -88,6 +88,14 @@
             left: 5%;
         }
 
+         /* Smartphones (portrait and landscape) ----------- */
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        /* Styles */
+               .stat-icons {
+                word-spacing: 30px;
+            }
+        }
+
         .stat-icon-blue {
             color: $primary-color;
         }

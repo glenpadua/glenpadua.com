@@ -401,6 +401,24 @@ body {
     height: 100%;
 }
 
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    body {
+        font-size: 16px;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    /* Styles */
+    body {
+        font-size: 16px;
+    }
+}
+
 h1 {
     font-size: 3.5em;
 }
@@ -449,6 +467,20 @@ section {
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .box-left {
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
+    .box-right {
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     /* Styles */
     .box-left {
         padding: 0 15px;
@@ -680,12 +712,10 @@ header .intro-text .intro-heading {
 .team-member .team-banner .team-name {
     font-family: 'Bangers',sans-serif;
     font-size: 2.5em;
-    font-size: 2.5vw;
 }
 .team-member .team-banner .team-tagline {
     margin-top: -15px;
     font-size: 1.3em;
-    font-size: 1.3vw;
     letter-spacing: 1px;
     word-spacing: 2px;
 }
@@ -745,7 +775,7 @@ header .intro-text .intro-heading {
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
     .team-member .team-banner .team-tagline {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 }
 @media only screen and (max-device-width: 1600px) {
@@ -1337,11 +1367,18 @@ footer .footer {
     bottom: 1%;
     left: 5%;
 }
+/* Smartphones (portrait and landscape) ----------- */
 .stat-card .stat-icon-blue {
     color: #5b80df;
 }
 .stat-card .stat-icon-green {
     color: #34be5c;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .stat-card .stat-icons {
+        word-spacing: 30px;
+    }
 }
 .stat-card-green {
     border: 3px solid #34be5c;
