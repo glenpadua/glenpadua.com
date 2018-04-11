@@ -915,13 +915,11 @@ header .intro-text .intro-heading {
     right: 0;
 }
 .arrow-top {
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+    transform: rotate(45deg);
     top: -50px;
 }
 .arrow-down {
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+    transform: rotate(-45deg);
     bottom: -50px;
 }
 @media (max-width: 767px) {
