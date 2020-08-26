@@ -20,4 +20,7 @@ dev_config.py
 # NPM modules
 node_modules
 
+# next.js build output
+.next
+
 .DS_Store
