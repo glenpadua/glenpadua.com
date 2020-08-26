@@ -1,112 +1,114 @@
 import React from 'react';
 import styled from 'styled-components';
-import Haikyuu from '../../assets/haikyuu.png';
+
+const transitionDuration = '0.4s';
 
 const Overlay = styled.div`
-  width: 115px;
+  width: 80px;
+  height: 80px;
   position: absolute;
-  height: 115px;
   border-radius: 50%;
-  background: rgba(241, 147, 0, 0.8);
-  top: 50px;
-  left: 143px;
+  background: ${props => props.color};
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 0;
-  transition: transform 0.3s ease-out;
+  transition: transform ${transitionDuration} ease-out;
 `;
 
 const Circle = styled.div`
-  width: 130px;
-  height: 130px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  transition: all 0.3s ease-out;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all ${transitionDuration} ease-out;
   z-index: 1;
-
-  &:after {
-    content: '';
-    width: 115px;
-    height: 115px;
-    display: block;
-    position: absolute;
-    background: rgba(241, 147, 0, 0.8);
-    border-radius: 50%;
-    transition: opacity 0.3s ease-out;
-  }
 `;
 
 const Title = styled.h3`
+  font-weight: 500;
   margin: 0;
+  padding: 0 10px;
   z-index: 1000;
-  transition: color 0.3s ease-out;
+  transition: color ${transitionDuration} ease-out;
+`;
+
+const Icon = styled.span`
+  font-size: 40px;
+  z-index: 1000;
+  color: white;
+  height: 40px;
+  transition: all ${transitionDuration};
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 `;
 
 const Card = styled.div`
   width: 100%;
-  padding: 20px 10px;
+  height: 250px;
+  padding-top: 20px;
+  padding-bottom: 0;
   background: #fff;
   color: #4c5656;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   align-items: center;
-  border-radius: 6px;
+  justify-content: space-between;
+  border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease-out;
+  transition: all ${transitionDuration} ease-out;
   position: relative;
 
   &:hover {
-    background: rgba(241, 147, 0, 0.8);
-    translateY(-5px) scale(1.005) translateZ(0);
+    background: ${props => props.color};
+    transform: translateY(-5px) scale(1.005) translateZ(0);
 
     ${Overlay} {
-      transform: scale(5) translateZ(0);
-    }
-
-    ${Circle} {
-      background: rgba(241, 147, 0, 0.8);
-
-      &:after {
-        background: rgba(241, 147, 0, 0.5);
-      }
+      transform: scale(8) translateZ(0);
     }
 
     ${Title} {
       color: #fff;
-      text-shadow: 1px 1px 4px #000000;
+    }
+
+    ${Info} {
+      color: #fff;
+    }
+
+    ${Icon} {
+      font-size: 50px;
     }
   }
 `;
 
-const Emoji = styled.span`
-  font-size: 50px;
-  z-index: 1000;
-`;
-
 const Info = styled.div`
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
   z-index: 1000;
+  margin-bottom: 30px;
+  padding: 0 10px;
+  text-align: center;
 `;
 
-const AboutCard = () => {
+const AboutCard = ({ title, icon, info, color }) => {
   return (
-    <Card>
-      <Title>CURRENTLY WATCHING</Title>
-      <Overlay />
-      <Circle>
-        <Emoji role="img" aria-label="television">
-          📺
-        </Emoji>
+    <Card color={color}>
+      <Title>{title}</Title>
+      <Overlay color={color} />
+      <Circle color={color}>
+        <Icon>{icon}</Icon>
       </Circle>
-
-      <Info>
-        <img src={Haikyuu} width="50%" />
-      </Info>
+      <Info>{info}</Info>
     </Card>
   );
 };
