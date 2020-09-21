@@ -8,13 +8,16 @@
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "next": "^9.3.1",
+    "@uncommonui/core": "^0.1.2",
+    "framer-motion": "^2.6.2",
+    "next": "^9.5.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",
@@ -26,6 +29,7 @@
     "@storybook/addon-essentials": "^6.0.18",
     "@storybook/addon-links": "^6.0.18",
     "@storybook/react": "^6.0.18",
+    "@storybook/storybook-deployer": "^2.8.6",
     "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.11.1",
     "react-is": "^16.13.1"
