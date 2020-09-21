@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import CardDeck from './';
-import ReactLogo from 'assets/react.svg';
-import GraphqlLogo from 'assets/graphql.svg';
-import Html5Logo from 'assets/html5.svg';
-import CSS3Logo from 'assets/css3.svg';
-import JSLogo from 'assets/javascript.svg';
-import ReduxLogo from 'assets/redux.svg';
-import JestLogo from 'assets/jest.svg';
-import RTLLogo from 'assets/testing-library.png';
-import StorybookLogo from 'assets/storybook.png';
-import StyledLogo from 'assets/styled.png';
+import ReactLogo from 'public/assets/react.svg';
+import GraphqlLogo from 'public/assets/graphql.svg';
+import Html5Logo from 'public/assets/html5.svg';
+import CSS3Logo from 'public/assets/css3.svg';
+import JSLogo from 'public/assets/javascript.svg';
+import ReduxLogo from 'public/assets/redux.svg';
+import JestLogo from 'public/assets/jest.svg';
+import RTLLogo from 'public/assets/testing-library.png';
+import StorybookLogo from 'public/assets/storybook.png';
+import StyledLogo from 'public/assets/styled.png';
 
 export default {
   title: 'Site/Card Deck',

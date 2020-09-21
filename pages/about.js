@@ -1,12 +1,16 @@
-import Layout from '../components/Layout';
-import { Input } from '@uncommonui/core';
+import Layout from 'components/Layout';
+import Head from 'next/head';
 
 const About = () => {
   return (
-    <Layout>
-      <p>This is the about page</p>
-      <Input type="text" />
-    </Layout>
+    <>
+      <Head>
+        <title>About</title>
+      </Head>
+      <Layout>
+        <p>This is the about page</p>
+      </Layout>
+    </>
   );
 };
 

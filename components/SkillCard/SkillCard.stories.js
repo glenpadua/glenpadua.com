@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import SkillCard from './';
-import ReactLogo from 'assets/react.svg';
-import GraphqlLogo from 'assets/graphql.svg';
+import ReactLogo from 'public/assets/react.svg';
+import GraphqlLogo from 'public/assets/graphql.svg';
 
 export default {
   title: 'Site/Skill Card',

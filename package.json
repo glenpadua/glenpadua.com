@@ -15,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@uncommonui/core": "^0.1.2",
     "framer-motion": "^2.6.2",
     "next": "^9.5.2",
     "react": "^16.13.1",

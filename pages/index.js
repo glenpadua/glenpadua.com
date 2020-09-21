@@ -1,5 +1,6 @@
-import Layout from '../components/Layout';
+import Layout from 'components/Layout';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const PostLink = props => (
   <li>
@@ -10,13 +11,18 @@ const PostLink = props => (
 );
 export default function Blog() {
   return (
-    <Layout>
-      <h1>My Blog</h1>
-      <ul>
-        <PostLink id="hello-nextjs" />
-        <PostLink id="learn-nextjs" />
-        <PostLink id="deploy-nextjs" />
-      </ul>
-    </Layout>
+    <>
+      <Head>
+        <title>Home</title>
+      </Head>
+      <Layout>
+        <h1>Hi I'm Glen!</h1>
+        <ul>
+          <PostLink id="hello-nextjs" />
+          <PostLink id="learn-nextjs" />
+          <PostLink id="deploy-nextjs" />
+        </ul>
+      </Layout>
+    </>
   );
 }

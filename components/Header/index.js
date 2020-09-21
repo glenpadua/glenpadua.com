@@ -1,8 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Avatar, Input } from '@uncommonui/core';
-// import Checkbox from '@uncommonui/checkbox';
-import ReactLogo from 'assets/react.svg';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -38,8 +35,6 @@ const Header = () => {
         <Item>Blog</Item>
         <Item>Snippets</Item>
       </Menu>
-      <Avatar src={ReactLogo} />
-      <Input type="text" />
     </Wrapper>
   );
 };
