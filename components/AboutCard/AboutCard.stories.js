@@ -33,29 +33,49 @@ const items = [
     id: 1,
     title: 'FRONTEND NINJA',
     icon: <FaUserNinja />,
-    info: <i>"Self Proclaimed at least."</i>,
+    info: (
+      <i>
+        "Because I <b>React</b> quickly."
+      </i>
+    ),
     color: 'rgba(0, 0, 0, 0.7)',
+    link: '/skills',
   },
   {
     id: 2,
     title: 'CURRENTLY WORKING AT',
     icon: <FaLaptop />,
-    info: <i>"Synup, not to be confused with Sign Up"</i>,
+    info: (
+      <i>
+        "<b>Synup</b>, not to be confused with Sign Up"
+      </i>
+    ),
     color: 'rgba(12, 53, 130, 0.7)',
+    href: 'https://synup.com',
   },
   {
     id: 3,
     title: 'CURRENT PET PROJECT',
     icon: <FaLaptopCode />,
-    info: <i>"Uncommon UI - The Component Utopia"</i>,
+    info: (
+      <i>
+        "<b>Uncommon UI</b> - The Component Utopia"
+      </i>
+    ),
     color: '#be9063',
+    href: 'https://github.com/Zephony/uncommon-ui',
   },
   {
     id: 4,
     title: 'STARTUP I CO-FOUNDED',
     icon: <FaFistRaised />,
-    info: <i>"Zephony, with my buddy Kevin"</i>,
+    info: (
+      <i>
+        "<b>Zephony</b>, with my buddy Kevin"
+      </i>
+    ),
     color: '#6465a5',
+    href: 'http://zephony.com/',
   },
   {
     id: 5,
@@ -63,13 +83,19 @@ const items = [
     icon: <FaSocks />,
     info: <i>"One small step for man, one giant hop for me"</i>,
     color: '#d9ac2a',
+    link: '/blog',
   },
   {
     id: 6,
     title: 'CURRENT WATCH',
     icon: <FaTv />,
-    info: <i>"An anime about Basketball called Haikyuu"</i>,
+    info: (
+      <i>
+        "An anime about Basketball called <b>Haikyuu</b>"
+      </i>
+    ),
     color: 'rgba(241, 147, 0, 0.8)',
+    href: 'https://www.imdb.com/title/tt3398540/',
   },
   {
     id: 7,
@@ -83,6 +109,7 @@ const items = [
       </i>
     ),
     color: '#f05837',
+    href: 'https://www.goodreads.com/user/show/92235776-glen-padua',
   },
 ];
 
@@ -90,12 +117,7 @@ export const BasicCards = () => (
   <Wrapper>
     {items.map(item => (
       <CardWrapper key={item.id}>
-        <AboutCard
-          title={item.title}
-          icon={item.icon}
-          info={item.info}
-          color={item.color}
-        />
+        <AboutCard {...item} />
       </CardWrapper>
     ))}
   </Wrapper>

@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const transitionDuration = '0.4s';
 
@@ -53,7 +55,7 @@ const Icon = styled.span`
   transform: translateY(-50%);
 `;
 
-const Card = styled.div`
+const Card = styled(motion.div)`
   width: 100%;
   height: 250px;
   padding-top: 20px;
@@ -98,11 +100,12 @@ const Info = styled.div`
   margin-bottom: 30px;
   padding: 0 10px;
   text-align: center;
+  font-weight: 300;
 `;
 
-const AboutCard = ({ title, icon, info, color }) => {
-  return (
-    <Card color={color}>
+const AboutCard = ({ title, icon, info, color, link, href }) => {
+  const getAboutContent = () => (
+    <Card color={color} initial={{ scale: 0 }} animate={{ scale: 1 }}>
       <Title>{title}</Title>
       <Overlay color={color} />
       <Circle color={color}>
@@ -110,6 +113,16 @@ const AboutCard = ({ title, icon, info, color }) => {
       </Circle>
       <Info>{info}</Info>
     </Card>
+  );
+
+  return link ? (
+    <Link href={link}>
+      <a>{getAboutContent()}</a>
+    </Link>
+  ) : (
+    <a href={href} target="_blank">
+      {getAboutContent()}
+    </a>
   );
 };
 
