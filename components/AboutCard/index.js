@@ -55,6 +55,14 @@ const Icon = styled.span`
   transform: translateY(-50%);
 `;
 
+const Info = styled.div`
+  z-index: 2;
+  margin-bottom: 30px;
+  padding: 0 10px;
+  text-align: center;
+  font-weight: 300;
+`;
+
 const Card = styled(motion.div)`
   width: 100%;
   height: 250px;
@@ -93,14 +101,6 @@ const Card = styled(motion.div)`
       font-size: 50px;
     }
   }
-`;
-
-const Info = styled.div`
-  z-index: 2;
-  margin-bottom: 30px;
-  padding: 0 10px;
-  text-align: center;
-  font-weight: 300;
 `;
 
 const AboutCard = ({ title, icon, info, color, link, href }) => {
