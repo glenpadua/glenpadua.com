@@ -7,6 +7,11 @@
   padding: 0;
 }
 
+/* Fix for jumping scrollbar https://aykevl.nl/2014/09/fix-jumping-scrollbar */
+html {
+  margin-left: calc(100vw - 100%);
+}
+
 body {
   background: #f2f4f8;
   font-family: 'Ubuntu', sans-serif;

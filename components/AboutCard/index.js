@@ -38,13 +38,13 @@ const Title = styled.h3`
   font-weight: 500;
   margin: 0;
   padding: 0 10px;
-  z-index: 1000;
+  z-index: 2;
   transition: color ${transitionDuration} ease-out;
 `;
 
 const Icon = styled.span`
   font-size: 40px;
-  z-index: 1000;
+  z-index: 2;
   color: white;
   height: 40px;
   transition: all ${transitionDuration};
@@ -96,7 +96,7 @@ const Card = styled(motion.div)`
 `;
 
 const Info = styled.div`
-  z-index: 1000;
+  z-index: 2;
   margin-bottom: 30px;
   padding: 0 10px;
   text-align: center;

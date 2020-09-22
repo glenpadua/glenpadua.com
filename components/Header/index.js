@@ -2,29 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Logo from 'components/Logo';
 import MobileNav, { NavItem } from './MobileNav';
-
-const menuItems = [
-  {
-    name: 'Home',
-    url: '/',
-  },
-  {
-    name: 'Skills',
-    url: '/skills',
-  },
-  {
-    name: 'Projects',
-    url: '/projects',
-  },
-  {
-    name: 'Blog',
-    url: '/blog',
-  },
-  {
-    name: 'Snippets',
-    url: '/snippets',
-  },
-];
+import { menuItems } from 'utils/helpers';
 
 const Wrapper = styled.div`
   width: 100%;
