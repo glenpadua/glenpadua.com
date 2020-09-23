@@ -6,6 +6,9 @@ import {
   FaFistRaised,
   FaSocks,
   FaBookReader,
+  FaBlog,
+  FaMicroblog,
+  FaSpotify,
 } from 'react-icons/fa';
 
 export function getRandomInt(max) {
@@ -58,7 +61,7 @@ export const aboutCards = [
       </i>
     ),
     color: 'rgba(12, 53, 130, 0.7)',
-    href: 'https://synup.com',
+    href: '/work',
   },
   {
     id: 3,
@@ -70,10 +73,26 @@ export const aboutCards = [
       </i>
     ),
     color: '#be9063',
-    href: 'https://github.com/Zephony/uncommon-ui',
+    href: '/work',
   },
   {
     id: 4,
+    title: 'LATEST BLOG POST',
+    icon: <FaBlog />,
+    info: <i>"Title of the Blog Post"</i>,
+    color: '#acddfa',
+    href: '/blog',
+  },
+  {
+    id: 5,
+    title: 'LATEST SNIPPET',
+    icon: <FaMicroblog />,
+    info: <i>"Title of the Snippet"</i>,
+    color: '#f4d721',
+    href: '/snippets',
+  },
+  {
+    id: 6,
     title: 'STARTUP I CO-FOUNDED',
     icon: <FaFistRaised />,
     info: (
@@ -82,10 +101,10 @@ export const aboutCards = [
       </i>
     ),
     color: '#6465a5',
-    href: 'http://zephony.com/',
+    href: '/work',
   },
   {
-    id: 5,
+    id: 7,
     title: 'CHRONICLES OF AN AMPUTEE',
     icon: <FaSocks />,
     info: <i>"One small step for man, one giant hop for me"</i>,
@@ -93,29 +112,36 @@ export const aboutCards = [
     link: '/blog',
   },
   {
-    id: 6,
-    title: 'CURRENT WATCH',
+    id: 8,
+    title: 'CURRENTLY WATCHING',
     icon: <FaTv />,
-    info: (
-      <i>
-        "An anime about Basketball called <b>Haikyuu</b>"
-      </i>
-    ),
-    color: 'rgba(241, 147, 0, 0.8)',
-    href: 'https://www.imdb.com/title/tt3398540/',
+    info: <i>"JoJo's Bizzare Adventure"</i>,
+    color: '#f35eb7',
+    href: 'https://www.imdb.com/title/tt2359704/',
   },
   {
-    id: 7,
-    title: 'CURRENT READ',
+    id: 9,
+    title: 'CURRENTLY READING',
     icon: <FaBookReader />,
     info: (
-      <i style={{ fontSize: '14px' }}>
-        "Think and Grow Rich" - Napoleon Hill
-        <br />
-        "How to be a Productivity Ninja" - Graham Allcot
+      <i>
+        <b>"How to be a Productivity Ninja"</b> by Graham Allcot
       </i>
     ),
     color: '#f05837',
     href: 'https://www.goodreads.com/user/show/92235776-glen-padua',
+  },
+  {
+    id: 10,
+    title: 'CURRENTLY LISTENING TO',
+    icon: <FaSpotify />,
+    info: (
+      <i>
+        <b>"Song Title"</b> by Artist
+      </i>
+    ),
+    color: '#40d15d',
+    href:
+      'https://open.spotify.com/album/3qPIe6YsuQ0qzg6bSEQjfv?highlight=spotify:track:3c9xinOHrEqF39omS0Czj1',
   },
 ];
