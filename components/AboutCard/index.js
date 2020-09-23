@@ -4,10 +4,11 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const transitionDuration = '0.4s';
+const dimension = '70px';
 
 const Overlay = styled.div`
-  width: 80px;
-  height: 80px;
+  width: ${dimension};
+  height: ${dimension};
   position: absolute;
   border-radius: 50%;
   background: ${props => props.color};
@@ -20,8 +21,8 @@ const Overlay = styled.div`
 `;
 
 const Circle = styled.div`
-  width: 80px;
-  height: 80px;
+  width: ${dimension};
+  height: ${dimension};
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -43,10 +44,10 @@ const Title = styled.h3`
 `;
 
 const Icon = styled.span`
-  font-size: 40px;
+  font-size: 35px;
   z-index: 2;
   color: white;
-  height: 40px;
+  height: 35px;
   transition: all ${transitionDuration};
   margin: 0;
   position: absolute;
@@ -65,7 +66,7 @@ const Info = styled.div`
 
 const Card = styled(motion.div)`
   width: 100%;
-  height: 250px;
+  height: 220px;
   padding-top: 20px;
   padding-bottom: 0;
   background: #fff;
@@ -98,7 +99,7 @@ const Card = styled(motion.div)`
     }
 
     ${Icon} {
-      font-size: 50px;
+      font-size: 45px;
     }
   }
 `;

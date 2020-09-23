@@ -124,7 +124,7 @@ export const aboutCards = [
     title: 'CURRENTLY READING',
     icon: <FaBookReader />,
     info: (
-      <i>
+      <i style={{ fontSize: '0.9em' }}>
         <b>"How to be a Productivity Ninja"</b> by Graham Allcot
       </i>
     ),
