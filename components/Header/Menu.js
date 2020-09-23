@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { NavItem } from './MobileNav';
@@ -47,6 +48,8 @@ const itemVariant = {
 
 const Menu = ({ items }) => {
   useLockBodyScroll();
+  const router = useRouter();
+
   return (
     <Wrapper
       variants={menuVariant}
@@ -60,6 +63,7 @@ const Menu = ({ items }) => {
           key={item.name}
           url={item.url}
           name={item.name}
+          isActive={item.url === router.pathname}
         />
       ))}
     </Wrapper>

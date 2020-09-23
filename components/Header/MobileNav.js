@@ -19,12 +19,12 @@ const Item = styled(motion.li)`
   margin-bottom: 20px;
 
   &:after {
-    transition: all ease-out 0.5s;
+    transition: all ease-out 0.2s;
     display: block;
     margin-top: 5px;
     content: '';
     height: 2px;
-    width: 0;
+    width: ${props => (props.isActive ? '100%' : '0')};
     background-color: #fff;
   }
 
@@ -37,9 +37,9 @@ const StyledLink = styled.a`
   font-size: 1.1em;
 `;
 
-export const NavItem = ({ name, url, ...props }) => {
+export const NavItem = ({ name, url, isActive, ...props }) => {
   return (
-    <Item {...props}>
+    <Item isActive={isActive} {...props}>
       <Link href={url}>
         <StyledLink>{name}</StyledLink>
       </Link>

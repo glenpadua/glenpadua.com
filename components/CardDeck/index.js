@@ -23,10 +23,13 @@ const generateNthChildrenStyles = (cards, initialStyles, increments) => {
 const Wrapper = styled.ul`
   list-style-type: none;
   position: relative;
-  width: 350px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
+  width: 260px;
+  height: 200px;
+
+  @media only screen and (min-width: 601px) {
+    height: 340px;
+    width: 450px;
+  }
 
   li {
     position: absolute;
@@ -83,10 +86,10 @@ const Wrapper = styled.ul`
   }
 `;
 
-const CardDeck = ({ cards }) => (
+const CardDeck = ({ cards, onCardClick }) => (
   <Wrapper cards={cards}>
     {cards.map(card => (
-      <SkillCard key={card.id} {...card} />
+      <SkillCard key={card.id} onClick={() => onCardClick(card)} {...card} />
     ))}
   </Wrapper>
 );

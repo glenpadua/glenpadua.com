@@ -41,6 +41,11 @@ const Title = styled.h3`
   padding: 0 10px;
   z-index: 2;
   transition: color ${transitionDuration} ease-out;
+  font-size: 1.3em;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1.1em;
+  }
 `;
 
 const Icon = styled.span`
@@ -58,10 +63,14 @@ const Icon = styled.span`
 
 const Info = styled.div`
   z-index: 2;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   padding: 0 10px;
   text-align: center;
   font-weight: 300;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 0.85em;
+  }
 `;
 
 const Card = styled(motion.div)`

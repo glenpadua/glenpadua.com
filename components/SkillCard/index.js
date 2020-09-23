@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Card = styled.li`
@@ -12,6 +12,10 @@ const Card = styled.li`
   @media only screen and (max-width: 600px) {
     width: 100px;
     height: 170px;
+  }
+
+  @media only screen and (min-width: 992px) {
+    cursor: pointer;
   }
 `;
 
@@ -94,31 +98,38 @@ const LogoWrapper = styled.div`
   justify-content: center;
 `;
 
-const cornerLogoDimension = window.innerWidth < 600 ? '20px' : '30px';
-const centerLogoDimension = window.innerWidth < 600 ? '40px' : '80px';
+const SkillCard = ({ text, logo, color, onClick }) => {
+  const [width, setWidth] = useState(0);
 
-const SkillCard = ({ text, logo, color }) => (
-  <Card color={color}>
-    <LogoTop
-      src={logo}
-      width={cornerLogoDimension}
-      height={cornerLogoDimension}
-    />
-    <TextTop>{text}</TextTop>
-    <LogoWrapper>
-      <Logo
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
+
+  const cornerLogoDimension = width < 600 ? '20px' : '30px';
+  const centerLogoDimension = width < 600 ? '40px' : '80px';
+  return (
+    <Card color={color} onClick={onClick}>
+      <LogoTop
         src={logo}
-        width={centerLogoDimension}
-        height={centerLogoDimension}
+        width={cornerLogoDimension}
+        height={cornerLogoDimension}
       />
-    </LogoWrapper>
-    <LogoBottom
-      src={logo}
-      width={cornerLogoDimension}
-      height={cornerLogoDimension}
-    />
-    <TextBottom>{text}</TextBottom>
-  </Card>
-);
+      <TextTop>{text}</TextTop>
+      <LogoWrapper>
+        <Logo
+          src={logo}
+          width={centerLogoDimension}
+          height={centerLogoDimension}
+        />
+      </LogoWrapper>
+      <LogoBottom
+        src={logo}
+        width={cornerLogoDimension}
+        height={cornerLogoDimension}
+      />
+      <TextBottom>{text}</TextBottom>
+    </Card>
+  );
+};
 
 export default SkillCard;

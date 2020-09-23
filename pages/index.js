@@ -35,7 +35,7 @@ const CardWrapper = styled.div`
   }
 `;
 
-export default function Blog() {
+export default function Home() {
   return (
     <>
       <Head>

@@ -61,7 +61,7 @@ export const aboutCards = [
       </i>
     ),
     color: 'rgba(12, 53, 130, 0.7)',
-    href: '/work',
+    link: '/work',
   },
   {
     id: 3,
@@ -73,7 +73,7 @@ export const aboutCards = [
       </i>
     ),
     color: '#be9063',
-    href: '/work',
+    link: '/work',
   },
   {
     id: 4,
@@ -81,7 +81,7 @@ export const aboutCards = [
     icon: <FaBlog />,
     info: <i>"Title of the Blog Post"</i>,
     color: '#acddfa',
-    href: '/blog',
+    link: '/blog',
   },
   {
     id: 5,
@@ -89,19 +89,15 @@ export const aboutCards = [
     icon: <FaMicroblog />,
     info: <i>"Title of the Snippet"</i>,
     color: '#f4d721',
-    href: '/snippets',
+    link: '/snippets',
   },
   {
     id: 6,
-    title: 'STARTUP I CO-FOUNDED',
+    title: 'ZEPHONY',
     icon: <FaFistRaised />,
-    info: (
-      <i>
-        "<b>Zephony</b>, with my buddy Kevin"
-      </i>
-    ),
+    info: <i>"Startup I Co-Founded in 2017"</i>,
     color: '#6465a5',
-    href: '/work',
+    link: '/work',
   },
   {
     id: 7,
@@ -131,17 +127,68 @@ export const aboutCards = [
     color: '#f05837',
     href: 'https://www.goodreads.com/user/show/92235776-glen-padua',
   },
+  // {
+  //   id: 10,
+  //   title: 'CURRENTLY LISTENING TO',
+  //   icon: <FaSpotify />,
+  //   info: (
+  //     <i>
+  //       <b>"Song Title"</b> by Artist
+  //     </i>
+  //   ),
+  //   color: '#40d15d',
+  //   href:
+  //     'https://open.spotify.com/album/3qPIe6YsuQ0qzg6bSEQjfv?highlight=spotify:track:3c9xinOHrEqF39omS0Czj1',
+  // },
+];
+
+export const frontendCards = [
   {
-    id: 10,
-    title: 'CURRENTLY LISTENING TO',
-    icon: <FaSpotify />,
-    info: (
-      <i>
-        <b>"Song Title"</b> by Artist
-      </i>
-    ),
-    color: '#40d15d',
-    href:
-      'https://open.spotify.com/album/3qPIe6YsuQ0qzg6bSEQjfv?highlight=spotify:track:3c9xinOHrEqF39omS0Czj1',
+    id: 1,
+    text: 'HTML5',
+    logo: '/assets/html5.svg',
+    color: '#f05837',
+  },
+  {
+    id: 2,
+    text: 'CSS3',
+    logo: '/assets/css3.svg',
+    color: '#007bff',
+  },
+  {
+    id: 3,
+    text: 'ES6',
+    logo: '/assets/javascript.svg',
+    color: '#d9ac2a',
+  },
+  {
+    id: 4,
+    text: 'React',
+    logo: '/assets/react.svg',
+    color: 'rgba(12, 53, 130, 1)',
+  },
+  {
+    id: 5,
+    text: 'Redux',
+    logo: '/assets/redux.svg',
+    color: '#242527',
+  },
+  {
+    id: 6,
+    text: 'Storybook',
+    logo: '/assets/storybook.png',
+    color: '#363636',
+  },
+  {
+    id: 7,
+    text: 'NextJS',
+    logo: '/assets/next-js.svg',
+    color: '#cc99cb',
+  },
+  {
+    id: 8,
+    text: 'Testing Library',
+    logo: '/assets/testing-library.png',
+    color: '#0862ad',
   },
 ];

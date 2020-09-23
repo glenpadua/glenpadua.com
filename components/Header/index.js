@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Logo from 'components/Logo';
 import MobileNav, { NavItem } from './MobileNav';
@@ -35,13 +36,19 @@ const MainNav = styled.ul`
 `;
 
 const Header = () => {
+  const router = useRouter();
   return (
     <Wrapper>
       <Logo size="small" />
       <MobileNav items={menuItems} />
       <MainNav>
         {menuItems.map(item => (
-          <NavItem key={item.name} name={item.name} url={item.url} />
+          <NavItem
+            key={item.name}
+            name={item.name}
+            url={item.url}
+            isActive={item.url === router.pathname}
+          />
         ))}
       </MainNav>
     </Wrapper>
