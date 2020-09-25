@@ -183,12 +183,65 @@ export const frontendCards = [
     id: 7,
     text: 'NextJS',
     logo: '/assets/next-js.svg',
-    color: '#cc99cb',
+    color: '#f19b00',
   },
   {
     id: 8,
     text: 'Testing Library',
     logo: '/assets/testing-library.png',
     color: '#0862ad',
+  },
+];
+
+export const otherCards = [
+  {
+    id: 1,
+    text: 'GraphQL',
+    logo: '/assets/graphql.svg',
+    color: '#007bff',
+  },
+  {
+    id: 2,
+    text: 'Framer Motion',
+    logo: '/assets/framer-motion.svg',
+    color: '#363636',
+    filter:
+      'invert(100%) sepia(11%) saturate(7496%) hue-rotate(286deg) brightness(114%) contrast(110%)',
+  },
+  {
+    id: 3,
+    text: 'Wordpress',
+    logo: '/assets/wordpress.svg',
+    color: '#07263b',
+  },
+  {
+    id: 4,
+    text: 'Photoshop',
+    logo: '/assets/photoshop.svg',
+    color: '#001d26',
+  },
+  {
+    id: 5,
+    text: 'Sketch',
+    logo: '/assets/sketch.svg',
+    color: '#3b1e61',
+  },
+  {
+    id: 6,
+    text: 'NodeJS',
+    logo: '/assets/nodejs.svg',
+    color: '#333333',
+  },
+  {
+    id: 7,
+    text: 'Babel',
+    logo: '/assets/babel.svg',
+    color: '#3b3c37',
+  },
+  {
+    id: 8,
+    text: 'Lerna',
+    logo: '/assets/lerna.svg',
+    color: 'linear-gradient( 40deg, #00fff0 0%, #677ef8 50%, #cc00ff 100% )',
   },
 ];

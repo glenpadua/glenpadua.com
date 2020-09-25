@@ -6,7 +6,7 @@ import Layout from 'components/Layout';
 import PageTitle from 'components/PageTitle';
 import CardDeck from 'components/CardDeck';
 import SkillCard from 'components/SkillCard';
-import { frontendCards } from 'utils/helpers';
+import { frontendCards, otherCards } from 'utils/helpers';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -92,7 +92,8 @@ const Quote = styled.p`
 `;
 
 const Skills = () => {
-  const [selectedFrontendCard, setSelectedCard] = useState(null);
+  const [selectedFrontendCard, setSelectedFrontendCard] = useState(null);
+  const [selectedOtherCard, setSelectedOtherCard] = useState(null);
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
@@ -106,20 +107,28 @@ const Skills = () => {
       </Head>
       <Layout>
         <Wrapper>
-          <PageTitle>My Deck of Skills</PageTitle>
+          <PageTitle>
+            My Deck of Skills{' '}
+            <span role="img" aria-label="clubs">
+              ♣
+            </span>
+          </PageTitle>
           <Decks>
             <Section>
               <Deck>
                 <CardDeck
                   cards={frontendCards}
-                  onCardClick={card => setSelectedCard(card)}
+                  onCardClick={card => setSelectedFrontendCard(card)}
                 />
                 <Title>FRONTEND DECK</Title>
               </Deck>
               <Info>
                 {selectedFrontendCard && width > 992 ? (
                   <SelectedCard>
-                    <SkillCard {...selectedFrontendCard} />
+                    <SkillCard
+                      {...selectedFrontendCard}
+                      onClick={() => setSelectedFrontendCard(null)}
+                    />
                     <p>
                       Something interesting about this skill that I've done in a
                       few words that will really hit home with whoever reads it.
@@ -139,15 +148,18 @@ const Skills = () => {
             <Section>
               <Deck>
                 <CardDeck
-                  cards={frontendCards}
-                  onCardClick={card => setSelectedCard(card)}
+                  cards={otherCards}
+                  onCardClick={card => setSelectedOtherCard(card)}
                 />
                 <Title>TECH DECK</Title>
               </Deck>
               <Info>
-                {selectedFrontendCard && width > 992 ? (
+                {selectedOtherCard && width > 992 ? (
                   <SelectedCard>
-                    <SkillCard {...selectedFrontendCard} />
+                    <SkillCard
+                      {...selectedOtherCard}
+                      onClick={() => setSelectedOtherCard(null)}
+                    />
                     <p>
                       Something interesting about this skill that I've done in a
                       few words that will really hit home with whoever reads it.

@@ -43,7 +43,12 @@ export default function Home() {
       </Head>
       <Layout>
         <Wrapper>
-          <PageTitle>Hello I'm Glen!</PageTitle>
+          <PageTitle>
+            Hello I'm Glen!{' '}
+            <span role="img" aria-label="hand-wave">
+              👋
+            </span>
+          </PageTitle>
           <Cards>
             {aboutCards.map(item => (
               <CardWrapper key={item.id}>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
-const Card = styled.li`
+const Card = styled(motion.li)`
   width: 175px;
   height: 275px;
   background: ${props => props.color};
@@ -19,18 +20,15 @@ const Card = styled.li`
   }
 `;
 
-const LogoTest = styled.div`
-  width: 75px;
-  height: 75px;
-  background-image: url('${props => props.src}');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-`;
-
 const Logo = styled.img`
   width: ${props => props.width};
   height: ${props => props.height};
+
+  ${props =>
+    props.filter &&
+    css`
+      filter: ${props.filter};
+    `}
 `;
 
 const LogoTop = styled(Logo)`
@@ -98,7 +96,7 @@ const LogoWrapper = styled.div`
   justify-content: center;
 `;
 
-const SkillCard = ({ text, logo, color, onClick }) => {
+const SkillCard = ({ text, logo, color, onClick, filter, ...props }) => {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
@@ -108,9 +106,10 @@ const SkillCard = ({ text, logo, color, onClick }) => {
   const cornerLogoDimension = width < 600 ? '20px' : '30px';
   const centerLogoDimension = width < 600 ? '40px' : '80px';
   return (
-    <Card color={color} onClick={onClick}>
+    <Card color={color} onClick={onClick} {...props}>
       <LogoTop
         src={logo}
+        filter={filter}
         width={cornerLogoDimension}
         height={cornerLogoDimension}
       />
@@ -118,12 +117,14 @@ const SkillCard = ({ text, logo, color, onClick }) => {
       <LogoWrapper>
         <Logo
           src={logo}
+          filter={filter}
           width={centerLogoDimension}
           height={centerLogoDimension}
         />
       </LogoWrapper>
       <LogoBottom
         src={logo}
+        filter={filter}
         width={cornerLogoDimension}
         height={cornerLogoDimension}
       />
