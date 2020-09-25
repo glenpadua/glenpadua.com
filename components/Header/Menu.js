@@ -20,7 +20,7 @@ const Wrapper = styled(motion.ul)`
 `;
 
 const menuVariant = {
-  hidden: {
+  closed: {
     right: -1000,
     transition: {
       duration: 0.5,
@@ -30,7 +30,7 @@ const menuVariant = {
       staggerDirection: -1,
     },
   },
-  visible: {
+  open: {
     right: 0,
     transition: {
       duration: 0.5,
@@ -42,8 +42,8 @@ const menuVariant = {
 };
 
 const itemVariant = {
-  hidden: { y: 20, opacity: 0 },
-  visible: { y: 0, opacity: 1 },
+  closed: { y: 20, opacity: 0 },
+  open: { y: 0, opacity: 1 },
 };
 
 const Menu = ({ items }) => {
@@ -53,9 +53,9 @@ const Menu = ({ items }) => {
   return (
     <Wrapper
       variants={menuVariant}
-      initial="hidden"
-      animate="visible"
-      exit="hidden"
+      initial="closed"
+      animate="open"
+      exit="closed"
     >
       {items.map(item => (
         <NavItem

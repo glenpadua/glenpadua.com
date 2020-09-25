@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useOnClickOutside } from 'utils/hooks';
 import Menu from './Menu';
+import MenuToggle from './MenuToggle';
 
 const Wrapper = styled.div`
   display: none;
@@ -47,57 +48,20 @@ export const NavItem = ({ name, url, isActive, ...props }) => {
   );
 };
 
-const iconCss = css`
-  font-size: 25px;
-  cursor: pointer;
-  position: absolute;
-  right: 20px;
-  top: 25px;
-  z-index: 100;
-  @keyframes showHide {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  animation: 3s ease 0s 1 showHide;
-`;
-
-const Burger = styled(FaBars)`
-  ${iconCss};
-  color: #000;
-`;
-
-const Close = styled(FaTimes)`
-  ${iconCss};
-  color: #fff;
-`;
-
 const MobileNav = ({ items }) => {
   const ref = useRef();
   const [isOpen, setOpen] = useState(false);
   useOnClickOutside(ref, () => setOpen(false));
   return (
     <Wrapper>
-      <div ref={ref}>
-        {isOpen ? (
-          <Close
-            onClick={e => {
-              setOpen(false);
-            }}
-          />
-        ) : (
-          <Burger
-            onClick={e => {
-              setOpen(true);
-            }}
-          />
-        )}
+      <motion.div
+        ref={ref}
+        initial={false}
+        animate={isOpen ? 'open' : 'closed'}
+      >
+        <MenuToggle toggle={() => setOpen(!isOpen)} />
         <AnimatePresence>{isOpen && <Menu items={items} />}</AnimatePresence>
-      </div>
+      </motion.div>
     </Wrapper>
   );
 };

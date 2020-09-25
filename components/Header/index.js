@@ -5,7 +5,7 @@ import Logo from 'components/Logo';
 import MobileNav, { NavItem } from './MobileNav';
 import { menuItems } from 'utils/helpers';
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
   width: 100%;
   display: flex;
   justify-content: space-between;
