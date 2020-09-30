@@ -44,7 +44,7 @@ export default function Home() {
       <Layout>
         <Wrapper>
           <PageTitle>
-            Hello I'm Glen!{' '}
+            Hello I'm Glen!
             <span role="img" aria-label="hand-wave">
               👋
             </span>

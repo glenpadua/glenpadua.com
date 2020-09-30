@@ -6,6 +6,10 @@ const Wrapper = styled.div`
   padding: 20px;
   max-width: 1440px;
   margin: 0 auto;
+
+  @media only screen and (min-width: 1100px) {
+    padding: 20px 40px;
+  }
 `;
 
 const Layout = props => (

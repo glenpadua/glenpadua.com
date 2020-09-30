@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { motion, useMotionValue } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { getRandomInt } from 'utils/helpers';
 import { useWindowDimensions } from 'utils/hooks';
 
