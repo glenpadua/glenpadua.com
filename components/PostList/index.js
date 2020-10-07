@@ -30,9 +30,13 @@ const Item = styled.li`
   }
 `;
 
-const PostList = () => {
+const PostList = ({ category }) => {
   const { loading, error, data } = useQuery(GET_ALL_POSTS, {
-    variables: {},
+    variables: category
+      ? {
+          where: { category },
+        }
+      : {},
   });
   if (error) return <div>Error</div>;
   if (loading) return <div>Loading...</div>;

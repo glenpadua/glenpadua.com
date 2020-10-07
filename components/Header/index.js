@@ -15,7 +15,7 @@ const Wrapper = styled.nav`
   }
 `;
 
-const MainNav = styled.ul`
+export const MainNav = styled.ul`
   list-style: none;
   color: #000;
   display: flex;
