@@ -12,6 +12,7 @@ const Wrapper = styled.ul`
   display: flex;
   width: 100%;
   justify-content: center;
+  flex-wrap: wrap;
 `;
 
 const Item = styled.li`
