@@ -1,8 +1,7 @@
 import React, { useState, useRef } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes } from 'react-icons/fa';
 import { useOnClickOutside } from 'utils/hooks';
 import Menu from './Menu';
 import MenuToggle from './MenuToggle';

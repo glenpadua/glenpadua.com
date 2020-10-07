@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Layout from 'components/Layout';
 import PageTitle from 'components/PageTitle';
 import PostList from 'components/PostList';
-import { ALL_POSTS } from 'utils/queries';
+import { GET_ALL_POSTS } from 'utils/queries';
 import { initializeApollo } from 'lib/apolloClient';
 
 const Wrapper = styled.div`
@@ -33,7 +33,7 @@ export async function getStaticProps() {
   const apolloClient = initializeApollo();
 
   await apolloClient.query({
-    query: ALL_POSTS,
+    query: GET_ALL_POSTS,
   });
 
   return {

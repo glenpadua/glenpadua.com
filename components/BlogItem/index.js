@@ -1,9 +1,10 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { hrefResolver, linkResolver } from 'prismic-configuration';
 
 const Wrapper = styled(motion.a)`
+  text-decoration: none;
   width: 100%;
   display: block;
   margin-bottom: 40px;
@@ -11,6 +12,7 @@ const Wrapper = styled(motion.a)`
   background: #fff;
   border-radius: 16px;
   cursor: pointer;
+  color: #000;
 `;
 
 const Image = styled.div`
@@ -44,19 +46,21 @@ const Preview = styled.p`
   line-height: 1.4;
 `;
 
-const BlogItem = ({ img, title, published, preview }) => (
-  <Wrapper
-    whileHover={{ scale: 1.1 }}
-    initial={{ scale: 0 }}
-    animate={{ scale: 1, transition: { duration: 0.5 } }}
-  >
-    <Image src={img} />
-    <Content>
-      <Title>{title}</Title>
-      <Published>{published}</Published>
-      <Preview>{preview}</Preview>
-    </Content>
-  </Wrapper>
+const BlogItem = ({ uid, img, title, published, preview }) => (
+  <Link as={`/blog/${uid}`} href={`/blog/[uid]`} passHref>
+    <Wrapper
+      whileHover={{ scale: 1.1 }}
+      initial={{ scale: 0 }}
+      animate={{ scale: 1, transition: { duration: 0.5 } }}
+    >
+      <Image src={img} />
+      <Content>
+        <Title>{title}</Title>
+        <Published>{published}</Published>
+        <Preview>{preview}</Preview>
+      </Content>
+    </Wrapper>
+  </Link>
 );
 
 export default BlogItem;
