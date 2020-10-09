@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   background: ${props => props.color};
   font-weight: 300;
   font-size: 0.7em;
-  padding: 4px 10px;
+  padding: 5px 10px;
   border-radius: 16px;
   display: inline;
 `;

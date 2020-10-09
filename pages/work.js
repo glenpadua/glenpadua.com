@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
 
@@ -16,6 +16,7 @@ const Portfolio = styled.div`
   display: flex;
   margin-top: 60px;
   justify-content: space-between;
+  min-height: 500px;
 `;
 
 const PortfolioItems = styled.div`
@@ -41,16 +42,16 @@ const PortfolioItems = styled.div`
 const Extra = styled.div`
   display: none;
   width: 48%;
-  box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.75);
   padding: 20px;
+  background: #fff;
 
   @media only screen and (min-width: 600px) {
     display: block;
-    background: #fff;
   }
 `;
 
 const Work = () => {
+  const [currentlyOpen, setCurrentlyOpen] = useState(0);
   return (
     <>
       <Head>
@@ -61,16 +62,20 @@ const Work = () => {
           <PageTitle>Stuff I've Done</PageTitle>
           <Portfolio>
             <PortfolioItems>
-              {portfolioItems.map(portfolio => (
-                <FolioBlock
-                  key={portfolio.id}
-                  title={portfolio.title}
-                  tags={portfolio.tags}
-                  links={portfolio.links}
-                >
-                  {portfolio.children}
-                </FolioBlock>
-              ))}
+              {portfolioItems.map(portfolio => {
+                return (
+                  (currentlyOpen === 0 || portfolio.id === currentlyOpen) && (
+                    <FolioBlock
+                      key={portfolio.id}
+                      portfolio={portfolio}
+                      currentlyOpen={currentlyOpen}
+                      setCurrentlyOpen={setCurrentlyOpen}
+                    >
+                      {portfolio.children}
+                    </FolioBlock>
+                  )
+                );
+              })}
             </PortfolioItems>
             <Extra>
               <SubHeading>My Journey so Far</SubHeading>

@@ -6,7 +6,6 @@ import Tag from 'components/Tag';
 
 const Wrapper = styled(motion.div)`
   background-color: #fff;
-  box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.75);
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -14,7 +13,7 @@ const Wrapper = styled(motion.div)`
   justify-content: center;
   align-items: center;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 
   @media only screen and (min-width: 1100px) {
     margin-right: 40px;
@@ -49,11 +48,12 @@ const InnerWrapper = styled(motion.div)`
 const Heading = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 0.3em;
 `;
 
 const Title = styled.h2`
   font-weight: 300;
-  font-size: 1.5em;
+  font-size: 1.4em;
 `;
 
 const Icon = styled.a`
@@ -84,8 +84,8 @@ const Tags = styled(motion.div)`
 `;
 
 const TagWrapper = styled.div`
-  padding: 2px;
-  padding-bottom: 4px;
+  padding: 0 3px;
+  padding-bottom: 8px;
 `;
 
 const getVariants = () => {
@@ -112,9 +112,18 @@ const getVariants = () => {
   };
 };
 
-const FolioBlock = ({ title, tags, links, children }) => {
+const FolioBlock = ({ portfolio, children, setCurrentlyOpen }) => {
   const [isOpen, setOpen] = useState(false);
 
+  const handleClick = () => {
+    setCurrentlyOpen(portfolio.id);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setCurrentlyOpen(0);
+    setOpen(false);
+  };
   return (
     <>
       {isOpen && (
@@ -122,15 +131,16 @@ const FolioBlock = ({ title, tags, links, children }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 0.5 } }}
         >
-          <Close onClick={() => setOpen(false)} />
+          <Close onClick={handleClose} />
         </motion.div>
       )}
       <Wrapper
         variants={getVariants()}
         initial={false}
         animate={isOpen ? 'open' : 'closed'}
-        onClick={() => setOpen(true)}
+        onClick={handleClick}
         isOpen={isOpen}
+        whileHover={{ scale: isOpen ? 1 : 1.1 }}
       >
         <InnerWrapper
           variants={{
@@ -143,10 +153,10 @@ const FolioBlock = ({ title, tags, links, children }) => {
           }}
         >
           <Heading>
-            <Title>{title}</Title>
-            {links &&
+            <Title>{portfolio.title}</Title>
+            {portfolio.links &&
               isOpen &&
-              links.map(link => (
+              portfolio.links.map(link => (
                 <Icon key={link.url} href={link.url} target="_blank">
                   {link.icon}
                 </Icon>
@@ -162,7 +172,7 @@ const FolioBlock = ({ title, tags, links, children }) => {
               },
             }}
           >
-            {tags.map(tag => (
+            {portfolio.tags.map(tag => (
               <TagWrapper key={tag.title}>
                 <Tag color={tag.color}>{tag.name}</Tag>
               </TagWrapper>

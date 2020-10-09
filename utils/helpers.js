@@ -142,9 +142,9 @@ export const aboutCards = [
     id: 8,
     title: 'CURRENTLY WATCHING',
     icon: <FaTv />,
-    info: <i>"JoJo's Bizzare Adventure"</i>,
+    info: <i>"Mob Psycho 100"</i>,
     color: '#f35eb7',
-    href: 'https://www.imdb.com/title/tt2359704/',
+    href: 'https://www.imdb.com/title/tt5897304/',
   },
   {
     id: 9,
