@@ -5,7 +5,9 @@ import Head from 'next/head';
 import Layout from 'components/Layout';
 import PageTitle from 'components/PageTitle';
 import FolioBlock from 'components/FolioBlock';
-import { portfolioItems, SubHeading, Para } from 'utils/portfolio';
+import Timeline from 'components/Timeline';
+import { portfolioItems } from 'utils/portfolio';
+import { timelineItems } from 'utils/timeline';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -16,7 +18,6 @@ const Portfolio = styled.div`
   display: flex;
   margin-top: 60px;
   justify-content: space-between;
-  min-height: 500px;
 `;
 
 const PortfolioItems = styled.div`
@@ -25,9 +26,11 @@ const PortfolioItems = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
+  max-height: 500px;
+  align-items: flex-start;
 
   @media only screen and (min-width: 600px) {
-    width: 48%;
+    width: 49%;
   }
 
   @media only screen and (min-width: 900px) {
@@ -41,9 +44,7 @@ const PortfolioItems = styled.div`
 
 const Extra = styled.div`
   display: none;
-  width: 48%;
-  padding: 20px;
-  background: #fff;
+  width: 49%;
 
   @media only screen and (min-width: 600px) {
     display: block;
@@ -78,26 +79,7 @@ const Work = () => {
               })}
             </PortfolioItems>
             <Extra>
-              <SubHeading>My Journey so Far</SubHeading>
-              <Para>
-                I started off my Web Developer journey in college where I built
-                websites for internal college activities.
-              </Para>
-              <Para>
-                Right after college I had a small stint as a Performance
-                Engineer for Cognizant where I tested and tuned the performance
-                of Walt Disney Parks and Resorts applications.
-              </Para>
-              <Para>
-                I left then to co-found a remote startup called Zephony where we
-                built custom web applications like CRMs and E-commerce for
-                clients all over the world. I worked as the sole Frontend
-                Developer and built SPAs using React.
-              </Para>
-              <Para>
-                I currently work as a Frontend Engineer for Synup where we build
-                and ship features to our ever growing SaaS product.
-              </Para>
+              <Timeline items={timelineItems} />
             </Extra>
           </Portfolio>
         </Wrapper>

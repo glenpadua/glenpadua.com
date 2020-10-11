@@ -28,6 +28,7 @@ const Wrapper = styled(motion.div)`
       padding: 20px;
       z-index: 100;
       cursor: initial;
+      margin-right: 0;
     `}
 `;
 
