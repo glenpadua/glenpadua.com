@@ -85,6 +85,7 @@ const Title = styled.h3`
 const Text = styled.p`
   font-weight: 300;
   font-size: 0.8em;
+  line-height: 1.4;
 `;
 
 const Date = styled.div`

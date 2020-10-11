@@ -15,6 +15,9 @@ const Wrapper = styled(motion.div)`
   padding: 0;
   margin-bottom: 30px;
 
+  @media only screen and (min-width: 400px) {
+    margin-right: 20px;
+  }
   @media only screen and (min-width: 1100px) {
     margin-right: 40px;
   }

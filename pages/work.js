@@ -15,9 +15,12 @@ const Wrapper = styled.div`
 `;
 
 const Portfolio = styled.div`
-  display: flex;
   margin-top: 60px;
-  justify-content: space-between;
+
+  @media only screen and (min-width: 900px) {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 const PortfolioItems = styled.div`
@@ -29,12 +32,9 @@ const PortfolioItems = styled.div`
   max-height: 500px;
   align-items: flex-start;
 
-  @media only screen and (min-width: 600px) {
-    width: 49%;
-  }
-
   @media only screen and (min-width: 900px) {
-    justify-content: space-around;
+    justify-content: center;
+    width: 49%;
   }
 
   @media only screen and (min-width: 1100px) {
@@ -44,9 +44,18 @@ const PortfolioItems = styled.div`
 
 const Extra = styled.div`
   display: none;
-  width: 49%;
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 500px) {
+    margin-top: 200px;
+    display: block;
+  }
+
+  @media only screen and (min-width: 730px) {
+    margin-top: 0;
+  }
+
+  @media only screen and (min-width: 900px) {
+    width: 49%;
     display: block;
   }
 `;
