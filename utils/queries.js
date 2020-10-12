@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const GET_ALL_POSTS = gql`
   query allPosts($where: WherePost) {
-    allPosts(where: $where) {
+    allPosts(where: $where, sortBy:date_DESC) {
       edges {
         node {
           title
@@ -44,12 +44,19 @@ export const GET_POST = gql`
           preview
           date
           cover_image
+          show_cover_image
           body {
             __typename
             ... on PostBodyText {
               type
               primary {
                 text
+              }
+            }
+            ... on PostBodyQuote {
+              type
+              primary {
+                quote
               }
             }
             ... on PostBodyImage_with_caption {

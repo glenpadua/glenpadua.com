@@ -4,9 +4,11 @@ import styled from 'styled-components';
 
 const Label = styled.span`
   margin-bottom: 2rem;
+  margin-top: 1rem;
   display: inline-block;
   font-style: italic;
   font-size: 1em;
+  opacity: 0.4;
 `;
 
 /**

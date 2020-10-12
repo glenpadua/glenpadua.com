@@ -5,15 +5,16 @@ import { linkResolver } from 'prismic-configuration';
 import { customLink } from 'utils/helpers';
 
 const Wrapper = styled.div`
-  font-weight: 400;
-  font-size: 1em;
+  font-weight: 300;
+  font-size: 1.15em;
   align-self: flex-start;
+  line-height: 1.5;
   p {
     margin-bottom: 2rem;
   }
 
   h2 {
-    font-size: 1.8em;
+    font-size: 2em;
     font-weight: 500;
     margin-bottom: 1rem;
   }

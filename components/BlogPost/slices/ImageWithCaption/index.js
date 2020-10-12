@@ -6,11 +6,13 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
 `;
 
 const Image = styled.img`
   max-width: 100%;
   height: auto;
+  max-height: 500px;
 `;
 
 /**

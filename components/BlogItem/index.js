@@ -31,7 +31,7 @@ const Content = styled.div`
 
 const Title = styled.h1`
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: 1.4em;
 `;
 
 const Published = styled.time`
