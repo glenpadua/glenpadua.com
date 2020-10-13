@@ -69,7 +69,12 @@ const Work = () => {
       </Head>
       <Layout>
         <Wrapper>
-          <PageTitle>Stuff I've Done</PageTitle>
+          <PageTitle>
+            Stuff I've Done{' '}
+            <span role="img" aria-label="laptop">
+              💻
+            </span>{' '}
+          </PageTitle>
           <Portfolio>
             <PortfolioItems>
               {portfolioItems.map(portfolio => {

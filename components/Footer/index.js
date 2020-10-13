@@ -38,7 +38,7 @@ const Footer = () => {
           NextJS
         </StyledLink>
         {'  '}
-        <span role="img" aria-label="heart on fire" style={{ color: 'red' }}>
+        <span role="img" aria-label="heart on fire">
           ❤️‍🔥
         </span>{' '}
         <StyledLink href="https://prismic.io/" target="_blank">

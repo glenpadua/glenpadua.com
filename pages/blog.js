@@ -49,7 +49,12 @@ const Blog = () => {
       </Head>
       <Layout>
         <Wrapper>
-          <PageTitle>Blog Posts</PageTitle>
+          <PageTitle>
+            Blog Posts{' '}
+            <span role="img" aria-label="book">
+              📖
+            </span>
+          </PageTitle>
           <Categories>
             <Nav>
               {categories.map(item => (

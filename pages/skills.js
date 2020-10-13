@@ -129,10 +129,7 @@ const Skills = () => {
                       {...selectedFrontendCard}
                       onClick={() => setSelectedFrontendCard(null)}
                     />
-                    <p>
-                      Something interesting about this skill that I've done in a
-                      few words that will really hit home with whoever reads it.
-                    </p>
+                    <p>{selectedFrontendCard.desc}</p>
                   </SelectedCard>
                 ) : (
                   <Quote>
@@ -160,10 +157,7 @@ const Skills = () => {
                       {...selectedOtherCard}
                       onClick={() => setSelectedOtherCard(null)}
                     />
-                    <p>
-                      Something interesting about this skill that I've done in a
-                      few words that will really hit home with whoever reads it.
-                    </p>
+                    <p>{selectedOtherCard.desc}</p>
                   </SelectedCard>
                 ) : (
                   <Quote>
