@@ -12,9 +12,17 @@ const Wrapper = styled.div`
   }
 `;
 
+const Info = styled.p`
+  margin-top: 10px;
+  font-size: 0.8em;
+  opacity: 0.5;
+  text-align: center;
+`;
+
 const Layout = props => (
   <Wrapper>
     <Header />
+    <Info>Note: This site is still a work in progress</Info>
     {props.children}
   </Wrapper>
 );
