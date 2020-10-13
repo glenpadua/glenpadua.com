@@ -21,7 +21,22 @@ const Wrapper = styled.div`
 `;
 
 const Categories = styled.div`
-  margin-top: 50px;
+  margin-top: 30px;
+
+  @media only screen and (min-width: 600px) {
+    margin-top: 50px;
+  }
+`;
+
+const Nav = styled(MainNav)`
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  li {
+    margin-bottom: 10px;
+  }
 `;
 
 const Blog = () => {
@@ -36,7 +51,7 @@ const Blog = () => {
         <Wrapper>
           <PageTitle>Blog Posts</PageTitle>
           <Categories>
-            <MainNav>
+            <Nav>
               {categories.map(item => (
                 <NavItem
                   key={item.name}
@@ -48,7 +63,7 @@ const Blog = () => {
                   }
                 />
               ))}
-            </MainNav>
+            </Nav>
           </Categories>
           <PostList category={category} />
         </Wrapper>

@@ -35,8 +35,12 @@ export const MainNav = styled.ul`
 `;
 
 const Logo = styled.img`
-  width: 75px;
+  width: 65px;
   height: auto;
+
+  @media only screen and (max-width: 600px) {
+    width: 40px;
+  }
 `;
 
 const Header = () => {

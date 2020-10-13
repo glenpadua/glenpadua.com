@@ -29,10 +29,10 @@ const PortfolioItems = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  max-height: 500px;
   align-items: flex-start;
 
   @media only screen and (min-width: 900px) {
+    max-height: 500px;
     justify-content: center;
     width: 49%;
   }
