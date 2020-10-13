@@ -3,7 +3,7 @@ import { RichText } from 'prismic-reactjs';
 
 const DisqusComments = ({ post, url }) => {
   console.log(url);
-  const disqusShortname = 'glenpadua-1';
+  const disqusShortname = 'glenpadua';
   const disqusConfig = {
     url: url,
     identifier: post._meta.id, // Single post id
