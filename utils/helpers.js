@@ -110,9 +110,9 @@ export const aboutCards = [
     id: 4,
     title: 'LATEST BLOG POST',
     icon: <FaBlog />,
-    info: <i>"Title of the Blog Post"</i>,
+    info: <i>"Back to School"</i>,
     color: '#acddfa',
-    link: '/blog',
+    link: '/blog/back-to-school',
   },
   {
     id: 5,
@@ -136,14 +136,14 @@ export const aboutCards = [
     icon: <FaSocks />,
     info: <i>"One small step for man, one giant hop for me"</i>,
     color: '#d9ac2a',
-    link: '/blog',
+    link: '/blog?category=amputee',
   },
   {
     id: 8,
     title: 'CURRENTLY WATCHING',
     icon: <FaTv />,
     info: <i>"Mob Psycho 100"</i>,
-    color: '#f35eb7',
+    color: '#cb2e89',
     href: 'https://www.imdb.com/title/tt5897304/',
   },
   {
@@ -152,7 +152,7 @@ export const aboutCards = [
     icon: <FaBookReader />,
     info: (
       <i style={{ fontSize: '0.9em' }}>
-        <b>"How to be a Productivity Ninja"</b> by Graham Allcot
+        <b>"Slaughterhouse-Five"</b> by Kurt Vonnegut Jr.
       </i>
     ),
     color: '#f05837',

@@ -1,5 +1,8 @@
+import Head from 'next/head';
 import styled from 'styled-components';
+
 import Header from './Header';
+import Footer from './Footer';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -20,11 +23,17 @@ const Info = styled.p`
 `;
 
 const Layout = props => (
-  <Wrapper>
-    <Header />
-    <Info>Note: This site is still a work in progress</Info>
-    {props.children}
-  </Wrapper>
+  <React.Fragment>
+    <Head>
+      <link rel="shortcut icon" href="/assets/favicon.ico" />
+    </Head>
+    <Wrapper>
+      <Header />
+      <Info>Note: This site is still a work in progress</Info>
+      {props.children}
+    </Wrapper>
+    <Footer />
+  </React.Fragment>
 );
 
 export default Layout;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import Logo from 'components/Logo';
 import MobileNav, { NavItem } from './MobileNav';
 import { menuItems } from 'utils/helpers';
 
@@ -35,11 +34,16 @@ export const MainNav = styled.ul`
   }
 `;
 
+const Logo = styled.img`
+  width: 75px;
+  height: auto;
+`;
+
 const Header = () => {
   const router = useRouter();
   return (
     <Wrapper>
-      <Logo size="small" />
+      <Logo src="/assets/logo.png" />
       <MobileNav items={menuItems} />
       <MainNav>
         {menuItems.map(item => (

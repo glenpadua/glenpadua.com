@@ -9,7 +9,7 @@
 
 /* Fix for jumping scrollbar https://aykevl.nl/2014/09/fix-jumping-scrollbar */
 html {
-  margin-left: calc(100vw - 100%);
+  overflow-y: scroll;
 }
 
 body {
