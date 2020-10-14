@@ -29,7 +29,6 @@ const Layout = props => (
     </Head>
     <Wrapper>
       <Header />
-      <Info>Note: This site is still a work in progress</Info>
       {props.children}
     </Wrapper>
     <Footer />
