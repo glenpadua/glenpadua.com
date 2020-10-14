@@ -29,7 +29,7 @@ const Logo = styled.img`
 
 const StyledLink = styled.a`
   text-decoration: none;
-  opacity: 0.6;
+  opacity: 0.9;
 
   &:hover {
     opacity: 1;

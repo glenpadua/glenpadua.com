@@ -118,9 +118,9 @@ export const aboutCards = [
     id: 5,
     title: 'LATEST SNIPPET',
     icon: <FaMicroblog />,
-    info: <i>"Title of the Snippet"</i>,
+    info: <i>"Free up space with npkill"</i>,
     color: '#f4d721',
-    link: '/snippets',
+    link: '/snippets/free-up-space-with-npkill',
   },
   {
     id: 6,
