@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const GET_ALL_POSTS = gql`
   query allPosts($where: WherePost) {
-    allPosts(where: $where, sortBy:date_DESC) {
+    allPosts(where: $where, sortBy: date_DESC) {
       edges {
         node {
           title
@@ -69,6 +69,54 @@ export const GET_POST = gql`
           }
           _meta {
             id
+            uid
+          }
+        }
+      }
+      totalCount
+    }
+  }
+`;
+
+export const GET_SNIPPETS = gql`
+  query allSnippets($uid: String) {
+    allSnippets(uid: $uid) {
+      edges {
+        node {
+          title
+          date
+          body {
+            __typename
+            ... on SnippetBodyText {
+              type
+              primary {
+                text
+              }
+            }
+            ... on SnippetBodyQuote {
+              type
+              primary {
+                quote
+              }
+            }
+          }
+          _meta {
+            id
+            uid
+          }
+        }
+      }
+      totalCount
+    }
+  }
+`;
+
+export const GET_ALL_SNIPPET_UIDS = gql`
+  query allSnippets {
+    allSnippets {
+      edges {
+        node {
+          _meta {
             uid
           }
         }

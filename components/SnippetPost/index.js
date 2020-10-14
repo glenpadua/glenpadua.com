@@ -4,8 +4,8 @@ import { RichText } from 'prismic-reactjs';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 
-import { GET_POST } from 'utils/queries';
-import SliceZone from './SliceZone';
+import { GET_SNIPPETS } from 'utils/queries';
+import SliceZone from 'components/BlogPost/SliceZone';
 import DisqusComments from 'components/DisqusComments';
 
 const Wrapper = styled.article`
@@ -21,24 +21,11 @@ const Title = styled.h1`
   text-align: center;
 `;
 
-const CoverWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-`;
-
-const Cover = styled.img`
-  max-width: 100%;
-  height: auto;
-  max-height: 450px;
-  margin-bottom: 2rem;
-`;
-
-const BlogPost = () => {
+const SnippetPost = () => {
   const router = useRouter();
   const [url, setUrl] = useState('');
   const { uid } = router.query;
-  const { loading, error, data } = useQuery(GET_POST, {
+  const { loading, error, data } = useQuery(GET_SNIPPETS, {
     variables: { uid },
   });
 
@@ -49,19 +36,14 @@ const BlogPost = () => {
 
   if (error) return <div>Error</div>;
   if (loading) return <div>Loading...</div>;
-  const post = data.allPosts.edges[0].node;
+  const snippet = data.allSnippets.edges[0].node;
   return (
     <Wrapper>
-      <Title>{RichText.asText(post.title)}</Title>
-      {post.show_cover_image && (
-        <CoverWrapper>
-          <Cover src={post.cover_image.url} />
-        </CoverWrapper>
-      )}
-      <SliceZone body={post.body} />
-      <DisqusComments url={url} post={post} />
+      <Title>{RichText.asText(snippet.title)}</Title>
+      <SliceZone body={snippet.body} />
+      <DisqusComments url={url} post={snippet} />
     </Wrapper>
   );
 };
 
-export default BlogPost;
+export default SnippetPost;

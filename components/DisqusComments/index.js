@@ -2,7 +2,6 @@ import { DiscussionEmbed } from 'disqus-react';
 import { RichText } from 'prismic-reactjs';
 
 const DisqusComments = ({ post, url }) => {
-  console.log(url);
   const disqusShortname = 'glenpadua';
   const disqusConfig = {
     url: url,

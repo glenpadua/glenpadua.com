@@ -18,6 +18,17 @@ const Wrapper = styled.div`
     font-weight: 500;
     margin-bottom: 1rem;
   }
+
+  pre {
+    font-family: monospace, Monaco;
+    font-size: 13px;
+    line-height: 24px;
+    background: #1d2230;
+    padding: 10px 12px;
+    color: #fff;
+    border-radius: 4px;
+    margin: 15px 0;
+  }
 `;
 
 /**
