@@ -142,9 +142,9 @@ export const aboutCards = [
     id: 8,
     title: 'CURRENTLY WATCHING',
     icon: <FaTv />,
-    info: <i>"Mob Psycho 100"</i>,
-    color: '#cb2e89',
-    href: 'https://www.imdb.com/title/tt5897304/',
+    info: <i>"Brooklyn Nine Nine"</i>,
+    color: '#ebdd29',
+    href: 'https://www.imdb.com/title/tt2467372/',
   },
   {
     id: 9,
@@ -152,7 +152,7 @@ export const aboutCards = [
     icon: <FaBookReader />,
     info: (
       <i style={{ fontSize: '0.9em' }}>
-        <b>"Slaughterhouse-Five"</b> by Kurt Vonnegut Jr.
+        <b>"Can't Hurt Me"</b> by David Goggins
       </i>
     ),
     color: '#f05837',

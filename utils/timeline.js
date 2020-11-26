@@ -13,7 +13,7 @@ export const timelineItems = [
   {
     title: 'Left Zephony',
     desc:
-      'Had similar goals but different opted to take different directions as co-founder so left to try new things.',
+      'Had similar goals but opted to take a different direction from my co-founder, so I left to try new things.',
     date: 'Apr 2019',
   },
   {
