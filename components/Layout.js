@@ -1,8 +1,11 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 
 import Header from './Header';
 import Footer from './Footer';
+
+import { initGA, logPageView } from 'utils/analytics';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -22,17 +25,26 @@ const Info = styled.p`
   text-align: center;
 `;
 
-const Layout = props => (
-  <React.Fragment>
-    <Head>
-      <link rel="shortcut icon" href="/assets/favicon.ico" />
-    </Head>
-    <Wrapper>
-      <Header />
-      {props.children}
-    </Wrapper>
-    <Footer />
-  </React.Fragment>
-);
+const Layout = props => {
+  useEffect(() => {
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true;
+    }
+    logPageView();
+  }, []);
+  return (
+    <React.Fragment>
+      <Head>
+        <link rel="shortcut icon" href="/assets/favicon.ico" />
+      </Head>
+      <Wrapper>
+        <Header />
+        {props.children}
+      </Wrapper>
+      <Footer />
+    </React.Fragment>
+  );
+};
 
 export default Layout;
