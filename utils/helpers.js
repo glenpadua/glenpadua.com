@@ -142,9 +142,13 @@ export const aboutCards = [
     id: 8,
     title: 'CURRENTLY WATCHING',
     icon: <FaTv />,
-    info: <i>"Brooklyn Nine Nine"</i>,
-    color: '#ebdd29',
-    href: 'https://www.imdb.com/title/tt2467372/',
+    info: (
+      <>
+        <i>"Attack on Titan (Final Season)"</i> <span>🤯</span>
+      </>
+    ),
+    color: '#391B0F',
+    href: 'https://www.imdb.com/title/tt2560140/',
   },
   {
     id: 9,
@@ -152,7 +156,7 @@ export const aboutCards = [
     icon: <FaBookReader />,
     info: (
       <i style={{ fontSize: '0.9em' }}>
-        <b>"Can't Hurt Me"</b> by David Goggins
+        <b>"The Psychology of Money"</b> by Morgan Housel
       </i>
     ),
     color: '#f05837',
