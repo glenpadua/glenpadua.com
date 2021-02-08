@@ -1,5 +1,10 @@
 export const timelineItems = [
   {
+    title: 'Joined Airbase',
+    desc: 'Part of the Growth and Reporting team. Still getting my base setup.',
+    date: 'Feb 2021',
+  },
+  {
     title: 'Contributed to wp-calypso',
     desc:
       'First significant open source contribution to Wordpress Calypso which is an SPA rewrite of Wordpress.',

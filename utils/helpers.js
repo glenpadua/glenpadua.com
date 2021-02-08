@@ -88,7 +88,7 @@ export const aboutCards = [
     icon: <FaLaptop />,
     info: (
       <i>
-        "<b>Synup</b>, not to be confused with Sign Up"
+        "<b>Airbase</b>, Spend Management done right!"
       </i>
     ),
     color: 'rgba(12, 53, 130, 0.7)',
