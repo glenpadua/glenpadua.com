@@ -1,7 +1,32 @@
 export const timelineItems = [
   {
+    title: 'Joined Remote',
+    desc:
+      'Joined remote.com and will be a part of the new Global Payroll Team!',
+    date: 'Mar 2022',
+  },
+  {
+    title: 'Essentials Offering',
+    desc:
+      'Moved to the essentials team and helped build the foundation for the free tier offering.',
+    date: 'Nov 2021',
+  },
+  {
+    title: 'Design Systems and CDD',
+    desc:
+      'Documented and presented the benefits of Component Driven Development and Design Systems to the FE team.',
+    date: 'Jul 2021',
+  },
+  {
+    title: 'Partner Dashboard',
+    desc:
+      'Built and setup the entire frontend for the Partner program dashboard.',
+    date: 'Apr 2021',
+  },
+  {
     title: 'Joined Airbase',
-    desc: 'Part of the Growth and Reporting team. Still getting my base setup.',
+    desc:
+      'Part of the Growth and Reporting team. Ready to take Airbase to new heights!',
     date: 'Feb 2021',
   },
   {

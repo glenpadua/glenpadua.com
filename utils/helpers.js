@@ -88,11 +88,11 @@ export const aboutCards = [
     icon: <FaLaptop />,
     info: (
       <i>
-        "<b>Airbase</b>, Spend Management done right!"
+        "<b>Remote</b> - Global standard for everything remote!"
       </i>
     ),
-    color: 'rgba(12, 53, 130, 0.7)',
-    link: '/work',
+    color: '#2E2989',
+    href: 'https://remote.com',
   },
   {
     id: 3,
@@ -100,7 +100,7 @@ export const aboutCards = [
     icon: <FaLaptopCode />,
     info: (
       <i>
-        "<b>Uncommon UI</b> - The Component Utopia"
+        "<b>Stumpedd</b> - For Amputees by an Amputee"
       </i>
     ),
     color: '#be9063',
@@ -144,7 +144,7 @@ export const aboutCards = [
     icon: <FaTv />,
     info: (
       <>
-        <i>"Attack on Titan (Final Season)"</i> <span>🤯</span>
+        <i>"Attack on Titan (Final Season 2)"</i> <span>🤯</span>
       </>
     ),
     color: '#391B0F',
@@ -156,7 +156,7 @@ export const aboutCards = [
     icon: <FaBookReader />,
     info: (
       <i style={{ fontSize: '0.9em' }}>
-        <b>"The Psychology of Money"</b> by Morgan Housel
+        <b>"Deep Work"</b> by Cal Newport
       </i>
     ),
     color: '#f05837',

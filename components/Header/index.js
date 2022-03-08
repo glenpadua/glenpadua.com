@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import styled from 'styled-components';
 import MobileNav, { NavItem } from './MobileNav';
 import { menuItems } from 'utils/helpers';
@@ -37,6 +38,7 @@ export const MainNav = styled.ul`
 const Logo = styled.img`
   width: 65px;
   height: auto;
+  cursor: pointer;
 
   @media only screen and (max-width: 600px) {
     width: 40px;
@@ -47,7 +49,9 @@ const Header = () => {
   const router = useRouter();
   return (
     <Wrapper>
-      <Logo src="/assets/logo.png" />
+      <Link href="/">
+        <Logo src="/assets/logo.png" />
+      </Link>
       <MobileNav items={menuItems} />
       <MainNav>
         {menuItems.map(item => (
