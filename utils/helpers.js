@@ -144,11 +144,11 @@ export const aboutCards = [
     icon: <FaTv />,
     info: (
       <>
-        <i>"Attack on Titan (Final Season 2)"</i> <span>🤯</span>
+        <i>"Moon Knight"</i> <span>🌙</span>
       </>
     ),
-    color: '#391B0F',
-    href: 'https://www.imdb.com/title/tt2560140/',
+    color: '#131313',
+    href: 'https://www.imdb.com/title/tt10234724/',
   },
   {
     id: 9,
@@ -156,7 +156,7 @@ export const aboutCards = [
     icon: <FaBookReader />,
     info: (
       <i style={{ fontSize: '0.9em' }}>
-        <b>"Deep Work"</b> by Cal Newport
+        <b>"The Stormlight Archive Series"</b> by Brandon Sanderson
       </i>
     ),
     color: '#f05837',
