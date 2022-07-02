@@ -156,11 +156,11 @@ export const aboutCards = [
     icon: <FaBookReader />,
     info: (
       <i style={{ fontSize: '0.9em' }}>
-        <b>"The Stormlight Archive Series"</b> by Brandon Sanderson
+        <b>"The Almanack of Naval Ravikant"</b> by Eric Jorgenson
       </i>
     ),
-    color: '#f05837',
-    href: 'https://www.goodreads.com/user/show/92235776-glen-padua',
+    color: '#7B7A7C',
+    href: 'https://amzn.to/3NEXICh',
   },
   // {
   //   id: 10,
