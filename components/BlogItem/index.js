@@ -7,22 +7,8 @@ const Wrapper = styled(motion.a)`
   text-decoration: none;
   width: 100%;
   display: block;
-  margin-bottom: 40px;
-  height: 380px;
-  background: #fff;
-  border-radius: 16px;
   cursor: pointer;
   color: #000;
-`;
-
-const Image = styled.div`
-  width: 100%;
-  height: 150px;
-  background: url(${props => props.src});
-  background-repeat: no-repeat;
-  background-position: centre;
-  background-size: cover;
-  border-radius: 16px 16px 0 0;
 `;
 
 const Content = styled.div`
@@ -48,12 +34,7 @@ const Preview = styled.p`
 
 const BlogItem = ({ uid, img, title, published, preview }) => (
   <Link as={`/blog/${uid}`} href={`/blog/[uid]`} passHref>
-    <Wrapper
-      whileHover={{ scale: 1.1 }}
-      initial={{ scale: 0 }}
-      animate={{ scale: 1, transition: { duration: 0.5 } }}
-    >
-      <Image src={img} />
+    <Wrapper whileHover={{ x: 10 }}>
       <Content>
         <Title>{title}</Title>
         <Published>{published}</Published>

@@ -58,9 +58,9 @@ export const categories = [
     url: '/blog',
   },
   {
-    name: 'Tech',
-    category: 'tech',
-    url: '/blog?category=tech',
+    name: 'Work',
+    category: 'work',
+    url: '/blog?category=work',
   },
   {
     name: 'Chronicles of an Amputee',
@@ -110,16 +110,16 @@ export const aboutCards = [
     id: 4,
     title: 'LATEST BLOG POST',
     icon: <FaBlog />,
-    info: <i>"Back to School"</i>,
-    color: '#acddfa',
-    link: '/blog/back-to-school',
+    info: <i>"Do you have an ideal dream job?"</i>,
+    color: '#99CCFF',
+    link: '/blog/do-you-have-an-ideal-dream-job',
   },
   {
     id: 5,
     title: 'LATEST SNIPPET',
     icon: <FaMicroblog />,
     info: <i>"Free up space with npkill"</i>,
-    color: '#f4d721',
+    color: '#FFCC00',
     link: '/snippets/free-up-space-with-npkill',
   },
   {

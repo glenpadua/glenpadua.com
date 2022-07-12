@@ -17,17 +17,8 @@ const Wrapper = styled.ul`
 
 const Item = styled.li`
   width: 100%;
-  margin: 20px 0;
-
-  @media only screen and (min-width: 600px) {
-    margin: 20px;
-    max-width: 300px;
-  }
-
-  @media only screen and (min-width: 992px) {
-    max-width: 300px;
-    margin: 20px 30px;
-  }
+  margin: 10px 0;
+  max-width: 800px;
 `;
 
 const PostList = ({ category }) => {
