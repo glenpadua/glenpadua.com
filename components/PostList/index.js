@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import styled from 'styled-components';
-import { RichText } from 'prismic-reactjs';
+import * as prismicH from '@prismicio/helpers';
 import { format } from 'date-fns';
 
 import { GET_ALL_POSTS } from 'utils/queries';
@@ -35,9 +35,9 @@ const PostList = ({ category }) => {
   return (
     <Wrapper>
       {allPosts.edges.map(post => {
-        const title = RichText.asText(post.node.title);
+        const title = prismicH.asText(post.node.title);
         const published = format(new Date(post.node.date), 'MMM d, yyyy');
-        const preview = RichText.asText(post.node.preview);
+        const preview = prismicH.asText(post.node.preview);
         const image = post.node.cover_image.url;
         const uid = post.node._meta.uid;
         return (

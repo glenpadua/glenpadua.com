@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { RichText } from 'prismic-reactjs';
+import * as prismicH from '@prismicio/helpers';
 
 import SliceZone from 'components/BlogPost/SliceZone';
 
@@ -37,7 +37,7 @@ const Snippet = ({ uid, title, published, body, truncate }) => {
         <Published>{published}</Published>
         <Content>
           {truncate ? (
-            `${RichText.asText(body[0].primary.text).substring(0, truncate)}...`
+            `${prismicH.asText(body[0].primary.text).substring(0, truncate)}...`
           ) : (
             <SliceZone body={body} />
           )}

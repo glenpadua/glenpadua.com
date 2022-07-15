@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { RichText } from 'prismic-reactjs';
+import { PrismicRichText } from '@prismicio/react';
 import { linkResolver } from 'prismic-configuration';
 import { customLink } from 'utils/helpers';
 
@@ -55,10 +55,10 @@ const Wrapper = styled.div`
  */
 const Text = ({ slice }) => (
   <Wrapper>
-    <RichText
-      render={slice.primary.text}
+    <PrismicRichText
+      field={slice.primary.text}
       linkResolver={linkResolver}
-      serializeHyperlink={customLink}
+      // serializeHyperlink={customLink}
     />
   </Wrapper>
 );

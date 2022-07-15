@@ -34,7 +34,7 @@ const Layout = props => {
     logPageView();
   }, []);
   return (
-    <React.Fragment>
+    <>
       <Head>
         <link rel="shortcut icon" href="/assets/favicon.ico" />
       </Head>
@@ -43,7 +43,7 @@ const Layout = props => {
         {props.children}
       </Wrapper>
       <Footer />
-    </React.Fragment>
+    </>
   );
 };
 

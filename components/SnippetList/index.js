@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import styled from 'styled-components';
-import { RichText } from 'prismic-reactjs';
+import * as prismicH from '@prismicio/helpers';
 import { format } from 'date-fns';
 
 import { GET_SNIPPETS } from 'utils/queries';
@@ -28,7 +28,7 @@ const SnippetList = () => {
   return (
     <Wrapper>
       {allSnippets.edges.map(snippet => {
-        const title = RichText.asText(snippet.node.title);
+        const title = prismicH.asText(snippet.node.title);
         const published = format(new Date(snippet.node.date), 'MMM d, yyyy');
         const body = snippet.node.body;
         const uid = snippet.node._meta.uid;

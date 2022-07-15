@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { RichText } from 'prismic-reactjs';
+import { PrismicText } from '@prismicio/react';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 
@@ -39,7 +39,9 @@ const SnippetPost = () => {
   const snippet = data.allSnippets.edges[0].node;
   return (
     <Wrapper>
-      <Title>{RichText.asText(snippet.title)}</Title>
+      <Title>
+        <PrismicText field={snippet.title} />
+      </Title>
       <SliceZone body={snippet.body} />
       <DisqusComments url={url} post={snippet} />
     </Wrapper>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { RichText } from 'prismic-reactjs';
+import { PrismicText } from '@prismicio/react';
+
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 
@@ -52,7 +53,9 @@ const BlogPost = () => {
   const post = data.allPosts.edges[0].node;
   return (
     <Wrapper>
-      <Title>{RichText.asText(post.title)}</Title>
+      <Title>
+        <PrismicText field={post.title} />
+      </Title>
       {post.show_cover_image && (
         <CoverWrapper>
           <Cover src={post.cover_image.url} />
