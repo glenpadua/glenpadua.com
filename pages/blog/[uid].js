@@ -22,7 +22,7 @@ export default function Post({ post }) {
       </Head>
       <Layout>
         <Wrapper>
-          <BlogPost post={post.data} />
+          <BlogPost post={post} />
         </Wrapper>
       </Layout>
     </React.Fragment>
@@ -33,8 +33,8 @@ export async function getStaticPaths() {
   const client = createClient();
   const posts = await client.getAllByType('post');
   return {
-    paths: posts.map(post => prismicH.asLink(post, linkResolver)),
-    fallback: true,
+    paths: posts.map(post => prismicH.asLink(post)),
+    fallback: false,
   };
 }
 

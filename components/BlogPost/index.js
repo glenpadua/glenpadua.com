@@ -34,7 +34,7 @@ const Cover = styled.img`
 
 const BlogPost = ({ post }) => {
   const [url, setUrl] = useState('');
-
+  const postData = post.data;
   useEffect(() => {
     // window is accessible here.
     setUrl(window.location.href);
@@ -43,15 +43,15 @@ const BlogPost = ({ post }) => {
   return (
     <Wrapper>
       <Title>
-        <PrismicText field={post.title} />
+        <PrismicText field={postData.title} />
       </Title>
-      {post.show_cover_image && (
+      {postData.show_cover_image && (
         <CoverWrapper>
-          <Cover src={post.cover_image.url} />
+          <Cover src={postData.cover_image.url} />
         </CoverWrapper>
       )}
-      <SliceZone body={post.body} />
-      <DisqusComments url={url} post={post} />
+      <SliceZone body={postData.body} />
+      <DisqusComments url={url} post={postData} />
     </Wrapper>
   );
 };

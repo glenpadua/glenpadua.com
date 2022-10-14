@@ -10,8 +10,6 @@ export function linkResolver(doc) {
   switch (doc.type) {
     case 'post':
       return `/blog/${doc.uid}`;
-    case 'snippet':
-      return `/snippets/${doc.uid}`;
     default:
       return '/';
   }
@@ -21,10 +19,6 @@ const routes = [
   {
     type: 'post',
     path: '/blog/:uid',
-  },
-  {
-    type: 'snippet',
-    path: '/snippets/:uid',
   },
 ];
 
