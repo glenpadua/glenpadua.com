@@ -10,19 +10,6 @@ import {
   FaMicroblog,
   FaSpotify,
 } from 'react-icons/fa';
-import Link from 'next/link';
-// import { linkResolver, hrefResolver } from 'prismic-configuration';
-
-// Helper function to convert Prismic Rich Text links to Next/Link components
-// export const customLink = (type, element, content, children, index) => (
-//   <Link
-//     key={index}
-//     href={hrefResolver(element.data)}
-//     as={linkResolver(element.data)}
-//   >
-//     <a>{content}</a>
-//   </Link>
-// );
 
 export function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -140,11 +127,11 @@ export const aboutCards = [
     icon: <FaTv />,
     info: (
       <>
-        <i>"Moon Knight"</i> <span>🌙</span>
+        <i>"Chainsaw Man"</i> <span>🪚</span>
       </>
     ),
-    color: '#131313',
-    href: 'https://www.imdb.com/title/tt10234724/',
+    color: '#C2462F',
+    href: 'https://myanimelist.net/anime/44511/Chainsaw_Man',
   },
   {
     id: 9,
