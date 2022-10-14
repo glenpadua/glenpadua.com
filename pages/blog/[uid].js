@@ -4,7 +4,7 @@ import Head from 'next/head';
 
 import Layout from 'components/Layout';
 import BlogPost from 'components/BlogPost';
-import { createClient, linkResolver } from '../../prismicio';
+import { createClient } from '../../prismicio';
 import * as prismicH from '@prismicio/helpers';
 
 const Wrapper = styled.div`
