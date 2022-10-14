@@ -6,7 +6,7 @@ import { Text, Quote, ImageWithCaption } from './slices';
  */
 const SliceZone = ({ body }) =>
   body.map((slice, index) => {
-    switch (slice.type) {
+    switch (slice.slice_type) {
       case 'image_with_caption':
         return <ImageWithCaption slice={slice} key={`slice-${index}`} />;
       case 'quote':

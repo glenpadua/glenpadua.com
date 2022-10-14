@@ -6,11 +6,10 @@ import Head from 'next/head';
 import Layout from 'components/Layout';
 import PageTitle from 'components/PageTitle';
 import PostList from 'components/PostList';
-import { GET_ALL_POSTS } from 'utils/queries';
-import { initializeApollo } from 'lib/apolloClient';
 import { MainNav } from 'components/Header';
 import { NavItem } from 'components/Header/MobileNav';
 import { categories } from 'utils/helpers';
+import { createClient } from 'prismicio';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -39,9 +38,10 @@ const Nav = styled(MainNav)`
   }
 `;
 
-const Blog = () => {
+const Blog = ({ posts }) => {
   const router = useRouter();
   const { category } = router.query;
+
   return (
     <React.Fragment>
       <Head>
@@ -70,25 +70,21 @@ const Blog = () => {
               ))}
             </Nav>
           </Categories>
-          <PostList category={category} />
+          <PostList posts={posts} category={category} />
         </Wrapper>
       </Layout>
     </React.Fragment>
   );
 };
 
-export async function getStaticProps({ params }) {
-  const apolloClient = initializeApollo();
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData });
 
-  await apolloClient.query({
-    query: GET_ALL_POSTS,
-  });
-
+  const posts = await client.getAllByType('post');
   return {
     props: {
-      initialApolloState: apolloClient.cache.extract(),
+      posts,
     },
-    revalidate: 1,
   };
 }
 

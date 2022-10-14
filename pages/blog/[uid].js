@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import Head from 'next/head';
 
 import Layout from 'components/Layout';
-import { GET_ALL_POST_UIDS, GET_POST } from 'utils/queries';
-import { initializeApollo } from 'lib/apolloClient';
 import BlogPost from 'components/BlogPost';
+import { createClient, linkResolver } from '../../prismicio';
+import * as prismicH from '@prismicio/helpers';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-export default function Post() {
+export default function Post({ post }) {
   return (
     <React.Fragment>
       <Head>
@@ -22,7 +22,7 @@ export default function Post() {
       </Head>
       <Layout>
         <Wrapper>
-          <BlogPost />
+          <BlogPost post={post.data} />
         </Wrapper>
       </Layout>
     </React.Fragment>
@@ -30,35 +30,20 @@ export default function Post() {
 }
 
 export async function getStaticPaths() {
-  const apolloClient = initializeApollo();
-
-  const { data } = await apolloClient.query({
-    query: GET_ALL_POST_UIDS,
-  });
-
+  const client = createClient();
+  const posts = await client.getAllByType('post');
   return {
-    paths: data.allPosts.edges.map(item => ({
-      params: { uid: item.node._meta.uid },
-    })),
+    paths: posts.map(post => prismicH.asLink(post, linkResolver)),
     fallback: true,
   };
 }
 
-export async function getStaticProps({ params }) {
-  const apolloClient = initializeApollo();
-  const { uid } = params;
+export async function getStaticProps({ params, previewData }) {
+  const client = createClient({ previewData });
 
-  await apolloClient.query({
-    query: GET_POST,
-    variables: {
-      uid,
-    },
-  });
+  const post = await client.getByUID('post', params.uid);
 
   return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-    },
-    revalidate: 1,
+    props: { post },
   };
 }

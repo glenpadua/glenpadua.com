@@ -5,7 +5,7 @@ const DisqusComments = ({ post, url }) => {
   const disqusShortname = 'glenpadua';
   const disqusConfig = {
     url: url,
-    identifier: post._meta.id, // Single post id
+    identifier: post.id, // Single post id
     title: prismicH.asText(post.title), // Single post title
   };
   return (

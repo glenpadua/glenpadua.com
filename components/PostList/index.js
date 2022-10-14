@@ -1,9 +1,7 @@
-import { useQuery } from '@apollo/client';
 import styled from 'styled-components';
 import * as prismicH from '@prismicio/helpers';
 import { format } from 'date-fns';
 
-import { GET_ALL_POSTS } from 'utils/queries';
 import BlogItem from 'components/BlogItem';
 
 const Wrapper = styled.ul`
@@ -21,27 +19,22 @@ const Item = styled.li`
   max-width: 800px;
 `;
 
-const PostList = ({ category }) => {
-  const { loading, error, data } = useQuery(GET_ALL_POSTS, {
-    variables: category
-      ? {
-          where: { category },
-        }
-      : {},
-  });
-  if (error) return <div>Error</div>;
-  if (loading) return <div>Loading...</div>;
-  const { allPosts } = data;
+const PostList = ({ posts, category }) => {
+  const postsByCategory = category
+    ? posts.filter(post => post.data.category === category)
+    : posts;
   return (
     <Wrapper>
-      {allPosts.edges.map(post => {
-        const title = prismicH.asText(post.node.title);
-        const published = format(new Date(post.node.date), 'MMM d, yyyy');
-        const preview = prismicH.asText(post.node.preview);
-        const image = post.node.cover_image.url;
-        const uid = post.node._meta.uid;
+      {postsByCategory.map(({ data, id, uid, first_publication_date }) => {
+        const title = prismicH.asText(data.title);
+        const published = format(
+          new Date(first_publication_date),
+          'MMM d, yyyy'
+        );
+        const preview = prismicH.asText(data.preview);
+        const image = data.cover_image.url;
         return (
-          <Item key={post.node._meta.id}>
+          <Item key={id}>
             <BlogItem
               uid={uid}
               img={image}

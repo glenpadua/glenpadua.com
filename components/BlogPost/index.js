@@ -2,11 +2,8 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { PrismicText } from '@prismicio/react';
 
-import { useQuery } from '@apollo/client';
-import { useRouter } from 'next/router';
-
-import { GET_POST } from 'utils/queries';
 import SliceZone from './SliceZone';
+
 import DisqusComments from 'components/DisqusComments';
 
 const Wrapper = styled.article`
@@ -35,22 +32,14 @@ const Cover = styled.img`
   margin-bottom: 2rem;
 `;
 
-const BlogPost = () => {
-  const router = useRouter();
+const BlogPost = ({ post }) => {
   const [url, setUrl] = useState('');
-  const { uid } = router.query;
-  const { loading, error, data } = useQuery(GET_POST, {
-    variables: { uid },
-  });
 
   useEffect(() => {
     // window is accessible here.
     setUrl(window.location.href);
   }, []);
 
-  if (error) return <div>Error</div>;
-  if (loading) return <div>Loading...</div>;
-  const post = data.allPosts.edges[0].node;
   return (
     <Wrapper>
       <Title>
