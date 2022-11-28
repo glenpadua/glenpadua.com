@@ -88,11 +88,11 @@ export const aboutCards = [
     icon: <FaLaptopCode />,
     info: (
       <i>
-        "<b>Stumpedd</b> - For Amputees by an Amputee"
+        "<b>Networthy</b> - Track your networth easily!"
       </i>
     ),
     color: '#be9063',
-    link: '/work',
+    href: 'https://networthyapp.com/',
   },
   {
     id: 4,
