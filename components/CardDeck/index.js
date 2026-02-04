@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import styled from 'styled-components';
 import SkillCard from 'components/SkillCard';
@@ -53,7 +55,7 @@ const Wrapper = styled.ul`
 
   ${props =>
     generateNthChildrenStyles(
-      props.cards,
+      props.$cards,
       {
         translateX: 0,
         translateY: 0,
@@ -70,7 +72,7 @@ const Wrapper = styled.ul`
   @media only screen and (max-width: 600px) {
     ${props =>
       generateNthChildrenStyles(
-        props.cards,
+        props.$cards,
         {
           translateX: 0,
           translateY: 0,
@@ -87,7 +89,7 @@ const Wrapper = styled.ul`
 `;
 
 const CardDeck = ({ cards, onCardClick }) => (
-  <Wrapper cards={cards}>
+  <Wrapper $cards={cards}>
     {cards.map(card => (
       <SkillCard key={card.id} onClick={() => onCardClick(card)} {...card} />
     ))}

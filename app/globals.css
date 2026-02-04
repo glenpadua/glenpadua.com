@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap');
+@import url('https://db.onlinewebfonts.com/c/364d63e1b223eac9c5125f5df3f24cc9?family=Zapfino + Extra + LT');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: #f2f4f8;
+  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: 0.8px;
+}
+
+a {
+  text-decoration: none;
+}

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   color: #fff;
-  background: ${props => props.color};
+  background: ${props => props.$color};
   font-weight: 300;
   font-size: 0.7em;
   padding: 5px 10px;
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `;
 
 const Tag = ({ children, color = '#000' }) => (
-  <Wrapper color={color}>{children}</Wrapper>
+  <Wrapper $color={color}>{children}</Wrapper>
 );
 
 export default Tag;

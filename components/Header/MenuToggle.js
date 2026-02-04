@@ -43,7 +43,7 @@ const openCommon = {
   },
 };
 const MenuToggle = ({ toggle }) => (
-  <Button onClick={toggle}>
+  <Button type="button" onClick={toggle}>
     <Wrapper>
       <Line
         variants={{

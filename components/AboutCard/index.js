@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
@@ -11,7 +13,7 @@ const Overlay = styled.div`
   height: ${dimension};
   position: absolute;
   border-radius: 50%;
-  background: ${props => props.color};
+  background: ${props => props.$color};
   margin: 0;
   position: absolute;
   top: 50%;
@@ -92,7 +94,7 @@ const Card = styled(motion.div)`
   position: relative;
 
   &:hover {
-    background: ${props => props.color};
+    background: ${props => props.$color};
     transform: translateY(-5px) scale(1.005) translateZ(0);
 
     ${Overlay} {
@@ -115,10 +117,10 @@ const Card = styled(motion.div)`
 
 const AboutCard = ({ title, icon, info, color, link, href }) => {
   const getAboutContent = () => (
-    <Card color={color} initial={{ scale: 0 }} animate={{ scale: 1 }}>
+    <Card $color={color}>
       <Title>{title}</Title>
-      <Overlay color={color} />
-      <Circle color={color}>
+      <Overlay $color={color} />
+      <Circle $color={color}>
         <Icon>{icon}</Icon>
       </Circle>
       <Info>{info}</Info>
@@ -126,11 +128,9 @@ const AboutCard = ({ title, icon, info, color, link, href }) => {
   );
 
   return link ? (
-    <Link href={link}>
-      <a>{getAboutContent()}</a>
-    </Link>
+    <Link href={link}>{getAboutContent()}</Link>
   ) : (
-    <a href={href} target="_blank">
+    <a href={href} target="_blank" rel="noreferrer">
       {getAboutContent()}
     </a>
   );

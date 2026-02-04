@@ -32,12 +32,11 @@ const PostList = ({ posts, category }) => {
           'MMM d, yyyy'
         );
         const preview = prismicH.asText(data.preview);
-        const image = data.cover_image.url;
+
         return (
           <Item key={id}>
             <BlogItem
               uid={uid}
-              img={image}
               title={title}
               published={published}
               preview={preview}

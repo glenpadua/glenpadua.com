@@ -12,18 +12,17 @@ const routes = [
   },
 ];
 
-// This factory function allows smooth preview setup
 export function createClient(config = {}) {
   const client = prismic.createClient(endpoint, {
     routes,
+    fetchOptions:
+      process.env.NODE_ENV === 'production'
+        ? { cache: 'force-cache', next: { tags: ['prismic'] } }
+        : { next: { revalidate: 5 } },
     ...config,
   });
 
-  enableAutoPreviews({
-    client,
-    previewData: config.previewData,
-    req: config.req,
-  });
+  enableAutoPreviews({ client });
 
   return client;
 }

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
@@ -11,14 +13,14 @@ const Wrapper = styled(motion.div)`
       left: 0;
     }
     100% {
-      top: ${props => props.top}px;
-      left: ${props => props.left}px;
+      top: ${props => props.$top}px;
+      left: ${props => props.$left}px;
     }
   }
 
   width: 120px;
   height: 120px;
-  background-color: ${props => props.color};
+  background-color: ${props => props.$color};
   border-radius: 50%;
   padding: 10px;
   display: flex;
@@ -56,9 +58,9 @@ const Particle = ({ text }) => {
   return (
     <Wrapper
       onAnimationEnd={() => console.log('I done')}
-      top={`${getNewPosition()[0]}`}
-      left={`${getNewPosition()[0]}`}
-      color={color}
+      $top={getNewPosition()[1]}
+      $left={getNewPosition()[0]}
+      $color={color}
     >
       {text || 'Text'}
     </Wrapper>

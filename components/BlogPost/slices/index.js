@@ -1,3 +1,11 @@
-export { default as Text } from './Text'
-export { default as Quote } from './Quote'
-export { default as ImageWithCaption } from './ImageWithCaption'
+import ImageWithCaption from './ImageWithCaption';
+import Quote from './Quote';
+import Text from './Text';
+
+export const components = {
+  image_with_caption: ImageWithCaption,
+  quote: Quote,
+  text: Text,
+};
+
+export { ImageWithCaption, Quote, Text };

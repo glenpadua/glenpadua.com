@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 import { FaTimes } from 'react-icons/fa';
@@ -18,12 +20,13 @@ const Wrapper = styled(motion.div)`
   @media only screen and (min-width: 400px) {
     margin-right: 20px;
   }
+
   @media only screen and (min-width: 1100px) {
     margin-right: 40px;
   }
 
   ${props =>
-    props.isOpen &&
+    props.$isOpen &&
     css`
       position: absolute;
       justify-content: start;
@@ -73,7 +76,7 @@ const Placeholder = styled.div`
   position: relative;
   border-radius: 50%;
   padding: 0;
-  display: ${props => (props.isOpen ? 'block' : 'none')};
+  display: ${props => (props.$isOpen ? 'block' : 'none')};
 
   @media only screen and (min-width: 768px) {
     width: 200px;
@@ -128,6 +131,7 @@ const FolioBlock = ({ portfolio, children, setCurrentlyOpen }) => {
     setCurrentlyOpen(0);
     setOpen(false);
   };
+
   return (
     <>
       {isOpen && (
@@ -143,7 +147,7 @@ const FolioBlock = ({ portfolio, children, setCurrentlyOpen }) => {
         initial={false}
         animate={isOpen ? 'open' : 'closed'}
         onClick={handleClick}
-        isOpen={isOpen}
+        $isOpen={isOpen}
         whileHover={{ scale: isOpen ? 1 : 1.1 }}
       >
         <InnerWrapper
@@ -161,7 +165,12 @@ const FolioBlock = ({ portfolio, children, setCurrentlyOpen }) => {
             {portfolio.links &&
               isOpen &&
               portfolio.links.map(link => (
-                <Icon key={link.url} href={link.url} target="_blank">
+                <Icon
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {link.icon}
                 </Icon>
               ))}
@@ -176,8 +185,8 @@ const FolioBlock = ({ portfolio, children, setCurrentlyOpen }) => {
               },
             }}
           >
-            {portfolio.tags.map(tag => (
-              <TagWrapper key={tag.title}>
+            {portfolio.tags.map((tag, index) => (
+              <TagWrapper key={`${tag.name}-${index}`}>
                 <Tag color={tag.color}>{tag.name}</Tag>
               </TagWrapper>
             ))}
@@ -186,7 +195,7 @@ const FolioBlock = ({ portfolio, children, setCurrentlyOpen }) => {
         {isOpen && children}
       </Wrapper>
       {/* To take up the space when it's open */}
-      <Placeholder isOpen={isOpen} />
+      <Placeholder $isOpen={isOpen} />
     </>
   );
 };

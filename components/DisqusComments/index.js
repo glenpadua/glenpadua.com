@@ -1,13 +1,16 @@
+'use client';
+
 import { DiscussionEmbed } from 'disqus-react';
 import * as prismicH from '@prismicio/helpers';
 
 const DisqusComments = ({ post, url }) => {
   const disqusShortname = 'glenpadua';
   const disqusConfig = {
-    url: url,
+    url,
     identifier: post.id, // Single post id
-    title: prismicH.asText(post.title), // Single post title
+    title: prismicH.asText(post.data?.title), // Single post title
   };
+
   return (
     <div>
       <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />

@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { PrismicText } from '@prismicio/react';
@@ -35,8 +37,8 @@ const Cover = styled.img`
 const BlogPost = ({ post }) => {
   const [url, setUrl] = useState('');
   const postData = post.data;
+
   useEffect(() => {
-    // window is accessible here.
     setUrl(window.location.href);
   }, []);
 
@@ -45,13 +47,13 @@ const BlogPost = ({ post }) => {
       <Title>
         <PrismicText field={postData.title} />
       </Title>
-      {postData.show_cover_image && (
+      {postData.show_cover_image && postData.cover_image?.url && (
         <CoverWrapper>
           <Cover src={postData.cover_image.url} />
         </CoverWrapper>
       )}
       <SliceZone body={postData.body} />
-      <DisqusComments url={url} post={postData} />
+      <DisqusComments url={url} post={post} />
     </Wrapper>
   );
 };

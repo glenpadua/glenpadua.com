@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { NavItem } from './MobileNav';
@@ -48,7 +50,7 @@ const itemVariant = {
 
 const Menu = ({ items }) => {
   useLockBodyScroll();
-  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <Wrapper
@@ -63,7 +65,7 @@ const Menu = ({ items }) => {
           key={item.name}
           url={item.url}
           name={item.name}
-          isActive={item.url === router.pathname}
+          isActive={item.url === pathname}
         />
       ))}
     </Wrapper>

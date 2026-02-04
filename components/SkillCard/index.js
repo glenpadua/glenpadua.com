@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -5,7 +7,7 @@ import { motion } from 'framer-motion';
 const Card = styled(motion.li)`
   width: 175px;
   height: 275px;
-  background: ${props => props.color};
+  background: ${props => props.$color};
   border-radius: 10px;
   list-style: none;
   position: relative;
@@ -21,13 +23,13 @@ const Card = styled(motion.li)`
 `;
 
 const Logo = styled.img`
-  width: ${props => props.width};
-  height: ${props => props.height};
+  width: ${props => props.$width};
+  height: ${props => props.$height};
 
   ${props =>
-    props.filter &&
+    props.$filter &&
     css`
-      filter: ${props.filter};
+      filter: ${props.$filter};
     `}
 `;
 
@@ -106,27 +108,27 @@ const SkillCard = ({ text, logo, color, onClick, filter, ...props }) => {
   const cornerLogoDimension = width < 600 ? '20px' : '30px';
   const centerLogoDimension = width < 600 ? '40px' : '80px';
   return (
-    <Card color={color} onClick={onClick} {...props}>
+    <Card $color={color} onClick={onClick} {...props}>
       <LogoTop
         src={logo}
-        filter={filter}
-        width={cornerLogoDimension}
-        height={cornerLogoDimension}
+        $filter={filter}
+        $width={cornerLogoDimension}
+        $height={cornerLogoDimension}
       />
       <TextTop>{text}</TextTop>
       <LogoWrapper>
         <Logo
           src={logo}
-          filter={filter}
-          width={centerLogoDimension}
-          height={centerLogoDimension}
+          $filter={filter}
+          $width={centerLogoDimension}
+          $height={centerLogoDimension}
         />
       </LogoWrapper>
       <LogoBottom
         src={logo}
-        filter={filter}
-        width={cornerLogoDimension}
-        height={cornerLogoDimension}
+        $filter={filter}
+        $width={cornerLogoDimension}
+        $height={cornerLogoDimension}
       />
       <TextBottom>{text}</TextBottom>
     </Card>

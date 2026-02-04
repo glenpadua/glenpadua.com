@@ -52,7 +52,7 @@ const IconLink = styled.a`
 
 const Icon = ({ url, icon }) => {
   return (
-    <IconLink href={url} target="_blank">
+    <IconLink href={url} target="_blank" rel="noreferrer">
       {icon}
     </IconLink>
   );
@@ -81,12 +81,13 @@ const Footer = () => {
   return (
     <Wrapper>
       <Text>
-        <Logo src="/assets/logo.png" />
+        <Logo src="/assets/logo.png" alt="Glen Padua logo" />
         <div>
           Built with{' '}
           <StyledLink
             href="https://nextjs.org/"
             target="_blank"
+            rel="noreferrer"
             style={{ color: '#0077fe' }}
           >
             NextJS
@@ -95,6 +96,7 @@ const Footer = () => {
           <StyledLink
             href="https://prismic.io/"
             target="_blank"
+            rel="noreferrer"
             style={{ color: '#5163ba' }}
           >
             Prismic

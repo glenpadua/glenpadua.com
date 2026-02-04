@@ -1,21 +1,9 @@
 import React from 'react';
-import { Text, Quote, ImageWithCaption } from './slices';
+import { SliceZone as PrismicSliceZone } from '@prismicio/react';
+import { components } from './slices';
 
-/**
- * Post slice zone component
- */
-const SliceZone = ({ body }) =>
-  body.map((slice, index) => {
-    switch (slice.slice_type) {
-      case 'image_with_caption':
-        return <ImageWithCaption slice={slice} key={`slice-${index}`} />;
-      case 'quote':
-        return <Quote slice={slice} key={`slice-${index}`} />;
-      case 'text':
-        return <Text slice={slice} key={`slice-${index}`} />;
-      default:
-        return null;
-    }
-  });
+const SliceZone = ({ body = [] }) => (
+  <PrismicSliceZone slices={body} components={components} />
+);
 
 export default SliceZone;

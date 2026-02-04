@@ -24,7 +24,7 @@ const Item = styled.div`
   background-color: inherit;
   width: 50%;
   display: flex;
-  left: ${props => (props.left ? '0' : '50%')};
+  left: ${props => (props.$left ? '0' : '50%')};
 
   &::after {
     content: '';
@@ -38,7 +38,7 @@ const Item = styled.div`
     border-radius: 50%;
     z-index: 1;
     ${props =>
-      props.right &&
+      props.$right &&
       css`
         left: -16px;
       `}
@@ -53,13 +53,13 @@ const Item = styled.div`
     z-index: 1;
     border: medium solid white;
     border-width: ${props =>
-      props.left ? '10px 0 10px 10px' : '10px 10px 10px 0'};
+      props.$left ? '10px 0 10px 10px' : '10px 10px 10px 0'};
     border-color: ${props =>
-      props.left
+      props.$left
         ? 'transparent transparent transparent white'
         : 'transparent white transparent transparent'};
     ${props =>
-      props.left
+      props.$left
         ? css`
             right: 30px;
           `
@@ -92,7 +92,7 @@ const Date = styled.div`
   position: absolute;
   top: 24px;
   ${props =>
-    props.left
+    props.$left
       ? css`
           left: -95px;
         `
@@ -106,17 +106,15 @@ const Date = styled.div`
 const Timeline = ({ items }) => (
   <Wrapper>
     {items.map((item, i) => (
-      <React.Fragment>
-        <Item left={i % 2 === 0} right={i % 2 !== 0}>
-          <Content>
-            <Title>{item.title}</Title>
-            <Text>{item.desc}</Text>
-          </Content>
-          <Date right={i % 2 === 0} left={i % 2 !== 0}>
-            {item.date}
-          </Date>
-        </Item>
-      </React.Fragment>
+      <Item key={`${item.title}-${item.date}-${i}`} $left={i % 2 === 0} $right={i % 2 !== 0}>
+        <Content>
+          <Title>{item.title}</Title>
+          <Text>{item.desc}</Text>
+        </Content>
+        <Date $right={i % 2 === 0} $left={i % 2 !== 0}>
+          {item.date}
+        </Date>
+      </Item>
     ))}
   </Wrapper>
 );

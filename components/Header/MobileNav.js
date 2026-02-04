@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
@@ -24,7 +26,7 @@ const Item = styled(motion.li)`
     margin-top: 5px;
     content: '';
     height: 2px;
-    width: ${props => (props.isActive ? '100%' : '0')};
+    width: ${props => (props.$isActive ? '100%' : '0')};
     background-color: #fff;
   }
 
@@ -33,16 +35,20 @@ const Item = styled(motion.li)`
   }
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   font-size: 1.1em;
+  color: inherit;
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
 `;
 
 export const NavItem = ({ name, url, isActive, ...props }) => {
   return (
-    <Item isActive={isActive} {...props}>
-      <Link href={url}>
-        <StyledLink>{name}</StyledLink>
-      </Link>
+    <Item $isActive={isActive} {...props}>
+      <StyledLink href={url}>{name}</StyledLink>
     </Item>
   );
 };

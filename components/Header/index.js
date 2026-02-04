@@ -1,8 +1,11 @@
+'use client';
+
 import React from 'react';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import styled from 'styled-components';
 import MobileNav, { NavItem } from './MobileNav';
+import { MainNav } from './styles';
 import { menuItems } from 'utils/helpers';
 
 const Wrapper = styled.nav`
@@ -12,26 +15,6 @@ const Wrapper = styled.nav`
 
   @media only screen and (min-width: 600px) {
     align-items: center;
-  }
-`;
-
-export const MainNav = styled.ul`
-  list-style: none;
-  color: #000;
-  display: flex;
-  font-size: 1em;
-
-  @media only screen and (max-width: 600px) {
-    display: none;
-  }
-
-  li {
-    margin-right: 30px;
-    margin-bottom: 0px;
-
-    &:after {
-      background-color: #000;
-    }
   }
 `;
 
@@ -46,11 +29,12 @@ const Logo = styled.img`
 `;
 
 const Header = () => {
-  const router = useRouter();
+  const pathname = usePathname();
+
   return (
     <Wrapper>
       <Link href="/">
-        <Logo src="/assets/logo.png" />
+        <Logo src="/assets/logo.png" alt="Glen Padua logo" />
       </Link>
       <MobileNav items={menuItems} />
       <MainNav>
@@ -59,7 +43,7 @@ const Header = () => {
             key={item.name}
             name={item.name}
             url={item.url}
-            isActive={item.url === router.pathname}
+            isActive={item.url === pathname}
           />
         ))}
       </MainNav>
