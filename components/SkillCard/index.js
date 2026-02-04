@@ -1,137 +1,49 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 
-const Card = styled(motion.li)`
-  width: 175px;
-  height: 275px;
-  background: ${props => props.$color};
-  border-radius: 10px;
-  list-style: none;
-  position: relative;
-
-  @media only screen and (max-width: 600px) {
-    width: 100px;
-    height: 170px;
-  }
-
-  @media only screen and (min-width: 992px) {
-    cursor: pointer;
-  }
-`;
-
-const Logo = styled.img`
-  width: ${props => props.$width};
-  height: ${props => props.$height};
-
-  ${props =>
-    props.$filter &&
-    css`
-      filter: ${props.$filter};
-    `}
-`;
-
-const LogoTop = styled(Logo)`
-  position: absolute;
-  top: 10px;
-  left: 10px;
-
-  @media only screen and (max-width: 600px) {
-    left: 5px;
-  }
-`;
-
-const LogoBottom = styled(Logo)`
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-
-  @media only screen and (max-width: 600px) {
-    right: 5px;
-  }
-`;
-
-const Text = styled.div`
-  font-size: 20px;
-  color: #fff;
-  writing-mode: vertical-rl;
-  letter-spacing: 1.5px;
-
-  @media only screen and (max-width: 600px) {
-    font-size: 13px;
-    letter-spacing: 0.5px;
-  }
-`;
-
-const TextTop = styled(Text)`
-  position: absolute;
-  top: 50px;
-  left: 10px;
-
-  @media only screen and (max-width: 600px) {
-    top: 40px;
-    left: 5px;
-  }
-`;
-
-const TextBottom = styled(Text)`
-  position: absolute;
-  bottom: 50px;
-  right: 10px;
-  transform: rotate(-180deg);
-
-  @media only screen and (max-width: 600px) {
-    bottom: 40px;
-    right: 5px;
-  }
-`;
-
-const LogoWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 const SkillCard = ({ text, logo, color, onClick, filter, ...props }) => {
-  const [width, setWidth] = useState(0);
+  const cornerLogoClass = 'h-5 w-5 sm:h-[30px] sm:w-[30px]';
+  const centerLogoClass = 'h-10 w-10 sm:h-20 sm:w-20';
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
-
-  const cornerLogoDimension = width < 600 ? '20px' : '30px';
-  const centerLogoDimension = width < 600 ? '40px' : '80px';
   return (
-    <Card $color={color} onClick={onClick} {...props}>
-      <LogoTop
+    <motion.div
+      className="relative h-[170px] w-[100px] list-none rounded-[10px] sm:h-[275px] sm:w-[175px]"
+      style={{ background: color }}
+      onClick={onClick}
+      {...props}
+    >
+      <img
         src={logo}
-        $filter={filter}
-        $width={cornerLogoDimension}
-        $height={cornerLogoDimension}
+        alt={`${text} logo`}
+        className={`absolute left-[5px] top-2.5 ${cornerLogoClass}`}
+        style={filter ? { filter } : undefined}
       />
-      <TextTop>{text}</TextTop>
-      <LogoWrapper>
-        <Logo
+
+      <div className="absolute left-[5px] top-10 text-[13px] tracking-[0.5px] text-white [writing-mode:vertical-rl] sm:left-2.5 sm:top-[50px] sm:text-[20px] sm:tracking-[1.5px]">
+        {text}
+      </div>
+
+      <div className="absolute inset-0 flex items-center justify-center">
+        <img
           src={logo}
-          $filter={filter}
-          $width={centerLogoDimension}
-          $height={centerLogoDimension}
+          alt={`${text} logo`}
+          className={centerLogoClass}
+          style={filter ? { filter } : undefined}
         />
-      </LogoWrapper>
-      <LogoBottom
+      </div>
+
+      <img
         src={logo}
-        $filter={filter}
-        $width={cornerLogoDimension}
-        $height={cornerLogoDimension}
+        alt={`${text} logo`}
+        className={`absolute bottom-2.5 right-[5px] ${cornerLogoClass}`}
+        style={filter ? { filter } : undefined}
       />
-      <TextBottom>{text}</TextBottom>
-    </Card>
+
+      <div className="absolute bottom-10 right-[5px] rotate-180 text-[13px] tracking-[0.5px] text-white [writing-mode:vertical-rl] sm:bottom-[50px] sm:right-2.5 sm:text-[20px] sm:tracking-[1.5px]">
+        {text}
+      </div>
+    </motion.div>
   );
 };
 

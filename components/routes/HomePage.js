@@ -1,58 +1,30 @@
-'use client';
-
-import styled from 'styled-components';
 import Layout from 'components/Layout';
 import PageTitle from 'components/PageTitle';
 import AboutCard from 'components/AboutCard';
 import { aboutCards } from 'utils/helpers';
 
-const Wrapper = styled.div`
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-`;
-
-const Cards = styled.section`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-`;
-
-const CardWrapper = styled.div`
-  width: 100%;
-  max-width: 300px;
-  margin: 20px 0;
-
-  @media only screen and (min-width: 600px) {
-    margin: 20px;
-  }
-
-  @media only screen and (min-width: 992px) {
-    max-width: 350px;
-    margin: 20px;
-  }
-`;
-
 export default function HomePage() {
   return (
     <Layout>
-      <Wrapper>
+      <div className="mt-[30px] w-full text-center">
         <PageTitle>
           Hello I'm Glen!
           <span role="img" aria-label="hand-wave">
             👋
           </span>
         </PageTitle>
-        <Cards>
+
+        <section className="mt-5 flex w-full flex-wrap justify-center">
           {aboutCards.map(item => (
-            <CardWrapper key={item.id}>
+            <div
+              key={item.id}
+              className="my-5 w-full max-w-[300px] min-[600px]:mx-5 lg:max-w-[350px]"
+            >
               <AboutCard {...item} />
-            </CardWrapper>
+            </div>
           ))}
-        </Cards>
-      </Wrapper>
+        </section>
+      </div>
     </Layout>
   );
 }

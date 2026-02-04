@@ -1,69 +1,34 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { getRandomInt } from 'utils/helpers';
-import { useWindowDimensions } from 'utils/hooks';
-
-const Wrapper = styled(motion.div)`
-  @keyframes move {
-    0% {
-      top: 0;
-      left: 0;
-    }
-    100% {
-      top: ${props => props.$top}px;
-      left: ${props => props.$left}px;
-    }
-  }
-
-  width: 120px;
-  height: 120px;
-  background-color: ${props => props.$color};
-  border-radius: 50%;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  position: absolute;
-  top: 200px;
-  left: 200px;
-  animation: 1s ease-out 0s 1 move;
-
-  &:nth-child(even) {
-    margin-top: 40px;
-  }
-`;
 
 const Particle = ({ text }) => {
-  const [color, setColor] = useState('');
-  const { height, width } = useWindowDimensions();
-
-  const getNewPosition = () => {
-    var newHeight = Math.floor(Math.random() * height - 100);
-    var newWidth = Math.floor(Math.random() * width - 100);
-    return [newWidth, newHeight];
-  };
+  const [color, setColor] = useState('rgb(0, 0, 0)');
+  const [target, setTarget] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    setColor(`rgb(
-        ${getRandomInt(255)},
-        ${getRandomInt(255)},
-        ${getRandomInt(255)}
-      )`);
+    setColor(`rgb(${getRandomInt(255)}, ${getRandomInt(255)}, ${getRandomInt(255)})`);
+
+    const width = Math.max(window.innerWidth - 120, 0);
+    const height = Math.max(window.innerHeight - 120, 0);
+    setTarget({
+      x: getRandomInt(width),
+      y: getRandomInt(height),
+    });
   }, []);
 
   return (
-    <Wrapper
-      onAnimationEnd={() => console.log('I done')}
-      $top={getNewPosition()[1]}
-      $left={getNewPosition()[0]}
-      $color={color}
+    <motion.div
+      initial={{ x: 0, y: 0 }}
+      animate={{ x: target.x, y: target.y }}
+      transition={{ duration: 1, ease: 'easeOut' }}
+      className="absolute left-[200px] top-[200px] flex h-[120px] w-[120px] items-center justify-center rounded-full p-2.5 text-white even:mt-10"
+      style={{ backgroundColor: color }}
     >
       {text || 'Text'}
-    </Wrapper>
+    </motion.div>
   );
 };
 

@@ -1,56 +1,21 @@
 'use client';
 
-import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-
-const LinkWrapper = styled(Link)`
-  text-decoration: none;
-  width: 100%;
-  display: block;
-  color: #000;
-`;
-
-const Wrapper = styled(motion.div)`
-  text-decoration: none;
-  width: 100%;
-  display: block;
-  cursor: pointer;
-  color: #000;
-`;
-
-const Content = styled.div`
-  padding: 10px 15px;
-`;
-
-const Title = styled.h1`
-  font-weight: 400;
-  font-size: 1.4em;
-`;
-
-const Published = styled.time`
-  font-weight: 300;
-  font-size: 0.8em;
-`;
-
-const Preview = styled.p`
-  margin-top: 10px;
-  font-weight: 300;
-  font-size: 1em;
-  line-height: 1.4;
-`;
+import { Card, CardContent } from 'components/ui/card';
 
 const BlogItem = ({ uid, title, published, preview }) => (
-  <LinkWrapper href={`/blog/${uid}`}>
-    <Wrapper whileHover={{ x: 10 }}>
-      <Content>
-        <Title>{title}</Title>
-        <Published>{published}</Published>
-        <Preview>{preview}</Preview>
-      </Content>
-    </Wrapper>
-  </LinkWrapper>
+  <Link href={`/blog/${uid}`} className="block w-full text-black no-underline">
+    <motion.div whileHover={{ x: 10 }}>
+      <Card className="border-none bg-transparent shadow-none">
+        <CardContent className="px-4 py-3">
+          <h2 className="text-[1.4em] font-normal">{title}</h2>
+          <time className="text-[0.8em] font-light">{published}</time>
+          <p className="mt-2.5 text-base font-light leading-[1.4]">{preview}</p>
+        </CardContent>
+      </Card>
+    </motion.div>
+  </Link>
 );
 
 export default BlogItem;

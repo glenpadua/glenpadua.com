@@ -1,99 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 import { FaTimes } from 'react-icons/fa';
 import Tag from 'components/Tag';
-
-const Wrapper = styled(motion.div)`
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin-bottom: 30px;
-
-  @media only screen and (min-width: 400px) {
-    margin-right: 20px;
-  }
-
-  @media only screen and (min-width: 1100px) {
-    margin-right: 40px;
-  }
-
-  ${props =>
-    props.$isOpen &&
-    css`
-      position: absolute;
-      justify-content: start;
-      align-items: initial;
-      padding: 20px;
-      z-index: 100;
-      cursor: initial;
-      margin-right: 0;
-    `}
-`;
-
-const Close = styled(FaTimes)`
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  font-size: 20px;
-  z-index: 1000;
-  cursor: pointer;
-`;
-
-const InnerWrapper = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Heading = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.3em;
-`;
-
-const Title = styled.h2`
-  font-weight: 300;
-  font-size: 1.4em;
-`;
-
-const Icon = styled.a`
-  text-decoration: none;
-  color: #000;
-  padding-left: 10px;
-  font-size: 1em;
-`;
-
-const Placeholder = styled.div`
-  width: 140px;
-  height: 140px;
-  position: relative;
-  border-radius: 50%;
-  padding: 0;
-  display: ${props => (props.$isOpen ? 'block' : 'none')};
-
-  @media only screen and (min-width: 768px) {
-    width: 200px;
-    height: 200px;
-  }
-`;
-
-const Tags = styled(motion.div)`
-  display: flex;
-  flex-wrap: wrap;
-  width: 95%;
-`;
-
-const TagWrapper = styled.div`
-  padding: 0 3px;
-  padding-bottom: 8px;
-`;
+import { portfolioLinkIconMap } from 'utils/iconMaps';
+import { cn } from 'lib/utils';
 
 const getVariants = () => {
   return {
@@ -119,7 +31,7 @@ const getVariants = () => {
   };
 };
 
-const FolioBlock = ({ portfolio, children, setCurrentlyOpen }) => {
+const FolioBlock = ({ portfolio, setCurrentlyOpen }) => {
   const [isOpen, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -132,25 +44,43 @@ const FolioBlock = ({ portfolio, children, setCurrentlyOpen }) => {
     setOpen(false);
   };
 
+  const links = portfolio.links || [];
+
   return (
     <>
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: 0.5 } }}
-        >
-          <Close onClick={handleClose} />
-        </motion.div>
-      )}
-      <Wrapper
+      <motion.div
         variants={getVariants()}
         initial={false}
         animate={isOpen ? 'open' : 'closed'}
         onClick={handleClick}
-        $isOpen={isOpen}
         whileHover={{ scale: isOpen ? 1 : 1.1 }}
+        className={cn(
+          'relative mb-[30px] flex cursor-pointer flex-col items-center justify-center bg-white p-0 sm:mr-5 min-[1100px]:mr-10',
+          isOpen &&
+            'absolute z-[100] mr-0 cursor-default items-start justify-start p-5'
+        )}
       >
-        <InnerWrapper
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 0.5 } }}
+          >
+            <button
+              type="button"
+              onClick={event => {
+                event.stopPropagation();
+                handleClose();
+              }}
+              aria-label={`Close ${portfolio.title}`}
+              className="absolute -right-2.5 -top-2.5 z-[1000] cursor-pointer text-xl text-black transition-opacity hover:opacity-70"
+            >
+              <FaTimes />
+            </button>
+          </motion.div>
+        )}
+
+        <motion.div
+          className="flex flex-col"
           variants={{
             open: {
               alignItems: 'initial',
@@ -160,22 +90,28 @@ const FolioBlock = ({ portfolio, children, setCurrentlyOpen }) => {
             },
           }}
         >
-          <Heading>
-            <Title>{portfolio.title}</Title>
-            {portfolio.links &&
+          <div className="mb-[0.3em] flex items-center">
+            <h2 className="text-[1.4em] font-light">{portfolio.title}</h2>
+            {links.length > 0 &&
               isOpen &&
-              portfolio.links.map(link => (
-                <Icon
-                  key={link.url}
-                  href={link.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {link.icon}
-                </Icon>
-              ))}
-          </Heading>
-          <Tags
+              links.map(link => {
+                const Icon = portfolioLinkIconMap[link.iconKey];
+
+                return (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pl-[10px] text-base text-black"
+                  >
+                    {Icon ? <Icon /> : null}
+                  </a>
+                );
+              })}
+          </div>
+          <motion.div
+            className="flex w-[95%] flex-wrap"
             variants={{
               open: {
                 justifyContent: 'initial',
@@ -186,16 +122,36 @@ const FolioBlock = ({ portfolio, children, setCurrentlyOpen }) => {
             }}
           >
             {portfolio.tags.map((tag, index) => (
-              <TagWrapper key={`${tag.name}-${index}`}>
+              <div key={`${tag.name}-${index}`} className="px-[3px] pb-2">
                 <Tag color={tag.color}>{tag.name}</Tag>
-              </TagWrapper>
+              </div>
             ))}
-          </Tags>
-        </InnerWrapper>
-        {isOpen && children}
-      </Wrapper>
+          </motion.div>
+        </motion.div>
+
+        {isOpen && (
+          <div className="mt-5 w-full max-w-[850px] text-[0.95em] font-light leading-relaxed text-black/90">
+            {portfolio.summary && <p className="mb-4">{portfolio.summary}</p>}
+            {portfolio.sections?.map(section => (
+              <div key={section.heading} className="mb-4">
+                <h3 className="mb-2 text-base font-medium">{section.heading}</h3>
+                <ul className="list-disc space-y-2 pl-5">
+                  {section.bullets.map((bullet, index) => (
+                    <li key={`${section.heading}-${index}`}>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
+      </motion.div>
       {/* To take up the space when it's open */}
-      <Placeholder $isOpen={isOpen} />
+      <div
+        className={cn(
+          'relative h-[140px] w-[140px] rounded-full p-0 md:h-[200px] md:w-[200px]',
+          isOpen ? 'block' : 'hidden'
+        )}
+      />
     </>
   );
 };

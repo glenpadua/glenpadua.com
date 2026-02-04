@@ -1,53 +1,38 @@
 'use client';
 
-import React from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import styled from 'styled-components';
 import MobileNav, { NavItem } from './MobileNav';
-import { MainNav } from './styles';
 import { menuItems } from 'utils/helpers';
-
-const Wrapper = styled.nav`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-
-  @media only screen and (min-width: 600px) {
-    align-items: center;
-  }
-`;
-
-const Logo = styled.img`
-  width: 65px;
-  height: auto;
-  cursor: pointer;
-
-  @media only screen and (max-width: 600px) {
-    width: 40px;
-  }
-`;
 
 const Header = () => {
   const pathname = usePathname();
 
   return (
-    <Wrapper>
-      <Link href="/">
-        <Logo src="/assets/logo.png" alt="Glen Padua logo" />
+    <nav className="flex w-full justify-between sm:items-center">
+      <Link href="/" aria-label="Go to home">
+        <img
+          src="/assets/logo.png"
+          alt="Glen Padua logo"
+          className="h-auto w-10 cursor-pointer sm:w-[65px]"
+        />
       </Link>
+
       <MobileNav items={menuItems} />
-      <MainNav>
+
+      <ul className="hidden list-none text-black sm:flex sm:text-base">
         {menuItems.map(item => (
-          <NavItem
-            key={item.name}
-            name={item.name}
-            url={item.url}
-            isActive={item.url === pathname}
-          />
+          <li key={item.name} className="mr-[30px] last:mr-0">
+            <NavItem
+              name={item.name}
+              url={item.url}
+              isActive={item.url === pathname}
+              tone="dark"
+            />
+          </li>
         ))}
-      </MainNav>
-    </Wrapper>
+      </ul>
+    </nav>
   );
 };
 

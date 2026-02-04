@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import styled from 'styled-components';
 import Layout from 'components/Layout';
 import PageTitle from 'components/PageTitle';
 import FolioBlock from 'components/FolioBlock';
@@ -9,91 +8,41 @@ import Timeline from 'components/Timeline';
 import { portfolioItems } from 'utils/portfolio';
 import { timelineItems } from 'utils/timeline';
 
-const Wrapper = styled.div`
-  width: 100%;
-  margin-top: 30px;
-`;
-
-const Portfolio = styled.div`
-  margin-top: 60px;
-
-  @media only screen and (min-width: 900px) {
-    display: flex;
-    justify-content: space-between;
-  }
-`;
-
-const PortfolioItems = styled.div`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  position: relative;
-  align-items: flex-start;
-
-  @media only screen and (min-width: 900px) {
-    max-height: 500px;
-    justify-content: center;
-    width: 49%;
-  }
-
-  @media only screen and (min-width: 1100px) {
-    justify-content: center;
-  }
-`;
-
-const Extra = styled.div`
-  display: none;
-
-  @media only screen and (min-width: 500px) {
-    margin-top: 200px;
-    display: block;
-  }
-
-  @media only screen and (min-width: 730px) {
-    margin-top: 0;
-  }
-
-  @media only screen and (min-width: 900px) {
-    width: 49%;
-    display: block;
-  }
-`;
-
 export default function WorkPage() {
   const [currentlyOpen, setCurrentlyOpen] = useState(0);
 
   return (
     <Layout>
-      <Wrapper>
+      <div className="mt-[30px] w-full">
         <PageTitle>
           Stuff I've Done{' '}
           <span role="img" aria-label="laptop">
             💻
           </span>{' '}
         </PageTitle>
-        <Portfolio>
-          <PortfolioItems>
+
+        <div className="mt-[60px] min-[900px]:flex min-[900px]:justify-between">
+          <div className="relative flex w-full flex-wrap items-start justify-center min-[900px]:max-h-[500px] min-[900px]:w-[49%]">
             {portfolioItems.map(portfolio => {
+              if (currentlyOpen !== 0 && portfolio.id !== currentlyOpen) {
+                return null;
+              }
+
               return (
-                (currentlyOpen === 0 || portfolio.id === currentlyOpen) && (
-                  <FolioBlock
-                    key={portfolio.id}
-                    portfolio={portfolio}
-                    currentlyOpen={currentlyOpen}
-                    setCurrentlyOpen={setCurrentlyOpen}
-                  >
-                    {portfolio.children}
-                  </FolioBlock>
-                )
+                <FolioBlock
+                  key={portfolio.id}
+                  portfolio={portfolio}
+                  setCurrentlyOpen={setCurrentlyOpen}
+                />
               );
             })}
-          </PortfolioItems>
-          <Extra>
+          </div>
+
+          <div className="mt-[200px] hidden min-[500px]:block min-[730px]:mt-0 min-[900px]:mt-0 min-[900px]:w-[49%]">
             <Timeline items={timelineItems} />
-          </Extra>
-        </Portfolio>
-      </Wrapper>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }

@@ -1,13 +1,14 @@
 # glenpadua.com
 
-Personal website built with Next.js App Router, Prismic, and styled-components.
+Personal website built with Next.js App Router, Prismic, Tailwind CSS, and shadcn UI primitives.
 
 ## Stack
 
 - Next.js 16 (App Router)
 - React 18
 - Prismic (`@prismicio/client`, `@prismicio/next`, `@prismicio/react`)
-- styled-components 6
+- Tailwind CSS 3
+- shadcn UI primitives (Radix + utility components)
 
 ## Requirements
 
@@ -29,3 +30,4 @@ Personal website built with Next.js App Router, Prismic, and styled-components.
 
 - Routing now uses the `app/` directory.
 - Core routes are preserved: `/`, `/skills`, `/work`, `/blog`, `/blog/[uid]`.
+- UI styling is class-based via Tailwind utilities and reusable `components/ui/*` primitives.

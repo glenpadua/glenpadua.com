@@ -1,73 +1,72 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
-import styled from 'styled-components';
+import { useState } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useOnClickOutside } from 'utils/hooks';
-import Menu from './Menu';
-import MenuToggle from './MenuToggle';
+import { Menu } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { Button } from 'components/ui/button';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from 'components/ui/sheet';
+import { cn } from 'lib/utils';
 
-const Wrapper = styled.div`
-  display: none;
+export const NavItem = ({ name, url, isActive, tone = 'dark', onNavigate }) => {
+  const textTone =
+    tone === 'light' ? 'text-white visited:text-white' : 'text-black visited:text-black';
+  const underlineTone = tone === 'light' ? 'after:bg-white' : 'after:bg-black';
 
-  @media only screen and (max-width: 600px) {
-    display: initial;
-  }
-`;
-
-const Item = styled(motion.li)`
-  cursor: pointer;
-  margin-bottom: 20px;
-
-  &:after {
-    transition: all ease-out 0.2s;
-    display: block;
-    margin-top: 5px;
-    content: '';
-    height: 2px;
-    width: ${props => (props.$isActive ? '100%' : '0')};
-    background-color: #fff;
-  }
-
-  &:hover:after {
-    width: 100%;
-  }
-`;
-
-const StyledLink = styled(Link)`
-  font-size: 1.1em;
-  color: inherit;
-  text-decoration: none;
-
-  &:visited {
-    color: inherit;
-  }
-`;
-
-export const NavItem = ({ name, url, isActive, ...props }) => {
   return (
-    <Item $isActive={isActive} {...props}>
-      <StyledLink href={url}>{name}</StyledLink>
-    </Item>
+    <Link
+      href={url}
+      onClick={onNavigate}
+      className={cn(
+        'relative inline-block whitespace-nowrap pb-1 text-[1.1rem] transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:content-[""] after:transition-all hover:after:w-full',
+        textTone,
+        underlineTone,
+        isActive && 'after:w-full'
+      )}
+    >
+      {name}
+    </Link>
   );
 };
 
 const MobileNav = ({ items }) => {
-  const ref = useRef();
+  const pathname = usePathname();
   const [isOpen, setOpen] = useState(false);
-  useOnClickOutside(ref, () => setOpen(false));
+
   return (
-    <Wrapper>
-      <motion.div
-        ref={ref}
-        initial={false}
-        animate={isOpen ? 'open' : 'closed'}
-      >
-        <MenuToggle toggle={() => setOpen(!isOpen)} />
-        <AnimatePresence>{isOpen && <Menu items={items} />}</AnimatePresence>
-      </motion.div>
-    </Wrapper>
+    <div className="sm:hidden">
+      <Sheet open={isOpen} onOpenChange={setOpen}>
+        <SheetTrigger asChild>
+          <Button variant="ghost" size="icon" aria-label="Open menu">
+            <Menu className="h-5 w-5" />
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="right" className="w-[200px] bg-black p-5">
+          <SheetHeader>
+            <SheetTitle className="text-base">Menu</SheetTitle>
+          </SheetHeader>
+          <ul className="mt-6 list-none">
+            {items.map(item => (
+              <li key={item.name} className="mb-5 last:mb-0">
+                <NavItem
+                  name={item.name}
+                  url={item.url}
+                  tone="light"
+                  isActive={item.url === pathname}
+                  onNavigate={() => setOpen(false)}
+                />
+              </li>
+            ))}
+          </ul>
+        </SheetContent>
+      </Sheet>
+    </div>
   );
 };
 

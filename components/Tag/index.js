@@ -1,18 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-
-const Wrapper = styled.div`
-  color: #fff;
-  background: ${props => props.$color};
-  font-weight: 300;
-  font-size: 0.7em;
-  padding: 5px 10px;
-  border-radius: 16px;
-  display: inline;
-`;
+import { Badge } from 'components/ui/badge';
 
 const Tag = ({ children, color = '#000' }) => (
-  <Wrapper $color={color}>{children}</Wrapper>
+  <Badge
+    className="inline rounded-2xl px-2.5 py-1 text-[0.7em] font-light text-white"
+    style={{ background: color }}
+  >
+    {children}
+  </Badge>
 );
 
 export default Tag;

@@ -1,16 +1,3 @@
-import {
-  FaTv,
-  FaUserNinja,
-  FaLaptop,
-  FaLaptopCode,
-  FaFistRaised,
-  FaSocks,
-  FaBookReader,
-  FaBlog,
-  FaMicroblog,
-  FaSpotify,
-} from 'react-icons/fa';
-
 export function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -61,108 +48,100 @@ export const aboutCards = [
   {
     id: 1,
     title: 'FRONTEND NINJA',
-    icon: <FaUserNinja />,
-    info: (
-      <i>
-        "Because I <b>React</b> quickly."
-      </i>
-    ),
+    iconKey: 'userNinja',
+    infoItalic: true,
+    infoSegments: [
+      { text: '"Because I ' },
+      { text: 'React', bold: true },
+      { text: ' quickly."' },
+    ],
     color: 'rgba(0, 0, 0, 0.7)',
     link: '/skills',
   },
   {
     id: 2,
     title: 'CURRENTLY WORKING AT',
-    icon: <FaLaptop />,
-    info: (
-      <i>
-        "<b>Remote</b> - Global standard for everything remote!"
-      </i>
-    ),
+    iconKey: 'laptop',
+    infoItalic: true,
+    infoSegments: [
+      { text: '"' },
+      { text: 'Remote', bold: true },
+      { text: ' - Global standard for everything remote!"' },
+    ],
     color: '#2E2989',
     href: 'https://remote.com',
   },
   {
     id: 3,
     title: 'CURRENT PET PROJECT',
-    icon: <FaLaptopCode />,
-    info: (
-      <i>
-        "<b>Networthy</b> - Track your networth easily!"
-      </i>
-    ),
+    iconKey: 'laptopCode',
+    infoItalic: true,
+    infoSegments: [
+      { text: '"' },
+      { text: 'Networthy', bold: true },
+      { text: ' - Track your networth easily!"' },
+    ],
     color: '#be9063',
     href: 'https://networthyapp.com/',
   },
   {
     id: 4,
     title: 'LATEST BLOG POST',
-    icon: <FaBlog />,
-    info: <i>"Do you have an ideal dream job?"</i>,
+    iconKey: 'blog',
+    infoItalic: true,
+    infoSegments: [{ text: '"Do you have an ideal dream job?"' }],
     color: '#99CCFF',
     link: '/blog/do-you-have-an-ideal-dream-job',
   },
   {
     id: 5,
     title: 'LATEST SNIPPET',
-    icon: <FaMicroblog />,
-    info: <i>"Free up space with npkill"</i>,
+    iconKey: 'microblog',
+    infoItalic: true,
+    infoSegments: [{ text: '"Free up space with npkill"' }],
     color: '#FFCC00',
     link: '/snippets/free-up-space-with-npkill',
   },
   {
     id: 6,
     title: 'ZEPHONY',
-    icon: <FaFistRaised />,
-    info: <i>"Startup I Co-Founded in 2017"</i>,
+    iconKey: 'fistRaised',
+    infoItalic: true,
+    infoSegments: [{ text: '"Startup I Co-Founded in 2017"' }],
     color: '#6465a5',
     link: '/work',
   },
   {
     id: 7,
     title: 'CHRONICLES OF AN AMPUTEE',
-    icon: <FaSocks />,
-    info: <i>"One small step for man, one giant hop for me"</i>,
+    iconKey: 'socks',
+    infoItalic: true,
+    infoSegments: [{ text: '"One small step for man, one giant hop for me"' }],
     color: '#d9ac2a',
     link: '/blog?category=amputee',
   },
   {
     id: 8,
     title: 'CURRENTLY WATCHING',
-    icon: <FaTv />,
-    info: (
-      <>
-        <i>"Chainsaw Man"</i> <span>🪚</span>
-      </>
-    ),
+    iconKey: 'tv',
+    infoItalic: true,
+    infoSegments: [{ text: '"Chainsaw Man" ' }, { text: '🪚' }],
     color: '#C2462F',
     href: 'https://myanimelist.net/anime/44511/Chainsaw_Man',
   },
   {
     id: 9,
     title: 'CURRENTLY READING',
-    icon: <FaBookReader />,
-    info: (
-      <i style={{ fontSize: '0.9em' }}>
-        <b>"The Almanack of Naval Ravikant"</b> by Eric Jorgenson
-      </i>
-    ),
+    iconKey: 'bookReader',
+    infoItalic: true,
+    infoClassName: 'text-[0.9em]',
+    infoSegments: [
+      { text: '"The Almanack of Naval Ravikant"', bold: true },
+      { text: ' by Eric Jorgenson' },
+    ],
     color: '#7B7A7C',
     href: 'https://amzn.to/3NEXICh',
   },
-  // {
-  //   id: 10,
-  //   title: 'CURRENTLY LISTENING TO',
-  //   icon: <FaSpotify />,
-  //   info: (
-  //     <i>
-  //       <b>"Song Title"</b> by Artist
-  //     </i>
-  //   ),
-  //   color: '#40d15d',
-  //   href:
-  //     'https://open.spotify.com/album/3qPIe6YsuQ0qzg6bSEQjfv?highlight=spotify:track:3c9xinOHrEqF39omS0Czj1',
-  // },
 ];
 
 export const frontendCards = [
@@ -215,7 +194,6 @@ export const frontendCards = [
     color: '#363636',
     desc: 'My goto for documenting and building components in isolation.',
   },
-
   {
     id: 8,
     text: 'Testing Library',
@@ -281,7 +259,7 @@ export const otherCards = [
     id: 8,
     text: 'Lerna',
     logo: '/assets/lerna.svg',
-    color: 'linear-gradient( 40deg, #00fff0 0%, #677ef8 50%, #cc00ff 100% )',
+    color: 'linear-gradient(40deg, #00fff0 0%, #677ef8 50%, #cc00ff 100%)',
     desc: 'Used lerna along with yarn-workspaces to create a monorepo.',
   },
 ];

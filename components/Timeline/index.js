@@ -1,122 +1,42 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-
-const Wrapper = styled.div`
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: white;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-  }
-`;
-
-const Item = styled.div`
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-  display: flex;
-  left: ${props => (props.$left ? '0' : '50%')};
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: white;
-    border: 4px solid #ff9f55;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-    ${props =>
-      props.$right &&
-      css`
-        left: -16px;
-      `}
-  }
-
-  &::before {
-    content: ' ';
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    border: medium solid white;
-    border-width: ${props =>
-      props.$left ? '10px 0 10px 10px' : '10px 10px 10px 0'};
-    border-color: ${props =>
-      props.$left
-        ? 'transparent transparent transparent white'
-        : 'transparent white transparent transparent'};
-    ${props =>
-      props.$left
-        ? css`
-            right: 30px;
-          `
-        : css`
-            left: 30px;
-          `}
-  }
-`;
-
-const Content = styled.div`
-  padding: 20px;
-  background-color: white;
-  position: relative;
-  border-radius: 6px;
-`;
-
-const Title = styled.h3`
-  font-weight: 400;
-  font-size: 1em;
-  margin-bottom: 10px;
-`;
-
-const Text = styled.p`
-  font-weight: 300;
-  font-size: 0.8em;
-  line-height: 1.4;
-`;
-
-const Date = styled.div`
-  position: absolute;
-  top: 24px;
-  ${props =>
-    props.$left
-      ? css`
-          left: -95px;
-        `
-      : css`
-          right: -95px;
-        `}
-  font-size: 0.85em;
-  opacity: 0.5;
-`;
+import { cn } from 'lib/utils';
 
 const Timeline = ({ items }) => (
-  <Wrapper>
-    {items.map((item, i) => (
-      <Item key={`${item.title}-${item.date}-${i}`} $left={i % 2 === 0} $right={i % 2 !== 0}>
-        <Content>
-          <Title>{item.title}</Title>
-          <Text>{item.desc}</Text>
-        </Content>
-        <Date $right={i % 2 === 0} $left={i % 2 !== 0}>
-          {item.date}
-        </Date>
-      </Item>
-    ))}
-  </Wrapper>
+  <div className="relative mx-auto max-w-[1200px]">
+    <div className="timeline-line absolute bottom-0 left-3 top-0 w-[6px] md:left-1/2 md:-translate-x-1/2" />
+    {items.map((item, index) => {
+      const isLeft = index % 2 === 0;
+
+      return (
+        <div
+          key={`${item.title}-${item.date}-${index}`}
+          className={cn(
+            'relative mb-4 w-full pl-12 pr-3 md:mb-0 md:w-1/2 md:px-10',
+            isLeft ? 'md:left-0' : 'md:left-1/2'
+          )}
+        >
+          <div className="relative rounded-md bg-white p-5 shadow-sm">
+            <h3 className="mb-2.5 text-base font-normal">{item.title}</h3>
+            <p className="text-[0.8em] font-light leading-[1.4]">{item.desc}</p>
+            <div
+              className={cn(
+                'absolute top-[15px] h-[25px] w-[25px] rounded-full border-4 border-[#ff9f55] bg-white',
+                'left-[-34px] md:left-auto',
+                isLeft ? 'md:-right-[17px]' : 'md:-left-4'
+              )}
+            />
+          </div>
+          <div
+            className={cn(
+              'mt-1 text-[0.85em] opacity-50 md:absolute md:top-6 md:mt-0',
+              isLeft ? 'md:-right-[95px]' : 'md:-left-[95px] md:text-right'
+            )}
+          >
+            {item.date}
+          </div>
+        </div>
+      );
+    })}
+  </div>
 );
 
 export default Timeline;

@@ -1,137 +1,62 @@
 'use client';
 
-import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { cn } from 'lib/utils';
+import { aboutIconMap } from 'utils/iconMaps';
 
 const transitionDuration = '0.4s';
-const dimension = '70px';
 
-const Overlay = styled.div`
-  width: ${dimension};
-  height: ${dimension};
-  position: absolute;
-  border-radius: 50%;
-  background: ${props => props.$color};
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 0;
-  transition: transform ${transitionDuration} ease-out;
-`;
+const renderInfo = ({ infoSegments = [], infoItalic, infoClassName }) => {
+  const content = infoSegments.map((segment, index) => (
+    <span key={`${segment.text}-${index}`} className={segment.bold ? 'font-bold' : undefined}>
+      {segment.text}
+    </span>
+  ));
 
-const Circle = styled.div`
-  width: ${dimension};
-  height: ${dimension};
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: all ${transitionDuration} ease-out;
-  z-index: 1;
-`;
+  const base = <span className={cn('text-inherit', infoClassName)}>{content}</span>;
 
-const Title = styled.h3`
-  font-weight: 500;
-  margin: 0;
-  padding: 0 10px;
-  z-index: 2;
-  transition: color ${transitionDuration} ease-out;
-  font-size: 1.3em;
+  return infoItalic ? <i>{base}</i> : base;
+};
 
-  @media only screen and (max-width: 768px) {
-    font-size: 1.1em;
-  }
-`;
+const AboutCard = props => {
+  const { title, iconKey, color, link, href } = props;
+  const Icon = aboutIconMap[iconKey];
 
-const Icon = styled.span`
-  font-size: 35px;
-  z-index: 2;
-  color: white;
-  height: 35px;
-  transition: all ${transitionDuration};
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-`;
+  const content = (
+    <motion.div
+      className="group relative flex h-[220px] w-full cursor-pointer flex-col items-center justify-between overflow-hidden rounded-[10px] bg-white pb-0 pt-5 text-[#4c5656] shadow-card transition-all"
+      whileHover={{ y: -5, scale: 1.005 }}
+      style={{ transitionDuration }}
+    >
+      <h3 className="z-[2] m-0 px-2.5 text-[1.3em] font-medium transition-colors duration-300 max-md:text-[1.1em] group-hover:text-white">
+        {title}
+      </h3>
 
-const Info = styled.div`
-  z-index: 2;
-  margin-bottom: 20px;
-  padding: 0 10px;
-  text-align: center;
-  font-weight: 300;
+      <div
+        className="absolute top-1/2 z-0 h-[70px] w-[70px] -translate-y-1/2 rounded-full transition-transform duration-300 group-hover:scale-[8]"
+        style={{ background: color }}
+      />
 
-  @media only screen and (max-width: 768px) {
-    font-size: 0.85em;
-  }
-`;
+      <div className="absolute top-1/2 z-[1] flex h-[70px] w-[70px] -translate-y-1/2 items-center justify-center rounded-full">
+        <span className="absolute top-1/2 z-[2] h-[35px] -translate-y-1/2 text-[35px] text-white transition-all duration-300 group-hover:text-[45px]">
+          {Icon ? <Icon /> : null}
+        </span>
+      </div>
 
-const Card = styled(motion.div)`
-  width: 100%;
-  height: 220px;
-  padding-top: 20px;
-  padding-bottom: 0;
-  background: #fff;
-  color: #4c5656;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
-  transition: all ${transitionDuration} ease-out;
-  position: relative;
-
-  &:hover {
-    background: ${props => props.$color};
-    transform: translateY(-5px) scale(1.005) translateZ(0);
-
-    ${Overlay} {
-      transform: scale(8) translateZ(0);
-    }
-
-    ${Title} {
-      color: #fff;
-    }
-
-    ${Info} {
-      color: #fff;
-    }
-
-    ${Icon} {
-      font-size: 45px;
-    }
-  }
-`;
-
-const AboutCard = ({ title, icon, info, color, link, href }) => {
-  const getAboutContent = () => (
-    <Card $color={color}>
-      <Title>{title}</Title>
-      <Overlay $color={color} />
-      <Circle $color={color}>
-        <Icon>{icon}</Icon>
-      </Circle>
-      <Info>{info}</Info>
-    </Card>
+      <div className="z-[2] mb-5 px-2.5 text-center text-[0.85em] font-light text-inherit transition-colors duration-300 md:text-base group-hover:text-white">
+        {renderInfo(props)}
+      </div>
+    </motion.div>
   );
 
-  return link ? (
-    <Link href={link}>{getAboutContent()}</Link>
-  ) : (
+  if (link) {
+    return <Link href={link}>{content}</Link>;
+  }
+
+  return (
     <a href={href} target="_blank" rel="noreferrer">
-      {getAboutContent()}
+      {content}
     </a>
   );
 };

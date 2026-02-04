@@ -1,25 +1,11 @@
-import React from 'react';
 import { PrismicText } from '@prismicio/react';
-import styled from 'styled-components';
 
-const Label = styled.span`
-  margin-bottom: 2rem;
-  margin-top: 1rem;
-  display: inline-block;
-  font-style: italic;
-  font-size: 1em;
-  opacity: 0.4;
-`;
-
-/**
- * Image caption component
- */
 const Caption = ({ caption }) => {
   return (
     <p>
-      <Label>
+      <span className="my-4 inline-block text-base italic opacity-40">
         <PrismicText field={caption} />
-      </Label>
+      </span>
     </p>
   );
 };

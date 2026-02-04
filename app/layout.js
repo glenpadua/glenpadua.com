@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
 import { PrismicPreview } from '@prismicio/next';
 import AnalyticsTracker from 'components/AnalyticsTracker';
-import StyledComponentsRegistry from 'lib/styled-components-registry';
 import { repositoryName } from 'prismicio';
 import './globals.css';
 
@@ -20,14 +19,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <StyledComponentsRegistry>
-          <Suspense fallback={null}>
-            <AnalyticsTracker />
-          </Suspense>
-          {children}
-          <PrismicPreview repositoryName={repositoryName} />
-        </StyledComponentsRegistry>
+      <body className="min-h-screen bg-[#f2f4f8] text-foreground antialiased">
+        <Suspense fallback={null}>
+          <AnalyticsTracker />
+        </Suspense>
+        {children}
+        <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
   );

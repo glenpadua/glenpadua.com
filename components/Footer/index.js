@@ -1,118 +1,77 @@
-import styled from 'styled-components';
 import { SiGithub, SiLinkedin, SiInstagram, SiTwitter } from 'react-icons/si';
-
-const Wrapper = styled.footer`
-  width: 100%;
-  display: flex;
-  height: 150px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  font-size: 0.7em;
-
-  @media only screen and (min-width: 600px) {
-    font-size: 0.9em;
-  }
-`;
-
-const Text = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Logo = styled.img`
-  width: 25px;
-  height: auto;
-  margin-right: 10px;
-`;
-
-const StyledLink = styled.a`
-  text-decoration: none;
-  opacity: 0.9;
-
-  &:hover {
-    opacity: 1;
-  }
-`;
-
-const Links = styled.div`
-  margin-top: 20px;
-`;
-
-const IconLink = styled.a`
-  margin: 0 10px;
-  color: #000;
-  opacity: 0.5;
-
-  &:hover {
-    opacity: 0.8;
-  }
-`;
-
-const Icon = ({ url, icon }) => {
-  return (
-    <IconLink href={url} target="_blank" rel="noreferrer">
-      {icon}
-    </IconLink>
-  );
-};
+import { Separator } from 'components/ui/separator';
 
 const sites = [
   {
     url: 'https://github.com/glenpadua',
-    icon: <SiGithub />,
+    icon: SiGithub,
   },
   {
     url: 'https://www.linkedin.com/in/glen-padua/',
-    icon: <SiLinkedin />,
+    icon: SiLinkedin,
   },
   {
     url: 'https://twitter.com/glenp01',
-    icon: <SiTwitter />,
+    icon: SiTwitter,
   },
   {
     url: 'https://www.instagram.com/glen.padua/',
-    icon: <SiInstagram />,
+    icon: SiInstagram,
   },
 ];
 
 const Footer = () => {
   return (
-    <Wrapper>
-      <Text>
-        <Logo src="/assets/logo.png" alt="Glen Padua logo" />
+    <footer className="flex h-[150px] w-full flex-col items-center justify-center text-[0.7em] sm:text-[0.9em]">
+      <div className="flex items-center justify-center gap-2">
+        <img src="/assets/logo.png" alt="Glen Padua logo" className="h-auto w-[25px]" />
         <div>
           Built with{' '}
-          <StyledLink
+          <a
             href="https://nextjs.org/"
             target="_blank"
             rel="noreferrer"
+            className="opacity-90 transition-opacity hover:opacity-100"
             style={{ color: '#0077fe' }}
           >
             NextJS
-          </StyledLink>
+          </a>
           <span> & </span>
-          <StyledLink
+          <a
             href="https://prismic.io/"
             target="_blank"
             rel="noreferrer"
+            className="opacity-90 transition-opacity hover:opacity-100"
             style={{ color: '#5163ba' }}
           >
             Prismic
-          </StyledLink>
-          {'  '}
+          </a>{' '}
           <span role="img" aria-label="heart on fire">
             ❤️‍🔥
-          </span>{' '}
+          </span>
         </div>
-      </Text>
-      <Links>
-        {sites.map(site => (
-          <Icon icon={site.icon} url={site.url} key={site.url} />
-        ))}
-      </Links>
-    </Wrapper>
+      </div>
+
+      <Separator className="my-3 w-[240px] bg-black/10" />
+
+      <div className="mt-1 flex items-center gap-5">
+        {sites.map(site => {
+          const Icon = site.icon;
+
+          return (
+            <a
+              key={site.url}
+              href={site.url}
+              target="_blank"
+              rel="noreferrer"
+              className="text-black/60 transition-colors hover:text-black/90"
+            >
+              <Icon />
+            </a>
+          );
+        })}
+      </div>
+    </footer>
   );
 };
 
