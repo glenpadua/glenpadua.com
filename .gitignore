@@ -20,8 +20,11 @@ dev_config.py
 # NPM modules
 node_modules
 
-# next.js build output
+# Next.js build output
 .next
+
+# TypeScript build info
+*.tsbuildinfo
 
 .DS_Store
 .tool-versions

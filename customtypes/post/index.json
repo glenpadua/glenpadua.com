@@ -39,13 +39,7 @@
       "category": {
         "type": "Select",
         "config": {
-          "options": [
-            "amputee",
-            "tech",
-            "productivity",
-            "personal",
-            "work"
-          ],
+          "options": ["amputee", "tech", "productivity", "personal", "work"],
           "default_value": "amputee",
           "label": "Category",
           "placeholder": "Choose a category it falls under"

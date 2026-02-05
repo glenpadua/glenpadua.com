@@ -29,7 +29,13 @@ a {
 
 @layer utilities {
   .timeline-line {
-    background: linear-gradient(to bottom, transparent 0%, #ffffff 5%, #ffffff 95%, transparent 100%);
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      #ffffff 5%,
+      #ffffff 95%,
+      transparent 100%
+    );
   }
 
   .text-balance {

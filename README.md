@@ -1,11 +1,11 @@
 # glenpadua.com
 
-Personal website built with Next.js App Router, Prismic, Tailwind CSS, and shadcn UI primitives.
+Personal website built with Next.js App Router, TypeScript, Prismic, Tailwind CSS, and shadcn UI primitives.
 
 ## Stack
 
 - Next.js 16 (App Router)
-- React 18
+- React 18 + TypeScript (strict mode)
 - Prismic (`@prismicio/client`, `@prismicio/next`, `@prismicio/react`)
 - Tailwind CSS 3
 - shadcn UI primitives (Radix + utility components)
@@ -20,6 +20,10 @@ Personal website built with Next.js App Router, Prismic, Tailwind CSS, and shadc
 - `npm run dev` - start local dev server
 - `npm run build` - create production build
 - `npm run start` - run production server
+- `npm run typecheck` - run TypeScript checks
+- `npm run lint` - run ESLint
+- `npm run format` - check Prettier formatting
+- `npm run check` - typecheck + lint + build
 
 ## Prismic Preview Routes
 
@@ -28,6 +32,6 @@ Personal website built with Next.js App Router, Prismic, Tailwind CSS, and shadc
 
 ## Notes
 
-- Routing now uses the `app/` directory.
+- Routing uses the `app/` directory with route-local components in `app/<route>/_components`.
 - Core routes are preserved: `/`, `/skills`, `/work`, `/blog`, `/blog/[uid]`.
-- UI styling is class-based via Tailwind utilities and reusable `components/ui/*` primitives.
+- UI styling is class-based via Tailwind utilities and reusable `app/components/ui/*` primitives.
