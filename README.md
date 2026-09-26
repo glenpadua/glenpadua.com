@@ -8,6 +8,8 @@ The [website manifesto](MANIFESTO.md) records the creative direction, consulting
 
 The first [lakeside scene experiment](docs/lakeside-scene.md) is available at `/preview/lakeside` while the development server is running.
 
+The connected lake-and-coast preview is at `/preview/diorama`, with the beach also available at `/preview/coast`. The [repeatable diorama pattern](docs/diorama-pattern.md) records the shared components, animation lessons, artwork process, and verification limits.
+
 ## Stack
 
 - Next.js 16 (App Router)

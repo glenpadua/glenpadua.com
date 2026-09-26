@@ -2,6 +2,8 @@
 
 26 September 2026. Preview route: `/preview/lakeside`.
 
+**Follow-up:** the scene now also forms the first chapter of `/preview/diorama`, paired with a beach push-up scene. Motion policy and sprite timing are shared, with additional near-tree sway and scroll parallax. See [the repeatable pattern](diorama-pattern.md) for the current two-scene architecture and verification. The notes below preserve the original experiment's decisions.
+
 This is the first working scene described in [the manifesto](../MANIFESTO.md). It is deliberately isolated from the current homepage and marked `noindex`. Existing work and writing links lead to the existing site; the invitation to say hello uses Glen's existing LinkedIn URL.
 
 ## What is implemented

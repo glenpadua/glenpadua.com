@@ -1,0 +1,22 @@
+{
+  "created": "2026-09-26",
+  "reference": "docs/references/beach-pushup-reference.png",
+  "generator": "Built-in image generation",
+  "assets": [
+    {
+      "file": "public/assets/diorama/coast.webp",
+      "source": "exec-25e8bc36-8385-4e60-9aa5-6e95b272673a.png",
+      "prompt": "Create a beautiful production background illustration for a personal portfolio website, using the attached beach image as exact art direction. Wide landscape 3:2, soft sophisticated storybook gouache, delicate paper grain, pale warm sand, restrained turquoise sea, very pale blue morning sky fading to ivory near horizon. Preserve composition: upper55 percent mostly empty sky for HTML typography; horizon at58percent; low forested tropical headland along left edge with two leaning coconut palms; gentle curved shoreline leading from left middle to lower right; sunlit dry sand bottom25percent. Remove the person, remove sailboat and birds completely, these are separate animated elements. Also remove the large foreground grass at bottom left; foreground vegetation will be layered separately. Empty uninterrupted dry sand in lower-left third for separately placing a push-up character. Beautiful soft sea color transitions and delicate brushwork, natural pale foam edge. No people, no exercise equipment, no text or UI, no boat, no birds. Peaceful luminous spacious composition consistent with the lakeside scene, not photorealistic, not oversaturated."
+    },
+    {
+      "file": "public/assets/diorama/pushup-atlas.webp",
+      "source": "exec-c5f91a05-19c5-4a81-8450-e689839e6137.png",
+      "prompt": "Production pixel art sprite sheet of the SAME man from attached beach reference doing a strict PUSH-UP. Transparent background. Exactly 3 equal columns by 2 equal rows, 1536x1024 canvas, each cell512x512. SIX complete poses, no panels labels floor shadows. Character faces LEFT in a three quarter side view, face with black sunglasses partly towards camera, feet right. All six SAME proportions and pixel density and clothes. Tousled dark brown hair, black sunglasses, tan skin, yellow and ivory vertically striped short sleeve shirt, charcoal shorts, tan sneakers. CRUCIAL: his anatomical LEFT leg is prosthetic, the NEAR leg visible to viewer: charcoal below-knee socket and exposed slim silver pylon down to tan shoe. Far leg natural tan skin. No mirroring. Human compact chibi proportions matching reference, not huge head. Ground contact same y400 in all cells, near palm centre x130 y400, near toe x435 y400. Hands stay planted, feet stay planted; straight line shoulders to hips to heels, body pivots naturally about toes as elbows bend. Reading order: 1 TOP PLANK arms fully straight shoulders highest; 2 slightly bent elbows lowering; 3 midway elbows bent; 4 BOTTOM chest just above ground elbows90degrees; 5 midway pushing up; 6 straight arm top plank. Entire body every cell, coherent shoulder elbow wrist anatomy. Draw real bending elbows, maintain rigid torso and same limb lengths; no rubber limbs. Preserve reference identity and recognizably visible left prosthesis in all six. Crisp detailed pixel art, controlled warm palette, transparent unused areas."
+    },
+    {
+      "file": "public/assets/diorama/nature-atlas.webp",
+      "source": "exec-67fb90ca-c0f3-4f12-91ee-2f9e63df5e85.png",
+      "prompt": "Create transparent scenic decoration atlas matching attached soft gouache beach illustration. Wide 1536x1024 canvas divided into THREE invisible equal vertical strips 512pxwide. Each contains isolated object with generous transparent padding no touching other strip. LEFT strip: two elegant sage green evergreen pine trees with trunks and softly textured feathery foliage, largest tree fromx100y160 to450y930, suitable for lakeside foreground. CENTRE strip: one elegant curved coconut palm with slender warm grey olive trunk and sage olive feathery fronds, crown aroundy240, trunkfooty950, completely inside centrestripx512to1024. RIGHT strip: small charming wooden sailing boat with cream triangular sails and fine mast, bow right, entire boat inside x1070to1490 y470to850. No ocean no ground no scenery no horizon no shadows no text no dividers. Genuine transparent all around objects. Painterly sophisticated storybook gouache delicate papergrain muted organic pigments, no harsh cartoon outlines. Three independent decorations to animate in a website. Do not add any character."
+    }
+  ]
+}

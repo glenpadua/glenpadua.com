@@ -1,0 +1,328 @@
+.diorama-journey {
+  background: #f6f5e9;
+}
+.diorama-journey #lakeside::after,
+.coast-scene::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 155px;
+  background: linear-gradient(transparent, #f6f5e9 80%, #f6f5e9);
+  pointer-events: none;
+  z-index: 4;
+}
+.diorama-journey .scene-footer,
+.coast-scene .scene-footer {
+  color: #364d43;
+  text-shadow: none;
+}
+.diorama-journey .scene-footer a:focus-visible,
+.coast-scene .scene-footer a:focus-visible {
+  outline-color: #34583b;
+}
+.scene-passage {
+  min-height: 360px;
+  padding: 58px 24px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: linear-gradient(#f6f5e9 60%, #f4f6ed);
+}
+.passage-line {
+  height: 55px;
+  width: 1px;
+  background: linear-gradient(transparent, #7f91726b);
+  margin-bottom: 27px;
+}
+.scene-passage p {
+  font:
+    italic 28px/1.45 Georgia,
+    serif;
+  color: #61725d;
+  letter-spacing: -0.5px;
+}
+.scene-passage a {
+  font-size: 8px;
+  letter-spacing: 2px;
+  margin-top: 27px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.scene-passage a span {
+  font-size: 17px;
+}
+.coast-scene {
+  background: #f5f7ee;
+  --ink: #284d4d;
+}
+.coast-scene::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 150px;
+  z-index: 1;
+  background: linear-gradient(#f4f6ed, transparent);
+  pointer-events: none;
+}
+.coast-topline {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  padding: 38px 5.5%;
+  color: #536a62;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.coast-topline a {
+  border-bottom: 1px solid #70847770;
+  padding-bottom: 6px;
+}
+.coast-topline > span {
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+.coast-introduction {
+  margin-left: 43%;
+  margin-top: clamp(30px, 5vh, 70px);
+  max-width: 720px;
+}
+.coast-introduction h1,
+.coast-introduction h2 {
+  font:
+    400 clamp(66px, 6vw, 100px)/0.99 Georgia,
+    'Times New Roman',
+    serif;
+  letter-spacing: -4.8px;
+}
+.coast-introduction h1 em,
+.coast-introduction h2 em {
+  color: #5b8983;
+  font-weight: 400;
+}
+.coast-introduction .scene-eyebrow {
+  font-size: 9px;
+  letter-spacing: 1.75px;
+}
+.coast-introduction .scene-eyebrow > span {
+  background: #6a9890;
+}
+.coast-introduction .scene-description {
+  color: #49675f;
+}
+.coast-introduction .scene-work-link {
+  border-color: #6d8c80;
+}
+.pushup-figure {
+  right: auto;
+  left: 17%;
+  bottom: 13%;
+  width: clamp(290px, 30vw, 430px);
+}
+.pushup-sprite {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.pushup-figure figcaption {
+  color: #74674c;
+}
+.coast-palm {
+  position: absolute;
+  width: clamp(140px, 17vw, 250px);
+  left: -5%;
+  bottom: 21%;
+  pointer-events: none;
+  transform: translate(
+    calc(var(--look-x) * 0.5),
+    calc(var(--scroll-drift) * 0.45)
+  );
+}
+.palm-sway {
+  width: 100%;
+  transform-origin: 32% 98%;
+  animation: palm-breeze 8.3s ease-in-out infinite alternate;
+}
+.coast-grass {
+  clip-path: polygon(0 65%, 0 100%, 32% 100%);
+  opacity: 0.72;
+}
+.coast-birds {
+  top: 49%;
+  right: 60%;
+  width: 100px;
+}
+.coast-birds .bird-wing {
+  stroke: #73a3a1;
+}
+.sea-motion {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.sea-glints {
+  stroke-width: 2;
+  transform-origin: center;
+  animation: sea-glint 7s ease-in-out infinite alternate;
+}
+.sea-glints path:nth-child(2) {
+  animation: ripple 9s ease-in-out infinite reverse;
+}
+.shore-wave {
+  stroke-width: 5;
+  opacity: 0;
+  animation: shore-wash 9s linear infinite;
+}
+.shore-wave-two {
+  animation-delay: -4.5s;
+  stroke-width: 2;
+}
+.sailboat {
+  position: absolute;
+  left: 76%;
+  top: 51%;
+  width: 7%;
+  animation: boat-drift 36s ease-in-out infinite alternate;
+}
+.boat-rock {
+  width: 100%;
+  display: block;
+  transform-origin: 50% 90%;
+  animation: boat-rock 4.6s ease-in-out infinite alternate;
+}
+.boat-wake {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  width: 125%;
+  height: 2px;
+  background: #fffdf2;
+  opacity: 0.6;
+  border-radius: 100%;
+  animation: ripple 4.6s ease-in-out infinite;
+}
+@keyframes palm-breeze {
+  from {
+    transform: rotate(-1.1deg) skewX(-0.5deg);
+  }
+  to {
+    transform: rotate(0.8deg) skewX(0.6deg);
+  }
+}
+@keyframes sea-glint {
+  from {
+    opacity: 0.12;
+    transform: translateX(-9px);
+  }
+  to {
+    opacity: 0.5;
+    transform: translateX(12px);
+  }
+}
+@keyframes shore-wash {
+  0% {
+    opacity: 0;
+    transform: translate(-3px, -9px);
+  }
+  25% {
+    opacity: 0.45;
+  }
+  65% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(5px, 18px);
+  }
+}
+@keyframes boat-rock {
+  from {
+    transform: rotate(-2deg) translateY(-1px);
+  }
+  to {
+    transform: rotate(2deg) translateY(1.5px);
+  }
+}
+@keyframes boat-drift {
+  from {
+    transform: translateX(-8px);
+  }
+  to {
+    transform: translateX(22px);
+  }
+}
+@media (max-width: 1050px) {
+  .coast-introduction {
+    margin-left: 34%;
+  }
+  .coast-introduction h1,
+  .coast-introduction h2 {
+    font-size: 76px;
+  }
+  .pushup-figure {
+    left: 15%;
+    width: 340px;
+    bottom: 13%;
+  }
+}
+@media (max-width: 650px) {
+  .scene-passage {
+    min-height: 285px;
+    padding: 35px 24px 55px;
+  }
+  .scene-passage p {
+    font-size: 25px;
+  }
+  .coast-topline {
+    padding: 28px 8%;
+  }
+  .coast-introduction {
+    margin: 46px 8% 0;
+  }
+  .coast-introduction h1,
+  .coast-introduction h2 {
+    font-size: clamp(44px, 13vw, 60px);
+    letter-spacing: -3px;
+  }
+  .coast-introduction .scene-eyebrow {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .coast-introduction .scene-description {
+    max-width: 310px;
+  }
+  .pushup-figure {
+    width: 300px;
+    left: 10%;
+    bottom: 8%;
+  }
+  .coast-palm {
+    width: 110px;
+    left: -50px;
+    bottom: 18%;
+  }
+  .coast-birds {
+    top: 48%;
+    right: 20%;
+    width: 75px;
+  }
+  .coast-grass {
+    clip-path: polygon(0 80%, 0 100%, 44% 100%);
+  }
+  .sailboat {
+    left: 62%;
+    top: 51%;
+    width: 9%;
+  }
+}
+@media (max-width: 370px) {
+  .pushup-figure {
+    left: 6%;
+    width: 280px;
+  }
+}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { AtlasCell, useSpriteSequence } from '../../_components/atlas-sprite';
 
 // Complete drawn poses, registered by the centre of each grip. No limb scaling,
 // detached arms, mirroring, or procedural joint movement is applied to the art.
@@ -22,29 +22,7 @@ const sequence = [
 ] as const;
 
 export function PullupSprite({ moving }: { moving: boolean }): JSX.Element {
-  const [step, setStep] = useState(0);
-  const remaining = useRef<number>(sequence[0].duration);
-  const started = useRef(0);
-  useEffect(() => {
-    if (!moving) return;
-    started.current = performance.now();
-    const timeout = window.setTimeout(() => {
-      const next = (step + 1) % sequence.length;
-      remaining.current = sequence[next].duration;
-      started.current = 0;
-      setStep(next);
-    }, remaining.current);
-    return () => {
-      window.clearTimeout(timeout);
-      if (started.current)
-        remaining.current = Math.max(
-          0,
-          remaining.current - (performance.now() - started.current),
-        );
-    };
-  }, [moving, step]);
-
-  const pose = poses[sequence[step].pose];
+  const pose = poses[useSpriteSequence(sequence, moving)];
   const scale = 150 / (pose.right[0] - pose.left[0]);
   const x = 125 - pose.left[0] * scale;
   const y = 145 - pose.left[1] * scale;
@@ -106,36 +84,14 @@ export function PullupSprite({ moving }: { moving: boolean }): JSX.Element {
         opacity=".45"
       />
       <g transform={`translate(${x} ${y}) scale(${scale})`}>
-        <svg
-          width="512"
-          height="512"
-          viewBox={`${pose.cell[0] * 512} ${pose.cell[1] * 512} 512 512`}
-          overflow="hidden"
-        >
-          <image
-            href="/assets/diorama/pullup-atlas.webp"
-            width="1536"
-            height="1024"
-          />
-        </svg>
+        <AtlasCell src="/assets/diorama/pullup-atlas.webp" cell={pose.cell} />
       </g>
       {/* The bar occludes the torso/face, but the fingers wrap in front of it. */}
       <path d="M70 145H330" stroke="#2d4930" strokeWidth="16" />
       <path d="M70 142H330" stroke="url(#bar-shading)" strokeWidth="13" />
       <g clipPath="url(#front-grips)">
         <g transform={`translate(${x} ${y}) scale(${scale})`}>
-          <svg
-            width="512"
-            height="512"
-            viewBox={`${pose.cell[0] * 512} ${pose.cell[1] * 512} 512 512`}
-            overflow="hidden"
-          >
-            <image
-              href="/assets/diorama/pullup-atlas.webp"
-              width="1536"
-              height="1024"
-            />
-          </svg>
+          <AtlasCell src="/assets/diorama/pullup-atlas.webp" cell={pose.cell} />
         </g>
       </g>
       <path
