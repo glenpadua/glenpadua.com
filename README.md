@@ -6,6 +6,8 @@ Personal website built with Next.js App Router, TypeScript, Prismic, Tailwind CS
 
 The [website manifesto](MANIFESTO.md) records the creative direction, consulting ambitions, engineering principles, and first-scene experiment for the next version of the site.
 
+The first [lakeside scene experiment](docs/lakeside-scene.md) is available at `/preview/lakeside` while the development server is running.
+
 ## Stack
 
 - Next.js 16 (App Router)
