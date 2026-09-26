@@ -2,6 +2,10 @@
 
 Personal website built with Next.js App Router, TypeScript, Prismic, Tailwind CSS, and shadcn UI primitives.
 
+## Future direction
+
+The [website manifesto](MANIFESTO.md) records the creative direction, consulting ambitions, engineering principles, and first-scene experiment for the next version of the site.
+
 ## Stack
 
 - Next.js 16 (App Router)
