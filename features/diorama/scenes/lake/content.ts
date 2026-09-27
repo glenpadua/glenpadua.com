@@ -1,16 +1,21 @@
 import type { WorldScene } from '../../model/types';
 import { articleHref } from '../../lib/routes';
 import { lakeHorizonMask } from './horizon';
-import { socialLinks } from '../../data/site';
 export const lakeScene: WorldScene = {
   id: 'lake',
   name: 'Lake',
   title: ['I’m Glen,', 'a software engineer.'],
-  body: ['I’ve been building things for the internet for over ten years.'],
-  discovery: {
-    label: 'Skipping leg day since 2008.',
-    href: articleHref('lottery-of-birth'),
+  // The second line retypes itself through these, then settles back.
+  titleSwaps: {
+    line: 1,
+    phrases: [
+      'a maker of things.',
+      'a human in the loop.',
+      'a fixer of workflows.',
+      'an AI meat proxy.',
+    ],
   },
+  body: ['I’ve been building things for the internet for over ten years.'],
   description:
     'Glen holds a pull-up by a green mountain lake, in a sage exercise tank and dark shorts. His left leg is a prosthesis.',
   sky: '#d7e9e9',
@@ -36,8 +41,9 @@ export const lakeScene: WorldScene = {
   hotspots: [
     {
       id: 'exercise',
-      label: 'Find me doing this on Instagram',
-      href: socialLinks.instagram,
+      label: 'Skipping leg day since 2008. Read ‘The Lottery of Birth’',
+      hint: 'Skipping leg day since 2008.',
+      href: articleHref('lottery-of-birth'),
       x: 83.5,
       y: 61,
     },

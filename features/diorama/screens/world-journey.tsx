@@ -282,7 +282,12 @@ function PopulatedJourney({
               first={i === 0}
               active={current === i}
             />
-            <SceneCopy scene={scene} first={i === 0} interactive={ready} />
+            <SceneCopy
+              scene={scene}
+              first={i === 0}
+              interactive={ready}
+              active={current === i}
+            />
           </section>
         ))}
         <JourneyEnding

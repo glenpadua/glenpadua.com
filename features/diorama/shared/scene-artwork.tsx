@@ -110,6 +110,7 @@ export function SceneArtwork({
             className={`cue-${h.id}`}
             href={h.href}
             label={h.label}
+            hint={h.hint}
             style={{ left: `${h.x}%`, top: `${h.y}%` }}
           />
         ))}

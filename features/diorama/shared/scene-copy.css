@@ -63,3 +63,19 @@
 .world .world-discovery[hidden] {
   display: none;
 }
+
+/* The caret while a title line is being retyped. */
+.world .world-title-caret {
+  display: inline-block;
+  width: 0.06em;
+  height: 0.82em;
+  margin-left: 0.05em;
+  vertical-align: -0.06em;
+  background: currentColor;
+  animation: world-caret 1.05s steps(1) infinite;
+}
+@keyframes world-caret {
+  50% {
+    opacity: 0;
+  }
+}

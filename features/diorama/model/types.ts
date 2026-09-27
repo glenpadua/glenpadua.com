@@ -1,6 +1,8 @@
 export interface WorldHotspot {
   id: string;
   label: string;
+  /** Short visible caption; `label` remains the accessible name. */
+  hint?: string;
   href: string;
   x: number;
   y: number;
@@ -22,6 +24,11 @@ export interface WorldScene {
   name: string;
   eyebrow?: string;
   title: readonly string[];
+  /**
+   * One title line retyped through lighthearted alternatives on arrival,
+   * then back to itself. The authored line stays the settled heading.
+   */
+  titleSwaps?: { line: number; phrases: readonly string[] };
   /** Paragraphs wrap naturally; title lines may still be art-directed. */
   body?: readonly string[];
   discovery?:

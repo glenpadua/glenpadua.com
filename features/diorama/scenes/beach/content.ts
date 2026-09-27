@@ -2,9 +2,9 @@ import type { WorldScene } from '../../model/types';
 export const beachScene: WorldScene = {
   id: 'beach',
   name: 'Beach',
-  title: ['Some ideas don’t leave me alone.'],
+  title: ['A laptop and decent wifi is all I need.'],
   body: [
-    'I work at Remote.com, build things on the side, and like finding out how far I can take an idea with AI.',
+    'By day I’m an engineer at Remote.com. On the side, I build things for problems worth solving: with AI where it helps, and without it where it doesn’t.',
   ],
   description:
     'Glen sits on the sand under a striped beach umbrella, wearing a yellow striped shirt and working on a laptop. His left leg is prosthetic. He faces the laptop and types quietly. A phone lies on the sand beside him.',

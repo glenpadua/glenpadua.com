@@ -202,7 +202,8 @@ test('built preview HTML has semantic copy, real destinations, noindex and stati
     assert.match(html, /href="\/preview\/diorama\/stories"/);
   }
   assert.match(home, /Skipping leg day/);
-  assert.match(home, /instagram.com\/glen.padua/);
+  assert.match(home, /href="\/preview\/diorama\/blog\/lottery-of-birth"/);
+  assert.match(home, /I’m Glen, a software engineer\./);
   assert.match(work, /Senior engineer/);
   assert.match(work, /Exploration/);
   for (const uid of [

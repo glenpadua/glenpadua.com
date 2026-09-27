@@ -4,10 +4,10 @@ import { worldRoutes } from '../../lib/routes';
 export const cityScene: WorldScene = {
   id: 'city',
   name: 'City',
-  title: ['Work should fit around life.'],
+  title: ['Then there’s life too.'],
   body: [
     'I’ve picked up a few stories along the way. Occasionally, I even finish writing them.',
-    'If you’ve got a story—or something you’d like to build—I’m up for a conversation.',
+    'And if something in your business is eating hours it shouldn’t, I’d like to hear about it.',
   ],
   discovery: { label: 'Say hello', href: contactHref },
   description:
