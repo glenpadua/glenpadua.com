@@ -18,3 +18,7 @@ Not yet: scripted StayPal/Purrfect Plate demos, case-study pages, final copy, an
 - Rubber-band selection initially stopped after one move because the browser began a native image drag on the painting; wallpaper images are now non-draggable and the band prevents default, after which dragging selected StayPal and Purrfect Plate.
 - Right-click opened the Desktop menu with focus on “Change wallpaper”; Escape closes it.
 - A notification appeared after ~45 s idle and only once in 75 s.
+
+## Wallpaper, revised
+
+Glen found the painted wallpapers weren't landing. They were replaced with quiet paper (gradient, grain, contour lines, a coffee ring) and “Change wallpaper” was removed; the label pills went with them. The sticky note returned to the bottom-right corner and notifications moved to the top right (bottom centre on phones). Rubber-band selection and notifications are unchanged.

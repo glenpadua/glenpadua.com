@@ -10,10 +10,10 @@ import {
   type ReactNode,
 } from 'react';
 import { createPortal, flushSync } from 'react-dom';
-import { Image as ImageIcon, Maximize2, Minimize2, X } from 'lucide-react';
+import { Maximize2, Minimize2, X } from 'lucide-react';
 import { useMotionPolicy } from '../../shared/scene-motion';
 import { deskToasts, type DeskFile, type DeskIcon } from './content';
-import { DeskWallpaper, useWallpaper, wallpaperNames } from './desk-wallpaper';
+import { DeskWallpaper } from './desk-wallpaper';
 import styles from './monitor-desktop.module.css';
 
 interface OpenWindow {
@@ -214,7 +214,6 @@ export function MonitorDesktop({
   const [windows, setWindows] = useState<OpenWindow[]>([]);
   const [zoomed, setZoomed] = useState(false);
   const [wandering, setWandering] = useState<string | null>(null);
-  const wall = useWallpaper();
   const [selected, setSelected] = useState<ReadonlySet<string>>(new Set());
   const [band, setBand] = useState<{
     x: number;
@@ -346,12 +345,6 @@ export function MonitorDesktop({
     !(target as HTMLElement).closest(
       'button, a, [data-window], [data-menubar], [role="menu"]',
     );
-
-  // Change the wallpaper (with the homepage's handoff when motion is on).
-  const changeWallpaper = () => {
-    wall.next(enabled);
-    setMenu(null);
-  };
 
   // Rubber-band selection on the empty desktop: it only highlights icons.
   const press = (event: PointerEvent<HTMLDivElement>) => {
@@ -508,25 +501,12 @@ export function MonitorDesktop({
           onPointerLeave={leave}
           onContextMenu={contextMenu}
         >
-          <DeskWallpaper
-            current={wall.current}
-            leaving={wall.leaving}
-            moving={enabled}
-            onSettled={wall.settle}
-          />
+          <DeskWallpaper />
           <div className={styles.menubar} data-menubar>
             <span>
               <i /> Glen’s desk
             </span>
             <ValenciaClock />
-            <button
-              className={styles.lean}
-              onClick={changeWallpaper}
-              aria-label={`Change wallpaper. Now: ${wallpaperNames[wall.current]}`}
-              title="Change wallpaper"
-            >
-              <ImageIcon size={12} />
-            </button>
             <button
               ref={leanButton}
               className={styles.lean}
@@ -581,10 +561,8 @@ export function MonitorDesktop({
               aria-label="Desktop"
               style={{ left: menu.x, top: menu.y }}
             >
-              <button ref={menuFirst} role="menuitem" onClick={changeWallpaper}>
-                Change wallpaper
-              </button>
               <button
+                ref={menuFirst}
                 role="menuitem"
                 onClick={() => {
                   setMenu(null);

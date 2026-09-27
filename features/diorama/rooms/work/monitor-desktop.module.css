@@ -103,8 +103,6 @@
 .icon span {
   padding: 0.05em 0.45em 0.1em;
   border-radius: 4px;
-  background: #fff8e4d9;
-  box-shadow: 0 1px 3px #2d41391f;
 }
 .icon[data-selected='true'] {
   background: #3c5a4538;
@@ -123,12 +121,12 @@
   outline-offset: 1px;
 }
 
-/* A sticky note on the open ground, clear of the people in every painting. */
+/* A sticky note stuck to the bottom corner of the screen. */
 .note {
   position: absolute;
   z-index: 2;
-  right: 30cqw;
-  bottom: 3cqh;
+  right: 3cqw;
+  bottom: 5cqh;
   max-width: 12em;
   margin: 0;
   padding: 0.6em 0.8em;
@@ -306,13 +304,17 @@
     width: calc(100vw - 20px);
     height: calc(100svh - 96px);
   }
-  /* Tall phone screens: the open sky under the icons is clear in every
-     painting, where the ground holds the people. */
   .monitor[data-zoomed='true'] .note {
     display: block;
-    top: 33%;
-    bottom: auto;
-    right: 14cqw;
+  }
+  /* Centred with margins: the toast's own animation owns its transform. */
+  .toast {
+    top: auto;
+    bottom: 4cqh;
+    left: 6cqw;
+    right: 6cqw;
+    width: fit-content;
+    margin-inline: auto;
   }
   /* On a phone an open window is the whole screen below the menu bar. */
   .monitor[data-zoomed='true'] .window {
@@ -334,12 +336,12 @@
   }
 }
 
-/* Now-and-then notification. Decorative: it never takes focus. */
+/* Now-and-then notification, top right like any desktop. Decorative. */
 .toast {
   position: absolute;
   z-index: 900;
   right: 2.5cqw;
-  bottom: 4cqh;
+  top: calc(clamp(18px, 8cqh, 34px) + 3cqh);
   max-width: 17em;
   margin: 0;
   padding: 0.55em 0.8em;
