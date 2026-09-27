@@ -7,7 +7,7 @@ export const cityScene: WorldScene = {
   title: ['Then there’s life too.'],
   body: [
     'I’ve picked up a few stories along the way. Occasionally, I even finish writing them.',
-    'And if something in your business is eating hours it shouldn’t, I’d like to hear about it.',
+    'I’m always curious how other people work, and what slows them down. If you’d like to swap notes, I’m up for a chat.',
   ],
   discovery: { label: 'Say hello', href: contactHref },
   description:
