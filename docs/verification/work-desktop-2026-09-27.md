@@ -22,3 +22,9 @@ Not yet: scripted StayPal/Purrfect Plate demos, case-study pages, final copy, an
 ## Wallpaper, revised
 
 Glen found the painted wallpapers weren't landing. They were replaced with quiet paper (gradient, grain, contour lines, a coffee ring) and “Change wallpaper” was removed; the label pills went with them. The sticky note returned to the bottom-right corner and notifications moved to the top right (bottom centre on phones). Rubber-band selection and notifications are unchanged.
+
+## Lamp dark mode, power menu and the full screen
+
+- In the browser pane: dimming the desk lamp switched the desktop to its dark theme; “Glen’s desk” opened Restart / Shut down; Shut down showed “It’s now safe to walk away from your desk.” with focus on “Turn it back on”.
+- Glen reported the desktop not filling the painted screen (a cream band below it, obvious once dark or off). The desktop now uses the measured painted screen (x 465–1095, y 182–510 of 1536×1024, plus 2px under the bezel) and a generated alpha mask for his head. A first version grew the head outline and uncovered a pale halo and bottom line; the final mask follows the painting's anti-aliasing and lets the desktop cover the light rim painted round the hair. Checked at 2.5× in light, dark and off; the pixel test passes.
+- Phones keep their own screen layout with no mask; the leaned-in screen is unmasked while the monitor left in the room keeps the mask.

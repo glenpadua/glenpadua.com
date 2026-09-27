@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import Link from 'next/link';
 import { worldAsset } from '../../lib/assets';
 import { articleHref, worldRoutes } from '../../lib/routes';
@@ -24,6 +24,7 @@ export function WorkRoom({
   const [panel, setPanel] = useState<'remote' | null>(null);
   const [light, setLight] = useState(true);
   const [screenAsleep, setScreenAsleep] = useState(false);
+  const goIdle = useCallback(() => setScreenAsleep(true), []);
   const opener = useRef<HTMLElement | null>(null);
   const open = (name: typeof panel) => {
     opener.current = document.activeElement as HTMLElement;
@@ -73,6 +74,8 @@ export function WorkRoom({
           files={files}
           notes={notes}
           asleep={screenAsleep}
+          dark={!light}
+          onIdle={goIdle}
           saver={
             <div className="screen-saver">
               <svg viewBox="0 0 100 70" aria-hidden="true">

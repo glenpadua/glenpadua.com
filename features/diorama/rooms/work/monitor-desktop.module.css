@@ -38,13 +38,29 @@
   background: #fbf3dde6;
   font-size: 0.86em;
 }
-.menubar > span:first-child {
+/* “Glen's desk” is the system menu, like the corner of any menu bar. */
+.system {
   display: flex;
   align-items: center;
   gap: 0.5em;
+  height: 100%;
   margin-right: auto;
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: inherit;
+  font: inherit;
 }
-.menubar i {
+.system:hover,
+.system[aria-expanded='true'] {
+  background: #54765d1f;
+}
+.systemMenu {
+  top: calc(clamp(18px, 8cqh, 34px) - 2px);
+  left: 0.6em;
+}
+.system i {
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -273,6 +289,7 @@
   font-size: clamp(13px, 1.75cqw, 17px);
 }
 .monitor[data-zoomed='true'] {
+  mask-image: none;
   position: fixed;
   z-index: 60;
   left: 50%;
@@ -408,5 +425,158 @@
 @media (prefers-reduced-motion: reduce) {
   .toast {
     animation: none;
+  }
+}
+
+/* Shut down: the screen goes dark and says the obvious thing. */
+.off {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1em;
+  padding: 1em;
+  background: #121714;
+  color: #b9c2b1;
+  text-align: center;
+}
+.off p {
+  margin: 0;
+}
+.off button {
+  padding: 0.35em 0.9em;
+  border: 1px solid #b9c2b155;
+  border-radius: 999px;
+  background: none;
+  color: #e7e0c9;
+  font: inherit;
+  font-size: 0.9em;
+}
+.off button:hover,
+.off button:focus-visible {
+  border-color: #e7e0c9;
+  outline: none;
+}
+
+/* Restart: a small start-up, the signature and a filling line. */
+.boot {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1.1em;
+  background: #fbf3dd;
+  color: #2d4139;
+}
+.bootMark {
+  font-family: var(--world-heading-font);
+  font-style: italic;
+  font-size: 1.9em;
+  animation: boot-in 500ms ease-out both;
+}
+.bootBar {
+  width: 9em;
+  height: 3px;
+  border-radius: 3px;
+  background: #54765d2e;
+  overflow: hidden;
+}
+.bootBar i {
+  display: block;
+  height: 100%;
+  background: #54765d;
+  animation: boot-bar 2.2s cubic-bezier(0.3, 0.1, 0.3, 1) 0.25s both;
+}
+@keyframes boot-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes boot-bar {
+  from {
+    width: 0;
+  }
+  60% {
+    width: 70%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Lamp off: the desktop follows the room into a warm dark mode. */
+.monitor[data-dark='true'] .screen {
+  color: #e9e3cf;
+}
+.monitor[data-dark='true'] .menubar {
+  border-bottom-color: #ffffff1a;
+  background: #1c2420e6;
+}
+.monitor[data-dark='true'] .system:hover,
+.monitor[data-dark='true'] .system[aria-expanded='true'],
+.monitor[data-dark='true'] .icon:hover,
+.monitor[data-dark='true'] .icon:focus-visible,
+.monitor[data-dark='true'] .icon[data-wander='true'] {
+  background: #e9e3cf1a;
+  border-color: #e9e3cf2e;
+}
+.monitor[data-dark='true'] .icon svg {
+  filter: drop-shadow(0 1px 0 #0006) brightness(0.92);
+}
+.monitor[data-dark='true'] .note {
+  background: #d9c77f;
+  color: #3a321c;
+}
+.monitor[data-dark='true'] .window,
+.monitor[data-dark='true'] .menu,
+.monitor[data-dark='true'] .toast {
+  border-color: #ffffff1f;
+  background: #232c27;
+  color: #e9e3cf;
+}
+.monitor[data-dark='true'] .titlebar {
+  border-bottom-color: #ffffff17;
+  background: #2b3530;
+}
+.monitor[data-dark='true'] .block h3,
+.monitor[data-dark='true'] .timeline span {
+  color: #a9b3a2;
+}
+.monitor[data-dark='true'] .status {
+  background: #9cc0a52a;
+  color: #cfe0cf;
+}
+.monitor[data-dark='true'] .link {
+  color: #cfe0cf;
+}
+.monitor[data-dark='true'] .boot {
+  background: #1a221e;
+  color: #e9e3cf;
+}
+.monitor[data-dark='true'] .cursor path {
+  fill: #2d4139;
+  stroke: #e9e3cf;
+}
+.screen,
+.menubar,
+.window,
+.titlebar,
+.note {
+  transition:
+    background-color 450ms ease,
+    color 450ms ease,
+    border-color 450ms ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .bootMark,
+  .bootBar i {
+    animation: none;
+  }
+  .bootBar i {
+    width: 100%;
   }
 }

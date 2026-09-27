@@ -52,9 +52,13 @@ const lines = hills.flatMap(hill =>
 );
 
 /** The desktop's quiet paper: gradient, grain, contour lines, a coffee ring. */
-export function DeskWallpaper(): JSX.Element {
+export function DeskWallpaper({
+  dark = false,
+}: {
+  dark?: boolean;
+}): JSX.Element {
   return (
-    <div className={styles.paper} aria-hidden="true">
+    <div className={styles.paper} data-dark={dark} aria-hidden="true">
       <svg
         className={styles.contours}
         viewBox="0 0 1000 600"

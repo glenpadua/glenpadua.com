@@ -4,6 +4,7 @@ import {
   useRef,
   useState,
   useSyncExternalStore,
+  type CSSProperties,
   type KeyboardEvent,
   type MouseEvent,
   type PointerEvent,
@@ -15,6 +16,17 @@ import { useMotionPolicy } from '../../shared/scene-motion';
 import { deskToasts, type DeskFile, type DeskIcon } from './content';
 import { DeskWallpaper } from './desk-wallpaper';
 import styles from './monitor-desktop.module.css';
+import { workScreen, workScreenMask } from './screen-mask';
+
+// The painted screen's measured box and head mask, as custom properties so
+// the room's layout rules decide where they apply (not on phones).
+const screenVars = {
+  '--screen-left': `${workScreen.left}%`,
+  '--screen-top': `${workScreen.top}%`,
+  '--screen-width': `${workScreen.width}%`,
+  '--screen-height': `${workScreen.height}%`,
+  '--screen-mask': workScreenMask,
+} as CSSProperties;
 
 interface OpenWindow {
   id: string;
@@ -199,11 +211,17 @@ export function MonitorDesktop({
   notes,
   asleep,
   saver,
+  dark = false,
+  onIdle,
 }: {
   files: readonly DeskFile[];
   notes: readonly string[];
   asleep: boolean;
   saver: ReactNode;
+  /** The room's desk lamp is off: the desktop follows it into dark mode. */
+  dark?: boolean;
+  /** Nobody has touched the page for a while: the room lets the screen sleep. */
+  onIdle?: () => void;
 }): JSX.Element {
   const { enabled } = useMotionPolicy();
   const note = useSyncExternalStore(
@@ -227,6 +245,14 @@ export function MonitorDesktop({
   const [menu, setMenu] = useState<{ x: number; y: number } | null>(null);
   const menuFirst = useRef<HTMLButtonElement>(null);
   const [toast, setToast] = useState<string | null>(null);
+  // The machine itself: on, off, or starting up; and its system menu.
+  const [power, setPower] = useState<'on' | 'off' | 'booting'>('on');
+  const [systemMenu, setSystemMenu] = useState(false);
+  const systemButton = useRef<HTMLButtonElement>(null);
+  const systemFirst = useRef<HTMLButtonElement>(null);
+  const powerButton = useRef<HTMLButtonElement>(null);
+  const bootTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  useEffect(() => () => clearTimeout(bootTimer.current), []);
   const screen = useRef<HTMLDivElement>(null);
   const cursor = useRef<HTMLSpanElement>(null);
   const icons = useRef(new Map<string, HTMLButtonElement>());
@@ -348,8 +374,11 @@ export function MonitorDesktop({
 
   // Rubber-band selection on the empty desktop: it only highlights icons.
   const press = (event: PointerEvent<HTMLDivElement>) => {
-    if (menu && !(event.target as HTMLElement).closest('[role="menu"]'))
-      setMenu(null);
+    const inMenu = (event.target as HTMLElement).closest(
+      '[role="menu"], [aria-haspopup="menu"]',
+    );
+    if (menu && !inMenu) setMenu(null);
+    if (systemMenu && !inMenu) setSystemMenu(false);
     if (
       event.pointerType !== 'mouse' ||
       event.button !== 0 ||
@@ -466,8 +495,62 @@ export function MonitorDesktop({
   const wanderingIcon =
     enabled && !asleep && !windows.length ? wandering : null;
 
+  const boot = () => {
+    setPower('booting');
+    clearTimeout(bootTimer.current);
+    bootTimer.current = setTimeout(
+      () => {
+        setPower('on');
+        requestAnimationFrame(() => systemButton.current?.focus());
+      },
+      enabled ? 2600 : 500,
+    );
+  };
+  const restart = () => {
+    setSystemMenu(false);
+    setWindows([]);
+    boot();
+  };
+  const shutDown = () => {
+    setSystemMenu(false);
+    setWindows([]);
+    setPower('off');
+    requestAnimationFrame(() => powerButton.current?.focus());
+  };
+  const toggleSystemMenu = () => {
+    setMenu(null);
+    setSystemMenu(open => {
+      if (!open) requestAnimationFrame(() => systemFirst.current?.focus());
+      return !open;
+    });
+  };
+
+  // A long quiet spell on the whole page lets the screen drift to sleep.
+  useEffect(() => {
+    if (!onIdle || !enabled || asleep || power !== 'on') return;
+    if (windows.length || zoomed) return;
+    let last = performance.now();
+    const stir = () => {
+      last = performance.now();
+    };
+    const events = ['pointermove', 'pointerdown', 'keydown', 'scroll', 'wheel'];
+    events.forEach(e => window.addEventListener(e, stir, { passive: true }));
+    const timer = setInterval(() => {
+      if (!document.hidden && performance.now() - last > 90_000) onIdle();
+    }, 5000);
+    return () => {
+      clearInterval(timer);
+      events.forEach(e => window.removeEventListener(e, stir));
+    };
+  }, [onIdle, enabled, asleep, power, windows.length, zoomed]);
+
   const escape = (event: KeyboardEvent<HTMLElement>) => {
     if (event.key !== 'Escape') return;
+    if (systemMenu) {
+      event.stopPropagation();
+      setSystemMenu(false);
+      return systemButton.current?.focus();
+    }
     if (menu) {
       event.stopPropagation();
       return setMenu(null);
@@ -486,6 +569,8 @@ export function MonitorDesktop({
       className={`desk-monitor ${styles.monitor}`}
       aria-label="Glen’s desktop"
       data-zoomed={zoomed}
+      data-dark={dark}
+      style={screenVars}
       onKeyDown={escape}
     >
       {asleep ? (
@@ -501,121 +586,164 @@ export function MonitorDesktop({
           onPointerLeave={leave}
           onContextMenu={contextMenu}
         >
-          <DeskWallpaper />
-          <div className={styles.menubar} data-menubar>
-            <span>
-              <i /> Glen’s desk
-            </span>
-            <ValenciaClock />
-            <button
-              ref={leanButton}
-              className={styles.lean}
-              onClick={() => setLean(!zoomed)}
-              aria-label={zoomed ? 'Back to the room' : 'Lean in to the screen'}
-            >
-              {zoomed ? <Minimize2 size={12} /> : <Maximize2 size={12} />}
-            </button>
-          </div>
-          <ul className={styles.icons} aria-label="Files">
-            {files.map(file => (
-              <li key={file.id}>
-                <button
-                  ref={node => {
-                    if (node) icons.current.set(file.id, node);
-                    else icons.current.delete(file.id);
-                  }}
-                  className={styles.icon}
-                  data-wander={wanderingIcon === file.id}
-                  data-selected={selected.has(file.id)}
-                  data-open={windows.some(w => w.id === file.id)}
-                  onClick={() => open(file)}
-                >
-                  <Glyph icon={file.icon} />
-                  <span>{file.name}</span>
-                </button>
-              </li>
-            ))}
-          </ul>
-          <p className={styles.note}>{note}</p>
-          {toast && (
-            <p key={toast} className={styles.toast} aria-hidden="true">
-              {toast}
-            </p>
-          )}
-          {band && (
-            <span
-              className={styles.band}
-              style={{
-                left: band.x,
-                top: band.y,
-                width: band.w,
-                height: band.h,
-              }}
-              aria-hidden="true"
-            />
-          )}
-          {menu && (
-            <div
-              className={styles.menu}
-              role="menu"
-              aria-label="Desktop"
-              style={{ left: menu.x, top: menu.y }}
-            >
-              <button
-                ref={menuFirst}
-                role="menuitem"
-                onClick={() => {
-                  setMenu(null);
-                  setLean(!zoomed);
-                }}
-              >
-                {zoomed ? 'Back to the room' : 'Lean in'}
+          <DeskWallpaper dark={dark} />
+          {power === 'off' && (
+            <div className={styles.off}>
+              <p>It’s now safe to walk away from your desk.</p>
+              <button ref={powerButton} onClick={boot}>
+                Turn it back on
               </button>
             </div>
           )}
-          {windows.map(win => {
-            const file = files.find(f => f.id === win.id)!;
-            return (
-              <section
-                key={win.id}
-                ref={node => {
-                  if (node) panes.current.set(win.id, node);
-                  else panes.current.delete(win.id);
-                }}
-                className={styles.window}
-                role="dialog"
-                aria-modal="false"
-                aria-labelledby={`desk-window-${win.id}`}
-                tabIndex={-1}
-                data-window={win.id}
-                style={{
-                  left: `${win.x}%`,
-                  top: `${win.y}%`,
-                  zIndex: 10 + win.z,
-                }}
-                onPointerDown={() => raise(win.id)}
-              >
-                <header
-                  className={styles.titlebar}
-                  onPointerDown={event => grab(event, win)}
-                  onPointerMove={move}
-                  onPointerUp={release}
-                  onPointerCancel={release}
+          {power === 'booting' && (
+            <div className={styles.boot} role="status">
+              <span className={styles.bootMark}>glen padua.</span>
+              <span className={styles.bootBar} aria-hidden="true">
+                <i />
+              </span>
+              <span className="sr-only">Starting up</span>
+            </div>
+          )}
+          {power === 'on' && (
+            <>
+              <div className={styles.menubar} data-menubar>
+                <button
+                  ref={systemButton}
+                  className={styles.system}
+                  aria-haspopup="menu"
+                  aria-expanded={systemMenu}
+                  onClick={toggleSystemMenu}
                 >
-                  <h2 id={`desk-window-${win.id}`}>{file.title}</h2>
-                  <button
-                    onClick={() => close(win.id)}
-                    aria-label={`Close ${file.title}`}
+                  <i /> Glen’s desk
+                </button>
+                {systemMenu && (
+                  <div
+                    className={`${styles.menu} ${styles.systemMenu}`}
+                    role="menu"
+                    aria-label="Glen’s desk"
                   >
-                    <X size={12} />
+                    <button ref={systemFirst} role="menuitem" onClick={restart}>
+                      Restart
+                    </button>
+                    <button role="menuitem" onClick={shutDown}>
+                      Shut down
+                    </button>
+                  </div>
+                )}
+                <ValenciaClock />
+                <button
+                  ref={leanButton}
+                  className={styles.lean}
+                  onClick={() => setLean(!zoomed)}
+                  aria-label={
+                    zoomed ? 'Back to the room' : 'Lean in to the screen'
+                  }
+                >
+                  {zoomed ? <Minimize2 size={12} /> : <Maximize2 size={12} />}
+                </button>
+              </div>
+              <ul className={styles.icons} aria-label="Files">
+                {files.map(file => (
+                  <li key={file.id}>
+                    <button
+                      ref={node => {
+                        if (node) icons.current.set(file.id, node);
+                        else icons.current.delete(file.id);
+                      }}
+                      className={styles.icon}
+                      data-wander={wanderingIcon === file.id}
+                      data-selected={selected.has(file.id)}
+                      data-open={windows.some(w => w.id === file.id)}
+                      onClick={() => open(file)}
+                    >
+                      <Glyph icon={file.icon} />
+                      <span>{file.name}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <p className={styles.note}>{note}</p>
+              {toast && (
+                <p key={toast} className={styles.toast} aria-hidden="true">
+                  {toast}
+                </p>
+              )}
+              {band && (
+                <span
+                  className={styles.band}
+                  style={{
+                    left: band.x,
+                    top: band.y,
+                    width: band.w,
+                    height: band.h,
+                  }}
+                  aria-hidden="true"
+                />
+              )}
+              {menu && (
+                <div
+                  className={styles.menu}
+                  role="menu"
+                  aria-label="Desktop"
+                  style={{ left: menu.x, top: menu.y }}
+                >
+                  <button
+                    ref={menuFirst}
+                    role="menuitem"
+                    onClick={() => {
+                      setMenu(null);
+                      setLean(!zoomed);
+                    }}
+                  >
+                    {zoomed ? 'Back to the room' : 'Lean in'}
                   </button>
-                </header>
-                <div className={styles.body}>
-                  <FileContents file={file} />
                 </div>
-              </section>
-            );
-          })}
+              )}
+              {windows.map(win => {
+                const file = files.find(f => f.id === win.id)!;
+                return (
+                  <section
+                    key={win.id}
+                    ref={node => {
+                      if (node) panes.current.set(win.id, node);
+                      else panes.current.delete(win.id);
+                    }}
+                    className={styles.window}
+                    role="dialog"
+                    aria-modal="false"
+                    aria-labelledby={`desk-window-${win.id}`}
+                    tabIndex={-1}
+                    data-window={win.id}
+                    style={{
+                      left: `${win.x}%`,
+                      top: `${win.y}%`,
+                      zIndex: 10 + win.z,
+                    }}
+                    onPointerDown={() => raise(win.id)}
+                  >
+                    <header
+                      className={styles.titlebar}
+                      onPointerDown={event => grab(event, win)}
+                      onPointerMove={move}
+                      onPointerUp={release}
+                      onPointerCancel={release}
+                    >
+                      <h2 id={`desk-window-${win.id}`}>{file.title}</h2>
+                      <button
+                        onClick={() => close(win.id)}
+                        aria-label={`Close ${file.title}`}
+                      >
+                        <X size={12} />
+                      </button>
+                    </header>
+                    <div className={styles.body}>
+                      <FileContents file={file} />
+                    </div>
+                  </section>
+                );
+              })}
+            </>
+          )}
           <span
             ref={cursor}
             className={styles.cursor}
@@ -645,7 +773,7 @@ export function MonitorDesktop({
   // world root; the painted monitor keeps a plain lit screen meanwhile.
   return (
     <>
-      <div className="desk-monitor" aria-hidden="true" />
+      <div className="desk-monitor" aria-hidden="true" style={screenVars} />
       {createPortal(
         <>
           <button
