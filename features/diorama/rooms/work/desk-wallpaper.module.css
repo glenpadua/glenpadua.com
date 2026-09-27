@@ -1,0 +1,101 @@
+/*
+ * The desktop wallpaper: a homepage painting in its own 3:2 box. The box
+ * covers the screen and slides to keep its people in view on tall screens.
+ */
+@property --wall-wipe {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 1;
+}
+.wallpaper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #dcebe7;
+}
+.painting {
+  --box-w: max(100cqw, 150cqh);
+  user-select: none;
+  -webkit-user-drag: none;
+  position: absolute;
+  bottom: 0;
+  width: var(--box-w);
+  aspect-ratio: 3 / 2;
+  left: clamp(
+    calc(100cqw - var(--box-w)),
+    calc(50cqw - var(--focal) * var(--box-w)),
+    0px
+  );
+}
+.back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Painting-space positions from the homepage scenes. */
+.lakeGlen {
+  position: absolute;
+  left: 66%;
+  top: 47%;
+  width: 21%;
+}
+/* Borrowed scene classes bring their scene-wide overlays; not here. */
+.painting .lakeGlen::before,
+.painting .lakeGlen::after,
+.painting .beachGlen::before,
+.painting .beachGlen::after {
+  content: none;
+}
+/* On the wallpaper, Glen and his umbrella sit on the right-hand sand so the
+   desktop icons don't cover him. */
+.beachGlen {
+  position: absolute;
+  left: 60%;
+  top: 60%;
+  width: 22%;
+}
+
+/* Handoffs, driven by one animated number instead of scroll. */
+.tide,
+.dusk,
+.dawn {
+  animation: wall-wipe 1.15s cubic-bezier(0.45, 0, 0.25, 1) both;
+}
+@keyframes wall-wipe {
+  from {
+    --wall-wipe: 0;
+  }
+  to {
+    --wall-wipe: 1;
+  }
+}
+.tide {
+  mask-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 100' preserveAspectRatio='none'%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='.62'/%3E%3Cstop offset='1' stop-opacity='0'/%3E%3C/linearGradient%3E%3Cpath fill='url(%23g)' d='M0 0H900V62C825 88 750 88 675 66S525 38 450 60 300 90 225 70 75 42 0 62Z'/%3E%3C/svg%3E"),
+    linear-gradient(#000 0 0);
+  mask-repeat: repeat-x, no-repeat;
+  mask-size:
+    300px 14%,
+    100% max(0%, calc((var(--wall-wipe) * 1.14 - 0.14) * 100% + 1px));
+  mask-position:
+    calc(var(--wall-wipe) * -180px)
+      calc((var(--wall-wipe) * 1.14 - 0.14) / 0.86 * 100%),
+    0 0;
+}
+.dusk {
+  mask-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000' preserveAspectRatio='none'%3E%3ClinearGradient id='g' x2='1'%3E%3Cstop offset='0' stop-opacity='0'/%3E%3Cstop offset='.6'/%3E%3C/linearGradient%3E%3Cpath fill='url(%23g)' d='M100 0V1000H40C20 850 62 700 36 500S14 150 40 0Z'/%3E%3C/svg%3E"),
+    linear-gradient(#000 0 0);
+  mask-repeat: repeat-y, no-repeat;
+  mask-size:
+    24% 400px,
+    max(0%, calc((var(--wall-wipe) * 1.24 - 0.24) * 100% + 1px)) 100%;
+  mask-position:
+    calc((1 - var(--wall-wipe) * 1.24) / 0.76 * 100%)
+      calc(var(--wall-wipe) * -120px),
+    100% 0;
+}
+.dawn {
+  opacity: var(--wall-wipe);
+}

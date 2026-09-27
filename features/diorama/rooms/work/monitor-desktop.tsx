@@ -5,13 +5,15 @@ import {
   useState,
   useSyncExternalStore,
   type KeyboardEvent,
+  type MouseEvent,
   type PointerEvent,
   type ReactNode,
 } from 'react';
 import { createPortal, flushSync } from 'react-dom';
-import { Maximize2, Minimize2, X } from 'lucide-react';
+import { Image as ImageIcon, Maximize2, Minimize2, X } from 'lucide-react';
 import { useMotionPolicy } from '../../shared/scene-motion';
-import type { DeskFile, DeskIcon } from './content';
+import { deskToasts, type DeskFile, type DeskIcon } from './content';
+import { DeskWallpaper, useWallpaper, wallpaperNames } from './desk-wallpaper';
 import styles from './monitor-desktop.module.css';
 
 interface OpenWindow {
@@ -212,6 +214,20 @@ export function MonitorDesktop({
   const [windows, setWindows] = useState<OpenWindow[]>([]);
   const [zoomed, setZoomed] = useState(false);
   const [wandering, setWandering] = useState<string | null>(null);
+  const wall = useWallpaper();
+  const [selected, setSelected] = useState<ReadonlySet<string>>(new Set());
+  const [band, setBand] = useState<{
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+  } | null>(null);
+  const bandStart = useRef<{ x: number; y: number; pointer: number } | null>(
+    null,
+  );
+  const [menu, setMenu] = useState<{ x: number; y: number } | null>(null);
+  const menuFirst = useRef<HTMLButtonElement>(null);
+  const [toast, setToast] = useState<string | null>(null);
   const screen = useRef<HTMLDivElement>(null);
   const cursor = useRef<HTMLSpanElement>(null);
   const icons = useRef(new Map<string, HTMLButtonElement>());
@@ -326,9 +342,105 @@ export function MonitorDesktop({
     drag.current = null;
   };
 
+  const onBackground = (target: EventTarget) =>
+    !(target as HTMLElement).closest(
+      'button, a, [data-window], [data-menubar], [role="menu"]',
+    );
+
+  // Change the wallpaper (with the homepage's handoff when motion is on).
+  const changeWallpaper = () => {
+    wall.next(enabled);
+    setMenu(null);
+  };
+
+  // Rubber-band selection on the empty desktop: it only highlights icons.
+  const press = (event: PointerEvent<HTMLDivElement>) => {
+    if (menu && !(event.target as HTMLElement).closest('[role="menu"]'))
+      setMenu(null);
+    if (
+      event.pointerType !== 'mouse' ||
+      event.button !== 0 ||
+      !onBackground(event.target)
+    )
+      return;
+    // No text selection or native image drag: either would cancel the band.
+    event.preventDefault();
+    const box = screen.current!.getBoundingClientRect();
+    bandStart.current = {
+      x: event.clientX - box.left,
+      y: event.clientY - box.top,
+      pointer: event.pointerId,
+    };
+    event.currentTarget.setPointerCapture(event.pointerId);
+    setSelected(new Set());
+  };
+  const stretch = (event: PointerEvent<HTMLDivElement>) => {
+    const start = bandStart.current;
+    const box = screen.current?.getBoundingClientRect();
+    if (!start || !box || start.pointer !== event.pointerId) return;
+    const x2 = event.clientX - box.left;
+    const y2 = event.clientY - box.top;
+    const rect = {
+      x: Math.min(start.x, x2),
+      y: Math.min(start.y, y2),
+      w: Math.abs(x2 - start.x),
+      h: Math.abs(y2 - start.y),
+    };
+    setBand(rect);
+    const hit = new Set<string>();
+    icons.current.forEach((node, id) => {
+      const r = node.getBoundingClientRect();
+      const left = r.left - box.left;
+      const top = r.top - box.top;
+      if (
+        left < rect.x + rect.w &&
+        left + r.width > rect.x &&
+        top < rect.y + rect.h &&
+        top + r.height > rect.y
+      )
+        hit.add(id);
+    });
+    setSelected(hit);
+  };
+  const letGo = () => {
+    bandStart.current = null;
+    setBand(null);
+  };
+  const contextMenu = (event: MouseEvent) => {
+    if (!onBackground(event.target)) return;
+    event.preventDefault();
+    const box = screen.current!.getBoundingClientRect();
+    setMenu({
+      x: Math.min(event.clientX - box.left, box.width - 150),
+      y: Math.min(event.clientY - box.top, box.height - 70),
+    });
+    requestAnimationFrame(() => menuFirst.current?.focus());
+  };
+
+  // Every so often, while nobody is reading, a quiet notification drifts in.
+  useEffect(() => {
+    if (!enabled || asleep || windows.length) return;
+    let shown = 0;
+    let last = performance.now();
+    let hide: ReturnType<typeof setTimeout>;
+    const timer = setInterval(() => {
+      const now = performance.now();
+      if (document.hidden || now - lastMove.current < 12_000) return;
+      if (now - last < 40_000 || Math.random() > 0.6) return;
+      last = now;
+      setToast(deskToasts[shown++ % deskToasts.length]);
+      hide = setTimeout(() => setToast(null), 5200);
+    }, 15_000);
+    return () => {
+      clearInterval(timer);
+      clearTimeout(hide);
+    };
+  }, [enabled, asleep, windows.length]);
+
   // The visitor's mini cursor. Updated directly: no re-render per move.
   const track = (event: PointerEvent<HTMLDivElement>) => {
     if (event.pointerType !== 'mouse') return;
+    stretch(event);
     const box = screen.current?.getBoundingClientRect();
     if (!box || !cursor.current) return;
     lastMove.current = performance.now();
@@ -363,6 +475,10 @@ export function MonitorDesktop({
 
   const escape = (event: KeyboardEvent<HTMLElement>) => {
     if (event.key !== 'Escape') return;
+    if (menu) {
+      event.stopPropagation();
+      return setMenu(null);
+    }
     const pane = (event.target as HTMLElement).closest<HTMLElement>(
       '[data-window]',
     );
@@ -385,14 +501,32 @@ export function MonitorDesktop({
         <div
           ref={screen}
           className={styles.screen}
+          onPointerDown={press}
           onPointerMove={track}
+          onPointerUp={letGo}
+          onPointerCancel={letGo}
           onPointerLeave={leave}
+          onContextMenu={contextMenu}
         >
-          <div className={styles.menubar}>
+          <DeskWallpaper
+            current={wall.current}
+            leaving={wall.leaving}
+            moving={enabled}
+            onSettled={wall.settle}
+          />
+          <div className={styles.menubar} data-menubar>
             <span>
               <i /> Glen’s desk
             </span>
             <ValenciaClock />
+            <button
+              className={styles.lean}
+              onClick={changeWallpaper}
+              aria-label={`Change wallpaper. Now: ${wallpaperNames[wall.current]}`}
+              title="Change wallpaper"
+            >
+              <ImageIcon size={12} />
+            </button>
             <button
               ref={leanButton}
               className={styles.lean}
@@ -412,6 +546,7 @@ export function MonitorDesktop({
                   }}
                   className={styles.icon}
                   data-wander={wanderingIcon === file.id}
+                  data-selected={selected.has(file.id)}
                   data-open={windows.some(w => w.id === file.id)}
                   onClick={() => open(file)}
                 >
@@ -422,6 +557,44 @@ export function MonitorDesktop({
             ))}
           </ul>
           <p className={styles.note}>{note}</p>
+          {toast && (
+            <p key={toast} className={styles.toast} aria-hidden="true">
+              {toast}
+            </p>
+          )}
+          {band && (
+            <span
+              className={styles.band}
+              style={{
+                left: band.x,
+                top: band.y,
+                width: band.w,
+                height: band.h,
+              }}
+              aria-hidden="true"
+            />
+          )}
+          {menu && (
+            <div
+              className={styles.menu}
+              role="menu"
+              aria-label="Desktop"
+              style={{ left: menu.x, top: menu.y }}
+            >
+              <button ref={menuFirst} role="menuitem" onClick={changeWallpaper}>
+                Change wallpaper
+              </button>
+              <button
+                role="menuitem"
+                onClick={() => {
+                  setMenu(null);
+                  setLean(!zoomed);
+                }}
+              >
+                {zoomed ? 'Back to the room' : 'Lean in'}
+              </button>
+            </div>
+          )}
           {windows.map(win => {
             const file = files.find(f => f.id === win.id)!;
             return (
@@ -437,7 +610,11 @@ export function MonitorDesktop({
                 aria-labelledby={`desk-window-${win.id}`}
                 tabIndex={-1}
                 data-window={win.id}
-                style={{ left: `${win.x}%`, top: `${win.y}%`, zIndex: win.z }}
+                style={{
+                  left: `${win.x}%`,
+                  top: `${win.y}%`,
+                  zIndex: 10 + win.z,
+                }}
                 onPointerDown={() => raise(win.id)}
               >
                 <header

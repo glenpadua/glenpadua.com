@@ -170,6 +170,15 @@ export const deskFiles: readonly DeskFile[] = [
   },
 ];
 
+/** Now-and-then desktop notifications while nobody is reading. */
+export const deskToasts: readonly string[] = [
+  'Build passed. Suspicious.',
+  'Reminder: stretch. The leg that’s left.',
+  'Millusha: dinner’s ready.',
+  'You have 43 tabs open. Surely not.',
+  'Backup complete. Probably.',
+];
+
 /** Places Glen has lived, in his order; a tap on the globe tours them. */
 export const livedPlaces: readonly GlobePlace[] = [
   {
