@@ -128,9 +128,6 @@ export function StoriesRoom({
                   />
                 </div>
                 <p className="paper-note">{a.note}</p>
-                <div className="paper-bottom">
-                  Read the story <ArrowUpRight size={17} />
-                </div>
               </a>
             );
           })}

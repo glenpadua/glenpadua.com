@@ -132,14 +132,6 @@
   margin-top: 0.4cqw;
   line-height: 1.4;
 }
-:where(.world .stories-room) .paper-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: clamp(10px, 0.8cqw, 13px);
-  margin-top: auto;
-  padding-top: 0.65cqw;
-}
 :where(.world .stories-room) .stories-controls {
   position: absolute;
   left: 5.5%;
@@ -365,10 +357,6 @@
   }
   :where(.world .stories-room) .paper-note {
     display: none;
-  }
-  :where(.world .stories-room) .paper-bottom {
-    font-size: 9px;
-    padding-top: 8px;
   }
   :where(.world .stories-room) .paper-picture {
     margin-bottom: 5px;
