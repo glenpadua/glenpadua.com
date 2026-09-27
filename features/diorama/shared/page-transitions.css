@@ -8,6 +8,7 @@
  * `cover-<uid>` on both the desk paper and the article, so it grows from the
  * paper into the page and settles back onto the desk.
  */
+/* Also inline in `world-layout.tsx`, which development reloading cannot drop. */
 @view-transition {
   navigation: auto;
 }

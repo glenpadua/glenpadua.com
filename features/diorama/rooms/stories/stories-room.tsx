@@ -36,6 +36,7 @@ export function StoriesRoom({
   const [category, setCategory] = useState('All');
   const [penResting, setPenResting] = useState(false);
   const [gathering, setGathering] = useState(false);
+  const [shuffled, setShuffled] = useState(false);
   const { enabled } = useMotionPolicy();
   const pages = Math.ceil(articles.length / 4);
   // The next handful's pictures load quietly, so dealt papers arrive painted.
@@ -47,12 +48,15 @@ export function StoriesRoom({
   const shuffle = () => {
     if (gathering) return;
     warmBatch(articles, page + 1);
+    // Later handfuls are always dealt, even after returning from an article.
+    document.getElementById('world-returning')?.remove();
     if (!enabled) return setPage(p => (p + 1) % pages);
     setGathering(true);
     setTimeout(() => {
       setPage(p => (p + 1) % pages);
+      setShuffled(true);
       setGathering(false);
-    }, 320);
+    }, 450);
   };
   const opener = useRef<HTMLButtonElement>(null);
   const batch = paperBatch(articles, page, 4);
@@ -94,6 +98,7 @@ export function StoriesRoom({
           className="paper-spread"
           aria-label="Featured stories"
           data-gathering={gathering}
+          data-dealt={shuffled ? 'pile' : undefined}
         >
           {batch.map((a, i) => {
             const cover = getArticleCover(a.uid);

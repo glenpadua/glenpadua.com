@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 import {
   MotionToggle,
   useMotionPolicy,
@@ -11,6 +11,13 @@ import { worldRoutes } from '../lib/routes';
 export function WorldShell({ children }: { children: ReactNode }): JSX.Element {
   const path = usePathname();
   const { enabled } = useMotionPolicy();
+  // The pre-paint arrival marker (see world-layout.tsx) describes only the
+  // page that was loaded; any client navigation afterwards clears it.
+  const loadedPath = useRef(path);
+  useEffect(() => {
+    if (path !== loadedPath.current)
+      document.getElementById('world-returning')?.remove();
+  }, [path]);
   // Full page loads between world pages morph by default; honour Pause.
   useEffect(() => {
     if (enabled) return;

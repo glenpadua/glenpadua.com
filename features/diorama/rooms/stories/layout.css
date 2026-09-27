@@ -19,21 +19,29 @@
   top: 17%;
   --rotation: 4deg;
   padding: 1.2% 1.4%;
-  background: #fcf2db;
-  color: #35443b;
-  border: 1px solid #d9c8a4;
-  box-shadow:
-    2px 5px 0 #261b1020,
-    0 13px 22px #3d210e35;
+  /* Matches the painted note under Glen's hand: warm paper, faint grain,
+     lit by the lamp from the upper left, shadow falling away from it. */
+  background:
+    linear-gradient(125deg, #fff9e838 0%, #fff9e800 42%, #5a3a1a12 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .32 0 0 0 0 .18 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    #f2e7cf;
+  color: #3a4038;
+  --paper-rest:
+    inset 0 0 0 1px #fffaf040, 0.5px 1px 0 #4a2c1236, 3px 5px 6px #3a200c2e,
+    9px 15px 20px #3a200c1f;
+  --paper-raised:
+    inset 0 0 0 1px #fffaf040, 1px 2px 0 #4a2c1226, 7px 11px 12px #3a200c2c,
+    18px 28px 34px #3a200c24;
+  box-shadow: var(--paper-rest);
   transform: rotate(var(--rotation, 7deg));
   transition:
-    transform 250ms var(--world-ease),
-    box-shadow 250ms var(--world-ease);
-  /* Backwards only: a finished deal must not pin the transform, or the
-     hover lift below never shows. */
-  animation: paper-deal 520ms var(--world-ease) backwards;
-  animation-delay: calc(var(--paper-order) * 60ms);
-  /* Each paper is gathered toward, and dealt out from, the middle of the desk. */
+    transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Backwards only: a finished arrival must not pin the transform, or the
+     hover below never shows. */
+  animation: paper-settle 700ms cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  animation-delay: calc(var(--paper-order) * 90ms);
+  /* Each paper slides toward, and back out of, a pile mid-desk on shuffle. */
   --gather-x: 55%;
   --gather-y: 45%;
   isolation: isolate;
@@ -45,16 +53,21 @@
   top: 0;
   width: 14px;
   height: 14px;
-  background: linear-gradient(225deg, #d0b886 49%, #efe2c5 50%);
-  box-shadow: -1px 1px 1px #a0876330;
+  background: linear-gradient(225deg, #c9b58c 49%, #e9dcc0 50%);
+  box-shadow: -1px 1px 2px #5a3a1a26;
 }
+/* Picked up a little: nudged toward the viewer, shadow lengthening. It keeps
+   most of its angle; paper does not snap square. */
 :where(.world .stories-room) .article-paper:hover,
 :where(.world .stories-room) .article-paper:focus-visible {
-  transform: translateY(-8px) rotate(0deg);
-  box-shadow:
-    3px 9px 0 #261b1015,
-    0 20px 35px #3d210e40;
+  transform: translate(-2px, -4px) rotate(calc(var(--rotation, 7deg) * 0.75))
+    scale(1.012);
+  box-shadow: var(--paper-raised);
   z-index: 5;
+}
+:where(.world .stories-room) .article-paper:focus-visible {
+  outline: 2px solid #fff2d9;
+  outline-offset: 5px;
 }
 :where(.world .stories-room) .paper-2 {
   --gather-x: -55%;
@@ -90,7 +103,7 @@
   font-size: clamp(10px, 0.67cqw, 12px);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  border-bottom: 1px solid #d1c6ab;
+  border-bottom: 1px solid #b9a98559;
   padding-bottom: 0.6cqw;
 }
 :where(.world .stories-room) .article-paper h2 {
@@ -244,35 +257,63 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-@keyframes paper-deal {
+/* Arrival: set down on the desk, a touch of drift as each one lands. */
+@keyframes paper-settle {
   from {
     opacity: 0;
-    transform: translate(var(--gather-x), var(--gather-y))
-      rotate(calc(var(--rotation, 7deg) * -2)) scale(0.96);
+    transform: translate(-6px, -12px) rotate(calc(var(--rotation, 7deg) - 2deg))
+      scale(1.02);
+    box-shadow: var(--paper-raised);
   }
-  70% {
+  45% {
     opacity: 1;
   }
   to {
     opacity: 1;
-    transform: translate(0, 0) rotate(var(--rotation, 7deg));
+    transform: rotate(var(--rotation, 7deg));
+    box-shadow: var(--paper-rest);
   }
 }
-/* Shuffle: the current papers slide together into one pile first. */
+/* Shuffle: the papers slide together into one pile, then the next handful
+   slides back out of it. No spinning. */
 :where(.world .stories-room)
   .paper-spread[data-gathering='true']
   .article-paper {
-  animation: paper-gather 240ms ease-in forwards;
-  animation-delay: calc(var(--paper-order) * 25ms);
+  animation: paper-gather 360ms cubic-bezier(0.5, 0, 0.75, 0) forwards;
+  animation-delay: calc(var(--paper-order) * 30ms);
   pointer-events: none;
 }
+:where(.world .stories-room) .paper-spread[data-dealt='pile'] .article-paper {
+  animation-name: paper-from-pile;
+  animation-duration: 640ms;
+  animation-delay: calc(var(--paper-order) * 70ms);
+}
 @keyframes paper-gather {
+  /* Paper stays opaque while it slides; the pile is lifted away at the end. */
+  75% {
+    opacity: 1;
+  }
   to {
     opacity: 0;
     transform: translate(var(--gather-x), var(--gather-y))
-      rotate(calc(var(--rotation, 7deg) * -2)) scale(0.96);
+      rotate(calc(var(--rotation, 7deg) * 0.3));
   }
 }
+@keyframes paper-from-pile {
+  from {
+    opacity: 0;
+    transform: translate(var(--gather-x), var(--gather-y))
+      rotate(calc(var(--rotation, 7deg) * 0.3));
+  }
+  12% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: rotate(var(--rotation, 7deg));
+  }
+}
+
 /* Paused: papers simply appear. */
 :where(.world[data-motion='false'] .stories-room) .article-paper {
   animation: none;
