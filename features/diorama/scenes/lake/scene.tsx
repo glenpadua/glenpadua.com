@@ -52,8 +52,8 @@ export function LakeScene(props: SceneProps): JSX.Element {
         enabled && props.active ? (
           <InteractionOrb
             className="lake-cheer"
-            label="Cheer Glen on"
-            hint="Cheer him on"
+            label="Cheer me on"
+            hint="Cheer me on"
             marker={<span className="lake-cheer-target" />}
             onClick={() => setCheers(count => count + 1)}
           />
