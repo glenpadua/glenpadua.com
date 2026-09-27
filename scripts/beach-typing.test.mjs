@@ -57,7 +57,7 @@ test('unavailable WebGL leaves the underlying painting as the fallback', async t
   );
 });
 
-test('built no-JavaScript beach uses the seated laptop art and a real Work link', () => {
+test('built no-JavaScript beach keeps seated art and a usable GitHub sticker', () => {
   const html = fs.readFileSync('.next/server/app/preview/diorama.html', 'utf8');
   const still = [...html.matchAll(/<noscript>([\s\S]*?)<\/noscript>/g)]
     .map(match => match[1])
@@ -71,8 +71,13 @@ test('built no-JavaScript beach uses the seated laptop art and a real Work link'
   assert.doesNotMatch(still, /beach-static|football/);
   assert.match(
     html,
-    /<a[^>]*class="[^"]*cue-beach-laptop[^>]*href="\/preview\/diorama\/work"/,
+    /<a[^>]*class="[^"]*beach-github[^>]*href="https:\/\/github\.com\/glenpadua"/,
   );
+  assert.match(
+    html,
+    /<a[^>]*class="[^"]*beach-social-phone[^>]*href="https:\/\/twitter\.com\/glenp01"/,
+  );
+  assert.doesNotMatch(html, /city-bench-cleared-v1\.webp/);
 });
 
 test('the typing overlay stays inside solid hand and keyboard pixels', async () => {

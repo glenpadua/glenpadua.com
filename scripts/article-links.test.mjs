@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import sharp from 'sharp';
-import { resolveArticleLink } from '../features/diorama/articles/routes.ts';
+import { resolveArticleLink } from '../features/diorama/lib/routes.ts';
 import { getArticleCover } from '../features/diorama/articles/covers.ts';
 import { deskArticles } from '../features/diorama/rooms/stories/content.ts';
 

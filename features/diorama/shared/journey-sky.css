@@ -226,3 +226,45 @@
 .world .sky-bird g {
   animation-play-state: var(--sky-bird-motion);
 }
+
+/* Once in a while: one shooting star, set off by the journey at night. */
+.world .journey-meteor {
+  position: absolute;
+  top: 11%;
+  left: 68%;
+  width: 150px;
+  height: 2px;
+  border-radius: 2px;
+  /* Bright head leading down and to the left, tail fading behind. */
+  background: linear-gradient(90deg, #fff8e7, #fff8e700);
+  opacity: 0;
+  transform: rotate(-18deg);
+  transform-origin: 0% 50%;
+  pointer-events: none;
+}
+.world .world-journey[data-meteor='true'] .journey-meteor {
+  animation: sky-meteor 1.15s cubic-bezier(0.3, 0.1, 0.6, 1) both;
+}
+@keyframes sky-meteor {
+  0% {
+    opacity: 0;
+    translate: 0 0;
+    scale: 0.2 1;
+  }
+  18% {
+    opacity: 0.95;
+    scale: 1 1;
+  }
+  100% {
+    opacity: 0;
+    translate: -300px 98px;
+    scale: 0.6 1;
+  }
+}
+@media (max-width: 760px) {
+  .world .journey-meteor {
+    top: 9%;
+    left: 58%;
+    width: 100px;
+  }
+}

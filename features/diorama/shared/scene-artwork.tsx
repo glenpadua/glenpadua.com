@@ -57,7 +57,6 @@ export function SceneArtwork({
               className={`world-layer layer-${layer.id}`}
               style={
                 {
-                  '--depth': layer.depth,
                   left: `${layer.x ?? 0}%`,
                   top: `${layer.y ?? 0}%`,
                   width: `${layer.width ?? 100}%`,

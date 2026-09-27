@@ -5,6 +5,10 @@ import { useMotionPolicy } from '../../shared/scene-motion';
 import { BeachCharacter, BeachStill } from './character';
 import { BeachAtmosphere } from './atmosphere';
 import { BeachWater } from './water';
+import { SiGithub } from 'react-icons/si';
+import { InteractionOrb } from '../../shared/interaction-orb';
+import { socialLinks } from '../../data/site';
+import { BeachSocialPhone } from './social-phone';
 
 export function BeachScene(props: SceneProps): JSX.Element {
   const { enabled } = useMotionPolicy();
@@ -24,6 +28,20 @@ export function BeachScene(props: SceneProps): JSX.Element {
         ) : undefined
       }
       atmosphere={<BeachAtmosphere moving={moving} />}
+      controls={
+        <>
+          <BeachSocialPhone />
+          <InteractionOrb
+            className="beach-github"
+            href={socialLinks.github}
+            label="Glen on GitHub (opens in a new tab)"
+            hint="GitHub ↗"
+            marker={
+              <SiGithub className="beach-github-sticker" aria-hidden="true" />
+            }
+          />
+        </>
+      }
     />
   );
 }

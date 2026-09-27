@@ -1,0 +1,322 @@
+/* Room-owned layout and motion. Zero-specificity boundaries preserve the
+   existing cascade while preventing styles from reaching other pages. */
+:where(.world .work-room) .room-light {
+  position: absolute;
+  inset: 0;
+  background: #171c3860;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 650ms ease-out;
+}
+:where(.world) .work-room[data-lamp='false'] .room-light {
+  opacity: 1;
+}
+:where(.world .work-room) .desk-monitor {
+  position: absolute;
+  left: 30.8%;
+  top: 18.8%;
+  width: 40.2%;
+  height: 24.8%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.1% 1.6%;
+  color: #2d4139;
+  background: #fff8e4;
+  border-radius: 2px;
+  letter-spacing: 0;
+}
+:where(.world .work-room) .monitor-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: clamp(10px, 0.76cqw, 13px);
+  border-bottom: 1px solid #c8cfb9;
+  padding-bottom: 0.5cqw;
+}
+:where(.world .work-room) .monitor-top > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+:where(.world .work-room) .monitor-top i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #638657;
+  box-shadow: 0 0 0 3px #63865715;
+}
+:where(.world .work-room) .monitor-project {
+  padding-top: 0.7cqw;
+  animation: monitor-enter 300ms var(--world-ease);
+}
+:where(.world .work-room) .monitor-project .world-eyebrow {
+  font-size: clamp(9px, 0.69cqw, 12px);
+  letter-spacing: 0.08em;
+}
+:where(.world .work-room) .monitor-project h2 {
+  font-size: clamp(24px, 3.15cqw, 52px);
+  margin: 0.35cqw 0 0.45cqw;
+  line-height: 1.05;
+}
+:where(.world .work-room) .monitor-teaser {
+  white-space: pre-line;
+  font-size: clamp(12px, 1.04cqw, 18px);
+  line-height: 1.45;
+}
+:where(.world .work-room) .monitor-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-top: auto;
+}
+:where(.world .work-room) .monitor-actions > div {
+  display: flex;
+  gap: 2px;
+}
+:where(.world .work-room) .monitor-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+  border-radius: 3px;
+  transition: background 170ms;
+}
+:where(.world .work-room) .monitor-actions button:hover {
+  background: #dfe6cb;
+}
+:where(.world .work-room) .monitor-actions .monitor-open {
+  padding: 0 8px 0 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+:where(.world .work-room) .room-remote {
+  left: 24%;
+  top: 66%;
+}
+:where(.world .work-room) .room-notebook {
+  left: 79%;
+  top: 72%;
+}
+:where(.world .work-room) .room-lamp {
+  left: 16%;
+  top: 33%;
+  flex-direction: column;
+  gap: 6px;
+}
+@keyframes monitor-enter {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 760px) {
+  :where(.world) .work-room .room-art-stage {
+    width: max(100vw, 66.6667svh);
+    height: max(150vw, 100svh);
+    top: auto;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  :where(.world .work-room) .desk-monitor {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 18%;
+    width: calc(100vw - 44px);
+    height: 26%;
+    min-height: 197px;
+    padding: 13px 15px;
+    border: 7px solid #343733;
+    border-radius: 7px;
+    box-shadow: 0 4px 0 #232e28;
+  }
+  :where(.world .work-room) .monitor-top {
+    font-size: 10px;
+    padding-bottom: 7px;
+  }
+  :where(.world .work-room) .monitor-project {
+    padding-top: 11px;
+  }
+  :where(.world .work-room) .monitor-project .world-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.07em;
+  }
+  :where(.world .work-room) .monitor-project h2 {
+    font-size: clamp(24px, 6.6vw, 37px);
+    margin: 7px 0 8px;
+  }
+  :where(.world .work-room) .monitor-teaser {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  :where(.world .work-room) .monitor-actions button {
+    font-size: 11px;
+    min-height: 40px;
+    min-width: 40px;
+  }
+  :where(.world .work-room) .monitor-actions .monitor-open {
+    padding-right: 0;
+  }
+  :where(.world .work-room) .room-remote {
+    left: 23%;
+    top: 57%;
+    flex-direction: column;
+    gap: 5px;
+  }
+  :where(.world .work-room) .room-notebook {
+    left: 81%;
+    top: 65%;
+    flex-direction: column;
+    gap: 5px;
+  }
+  :where(.world .work-room) .room-lamp {
+    left: 25%;
+    top: 15%;
+  }
+  :where(.world .work-room) .room-lamp .world-cue-label {
+    display: none;
+  }
+}
+@media (min-width: 761px) and (max-height: 650px) {
+  :where(.world .work-room) .desk-monitor {
+    height: 25.5%;
+  }
+  :where(.world .work-room) .monitor-project h2 {
+    font-size: 30px;
+  }
+  :where(.world .work-room) .monitor-project .world-eyebrow {
+    font-size: 9px;
+  }
+  :where(.world .work-room) .monitor-teaser {
+    font-size: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :where(.world .work-room) .monitor-project {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@media (max-width: 760px) {
+  :where(.world) .work-room .room-art-stage {
+    width: max(100vw, 50svh);
+    height: max(200vw, 100svh);
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+  }
+  :where(.world .work-room) .desk-monitor {
+    left: 8%;
+    top: 18.4%;
+    transform: none;
+    width: 84%;
+    height: 23%;
+    min-height: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 11px 13px;
+    background: #fff8e4;
+  }
+  :where(.world .work-room) .monitor-project {
+    padding-top: 8px;
+  }
+  :where(.world .work-room) .monitor-project h2 {
+    margin: 6px 0 7px;
+    font-size: clamp(24px, 6.6vw, 31px);
+  }
+  :where(.world .work-room) .room-remote {
+    left: 20%;
+    top: 52%;
+  }
+  :where(.world .work-room) .room-notebook {
+    left: 83%;
+    top: 60%;
+  }
+  :where(.world .work-room) .room-lamp {
+    left: 16%;
+    top: 15%;
+  }
+}
+@media (min-width: 761px) and (max-aspect-ratio: 5/4) {
+  :where(.world .work-room) .room-lamp {
+    left: max(16%, calc(50% - 50vw + 60px));
+  }
+  :where(.world .work-room) .room-notebook {
+    left: min(79%, calc(50% + 50vw - 75px));
+  }
+}
+.world .room-lamp .world-cue-label {
+  display: block;
+}
+:where(.world .work-room) .room-screen-mode {
+  left: 69%;
+  top: 25%;
+}
+:where(.world .work-room) .screen-saver {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 12px;
+  text-align: center;
+  color: #293e34;
+  background: #fff8e4;
+}
+:where(.world .work-room) .screen-saver svg {
+  width: 85px;
+  margin: auto;
+}
+:where(.world .work-room) .screen-saver p {
+  font-size: 12px;
+}
+:where(.world .work-room) .screen-saver button {
+  border: 0;
+  background: transparent;
+  min-height: 44px;
+  text-decoration: underline;
+}
+:where(.world .work-room) .screen-saver-orbit {
+  transform-origin: 50% 50%;
+  animation: saver-orbit 28s linear infinite;
+}
+.world .room-screen-mode .world-cue-mark {
+  color: #665034;
+}
+:where(.world .work-room) .room-window-glow {
+  position: absolute;
+  left: 83%;
+  top: 21%;
+  width: 16%;
+  height: 31%;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 60% 50%, #ffc58422, transparent 67%);
+  animation: world-glimmer 13s ease-in-out infinite alternate;
+}
+@keyframes saver-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 760px) {
+  .world .room-screen-mode .world-cue-label,
+  .world .room-notebook .world-cue-label {
+    left: auto;
+    right: 0;
+    --cue-label-x: 0%;
+  }
+  :where(.world .work-room) .room-screen-mode {
+    left: 86%;
+    top: 19%;
+  }
+}

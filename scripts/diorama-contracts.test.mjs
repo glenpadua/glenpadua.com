@@ -3,7 +3,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createWorldRoutes } from '../features/diorama/lib/routes.ts';
-import { sceneFrame, paperBatch } from '../features/diorama/lib/travel.ts';
+import {
+  sceneFrame,
+  paperBatch,
+  PEOPLE_HANDOFF,
+  journeyPosition,
+  chapterStop,
+} from '../features/diorama/lib/travel.ts';
 
 // Presence alone is insufficient: streamed Suspense content can be parked under
 // a hidden parent and require JavaScript to become visible.
@@ -63,11 +69,13 @@ test('the same experience can mount at preview or public URLs', () => {
     home: '/preview/diorama',
     work: '/preview/diorama/work',
     stories: '/preview/diorama/stories',
+    blog: '/preview/diorama/blog',
   });
   assert.deepEqual(createWorldRoutes('/'), {
     home: '/',
     work: '/work',
     stories: '/stories',
+    blog: '/blog',
   });
   assert.deepEqual(createWorldRoutes(''), createWorldRoutes('/'));
 });
@@ -78,39 +86,79 @@ test('chapter stops remain complete when scenes are added or removed', () => {
       const poses = Array.from({ length: count }, (_, i) =>
         sceneFrame(stop, i, count),
       );
-      assert.equal(poses.filter(p => p.opacity === 1).length, 1);
-      assert.equal(poses[stop].subject, 1);
-      assert.equal(poses[stop].travel, 0);
+      assert.equal(poses.filter(p => p.visible).length, 1);
+      assert.deepEqual(
+        { ...poses[stop] },
+        { visible: true, role: 'rest', wipe: 1, subject: 1, copy: 1 },
+      );
     }
   }
 });
 
-test('each native scene stop has one complete character and background', () => {
-  for (let stop = 0; stop < 3; stop++) {
-    for (let scene = 0; scene < 3; scene++) {
-      const pose = sceneFrame(stop, scene, 3);
-      assert.equal(pose.opacity, scene === stop ? 1 : 0);
-      if (scene === stop) {
-        assert.equal(pose.subject, 1);
-        assert.equal(pose.travel, 0);
-      }
-    }
-  }
-});
-
-test('transitions never double-expose people, including reverse travel', () => {
+test('each passage uncovers one chapter over the next, in both directions', () => {
   const positions = Array.from({ length: 401 }, (_, i) => i / 200);
   for (const progress of [...positions, ...positions.toReversed()]) {
     const poses = [0, 1, 2].map(i => sceneFrame(progress, i, 3));
-    assert.ok(poses.filter(p => p.opacity * p.subject > 0.001).length <= 1);
-    for (const pose of poses) {
-      assert.ok(Number.isFinite(pose.travel));
-      assert.ok(pose.opacity >= 0 && pose.opacity <= 1);
-      assert.ok(pose.subject >= 0 && pose.subject <= 1);
+    const shown = poses.filter(p => p.visible);
+    assert.ok(shown.length === 1 || shown.length === 2);
+    if (shown.length === 2) {
+      const [out, incoming] = shown;
+      assert.equal(out.role, 'out');
+      assert.equal(incoming.role, 'in');
+      assert.equal(out.wipe, incoming.wipe);
+      assert.ok(incoming.wipe > 0 && incoming.wipe < 1);
     }
-    assert.ok(
-      Math.abs(poses.reduce((sum, p) => sum + p.opacity, 0) - 1) < 0.00001,
-    );
+    for (const pose of poses) {
+      for (const value of [pose.wipe, pose.subject, pose.copy])
+        assert.ok(value >= 0 && value <= 1);
+    }
+  }
+});
+
+test('transitions never show two Glens, including reverse travel', () => {
+  const positions = Array.from({ length: 2001 }, (_, i) => i / 1000);
+  for (const progress of [...positions, ...positions.toReversed()]) {
+    const poses = [0, 1, 2].map(i => sceneFrame(progress, i, 3));
+    const people = poses.filter(p => p.visible && p.subject > 0.001);
+    assert.ok(people.length <= 1, `two people at ${progress}`);
+    // Copy never overlaps either: one heading at a time.
+    const copy = poses.filter(p => p.visible && p.copy > 0.001);
+    assert.ok(copy.length <= 1, `two headings at ${progress}`);
+  }
+});
+
+test('incoming people wait for the handoff; outgoing people stay until the edge', () => {
+  for (let i = 0; i <= 100; i++) {
+    const progress = 0.62 + (0.38 * i) / 100;
+    const [out, incoming] = [0, 1].map(n => sceneFrame(progress, n, 2));
+    if (incoming.role === 'in' && incoming.wipe < PEOPLE_HANDOFF)
+      assert.equal(incoming.subject, 0);
+    if (out.role !== 'out') continue;
+    if (out.wipe <= 0.3) assert.equal(out.subject, 1);
+    if (out.wipe >= 0.55) assert.equal(out.subject, 0);
+  }
+});
+
+test('portrait people leave sooner but still before anyone arrives', () => {
+  for (let i = 0; i <= 100; i++) {
+    const progress = 0.62 + (0.38 * i) / 100;
+    const [out, incoming] = [0, 1].map(n => sceneFrame(progress, n, 2, 0.42));
+    if (out.role === 'out' && out.wipe >= 0.42) assert.equal(out.subject, 0);
+    assert.ok(!(out.subject > 0 && incoming.subject > 0));
+  }
+});
+
+test('every chapter rests at its stop and the day ends after the last', () => {
+  for (const count of [1, 2, 3, 5]) {
+    for (let i = 0; i < count; i++) {
+      const at = journeyPosition(chapterStop(i, count), count);
+      assert.ok(Math.abs(at.progress - i) < 1e-9);
+      assert.equal(at.ending, 0);
+    }
+    const end = journeyPosition(1, count);
+    assert.equal(end.progress, count - 1);
+    assert.ok(Math.abs(end.ending - 1) < 1e-9);
+    assert.deepEqual(journeyPosition(-0.2, count), { progress: 0, ending: 0 });
   }
 });
 

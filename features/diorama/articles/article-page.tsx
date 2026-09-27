@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 import { ArticleBody } from './article-body';
-import { getArticleCover } from './covers';
-import { articleHref } from './routes';
+import { coverTransition, getArticleCover } from './covers';
+import { articleHref } from '../lib/routes';
 import type { Article } from './model';
 import { worldRoutes } from '../lib/routes';
 import './styles.css';
@@ -53,7 +53,12 @@ export function ArticlePage({
         </header>
         <div
           className="article-cover"
-          style={{ '--cover-position': cover.position } as CSSProperties}
+          style={
+            {
+              '--cover-position': cover.position,
+              ...coverTransition(article.uid),
+            } as CSSProperties
+          }
         >
           <img
             src={cover.src}

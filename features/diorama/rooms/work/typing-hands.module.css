@@ -1,4 +1,8 @@
 .frame {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
   display: block;
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
@@ -57,4 +61,14 @@
   .right {
     mask-image: url('/assets/world/work-typing-mask-portrait-right.svg');
   }
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+:global(.work-room[data-screen-asleep='true']) .frame {
+  animation-play-state: paused;
 }

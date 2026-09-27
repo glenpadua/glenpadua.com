@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 /** Single cover selection for Stories and the reader. See docs/art-style.md. */
 export interface ArticleCover {
   src: string;
@@ -7,6 +8,17 @@ export interface ArticleCover {
   position: string;
   thumbnailPosition: string;
   alt: string;
+}
+
+/**
+ * The desk paper and the article share one view-transition name, so a full
+ * page load morphs the cover between them (`shared/page-transitions.css`).
+ */
+export function coverTransition(uid: string): CSSProperties {
+  return {
+    viewTransitionName: `cover-${uid.toLowerCase().replace(/[^a-z0-9-]/g, '-')}`,
+    viewTransitionClass: 'story-cover',
+  } as CSSProperties;
 }
 
 export const coverProvenance = {

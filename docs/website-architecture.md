@@ -25,7 +25,7 @@ features/diorama/
   rooms/
     work/                  project content and workstation UI
     stories/               article content, CMS adapter and writing-room UI
-  styles/                  world shell, rooms, common motion, ordered imports
+  styles/                  world shell, room stage, motion policy, ordered imports
 ```
 
 Each scene owns `content.ts`, `scene.tsx` and `styles.css`, plus its character/effect modules. The beach and city agents can improve their scenes without editing the journey, lake, or each other. Assets remain at stable `/assets/world/` URLs; add new assets with scene-specific names, preserving approved source artwork and manifests.
@@ -34,31 +34,39 @@ Each scene owns `content.ts`, `scene.tsx` and `styles.css`, plus its character/e
 
 ## What to edit
 
-| Task                                                                            | Owner                                                        |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| Add/remove/reorder homepage chapters                                            | `features/diorama/data/scenes.ts`                            |
-| Change one scene's words, layers, depth, hotspot locations or phone composition | `scenes/<name>/content.ts` and `styles.css`                  |
-| Character movement, water, lighting, scene-specific interaction state           | `scenes/<name>/scene.tsx` and adjacent modules               |
-| Every interaction orb's appearance and behavior                                 | `shared/interaction-orb.tsx` and `interaction-orb.css`       |
-| Pause, reduced motion, tab visibility                                           | `shared/scene-motion.tsx`                                    |
-| Scroll transitions and nearby asset loading                                     | `screens/world-journey.tsx`, `lib/travel.ts`                 |
-| Default layer images, static fallback, image failure handling                   | `shared/scene-artwork.tsx`                                   |
-| Project content/order                                                           | `rooms/work/content.ts`                                      |
-| Featured story notes/order and outage fallback                                  | `rooms/stories/content.ts`                                   |
-| Matching Stories thumbnails and article covers                                  | `articles/covers.ts`, `getArticleCover(uid)`                 |
-| Stories handwriting and its painting-space masks                                | `rooms/stories/writing-hand.tsx`, `rooms/stories/styles.css` |
-| CMS refresh/mapping                                                             | `rooms/stories/load-articles.ts` (server only)               |
-| Mount URLs / contact                                                            | `lib/routes.ts` / `data/site.ts`                             |
+| Task                                                                     | Owner                                                        |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------ |
+| Add/remove/reorder homepage chapters                                     | `features/diorama/data/scenes.ts`                            |
+| Change one scene's words, layers, hotspot locations or phone composition | `scenes/<name>/content.ts` and `styles.css`                  |
+| Character movement, water, lighting, scene-specific interaction state    | `scenes/<name>/scene.tsx` and adjacent modules               |
+| Every interaction orb's appearance and behavior                          | `shared/interaction-orb.tsx` and `interaction-orb.css`       |
+| Pause, reduced motion, tab visibility                                    | `shared/scene-motion.tsx`                                    |
+| Scroll transitions and nearby asset loading                              | `screens/world-journey.tsx`, `lib/travel.ts`                 |
+| Default layer images, static fallback, image failure handling            | `shared/scene-artwork.tsx`                                   |
+| Project content/order                                                    | `rooms/work/content.ts`                                      |
+| Featured story notes/order and outage fallback                           | `rooms/stories/content.ts`                                   |
+| Matching Stories thumbnails and article covers                           | `articles/covers.ts`, `getArticleCover(uid)`                 |
+| Stories handwriting and its painting-space masks                         | `rooms/stories/writing-hand.tsx`, `rooms/stories/styles.css` |
+| CMS refresh/mapping                                                      | `rooms/stories/load-articles.ts` (server only)               |
+| Mount URLs / contact                                                     | `lib/routes.ts` / `data/site.ts`                             |
 
 ## Scene contract
 
-`WorldScene` is serializable content: id, copy, description, palette, mobile stage, layers and link hotspots. `SceneProps` adds `load`, `first`, and `active`. The journey supplies these and manages native scroll, visibility and inert inactive chapters.
+`WorldScene` is serializable content: id, copy, description, palette, mobile stage, layers and link hotspots. `SceneProps` adds `load`, `first`, and `active`. The journey supplies these and manages native scroll, visibility and inert inactive chapters. `sceneFrame` supplies each chapter's passage role (`rest`, `in`, `out`), a shared `wipe` amount and separate `subject` (people, props, discoveries) and `copy` fades. A scene's optional `entrance` (`tide`, `dusk`, default `fade`) names a shaped edge in `shared/scene-wipe.css`: the incoming chapter is uncovered over the opaque outgoing one, which takes the inverse mask. Browsers without `mask-composite` fall back to a fade. Hidden chapters get both `visibility: hidden` and `opacity: 0`, because scene CSS may force children visible. Outgoing people leave ahead of the edge by wipe 0.55, or 0.42 on portrait stages where people sit nearer the entrance edges (`leaveBy`); incoming people wait for `PEOPLE_HANDOFF`. The contract tests keep one person and one heading on screen at a time. Ground layers, local effects and discovery targets share fixed painting-space geometry, with no scroll-derived translation or layer depth speeds. Preserve local character/environment animation and the shared sky’s scroll progression.
 
 `SceneArtwork` supplies the shared art stage, default images, no-JavaScript/error fallback and link hotspots. A scene can supply `renderLayer`, `afterLayer`, `atmosphere`, `controls`, `response` and `fallback`. Return `undefined` from `renderLayer` to use the default image. Optional `fallback` replaces the default static image both after a layer failure and inside `<noscript>`; use static, decorative markup with scene-owned responsive positioning and no dependency on effects or event handlers. Keep essential links in the existing hotspot/navigation slots. Omitting the fallback preserves the default image and its horizon mask. Keep behavior and state in the scene rather than adding new scene-id branches to the shared renderer.
 
 For a new chapter, create a unique id and its content, add it to `data/scenes.ts`, and supply a `<id>-static.webp` fallback plus declared assets. A data-only scene works with the default renderer. For custom effects, add its component to `scenes/registry.tsx` and import its stylesheet in `styles/index.css`. Unique ids are required. The empty scene list has an intentional fallback; a single scene works without a transition.
 
 All positions refer to the same painting stage, so artwork and controls share coordinates. Scene-only selectors stay scoped to their scene or uniquely named effect classes. Shared CSS pause/reduced-motion rules apply to all scene effects; do not override them locally. Review mobile overrides whenever the artwork changes.
+
+## Room styles and feature boundaries
+
+`styles/rooms.css` owns only the common full-view room stage and no-JavaScript presentation. Work layout, monitor UI and ambient motion live in `rooms/work/layout.css`; Stories paper layout, archive UI and ambient motion live in `rooms/stories/layout.css`. `shared/world-dialog.css` owns the portal dialog. `styles/index.css` imports these in a deliberate order, before the scene styles. Keep that order stable and verify a production build after changes.
+
+Room styles use `:where(...)` boundaries so scoping does not increase selector specificity. Archive styles use `.world-dialog` because the dialog is portalled outside `.world`. Typing geometry, masks and screen-sleep pause behavior are entirely inside Work’s `typing-hands.module.css`; do not add room-specific animation rules back to shared `styles/motion.css`.
+
+`scripts/diorama-boundaries.test.mjs` checks that feature imports never reach into `app/` and that the extracted room/dialog styles stay scoped away from legacy pages. Keep the feature reusable without introducing a renderer abstraction for every similar-looking effect.
 
 ## Shared typography
 
@@ -76,9 +84,23 @@ Lake uses a painting-space ridge/pine mask from `scenes/lake/horizon.ts`; its ex
 
 Before hydration or without JavaScript, each stacked scene has its own server-rendered sky at its declared time. Once ready, only the continuous sky is displayed. Reduced motion and pause stop ambient CSS motion and use each active chapter's still sky, with no celestial scroll travel. The global visibility policy pauses ambient effects in background tabs. Run `scripts/sky-time.test.mjs` for colour/position continuity, reverse travel, chapter edits and day/night handoff; visual checks must also inspect the masks and intermediate scroll positions on desktop and portrait.
 
+## The day's end and scroll gusts
+
+`lib/travel.ts` maps scroll to chapters plus an `EPILOGUE` (0.8 viewport heights) after the last one (`journeyPosition`, `chapterStop`). The journey sets `--ending` (0–1; snapped while paused) and `data-ended`; `shared/journey-ending.tsx` renders the closing words from `data/ending.ts` over the night sky, or as an ordinary block without JavaScript. Keyboard focus entering it scrolls it into view; “Start the day again” returns to dawn and focuses the page. `#end` is a fragment stop.
+
+The journey also sets `--lean` (−1 to 1) from smoothed scroll speed and keeps settling for a few frames after scrolling stops, then goes idle. It is 0 while motion is disabled. Scenes may use it for foreground foliage only (lake grass strips, city sprigs); keep it to a degree or two.
+
+## Scene copy
+
+`shared/scene-copy.tsx` renders scene-owned words with semantic headings, naturally wrapping paragraphs and an optional `discovery`. A discovery is either a real link or a small content disclosure using `WorldDialog`; its copy stays in `scenes/<name>/content.ts`. Disclosure dismissal returns focus to its opener, and a native details fallback is available without JavaScript. `eyebrow` is optional; the homepage no longer supplies it. Common copy/link styling lives in `shared/scene-copy.css`; each scene owns heading scale and placement.
+
+## Page transitions
+
+Full page loads inside the world (story papers, article links, “Back to Stories”) use cross-document view transitions from `shared/page-transitions.css`. The header and bottom controls are anchored; a story cover carries one `cover-<uid>` name (from `coverTransition` in `articles/covers.ts`) on the desk paper and in the article, so it grows from the paper into the page and settles back. `WorldShell` skips the transition while motion is paused; reduced motion removes its animation. Browsers without cross-document view transitions navigate normally. Header links are client-side navigations and do not use this path. `world-layout.tsx` preloads the three first-paint font files so full page loads do not flash fallback faces.
+
 ## Shared controls and effects
 
-`InteractionOrb` renders either a real link (`href`) or button (`onClick`). Supply a descriptive `label`; optional `hint` is the brief visible tooltip. Optional `pressed`, `hasPopup` and `disabled` expose action semantics. Place it with a scene class or percentage style. Touch activates the action directly; it does not require a hover-only step. Text navigation provides the obvious route to essentials.
+`InteractionOrb` retains its existing API and now renders an outlined `DiscoveryMark`, rather than a floating glowing dot. The same mark is used for quiet copy discoveries. `InteractionOrb` renders either a real link (`href`) or button (`onClick`). Supply a descriptive `label`; optional `hint` is the brief visible tooltip. Optional `marker` replaces the decorative glint with a scene-owned object (GitHub sticker or Twitter phone) while preserving the shared target and label behavior. Custom markers must be decorative; accessible naming stays on the link/button. Social destinations live in `data/site.ts`. Optional `pressed`, `hasPopup` and `disabled` expose action semantics. Place it with a scene class or percentage style. Touch activates the action directly; it does not require a hover-only step. Text navigation provides the obvious route to essentials.
 
 Use `useMotionPolicy().enabled` **and** scene `active` for continuous scene renderers. CSS animations inherit the shared pause rules. Imperative canvases must explicitly pause, stop when hidden, clean up frames/listeners/textures/renderers, bound their pixel ratio and preserve the painting if initialization fails. Lazy-load expensive engines. The existing lake implementation is an experiment with lake-specific shoreline geometry, not yet a generic water engine. Extract shared lifecycle code once another real effect demonstrates the common contract; keep shaders and masks scene-local.
 
@@ -88,7 +110,7 @@ Keep runtime business content in TypeScript or Prismic. JSON under docs is asset
 
 Work owns the interactive globe in `rooms/work/spinning-globe.tsx`, `spinning-globe.module.css`, `globe-renderer.ts` and `globe-motion.ts`. It uses a bounded 160×160 Canvas2D surface over an illustrated fallback, shared `InteractionOrb` controls, and motion-policy-aware momentum with no idle animation loop. Keep its projection, map texture, room artwork and responsive placement local to Work. Its assets use the `work-globe*` prefix; verification and provenance live in `docs/verification/work-refinement/globe.md`, with focused physics checks in `scripts/work-globe.test.mjs`.
 
-Stories handwriting is owned by `rooms/stories/writing-hand.tsx` and `rooms/stories/styles.css`; it no longer uses shared `RoomHands`. One opaque hand cut from the approved artwork rotates over a fixed cleaned background, with the original cuff above it. Desktop/portrait masks and cleaned backgrounds use the `public/assets/world/stories-writing-*` prefix. Keep these assets and motion geometry together; preserve the original painting fallback while assets load or fail. Verification lives in `docs/verification/stories-refinement/`.
+Stories handwriting is owned by `rooms/stories/writing-hand.tsx` and `rooms/stories/styles.css`. The unused shared `RoomHands` prototype has been removed. One opaque hand cut from the approved artwork rotates over a fixed cleaned background, with the original cuff above it. Desktop/portrait masks and cleaned backgrounds use the `public/assets/world/stories-writing-*` prefix. Keep these assets and motion geometry together; preserve the original painting fallback while assets load or fail. Verification lives in `docs/verification/stories-refinement/`.
 
 - Lakeside thread: `scenes/lake/`, lake assets, lake tests and verification.
 - Beach thread: `scenes/beach/`, beach assets, beach tests and verification.
@@ -99,9 +121,9 @@ Do not copy/paste the orb or another scene's renderer into a new local implement
 
 ## Promoting the experience later
 
-Promotion is a separate requested step; this refactor does not switch the public site.
+Promotion is a separate requested step; this refactor does not switch the public site. See [the current readiness review](site-readiness.md) for the remaining launch work.
 
-1. Change the single mount in `lib/routes.ts` from `/preview/diorama` to an empty string. Its helper maps that to `/`, `/work`, `/stories`; all scene/room/navigation links use it.
+1. Change the single mount in `lib/routes.ts` from `/preview/diorama` to an empty string. Its helper maps that to `/`, `/work`, `/stories` and the `/blog` article prefix. `articleHref` and legacy article-link resolution live in that same module.
 2. Compose `WorldLayout` and the existing feature screens in the public route entries, or a shared route-group layout. Keep the old pages recoverable in Git. Avoid wrapping article pages in a scenic viewport.
 3. Preserve `/blog` and every `/blog/[uid]`; retain `/skills` or add a deliberate redirect. Decide whether Stories replaces the blog index or complements it. The server article adapter and original URLs do not change.
 4. Keep preview routes `noindex`; set public titles, descriptions, canonical URLs, sitemap and social metadata for the new public entries. If keeping both mounts live, replace the single deployment mount with an explicit route context; do not silently let preview links escape to public pages.
@@ -109,6 +131,6 @@ Promotion is a separate requested step; this refactor does not switch the public
 
 ## Verification
 
-Use the scripts in `package.json` for typecheck, lint and production build. After a coordinated build, run `rtk proxy node --test scripts/diorama-contracts.test.mjs scripts/lake-shoreline.test.mjs` on Node 24+. The tests check reversible scene travel, archive batching, routing and rendered semantics; the lake test checks its water mask against actual painting pixels.
+Use the scripts in `package.json` for typecheck, lint and production build. After a coordinated build, run `rtk proxy npm run test:diorama` on Node 24+ to run every focused suite, including the required rendered-content and lake-shoreline checks. In hosts where the default build cannot create Turbopack workers, use `rtk proxy npm run build -- --webpack`. The tests check reversible scene travel, archive batching, routing and rendered semantics; the lake test checks its water mask against actual painting pixels.
 
 For visual work, inspect several moments of the animation, not just the initial frame. Exercise orbs with mouse/touch and keyboard, verify label disclosure and focus return, and compare desktop/phone composition. Store scene-specific evidence under `docs/verification/`. Keep claims limited to what was actually observed.

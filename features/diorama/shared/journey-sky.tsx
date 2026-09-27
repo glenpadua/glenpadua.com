@@ -44,6 +44,7 @@ export function JourneySky({
           />
         ))}
       </div>
+      {!fallback && <span className="journey-meteor" />}
       <div className="journey-cloud-bank">
         {[0, 1, 2].map(i => (
           <svg

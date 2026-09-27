@@ -1,9 +1,10 @@
 'use client';
+
 import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { worldAsset } from '../../lib/assets';
-import { worldRoutes } from '../../lib/routes';
+import { articleHref, worldRoutes } from '../../lib/routes';
 import { weddingWebsite, type DeskProject } from './content';
 import { WorldDialog } from '@/features/diorama/shared/world-dialog';
 import { InteractionOrb } from '../../shared/interaction-orb';
@@ -241,7 +242,7 @@ export function WorkRoom({
             <Link
               prefetch={false}
               className="world-text-link"
-              href="/blog/do-you-have-an-ideal-dream-job"
+              href={articleHref('do-you-have-an-ideal-dream-job')}
             >
               My take on work and life ↗
             </Link>

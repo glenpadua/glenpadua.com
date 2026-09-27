@@ -100,10 +100,6 @@
     left: 21% !important;
     width: 34% !important;
   }
-  .world-beach .cue-beach-laptop {
-    left: 43% !important;
-    top: 71% !important;
-  }
   .atmosphere-beach .world-boat {
     left: 57%;
   }
@@ -143,4 +139,92 @@
 }
 .world .world-beach .layer-back > img {
   mask-image: none;
+}
+
+/* A conversational continuation, quieter than the opening introduction. */
+.world-beach .world-copy {
+  max-width: min(48%, 530px);
+  top: 13%;
+}
+.world-beach .world-copy h2 {
+  font-size: clamp(30px, 3.3vw, 47px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+@media (max-width: 760px) {
+  .world-beach .world-copy {
+    top: 104px;
+    max-width: none;
+  }
+  .world-beach .world-copy h2 {
+    font-size: clamp(28px, 7.5vw, 40px);
+  }
+}
+@media (max-width: 760px) and (max-height: 700px) {
+  .world-beach .world-copy {
+    top: 88px;
+  }
+}
+
+/* Centre of the painted laptop lid; hit area stays at least 44px. */
+.world-beach .beach-github {
+  left: 36.67%;
+  top: 71.27%;
+}
+.world-beach .beach-github-sticker {
+  width: clamp(15px, 1.8vw, 26px);
+  height: auto;
+  color: #e8e1cc;
+  transform: skewX(-18deg) rotate(-5deg);
+  filter: drop-shadow(0 1px 1px #151b2780);
+  transition: color 180ms ease;
+}
+.world-beach .beach-github:is(:hover, :focus-visible) .beach-github-sticker {
+  color: #fff9e9;
+}
+@media (max-width: 760px) {
+  .world-beach .beach-github {
+    left: 43.67%;
+    top: 69.33%;
+  }
+}
+
+/* Phone lies on the sand beside Glen: small, foreshortened and grounded by a contact shadow. */
+.world-beach .beach-social-phone {
+  left: 26%;
+  top: 80%;
+}
+.world-beach .beach-phone-art {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(13px, 1.6vw, 24px);
+  height: auto;
+  overflow: visible;
+  transform: translate(-50%, -50%) rotate(76deg) skewX(-8deg) scaleX(0.55);
+  filter: drop-shadow(1px 1px 0.5px #332a2988);
+  transition: filter 180ms ease;
+}
+.world-beach .beach-social-phone:is(:hover, :focus-visible) .beach-phone-art {
+  filter: drop-shadow(1px 1px 0.5px #332a2988) drop-shadow(0 0 5px #add6dc66);
+}
+.world-beach .beach-social-phone .world-cue-label {
+  left: auto;
+  right: 0;
+  --cue-label-x: 0%;
+}
+
+.world-beach .beach-social-phone .world-cue-mark {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+}
+
+@media (max-width: 760px) {
+  .world-beach .beach-social-phone {
+    left: 30%;
+    top: 80%;
+  }
 }

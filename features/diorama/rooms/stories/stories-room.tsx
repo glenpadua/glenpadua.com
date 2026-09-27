@@ -1,16 +1,29 @@
 'use client';
-import { useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Archive, ArrowUpRight, Shuffle } from 'lucide-react';
 import Link from 'next/link';
 import { worldAsset } from '../../lib/assets';
-import { getArticleCover } from '../../articles/covers';
-import { articleHref } from '../../articles/routes';
+import { coverTransition, getArticleCover } from '../../articles/covers';
+import { articleHref } from '../../lib/routes';
 import type { DeskArticle } from './content';
 import { WorldDialog } from '@/features/diorama/shared/world-dialog';
 import { paperBatch } from '@/features/diorama/lib/travel';
 import { InteractionOrb } from '../../shared/interaction-orb';
 import { WritingHand } from './writing-hand';
+import { useMotionPolicy } from '../../shared/scene-motion';
 import './styles.css';
+
+const warmed = new Set<string>();
+function warmCover(src: string) {
+  if (warmed.has(src)) return;
+  warmed.add(src);
+  new Image().src = src;
+}
+
+function warmBatch(articles: readonly DeskArticle[], page: number) {
+  for (const a of paperBatch(articles, page, 4))
+    warmCover(getArticleCover(a.uid).thumbnailSrc);
+}
 
 export function StoriesRoom({
   articles,
@@ -22,6 +35,25 @@ export function StoriesRoom({
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All');
   const [penResting, setPenResting] = useState(false);
+  const [gathering, setGathering] = useState(false);
+  const { enabled } = useMotionPolicy();
+  const pages = Math.ceil(articles.length / 4);
+  // The next handful's pictures load quietly, so dealt papers arrive painted.
+  useEffect(() => {
+    const timer = setTimeout(() => warmBatch(articles, page + 1), 1500);
+    return () => clearTimeout(timer);
+  }, [articles, page]);
+  // Gather the papers into a pile, then deal the next handful from it.
+  const shuffle = () => {
+    if (gathering) return;
+    warmBatch(articles, page + 1);
+    if (!enabled) return setPage(p => (p + 1) % pages);
+    setGathering(true);
+    setTimeout(() => {
+      setPage(p => (p + 1) % pages);
+      setGathering(false);
+    }, 320);
+  };
   const opener = useRef<HTMLButtonElement>(null);
   const batch = paperBatch(articles, page, 4);
   const categories = ['All', ...new Set(articles.map(a => a.category))];
@@ -58,7 +90,11 @@ export function StoriesRoom({
           />
         </picture>
         <WritingHand />
-        <div className="paper-spread" aria-label="Featured stories">
+        <div
+          className="paper-spread"
+          aria-label="Featured stories"
+          data-gathering={gathering}
+        >
           {batch.map((a, i) => {
             const cover = getArticleCover(a.uid);
             return (
@@ -67,13 +103,16 @@ export function StoriesRoom({
                 key={`${page}-${a.uid}`}
                 href={articleHref(a.uid)}
                 style={{ '--paper-order': i } as CSSProperties}
+                // Start the full cover early so the morph lands on a painting.
+                onPointerEnter={() => warmCover(cover.src)}
+                onFocus={() => warmCover(cover.src)}
               >
                 <div className="paper-meta">
                   <span>{a.category}</span>
                   <time dateTime={a.date}>{a.date.slice(0, 4)}</time>
                 </div>
                 <h2>{a.title}</h2>
-                <div className="paper-picture">
+                <div className="paper-picture" style={coverTransition(a.uid)}>
                   <img
                     src={cover.thumbnailSrc}
                     style={{ objectPosition: cover.thumbnailPosition }}
@@ -97,7 +136,7 @@ export function StoriesRoom({
           label="Shuffle the story papers"
           hint="Another handful"
           disabled={articles.length <= 4}
-          onClick={() => setPage(p => (p + 1) % Math.ceil(articles.length / 4))}
+          onClick={shuffle}
         />
         <InteractionOrb
           className="room-pen-rest"
@@ -108,10 +147,7 @@ export function StoriesRoom({
         />
       </div>
       <div className="stories-controls">
-        <button
-          onClick={() => setPage(p => (p + 1) % Math.ceil(articles.length / 4))}
-          disabled={articles.length <= 4}
-        >
+        <button onClick={shuffle} disabled={articles.length <= 4}>
           <Shuffle size={16} /> Shuffle the papers
         </button>
         <span className="stories-page" role="status">

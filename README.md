@@ -9,6 +9,7 @@ The current development preview is `/preview/diorama`, with immersive Work and S
 - [Manifesto](MANIFESTO.md): why this website exists and the standard it should meet.
 - [Current creative direction](docs/website-direction.md): approved scenes, character details, voice, motion and interactions.
 - [Architecture and edit guide](docs/website-architecture.md): where to change things, parallel scene ownership, and eventual public-site promotion.
+- [Readiness review](docs/site-readiness.md): what remains before replacing the public website, and what can wait.
 - [AGENTS.md](AGENTS.md): concise instructions for coding agents.
 
 Start the application with `rtk proxy npm run dev -- --hostname 127.0.0.1 --port 3100`, then open [the local preview](http://127.0.0.1:3100/preview/diorama). Check whether that port already has a server before starting another. A running production server needs a coordinated rebuild/restart to show source changes.
@@ -25,7 +26,7 @@ The [static mock](docs/mock/README.md) and [storyboard](docs/storyboard/README.m
 
 ## Requirements
 
-- Node.js `>=20.9.0`
+- Node.js `>=20.9.0` for the application; Node.js 24+ for the focused test suites
 - npm
 
 ## Scripts
@@ -37,6 +38,7 @@ The [static mock](docs/mock/README.md) and [storyboard](docs/storyboard/README.m
 - `npm run lint` - run ESLint
 - `npm run format` - check Prettier formatting
 - `npm run check` - typecheck + lint + build
+- `npm run test:diorama` - all focused tests; run after building on Node.js 24+
 
 ## Prismic Preview Routes
 

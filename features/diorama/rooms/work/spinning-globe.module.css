@@ -41,7 +41,7 @@
   cursor: grabbing;
 }
 
-.control :global(.world-cue-dot) {
+.control :global(.world-cue-mark) {
   position: absolute;
   right: 0;
   bottom: 0;

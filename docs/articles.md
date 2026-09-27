@@ -4,7 +4,7 @@ The reading preview lives at `/preview/diorama/blog/[uid]`. Public `/blog/[uid]`
 
 ## Ownership
 
-`features/diorama/articles/` owns the reader, its styles, cover registry and Prismic adapter. `app/preview/diorama/blog/[uid]/page.tsx` is a thin route with noindex metadata and the existing public canonical URL. `rooms/stories/` owns the writing desk and archive; its cards, archive entries and no-JavaScript links use `articles/routes.ts` to reach the updated reader. That helper handles preview article links without changing the shared mount map.
+`features/diorama/articles/` owns the reader, its styles, cover registry and Prismic adapter. `app/preview/diorama/blog/[uid]/page.tsx` is a thin route with noindex metadata and the existing public canonical URL. `rooms/stories/` owns the writing desk and archive; its cards, archive entries and no-JavaScript links use `articleHref` from `lib/routes.ts` to reach the updated reader. Scene navigation, article links and known legacy article-link rewriting share that single mount map.
 
 The reader inherits `WorldLayout`. Its stylesheet adjusts the containing header and utility placement only when `.reading-article` is present, so controls scroll with the reading page. Static articles hide the inherited motion toggle from display and keyboard/accessibility navigation. Future animated article blocks should expose controls only when they have motion to pause. No scene artwork, room styling or shared control implementation is copied.
 

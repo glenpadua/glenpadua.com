@@ -17,24 +17,17 @@
   border-radius: 50%;
   gap: 0;
 }
-.world .world-cue-dot {
+.world .world-cue-mark {
   display: block;
-  border-radius: 50%;
-  transition: box-shadow 220ms var(--world-ease);
-  width: 9px;
-  height: 9px;
-  border: 1px solid #fff8e5c9;
-  background: #fff8dc;
-  box-shadow:
-    0 0 8px 2px #fff2bba6,
-    0 0 20px 6px #ffe7a333;
-  animation: discovery-float 5.8s ease-in-out infinite;
-}
-.world .world-cue:nth-child(even) .world-cue-dot {
-  animation-delay: -2.9s;
+  width: 20px;
+  height: 20px;
+  color: #354b3f;
+  filter: drop-shadow(0 1px 1px #14291e40);
+  transition: transform 180ms var(--world-ease);
 }
 .world .world-cue-label {
   background: #fbf4e2f2;
+  color: #293e34;
   border-radius: 3px;
   padding: 5px 9px;
   box-shadow: 0 2px 12px #243c3312;
@@ -57,24 +50,12 @@
   opacity: 1;
   transform: translate(var(--cue-label-x), 0);
 }
-.world .world-cue:hover .world-cue-dot,
-.world .world-cue:focus-visible .world-cue-dot {
-  box-shadow:
-    0 0 9px 3px #fff2bbd9,
-    0 0 22px 7px #ffe7a34d;
+.world .world-cue:hover .world-cue-mark,
+.world .world-cue:focus-visible .world-cue-mark {
+  transform: scale(1.18);
 }
-.world .world-cue[aria-pressed='true'] .world-cue-dot {
-  background: #e2ad65;
-  box-shadow: 0 0 6px #d69b54aa;
-}
-@keyframes discovery-float {
-  0%,
-  100% {
-    transform: translateY(1px);
-  }
-  50% {
-    transform: translateY(-2px);
-  }
+.world .world-cue[aria-pressed='true'] .world-cue-mark {
+  fill: #e2ad65;
 }
 @media (hover: none) {
   .world .world-cue:focus .world-cue-label {

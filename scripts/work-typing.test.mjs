@@ -48,42 +48,9 @@ for (const { name, base, protectedAreas, fingers } of cases) {
       .toBuffer();
     const masks = await Promise.all(
       ['left', 'right'].map(async side => {
-        let svg;
-        if (process.env.WORK_TYPING_BASELINE) {
-          // Reproduce the original runtime clip polygons against the real frames.
-          const css = readFileSync(
-            'features/diorama/styles/motion.css',
-            'utf8',
-          );
-          const matches = [
-            ...css.matchAll(
-              new RegExp(
-                `\\.hands-typing\\.hand-${side}\\s*\\{\\s*clip-path: polygon\\(([^)]+)\\)`,
-                'g',
-              ),
-            ),
-          ];
-          const polygon = matches[name === 'portrait' ? 1 : 0][1];
-          const points = polygon
-            .split(',')
-            .map(pair =>
-              pair
-                .trim()
-                .split(/\s+/)
-                .map(
-                  (value, axis) =>
-                    (parseFloat(value) / 100) *
-                    (axis ? info.height : info.width),
-                )
-                .join(','),
-            )
-            .join(' ');
-          svg = Buffer.from(
-            `<svg xmlns="http://www.w3.org/2000/svg" width="${info.width}" height="${info.height}"><polygon points="${points}" fill="white"/></svg>`,
-          );
-        } else {
-          svg = readFileSync(`${artwork}work-typing-mask-${name}-${side}.svg`);
-        }
+        const svg = readFileSync(
+          `${artwork}work-typing-mask-${name}-${side}.svg`,
+        );
         return sharp(svg)
           .resize(info.width, info.height)
           .ensureAlpha()

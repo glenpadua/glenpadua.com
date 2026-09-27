@@ -1,0 +1,94 @@
+/*
+ * Chapter entrances. The journey sets `data-wipe` (in/out), `data-entrance`
+ * and `--wipe` (0–1) while two chapters share the screen. The incoming
+ * chapter is uncovered above an opaque outgoing one; the outgoing chapter
+ * takes the inverse shape so its hills never show through the new sky.
+ * Edges scroll with the page and reverse naturally. Pause and reduced motion
+ * never set `data-wipe`, so they keep the plain chapter switch. People timing
+ * (`--subject`, `--copy`) comes from `sceneFrame` in `lib/travel.ts`.
+ */
+.world .is-ready .world-scene[data-wipe] {
+  mask-mode: alpha;
+}
+.world .is-ready .world-scene[data-wipe='in'] {
+  mask-image: var(--wipe-edge), linear-gradient(#000 0 0);
+  mask-repeat: var(--wipe-edge-repeat), no-repeat;
+  mask-size: var(--wipe-edge-size), var(--wipe-solid-size);
+  mask-position: var(--wipe-edge-at), var(--wipe-solid-at);
+}
+/* Everything outside the incoming shape; subtracting their union leaves no seam. */
+.world .is-ready .world-scene[data-wipe='out'] {
+  mask-image:
+    linear-gradient(#000 0 0), var(--wipe-edge), linear-gradient(#000 0 0);
+  mask-repeat: no-repeat, var(--wipe-edge-repeat), no-repeat;
+  mask-size:
+    100% 100%,
+    var(--wipe-edge-size),
+    var(--wipe-solid-size);
+  mask-position:
+    0 0,
+    var(--wipe-edge-at),
+    var(--wipe-solid-at);
+  mask-composite: subtract, add, add;
+}
+
+/*
+ * A wave rolls in from the horizon towards the viewer, its foamy crest
+ * drifting sideways, washing the beach over the previous scene.
+ */
+.world .is-ready .world-scene[data-entrance='tide'] {
+  --wipe-edge: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 100' preserveAspectRatio='none'%3E%3ClinearGradient id='g' x2='0' y2='1'%3E%3Cstop offset='.62'/%3E%3Cstop offset='1' stop-opacity='0'/%3E%3C/linearGradient%3E%3Cpath fill='url(%23g)' d='M0 0H900V62C825 88 750 88 675 66S525 38 450 60 300 90 225 70 75 42 0 62Z'/%3E%3C/svg%3E");
+  --wipe-edge-repeat: repeat-x;
+  --wipe-edge-size: 900px 14%;
+  --wipe-edge-at: calc(var(--wipe) * -540px)
+    calc((var(--wipe) * 1.14 - 0.14) / 0.86 * 100%);
+  --wipe-solid-size: 100%
+    max(0%, calc((var(--wipe) * 1.14 - 0.14) * 100% + 1px));
+  --wipe-solid-at: 0 0;
+}
+.world .is-ready .world-scene[data-wipe='in'][data-entrance='tide']::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 100' preserveAspectRatio='none'%3E%3Cpath fill='none' stroke='%23fffaf0' stroke-opacity='.8' stroke-width='3' stroke-linecap='round' d='M0 50C75 76 150 76 225 58S375 26 450 48 600 78 675 54 825 30 900 50'/%3E%3C/svg%3E")
+    var(--wipe-edge-at) / var(--wipe-edge-size) repeat-x;
+  /* Foam only shows once the crest reaches the ground, then settles. */
+  --foam-from: 0.5;
+  opacity: clamp(
+    0,
+    min((var(--wipe) - var(--foam-from)) * 6, (1 - var(--wipe)) * 4),
+    0.85
+  );
+}
+
+@media (max-aspect-ratio: 4/5) {
+  /* Portrait horizons sit lower on the screen. */
+  .world .is-ready .world-scene[data-wipe='in'][data-entrance='tide']::after {
+    --foam-from: 0.68;
+  }
+}
+
+/*
+ * Evening follows the sun west: a soft, uneven dusk line sweeps from the
+ * right-hand edge to the left.
+ */
+.world .is-ready .world-scene[data-entrance='dusk'] {
+  --wipe-edge: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000' preserveAspectRatio='none'%3E%3ClinearGradient id='g' x2='1'%3E%3Cstop offset='0' stop-opacity='0'/%3E%3Cstop offset='.6'/%3E%3C/linearGradient%3E%3Cpath fill='url(%23g)' d='M100 0V1000H40C20 850 62 700 36 500S14 150 40 0Z'/%3E%3C/svg%3E");
+  --wipe-edge-repeat: repeat-y;
+  --wipe-edge-size: 24% 1000px;
+  --wipe-edge-at: calc((1 - var(--wipe) * 1.24) / 0.76 * 100%)
+    calc(var(--wipe) * -300px);
+  --wipe-solid-size: max(0%, calc((var(--wipe) * 1.24 - 0.24) * 100% + 1px))
+    100%;
+  --wipe-solid-at: 100% 0;
+}
+
+/*
+ * A chapter without an authored entrance, or a browser without mask
+ * compositing, fades in; the journey sets its opacity.
+ */
+.world .is-ready .world-scene[data-entrance='fade'] {
+  mask: none;
+}

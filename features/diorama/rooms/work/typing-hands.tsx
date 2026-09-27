@@ -12,10 +12,7 @@ export function TypingHands(): JSX.Element | null {
   return (
     <>
       {(['left', 'right'] as const).map(side => (
-        <picture
-          key={side}
-          className={`room-hands ${styles.frame} ${styles[side]}`}
-        >
+        <picture key={side} className={`${styles.frame} ${styles[side]}`}>
           <source
             media="(max-width:760px)"
             srcSet={worldAsset('typing-portrait-v2')}

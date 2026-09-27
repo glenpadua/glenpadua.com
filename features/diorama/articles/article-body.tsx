@@ -1,7 +1,7 @@
 import { asLink, isFilled } from '@prismicio/client';
 import { PrismicRichText, type RichTextComponents } from '@prismicio/react';
 import type { ArticleSlice } from './model';
-import { resolveArticleLink } from './routes';
+import { resolveArticleLink } from '../lib/routes';
 
 export function ArticleBody({
   body,

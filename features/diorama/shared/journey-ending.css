@@ -1,0 +1,89 @@
+/* The day's end: an ordinary block without JavaScript, then over the night sky. */
+.world .world-ending {
+  position: relative;
+  z-index: 6;
+  padding: 14svh 9% 18svh;
+  background: #1f2c47;
+  color: #fff1d9;
+}
+.world .is-ready .world-ending {
+  position: absolute;
+  top: 16%;
+  /* Keeps small links legible where they cross the lit skyline. */
+  text-shadow: 0 1px 8px #151f38;
+  left: 9%;
+  max-width: min(49%, 540px);
+  padding: 0;
+  background: none;
+  opacity: var(--ending, 0);
+  pointer-events: none;
+}
+.world .is-ready[data-ended='true'] .world-ending {
+  pointer-events: auto;
+}
+.world .world-ending h2 {
+  margin: 0 0 20px;
+  font-family: var(--world-heading-font);
+  font-weight: 400;
+  font-size: clamp(30px, 3.3vw, 47px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+.world .world-ending-links {
+  display: grid;
+  gap: 2px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+.world .world-ending-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: inherit;
+  font-size: clamp(15px, 1.25vw, 18px);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+.world .world-ending-social {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin: 0 28px 0 0;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.world .world-ending-social a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #fff1d9;
+}
+.world .world-ending-again {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff1d9;
+  font: inherit;
+  font-size: 14px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.world .world-ending :is(a, button):focus-visible {
+  outline: 2px solid #fff1d9;
+  outline-offset: 3px;
+}
+@media (max-width: 760px) {
+  .world .is-ready .world-ending {
+    top: 120px;
+    left: 7%;
+    right: 6%;
+    max-width: none;
+  }
+}

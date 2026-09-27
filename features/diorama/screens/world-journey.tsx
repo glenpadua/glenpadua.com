@@ -9,9 +9,17 @@ import {
 import { ArrowDown } from 'lucide-react';
 import type { WorldScene } from '../model/types';
 import { useMotionPolicy } from '@/features/diorama/shared/scene-motion';
-import { clamp, sceneFrame } from '@/features/diorama/lib/travel';
+import {
+  EPILOGUE,
+  chapterStop,
+  clamp,
+  journeyPosition,
+  sceneFrame,
+} from '@/features/diorama/lib/travel';
 import { SceneRenderer } from '../scenes/registry';
+import { SceneCopy } from '../shared/scene-copy';
 import { JourneySky } from '../shared/journey-sky';
+import { JourneyEnding } from '../shared/journey-ending';
 import { journeyTime, skyStyle } from '../lib/sky-time';
 
 const subscribeHydration = () => () => {};
@@ -34,6 +42,7 @@ function PopulatedJourney({
   );
   const [current, setCurrent] = useState(0);
   const [loadedThrough, setLoadedThrough] = useState(0);
+  const [ended, setEnded] = useState(false);
 
   useEffect(() => {
     const element = root.current;
@@ -48,18 +57,20 @@ function PopulatedJourney({
         } catch {
           return;
         }
-        const index = scenes.findIndex(
-          scene => fragment === scene.id || fragment === `${scene.id}-scene`,
-        );
+        const index =
+          fragment === 'end'
+            ? scenes.length - 1
+            : scenes.findIndex(
+                scene =>
+                  fragment === scene.id || fragment === `${scene.id}-scene`,
+              );
         if (index < 0) return;
         // Hydration replaces stacked scenes with one sticky viewport. The
         // browser's earlier anchor jump no longer describes this geometry.
         const travel = Math.max(0, element.offsetHeight - window.innerHeight);
         const top = element.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({
-          top: top + (index * travel) / Math.max(1, scenes.length - 1),
-          behavior: 'instant',
-        });
+        const stop = fragment === 'end' ? 1 : chapterStop(index, scenes.length);
+        window.scrollTo({ top: top + stop * travel, behavior: 'instant' });
       });
     };
     restoreFragment();
@@ -76,9 +87,15 @@ function PopulatedJourney({
     const chapters = Array.from(
       element.querySelectorAll<HTMLElement>('.world-scene'),
     );
+    // Shaped entrances need mask compositing; otherwise every passage fades.
+    const shaped = CSS.supports('mask-composite', 'subtract');
     let frame = 0;
     let measure = true;
     let sunrise: { x: number; y: number } | undefined;
+    // Scroll speed as a gentle gust (`--lean`, -1 to 1) for foreground plants.
+    let lastY = window.scrollY;
+    let lastTime = performance.now();
+    let lean = 0;
     const update = () => {
       frame = 0;
       if (measure) {
@@ -110,15 +127,32 @@ function PopulatedJourney({
         }
       }
       const travel = Math.max(1, element.offsetHeight - window.innerHeight);
-      const progress =
-        clamp(-element.getBoundingClientRect().top / travel, 0, 1) *
-        (scenes.length - 1);
+      const { progress, ending } = journeyPosition(
+        -element.getBoundingClientRect().top / travel,
+        scenes.length,
+      );
+      setEnded(previous => (previous === ending > 0.5 ? previous : !previous));
+      element.style.setProperty(
+        '--ending',
+        (enabled ? ending : Math.round(ending)).toFixed(3),
+      );
       const active = clamp(Math.floor(progress + 0.18), 0, scenes.length - 1);
+      const now = performance.now();
+      const speed = (window.scrollY - lastY) / Math.max(1, now - lastTime);
+      lastY = window.scrollY;
+      lastTime = now;
+      const gust = enabled ? clamp(speed / 1.6, -1, 1) : 0;
+      // Plants catch a gust quickly and straighten slowly.
+      lean += (gust - lean) * (Math.abs(gust) > Math.abs(lean) ? 0.22 : 0.06);
+      if (!gust && Math.abs(lean) < 0.004) lean = 0;
+      element.style.setProperty('--lean', lean.toFixed(3));
       setCurrent(previous => (previous === active ? previous : active));
+      // Load a chapter one passage early, so a quick scroll never meets
+      // an unpainted scene behind the wipe.
       setLoadedThrough(previous =>
         Math.max(
           previous,
-          Math.min(scenes.length - 1, Math.ceil(progress + 0.05)),
+          Math.min(scenes.length - 1, Math.ceil(progress + 0.7)),
         ),
       );
       const time = journeyTime(
@@ -129,22 +163,46 @@ function PopulatedJourney({
         element.style.setProperty(name, String(value));
       }
       element.dataset.skyTime = time.toFixed(3);
+      element.dataset.night = String(time >= 0.72);
+      const leaveBy = window.innerWidth < window.innerHeight ? 0.42 : 0.55;
       chapters.forEach((chapter, i) => {
-        const pose = sceneFrame(progress, i, scenes.length);
-        const visible = enabled ? pose.opacity > 0.001 : i === active;
-        chapter.style.opacity = String(
-          enabled ? pose.opacity : i === active ? 1 : 0,
-        );
+        const pose = sceneFrame(progress, i, scenes.length, leaveBy);
+        const visible = enabled ? pose.visible : i === active;
+        const passing = enabled && visible && pose.role !== 'rest';
+        // An outgoing chapter takes the shape of the entrance covering it.
+        const authored =
+          pose.role === 'out' ? scenes[i + 1]?.entrance : scenes[i].entrance;
+        const entrance = shaped && authored !== 'fade' ? authored : undefined;
+        const fading = passing && pose.role === 'in' && !entrance;
+        // Opacity as well as visibility: a scene's own `visibility: visible`
+        // children must not leak out of a hidden chapter.
         chapter.style.visibility = visible ? 'visible' : 'hidden';
-        chapter.style.setProperty('--travel', `${enabled ? pose.travel : 0}vh`);
-        chapter.style.setProperty('--drift', `${enabled ? pose.drift : 0}px`);
+        chapter.style.opacity = !visible
+          ? '0'
+          : fading
+            ? String(pose.wipe)
+            : '1';
         chapter.style.setProperty(
           '--subject',
-          String(enabled ? pose.subject : 1),
+          String(passing ? pose.subject : 1),
         );
+        chapter.style.setProperty('--copy', String(passing ? pose.copy : 1));
+        chapter.style.setProperty(
+          '--wipe',
+          passing ? pose.wipe.toFixed(4) : '1',
+        );
+        if (passing) {
+          chapter.dataset.wipe = pose.role;
+          chapter.dataset.entrance = entrance ?? 'fade';
+        } else {
+          delete chapter.dataset.wipe;
+          delete chapter.dataset.entrance;
+        }
         chapter.dataset.moving = String(enabled && i === active);
         chapter.inert = i !== active;
       });
+      // Keep settling after the scroll stops, then go quiet.
+      if (lean) schedule();
     };
     const schedule = () => {
       if (!frame) frame = requestAnimationFrame(update);
@@ -163,6 +221,31 @@ function PopulatedJourney({
     };
   }, [enabled, ready, scenes]);
 
+  // A single shooting star per session, a little while after night falls.
+  const night =
+    current === scenes.length - 1 && (scenes.at(-1)?.skyTime ?? 0) >= 0.9;
+  useEffect(() => {
+    const element = root.current;
+    if (!element || !enabled || !night) return;
+    try {
+      if (sessionStorage.getItem('world-meteor-seen')) return;
+    } catch {
+      /* Storage is optional; without it the star may return next visit. */
+    }
+    const timer = setTimeout(
+      () => {
+        element.dataset.meteor = 'true';
+        try {
+          sessionStorage.setItem('world-meteor-seen', 'true');
+        } catch {
+          /* Storage is optional. */
+        }
+      },
+      2500 + Math.random() * 4000,
+    );
+    return () => clearTimeout(timer);
+  }, [enabled, night]);
+
   return (
     <main
       id="world-main"
@@ -170,8 +253,10 @@ function PopulatedJourney({
       ref={root}
       className={`world-journey ${ready ? 'is-ready' : ''}`}
       data-scene={scenes[current].id}
+      data-ended={ended}
       style={variables({
         '--scene-count': scenes.length,
+        '--epilogue': EPILOGUE,
         ...skyStyle(scenes[0].skyTime ?? 0),
       })}
     >
@@ -197,32 +282,29 @@ function PopulatedJourney({
               first={i === 0}
               active={current === i}
             />
-            <div className="world-copy">
-              <p className="world-eyebrow">{scene.eyebrow}</p>
-              {i === 0 ? (
-                <h1 id={`${scene.id}-title`}>
-                  {scene.title.map(line => (
-                    <span key={line}>{line}</span>
-                  ))}
-                </h1>
-              ) : (
-                <h2 id={`${scene.id}-title`}>
-                  {scene.title.map(line => (
-                    <span key={line}>{line}</span>
-                  ))}
-                </h2>
-              )}
-              {scene.body && (
-                <p className="world-description">
-                  {scene.body.map(line => (
-                    <span key={line}>{line}</span>
-                  ))}
-                </p>
-              )}
-            </div>
+            <SceneCopy scene={scene} first={i === 0} interactive={ready} />
           </section>
         ))}
-        {current < scenes.length - 1 && (
+        <JourneyEnding
+          interactive={ready}
+          onReach={() => {
+            const element = root.current;
+            if (!element || ended) return;
+            window.scrollTo({
+              top:
+                element.offsetTop + element.offsetHeight - window.innerHeight,
+              behavior: 'instant',
+            });
+          }}
+          onRestart={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: enabled ? 'smooth' : 'instant',
+            });
+            root.current?.focus({ preventScroll: true });
+          }}
+        />
+        {current < scenes.length - 1 ? (
           <a
             className="world-wander"
             href={`#${scenes[current + 1].id}${ready ? '' : '-scene'}`}
@@ -230,14 +312,26 @@ function PopulatedJourney({
           >
             <ArrowDown size={26} strokeWidth={1.35} aria-hidden="true" />
           </a>
+        ) : (
+          !ended && (
+            <a
+              className="world-wander"
+              href="#end"
+              aria-label="Continue to the end of the day"
+            >
+              <ArrowDown size={26} strokeWidth={1.35} aria-hidden="true" />
+            </a>
+          )
         )}
       </div>
-      {scenes.map((scene, i) => (
+      {[...scenes.map(scene => scene.id), 'end'].map((id, i) => (
         <span
           className="world-stop"
-          id={scene.id}
-          key={scene.id}
-          style={{ top: `${(i * 100) / scenes.length}%` }}
+          id={id}
+          key={id}
+          style={{
+            top: `calc((100% - 100svh) * ${chapterStop(i, scenes.length)})`,
+          }}
           aria-hidden="true"
         />
       ))}

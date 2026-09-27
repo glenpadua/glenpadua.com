@@ -1,10 +1,13 @@
-.world:has(.world-journey[data-scene='city']) {
+/* Follows the shared sky, so the header lightens as dusk falls, not after. */
+.world:has(.world-journey[data-scene='city']),
+.world:has(.world-journey[data-night='true']) {
   --header-ink: #fff2d9;
+  --edge-ink: #fff2d9;
+  --edge-shadow: 0 1px 5px #182d24b3;
   --header-shadow: 0 1px 5px #182d2480;
 }
 .world-city .layer-terrace {
   opacity: var(--subject);
-  transform: translate3d(0, calc(var(--drift) * 0.6 + var(--travel) * 1.1), 0);
 }
 .world-city .world-copy {
   color: #fff1d9;
@@ -42,6 +45,15 @@
 .city-windows rect[data-lit='true'] {
   fill: #ffda92;
 }
+/* As evening arrives, lights come on in the wake of the dusk line. */
+.world-city[data-wipe='in'] .city-windows rect[data-lit='true'] {
+  transition: none;
+  fill: color-mix(
+    in srgb,
+    #ffda92 calc(clamp(0, (var(--wipe) - var(--lights-on)) * 14, 1) * 100%),
+    #4c617d
+  );
+}
 
 .city-cup-steam {
   stroke: #fff4d6;
@@ -58,6 +70,7 @@
 }
 .city-sprig {
   transform-origin: 1468px 1014px;
+  rotate: calc(var(--lean, 0) * -5deg);
   animation: city-plant-breeze 7.4s ease-in-out infinite;
 }
 .city-sprig-far {
@@ -205,9 +218,9 @@
     left: 69.5% !important;
     top: 73% !important;
   }
-  .world-city .cue-satchel {
-    left: 93% !important;
-    top: 72% !important;
+  .world-city .cue-coffee {
+    left: 75.5% !important;
+    top: 71% !important;
   }
   .world-city .cue-lantern {
     left: 62.5%;
@@ -219,4 +232,27 @@
 .world .world-city .layer-back > img,
 .world .world-city .world-static-art {
   mask-image: linear-gradient(transparent 24%, #000 53%);
+}
+
+.world-city .world-copy {
+  max-width: min(49%, 540px);
+}
+.world-city .world-copy h2 {
+  font-size: clamp(30px, 3.3vw, 47px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+@media (max-width: 760px) {
+  .world-city .world-copy {
+    top: 104px;
+    max-width: none;
+  }
+  .world-city .world-copy h2 {
+    font-size: clamp(28px, 7.5vw, 40px);
+  }
+}
+@media (max-width: 760px) and (max-height: 700px) {
+  .world-city .world-copy {
+    top: 88px;
+  }
 }

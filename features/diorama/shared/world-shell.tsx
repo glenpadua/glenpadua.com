@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { type ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import {
   MotionToggle,
   useMotionPolicy,
@@ -11,6 +11,16 @@ import { worldRoutes } from '../lib/routes';
 export function WorldShell({ children }: { children: ReactNode }): JSX.Element {
   const path = usePathname();
   const { enabled } = useMotionPolicy();
+  // Full page loads between world pages morph by default; honour Pause.
+  useEffect(() => {
+    if (enabled) return;
+    const skip = (event: Event) =>
+      (
+        event as Event & { viewTransition?: { skipTransition(): void } | null }
+      ).viewTransition?.skipTransition();
+    window.addEventListener('pageswap', skip);
+    return () => window.removeEventListener('pageswap', skip);
+  }, [enabled]);
   const room = path.endsWith('/work')
     ? 'work'
     : path.endsWith('/stories')

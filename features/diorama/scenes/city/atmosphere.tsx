@@ -35,6 +35,11 @@ const windows = [
   [1340, 565, 5, 8],
 ] as const;
 
+// The dusk entrance sweeps right to left (see `shared/scene-wipe.css`); a
+// window switches on just after the dusk line has passed it.
+const duskArrival = (x: number) =>
+  Math.min(0.97, 1 - x / 1536 / 1.24 + 0.1).toFixed(3);
+
 export function CitySkyline({ moving }: { moving: boolean }): JSX.Element {
   const [lit, setLit] = useState(() => windows.map((_, i) => i % 3 !== 0));
   useEffect(() => {
@@ -90,6 +95,7 @@ export function CitySkyline({ moving }: { moving: boolean }): JSX.Element {
             width={width}
             height={height}
             data-lit={lit[i]}
+            style={{ '--lights-on': duskArrival(x) } as CSSProperties}
           />
         ))}
       </g>

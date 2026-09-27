@@ -1,12 +1,20 @@
 'use client';
 import Link from 'next/link';
-import type { AriaAttributes, CSSProperties, MouseEventHandler } from 'react';
+import { DiscoveryMark } from './discovery-mark';
+import type {
+  AriaAttributes,
+  CSSProperties,
+  MouseEventHandler,
+  ReactNode,
+} from 'react';
 
 interface OrbBase {
   label: string;
   hint?: string;
   className?: string;
   style?: CSSProperties;
+  /** An object-shaped marker can replace the glint without duplicating link UX. */
+  marker?: ReactNode;
 }
 type OrbProps = OrbBase &
   (
@@ -26,7 +34,7 @@ type OrbProps = OrbBase &
       }
   );
 
-/** One discovery control: quiet orb, real link/button, label on hover or focus. */
+/** One discovery control: anchored glint, real link/button, label on hover or focus. */
 export function InteractionOrb(props: OrbProps): JSX.Element {
   const shared = {
     className: `world-cue ${props.className ?? ''}`,
@@ -35,7 +43,7 @@ export function InteractionOrb(props: OrbProps): JSX.Element {
   };
   const contents = (
     <>
-      <span className="world-cue-dot" aria-hidden="true" />
+      {props.marker ?? <DiscoveryMark />}
       <span className="world-cue-label" aria-hidden="true">
         {props.hint ?? props.label}
       </span>

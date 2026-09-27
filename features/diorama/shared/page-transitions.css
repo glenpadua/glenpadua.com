@@ -1,0 +1,83 @@
+/*
+ * Cross-document view transitions for full page loads inside the world
+ * (story papers, article links, "Back to Stories"). Browsers without support
+ * navigate normally. `WorldShell` skips them while motion is paused, and
+ * reduced motion removes the animation below.
+ *
+ * Named participants: the header stays anchored; a story's cover carries
+ * `cover-<uid>` on both the desk paper and the article, so it grows from the
+ * paper into the page and settles back onto the desk.
+ */
+@view-transition {
+  navigation: auto;
+}
+.world .world-header {
+  view-transition-name: world-header;
+}
+.world .world-utility {
+  view-transition-name: world-utility;
+}
+::view-transition-group(world-header),
+::view-transition-group(world-utility) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(world-header),
+::view-transition-old(world-utility) {
+  display: none;
+}
+::view-transition-new(world-header),
+::view-transition-new(world-utility) {
+  animation: none;
+}
+::view-transition-group(.story-cover) {
+  animation-duration: 480ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 50;
+}
+::view-transition-old(.story-cover),
+::view-transition-new(.story-cover) {
+  /* Paper thumbnails and article covers crop differently; fill the box. */
+  height: 100%;
+  object-fit: cover;
+}
+/* Swap the pictures almost at once so one painting grows, not two ghosts. */
+::view-transition-old(.story-cover) {
+  animation: 110ms ease-out both story-cover-out;
+}
+::view-transition-new(.story-cover) {
+  animation: 110ms ease-out both story-cover-in;
+}
+/* Papers that do not travel leave with the desk. */
+::view-transition-old(.story-cover):only-child,
+::view-transition-new(.story-cover):only-child {
+  animation-duration: 140ms;
+}
+@keyframes story-cover-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes story-cover-in {
+  from {
+    opacity: 0;
+  }
+}
+::view-transition-old(root) {
+  animation-duration: 180ms;
+}
+::view-transition-new(root) {
+  animation-duration: 260ms;
+  animation-delay: 80ms;
+}
+::view-transition {
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
