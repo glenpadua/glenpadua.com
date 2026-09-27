@@ -16,7 +16,7 @@ export async function generateStaticParams(): Promise<Array<{ uid: string }>> {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = await loadArticle((await params).uid);
   return {
-    title: article?.title || 'Story not found',
+    title: article?.title || 'Page not found',
     description: article?.description,
     robots: { index: false, follow: false },
     ...(article && {

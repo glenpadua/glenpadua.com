@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import sharp from 'sharp';
 import { resolveArticleLink } from '../features/diorama/lib/routes.ts';
 import { getArticleCover } from '../features/diorama/articles/covers.ts';
-import { deskArticles } from '../features/diorama/rooms/stories/content.ts';
+import { deskArticles } from '../features/diorama/rooms/writing/content.ts';
 
 test('known legacy and public article links stay in the preview, preserving fragments and queries', () => {
   const uids = ['lottery-of-birth'];
@@ -55,29 +55,29 @@ test('each published story has a distinct, loadable cover with accurate dimensio
   );
 });
 
-test('built Stories links resolve to rendered articles and its featured covers share the reader registry', () => {
-  const stories = fs.readFileSync(
-    '.next/server/app/preview/diorama/stories.html',
+test('built Writing links resolve to rendered articles and its featured covers share the reader registry', () => {
+  const writing = fs.readFileSync(
+    '.next/server/app/preview/diorama/writing.html',
     'utf8',
   );
   for (const article of deskArticles) {
     const cover = getArticleCover(article.uid);
     assert.ok(
-      stories.includes(`href="/preview/diorama/blog/${article.uid}"`),
+      writing.includes(`href="/preview/diorama/blog/${article.uid}"`),
       article.uid,
     );
-    assert.ok(!stories.includes(`href="/blog/${article.uid}"`), article.uid);
+    assert.ok(!writing.includes(`href="/blog/${article.uid}"`), article.uid);
     const reader = fs.readFileSync(
       `.next/server/app/preview/diorama/blog/${article.uid}.html`,
       'utf8',
     );
     assert.ok(reader.includes(`src="${cover.src}"`), article.uid);
-    assert.match(reader, /href="\/preview\/diorama\/stories"/);
+    assert.match(reader, /href="\/preview\/diorama\/writing"/);
     assert.match(reader, /<meta name="robots" content="noindex, nofollow"/);
   }
   for (const article of deskArticles.slice(0, 4)) {
     assert.ok(
-      stories.includes(`src="${getArticleCover(article.uid).thumbnailSrc}"`),
+      writing.includes(`src="${getArticleCover(article.uid).thumbnailSrc}"`),
       article.uid,
     );
   }

@@ -41,7 +41,7 @@ test('room and dialog styles cannot leak into the legacy website', () => {
     'styles/rooms.css',
     'styles/motion.css',
     'rooms/work/layout.css',
-    'rooms/stories/layout.css',
+    'rooms/writing/layout.css',
     'shared/world-dialog.css',
   ]) {
     postcss.parse(readFileSync(resolve(root, file), 'utf8')).walkRules(rule => {

@@ -6,7 +6,7 @@ export const journeyEnding = {
   title: 'That’s the day.',
   links: [
     { label: 'See what I’m working on', href: worldRoutes.work },
-    { label: 'Read a story', href: worldRoutes.stories },
+    { label: 'Read something I wrote', href: worldRoutes.writing },
     { label: 'Say hello', href: contactHref },
   ],
   social: [

@@ -162,8 +162,8 @@ export function WorkRoom({
         />
         <InteractionOrb
           className="room-notebook"
-          label="Stories"
-          href={worldRoutes.stories}
+          label="Writing"
+          href={worldRoutes.writing}
         />
         <InteractionOrb
           className="room-lamp"

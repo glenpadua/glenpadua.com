@@ -5,7 +5,7 @@ import { worldScenes } from '@/features/diorama/data/scenes';
 export const metadata: Metadata = {
   title: 'A little world — Glen Padua',
   description:
-    'Glen Padua. A lake, a beach, a few stories, and the things I make.',
+    'Glen Padua. A lake, a beach, some writing, and the things I make.',
   robots: { index: false, follow: false },
 };
 

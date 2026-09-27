@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-/** Single cover selection for Stories and the reader. See docs/art-style.md. */
+/** Single cover selection for the Writing desk and the reader. See docs/art-style.md. */
 export interface ArticleCover {
   src: string;
   thumbnailSrc: string;
@@ -17,7 +17,7 @@ export interface ArticleCover {
 export function coverTransition(uid: string): CSSProperties {
   return {
     viewTransitionName: `cover-${uid.toLowerCase().replace(/[^a-z0-9-]/g, '-')}`,
-    viewTransitionClass: 'story-cover',
+    viewTransitionClass: 'article-cover',
   } as CSSProperties;
 }
 

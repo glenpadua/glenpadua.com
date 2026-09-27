@@ -10,7 +10,7 @@ export {
 export {
   deskArticles,
   type DeskArticle,
-} from '@/features/diorama/rooms/stories/content';
+} from '@/features/diorama/rooms/writing/content';
 export type {
   WorldScene,
   WorldLayer,

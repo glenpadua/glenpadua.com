@@ -1,10 +1,10 @@
 /*
  * Cross-document view transitions for full page loads inside the world
- * (story papers, article links, "Back to Stories"). Browsers without support
+ * (desk papers, article links, "Back to Writing"). Browsers without support
  * navigate normally. `WorldShell` skips them while motion is paused, and
  * reduced motion removes the animation below.
  *
- * Named participants: the header stays anchored; a story's cover carries
+ * Named participants: the header stays anchored; an article's cover carries
  * `cover-<uid>` on both the desk paper and the article, so it grows from the
  * paper into the page and settles back onto the desk.
  */
@@ -31,35 +31,35 @@
 ::view-transition-new(world-utility) {
   animation: none;
 }
-::view-transition-group(.story-cover) {
+::view-transition-group(.article-cover) {
   animation-duration: 480ms;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 50;
 }
-::view-transition-old(.story-cover),
-::view-transition-new(.story-cover) {
+::view-transition-old(.article-cover),
+::view-transition-new(.article-cover) {
   /* Paper thumbnails and article covers crop differently; fill the box. */
   height: 100%;
   object-fit: cover;
 }
 /* Swap the pictures almost at once so one painting grows, not two ghosts. */
-::view-transition-old(.story-cover) {
-  animation: 110ms ease-out both story-cover-out;
+::view-transition-old(.article-cover) {
+  animation: 110ms ease-out both article-cover-out;
 }
-::view-transition-new(.story-cover) {
-  animation: 110ms ease-out both story-cover-in;
+::view-transition-new(.article-cover) {
+  animation: 110ms ease-out both article-cover-in;
 }
 /* Papers that do not travel leave with the desk. */
-::view-transition-old(.story-cover):only-child,
-::view-transition-new(.story-cover):only-child {
+::view-transition-old(.article-cover):only-child,
+::view-transition-new(.article-cover):only-child {
   animation-duration: 140ms;
 }
-@keyframes story-cover-out {
+@keyframes article-cover-out {
   to {
     opacity: 0;
   }
 }
-@keyframes story-cover-in {
+@keyframes article-cover-in {
   from {
     opacity: 0;
   }

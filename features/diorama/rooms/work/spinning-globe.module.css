@@ -113,7 +113,7 @@
    corner of the desk, below the mug, with a full-size touch target. */
 @media (min-width: 761px) and (max-aspect-ratio: 1/1) {
   /* The notebook is outside this crop; its clamped discovery orb would land
-     on the globe. Stories remains available in the main navigation. */
+     on the globe. Writing remains available in the main navigation. */
   .globe ~ :global(.room-notebook) {
     display: none;
   }

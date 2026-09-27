@@ -14,7 +14,7 @@ export async function loadArticles(): Promise<DeskArticle[]> {
           uid: post.uid!,
           title: asText(post.data.title) || known?.title || post.uid!,
           date: post.data.date || known?.date || '',
-          category: known?.category || String(post.data.category || 'Stories'),
+          category: known?.category || String(post.data.category || 'Writing'),
           note: known?.note || '',
         };
       });

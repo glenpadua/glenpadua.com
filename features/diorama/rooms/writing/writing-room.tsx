@@ -25,7 +25,7 @@ function warmBatch(articles: readonly DeskArticle[], page: number) {
     warmCover(getArticleCover(a.uid).thumbnailSrc);
 }
 
-export function StoriesRoom({
+export function WritingRoom({
   articles,
 }: {
   articles: readonly DeskArticle[];
@@ -72,10 +72,10 @@ export function StoriesRoom({
     <main
       id="world-main"
       tabIndex={-1}
-      className="world-room stories-room"
+      className="world-room writing-room"
       data-pen-resting={penResting}
     >
-      <h1 className="sr-only">Stories — a few loose pages</h1>
+      <h1 className="sr-only">Writing — a few loose pages</h1>
       <div className="room-art-stage">
         <picture>
           <source
@@ -96,7 +96,7 @@ export function StoriesRoom({
         <WritingHand />
         <div
           className="paper-spread"
-          aria-label="Featured stories"
+          aria-label="Featured writing"
           data-gathering={gathering}
           data-dealt={shuffled ? 'pile' : undefined}
         >
@@ -135,7 +135,7 @@ export function StoriesRoom({
         <span className="desk-coffee-steam" aria-hidden="true" />
         <InteractionOrb
           className="room-paper-shuffle"
-          label="Shuffle the story papers"
+          label="Shuffle the papers"
           hint="Another handful"
           disabled={articles.length <= 4}
           onClick={shuffle}
@@ -148,11 +148,11 @@ export function StoriesRoom({
           onClick={() => setPenResting(value => !value)}
         />
       </div>
-      <div className="stories-controls">
+      <div className="writing-controls">
         <button onClick={shuffle} disabled={articles.length <= 4}>
           <Shuffle size={16} /> Shuffle the papers
         </button>
-        <span className="stories-page" role="status">
+        <span className="writing-page" role="status">
           {page * 4 + 1}–{Math.min((page + 1) * 4, articles.length)} of{' '}
           {articles.length}
         </span>
@@ -161,12 +161,12 @@ export function StoriesRoom({
           onClick={() => setArchive(true)}
           aria-haspopup="dialog"
         >
-          <Archive size={16} /> All stories
+          <Archive size={16} /> All writing
         </button>
       </div>
       <noscript>
         <div className="world-noscript">
-          <p>All stories</p>
+          <p>All writing</p>
           {articles.map(a => (
             <a key={a.uid} href={articleHref(a.uid)}>
               {a.title} ↗
@@ -181,10 +181,10 @@ export function StoriesRoom({
           if (!value) requestAnimationFrame(() => opener.current?.focus());
         }}
         title="The rest of the pile."
-        eyebrow="Stories / archive"
+        eyebrow="Writing / archive"
       >
         <label className="archive-search">
-          Find a story
+          Find something
           <input
             type="search"
             value={query}
@@ -204,7 +204,7 @@ export function StoriesRoom({
           ))}
         </div>
         <p className="archive-count" role="status">
-          {filtered.length} {filtered.length === 1 ? 'story' : 'stories'}
+          {filtered.length} {filtered.length === 1 ? 'piece' : 'pieces'}
         </p>
         <ul className="archive-list">
           {filtered.map(a => (

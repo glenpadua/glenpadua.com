@@ -4,7 +4,7 @@ Personal website built with Next.js App Router, TypeScript, Prismic, Tailwind CS
 
 ## The illustrated website
 
-The current development preview is `/preview/diorama`, with immersive Work and Stories rooms at `/preview/diorama/work` and `/preview/diorama/stories`. The existing public website is preserved. The implementation lives in `features/diorama/`; preview routes only mount it.
+The current development preview is `/preview/diorama`, with immersive Work and Writing rooms at `/preview/diorama/work` and `/preview/diorama/writing`. The existing public website is preserved. The implementation lives in `features/diorama/`; preview routes only mount it.
 
 - [Manifesto](MANIFESTO.md): why this website exists and the standard it should meet.
 - [Current creative direction](docs/website-direction.md): approved scenes, character details, voice, motion and interactions.

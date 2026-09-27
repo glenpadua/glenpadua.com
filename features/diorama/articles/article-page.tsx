@@ -38,11 +38,11 @@ export function ArticlePage({
     <main id="world-main" tabIndex={-1} className="reading-article">
       <article>
         <header className="article-heading">
-          <a className="article-back" href={worldRoutes.stories}>
-            <span aria-hidden="true">←</span> Back to Stories
+          <a className="article-back" href={worldRoutes.writing}>
+            <span aria-hidden="true">←</span> Back to Writing
           </a>
           <p className="article-category">
-            {categoryNames[article.category] || article.category || 'Stories'}
+            {categoryNames[article.category] || article.category || 'Writing'}
           </p>
           <h1>{article.title}</h1>
           <div className="article-byline">
@@ -80,28 +80,28 @@ export function ArticlePage({
             <nav aria-label="More in this series" className="article-next">
               {previous && (
                 <a href={articleHref(previous.uid)}>
-                  <span>← Previous story</span>
+                  <span>← Previous</span>
                   <strong>{previous.title}</strong>
                 </a>
               )}
               {next && (
                 <a href={articleHref(next.uid)}>
-                  <span>Next story →</span>
+                  <span>Next →</span>
                   <strong>{next.title}</strong>
                 </a>
               )}
             </nav>
           ) : (
-            <nav aria-label="More stories" className="article-next">
+            <nav aria-label="More writing" className="article-next">
               {related.map(item => (
                 <a key={item.uid} href={articleHref(item.uid)}>
-                  <span>Another story</span>
+                  <span>Read next</span>
                   <strong>{item.title}</strong>
                 </a>
               ))}
             </nav>
           )}
-          <a className="article-back" href={worldRoutes.stories}>
+          <a className="article-back" href={worldRoutes.writing}>
             Back to the writing desk <span aria-hidden="true">↗</span>
           </a>
         </footer>

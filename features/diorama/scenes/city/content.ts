@@ -27,8 +27,8 @@ export const cityScene: WorldScene = {
   hotspots: [
     {
       id: 'notebook',
-      label: 'Stories',
-      href: worldRoutes.stories,
+      label: 'Writing',
+      href: worldRoutes.writing,
       x: 69.5,
       y: 75,
     },

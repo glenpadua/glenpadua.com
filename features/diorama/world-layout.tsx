@@ -14,18 +14,18 @@ const fonts = [
 
 /*
  * Runs while the page is still parsing, before first paint. Arriving at the
- * Stories desk from an article (link or browser Back) adds a head style so the
+ * writing desk from an article (link or browser Back) adds a head style so the
  * papers are already on the desk: no deal-in, and the returning cover's view
  * transition lands on a paper that is not moving. Layouts persist across
  * client navigation, so this runs once per full page load.
  */
 const arrival = `(function(){try{
 var n=window.navigation,f=(n&&n.activation&&n.activation.from&&n.activation.from.url)||document.referrer;
-if(!f||location.pathname.replace(/\\/$/,'')!==${JSON.stringify(worldRoutes.stories)})return;
+if(!f||location.pathname.replace(/\\/$/,'')!==${JSON.stringify(worldRoutes.writing)})return;
 var u=new URL(f);
 if(u.origin!==location.origin||u.pathname.indexOf(${JSON.stringify(`${worldRoutes.blog}/`)})!==0)return;
 var s=document.createElement('style');s.id='world-returning';
-s.textContent='.stories-room .article-paper{animation:none!important}';
+s.textContent='.writing-room .article-paper{animation:none!important}';
 document.head.appendChild(s);
 }catch(e){}})();`;
 

@@ -39,7 +39,7 @@ Inspect the actual files before generating or editing art. These approved images
 - [Beach](mock/assets/beach-football.png): brighter daylight, water and physical character/object contact.
 - [City](mock/assets/city.png): evening colour and the relationship between two characters.
 - [Work](mock/assets/work-arsenal.png) and [portrait Work](mock/assets/work-portrait.png): room perspective and warm interior lighting.
-- [Stories](mock/assets/writing.png): overhead composition, paper, wood and restrained personal objects.
+- [Writing desk](mock/assets/writing.png): overhead composition, paper, wood and restrained personal objects.
 
 The lake/landing-page illustration is the primary style and character reference. Other images supply scene-specific context only. Historical experiments and rejected detailed cover drafts do not supersede it.
 

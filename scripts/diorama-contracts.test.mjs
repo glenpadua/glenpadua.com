@@ -48,7 +48,7 @@ function ancestorsBeforeMain(html) {
 }
 
 test('static preview content is not hidden behind a JavaScript-only loading reveal', () => {
-  for (const route of ['diorama', 'diorama/work', 'diorama/stories']) {
+  for (const route of ['diorama', 'diorama/work', 'diorama/writing']) {
     const html = fs.readFileSync(
       `.next/server/app/preview/${route}.html`,
       'utf8',
@@ -68,13 +68,13 @@ test('the same experience can mount at preview or public URLs', () => {
   assert.deepEqual(createWorldRoutes('/preview/diorama/'), {
     home: '/preview/diorama',
     work: '/preview/diorama/work',
-    stories: '/preview/diorama/stories',
+    writing: '/preview/diorama/writing',
     blog: '/preview/diorama/blog',
   });
   assert.deepEqual(createWorldRoutes('/'), {
     home: '/',
     work: '/work',
-    stories: '/stories',
+    writing: '/writing',
     blog: '/blog',
   });
   assert.deepEqual(createWorldRoutes(''), createWorldRoutes('/'));
@@ -187,11 +187,11 @@ test('built preview HTML has semantic copy, real destinations, noindex and stati
     '.next/server/app/preview/diorama/work.html',
     'utf8',
   );
-  const stories = fs.readFileSync(
-    '.next/server/app/preview/diorama/stories.html',
+  const writing = fs.readFileSync(
+    '.next/server/app/preview/diorama/writing.html',
     'utf8',
   );
-  for (const html of [home, work, stories]) {
+  for (const html of [home, work, writing]) {
     for (const [img] of html.matchAll(/<img\b[^>]*>/gi)) {
       assert.match(img, /\ssrc="[^"]+"/, `empty image placeholder: ${img}`);
     }
@@ -199,7 +199,7 @@ test('built preview HTML has semantic copy, real destinations, noindex and stati
     assert.match(html, /<h1/);
     assert.match(html, /<noscript>/);
     assert.match(html, /href="\/preview\/diorama\/work"/);
-    assert.match(html, /href="\/preview\/diorama\/stories"/);
+    assert.match(html, /href="\/preview\/diorama\/writing"/);
   }
   assert.match(home, /Skipping leg day/);
   assert.match(home, /href="\/preview\/diorama\/blog\/lottery-of-birth"/);
@@ -216,5 +216,5 @@ test('built preview HTML has semantic copy, real destinations, noindex and stati
     'back-to-school',
     'free-space-npkill',
   ])
-    assert.match(stories, new RegExp(`href="/preview/diorama/blog/${uid}"`));
+    assert.match(writing, new RegExp(`href="/preview/diorama/blog/${uid}"`));
 });

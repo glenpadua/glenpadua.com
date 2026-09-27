@@ -4,7 +4,7 @@ export function createWorldRoutes(base: string) {
   return {
     home: prefix || '/',
     work: `${prefix}/work`,
-    stories: `${prefix}/stories`,
+    writing: `${prefix}/writing`,
     blog: `${prefix}/blog`,
   };
 }

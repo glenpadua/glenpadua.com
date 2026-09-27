@@ -354,7 +354,7 @@ export function WorldJourney({
     return (
       <main id="world-main" tabIndex={-1} className="world-empty">
         <h1>Out exploring.</h1>
-        <p>The desk and stories are still here.</p>
+        <p>The desk and the writing are still here.</p>
       </main>
     );
   return <PopulatedJourney scenes={scenes} />;

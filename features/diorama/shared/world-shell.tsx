@@ -30,8 +30,8 @@ export function WorldShell({ children }: { children: ReactNode }): JSX.Element {
   }, [enabled]);
   const room = path.endsWith('/work')
     ? 'work'
-    : path.endsWith('/stories')
-      ? 'stories'
+    : path.endsWith('/writing')
+      ? 'writing'
       : 'home';
   return (
     <div className="world" data-room={room} data-motion={enabled}>
@@ -51,7 +51,7 @@ export function WorldShell({ children }: { children: ReactNode }): JSX.Element {
           {[
             ['Home', worldRoutes.home],
             ['Work', worldRoutes.work],
-            ['Stories', worldRoutes.stories],
+            ['Writing', worldRoutes.writing],
           ].map(([label, href]) => (
             <Link
               prefetch={false}

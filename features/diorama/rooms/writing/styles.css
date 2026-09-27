@@ -1,10 +1,10 @@
-.stories-room .paper-picture img {
+.writing-room .paper-picture img {
   filter: none;
   opacity: 1;
 }
 
 @media (min-width: 761px) {
-  .stories-room .article-paper h2 {
+  .writing-room .article-paper h2 {
     font-size: clamp(22px, 1.8cqw, 31px);
     margin: 0.55cqw 0;
   }
@@ -58,7 +58,7 @@
 .stories-writing-composite[data-ready='true'] .stories-writing-motion {
   animation: stories-writing-stroke 5.4s ease-in-out infinite;
 }
-.stories-room[data-pen-resting='true'] .stories-writing-motion {
+.writing-room[data-pen-resting='true'] .stories-writing-motion {
   animation-play-state: paused;
 }
 @keyframes stories-writing-stroke {

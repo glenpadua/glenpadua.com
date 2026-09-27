@@ -1,13 +1,13 @@
 /* Painting-space layout, archive UI and ambient motion for the writing room.
    Hand masks and cover typography remain in styles.css. */
-:where(.world) .stories-room {
+:where(.world) .writing-room {
   background: #ad7841;
 }
-:where(.world .stories-room) .paper-spread {
+:where(.world .writing-room) .paper-spread {
   position: absolute;
   inset: 0;
 }
-:where(.world .stories-room) .article-paper {
+:where(.world .writing-room) .article-paper {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@
   --gather-y: 45%;
   isolation: isolate;
 }
-:where(.world .stories-room) .article-paper:before {
+:where(.world .writing-room) .article-paper:before {
   content: '';
   position: absolute;
   right: 0;
@@ -58,18 +58,18 @@
 }
 /* Picked up a little: nudged toward the viewer, shadow lengthening. It keeps
    most of its angle; paper does not snap square. */
-:where(.world .stories-room) .article-paper:hover,
-:where(.world .stories-room) .article-paper:focus-visible {
+:where(.world .writing-room) .article-paper:hover,
+:where(.world .writing-room) .article-paper:focus-visible {
   transform: translate(-2px, -4px) rotate(calc(var(--rotation, 7deg) * 0.75))
     scale(1.012);
   box-shadow: var(--paper-raised);
   z-index: 5;
 }
-:where(.world .stories-room) .article-paper:focus-visible {
+:where(.world .writing-room) .article-paper:focus-visible {
   outline: 2px solid #fff2d9;
   outline-offset: 5px;
 }
-:where(.world .stories-room) .paper-2 {
+:where(.world .writing-room) .paper-2 {
   --gather-x: -55%;
   --gather-y: 45%;
   left: 56%;
@@ -78,7 +78,7 @@
   height: 26%;
   --rotation: -5deg;
 }
-:where(.world .stories-room) .paper-3 {
+:where(.world .writing-room) .paper-3 {
   --gather-x: 55%;
   --gather-y: -45%;
   left: 19%;
@@ -87,7 +87,7 @@
   height: 27%;
   --rotation: -5deg;
 }
-:where(.world .stories-room) .paper-4 {
+:where(.world .writing-room) .paper-4 {
   --gather-x: -55%;
   --gather-y: -45%;
   left: 64%;
@@ -96,7 +96,7 @@
   height: 28%;
   --rotation: 5deg;
 }
-:where(.world .stories-room) .paper-meta {
+:where(.world .writing-room) .paper-meta {
   display: flex;
   justify-content: space-between;
   gap: 6px;
@@ -106,12 +106,12 @@
   border-bottom: 1px solid #b9a98559;
   padding-bottom: 0.6cqw;
 }
-:where(.world .stories-room) .article-paper h2 {
+:where(.world .writing-room) .article-paper h2 {
   font-size: clamp(24px, 2.3cqw, 40px);
   margin: 0.8cqw 0 1cqw;
   line-height: 1.06;
 }
-:where(.world .stories-room) .paper-picture {
+:where(.world .writing-room) .paper-picture {
   position: relative;
   flex: 1;
   min-height: 0;
@@ -119,7 +119,7 @@
   background: #d8ddc0;
   margin-bottom: 0.5cqw;
 }
-:where(.world .stories-room) .paper-picture img {
+:where(.world .writing-room) .paper-picture img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -127,12 +127,12 @@
   filter: saturate(0.65);
   opacity: 0.85;
 }
-:where(.world .stories-room) .paper-note {
+:where(.world .writing-room) .paper-note {
   font-size: clamp(9px, 0.7cqw, 12px);
   margin-top: 0.4cqw;
   line-height: 1.4;
 }
-:where(.world .stories-room) .stories-controls {
+:where(.world .writing-room) .writing-controls {
   position: absolute;
   left: 5.5%;
   bottom: 83px;
@@ -147,7 +147,7 @@
   padding: 2px 0;
   font-size: 11px;
 }
-:where(.world .stories-room) .stories-controls button {
+:where(.world .writing-room) .writing-controls button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -157,22 +157,22 @@
   background: none;
   font-size: 11px;
 }
-:where(.world .stories-room) .stories-controls button:hover {
+:where(.world .writing-room) .writing-controls button:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-:where(.world .stories-room) .stories-controls button:focus-visible {
+:where(.world .writing-room) .writing-controls button:focus-visible {
   outline-color: var(--edge-ink);
   box-shadow: 0 0 0 7px #34231380;
 }
-:where(.world .stories-room) .stories-controls svg {
+:where(.world .writing-room) .writing-controls svg {
   filter: drop-shadow(var(--edge-shadow));
 }
-:where(.world .stories-room) .stories-page {
+:where(.world .writing-room) .writing-page {
   font-size: 10px;
   color: inherit;
 }
-:where(.world .stories-room) .desk-coffee-steam {
+:where(.world .writing-room) .desk-coffee-steam {
   position: absolute;
   left: 92%;
   top: 6%;
@@ -268,14 +268,14 @@
 }
 /* Shuffle: the papers slide together into one pile, then the next handful
    slides back out of it. No spinning. */
-:where(.world .stories-room)
+:where(.world .writing-room)
   .paper-spread[data-gathering='true']
   .article-paper {
   animation: paper-gather 360ms cubic-bezier(0.5, 0, 0.75, 0) forwards;
   animation-delay: calc(var(--paper-order) * 30ms);
   pointer-events: none;
 }
-:where(.world .stories-room) .paper-spread[data-dealt='pile'] .article-paper {
+:where(.world .writing-room) .paper-spread[data-dealt='pile'] .article-paper {
   animation-name: paper-from-pile;
   animation-duration: 640ms;
   animation-delay: calc(var(--paper-order) * 70ms);
@@ -307,29 +307,29 @@
 }
 
 /* Paused: papers simply appear. */
-:where(.world[data-motion='false'] .stories-room) .article-paper {
+:where(.world[data-motion='false'] .writing-room) .article-paper {
   animation: none;
 }
 @media (max-width: 760px) {
-  :where(.world) .stories-room .room-art-stage {
+  :where(.world) .writing-room .room-art-stage {
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     transform: none;
   }
-  :where(.world) .stories-room .room-art {
+  :where(.world) .writing-room .room-art {
     object-fit: cover;
     object-position: 50% bottom;
   }
-  :where(.world .stories-room) .paper-spread {
+  :where(.world .writing-room) .paper-spread {
     inset: 115px 7% 29%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 21px 17px;
   }
-  :where(.world .stories-room) .article-paper {
+  :where(.world .writing-room) .article-paper {
     position: relative;
     left: auto;
     top: auto;
@@ -338,30 +338,30 @@
     padding: 14px 12px;
     --rotation: 3deg;
   }
-  :where(.world .stories-room) .paper-2,
-  :where(.world .stories-room) .paper-3 {
+  :where(.world .writing-room) .paper-2,
+  :where(.world .writing-room) .paper-3 {
     --rotation: -4deg;
   }
-  :where(.world .stories-room) .paper-4 {
+  :where(.world .writing-room) .paper-4 {
     --rotation: 4deg;
   }
-  :where(.world .stories-room) .article-paper h2 {
+  :where(.world .writing-room) .article-paper h2 {
     font-size: clamp(20px, 5.3vw, 31px);
     margin: 12px 0;
     line-height: 1.06;
   }
-  :where(.world .stories-room) .paper-meta {
+  :where(.world .writing-room) .paper-meta {
     font-size: 8px;
     padding-bottom: 7px;
     letter-spacing: 0.05em;
   }
-  :where(.world .stories-room) .paper-note {
+  :where(.world .writing-room) .paper-note {
     display: none;
   }
-  :where(.world .stories-room) .paper-picture {
+  :where(.world .writing-room) .paper-picture {
     margin-bottom: 5px;
   }
-  :where(.world .stories-room) .stories-controls {
+  :where(.world .writing-room) .writing-controls {
     left: 5%;
     right: 5%;
     bottom: 69px;
@@ -369,48 +369,48 @@
     justify-content: space-between;
     padding: 2px 7px;
   }
-  :where(.world .stories-room) .stories-controls button {
+  :where(.world .writing-room) .writing-controls button {
     font-size: 10px;
     gap: 6px;
     min-height: 42px;
   }
-  :where(.world .stories-room) .stories-page {
+  :where(.world .writing-room) .writing-page {
     font-size: 9px;
   }
-  :where(.world .stories-room) .stories-controls svg {
+  :where(.world .writing-room) .writing-controls svg {
     width: 14px;
   }
 }
 @media (max-width: 360px) {
-  :where(.world .stories-room) .paper-spread {
+  :where(.world .writing-room) .paper-spread {
     inset: 105px 7% 28%;
     gap: 18px 15px;
   }
-  :where(.world .stories-room) .article-paper {
+  :where(.world .writing-room) .article-paper {
     padding: 12px 10px;
   }
-  :where(.world .stories-room) .article-paper h2 {
+  :where(.world .writing-room) .article-paper h2 {
     font-size: 19px;
   }
-  :where(.world .stories-room) .stories-controls button {
+  :where(.world .writing-room) .writing-controls button {
     font-size: 9px;
     gap: 4px;
   }
-  :where(.world .stories-room) .stories-controls {
+  :where(.world .writing-room) .writing-controls {
     gap: 3px;
   }
-  :where(.world .stories-room) .stories-page {
+  :where(.world .writing-room) .writing-page {
     font-size: 8px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  :where(.world .stories-room) .article-paper {
+  :where(.world .writing-room) .article-paper {
     animation: none !important;
     transition: none !important;
   }
 }
 @media (max-width: 760px) {
-  :where(.world) .stories-room .room-art-stage {
+  :where(.world) .writing-room .room-art-stage {
     width: max(100vw, 50svh);
     height: max(200vw, 100svh);
     left: 50%;
@@ -418,20 +418,20 @@
     bottom: auto;
     transform: translate(-50%, -50%);
   }
-  :where(.world .stories-room) .paper-spread {
+  :where(.world .writing-room) .paper-spread {
     inset: 15% 8% 30%;
     gap: 20px 16px;
     grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
   }
-  :where(.world) .stories-room .room-art {
+  :where(.world) .writing-room .room-art {
     object-fit: fill;
   }
-  :where(.world .stories-room) .article-paper {
+  :where(.world .writing-room) .article-paper {
     min-height: 0;
   }
 }
 @media (max-width: 760px) {
-  :where(.world .stories-room) .paper-spread {
+  :where(.world .writing-room) .paper-spread {
     left: 50%;
     right: auto;
     /* The portrait tray begins at 89% of the painting's width. */
