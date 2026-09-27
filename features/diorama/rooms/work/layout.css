@@ -25,76 +25,6 @@
   border-radius: 2px;
   letter-spacing: 0;
 }
-:where(.world .work-room) .monitor-top {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: clamp(10px, 0.76cqw, 13px);
-  border-bottom: 1px solid #c8cfb9;
-  padding-bottom: 0.5cqw;
-}
-:where(.world .work-room) .monitor-top > span:first-child {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-:where(.world .work-room) .monitor-top i {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #638657;
-  box-shadow: 0 0 0 3px #63865715;
-}
-:where(.world .work-room) .monitor-project {
-  padding-top: 0.7cqw;
-  animation: monitor-enter 300ms var(--world-ease);
-}
-:where(.world .work-room) .monitor-project .world-eyebrow {
-  font-size: clamp(9px, 0.69cqw, 12px);
-  letter-spacing: 0.08em;
-}
-:where(.world .work-room) .monitor-project h2 {
-  font-size: clamp(24px, 3.15cqw, 52px);
-  margin: 0.35cqw 0 0.45cqw;
-  line-height: 1.05;
-}
-:where(.world .work-room) .monitor-teaser {
-  white-space: pre-line;
-  font-size: clamp(12px, 1.04cqw, 18px);
-  line-height: 1.45;
-}
-:where(.world .work-room) .monitor-actions {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: center;
-  margin-top: auto;
-}
-:where(.world .work-room) .monitor-actions > div {
-  display: flex;
-  gap: 2px;
-}
-:where(.world .work-room) .monitor-actions button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-width: 44px;
-  min-height: 44px;
-  border: 0;
-  background: transparent;
-  font-size: 12px;
-  border-radius: 3px;
-  transition: background 170ms;
-}
-:where(.world .work-room) .monitor-actions button:hover {
-  background: #dfe6cb;
-}
-:where(.world .work-room) .monitor-actions .monitor-open {
-  padding: 0 8px 0 0;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
 :where(.world .work-room) .room-remote {
   left: 24%;
   top: 66%;
@@ -108,16 +38,6 @@
   top: 33%;
   flex-direction: column;
   gap: 6px;
-}
-@keyframes monitor-enter {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 @media (max-width: 760px) {
   :where(.world) .work-room .room-art-stage {
@@ -138,33 +58,6 @@
     border: 7px solid #343733;
     border-radius: 7px;
     box-shadow: 0 4px 0 #232e28;
-  }
-  :where(.world .work-room) .monitor-top {
-    font-size: 10px;
-    padding-bottom: 7px;
-  }
-  :where(.world .work-room) .monitor-project {
-    padding-top: 11px;
-  }
-  :where(.world .work-room) .monitor-project .world-eyebrow {
-    font-size: 9px;
-    letter-spacing: 0.07em;
-  }
-  :where(.world .work-room) .monitor-project h2 {
-    font-size: clamp(24px, 6.6vw, 37px);
-    margin: 7px 0 8px;
-  }
-  :where(.world .work-room) .monitor-teaser {
-    font-size: 12px;
-    line-height: 1.4;
-  }
-  :where(.world .work-room) .monitor-actions button {
-    font-size: 11px;
-    min-height: 40px;
-    min-width: 40px;
-  }
-  :where(.world .work-room) .monitor-actions .monitor-open {
-    padding-right: 0;
   }
   :where(.world .work-room) .room-remote {
     left: 23%;
@@ -190,21 +83,6 @@
   :where(.world .work-room) .desk-monitor {
     height: 25.5%;
   }
-  :where(.world .work-room) .monitor-project h2 {
-    font-size: 30px;
-  }
-  :where(.world .work-room) .monitor-project .world-eyebrow {
-    font-size: 9px;
-  }
-  :where(.world .work-room) .monitor-teaser {
-    font-size: 12px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  :where(.world .work-room) .monitor-project {
-    animation: none !important;
-    transition: none !important;
-  }
 }
 @media (max-width: 760px) {
   :where(.world) .work-room .room-art-stage {
@@ -227,13 +105,6 @@
     box-shadow: none;
     padding: 11px 13px;
     background: #fff8e4;
-  }
-  :where(.world .work-room) .monitor-project {
-    padding-top: 8px;
-  }
-  :where(.world .work-room) .monitor-project h2 {
-    margin: 6px 0 7px;
-    font-size: clamp(24px, 6.6vw, 31px);
   }
   :where(.world .work-room) .room-remote {
     left: 20%;
@@ -259,9 +130,10 @@
 .world .room-lamp .world-cue-label {
   display: block;
 }
+/* On the monitor's bottom-right bezel: never on the desktop itself. */
 :where(.world .work-room) .room-screen-mode {
-  left: 69%;
-  top: 25%;
+  left: 71.6%;
+  top: 44.6%;
 }
 :where(.world .work-room) .screen-saver {
   position: absolute;
@@ -316,7 +188,7 @@
     --cue-label-x: 0%;
   }
   :where(.world .work-room) .room-screen-mode {
-    left: 86%;
-    top: 19%;
+    left: 62%;
+    top: 45.5%;
   }
 }

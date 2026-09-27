@@ -4,8 +4,8 @@ export { worldAsset } from '@/features/diorama/lib/assets';
 export { worldScenes } from '@/features/diorama/data/scenes';
 export { contactHref } from '@/features/diorama/data/site';
 export {
-  deskProjects,
-  type DeskProject,
+  deskFiles,
+  type DeskFile,
 } from '@/features/diorama/rooms/work/content';
 export {
   deskArticles,

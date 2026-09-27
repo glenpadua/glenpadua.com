@@ -1,0 +1,313 @@
+/*
+ * The Work monitor as a desktop. Sizes use container units so the same
+ * desktop reads at monitor size and when leaned in.
+ */
+.monitor {
+  padding: 0;
+  overflow: hidden;
+  view-transition-name: desk-screen;
+}
+.screen {
+  position: absolute;
+  inset: 0;
+  container-type: size;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 85% 110%, #e6ecd6 0%, #e6ecd600 60%), #fff8e4;
+  color: #2d4139;
+  font-size: clamp(9px, 2.1cqw, 14px);
+  line-height: 1.4;
+}
+@media (hover: hover) and (pointer: fine) {
+  .screen,
+  .screen * {
+    cursor: none !important;
+  }
+}
+
+.menubar {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 1.4em;
+  height: clamp(18px, 8cqh, 34px);
+  padding: 0 0.4em 0 1em;
+  border-bottom: 1px solid #c8cfb9;
+  background: #fbf3dde6;
+  font-size: 0.86em;
+}
+.menubar > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-right: auto;
+}
+.menubar i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #638657;
+  box-shadow: 0 0 0 3px #63865715;
+}
+.lean {
+  display: grid;
+  place-items: center;
+  width: 2.2em;
+  height: 100%;
+  min-width: 24px;
+  border: 0;
+  background: none;
+  color: inherit;
+}
+
+.icons {
+  position: absolute;
+  top: calc(clamp(18px, 8cqh, 34px) + 3.5cqh);
+  left: 2.5cqw;
+  display: grid;
+  grid-template-columns: repeat(3, 6.6em);
+  gap: 0.3em 0.2em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.icon {
+  display: grid;
+  justify-items: center;
+  gap: 0.25em;
+  width: 100%;
+  padding: 0.35em 0.2em;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.86em;
+  line-height: 1.2;
+  text-align: center;
+}
+.icon svg {
+  width: 2.3em;
+  height: 2.3em;
+  filter: drop-shadow(0 1px 0 #2d413922);
+}
+.icon:hover,
+.icon:focus-visible,
+.icon[data-wander='true'] {
+  background: #54765d1c;
+  border-color: #54765d33;
+}
+.icon[data-open='true'] span {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.icon:focus-visible {
+  outline: 2px solid #54765d;
+  outline-offset: 1px;
+}
+
+/* A sticky note on the desktop: what's happening now. */
+.note {
+  position: absolute;
+  right: 3cqw;
+  bottom: 5cqh;
+  max-width: 13em;
+  margin: 0;
+  padding: 0.6em 0.8em;
+  background: #f6e7a8;
+  color: #4a4127;
+  font-size: 0.82em;
+  line-height: 1.35;
+  transform: rotate(2deg);
+  box-shadow: 1px 2px 4px #2d413926;
+}
+
+.window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: min(56%, 34em);
+  height: 80%;
+  border: 1px solid #b9bfa8;
+  border-radius: 6px;
+  background: #fffdf5;
+  box-shadow:
+    0 1px 0 #2d413914,
+    0 10px 24px #2d41392e;
+  overflow: hidden;
+  animation: window-open 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.window:focus-visible {
+  outline: 2px solid #54765d;
+  outline-offset: 1px;
+}
+@keyframes window-open {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+.titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.35em 0.4em 0.35em 0.8em;
+  border-bottom: 1px solid #dad9c4;
+  background: #f3ecd6;
+  touch-action: none;
+  user-select: none;
+}
+.titlebar h2 {
+  margin: 0 auto 0 0;
+  font-family: var(--world-heading-font);
+  font-weight: 500;
+  font-size: 1.05em;
+}
+.titlebar button {
+  display: grid;
+  place-items: center;
+  width: 1.9em;
+  height: 1.9em;
+  min-width: 22px;
+  min-height: 22px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: inherit;
+}
+.titlebar button:hover {
+  background: #2d41391a;
+}
+.body {
+  flex: 1;
+  overflow: auto;
+  padding: 0.7em 0.9em 0.9em;
+  overscroll-behavior: contain;
+}
+.body p {
+  margin: 0 0 0.6em;
+}
+.status {
+  display: inline-block;
+  margin: 0 0 0.7em !important;
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
+  background: #54765d1f;
+  color: #3c5a45;
+  font-size: 0.82em;
+}
+.block h3 {
+  margin: 0 0 0.15em;
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6a7566;
+}
+.timeline {
+  display: grid;
+  gap: 0.55em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.timeline li {
+  display: grid;
+  grid-template-columns: 4.6em 1fr;
+  column-gap: 0.6em;
+}
+.timeline span {
+  grid-row: span 2;
+  color: #6a7566;
+  font-variant-numeric: tabular-nums;
+}
+.timeline p {
+  margin: 0;
+}
+.link {
+  color: #3c5a45;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Glen's (or the visitor's) little cursor. */
+.cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: max(9px, 1.7cqw);
+  pointer-events: none;
+}
+.cursor svg {
+  display: block;
+  width: 100%;
+  filter: drop-shadow(0 1px 1px #2d413940);
+}
+.cursor[data-mode='hidden'] {
+  opacity: 0;
+}
+.cursor[data-mode='wander'] {
+  transition: transform 1.3s cubic-bezier(0.45, 0, 0.25, 1);
+}
+
+/* Leaning in: the screen comes forward to fill the view. */
+.monitor[data-zoomed='true'] .screen {
+  font-size: clamp(13px, 1.75cqw, 17px);
+}
+.monitor[data-zoomed='true'] {
+  position: fixed;
+  z-index: 60;
+  left: 50%;
+  top: 50%;
+  width: min(940px, calc(100vw - 32px));
+  height: min(600px, calc(100svh - 120px));
+  transform: translate(-50%, -50%);
+  border: 8px solid #343733;
+  border-radius: 9px;
+  box-shadow: 0 30px 80px #0e161266;
+}
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 59;
+  border: 0;
+  background: #1a221ecc;
+  cursor: zoom-out;
+}
+@media (max-width: 760px) {
+  .icons {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .note {
+    display: none;
+  }
+  .monitor[data-zoomed='true'] {
+    width: calc(100vw - 20px);
+    height: calc(100svh - 96px);
+  }
+  .monitor[data-zoomed='true'] .note {
+    display: block;
+  }
+  /* On a phone an open window is the whole screen below the menu bar. */
+  .monitor[data-zoomed='true'] .window {
+    left: 0 !important;
+    top: clamp(18px, 8cqh, 34px) !important;
+    width: 100%;
+    height: calc(100% - clamp(18px, 8cqh, 34px));
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .window {
+    animation: none;
+  }
+  .cursor[data-mode='wander'] {
+    transition: none;
+  }
+}

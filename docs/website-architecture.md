@@ -106,6 +106,10 @@ Use `useMotionPolicy().enabled` **and** scene `active` for continuous scene rend
 
 Keep runtime business content in TypeScript or Prismic. JSON under docs is asset provenance, not an alternative runtime configuration. UI content remains HTML; decorative canvas/SVG art is hidden from assistive technology.
 
+## Work monitor desktop
+
+`rooms/work/monitor-desktop.tsx` (with `monitor-desktop.module.css`) renders the monitor as a desktop from `deskFiles` and `deskNotes` in `rooms/work/content.ts`. Windows are real HTML (`role="dialog"`, non-modal), focusable, draggable within the screen and closed with Escape, returning focus to their icon. The visitor's mini cursor is updated directly on pointer move; the idle wander only highlights icons and never opens anything, and stops while motion is disabled. Leaning in portals the screen to the `.world` root (the art stage is transformed, so `position: fixed` cannot live inside it) with a same-document view transition; phones lean in when a file opens and show windows full-screen. Without JavaScript, `DesktopFallback` lists every file. Copy is draft until Glen approves it; case-study pages are later work.
+
 ## Parallel ownership
 
 Work owns the interactive globe in `rooms/work/spinning-globe.tsx`, `spinning-globe.module.css`, `globe-renderer.ts` and `globe-motion.ts`. It uses a bounded 160×160 Canvas2D surface over an illustrated fallback, shared `InteractionOrb` controls, and motion-policy-aware momentum with no idle animation loop. Keep its projection, map texture, room artwork and responsive placement local to Work. Its assets use the `work-globe*` prefix; verification and provenance live in `docs/verification/work-refinement/globe.md`, with focused physics checks in `scripts/work-globe.test.mjs`.

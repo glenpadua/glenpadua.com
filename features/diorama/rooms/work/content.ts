@@ -1,5 +1,5 @@
-import { worldRoutes } from '../../lib/routes';
 import type { GlobePlace } from './globe-motion';
+import { contactHref } from '../../data/site';
 
 export const weddingWebsite = {
   href: 'https://fenimeetsfiltercoffee.vercel.app/',
@@ -10,59 +10,162 @@ export const weddingWebsite = {
     'An illustrated wedding portrait of Glen and Millusha kissing outside a white church.',
 } as const;
 
-export interface DeskProject {
+/*
+ * The Work monitor is a small desktop. Each file opens a window.
+ * DRAFT COPY: assembled from Glen's projects and old site for the prototype;
+ * Glen is reviewing every line before this goes public.
+ */
+export type DeskIcon =
+  | 'chat'
+  | 'plate'
+  | 'folder'
+  | 'career'
+  | 'inbox'
+  | 'trash';
+
+export interface DeskFile {
   id: string;
   name: string;
-  status: string;
-  teaser: string;
-  paragraphs: readonly string[];
+  icon: DeskIcon;
+  /** Short, honest status shown as a chip. */
+  status?: string;
+  title: string;
+  /** Problem → what I did → where it's at, in plain words. */
+  blocks?: readonly { label: string; text: string }[];
+  /** A dated list instead of blocks (career). */
+  timeline?: readonly { when: string; what: string; detail: string }[];
+  paragraphs?: readonly string[];
   link?: { label: string; href: string };
 }
-export const deskProjects: readonly DeskProject[] = [
-  {
-    id: 'world',
-    name: 'This little world',
-    status: 'Current experiment',
-    teaser: 'I could’ve used a template.\nAnyway, here we are.',
-    paragraphs: [
-      'A personal website with a lake, a beach, and a desk I should probably be sitting at.',
-      'Illustrated layers, real HTML, native scrolling. The words and projects can change without repainting the scenery. The original blog is still right where it was.',
-    ],
-    link: { label: 'Explore the world', href: worldRoutes.home },
-  },
-  {
-    id: 'uncommon',
-    name: 'Uncommon UI',
-    status: 'Open source · from the archive',
-    teaser: 'The building blocks.\nAnd a few less common ones.',
-    paragraphs: [
-      'A React component library I built at Zephony, with independently published packages, tests and Storybook examples.',
-      'I set up the monorepo, contribution guidelines and continuous integration, and built the components. This is earlier work, preserved here with its original source.',
-    ],
-    link: {
-      label: 'View the source',
-      href: 'https://github.com/Zephony/uncommon-ui',
-    },
-  },
-  {
-    id: 'new-faces',
-    name: 'New Faces',
-    status: 'Client work · at Zephony',
-    teaser: 'From a new lead\nto the whole operation.',
-    paragraphs: [
-      'A custom CRM for an Italian talent management agency, covering the journey from leads to students.',
-      'I helped shape the application through several iterations and built its frontend in React and Redux, including a rules engine, custom search filters and activity logging.',
-    ],
-    link: { label: 'Original project notes', href: '/work' },
-  },
+
+/** Sticky notes on the desktop; one is picked at random per visit. */
+export const deskNotes: readonly string[] = [
+  'Buy oat milk. Fix that one bug. Leg day (lol).',
+  'It was DNS. It’s always DNS.',
+  'Do not deploy on Friday. (Deployed on Friday.)',
+  'Water the plants. They know.',
+  'Arsenal at 9. Nothing else is scheduled.',
+  'Rename the variable. Rename it back.',
+];
+
+export const deskFiles: readonly DeskFile[] = [
   {
     id: 'staypal',
     name: 'StayPal',
-    status: 'Exploration',
-    teaser: 'An idea on the desk.\nStill finding its shape.',
+    icon: 'chat',
+    status: 'Paused · pilot-ready',
+    title: 'StayPal',
+    blocks: [
+      {
+        label: 'The problem',
+        text: 'Short-term rental hosts answer the same guest questions at every hour: door codes, wifi, late arrivals, the boiler.',
+      },
+      {
+        label: 'What I built',
+        text: 'A WhatsApp co-host. A router hands each message to one of seven specialist agents; it understands voice notes and photos, and escalates anything urgent to the host with context.',
+      },
+      {
+        label: 'Where it’s at',
+        text: 'Paused while I go back to talking with hosts before building more. The site is live.',
+      },
+    ],
+    link: { label: 'staypal.ai', href: 'https://www.staypal.ai/' },
+  },
+  {
+    id: 'purrfect-plate',
+    name: 'Purrfect Plate',
+    icon: 'plate',
+    status: 'In progress · with Millusha',
+    title: 'Purrfect Plate',
+    blocks: [
+      {
+        label: 'The problem',
+        text: 'Our favourite recipes lived in screenshots, saved reels and half-remembered videos.',
+      },
+      {
+        label: 'What we’re building',
+        text: 'A shared recipe library that turns a cooking video into a recipe, with every step traced back to the captions, audio or frame it came from. Plus a pantry and a shopping list. One app on the web and on our phones.',
+      },
+      {
+        label: 'Where it’s at',
+        text: 'We cook with it at home. Not open to the public yet.',
+      },
+    ],
+  },
+  {
+    id: 'client-work',
+    name: 'Client work',
+    icon: 'folder',
+    status: 'Zephony · 2017–19',
+    title: 'Client work',
+    blocks: [
+      {
+        label: 'The setting',
+        text: 'I co-founded a small studio and led frontend for five or six clients at a time, mostly small businesses in Italy.',
+      },
+      {
+        label: 'What I built',
+        text: 'A CRM that took a talent agency from lead to enrolled student, with a rules engine and activity log. A configurator for renting sports equipment. An online store with Stripe, PayPal and translations.',
+      },
+      {
+        label: 'What stuck',
+        text: 'Start from how the business actually works, not from the stack.',
+      },
+    ],
+  },
+  {
+    id: 'career',
+    name: 'Career',
+    icon: 'career',
+    status: 'Remote.com · since 2022',
+    title: 'Career',
+    timeline: [
+      {
+        when: '2022–',
+        what: 'Remote.com',
+        detail: 'Senior engineer, Global Payroll.',
+      },
+      {
+        when: '2021–22',
+        what: 'Airbase',
+        detail: 'Growth and reporting; built the partner dashboard frontend.',
+      },
+      {
+        when: '2019–21',
+        what: 'Synup',
+        detail: 'Frontend for reputation management used by 100k+ businesses.',
+      },
+      {
+        when: '2017–19',
+        what: 'Zephony',
+        detail: 'Co-founder. Client work across CRM, commerce and rentals.',
+      },
+      {
+        when: '2015–17',
+        what: 'Cognizant',
+        detail: 'Performance engineering for Walt Disney Parks and Resorts.',
+      },
+    ],
+  },
+  {
+    id: 'inbox',
+    name: 'Inbox',
+    icon: 'inbox',
+    title: 'Inbox',
     paragraphs: [
-      'I’m exploring what could make life easier for hosts: guest questions, day-to-day operations, and the bits that keep interrupting the day.',
-      'The work is still exploratory. A useful tool, a product, custom work—the shape is open. No launched-business victory lap yet.',
+      'I’m always curious how other people work, and what slows them down.',
+      'If you’d like to swap notes, I’m up for a chat.',
+    ],
+    link: { label: 'Say hello', href: contactHref },
+  },
+  {
+    id: 'trash',
+    name: 'Trash',
+    icon: 'trash',
+    title: 'Trash',
+    paragraphs: [
+      'Networthy, Piggy, Content Cop, Uncommon UI and a few others.',
+      'Built them, learned something, moved on. Not everything needs to be kept.',
     ],
   },
 ];
