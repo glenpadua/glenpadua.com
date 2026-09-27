@@ -50,7 +50,7 @@ export function LakeCharacter({
         <img
           key={play}
           className={`character-sheet ${play ? 'action-requested' : ''}`}
-          src={load ? worldAsset('pullup-motion-v2') : undefined}
+          src={load ? worldAsset('pullup-motion-glasses-v1') : undefined}
           width={1200}
           height={1440}
           alt=""

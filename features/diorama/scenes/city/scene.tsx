@@ -15,6 +15,14 @@ export function CityScene(props: SceneProps): JSX.Element {
   return (
     <SceneArtwork
       {...props}
+      fallback={
+        <img
+          className="world-static-art"
+          src={worldAsset('city-static-glasses-v1')}
+          alt=""
+          loading={props.first ? 'eager' : 'lazy'}
+        />
+      }
       lantern={lantern}
       afterLayer={layer => {
         if (layer.id === 'back') return <CitySkyline moving={moving} />;
@@ -24,7 +32,7 @@ export function CityScene(props: SceneProps): JSX.Element {
               {props.load && (
                 <img
                   className="city-terrace-unlit"
-                  src={worldAsset('city-front-off-v2')}
+                  src={worldAsset('city-front-off-glasses-v1')}
                   alt=""
                   width={1536}
                   height={1024}

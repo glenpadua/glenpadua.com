@@ -1,0 +1,93 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {
+  TYPING_CYCLE_MS,
+  TYPING_PATCH,
+  typingStateAt,
+} from '../features/diorama/scenes/beach/typing.ts';
+
+test('typing loops through quiet keypresses and returns to the starting pose', () => {
+  assert.deepEqual(
+    [0, 260, 400, 620, 740, 1260].map(t => typingStateAt(t).frame),
+    [0, 1, 0, 1, 0, 0],
+  );
+  assert.equal(TYPING_CYCLE_MS, 1260);
+});
+
+test('resuming active time preserves the current keypress and its remaining duration', () => {
+  assert.deepEqual(typingStateAt(300), { frame: 1, untilNextMs: 100 });
+  assert.deepEqual(
+    typingStateAt(300 + TYPING_CYCLE_MS * 50),
+    typingStateAt(300),
+  );
+  for (let t = 0; t < TYPING_CYCLE_MS; t++)
+    assert.ok(typingStateAt(t).untilNextMs > 0);
+});
+
+test('unavailable WebGL leaves the underlying painting as the fallback', async t => {
+  const { createBeachWater } =
+    await import('../features/diorama/scenes/beach/water-renderer.ts');
+  let attempts = 0;
+  const canvas = {
+    width: 1,
+    height: 1,
+    style: {},
+    addEventListener() {},
+    removeEventListener() {},
+    setAttribute() {},
+    getContext() {
+      attempts++;
+      return null;
+    },
+  };
+  t.mock.method(console, 'error', () => {});
+  assert.equal(
+    await createBeachWater(canvas, '/assets/world/beach-back.webp'),
+    null,
+  );
+  assert.ok(
+    attempts > 0,
+    'Exercise the actual unavailable graphics context path.',
+  );
+  assert.equal(
+    canvas.style.opacity,
+    undefined,
+    'The hidden canvas is never revealed.',
+  );
+});
+
+test('built no-JavaScript beach uses the seated laptop art and a real Work link', () => {
+  const html = fs.readFileSync('.next/server/app/preview/diorama.html', 'utf8');
+  const still = [...html.matchAll(/<noscript>([\s\S]*?)<\/noscript>/g)]
+    .map(match => match[1])
+    .find(markup => markup.includes('beach-still'));
+  assert.ok(
+    still,
+    'Beach supplies its own static composition without JavaScript.',
+  );
+  assert.match(still, /beach-back\.webp/);
+  assert.match(still, /beach-typing-focused\.webp/);
+  assert.doesNotMatch(still, /beach-static|football/);
+  assert.match(
+    html,
+    /<a[^>]*class="[^"]*cue-beach-laptop[^>]*href="\/preview\/diorama\/work"/,
+  );
+});
+
+test('the typing overlay stays inside solid hand and keyboard pixels', async () => {
+  const { default: sharp } = await import('sharp');
+  const { left, top, right, bottom } = TYPING_PATCH;
+  for (const asset of ['beach-typing-focused', 'beach-typing-focused-tap']) {
+    const pixels = await sharp(`public/assets/world/${asset}.webp`)
+      .ensureAlpha()
+      .extract({ left, top, width: right - left, height: bottom - top })
+      .raw()
+      .toBuffer();
+    for (let i = 3; i < pixels.length; i += 4)
+      assert.ok(
+        pixels[i] >= 250,
+        'The generated alpha must cover at least 98% of the original pose.',
+      );
+  }
+});

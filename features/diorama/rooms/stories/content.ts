@@ -4,7 +4,6 @@ export interface DeskArticle {
   category: string;
   date: string;
   note: string;
-  art: string;
 }
 // Verified against public Prismic on 2026-09-26; server fetch includes future posts.
 export const deskArticles: readonly DeskArticle[] = [
@@ -14,7 +13,6 @@ export const deskArticles: readonly DeskArticle[] = [
     category: 'Life',
     date: '2020-04-09',
     note: 'Chronicles of an Amputee · 01',
-    art: 'lake-static',
   },
   {
     uid: 'bone-to-be-wild',
@@ -22,7 +20,6 @@ export const deskArticles: readonly DeskArticle[] = [
     category: 'Life',
     date: '2020-05-14',
     note: 'Chronicles of an Amputee · 05',
-    art: 'lake-static',
   },
   {
     uid: 'the-russian-connection',
@@ -30,7 +27,6 @@ export const deskArticles: readonly DeskArticle[] = [
     category: 'Life',
     date: '2020-04-18',
     note: 'Chronicles of an Amputee · 02',
-    art: 'city-static',
   },
   {
     uid: 'do-you-have-an-ideal-dream-job',
@@ -38,7 +34,6 @@ export const deskArticles: readonly DeskArticle[] = [
     category: 'Work & life',
     date: '2022-07-12',
     note: 'Time. Money. Health. Happiness.',
-    art: 'beach-static',
   },
   {
     uid: 'lord-of-the-rings',
@@ -46,7 +41,6 @@ export const deskArticles: readonly DeskArticle[] = [
     category: 'Life',
     date: '2020-04-24',
     note: 'Chronicles of an Amputee · 03',
-    art: 'city-static',
   },
   {
     uid: 'bones-that-got-away',
@@ -54,7 +48,6 @@ export const deskArticles: readonly DeskArticle[] = [
     category: 'Life',
     date: '2020-05-02',
     note: 'Chronicles of an Amputee · 04',
-    art: 'lake-static',
   },
   {
     uid: 'back-to-school',
@@ -62,7 +55,6 @@ export const deskArticles: readonly DeskArticle[] = [
     category: 'Life',
     date: '2020-06-03',
     note: 'Chronicles of an Amputee · 06',
-    art: 'beach-static',
   },
   {
     uid: 'free-space-npkill',
@@ -70,6 +62,5 @@ export const deskArticles: readonly DeskArticle[] = [
     category: 'Code',
     date: '2022-05-05',
     note: 'A little more room on your drive.',
-    art: 'work',
   },
 ];

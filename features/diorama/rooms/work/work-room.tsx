@@ -2,7 +2,6 @@
 import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
-import { contactHref } from '../../data/site';
 import { worldAsset } from '../../lib/assets';
 import { worldRoutes } from '../../lib/routes';
 import { weddingWebsite, type DeskProject } from './content';
@@ -12,6 +11,7 @@ import { TypingHands } from './typing-hands';
 import { SlackProfile } from './slack-profile';
 import { WeddingFrame } from './wedding-frame';
 import { CoffeeSteam } from './coffee-steam';
+import { SpinningGlobe } from './spinning-globe';
 
 export function WorkRoom({
   projects,
@@ -19,9 +19,7 @@ export function WorkRoom({
   projects: readonly DeskProject[];
 }): JSX.Element {
   const [index, setIndex] = useState(0);
-  const [panel, setPanel] = useState<'project' | 'remote' | 'workflow' | null>(
-    null,
-  );
+  const [panel, setPanel] = useState<'project' | 'remote' | null>(null);
   const [light, setLight] = useState(true);
   const [screenAsleep, setScreenAsleep] = useState(false);
   const opener = useRef<HTMLElement | null>(null);
@@ -49,23 +47,24 @@ export function WorkRoom({
         <picture>
           <source
             media="(max-width:760px)"
-            srcSet={worldAsset('work-portrait-v1')}
+            srcSet={worldAsset('work-globe-room-portrait')}
           />
           <source
-            srcSet={`${worldAsset('work-900')} 900w, ${worldAsset('work')} 1536w`}
+            srcSet={`${worldAsset('work-globe-room-900')} 900w, ${worldAsset('work-globe-room')} 1536w`}
             sizes="100vw"
           />
           <img
             className="room-art"
-            src={worldAsset('work')}
+            src={worldAsset('work-globe-room')}
             width={1536}
             height={1024}
-            alt="Looking over the back of Glen’s head as he works at a bedroom desk. Main monitor ahead, laptop and tablet on either side. An Arsenal scarf hangs over the desk."
+            alt="Looking over the back of Glen’s head as he works at a bedroom desk. Main monitor ahead, a laptop to the left and a globe to the right. An Arsenal scarf hangs over the desk."
             fetchPriority="high"
           />
         </picture>
         <WeddingFrame />
         <TypingHands />
+        <SpinningGlobe />
         <div className="room-light" aria-hidden="true" />
         <CoffeeSteam />
         <span className="room-window-glow" aria-hidden="true" />
@@ -161,12 +160,6 @@ export function WorkRoom({
           hasPopup="dialog"
         />
         <InteractionOrb
-          className="room-workflow"
-          label="How I work"
-          onClick={() => open('workflow')}
-          hasPopup="dialog"
-        />
-        <InteractionOrb
           className="room-notebook"
           label="Stories"
           href={worldRoutes.stories}
@@ -203,19 +196,9 @@ export function WorkRoom({
       <WorldDialog
         open={panel !== null}
         onOpenChange={close}
-        title={
-          panel === 'remote'
-            ? 'The day job.'
-            : panel === 'workflow'
-              ? 'Tools are the easy part.'
-              : project.name
-        }
+        title={panel === 'remote' ? 'The day job.' : project.name}
         eyebrow={
-          panel === 'project'
-            ? project.status
-            : panel === 'remote'
-              ? 'Remote.com · Senior engineer'
-              : 'How I work'
+          panel === 'project' ? project.status : 'Remote.com · Senior engineer'
         }
       >
         {panel === 'project' && (
@@ -262,30 +245,6 @@ export function WorkRoom({
             >
               My take on work and life ↗
             </Link>
-          </>
-        )}
-        {panel === 'workflow' && (
-          <>
-            <p>
-              I build agentic workflows and software. The useful part is
-              figuring out where either actually helps.
-            </p>
-            <p>
-              Understand the work. Make a small version. Try it with the people
-              who’ll use it. Keep what earns its place.
-            </p>
-            <p className="world-note">
-              The tablet is part of the illustration. There isn’t a live AI chat
-              here yet.
-            </p>
-            <a
-              className="world-text-link"
-              href={contactHref}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Got something you’re figuring out? ↗
-            </a>
           </>
         )}
       </WorldDialog>

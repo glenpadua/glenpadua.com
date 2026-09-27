@@ -12,7 +12,12 @@ export const cityScene: WorldScene = {
   mobile: { width: 210, left: -109 },
   layers: [
     { id: 'back', asset: 'city-back', depth: 0.16, responsive: true },
-    { id: 'terrace', asset: 'city-front', depth: 0.75, responsive: true },
+    {
+      id: 'terrace',
+      asset: 'city-front-glasses-v1',
+      depth: 0.75,
+      responsive: true,
+    },
   ],
   hotspots: [
     {

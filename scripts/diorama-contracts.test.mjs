@@ -167,5 +167,5 @@ test('built preview HTML has semantic copy, real destinations, noindex and stati
     'back-to-school',
     'free-space-npkill',
   ])
-    assert.match(stories, new RegExp(`href="/blog/${uid}"`));
+    assert.match(stories, new RegExp(`href="/preview/diorama/blog/${uid}"`));
 });

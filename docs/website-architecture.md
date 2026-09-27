@@ -14,6 +14,7 @@ features/diorama/
   screens/world-journey.tsx native scroll, active chapter, nearby loading
   data/scenes.ts            chapter order
   data/site.ts              shared contact destination
+  articles/                reading layout, cover registry and article CMS adapter
   model/                   scene content and runtime contracts
   lib/                     route map, asset paths, pure choreography
   shared/                  orb, motion policy, layer/fallback renderer, dialog, sky
@@ -44,6 +45,7 @@ Each scene owns `content.ts`, `scene.tsx` and `styles.css`, plus its character/e
 | Default layer images, static fallback, image failure handling                   | `shared/scene-artwork.tsx`                                   |
 | Project content/order                                                           | `rooms/work/content.ts`                                      |
 | Featured story notes/order and outage fallback                                  | `rooms/stories/content.ts`                                   |
+| Matching Stories thumbnails and article covers                                  | `articles/covers.ts`, `getArticleCover(uid)`                 |
 | Stories handwriting and its painting-space masks                                | `rooms/stories/writing-hand.tsx`, `rooms/stories/styles.css` |
 | CMS refresh/mapping                                                             | `rooms/stories/load-articles.ts` (server only)               |
 | Mount URLs / contact                                                            | `lib/routes.ts` / `data/site.ts`                             |
@@ -52,13 +54,15 @@ Each scene owns `content.ts`, `scene.tsx` and `styles.css`, plus its character/e
 
 `WorldScene` is serializable content: id, copy, description, palette, mobile stage, layers and link hotspots. `SceneProps` adds `load`, `first`, and `active`. The journey supplies these and manages native scroll, visibility and inert inactive chapters.
 
-`SceneArtwork` supplies the shared art stage, default images, no-JavaScript/error fallback and link hotspots. A scene can supply `renderLayer`, `afterLayer`, `atmosphere`, `controls` and `response`. Return `undefined` from `renderLayer` to use the default image. Keep behavior and state in the scene rather than adding new scene-id branches to the shared renderer.
+`SceneArtwork` supplies the shared art stage, default images, no-JavaScript/error fallback and link hotspots. A scene can supply `renderLayer`, `afterLayer`, `atmosphere`, `controls`, `response` and `fallback`. Return `undefined` from `renderLayer` to use the default image. Optional `fallback` replaces the default static image both after a layer failure and inside `<noscript>`; use static, decorative markup with scene-owned responsive positioning and no dependency on effects or event handlers. Keep essential links in the existing hotspot/navigation slots. Omitting the fallback preserves the default image and its horizon mask. Keep behavior and state in the scene rather than adding new scene-id branches to the shared renderer.
 
 For a new chapter, create a unique id and its content, add it to `data/scenes.ts`, and supply a `<id>-static.webp` fallback plus declared assets. A data-only scene works with the default renderer. For custom effects, add its component to `scenes/registry.tsx` and import its stylesheet in `styles/index.css`. Unique ids are required. The empty scene list has an intentional fallback; a single scene works without a transition.
 
 All positions refer to the same painting stage, so artwork and controls share coordinates. Scene-only selectors stay scoped to their scene or uniquely named effect classes. Shared CSS pause/reduced-motion rules apply to all scene effects; do not override them locally. Review mobile overrides whenever the artwork changes.
 
 ## Shared typography
+
+All visual assets follow [the shared art style](art-style.md). Article implementation and cover replacement are documented in [the article guide](articles.md); article styles are scoped to `.reading-article` and its containing `.world`, leaving scene and room layouts unchanged.
 
 The approved Lora/Nunito Sans pairing is recorded in [current direction](website-direction.md#typography). Edit font-face declarations and `--world-heading-font` / `--world-body-font` in `styles/typography.css`; it is imported by the shared stylesheet entry. Font files, licenses and provenance live in `public/assets/fonts/diorama/`. Scene-specific sizes and placement remain scene-owned, while font families use the shared tokens.
 
@@ -81,6 +85,8 @@ Use `useMotionPolicy().enabled` **and** scene `active` for continuous scene rend
 Keep runtime business content in TypeScript or Prismic. JSON under docs is asset provenance, not an alternative runtime configuration. UI content remains HTML; decorative canvas/SVG art is hidden from assistive technology.
 
 ## Parallel ownership
+
+Work owns the interactive globe in `rooms/work/spinning-globe.tsx`, `spinning-globe.module.css`, `globe-renderer.ts` and `globe-motion.ts`. It uses a bounded 160×160 Canvas2D surface over an illustrated fallback, shared `InteractionOrb` controls, and motion-policy-aware momentum with no idle animation loop. Keep its projection, map texture, room artwork and responsive placement local to Work. Its assets use the `work-globe*` prefix; verification and provenance live in `docs/verification/work-refinement/globe.md`, with focused physics checks in `scripts/work-globe.test.mjs`.
 
 Stories handwriting is owned by `rooms/stories/writing-hand.tsx` and `rooms/stories/styles.css`; it no longer uses shared `RoomHands`. One opaque hand cut from the approved artwork rotates over a fixed cleaned background, with the original cuff above it. Desktop/portrait masks and cleaned backgrounds use the `public/assets/world/stories-writing-*` prefix. Keep these assets and motion geometry together; preserve the original painting fallback while assets load or fail. Verification lives in `docs/verification/stories-refinement/`.
 

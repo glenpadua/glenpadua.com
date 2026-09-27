@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-27",
+  "generator": "Built-in imagegen",
+  "style": "docs/art-style.md / illustrated-world-v1",
+  "prompts": [
+    {
+      "name": "focused typing base",
+      "prompt": "Use case precise-object-edit. Refine this approved full square beach sprite into a laptop WORKING pose. Keep umbrella, pole, overall seated location/scale, yellow/ivory striped shirt, charcoal shorts, legs, anatomical LEFT prosthesis viewer-right, shoes, laptop and sand. Glen must face his laptop on viewer-right: turn head and shoulders slightly right in a natural three-quarter/profile working view, tilt chin slightly down so his sunglasses/gaze point at the laptop screen, no looking at viewer. BOTH forearms and hands positioned naturally on laptop keyboard, fingers lightly resting on keys, exactly two arms/hands, partly occluded by laptop as appropriate. Remove drinking glass entirely and naturally fill sand. No sipping or other activity. Same simple warm illustrated adventure-game aesthetic with restrained outlines; no realism. Full square composition with same canopy margins. True alpha transparency. This is the BASE frame of a subtle typing animation. Calm absorbed working posture, complete coherent anatomy, clean whole sprite, no isolated limbs."
+    },
+    {
+      "name": "subtle key release",
+      "prompt": "Use case precise-object-edit. This is frame A of a two-frame looping typing sprite. Produce frame B with absolute pixel registration: same1254-square canvas, same object positions. Change ONLY the visible typing fingertips and a tiny wrist flex near keyboard around x640..716,y858..913. Raise index/middle fingertips by approximately 6 source pixels as a small key-release movement; palm/wrist hardly moves. Preserve exact forearm/elbow silhouette. Everything else must remain EXACTLY unchanged: whole umbrella and pole, hair/head facing laptop down-right, sunglasses/face, striped shirt, laptop body, both legs/prosthetic LEFT leg viewer-right, shoes, sand, all contours and textures. No face nod, no torso shift, no movement of screen, no glass or extra props. One clean complete coherent sprite, no duplication, no motion blur, no isolated parts. Keep true transparent alpha and original framing/margins. Extremely subtle natural typing finger motion only."
+    }
+  ]
+}

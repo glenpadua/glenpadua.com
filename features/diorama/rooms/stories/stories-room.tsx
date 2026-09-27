@@ -3,6 +3,8 @@ import { useRef, useState, type CSSProperties } from 'react';
 import { Archive, ArrowUpRight, Shuffle } from 'lucide-react';
 import Link from 'next/link';
 import { worldAsset } from '../../lib/assets';
+import { getArticleCover } from '../../articles/covers';
+import { articleHref } from '../../articles/routes';
 import type { DeskArticle } from './content';
 import { WorldDialog } from '@/features/diorama/shared/world-dialog';
 import { paperBatch } from '@/features/diorama/lib/travel';
@@ -57,33 +59,37 @@ export function StoriesRoom({
         </picture>
         <WritingHand />
         <div className="paper-spread" aria-label="Featured stories">
-          {batch.map((a, i) => (
-            <a
-              className={`article-paper paper-${i + 1}`}
-              key={`${page}-${a.uid}`}
-              href={`/blog/${a.uid}`}
-              style={{ '--paper-order': i } as CSSProperties}
-            >
-              <div className="paper-meta">
-                <span>{a.category}</span>
-                <time dateTime={a.date}>{a.date.slice(0, 4)}</time>
-              </div>
-              <h2>{a.title}</h2>
-              <div className="paper-picture">
-                <img
-                  src={worldAsset(a.art)}
-                  alt=""
-                  width={400}
-                  height={160}
-                  loading="lazy"
-                />
-              </div>
-              <p className="paper-note">{a.note}</p>
-              <div className="paper-bottom">
-                Read the story <ArrowUpRight size={17} />
-              </div>
-            </a>
-          ))}
+          {batch.map((a, i) => {
+            const cover = getArticleCover(a.uid);
+            return (
+              <a
+                className={`article-paper paper-${i + 1}`}
+                key={`${page}-${a.uid}`}
+                href={articleHref(a.uid)}
+                style={{ '--paper-order': i } as CSSProperties}
+              >
+                <div className="paper-meta">
+                  <span>{a.category}</span>
+                  <time dateTime={a.date}>{a.date.slice(0, 4)}</time>
+                </div>
+                <h2>{a.title}</h2>
+                <div className="paper-picture">
+                  <img
+                    src={cover.thumbnailSrc}
+                    style={{ objectPosition: cover.thumbnailPosition }}
+                    alt=""
+                    width={600}
+                    height={Math.round((600 * cover.height) / cover.width)}
+                    loading="lazy"
+                  />
+                </div>
+                <p className="paper-note">{a.note}</p>
+                <div className="paper-bottom">
+                  Read the story <ArrowUpRight size={17} />
+                </div>
+              </a>
+            );
+          })}
         </div>
         <span className="desk-coffee-steam" aria-hidden="true" />
         <InteractionOrb
@@ -124,7 +130,7 @@ export function StoriesRoom({
         <div className="world-noscript">
           <p>All stories</p>
           {articles.map(a => (
-            <a key={a.uid} href={`/blog/${a.uid}`}>
+            <a key={a.uid} href={articleHref(a.uid)}>
               {a.title} ↗
             </a>
           ))}
@@ -165,7 +171,7 @@ export function StoriesRoom({
         <ul className="archive-list">
           {filtered.map(a => (
             <li key={a.uid}>
-              <a href={`/blog/${a.uid}`}>
+              <a href={articleHref(a.uid)}>
                 <span>
                   {a.category} · {a.date.slice(0, 4)}
                 </span>

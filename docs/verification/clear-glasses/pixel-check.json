@@ -1,0 +1,47 @@
+[
+  {
+    "original": "pullup-motion-v2.webp",
+    "output": "pullup-motion-glasses-v1.webp",
+    "width": 1200,
+    "height": 1440,
+    "eyeRegions": [
+      [230, 303, 125, 49],
+      [829, 262, 137, 53],
+      [230, 864, 134, 34],
+      [817, 802, 141, 53]
+    ],
+    "outsideDifferences": 0
+  },
+  {
+    "original": "city-front.webp",
+    "output": "city-front-glasses-v1.webp",
+    "width": 1536,
+    "height": 1024,
+    "eyeRegions": [[1164, 612, 98, 40]],
+    "outsideDifferences": 0
+  },
+  {
+    "original": "city-front-off-v2.webp",
+    "output": "city-front-off-glasses-v1.webp",
+    "width": 1536,
+    "height": 1024,
+    "eyeRegions": [[1164, 612, 98, 40]],
+    "outsideDifferences": 0
+  },
+  {
+    "original": "city-static.webp",
+    "output": "city-static-glasses-v1.webp",
+    "width": 1536,
+    "height": 1024,
+    "eyeRegions": [[1164, 612, 98, 40]],
+    "outsideDifferences": 0
+  },
+  {
+    "original": "lake-static.webp",
+    "output": "lake-static-glasses-v1.webp",
+    "width": 1536,
+    "height": 1024,
+    "eyeRegions": [[1140, 600, 78, 26]],
+    "outsideDifferences": 0
+  }
+]

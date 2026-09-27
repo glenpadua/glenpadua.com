@@ -1,0 +1,326 @@
+{
+  "date": "2026-09-27",
+  "styleGuide": "docs/art-style.md",
+  "styleRevision": "illustrated-world-v1",
+  "generator": "OpenAI built-in image_gen",
+  "model": "Not exposed by the built-in tool",
+  "contentTreatment": "Interpretive illustrations based on published article content; original documentary body media unchanged.",
+  "referenceDecision": "Glen approved the sparse poolside cover and requested the same treatment for all eight covers. Earlier detailed drafts were rejected and are not used.",
+  "encoding": "Full composition preserved; resized to 1536x768 and 600x300, WebP quality 88. No artistic edits during encoding.",
+  "reviewNotes": "docs/verification/articles/stories-covers.md",
+  "assets": [
+    {
+      "uid": "lottery-of-birth",
+      "sourceArticle": {
+        "url": "https://glenpadua.com/blog/lottery-of-birth",
+        "cmsId": "X3M1KxAAAFDAsykS",
+        "lastPublicationDate": "2020-10-12T16:25:10+0000",
+        "bodySha256": "ae8ca3f6ce05042b56f2cca5dd88562e7783818b97c4dba50d429d1ff2fe63a7"
+      },
+      "generation": {
+        "sourceFile": "exec-c3942913-4f7b-48cf-96d5-240edc64bd03.png",
+        "sourceWidth": 1774,
+        "sourceHeight": 887,
+        "sourceSha256": "1f62caf3a3ac85383c8c9170eb98761122197b1cad2db4c38b7675154b0e02e7",
+        "prompt": "Use case: illustration-story. Create a new article cover by adapting the supplied approved style references. Image 1 is the USER-APPROVED poolside cover: match its exact sparse, simple 2D drawing style, spacious composition, broad layered colour shapes, faint uniform paper grain, clean cartoon outlines and gently muted colours. Image 2 is the original landing-page character/style reference. Do not increase detail beyond either. Landscape 2:1. Main subject group centered within middle 60% width and occupying about 30–40% of picture height, with generous quiet space above. The image should look like another scene from the same little video game. Palette follows subject but stays in sage/forest green, warm cream/sand/wood, soft blue, selective terracotta/turquoise. Materials use broad matte shapes with no physical surface detail. No woodgrain, embroidery, realistic shadows, skin texture, individual foliage, cinematic depth of field, complex architecture, extra decorative props or dense furnishings. If a character appears, keep the EXACT same compact cartoon language: oversized rounded head, very short body and limbs, spiky brown hair, tiny simple nose/mouth, dark contours, no adult realistic proportions, no stubble, muscles or body hair. Children have intact natural legs, no prosthesis; only school child wears a LEFT external calliper. Keep all important subjects inside both 2:1 and centered 3:2 crops. No words, lettering, logos, title, watermark, or border. Never use the rejected richly detailed cover drafts as references. Follow docs/art-style.md illustrated-world-v1, clarified against the landing page.\nArticle subject: A scene about the cards life deals you. The tiny Glen character as a young boy, seated cross-legged on one simple sage rug, holds three cream playing cards with only a dot, triangle and leaf symbol. Dark spiky brown hair and dark sunglasses like the reference's Glen, small friendly smile, simple cream T-shirt and charcoal shorts, BOTH natural intact legs and feet (before any surgery or amputation). A couple of cards on the rug. Setting a very simple airy family room: broad cream wall occupies upper half, one large open window with flat green hills and pale blue sky, just one plain low wood shelf silhouette at outer edge. No plants, toys, books, patterned fabric or detailed furniture. Keep child small, same chibi proportions as approved poolside Glen, central and surrounded by quiet room.",
+        "references": [
+          "public/assets/world/articles/do-you-have-an-ideal-dream-job-v1.webp",
+          "docs/mock/assets/lake.png"
+        ]
+      },
+      "userApprovedReference": false,
+      "focalPosition": "50% 50%",
+      "files": [
+        {
+          "path": "public/assets/world/articles/lottery-of-birth-v1.webp",
+          "width": 1536,
+          "height": 768,
+          "bytes": 54332,
+          "sha256": "9e314d9df4e167fb575031d4950c70d77131b31777a38c3f3c74a19eec7d3218"
+        },
+        {
+          "path": "public/assets/world/articles/lottery-of-birth-v1-600.webp",
+          "width": 600,
+          "height": 300,
+          "bytes": 12452,
+          "sha256": "b36c63eeeb154b0823953584ba22979f2cbc8404f1d727c29b689e446c0515bc"
+        }
+      ],
+      "thumbnailFocalPosition": "50% 75%"
+    },
+    {
+      "uid": "the-russian-connection",
+      "sourceArticle": {
+        "url": "https://glenpadua.com/blog/the-russian-connection",
+        "cmsId": "X4SDCxEAACYAF7-I",
+        "lastPublicationDate": "2020-10-12T17:02:56+0000",
+        "bodySha256": "2ed31bfc143928d08dae1688bd2dec8acf2717d52f6b32ddb75b726a2a125233"
+      },
+      "generation": {
+        "sourceFile": "exec-41d6bf57-c429-46e8-bca4-cda4a55ea304.png",
+        "sourceWidth": 1774,
+        "sourceHeight": 887,
+        "sourceSha256": "8687a57bf93214d1da3e4e61d7c46c61a02211c6dc7dc77536160fb412dd144a",
+        "prompt": "Use case: illustration-story. Create a new article cover by adapting the supplied approved style references. Image 1 is the USER-APPROVED poolside cover: match its exact sparse, simple 2D drawing style, spacious composition, broad layered colour shapes, faint uniform paper grain, clean cartoon outlines and gently muted colours. Image 2 is the original landing-page character/style reference. Do not increase detail beyond either. Landscape 2:1. Main subject group centered within middle 60% width and occupying about 30–40% of picture height, with generous quiet space above. The image should look like another scene from the same little video game. Palette follows subject but stays in sage/forest green, warm cream/sand/wood, soft blue, selective terracotta/turquoise. Materials use broad matte shapes with no physical surface detail. No woodgrain, embroidery, realistic shadows, skin texture, individual foliage, cinematic depth of field, complex architecture, extra decorative props or dense furnishings. If a character appears, keep the EXACT same compact cartoon language: oversized rounded head, very short body and limbs, spiky brown hair, tiny simple nose/mouth, dark contours, no adult realistic proportions, no stubble, muscles or body hair. Children have intact natural legs, no prosthesis; only school child wears a LEFT external calliper. Keep all important subjects inside both 2:1 and centered 3:2 crops. No words, lettering, logos, title, watermark, or border. Never use the rejected richly detailed cover drafts as references. Follow docs/art-style.md illustrated-world-v1, clarified against the landing page.\nArticle subject: An imaginary Dr Rex from the essay's dinosaur joke. A small friendly sage-green cartoon T-rex doctor, very large rounded head and tiny body/arms, cream doctor's coat, tiny simple eyes and smile, at one little plain wooden desk. He points to a simple ivory bone TEACHING MODEL on the desk held inside three small silver circles connected by two straight vertical bars. It is a simplified model, no flesh, wounds or patient. Beside an open window a tiny amber butterfly represents small acts of kindness. Spare cream room with a broad sage lower wall and blue sky visible at window, almost no other decoration. Dinosaur and desk central and only 35% image height. No bookshelf, globe, skeleton picture, detailed medical instruments or realistic dinosaur scales.",
+        "references": [
+          "public/assets/world/articles/do-you-have-an-ideal-dream-job-v1.webp",
+          "docs/mock/assets/lake.png"
+        ]
+      },
+      "userApprovedReference": false,
+      "focalPosition": "50% 50%",
+      "files": [
+        {
+          "path": "public/assets/world/articles/the-russian-connection-v1.webp",
+          "width": 1536,
+          "height": 768,
+          "bytes": 52504,
+          "sha256": "63ed75b698727eca37fb7ce0431ca26f9315ec0826321e7df4eda2bf46ed6b34"
+        },
+        {
+          "path": "public/assets/world/articles/the-russian-connection-v1-600.webp",
+          "width": 600,
+          "height": 300,
+          "bytes": 13542,
+          "sha256": "3f2026edfb7fcf17654584d08d4ed90bd86a76b4e717cad283f3fd999a2e142f"
+        }
+      ],
+      "thumbnailFocalPosition": "50% 60%"
+    },
+    {
+      "uid": "lord-of-the-rings",
+      "sourceArticle": {
+        "url": "https://glenpadua.com/blog/lord-of-the-rings",
+        "cmsId": "X4SFZBEAACcAF8oy",
+        "lastPublicationDate": "2020-10-12T16:41:14+0000",
+        "bodySha256": "2dd48c9e46f74b1227ebbdc86264953266d092f1a1174be6d49c7704003ca48d"
+      },
+      "generation": {
+        "sourceFile": "exec-107a3c18-9644-4cfb-9e6d-669ebac8013c.png",
+        "sourceWidth": 1774,
+        "sourceHeight": 887,
+        "sourceSha256": "f2d12bab363408e7cdfcebf00badea8be84aefb1776ee4e9cd54e4568c9675e8",
+        "prompt": "Use case: illustration-story. Create a new article cover by adapting the supplied approved style references. Image 1 is the USER-APPROVED poolside cover: match its exact sparse, simple 2D drawing style, spacious composition, broad layered colour shapes, faint uniform paper grain, clean cartoon outlines and gently muted colours. Image 2 is the original landing-page character/style reference. Do not increase detail beyond either. Landscape 2:1. Main subject group centered within middle 60% width and occupying about 30–40% of picture height, with generous quiet space above. The image should look like another scene from the same little video game. Palette follows subject but stays in sage/forest green, warm cream/sand/wood, soft blue, selective terracotta/turquoise. Materials use broad matte shapes with no physical surface detail. No woodgrain, embroidery, realistic shadows, skin texture, individual foliage, cinematic depth of field, complex architecture, extra decorative props or dense furnishings. If a character appears, keep the EXACT same compact cartoon language: oversized rounded head, very short body and limbs, spiky brown hair, tiny simple nose/mouth, dark contours, no adult realistic proportions, no stubble, muscles or body hair. Children have intact natural legs, no prosthesis; only school child wears a LEFT external calliper. Keep all important subjects inside both 2:1 and centered 3:2 crops. No words, lettering, logos, title, watermark, or border. Never use the rejected richly detailed cover drafts as references. Follow docs/art-style.md illustrated-world-v1, clarified against the landing page.\nArticle subject: The title is a pun about months with orthopedic rings, studying at home and playing video games, NOT Tolkien. A small simple still-life group in a quiet room: a plain wooden low table carrying a simplified three-ring orthopedic frame teaching MODEL (three clean silver circular rings connected by two rods around an ivory bone-shaped model), with a small old-fashioned rectangular game controller and a closed plain sage school notebook beside it. Ring model central and clearest silhouette, no fine bolt perforations or engineering detail. One plain sage couch silhouette in distant background, a large cream wall and soft window light. Model and table occupy middle lower third, plentiful quiet space. No people, no surgical scene, no detailed rugs, lamp, television, bookshelves, mugs or plants.",
+        "references": [
+          "public/assets/world/articles/do-you-have-an-ideal-dream-job-v1.webp",
+          "docs/mock/assets/lake.png"
+        ]
+      },
+      "userApprovedReference": false,
+      "focalPosition": "50% 50%",
+      "files": [
+        {
+          "path": "public/assets/world/articles/lord-of-the-rings-v1.webp",
+          "width": 1536,
+          "height": 768,
+          "bytes": 51200,
+          "sha256": "ff36c64d4b787cd2c21590208e2551420f6fe61a5d79781222a741f3692cf3df"
+        },
+        {
+          "path": "public/assets/world/articles/lord-of-the-rings-v1-600.webp",
+          "width": 600,
+          "height": 300,
+          "bytes": 12004,
+          "sha256": "cb6f74f39ad62620e1c582e3adb91474c071c4ca9e45a11a14039dae5ed1ccd9"
+        }
+      ],
+      "thumbnailFocalPosition": "50% 75%"
+    },
+    {
+      "uid": "bones-that-got-away",
+      "sourceArticle": {
+        "url": "https://glenpadua.com/blog/bones-that-got-away",
+        "cmsId": "X4SJWhEAACYAF9wN",
+        "lastPublicationDate": "2020-10-12T16:50:44+0000",
+        "bodySha256": "9b0cb97ce5058f4607e48f47f786ba321f5dc47e6b412404b091016c2db4cc57"
+      },
+      "generation": {
+        "sourceFile": "exec-a011c124-4394-43c6-845f-23d73b1f4de0.png",
+        "sourceWidth": 1774,
+        "sourceHeight": 887,
+        "sourceSha256": "6b9427fc30d60a407de06202ed441177a61973ec4e32d719fa1610c3d9750f79",
+        "prompt": "Use case: illustration-story. Create a new article cover by adapting the supplied approved style references. Image 1 is the USER-APPROVED poolside cover: match its exact sparse, simple 2D drawing style, spacious composition, broad layered colour shapes, faint uniform paper grain, clean cartoon outlines and gently muted colours. Image 2 is the original landing-page character/style reference. Do not increase detail beyond either. Landscape 2:1. Main subject group centered within middle 60% width and occupying about 30–40% of picture height, with generous quiet space above. The image should look like another scene from the same little video game. Palette follows subject but stays in sage/forest green, warm cream/sand/wood, soft blue, selective terracotta/turquoise. Materials use broad matte shapes with no physical surface detail. No woodgrain, embroidery, realistic shadows, skin texture, individual foliage, cinematic depth of field, complex architecture, extra decorative props or dense furnishings. If a character appears, keep the EXACT same compact cartoon language: oversized rounded head, very short body and limbs, spiky brown hair, tiny simple nose/mouth, dark contours, no adult realistic proportions, no stubble, muscles or body hair. Children have intact natural legs, no prosthesis; only school child wears a LEFT external calliper. Keep all important subjects inside both 2:1 and centered 3:2 crops. No words, lettering, logos, title, watermark, or border. Never use the rejected richly detailed cover drafts as references. Follow docs/art-style.md illustrated-world-v1, clarified against the landing page.\nArticle subject: The essay compares bones/relationships that cannot be forced together to incompatible puzzle pieces and recalls a birthday in hospital. Show two simple large cream wooden puzzle pieces standing on a small plain wooden bedside table; their facing edges each have an OUTWARD round tab so they clearly cannot interlock, with a gap between them. A tiny plain birthday cake with one lit candle sits behind them. These three objects are the entire subject group, centered small within a quiet room. Broad cream wall, pale sage lower wall, a single broad window showing blue sky at outer edge. No people, no toy figure, no mug, no books or extra ornament, no realistic wood grain, no bones or medical equipment. Gentle hopeful mood, sparse cartoon composition matching the approved cover.",
+        "references": [
+          "public/assets/world/articles/do-you-have-an-ideal-dream-job-v1.webp",
+          "docs/mock/assets/lake.png"
+        ]
+      },
+      "userApprovedReference": false,
+      "focalPosition": "50% 50%",
+      "files": [
+        {
+          "path": "public/assets/world/articles/bones-that-got-away-v1.webp",
+          "width": 1536,
+          "height": 768,
+          "bytes": 39542,
+          "sha256": "990383a1a684335782397f438baee6e9909dd19ad618c42c71f8e294206e1526"
+        },
+        {
+          "path": "public/assets/world/articles/bones-that-got-away-v1-600.webp",
+          "width": 600,
+          "height": 300,
+          "bytes": 9592,
+          "sha256": "de445679fa7a1d573f45101d5363eac96c6e05833bfd226b40ed241e7f997c31"
+        }
+      ],
+      "thumbnailFocalPosition": "50% 75%"
+    },
+    {
+      "uid": "bone-to-be-wild",
+      "sourceArticle": {
+        "url": "https://glenpadua.com/blog/bone-to-be-wild",
+        "cmsId": "X4SKfBEAANoKF-El",
+        "lastPublicationDate": "2020-10-12T16:55:28+0000",
+        "bodySha256": "a78b508d29528767cc8c99c97f2600c0c234490cffdc8d364567fa1eebea4a9d"
+      },
+      "generation": {
+        "sourceFile": "exec-c131488d-b583-42f2-bf82-51ae37995935.png",
+        "sourceWidth": 1774,
+        "sourceHeight": 887,
+        "sourceSha256": "50fdc110a1b5072ea0f797da74eb175bff299e445ed85ceac8cfb8c73cf2f5f4",
+        "prompt": "Use case: illustration-story. Create a new article cover by adapting the supplied approved style references. Image 1 is the USER-APPROVED poolside cover: match its exact sparse, simple 2D drawing style, spacious composition, broad layered colour shapes, faint uniform paper grain, clean cartoon outlines and gently muted colours. Image 2 is the original landing-page character/style reference. Do not increase detail beyond either. Landscape 2:1. Main subject group centered within middle 60% width and occupying about 30–40% of picture height, with generous quiet space above. The image should look like another scene from the same little video game. Palette follows subject but stays in sage/forest green, warm cream/sand/wood, soft blue, selective terracotta/turquoise. Materials use broad matte shapes with no physical surface detail. No woodgrain, embroidery, realistic shadows, skin texture, individual foliage, cinematic depth of field, complex architecture, extra decorative props or dense furnishings. If a character appears, keep the EXACT same compact cartoon language: oversized rounded head, very short body and limbs, spiky brown hair, tiny simple nose/mouth, dark contours, no adult realistic proportions, no stubble, muscles or body hair. Children have intact natural legs, no prosthesis; only school child wears a LEFT external calliper. Keep all important subjects inside both 2:1 and centered 3:2 crops. No words, lettering, logos, title, watermark, or border. Never use the rejected richly detailed cover drafts as references. Follow docs/art-style.md illustrated-world-v1, clarified against the landing page.\nArticle subject: An essay about empathy, putting yourself in others' shoes and reconsidering doctors' attempts to help. Four simple shoes at a sunlit doorway: one small tan child's pair and one larger brown adult pair, placed near each other, centered in the lower middle. Above them a simple cream doctor's coat silhouette with one dark stethoscope hanging on a peg. A plain sage wall and warm sand floor, open doorway shows just a broad patch of blue sky and soft green shrub silhouettes. Shoes are small bold cartoon shapes with minimal lacing, no leather texture. Generous empty wall, no people, no room furnishings, no scenery town, no rug, no pots. Same flat simple outlines and low detail as approved poolside scene.",
+        "references": [
+          "public/assets/world/articles/do-you-have-an-ideal-dream-job-v1.webp",
+          "docs/mock/assets/lake.png"
+        ]
+      },
+      "userApprovedReference": false,
+      "focalPosition": "50% 50%",
+      "files": [
+        {
+          "path": "public/assets/world/articles/bone-to-be-wild-v1.webp",
+          "width": 1536,
+          "height": 768,
+          "bytes": 58898,
+          "sha256": "d6a0f141f74639eaa2f57d6c8d249e0efac42b6ce8f8b59cfe476310ef71a62c"
+        },
+        {
+          "path": "public/assets/world/articles/bone-to-be-wild-v1-600.webp",
+          "width": 600,
+          "height": 300,
+          "bytes": 11702,
+          "sha256": "7c78e9fb755be9782a5421311ba73150cfb733ff6cb5595b324c8022e84c9de3"
+        }
+      ],
+      "thumbnailFocalPosition": "50% 75%"
+    },
+    {
+      "uid": "back-to-school",
+      "sourceArticle": {
+        "url": "https://glenpadua.com/blog/back-to-school",
+        "cmsId": "X4SLohEAANoKF-ZP",
+        "lastPublicationDate": "2020-10-13T14:19:22+0000",
+        "bodySha256": "1898556081b804d441b5fb6565dcb46958e2346f64560c8ec98703ce2cd7e508"
+      },
+      "generation": {
+        "sourceFile": "exec-ab35f7fa-cbc9-4ee7-98b8-301ebeb85956.png",
+        "sourceWidth": 1774,
+        "sourceHeight": 887,
+        "sourceSha256": "f1ff8cf4a7db057996255584d0bd4adf12a80d0673dce3c4d246dfe20b63f262",
+        "prompt": "Use case: illustration-story. Create a new article cover by adapting the supplied approved style references. Image 1 is the USER-APPROVED poolside cover: match its exact sparse, simple 2D drawing style, spacious composition, broad layered colour shapes, faint uniform paper grain, clean cartoon outlines and gently muted colours. Image 2 is the original landing-page character/style reference. Do not increase detail beyond either. Landscape 2:1. Main subject group centered within middle 60% width and occupying about 30–40% of picture height, with generous quiet space above. The image should look like another scene from the same little video game. Palette follows subject but stays in sage/forest green, warm cream/sand/wood, soft blue, selective terracotta/turquoise. Materials use broad matte shapes with no physical surface detail. No woodgrain, embroidery, realistic shadows, skin texture, individual foliage, cinematic depth of field, complex architecture, extra decorative props or dense furnishings. If a character appears, keep the EXACT same compact cartoon language: oversized rounded head, very short body and limbs, spiky brown hair, tiny simple nose/mouth, dark contours, no adult realistic proportions, no stubble, muscles or body hair. Children have intact natural legs, no prosthesis; only school child wears a LEFT external calliper. Keep all important subjects inside both 2:1 and centered 3:2 crops. No words, lettering, logos, title, watermark, or border. Never use the rejected richly detailed cover drafts as references. Follow docs/art-style.md illustrated-world-v1, clarified against the landing page.\nArticle subject: Returning to school with courage. Same exact miniature Glen character language as the references, as a nine-year-old boy, small oversized head and short limbs, spiky side-parted brown hair, simple khaki shirt and shorts, sage backpack. Seen from behind three-quarter, standing at a classroom door. His anatomical LEFT leg (viewer-left in rear view) is INTACT and has a minimal external metal calliper brace with two dark straps and a slightly thicker shoe sole, not a prosthetic limb. Natural right leg ordinary shoe. Keep the brace simple but leg visible inside it. Boy about 35% frame height, whole body center. A broad cream school wall and rectangular doorway, inside only two simple empty wooden desks and a plain sage blackboard with NO writing. A hint of green tree silhouette at far edge. Upper half largely empty warm cream wall/sky. No other children, no crowd, no bookshelves, globe, bags on hooks, patterned flooring, detailed plants or complex shadowing.",
+        "references": [
+          "public/assets/world/articles/do-you-have-an-ideal-dream-job-v1.webp",
+          "docs/mock/assets/lake.png"
+        ],
+        "correction": {
+          "inputSource": "exec-bd68fd10-1b27-491c-99d3-8088d886f0dc.png",
+          "prompt": "Make one precise correction to this cover. Keep the entire illustration, exact simple cartoon style, tiny character proportions, composition, colours, background, face, hair and backpack unchanged. Correct the boy's LEFT lower leg (viewer-left, rear view): it must be a natural intact tan-skinned calf and ankle, same skin as his right leg, with an EXTERNAL calliper made of only two thin silver rails OUTSIDE the leg and two narrow dark straps. The tan calf must be clearly visible between the rails and straps, from knee to sock/shoe. It is not a prosthetic limb and not a metal replacement leg. Give that shoe a slightly thicker built-up tan sole. Also make his shirt and shorts both plain khaki, the school uniform from the article. Do not change anything else, do not add detail or texture."
+        }
+      },
+      "userApprovedReference": false,
+      "focalPosition": "50% 50%",
+      "files": [
+        {
+          "path": "public/assets/world/articles/back-to-school-v1.webp",
+          "width": 1536,
+          "height": 768,
+          "bytes": 42524,
+          "sha256": "ba492e9045a6e83a313d91523fac552935b12447e3e4cb0807a993cb2c1ea647"
+        },
+        {
+          "path": "public/assets/world/articles/back-to-school-v1-600.webp",
+          "width": 600,
+          "height": 300,
+          "bytes": 11210,
+          "sha256": "e06ba476f4d7adbbff2f0b2222b54be683b80c51b1f66ed5c0d2e3f85aca4dab"
+        }
+      ],
+      "thumbnailFocalPosition": "50% 70%"
+    },
+    {
+      "uid": "free-space-npkill",
+      "sourceArticle": {
+        "url": "https://glenpadua.com/blog/free-space-npkill",
+        "cmsId": "Y1DjhxAAACAAkvWz",
+        "lastPublicationDate": "2022-10-20T05:59:42+0000",
+        "bodySha256": "5919c98704487dd3525bb2fd64fbeb635e0778d1d45f63a3ffc3c6317a9b08e2"
+      },
+      "generation": {
+        "sourceFile": "exec-87a48660-7405-49b9-b3c4-39352f769be5.png",
+        "sourceWidth": 1774,
+        "sourceHeight": 887,
+        "sourceSha256": "550b2986942e4092feccb33c9d5d66c019cd6f9f9e4b4d85c2520a3bc8d28ae1",
+        "prompt": "Use case: illustration-story. Create a new article cover by adapting the supplied approved style references. Image 1 is the USER-APPROVED poolside cover: match its exact sparse, simple 2D drawing style, spacious composition, broad layered colour shapes, faint uniform paper grain, clean cartoon outlines and gently muted colours. Image 2 is the original landing-page character/style reference. Do not increase detail beyond either. Landscape 2:1. Main subject group centered within middle 60% width and occupying about 30–40% of picture height, with generous quiet space above. The image should look like another scene from the same little video game. Palette follows subject but stays in sage/forest green, warm cream/sand/wood, soft blue, selective terracotta/turquoise. Materials use broad matte shapes with no physical surface detail. No woodgrain, embroidery, realistic shadows, skin texture, individual foliage, cinematic depth of field, complex architecture, extra decorative props or dense furnishings. If a character appears, keep the EXACT same compact cartoon language: oversized rounded head, very short body and limbs, spiky brown hair, tiny simple nose/mouth, dark contours, no adult realistic proportions, no stubble, muscles or body hair. Children have intact natural legs, no prosthesis; only school child wears a LEFT external calliper. Keep all important subjects inside both 2:1 and centered 3:2 crops. No words, lettering, logos, title, watermark, or border. Never use the rejected richly detailed cover drafts as references. Follow docs/art-style.md illustrated-world-v1, clarified against the landing page.\nArticle subject: A simple metaphor for cleaning forgotten project dependencies to free disk space. A tiny plain wood desk centered in a spacious pale cream room. On it a sage laptop, open screen shows just three cream horizontal strokes and one green stroke, no actual letters. To its left two small ochre folder shapes and one plain small archive box; to its right a little wooden hand brush and two loose folder-shaped paper scraps, leaving a generous clean clear area. Desk and subject group about 35% image height, upper half is a broad quiet pale wall with a single simple window patch of blue sky and soft distant green. Clear cartoon laptop silhouette. No person, toy, mug, paintings, books, plants, cables, intricate keyboard, piles of clutter, surface texture or realistic lighting.",
+        "references": [
+          "public/assets/world/articles/do-you-have-an-ideal-dream-job-v1.webp",
+          "docs/mock/assets/lake.png"
+        ]
+      },
+      "userApprovedReference": false,
+      "focalPosition": "50% 50%",
+      "files": [
+        {
+          "path": "public/assets/world/articles/free-space-npkill-v1.webp",
+          "width": 1536,
+          "height": 768,
+          "bytes": 32268,
+          "sha256": "b497025a52384b88ba683ca0d69a6426ffcdefa14f2946bb8f70ca71e9fdc368"
+        },
+        {
+          "path": "public/assets/world/articles/free-space-npkill-v1-600.webp",
+          "width": 600,
+          "height": 300,
+          "bytes": 7320,
+          "sha256": "46978672401de1b60fa77010cef67e7c36f1a2a019fe5d564f14c0c6e12ad74b"
+        }
+      ],
+      "thumbnailFocalPosition": "50% 75%"
+    },
+    {
+      "uid": "do-you-have-an-ideal-dream-job",
+      "sourceArticle": {
+        "url": "https://glenpadua.com/blog/do-you-have-an-ideal-dream-job",
+        "cmsId": "YszLVhAAACQAtBbl",
+        "lastPublicationDate": "2022-07-12T02:04:45+0000",
+        "bodySha256": "b3509c8037dcc2168783c6b439d5bfe82fadb4a155f63ad814cb77c1846cb185"
+      },
+      "generation": {
+        "sourceFile": "exec-c55f14bc-6890-4cd1-9b18-6fd663a2e73a.png",
+        "sourceWidth": 1774,
+        "sourceHeight": 887,
+        "sourceSha256": "9919ede102f2f195f6930deb6120b08dd51114427836a27a48dc780916b5a5a8",
+        "prompt": "Edit the supplied approved LANDING PAGE illustration into a new cover scene. This reference is the sole authority for BOTH drawing style and character identity. Keep exactly its simple 2D video-game illustration language and exact tiny Glen character design: oversized round head, short body, tiny simple mouth and nose, dark sunglasses, spiky brown hair, clean contour, sage tank, charcoal shorts, tan sneakers, anatomical LEFT below-knee prosthesis (viewer-right front facing). Do not redesign him as an adult-proportioned man. Do not add beard, stubble, muscles, body hair or realistic skin.\nChange the activity from pull-ups to using a laptop beside a pool in Bali: remove the pull-up bar; seat the SAME small cartoon Glen at one simple little wooden table, laptop open. Keep his size small within the landscape, about 30 percent of image height; use a centered grouping that survives a 3:2 crop. Behind him one broad flat turquoise pool shape with at most 4 simple ripple strokes, one low sage hedge and two simplified palm silhouettes. Upper HALF of the cover is spacious pale blue sky with a single soft cloud. Foreground is one plain warm sand-coloured poolside plane and a little broad-leaf silhouette at an outer edge. Keep the background as simple and spacious as the supplied landing page: broad layered colour fields and faint paper grain. No resort building, no temple, no terraces, no intricate tropical garden, no dog, no rug, no pillows, no ornaments, no flowers, no rock texture, no water caustics, no woodgrain, no complex lighting or cinematic shadows. Only Glen, table, laptop, pool, distant hedge/palms and sky. No words or logos. Landscape 2:1. Match the reference, not a richly detailed children's book or painterly illustration.",
+        "references": ["docs/mock/assets/lake.png"]
+      },
+      "userApprovedReference": true,
+      "focalPosition": "50% 50%",
+      "files": [
+        {
+          "path": "public/assets/world/articles/do-you-have-an-ideal-dream-job-v1.webp",
+          "width": 1536,
+          "height": 768,
+          "bytes": 72772,
+          "sha256": "6d5db7fc9a6b5882317185e1a91ccc51185114c78d8d45e39d09e3bf8b793687"
+        },
+        {
+          "path": "public/assets/world/articles/do-you-have-an-ideal-dream-job-v1-600.webp",
+          "width": 600,
+          "height": 300,
+          "bytes": 15080,
+          "sha256": "a45fc727b5977c2d2aadc6122ac239ff2baccb5d6bd442c318e8387683d971a4"
+        }
+      ],
+      "thumbnailFocalPosition": "50% 75%"
+    }
+  ]
+}

@@ -43,21 +43,40 @@
   opacity: 1;
 }
 .character-beach {
+  position: relative;
   aspect-ratio: 1;
 }
-.beach-footwork {
-  display: block;
+/* The full base never changes. Only the opaque keyboard patch switches on taps. */
+.world-beach .beach-typing-frame {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  overflow: visible;
+  visibility: hidden;
 }
-.world-beach .cue-football {
-  left: 38%;
-  top: 83%;
+.world-beach .beach-typing-frame.frame-0,
+.beach-laptop[data-frame='1'] .frame-1 {
+  visibility: visible;
 }
-.world-beach .cue-outside {
-  left: 46% !important;
-  top: 78% !important;
+.beach-still {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.beach-still-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.035);
+  transform-origin: center bottom;
+}
+.beach-still-character {
+  position: absolute;
+  left: 18%;
+  top: 43%;
+  width: 28%;
+  height: auto;
 }
 
 @media (max-width: 760px) {
@@ -75,18 +94,15 @@
     margin: 19px 0 23px;
     letter-spacing: -0.055em;
   }
-  .world-beach .layer-character {
-    top: 51% !important;
-    left: 25% !important;
-    width: 19% !important;
+  .world-beach .layer-character,
+  .world-beach .beach-still-character {
+    top: 35% !important;
+    left: 21% !important;
+    width: 34% !important;
   }
-  .world-beach .cue-football {
-    left: 40%;
-    top: 84%;
-  }
-  .world-beach .cue-outside {
-    left: 49% !important;
-    top: 78% !important;
+  .world-beach .cue-beach-laptop {
+    left: 43% !important;
+    top: 71% !important;
   }
   .atmosphere-beach .world-boat {
     left: 57%;
@@ -121,7 +137,8 @@
 
 /* Reveal the shared sky above the original painted horizon. */
 .world .world-beach .layer-back,
-.world .world-beach .world-static-art {
+.world .world-beach .world-static-art,
+.world .world-beach .beach-still-back {
   mask-image: linear-gradient(transparent 32%, #000 43%);
 }
 .world .world-beach .layer-back > img {

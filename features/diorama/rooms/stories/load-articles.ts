@@ -16,7 +16,6 @@ export async function loadArticles(): Promise<DeskArticle[]> {
           date: post.data.date || known?.date || '',
           category: known?.category || String(post.data.category || 'Stories'),
           note: known?.note || '',
-          art: known?.art || 'lake-static',
         };
       });
     articles = [...fresh].sort((a, b) => {

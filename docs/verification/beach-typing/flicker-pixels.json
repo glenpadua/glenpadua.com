@@ -1,0 +1,5 @@
+{
+  "capture": "JPEG; positions aligned to 16px blocks; keyboard exclusion includes JPEG blocks and 1px chroma halo",
+  "changedPixelsOutsideKeyboard": 0,
+  "changedKeyboardPixels": 1938
+}

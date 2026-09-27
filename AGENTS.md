@@ -5,6 +5,7 @@ Read `/Users/glen/.codex/RTK.md` for this host's shell conventions. Prefix shell
 ## Start with the right source
 
 - For any website design, copy, scene or interaction work, read [MANIFESTO.md](MANIFESTO.md) and [current direction](docs/website-direction.md).
+- For creating, selecting, editing or animating any visual asset (including article covers), read [the shared art style](docs/art-style.md) and inspect its approved references. Link to that definition rather than writing a separate style brief.
 - For implementation, file ownership, adding a scene, or replacing the old website, read [the architecture and edit guide](docs/website-architecture.md).
 - For scene artwork, inspect the actual approved images and the scene's `content.ts`; [the mock](docs/mock/README.md) and [storyboard](docs/storyboard/README.md) are design history. Current direction supersedes their older experiments.
 - When changing Next.js routing or rendering, read the relevant installed guide under `node_modules/next/dist/docs/`; this installed version may differ from remembered APIs.

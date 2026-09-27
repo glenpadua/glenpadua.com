@@ -11,6 +11,8 @@ interface ArtworkProps extends SceneProps {
   atmosphere?: ReactNode;
   controls?: ReactNode;
   response?: ReactNode;
+  /** Static, scene-owned art used after a layer failure and without JavaScript. */
+  fallback?: ReactNode;
   lantern?: boolean;
 }
 
@@ -24,6 +26,7 @@ export function SceneArtwork({
   atmosphere,
   controls,
   response,
+  fallback,
   lantern,
 }: ArtworkProps): JSX.Element {
   const [failed, setFailed] = useState(false);
@@ -36,14 +39,16 @@ export function SceneArtwork({
       data-lantern={lantern}
     >
       {failed ? (
-        <img
-          className="world-static-art"
-          style={{
-            maskImage: scene.layers.find(layer => layer.id === 'back')?.mask,
-          }}
-          src={worldAsset(`${scene.id}-static`)}
-          alt=""
-        />
+        (fallback ?? (
+          <img
+            className="world-static-art"
+            style={{
+              maskImage: scene.layers.find(layer => layer.id === 'back')?.mask,
+            }}
+            src={worldAsset(`${scene.id}-static`)}
+            alt=""
+          />
+        ))
       ) : (
         <>
           {scene.layers.map(layer => (
@@ -87,15 +92,17 @@ export function SceneArtwork({
         </>
       )}
       <noscript>
-        <img
-          className="world-static-art"
-          style={{
-            maskImage: scene.layers.find(layer => layer.id === 'back')?.mask,
-          }}
-          src={worldAsset(`${scene.id}-static`)}
-          alt=""
-          loading={first ? 'eager' : 'lazy'}
-        />
+        {fallback ?? (
+          <img
+            className="world-static-art"
+            style={{
+              maskImage: scene.layers.find(layer => layer.id === 'back')?.mask,
+            }}
+            src={worldAsset(`${scene.id}-static`)}
+            alt=""
+            loading={first ? 'eager' : 'lazy'}
+          />
+        )}
       </noscript>
       <div className="world-hotspots">
         {scene.hotspots.map(h => (

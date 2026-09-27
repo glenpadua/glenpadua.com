@@ -1,0 +1,58 @@
+[
+  {
+    "time": 1790512465486,
+    "frame": "1",
+    "visible": [
+      "/assets/world/beach-typing-focused-tap.webp"
+    ]
+  },
+  {
+    "time": 1790512465615,
+    "frame": "0",
+    "visible": [
+      "/assets/world/beach-typing-focused.webp"
+    ]
+  },
+  {
+    "time": 1790512465836,
+    "frame": "1",
+    "visible": [
+      "/assets/world/beach-typing-focused-tap.webp"
+    ]
+  },
+  {
+    "time": 1790512465962,
+    "frame": "0",
+    "visible": [
+      "/assets/world/beach-typing-focused.webp"
+    ]
+  },
+  {
+    "time": 1790512466701,
+    "frame": "1",
+    "visible": [
+      "/assets/world/beach-typing-focused-tap.webp"
+    ]
+  },
+  {
+    "time": 1790512466818,
+    "frame": "0",
+    "visible": [
+      "/assets/world/beach-typing-focused.webp"
+    ]
+  },
+  {
+    "time": 1790512467038,
+    "frame": "1",
+    "visible": [
+      "/assets/world/beach-typing-focused-tap.webp"
+    ]
+  },
+  {
+    "time": 1790512467152,
+    "frame": "0",
+    "visible": [
+      "/assets/world/beach-typing-focused.webp"
+    ]
+  }
+]
