@@ -1,0 +1,129 @@
+.world:has(.world-journey[data-scene='beach']) {
+  --header-ink: #344c43;
+  --edge-ink: #344c43;
+  --edge-shadow: 0 1px 6px #fff3dba6;
+}
+.world-beach .world-copy {
+  left: 44%;
+  top: 17%;
+  max-width: 53%;
+}
+.world-beach .world-copy h2 {
+  font-size: clamp(40px, min(5.3vw, 7.7svh), 80px);
+}
+.world-beach .layer-back {
+  mask-image: linear-gradient(transparent, #000 18%);
+}
+
+.atmosphere-beach .world-boat {
+  position: absolute;
+  left: 72%;
+  top: 49%;
+  width: 7%;
+  transform-origin: 50% 90%;
+  animation: beach-boat 9s ease-in-out infinite alternate;
+}
+@keyframes beach-boat {
+  from {
+    transform: translate3d(-8px, 1px, 0) rotate(-1.5deg);
+  }
+  to {
+    transform: translate3d(8px, -1px, 0) rotate(1.5deg);
+  }
+}
+.world-beach .beach-water {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.world-beach .beach-water[data-ready='true'] {
+  opacity: 1;
+}
+.character-beach {
+  aspect-ratio: 1;
+}
+.beach-footwork {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.world-beach .cue-football {
+  left: 38%;
+  top: 83%;
+}
+.world-beach .cue-outside {
+  left: 46% !important;
+  top: 78% !important;
+}
+
+@media (max-width: 760px) {
+  .world-beach {
+    --sky: #ccebf0 !important;
+  }
+  .world-beach .world-copy {
+    left: 7%;
+    right: 6%;
+    top: 120px;
+    max-width: none;
+  }
+  .world-beach .world-copy h2 {
+    font-size: clamp(35px, 9.5vw, 63px);
+    margin: 19px 0 23px;
+    letter-spacing: -0.055em;
+  }
+  .world-beach .layer-character {
+    top: 51% !important;
+    left: 25% !important;
+    width: 19% !important;
+  }
+  .world-beach .cue-football {
+    left: 40%;
+    top: 84%;
+  }
+  .world-beach .cue-outside {
+    left: 49% !important;
+    top: 78% !important;
+  }
+  .atmosphere-beach .world-boat {
+    left: 57%;
+  }
+}
+@media (max-height: 700px) {
+  .world-beach .world-copy {
+    top: 18%;
+  }
+  .world-beach .world-copy h2 {
+    font-size: clamp(32px, 5vw, 58px);
+    margin: 14px 0 16px;
+  }
+}
+@media (max-width: 760px) and (max-height: 700px) {
+  .world-beach .world-copy h2 {
+    font-size: 32px;
+  }
+  .world-beach .world-copy {
+    top: 15%;
+  }
+}
+@media (min-width: 761px) and (max-aspect-ratio: 5/4) {
+  .world-beach .world-art {
+    left: 0;
+    transform: none;
+  }
+  .atmosphere-beach .world-boat {
+    left: 62%;
+  }
+}
+
+/* Reveal the shared sky above the original painted horizon. */
+.world .world-beach .layer-back,
+.world .world-beach .world-static-art {
+  mask-image: linear-gradient(transparent 32%, #000 43%);
+}
+.world .world-beach .layer-back > img {
+  mask-image: none;
+}

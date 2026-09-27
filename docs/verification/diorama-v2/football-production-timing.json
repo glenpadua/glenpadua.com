@@ -1,0 +1,98 @@
+[
+  {
+    "ms": 12,
+    "file": "00.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, -588.797, 0)"
+  },
+  {
+    "ms": 171,
+    "file": "01.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, -588.797, 0)"
+  },
+  {
+    "ms": 321,
+    "file": "02.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)"
+  },
+  {
+    "ms": 471,
+    "file": "03.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)"
+  },
+  {
+    "ms": 619,
+    "file": "04.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)"
+  },
+  {
+    "ms": 770,
+    "file": "05.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, -294.398, 0)"
+  },
+  {
+    "ms": 921,
+    "file": "06.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, -294.398, 0)"
+  },
+  {
+    "ms": 1068,
+    "file": "07.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)"
+  },
+  {
+    "ms": 1205,
+    "file": "08.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)"
+  },
+  {
+    "ms": 1339,
+    "file": "09.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)"
+  },
+  {
+    "ms": 1486,
+    "file": "10.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)"
+  },
+  {
+    "ms": 1635,
+    "file": "11.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)"
+  },
+  {
+    "ms": 1784,
+    "file": "12.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)"
+  },
+  {
+    "ms": 1940,
+    "file": "13.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)"
+  },
+  {
+    "ms": 2089,
+    "file": "14.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)"
+  },
+  {
+    "ms": 2238,
+    "file": "15.jpg",
+    "playState": "running, running",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)"
+  }
+]

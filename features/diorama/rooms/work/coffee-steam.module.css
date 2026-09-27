@@ -1,0 +1,62 @@
+/* Painting-space origins: desktop (1065, 609) / 1536x1024;
+   portrait (577, 768) / 800x1600. The fixed clip ends inside the opening,
+   above the front rim, so no animation phase can cross the cup body. */
+.region {
+  position: absolute;
+  left: 69.34%;
+  bottom: 40.53%;
+  width: 3.1%;
+  height: 8%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  pointer-events: none;
+  mask-image: linear-gradient(transparent, #000 24%, #000 86%, transparent);
+}
+
+.trails {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wisp {
+  stroke: #fff2d6;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  opacity: 0;
+  animation: steamRise 5.5s ease-in-out infinite;
+}
+
+.second {
+  animation-delay: -2.75s;
+}
+
+@keyframes steamRise {
+  0% {
+    opacity: 0;
+    transform: translate(0, 10%);
+  }
+  35% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(5%, -24%);
+  }
+}
+
+@media (max-width: 760px) {
+  .region {
+    left: 72.125%;
+    bottom: 52%;
+    width: 5%;
+    height: 5%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .region {
+    display: none;
+  }
+}

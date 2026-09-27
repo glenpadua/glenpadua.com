@@ -1,0 +1,60 @@
+.frame {
+  display: block;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-mode: alpha;
+}
+
+.left {
+  mask-image: url('/assets/world/work-typing-mask-desktop-left.svg');
+}
+
+.right {
+  mask-image: url('/assets/world/work-typing-mask-desktop-right.svg');
+}
+
+/* The original painting is the fallback if masks are unsupported or fail. */
+@supports (mask-image: url('')) {
+  .frame {
+    animation: typingBeat 3.4s steps(1, end) infinite;
+  }
+
+  .right {
+    animation-delay: -1.5s;
+  }
+}
+
+@keyframes typingBeat {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  14% {
+    opacity: 0;
+  }
+  22% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 0;
+  }
+  42% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .left {
+    mask-image: url('/assets/world/work-typing-mask-portrait-left.svg');
+  }
+
+  .right {
+    mask-image: url('/assets/world/work-typing-mask-portrait-right.svg');
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-27",
+  "mode": "Built-in image_gen",
+  "purpose": "A clean plate behind the original painted pine silhouettes; originals stay unchanged.",
+  "assets": [
+    {
+      "file": "public/assets/world/lake-clearing-v3.webp",
+      "source": "/Users/glen/.codex/generated_images/01a0df7a-c5ab-7c32-a9ce-6c1d06419986/exec-854b7bbf-0c71-4c69-b6df-786686bc19e3.png",
+      "prompt": "Use case: precise-object-edit. Input image is the edit target, an approved 1536x1024 illustrated landscape. Create a clean background plate for animating its trees. Remove ONLY the five prominent individual pine trees: two at far left (approximately x125 y470-610 and x215 y500-625) and three at far right (approximately x1335 y583-650, x1388 y556-640, x1440 y527-630). Fill their tiny footprints with the exact continuation of existing sky, distant hills and nearby low vegetation. Preserve everything else exactly: original camera, canvas 1536x1024, hill contours, blue sky, green palette, brush texture, lake shoreline and grass. Do not remove the small distant forest silhouettes or shrubs. No new objects, no text, no borders. The output must align pixel-for-pixel to the input outside the five removed trees.",
+      "processing": "WebP quality 88; no compositing or retouching. Only masked tree footprints are used at runtime."
+    }
+  ],
+  "discarded": [
+    {
+      "source": "exec-0ed088ac-4cd3-4b91-8305-3bee7bce0b13.png",
+      "prompt": "Use case: background-extraction. Input image is the edit target, an approved 1536x1024 illustrated landscape. Extract ONLY its five prominent individual pine trees onto genuine transparency. Preserve the exact tree paint, shapes, colors, scale and original positions on the same 1536x1024 canvas: two trees at far left (approximately x125 y470-610 and x215 y500-625) and three at far right (approximately x1335 y583-650, x1388 y556-640, x1440 y527-630). Retain tree trunks down to their ground contact. ALL sky, hills, small distant forest silhouettes, bushes, water and grass become fully transparent. Do not add shadows, halos, background, checkerboard or any objects. Do not recenter or enlarge. This is a registered animation overlay, not a new composition.",
+      "reason": "Extraction changed the tree texture and added a halo."
+    },
+    {
+      "source": "exec-02aabe8e-5a1e-43fa-a090-55bf3329bfab.png",
+      "prompt": "Use case: background-extraction. Extract the FIVE SIMPLE FLAT PINE TREE SILHOUETTES from this exact painting. Genuine transparent background, completely transparent between and around trees. Do not add glow, haze, shadows or soft edges. The trees are simple flat dark sage green shapes with a little paper grain: NO detailed needles, NO new branches, NO painterly redesign. Preserve their exact original silhouettes: rounded drooping triangular tiers, plain trunks. Keep them in the original positions on a 1536x1024 transparent canvas. Two at left x125 y470-610, x215 y500-625; three at right x1335 y583-650, x1388 y556-640, x1440 y527-630. Copy the trees faithfully, delete everything else. Edges should be clean and opaque up to their silhouette, no fog, no gradient, no halo. Transparency outside the silhouettes is essential for animation.",
+      "reason": "Extraction still added a halo. Neither generated tree overlay is used."
+    }
+  ],
+  "treePaint": "Original public/assets/world/lake-back.webp, clipped in the SVG using original painting coordinates. Crown transforms share a 9.2 second gust with slight delays; roots are fixed."
+}

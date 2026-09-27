@@ -4,7 +4,15 @@ import prettier from 'eslint-config-prettier/flat';
 
 const config = [
   {
-    ignores: ['node_modules/**', '.next/**', 'out/**', 'coverage/**'],
+    // Static design studies are source references, not application code.
+    ignores: [
+      'node_modules/**',
+      '.next/**',
+      'out/**',
+      'coverage/**',
+      'docs/mock/**',
+      'docs/storyboard/**',
+    ],
   },
   ...nextVitals,
   ...nextTypescript,

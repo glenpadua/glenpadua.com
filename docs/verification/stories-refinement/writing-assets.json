@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-27",
+  "generator": "Built-in imagegen",
+  "usage": "Only a fixed, masked cleanup patch is displayed; original painting supplies the single moving hand and fixed cuff. Original complete painting remains the fallback.",
+  "processing": "Registered to 1536x1024 desktop and 800x1600 portrait; WebP quality 95.",
+  "entries": [
+    {
+      "layout": "desktop",
+      "generatedSource": "/Users/glen/.codex/generated_images/01a0e241-2365-7181-9348-dc10a2eca21a/exec-bce67ceb-8cee-42dc-afb9-603f7f00e91d.png",
+      "asset": "public/assets/world/stories-writing-clean-desktop.webp",
+      "prompt": "Use case: precise-object-edit. Edit target: this exact approved overhead writing desk illustration. Produce a clean background plate for an animation. REMOVE ONLY the right writing hand, its pen, the exposed right forearm, and ALL shadows cast by that hand/pen/forearm, in the lower-right part of the image. Reconstruct the cream paper and wooden tabletop hidden underneath. Keep the existing green sleeve/cuff at the bottom-right exactly in place; it will cover the moving arm's root. Keep the entire left hand, crown/hair, every paper edge, handwritten lines already visible, wood grain outside the erased hand, lamp, plants, coffee, tray, viewpoint, framing and lighting unchanged. No right hand, no pen, no ghost outline, no hand-shaped shadows, no leftover skin. This is a precisely registered cleanup plate, not a redesign. Match the supplied canvas aspect ratio and registration exactly. Original simple illustrated aesthetic. Only the small area previously occupied by the right hand, forearm, pen and their cast shadows may change; EVERYTHING else must remain unchanged."
+    },
+    {
+      "layout": "portrait",
+      "generatedSource": "/Users/glen/.codex/generated_images/01a0e241-2365-7181-9348-dc10a2eca21a/exec-82cc5255-ab60-45ea-8bfb-72cdf3c25f41.png",
+      "asset": "public/assets/world/stories-writing-clean-portrait.webp",
+      "prompt": "Use case: precise-object-edit. Edit target: this exact approved 1:2 portrait overhead writing desk illustration. Produce a clean background plate for animation. REMOVE ONLY the right writing hand, its pen, the exposed right forearm, and ALL shadows cast by that hand/pen/forearm at the bottom-right. Reconstruct the cream paper and wooden tabletop hidden underneath. Keep the existing green sleeve/cuff at bottom-right exactly in place. Preserve the left hand, crown/hair, all existing paper edges and visible handwritten lines, wood grain outside the erased region, all other props, lighting, simple illustrated style and exact image registration. No right hand, no pen, no ghost outline, no hand-shaped shadows, no skin remnants. This is precise object removal, not a redesign. Keep the portrait 1:2 canvas and all positions identical; only the right hand, exposed forearm, pen and their cast shadows disappear."
+    }
+  ]
+}

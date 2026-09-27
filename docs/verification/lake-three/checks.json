@@ -1,0 +1,26 @@
+{
+  "durationMs": 7918,
+  "frames": 28,
+  "pausedMeanChannelDifference": 0,
+  "movingMeanChannelDifference": 0.2781832637646591,
+  "bounds": {
+    "buffer": [
+      711,
+      114
+    ],
+    "canvas": {
+      "bottom": 630.3892822265625,
+      "height": 78.86212158203125,
+      "left": 368.226806640625,
+      "right": 858.9623413085938,
+      "top": 551.5271606445312,
+      "width": 490.7355346679687,
+      "x": 368.226806640625,
+      "y": 551.5271606445312
+    },
+    "viewport": [
+      1101,
+      867
+    ]
+  }
+}

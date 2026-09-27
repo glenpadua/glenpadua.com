@@ -1,0 +1,185 @@
+{
+  "generatedOriginalsDirectory": "/Users/glen/.codex/generated_images/01a0df7a-c5ab-7c32-a9ce-6c1d06419986",
+  "assets": [
+    {
+      "file": "public/assets/world/beach-back-900.webp",
+      "source": "generated:exec-6490b8fa-32c1-4a5e-9afc-805994908f97.png",
+      "bytes": 25196,
+      "sha256": "f103bbda60460e4416bd6d9b07df1bd555e59d701a70b66edd419c31f134d3a8",
+      "width": 900,
+      "height": 600,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/beach-back.webp",
+      "source": "generated:exec-6490b8fa-32c1-4a5e-9afc-805994908f97.png",
+      "bytes": 66696,
+      "sha256": "db05110cf0bbec34c41fee5522c78c57c9787138270ea3fcc970774786494e45",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/beach-character.webp",
+      "source": "generated:exec-f6926607-e091-43d2-925c-b9fc74bc8f6d.png",
+      "bytes": 41016,
+      "sha256": "4396ab4bfe09c7d767725e7829d8ea0ef8e3cd230fd46d2d3a3313a1b11c06bb",
+      "width": 600,
+      "height": 566,
+      "hasAlpha": true
+    },
+    {
+      "file": "public/assets/world/beach-static.webp",
+      "source": "docs/mock/assets/beach-football.png",
+      "bytes": 83276,
+      "sha256": "b8523462e1831906487c56013e1d952eb79dca872ef1255cf85a8e27854f9577",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/city-back-900.webp",
+      "source": "generated:exec-b3904ecd-6c9e-4a98-8eca-5c9e64414a0f.png",
+      "bytes": 60644,
+      "sha256": "5a573c2cb212bcf77b9b5fe41a38b94f1a6c39bda9655a8a3e50c70f6cae871b",
+      "width": 900,
+      "height": 600,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/city-back.webp",
+      "source": "generated:exec-b3904ecd-6c9e-4a98-8eca-5c9e64414a0f.png",
+      "bytes": 138862,
+      "sha256": "0f0dc4841e5894be3c27a0531a62955e1151a98499764fd41ece0566a8371098",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/city-front-900.webp",
+      "source": "generated:exec-e3781a9f-94fe-4e3c-b3a5-06f25f263f4f.png",
+      "bytes": 76798,
+      "sha256": "0bfec49d0984bf36377ab5bcbe87fd0531bdd850bb9bb6bdbf3c6a0259588b75",
+      "width": 900,
+      "height": 600,
+      "hasAlpha": true
+    },
+    {
+      "file": "public/assets/world/city-front.webp",
+      "source": "generated:exec-e3781a9f-94fe-4e3c-b3a5-06f25f263f4f.png",
+      "bytes": 168028,
+      "sha256": "5ca0c00fa62ecf0f46a9e197a62eff58ce65ef9b1ff800202bdf1d82eeb1586e",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true
+    },
+    {
+      "file": "public/assets/world/city-static.webp",
+      "source": "docs/mock/assets/city.png",
+      "bytes": 155100,
+      "sha256": "34a5f747a0b302edaddaf8d9872d5403bee33b16f6fcc9da2ea424546fa5693d",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/grass.webp",
+      "source": "generated:exec-a4b2eaa7-4cd1-4025-8a77-b47e80afa5c5.png",
+      "bytes": 58336,
+      "sha256": "0eb9a296b76c9f7fb44c894d08e4bc9dd5bd376a403e975a513935cf21632d56",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true
+    },
+    {
+      "file": "public/assets/world/lake-back-900.webp",
+      "source": "generated:exec-65d19e5b-92be-42e2-80e8-49b55dab68ee.png",
+      "bytes": 32402,
+      "sha256": "8cec470fac9dd80e3d784f0cd520b51071745641890a7322a4509e46f984c7d6",
+      "width": 900,
+      "height": 600,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/lake-back.webp",
+      "source": "generated:exec-65d19e5b-92be-42e2-80e8-49b55dab68ee.png",
+      "bytes": 85952,
+      "sha256": "d58f4c8ce942d83e7938e2ac26692f6887f12e51f57448786af9ba8a0ca7e033",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/lake-character.webp",
+      "source": "generated:exec-37894067-f0b6-4ee1-86da-5f5f3ad1e57f.png",
+      "bytes": 46288,
+      "sha256": "a666088f7880147556e225a186c6de521ba055976eea09fa255ee0d649b30e08",
+      "width": 600,
+      "height": 583,
+      "hasAlpha": true
+    },
+    {
+      "file": "public/assets/world/lake-static.webp",
+      "source": "docs/mock/assets/lake.png",
+      "bytes": 104306,
+      "sha256": "94f60789c073d585027615dc7cb9799e782f64c65c8db16b632963530ad66434",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/work-900.webp",
+      "source": "docs/mock/assets/work-arsenal.png",
+      "bytes": 55602,
+      "sha256": "402fc9c96017a5a915c3ec938b588769521b54222dca07345a2ca3513a0ff7d3",
+      "width": 900,
+      "height": 600,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/work-portrait-v1.webp",
+      "source": "generated:exec-1cf75141-f6f8-4c68-9cee-d3f1b8fa31a3.png",
+      "bytes": 137262,
+      "sha256": "a1899709fec06e5a846fea1c872625919ecdf6e2cb643be165aaf62e8b783e98",
+      "width": 800,
+      "height": 1600,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/work.webp",
+      "source": "docs/mock/assets/work-arsenal.png",
+      "bytes": 128792,
+      "sha256": "76c3aeb5e9b466659c31c571582cf8021a812f2991afbd2c829e87fa6d23102e",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/writing-900.webp",
+      "source": "docs/mock/assets/writing.png",
+      "bytes": 95916,
+      "sha256": "96ff10ffb715d2f58918dd3ad3d0355ad2d52a6a1a652ec79e954f7d569c70ca",
+      "width": 900,
+      "height": 600,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/writing-portrait-v1.webp",
+      "source": "generated:exec-6873e618-62b0-4c75-8704-510fd9bf5b2d.png",
+      "bytes": 195376,
+      "sha256": "790b4ac9468621248de821b010c3ab9c04a6545fff5e13e58b3a56a38fb8901f",
+      "width": 800,
+      "height": 1600,
+      "hasAlpha": false
+    },
+    {
+      "file": "public/assets/world/writing.webp",
+      "source": "docs/mock/assets/writing.png",
+      "bytes": 247496,
+      "sha256": "af9e0e7f283750819a9a2e64a51bef600abf2e0dafc87748870f008a1284c8d4",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false
+    }
+  ]
+}

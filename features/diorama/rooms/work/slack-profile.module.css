@@ -1,0 +1,260 @@
+/* Glass corners in the 1536 × 1024 painting: (225,486), (433,464),
+   (453,606), (246,639). The projective transform fits all four edges;
+   perspective follows the painting width so resizing retains that fit. */
+:global(.world) .screen {
+  position: absolute;
+  left: 14.6484375%;
+  top: 47.4609375%;
+  width: 13.541666667%;
+  height: 14.94140625%;
+  transform: perspective(100cqw)
+    matrix3d(
+      1.076861649,
+      -0.113898828,
+      -0.567593716,
+      0,
+      0.13689868,
+      0.997404672,
+      0.026055062,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+    );
+  transform-origin: top left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  border-radius: 0.18cqw;
+  background: #f2efea;
+  color: #252329;
+  text-align: left;
+  font: 400 0.48cqw/1.35 var(--world-body-font);
+}
+
+.workspace {
+  display: flex;
+  align-items: center;
+  flex: 0 0 16%;
+  gap: 0.3cqw;
+  padding: 0 0.45cqw;
+  background: #3e2342;
+  color: #f7edf6;
+}
+
+.workspace b {
+  font-size: 0.72cqw;
+}
+
+.workspace svg {
+  width: 0.7cqw;
+  height: 0.7cqw;
+  flex-shrink: 0;
+}
+
+.workspace .search {
+  margin-left: auto;
+  opacity: 0.7;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3cqw;
+  width: 37%;
+  flex-shrink: 0;
+  padding: 0.5cqw 0;
+  background: #513653;
+  color: #e6d7e6;
+}
+
+.sidebar > span {
+  display: flex;
+  align-items: center;
+  gap: 0.22cqw;
+  padding: 0 0.35cqw;
+  white-space: nowrap;
+}
+
+.sidebar svg {
+  width: 0.55cqw;
+  height: 0.55cqw;
+}
+
+.sidebar .section,
+.sidebar .channels {
+  font-size: 0.4cqw;
+  margin-top: 0.3cqw;
+  color: #c9b6ca;
+}
+
+.sidebar .selected {
+  padding-block: 0.2cqw;
+  background: #39788c;
+  color: #faf5ee;
+}
+
+.selected > i {
+  width: 0.24cqw;
+  height: 0.24cqw;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #aed2b3;
+}
+
+.selected small {
+  font-size: 0.35cqw;
+  opacity: 0.75;
+}
+
+.channelLine i {
+  width: 60%;
+  height: 0.15cqw;
+  background: #bca9bd;
+  opacity: 0.45;
+}
+
+.profile {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35cqw 0.5cqw;
+  border-bottom: 1px solid #d9d3d7;
+  font-weight: 700;
+}
+
+.profileBar svg {
+  width: 0.7cqw;
+  height: 0.7cqw;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.13cqw;
+  padding: 0.5cqw 0.55cqw;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 2cqw;
+  height: 2cqw;
+  margin-bottom: 0.2cqw;
+  border-radius: 0.25cqw;
+  background: #c9d6ca;
+  color: #385641;
+  font-size: 0.9cqw;
+  font-weight: 700;
+}
+
+.identity strong {
+  font-size: 0.82cqw;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.role {
+  font-size: 0.56cqw;
+}
+
+.company {
+  font-size: 0.5cqw;
+  color: #675d6a;
+}
+
+@media (max-width: 760px) {
+  /* Glass corners in the 800 × 1600 portrait: (29,670), (139,651),
+     (158,760), (49,786). */
+  :global(.world) .screen {
+    left: 3.625%;
+    top: 41.875%;
+    width: 13.75%;
+    height: 7.25%;
+    transform: perspective(100cqw)
+      matrix3d(
+        1.063757576,
+        -0.183739945,
+        -0.46369146,
+        0,
+        0.172079415,
+        0.998060606,
+        0.013375131,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      );
+  }
+
+  .workspace {
+    gap: 0.45cqw;
+    padding: 0 0.5cqw;
+  }
+
+  .workspace b {
+    font-size: 1.35cqw;
+  }
+
+  .workspace svg {
+    width: 1cqw;
+    height: 1cqw;
+  }
+
+  .workspace .search,
+  .workspace svg:nth-of-type(2),
+  .sidebar {
+    display: none;
+  }
+
+  .profileBar {
+    padding: 0.4cqw 0.7cqw;
+    font-size: 0.9cqw;
+  }
+
+  .identity {
+    padding: 0.6cqw 0.7cqw;
+    gap: 0.2cqw;
+  }
+
+  .avatar {
+    width: 3cqw;
+    height: 3cqw;
+    font-size: 1.5cqw;
+  }
+
+  .identity strong {
+    font-size: 1.6cqw;
+  }
+
+  .role,
+  .company {
+    font-size: 1.1cqw;
+  }
+}

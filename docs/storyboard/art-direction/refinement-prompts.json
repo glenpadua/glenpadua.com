@@ -1,0 +1,10 @@
+{
+  "workstation-bedroom-v2": {
+    "path": "/Users/glen/.codex/generated_images/01a09489-ebe7-7a92-875b-3eec922a4f3e/exec-5e46c57d-6d89-4791-bc70-f0975f416b35.png",
+    "prompt": "Precise object edit. Preserve this image exactly: all room composition, furniture, screens, bedding, lighting, colours, textures, and Glen's exact face/body/clothes/pose and ANATOMICAL LEFT prosthetic leg. ONLY remove the sleeping dog on the foreground rug, reconstructing the matching rug beneath it. No animals, no new object in its place. Do not change anything else."
+  },
+  "writing-table-v2": {
+    "path": "/Users/glen/.codex/generated_images/01a09489-ebe7-7a92-875b-3eec922a4f3e/exec-7d0d80dc-79fb-4b59-a615-9b54ebe15cd5.png",
+    "prompt": "Precise localized edit. Preserve this beautiful overhead writing table exactly: tabletop, all four papers, their sizes, angles, positions, texture, all readable titles verbatim, pen, lamp, coffee, archive stack and More stories tab, lighting and composition. Change ONLY the small painted illustrations printed inside the four paper pages: replace them with simple soft abstract gouache landscape studies in the SAME colour palettes, with gentle layered hills/horizon/water, no people, no animals, no distinctive buildings or landmarks. In particular remove every little Glen character and the dog within the thumbnails, and remove the Russian landmark buildings. These are neutral artwork placeholders so we do not invent biographical scenes for real blog posts. Keep all titles EXACTLY: The Lottery of Birth; Bone to be Wild; The Russian Connection; Do you have an ideal dream job? Do not add/remove/move any paper or change title typography. No other changes."
+  }
+}

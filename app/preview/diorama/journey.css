@@ -117,10 +117,11 @@
   border-color: #6d8c80;
 }
 .pushup-figure {
+  z-index: 5;
   right: auto;
   left: 17%;
   bottom: 13%;
-  width: clamp(290px, 30vw, 430px);
+  width: clamp(240px, 25vw, 355px);
 }
 .pushup-sprite {
   width: 100%;
@@ -173,13 +174,16 @@
   animation: ripple 9s ease-in-out infinite reverse;
 }
 .shore-wave {
-  stroke-width: 5;
+  stroke-width: 4;
   opacity: 0;
-  animation: shore-wash 9s linear infinite;
+  animation: shore-wash 8s ease-in-out infinite;
 }
 .shore-wave-two {
-  animation-delay: -4.5s;
+  animation-delay: -4s;
   stroke-width: 2;
+}
+.shore-surge {
+  animation: shore-surge 8s ease-in-out infinite;
 }
 .sailboat {
   position: absolute;
@@ -227,17 +231,36 @@
 @keyframes shore-wash {
   0% {
     opacity: 0;
-    transform: translate(-3px, -9px);
+    transform: translate(0, -12px);
   }
-  25% {
-    opacity: 0.45;
+  30% {
+    opacity: 0.55;
   }
-  65% {
-    opacity: 0.3;
+  55% {
+    opacity: 0.4;
+    transform: translate(-4px, 19px);
   }
   100% {
     opacity: 0;
-    transform: translate(5px, 18px);
+    transform: translate(0, 2px);
+  }
+}
+@keyframes shore-surge {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  25% {
+    opacity: 0.8;
+  }
+  55% {
+    opacity: 0.9;
+    transform: translate(-3px, 19px);
+  }
+  85% {
+    opacity: 0.3;
+    transform: translate(0, 5px);
   }
 }
 @keyframes boat-rock {
@@ -266,7 +289,7 @@
   }
   .pushup-figure {
     left: 15%;
-    width: 340px;
+    width: 280px;
     bottom: 13%;
   }
 }
@@ -297,7 +320,7 @@
     max-width: 310px;
   }
   .pushup-figure {
-    width: 300px;
+    width: 250px;
     left: 10%;
     bottom: 8%;
   }
@@ -323,6 +346,6 @@
 @media (max-width: 370px) {
   .pushup-figure {
     left: 6%;
-    width: 280px;
+    width: 230px;
   }
 }

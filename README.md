@@ -2,13 +2,18 @@
 
 Personal website built with Next.js App Router, TypeScript, Prismic, Tailwind CSS, and shadcn UI primitives.
 
-## Future direction
+## The illustrated website
 
-The [website manifesto](MANIFESTO.md) records the creative direction, consulting ambitions, engineering principles, and first-scene experiment for the next version of the site.
+The current development preview is `/preview/diorama`, with immersive Work and Stories rooms at `/preview/diorama/work` and `/preview/diorama/stories`. The existing public website is preserved. The implementation lives in `features/diorama/`; preview routes only mount it.
 
-The first [lakeside scene experiment](docs/lakeside-scene.md) is available at `/preview/lakeside` while the development server is running.
+- [Manifesto](MANIFESTO.md): why this website exists and the standard it should meet.
+- [Current creative direction](docs/website-direction.md): approved scenes, character details, voice, motion and interactions.
+- [Architecture and edit guide](docs/website-architecture.md): where to change things, parallel scene ownership, and eventual public-site promotion.
+- [AGENTS.md](AGENTS.md): concise instructions for coding agents.
 
-The connected lake-and-coast preview is at `/preview/diorama`, with the beach also available at `/preview/coast`. The [repeatable diorama pattern](docs/diorama-pattern.md) records the shared components, animation lessons, artwork process, and verification limits.
+Start the application with `rtk proxy npm run dev -- --hostname 127.0.0.1 --port 3100`, then open [the local preview](http://127.0.0.1:3100/preview/diorama). Check whether that port already has a server before starting another. A running production server needs a coordinated rebuild/restart to show source changes.
+
+The [static mock](docs/mock/README.md) and [storyboard](docs/storyboard/README.md) preserve design studies. `/preview/lakeside` and `/preview/coast` are earlier animation experiments. Use the current direction and architecture guide for new implementation work. Historical [v1](docs/diorama-v1.md) and [motion v2](docs/diorama-motion-v2.md) reports record earlier verification, not current release guarantees.
 
 ## Stack
 
@@ -40,6 +45,6 @@ The connected lake-and-coast preview is at `/preview/diorama`, with the beach al
 
 ## Notes
 
-- Routing uses the `app/` directory with route-local components in `app/<route>/_components`.
+- Routes live in `app/`. The illustrated experience is feature-owned under `features/diorama`; legacy pages retain route-local components.
 - Core routes are preserved: `/`, `/skills`, `/work`, `/blog`, `/blog/[uid]`.
-- UI styling is class-based via Tailwind utilities and reusable `app/components/ui/*` primitives.
+- The public site uses Tailwind and `app/components/ui/*`; the illustrated experience uses scoped CSS, shared orbs/dialogs, and scene-owned effects.

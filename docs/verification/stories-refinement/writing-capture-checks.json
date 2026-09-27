@@ -1,0 +1,15 @@
+{
+  "hair": {
+    "box": [460, 710, 650, 790],
+    "changedFrames": 0
+  },
+  "desk": {
+    "box": [945, 630, 1010, 680],
+    "changedFrames": 0
+  },
+  "capture": {
+    "frames": 80,
+    "durationMs": 6853,
+    "distinctPositions": 64
+  }
+}

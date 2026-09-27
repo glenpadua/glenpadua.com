@@ -1,0 +1,261 @@
+.world-layer.layer-grass {
+  top: 4% !important;
+  transform: translate3d(0, calc(var(--drift) + var(--travel) * 1.3), 0)
+    scale(1.08);
+}
+.world-lake-glimmer {
+  position: absolute;
+  left: 49%;
+  top: 69%;
+  width: 14%;
+  height: 3%;
+  background: radial-gradient(ellipse, #ffffe84d, transparent 70%);
+  animation: world-glimmer 7s ease-in-out infinite alternate;
+}
+@media (max-width: 760px) {
+  .cue-exercise {
+    flex-direction: column;
+    gap: 5px;
+    left: 77% !important;
+    top: 47% !important;
+  }
+  .world-layer.layer-grass {
+    top: 8% !important;
+  }
+}
+@media (min-width: 761px) {
+  .world-lake .world-copy {
+    top: 14%;
+  }
+  .cue-exercise {
+    flex-direction: row-reverse;
+  }
+}
+@media (min-width: 761px) and (max-aspect-ratio: 5/4) {
+  .world-lake .world-art {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+}
+@media (max-width: 760px) {
+  .world-lake {
+    --sky: #b9d9e9 !important;
+  }
+}
+
+.lake-life,
+.lake-water {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.lake-water-canvas {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+}
+.lake-water-canvas[data-water-state='running'],
+.lake-water-canvas[data-water-state='paused'] {
+  opacity: 1;
+}
+.world .layer-grass img {
+  transform-origin: 50% 100%;
+  animation: meadow-breeze 8s ease-in-out infinite alternate;
+}
+.lake-pine {
+  transform-box: view-box;
+  animation: pine-breeze 9.2s ease-in-out infinite;
+}
+.lake-grass {
+  position: relative;
+  aspect-ratio: 3 / 2;
+}
+.lake-grass-strip {
+  position: absolute;
+  inset: 0;
+}
+.world-lake .lake-grass img {
+  animation: passing-breeze 9.2s ease-in-out infinite;
+}
+.lake-seeds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: var(--subject);
+  transform: translateY(calc(var(--travel) * 0.3));
+}
+.lake-seed {
+  position: absolute;
+  left: 45%;
+  top: 79%;
+  width: clamp(9px, 0.85vw, 13px);
+  opacity: 0;
+  animation: seed-passage 18.4s linear infinite;
+}
+.lake-seed svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  animation: seed-turn 9.2s ease-in-out infinite alternate;
+}
+.seed-1 {
+  left: 57%;
+  top: 72%;
+  animation-delay: 1.1s;
+}
+.seed-2 {
+  left: 66%;
+  top: 83%;
+  width: clamp(7px, 0.65vw, 10px);
+  animation-delay: 2s;
+}
+@keyframes seed-passage {
+  0%,
+  5% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  12% {
+    opacity: 0.85;
+  }
+  25% {
+    opacity: 0.85;
+    transform: translate3d(90px, -28px, 0);
+  }
+  42% {
+    opacity: 0.7;
+    transform: translate3d(185px, -46px, 0);
+  }
+  52%,
+  100% {
+    opacity: 0;
+    transform: translate3d(245px, -65px, 0);
+  }
+}
+@keyframes seed-turn {
+  from {
+    transform: rotate(-18deg);
+  }
+  to {
+    transform: rotate(24deg);
+  }
+}
+@keyframes pine-breeze {
+  0%,
+  18%,
+  100% {
+    transform: skewX(0deg);
+  }
+  42% {
+    transform: skewX(-1.3deg);
+  }
+  58% {
+    transform: skewX(0.35deg);
+  }
+  73% {
+    transform: skewX(-0.45deg);
+  }
+  86% {
+    transform: skewX(0.12deg);
+  }
+}
+@keyframes passing-breeze {
+  0%,
+  14%,
+  100% {
+    transform: skewX(0deg);
+  }
+  40% {
+    transform: skewX(-3deg);
+  }
+  58% {
+    transform: skewX(0.55deg);
+  }
+  73% {
+    transform: skewX(-0.7deg);
+  }
+  86% {
+    transform: skewX(0.18deg);
+  }
+}
+@keyframes meadow-breeze {
+  from {
+    transform: skewX(-0.45deg);
+  }
+  to {
+    transform: skewX(0.65deg);
+  }
+}
+.character-lake {
+  aspect-ratio: 5/6;
+}
+.character-lake .character-sheet {
+  animation: pullup-cycle 5.8s steps(1, end) infinite;
+}
+.pullup-apparatus {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.world-lake .layer-character {
+  top: 47% !important;
+  width: 21% !important;
+  left: 66% !important;
+}
+@keyframes pullup-cycle {
+  0%,
+  17%,
+  100% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-50%, 0);
+  }
+  23% {
+    transform: translate(0, -50%);
+  }
+  26%,
+  36% {
+    transform: translate(-50%, -50%);
+  }
+  40% {
+    transform: translate(0, -50%);
+  }
+  44% {
+    transform: translate(-50%, 0);
+  }
+  48% {
+    transform: translate(0, 0);
+  }
+}
+@media (max-width: 760px) {
+  .world-lake .layer-character {
+    width: 23% !important;
+    left: 63% !important;
+    top: 48% !important;
+  }
+}
+
+.character-lake .character-sheet {
+  width: 200%;
+  height: 200%;
+}
+
+/* The parent layer carries the ridge-and-pine silhouette from content. */
+.world .world-lake .layer-back > img {
+  mask-image: none;
+}
+.world-lake::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: #31445c;
+  opacity: calc((1 - var(--sky-daylight, 0)) * 0.12);
+}

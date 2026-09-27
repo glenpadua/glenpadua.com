@@ -1,0 +1,1627 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Glen’s world — storyboard 0.5</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #273b35;
+        --paper: #f5f1e6;
+        --line: #c3cab7;
+        --accent: #8b482f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font:
+          15px/1.65 'Avenir Next',
+          'Trebuchet MS',
+          sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: Georgia, serif;
+        font-weight: 400;
+        line-height: 1.06;
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 4px;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+      }
+      button,
+      a,
+      summary {
+        touch-action: manipulation;
+      }
+      button:focus-visible,
+      a:focus-visible,
+      summary:focus-visible {
+        outline: 3px solid #ac5b32;
+        outline-offset: 5px;
+      }
+      button {
+        border: 0;
+      }
+      button:disabled {
+        opacity: 0.45;
+        cursor: default;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      .eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .muted {
+        color: #59695c;
+      }
+      .draftbar {
+        padding: 13px 5%;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        border-bottom: 1px solid var(--line);
+        font-size: 11px;
+      }
+      .masthead {
+        padding: 23px 5%;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        justify-content: space-between;
+      }
+      .wordmark {
+        font:
+          italic 27px Georgia,
+          serif;
+        text-decoration: none;
+      }
+      .tabs {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+      }
+      .tabs button {
+        padding: 8px 15px;
+        background: transparent;
+        border-radius: 2px;
+        font-size: 13px;
+      }
+      .tabs button[aria-pressed='true'] {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .intro {
+        padding: 35px 5% 42px;
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 50px;
+        max-width: 1440px;
+        margin: auto;
+      }
+      .intro h1 {
+        font-size: clamp(37px, 5vw, 65px);
+        max-width: 850px;
+        margin: 13px 0 20px;
+        letter-spacing: -0.035em;
+      }
+      .intro p {
+        max-width: 640px;
+      }
+      .intro aside {
+        border-left: 1px solid var(--line);
+        padding-left: 25px;
+        align-self: end;
+        font-size: 13px;
+      }
+      .intro aside p + p {
+        margin-top: 12px;
+      }
+      .view {
+        max-width: 1600px;
+        margin: auto;
+      }
+      .scene {
+        position: relative;
+        isolation: isolate;
+        min-height: 700px;
+        overflow: hidden;
+      }
+      .scene-copy {
+        position: relative;
+        z-index: 2;
+        margin: 0 7%;
+        padding-top: 75px;
+        max-width: 530px;
+      }
+      .scene-copy h2 {
+        font-size: clamp(40px, 5.8vw, 78px);
+        letter-spacing: -0.04em;
+        margin: 15px 0 22px;
+      }
+      .scene-copy p:not(.eyebrow) {
+        max-width: 390px;
+        font-size: 16px;
+      }
+      .scenery {
+        position: absolute;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center bottom;
+        inset: 0;
+      }
+      .lake {
+        background: #edf0d9;
+        min-height: 730px;
+      }
+      .lake .scenery {
+        mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+      }
+      .coast {
+        background: #ebefd8;
+        min-height: 780px;
+      }
+      .coast .scenery {
+        mask-image: linear-gradient(
+          to bottom,
+          transparent 0%,
+          #000 15%,
+          #000 78%,
+          transparent 100%
+        );
+      }
+      .coast:before {
+        content: '';
+        position: absolute;
+        z-index: -3;
+        inset: 0;
+        background: linear-gradient(
+          #edf0d9,
+          #e5efdf 15%,
+          #dfeddf 55%,
+          #e7c6ad 100%
+        );
+      }
+      .coast .scene-copy {
+        margin-left: auto;
+        margin-right: 7%;
+        padding-top: 65px;
+        max-width: 490px;
+      }
+      .city {
+        min-height: 760px;
+        background: linear-gradient(#e7c6ad, #bcabb1 28%, #757d95 64%, #4f6073);
+        color: #2b3346;
+      }
+      .city .scene-copy {
+        padding-top: 65px;
+        max-width: 540px;
+      }
+      .city-art {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 390px;
+        z-index: -1;
+        background: linear-gradient(transparent, #344658 80%);
+        display: flex;
+        align-items: flex-end;
+        gap: 1.2%;
+        padding-inline: 3%;
+      }
+      .building {
+        width: 10%;
+        height: var(--h);
+        background: var(--b, #5a687c);
+        position: relative;
+        border-top: 5px solid #657589;
+      }
+      .building:after {
+        content: '';
+        position: absolute;
+        inset: 20px 13px;
+        background: repeating-linear-gradient(
+          to right,
+          transparent 0 12px,
+          #c5ba9b66 12px 19px,
+          transparent 19px 29px
+        );
+        mask-image: repeating-linear-gradient(
+          to bottom,
+          #000 0 13px,
+          transparent 13px 34px
+        );
+      }
+      .building:nth-child(even) {
+        --b: #465970;
+      }
+      .city .street {
+        position: absolute;
+        bottom: 0;
+        height: 60px;
+        background: #304253;
+        width: 100%;
+      }
+      .city .moon {
+        position: absolute;
+        right: 22%;
+        top: 19%;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: #f5e7c8;
+        box-shadow: 0 0 65px #f5e7c866;
+      }
+      .hotspot {
+        position: absolute;
+        z-index: 3;
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #f8f3e6e6;
+        border: 1px solid #566a54;
+        box-shadow: 0 0 0 7px #f6f4dc33;
+        font-size: 21px;
+      }
+      .hotspot:after {
+        content: '';
+        position: absolute;
+        inset: -8px;
+        border: 1px solid currentColor;
+        border-radius: 50%;
+        animation: beacon 3.8s ease-in-out infinite;
+        pointer-events: none;
+      }
+      .hotspot .tip {
+        position: absolute;
+        bottom: calc(100% + 17px);
+        background: #273b35;
+        color: #f8f3e6;
+        white-space: nowrap;
+        padding: 6px 12px;
+        font-size: 12px;
+        opacity: 0;
+        transform: translateY(4px);
+        transition:
+          opacity 0.2s,
+          transform 0.2s;
+        pointer-events: none;
+      }
+      .hotspot:hover .tip,
+      .hotspot:focus-visible .tip {
+        opacity: 1;
+        transform: none;
+      }
+      .video-cue {
+        left: 78%;
+        top: 58%;
+      }
+      .coast-cue {
+        left: 28%;
+        top: 68%;
+      }
+      .football {
+        left: 46%;
+        top: 78%;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        font-size: 35px;
+      }
+      .football.kick {
+        animation: kick 0.8s ease-out;
+      }
+      .room-cue {
+        left: 72%;
+        bottom: 150px;
+        border-radius: 2px;
+        background: #f5d494;
+        color: #514139;
+        box-shadow: 0 0 60px #eccb8b88;
+      }
+      .room-cue:after {
+        border-radius: 2px;
+      }
+      .story-cue {
+        left: 53%;
+        bottom: 94px;
+      }
+      .scene-foot {
+        position: absolute;
+        bottom: 16px;
+        left: 7%;
+        right: 7%;
+        font-size: 10px;
+        letter-spacing: 0.04em;
+        z-index: 2;
+      }
+      .city .scene-foot {
+        color: #e4e2d8;
+      }
+      .underboard {
+        padding: 40px 6%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+        border-bottom: 1px solid var(--line);
+      }
+      .underboard h3 {
+        font-size: 24px;
+        margin: 10px 0;
+      }
+      .underboard p {
+        font-size: 13px;
+      }
+      .room {
+        position: relative;
+        isolation: isolate;
+        min-height: 750px;
+        background: linear-gradient(#c9c2b3, #ded4bd 70%, #a77f63 70%, #725440);
+        overflow: hidden;
+      }
+      .room:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background: repeating-linear-gradient(
+          90deg,
+          transparent 0 130px,
+          #94806a22 131px 132px
+        );
+      }
+      .room-title {
+        padding: 40px 6%;
+      }
+      .room-title h2 {
+        font-size: clamp(33px, 4vw, 53px);
+        margin: 12px 0 16px;
+        max-width: 700px;
+      }
+      .room-title p:last-child {
+        font-size: 14px;
+        max-width: 650px;
+      }
+      .window {
+        position: absolute;
+        left: 6%;
+        top: 250px;
+        width: 150px;
+        height: 215px;
+        background: linear-gradient(#a3bac5, #ded6b7);
+        border: 12px solid #7c6250;
+        box-shadow: inset 0 0 0 5px #ece0bf;
+      }
+      .window:after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 100%;
+        left: 50%;
+        background: #7c6250;
+      }
+      .bed {
+        position: absolute;
+        left: 2%;
+        bottom: 90px;
+        width: 260px;
+        height: 130px;
+        background: #7b8b76;
+        border-radius: 25px 10px 0 0;
+        border-bottom: 20px solid #624a3e;
+        transform: skewY(-5deg);
+        z-index: -1;
+      }
+      .pillow {
+        position: absolute;
+        left: 15px;
+        top: -20px;
+        width: 85px;
+        height: 45px;
+        background: #e8dcc3;
+        transform: rotate(-8deg);
+        border-radius: 15px;
+      }
+      .desk {
+        position: absolute;
+        left: 28%;
+        right: 4%;
+        bottom: 110px;
+        height: 20px;
+        background: #8a5e40;
+        border-top: 7px solid #b9946b;
+        box-shadow: 0 9px 0 #533e32;
+      }
+      .desk:before,
+      .desk:after {
+        content: '';
+        position: absolute;
+        top: 20px;
+        width: 14px;
+        height: 100px;
+        background: #55473a;
+      }
+      .desk:before {
+        left: 15px;
+      }
+      .desk:after {
+        right: 15px;
+      }
+      .monitor {
+        position: absolute;
+        left: 36%;
+        right: 11%;
+        bottom: 205px;
+        min-height: 245px;
+        background: #28383a;
+        border: 12px solid #3c4542;
+        border-bottom-width: 23px;
+        border-radius: 9px;
+        color: #f4ead3;
+        box-shadow: 7px 12px 0 #5d544426;
+      }
+      .monitor:after {
+        content: '';
+        position: absolute;
+        bottom: -95px;
+        left: 46%;
+        width: 8%;
+        height: 73px;
+        background: #444a44;
+        z-index: -1;
+      }
+      .monitor-body {
+        padding: 22px 26px;
+        min-height: 180px;
+      }
+      .monitor h3 {
+        font-size: 32px;
+        margin: 10px 0 12px;
+      }
+      .monitor p {
+        font-size: 12px;
+        max-width: 450px;
+      }
+      .monitor .project-kind {
+        color: #d5c892;
+        font-size: 10px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+      .screen-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 17px;
+        border-top: 1px solid #63716a;
+      }
+      .screen-controls button {
+        background: transparent;
+        color: #f4ead3;
+        min-height: 38px;
+        padding: 5px 12px;
+        border: 1px solid #849182;
+      }
+      .screen-controls span {
+        font-size: 11px;
+      }
+      .project-open {
+        margin-top: 15px;
+        background: #d3dbb6;
+        padding: 8px 13px;
+        color: #283a32;
+        font-size: 12px;
+      }
+      .laptop {
+        position: absolute;
+        left: 20%;
+        bottom: 143px;
+        width: 155px;
+        min-height: 130px;
+        background: #55566c;
+        color: #eee8d9;
+        border: 7px solid #454748;
+        border-bottom: 13px solid #3c403e;
+        border-radius: 5px;
+        transform: rotate(-6deg);
+        padding: 12px;
+        text-align: left;
+      }
+      .laptop strong {
+        display: block;
+        font-size: 17px;
+      }
+      .laptop small {
+        font-size: 10px;
+      }
+      .laptop:after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: -15px;
+        right: -15px;
+        height: 9px;
+        background: #555c54;
+      }
+      .ai-cue {
+        right: 4%;
+        bottom: 360px;
+        background: #f5ddae;
+      }
+      .chair {
+        position: absolute;
+        bottom: 13px;
+        left: 57%;
+        width: 95px;
+        height: 128px;
+        background: #4b5550;
+        border-radius: 35px 35px 8px 8px;
+        border: 7px solid #404740;
+      }
+      .chair:after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 46px;
+        background: #3b443e;
+        left: 44%;
+        bottom: -32px;
+      }
+      .figure-label {
+        position: absolute;
+        left: 45%;
+        bottom: 26px;
+        color: #f8eed4;
+        font-size: 10px;
+        background: #534b3bd9;
+        padding: 5px 10px;
+        max-width: 220px;
+      }
+      .deck-cue {
+        position: absolute;
+        left: 30%;
+        bottom: 130px;
+        transform: rotate(8deg);
+        font-size: 24px;
+        background: #efe2bd;
+        color: #3f5143;
+        padding: 5px 13px;
+        border: 2px solid #515c45;
+        box-shadow:
+          -5px -4px #dcc999,
+          -9px -8px #708073;
+      }
+      .project-notes {
+        padding: 35px 6%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 45px;
+      }
+      .project-notes h3 {
+        font-size: 26px;
+        margin-bottom: 12px;
+      }
+      .project-notes p {
+        font-size: 13px;
+      }
+      .reading-room {
+        background: linear-gradient(#ddd0b8, #e8decb 66%, #ad9479);
+        min-height: 650px;
+        position: relative;
+        padding: 50px 7%;
+        overflow: hidden;
+      }
+      .reading-room h2 {
+        font-size: clamp(39px, 5vw, 64px);
+        max-width: 630px;
+        margin: 15px 0 20px;
+      }
+      .reading-room p {
+        max-width: 560px;
+      }
+      .shelf {
+        display: flex;
+        align-items: flex-end;
+        gap: 18px;
+        margin-top: 55px;
+        max-width: 850px;
+        padding: 0 20px 0;
+        border-bottom: 19px solid #8b6549;
+        box-shadow: 0 12px 0 #5f47342b;
+      }
+      .book {
+        padding: 25px 20px;
+        text-align: left;
+        color: #f6eedb;
+        background: var(--cover);
+        min-height: 210px;
+        flex: 1;
+        max-width: 260px;
+        border-left: 8px solid #ffffff20;
+        box-shadow: 4px 0 0 #473c2f20;
+      }
+      .book:nth-child(2) {
+        transform: rotate(-4deg);
+        margin-right: 10px;
+        min-height: 235px;
+      }
+      .book span {
+        display: block;
+        font:
+          27px/1.2 Georgia,
+          serif;
+      }
+      .book small {
+        display: block;
+        margin-top: 30px;
+        font-size: 10px;
+      }
+      .book:hover,
+      .book:focus-visible {
+        filter: brightness(1.12);
+      }
+      .paper-section {
+        padding: 45px 7% 70px;
+      }
+      .paper-section h2 {
+        font-size: 38px;
+        margin-bottom: 22px;
+      }
+      .paper-section h3 {
+        font-size: 26px;
+        margin: 30px 0 15px;
+      }
+      .paper-section p {
+        max-width: 780px;
+      }
+      .paper-section p + p {
+        margin-top: 17px;
+      }
+      .paper-section ul {
+        padding-left: 20px;
+        max-width: 850px;
+      }
+      .paper-section li {
+        margin-bottom: 12px;
+      }
+      .source-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 12px;
+        margin-top: 25px;
+      }
+      .mechanics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+        padding: 30px 0;
+      }
+      .mechanics h3 {
+        font-size: 25px;
+        margin: 10px 0;
+      }
+      .mechanics p {
+        font-size: 13px;
+      }
+      .dialog {
+        position: fixed;
+        z-index: 20;
+        inset: 0;
+        background: #20352ed9;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        overflow: auto;
+      }
+      .dialog-panel {
+        background: var(--paper);
+        padding: 35px;
+        max-width: 650px;
+        width: 100%;
+        max-height: 85vh;
+        overflow: auto;
+        box-shadow: 0 30px 80px #13261d66;
+      }
+      .dialog-panel h2 {
+        font-size: 36px;
+        margin: 15px 0 20px;
+      }
+      .dialog-panel p + p {
+        margin-top: 16px;
+      }
+      .dialog-close {
+        float: right;
+        background: transparent;
+        border: 1px solid var(--line);
+        padding: 6px 12px;
+      }
+      .dialog-content a {
+        display: inline-block;
+        margin-top: 20px;
+      }
+      .clip-placeholder {
+        margin: 20px 0;
+        padding: 35px 20px;
+        text-align: center;
+        background: #dce1cb;
+        aspect-ratio: 16/9;
+        display: grid;
+        place-items: center;
+      }
+      .dialog-panel .eyebrow {
+        clear: both;
+        padding-top: 20px;
+      }
+      .footer {
+        padding: 22px 5%;
+        font-size: 11px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        border-top: 1px solid var(--line);
+      }
+      .motion-toggle {
+        background: transparent;
+        text-decoration: underline;
+        padding: 2px;
+      }
+      .paused *,
+      .paused *::before,
+      .paused *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      @keyframes beacon {
+        0%,
+        100% {
+          opacity: 0.2;
+          transform: scale(0.96);
+        }
+        50% {
+          opacity: 0.65;
+          transform: scale(1.08);
+        }
+      }
+      @keyframes kick {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0);
+        }
+        45% {
+          transform: translate(65px, -55px) rotate(135deg);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+      @media (max-width: 720px) {
+        .draftbar {
+          font-size: 10px;
+        }
+        .masthead {
+          align-items: flex-start;
+          gap: 12px;
+        }
+        .tabs {
+          gap: 0;
+          justify-content: flex-end;
+        }
+        .tabs button {
+          padding: 8px 10px;
+          font-size: 12px;
+        }
+        .intro {
+          grid-template-columns: 1fr;
+          gap: 20px;
+          padding-top: 15px;
+        }
+        .intro aside {
+          padding-left: 0;
+          border: 0;
+        }
+        .scene {
+          min-height: 660px;
+        }
+        .scene-copy {
+          padding-top: 45px;
+          max-width: 85%;
+        }
+        .scene-copy h2 {
+          font-size: 48px;
+        }
+        .scene-copy p:not(.eyebrow) {
+          font-size: 14px;
+          max-width: 280px;
+        }
+        .lake .scenery {
+          object-position: 72% bottom;
+        }
+        .coast .scene-copy {
+          margin-left: 7%;
+          max-width: 85%;
+        }
+        .coast .scenery {
+          object-position: 30% bottom;
+        }
+        .video-cue {
+          left: 70%;
+          top: 64%;
+        }
+        .coast-cue {
+          top: 68%;
+          left: 28%;
+        }
+        .city .scene-copy {
+          padding-top: 40px;
+        }
+        .city-art {
+          height: 285px;
+        }
+        .city .moon {
+          right: 10%;
+          top: 46%;
+          width: 32px;
+          height: 32px;
+        }
+        .room-cue {
+          left: 72%;
+          bottom: 100px;
+        }
+        .story-cue {
+          left: 45%;
+          bottom: 65px;
+        }
+        .underboard,
+        .project-notes,
+        .mechanics {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+        .room {
+          min-height: 830px;
+        }
+        .room-title {
+          padding: 30px 6%;
+        }
+        .room-title h2 {
+          font-size: 37px;
+        }
+        .monitor {
+          left: 6%;
+          right: 6%;
+          bottom: 282px;
+          min-height: 255px;
+        }
+        .monitor-body {
+          padding: 20px;
+        }
+        .monitor h3 {
+          font-size: 28px;
+        }
+        .monitor:after {
+          height: 65px;
+          bottom: -85px;
+        }
+        .window {
+          display: none;
+        }
+        .bed {
+          width: 135px;
+          height: 88px;
+          left: 1%;
+          bottom: 115px;
+        }
+        .desk {
+          left: 8%;
+          bottom: 203px;
+        }
+        .laptop {
+          left: 8%;
+          bottom: 143px;
+          width: 140px;
+          min-height: 95px;
+          z-index: 3;
+        }
+        .ai-cue {
+          right: 9%;
+          bottom: 158px;
+        }
+        .chair {
+          left: 54%;
+          bottom: 67px;
+        }
+        .figure-label {
+          bottom: 13px;
+          left: 36%;
+          font-size: 9px;
+        }
+        .deck-cue {
+          left: 16%;
+          bottom: 95px;
+          z-index: 4;
+        }
+        .reading-room {
+          padding: 35px 7%;
+          min-height: 720px;
+        }
+        .shelf {
+          gap: 12px;
+          padding: 0 8px;
+          margin-top: 40px;
+          align-items: stretch;
+        }
+        .book {
+          padding: 20px 9px;
+          min-width: 0;
+          min-height: 210px;
+          border-left-width: 4px;
+        }
+        .book span {
+          font-size: 19px;
+          overflow-wrap: break-word;
+        }
+        .book:nth-child(2) {
+          margin-right: 0;
+          transform: rotate(-3deg);
+          min-height: 210px;
+        }
+        .book small {
+          font-size: 9px;
+        }
+        .reading-room h2 {
+          font-size: 44px;
+        }
+        .dialog {
+          padding: 15px;
+        }
+        .dialog-panel {
+          padding: 23px;
+        }
+        .dialog-panel h2 {
+          font-size: 30px;
+        }
+        .scene-foot {
+          font-size: 9px;
+        }
+        .footer {
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="draftbar">
+      <span>STORYBOARD 0.5 · COMPOSITION & INTERACTION STUDY</span
+      ><a href="README.md">Full storyboard ↗</a>
+    </div>
+    <header class="masthead">
+      <a class="wordmark" href="#home" data-nav="home">glen padua.</a>
+      <nav class="tabs" aria-label="Preview destinations">
+        <button data-tab="home" aria-pressed="true">Home</button
+        ><button data-tab="work" aria-pressed="false">Work</button
+        ><button data-tab="stories" aria-pressed="false">Stories</button
+        ><button data-tab="direction" aria-pressed="false">
+          Discussion notes
+        </button>
+      </nav>
+    </header>
+    <section class="intro">
+      <div>
+        <p class="eyebrow">The scene is the interface</p>
+        <h1>A person first.<br />A portfolio elsewhere.</h1>
+        <p>
+          Home tells the story. The room holds the work. The writing gets a
+          place of its own.
+        </p>
+      </div>
+      <aside>
+        <p>
+          <strong>Latest direction:</strong> continuous scenery, copy with a
+          pulse, and things worth poking at.
+        </p>
+        <p>
+          Rough reference art and room schematics. Copy is a draft. The glowing
+          cues open sketches; there is no live video or AI connected.
+        </p>
+      </aside>
+    </section>
+    <main>
+      <div class="view" id="home" data-view="home">
+        <section class="scene lake" aria-label="Lake and mountains">
+          <img
+            class="scenery"
+            src="../references/lakeside-pullup-reference.png"
+            alt="Painted lake and mountains with Glen doing pull-ups; existing reference art."
+          />
+          <div class="scene-copy">
+            <p class="eyebrow">Glen Padua</p>
+            <h2>Skipping leg day<br />since 2008.</h2>
+            <p>I’m Glen. That’s me on the bar. The tiny version, anyway.</p>
+          </div>
+          <button
+            class="hotspot video-cue"
+            data-dialog="video"
+            aria-label="Calisthenics video — concept"
+          >
+            <span aria-hidden="true">▷</span
+            ><span class="tip">Calisthenics video</span>
+          </button>
+          <p class="scene-foot">
+            GLEN’S OWN BIO LINE · EXERCISE OUTFIT TO DESIGN · SCROLL INTO THE
+            NEXT SETTING
+          </p>
+        </section>
+        <section class="scene coast" aria-label="Coast">
+          <img
+            class="scenery"
+            src="../references/beach-pushup-reference.png"
+            alt="Painted beach reference with Glen exercising. Final coast activity and clothes are still to choose."
+          />
+          <div class="scene-copy">
+            <p class="eyebrow">Somewhere with a better view</p>
+            <h2>Same guy.<br />Different background.</h2>
+            <p>
+              I like having a job. I also like having a life. Working remotely
+              helps with both.
+            </p>
+          </div>
+          <button
+            class="hotspot coast-cue"
+            data-dialog="travel"
+            aria-label="A note from the road — concept"
+          >
+            <span aria-hidden="true">✧</span
+            ><span class="tip">A note from the road</span></button
+          ><button
+            class="hotspot football"
+            id="football"
+            aria-label="Give the football a kick"
+          >
+            <span aria-hidden="true">⚽</span
+            ><span class="tip">Go on then.</span>
+          </button>
+          <p class="scene-foot">
+            REFERENCE HAS PUSH-UPS · PROPOSED FINAL: CASUAL OUTFIT, BAG, A
+            MOMENT BETWEEN ACTIVITIES
+          </p>
+        </section>
+        <section class="scene city" aria-label="City at dusk">
+          <div class="moon" aria-hidden="true"></div>
+          <div class="scene-copy">
+            <p class="eyebrow">Back to the other tabs</p>
+            <h2>Yes, I do<br />actually work.</h2>
+            <p>
+              Senior engineer at Remote.com. Over ten years of building
+              software. This website is what happens when I give myself a brief.
+            </p>
+          </div>
+          <div class="city-art" aria-hidden="true">
+            <i class="building" style="--h: 37%"></i
+            ><i class="building" style="--h: 60%"></i
+            ><i class="building" style="--h: 45%"></i
+            ><i class="building" style="--h: 82%"></i
+            ><i class="building" style="--h: 51%"></i
+            ><i class="building" style="--h: 64%"></i
+            ><i class="building" style="--h: 39%"></i
+            ><i class="building" style="--h: 73%"></i
+            ><i class="building" style="--h: 47%"></i>
+          </div>
+          <div class="street" aria-hidden="true"></div>
+          <button
+            class="hotspot room-cue"
+            data-nav="work"
+            aria-label="Enter the Work room"
+          >
+            <span aria-hidden="true">▥</span
+            ><span class="tip">Work</span></button
+          ><button
+            class="hotspot story-cue"
+            data-nav="stories"
+            aria-label="Enter the Stories room"
+          >
+            <span aria-hidden="true">▤</span><span class="tip">Stories</span>
+          </button>
+          <p class="scene-foot">
+            CITY / EVENING OUTFIT TO DESIGN · A LIT WINDOW LEADS TO A SEPARATE
+            WORK PAGE
+          </p>
+        </section>
+        <div class="underboard">
+          <div>
+            <p class="eyebrow">01 / Colour carries you</p>
+            <h3>No hard cut.</h3>
+            <p>
+              Sage mist becomes turquoise and sand, then warm dusk. These
+              gradients study the colour handoff; final painted layers need
+              matching horizons and feathered edges.
+            </p>
+          </div>
+          <div>
+            <p class="eyebrow">02 / Let people notice</p>
+            <h3>A cue, not a pitch.</h3>
+            <p>
+              The play cue has one job. The football has another. Focus or hover
+              names the action; persistent navigation provides a direct route.
+            </p>
+          </div>
+          <div>
+            <p class="eyebrow">03 / Keep the person</p>
+            <h3>Different clothes. Same Glen.</h3>
+            <p>
+              Face, proportions, and anatomical left prosthesis carry across
+              settings. Outfit and pose changes need consistent new artwork.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="view" id="work" data-view="work" hidden>
+        <section class="room" aria-label="Proposed bedroom workstation">
+          <div class="room-title">
+            <p class="eyebrow">Work · a separate place</p>
+            <h2>This is where I open<br />too many tabs.</h2>
+            <p>
+              Work, side projects, and ideas that got far enough to need a name.
+            </p>
+          </div>
+          <div class="window" aria-hidden="true"></div>
+          <div class="bed" aria-hidden="true"><div class="pillow"></div></div>
+          <div class="desk" aria-hidden="true"></div>
+          <section class="monitor" aria-label="Project monitor">
+            <div class="monitor-body" aria-live="polite">
+              <p class="project-kind" id="project-kind">Current experiment</p>
+              <h3 id="project-name">This little world</h3>
+              <p id="project-description">
+                The site you’re exploring: painted places, a recurring
+                character, and lots of tiny decisions.
+              </p>
+              <button class="project-open" id="project-open">
+                Open the project notes ↗
+              </button>
+            </div>
+            <div class="screen-controls">
+              <button id="previous" aria-label="Previous project">←</button
+              ><span id="project-count">01 / 03</span
+              ><button id="next" aria-label="Next project">→</button>
+            </div>
+          </section>
+          <button
+            class="laptop"
+            data-dialog="remote"
+            aria-label="Remote.com — role and external link"
+          >
+            <small>WORK / TEAM CHAT</small><strong>Remote.com</strong
+            ><small>Public context only ↗</small></button
+          ><button
+            class="hotspot ai-cue"
+            data-dialog="ai"
+            aria-label="Ask the AI guide — scripted concept"
+          >
+            <span aria-hidden="true">···</span
+            ><span class="tip">Ask the AI one.</span></button
+          ><button
+            class="deck-cue"
+            data-dialog="deck"
+            aria-label="The original deck of skills"
+          >
+            ♣
+          </button>
+          <div class="chair" aria-hidden="true"></div>
+          <p class="figure-label">
+            GLEN TYPING HERE · CHARACTER ART NOT YET MADE
+          </p>
+        </section>
+        <div class="project-notes">
+          <div>
+            <h3>The screen is the portfolio.</h3>
+            <p>
+              Browse projects on the main monitor. Open a readable detail view,
+              then deliberately follow a product, internal tool, or case-study
+              link. The laptop introduces Remote.com. No automatic carousel.
+            </p>
+          </div>
+          <div>
+            <h3>A bedroom with a person in it.</h3>
+            <p>
+              Final art adds Glen typing, his appropriate outfit, accurate
+              prosthesis where visible, code and AI activity, and personal
+              objects. The diagram above establishes the layout; it is not the
+              final artwork or a screenshot of his actual desk.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="view" id="stories" data-view="stories" hidden>
+        <section class="reading-room">
+          <p class="eyebrow">Stories · proposed reading corner</p>
+          <h2>Some of this made<br />sense in my head.</h2>
+          <p>
+            Stories, opinions, and the occasional change of mind. The leg has
+            had enough screen time. There are other things to talk about.
+          </p>
+          <div class="shelf" aria-label="Choose an existing essay">
+            <button class="book" style="--cover: #586952" data-dialog="lottery">
+              <span>The Lottery<br />of Birth</span
+              ><small>PERSONAL · 2020</small></button
+            ><button class="book" style="--cover: #9b5d43" data-dialog="bone">
+              <span>Bone to<br />be Wild</span
+              ><small>PERSONAL · 2020</small></button
+            ><button class="book" style="--cover: #4f6774" data-dialog="job">
+              <span>An ideal<br />dream job?</span
+              ><small>WORK & LIFE · 2022</small>
+            </button>
+          </div>
+        </section>
+        <div class="paper-section">
+          <p class="eyebrow">Objects invite. The story gets the space.</p>
+          <h2 style="margin-top: 15px">Each piece can have its own form.</h2>
+          <p>
+            The room helps you find something to read. The article opens into a
+            full reading experience: a personal journey, a scenario you can
+            change, a failed idea you can pick apart, or a useful tool inside a
+            practical explanation.
+          </p>
+          <div class="mechanics">
+            <div>
+              <h3>Personal stories</h3>
+              <p>
+                Illustrated moments, photographs, and asides. No need to turn a
+                life story into a game or end it in a sales pitch.
+              </p>
+            </div>
+            <div>
+              <h3>Ideas & experiments</h3>
+              <p>
+                Make assumptions visible. Let someone try a comparison, follow a
+                decision, or understand what went wrong.
+              </p>
+            </div>
+            <div>
+              <h3>Useful knowledge</h3>
+              <p>
+                Give the reader something they can use. A relevant project or
+                custom-work conversation can follow naturally.
+              </p>
+            </div>
+          </div>
+          <p class="muted">
+            Reading corner is a proposal. A train compartment or travel notebook
+            could work too. Keep a readable all-posts index; a bookshelf should
+            never make finding an article harder.
+          </p>
+          <div class="source-links">
+            <a href="https://glenpadua.com/blog">Current blog ↗</a
+            ><a href="https://ai-2027.com/"
+              >Interactive editorial reference: AI 2027 ↗</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="view" id="direction" data-view="direction" hidden>
+        <section class="paper-section">
+          <p class="eyebrow">What changed in 0.5</p>
+          <h2>
+            The previous draft was too much portfolio,<br />not enough Glen.
+          </h2>
+          <p>
+            This version removes work examples from Home, gives Work its own
+            room, and replaces the generic positioning lines with copy informed
+            by three original essays. The reading room is a proposal, not a
+            settled setting.
+          </p>
+          <h3>What the older writing actually does</h3>
+          <ul>
+            <li>
+              <strong>Misdirection:</strong> set up a grand entrance, then
+              undercut it. The joke is often on Glen.
+            </li>
+            <li>
+              <strong>Asides:</strong> an absurd question or a blunt observation
+              interrupts the story in a way that sounds spoken.
+            </li>
+            <li>
+              <strong>Earnestness:</strong> the jokes make room for reflection.
+              They do not have to undercut every meaningful sentence.
+            </li>
+            <li>
+              <strong>Specificity:</strong> real events and opinions, rather
+              than a stream of claims about curiosity and craftsmanship.
+            </li>
+          </ul>
+          <p>
+            “Skipping leg day since 2008” is Glen’s supplied line. The other
+            scene copy is new draft material to edit together. Humour about the
+            prosthesis should remain his to direct.
+          </p>
+          <div class="source-links">
+            <a href="https://glenpadua.com/blog/lottery-of-birth"
+              >The Lottery of Birth ↗</a
+            ><a href="https://glenpadua.com/blog/bone-to-be-wild"
+              >Bone to be Wild ↗</a
+            ><a href="https://glenpadua.com/blog/do-you-have-an-ideal-dream-job"
+              >The dream-job post ↗</a
+            ><a href="https://glenpadua.com/skills">Original card deck ↗</a>
+          </div>
+          <h3>One object, one expectation</h3>
+          <p>
+            The exercise sprite opens the real-life video path. A separate
+            speech cue opens the AI guide. A window leads to Work. A football
+            can just be a football worth kicking. Keep those signals consistent
+            across the world.
+          </p>
+          <h3>Still to choose</h3>
+          <ul>
+            <li>
+              The city, personal scene details, final activities, and outfit
+              sheet.
+            </li>
+            <li>The real calisthenics clip and how it should play.</li>
+            <li>
+              The Work monitor’s actual project roster and each destination.
+            </li>
+            <li>
+              The writing room setting, first interactive essay, and final
+              voice.
+            </li>
+            <li>The human contact channel and where its cue lives.</li>
+          </ul>
+          <p>
+            No application routes, character assets, live AI, embeds, or
+            published posts have changed. This board lets us explore the revised
+            structure and simple interactions first.
+          </p>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <span>DISCUSSION ARTIFACT · NOT A RELEASE PREVIEW</span
+      ><button class="motion-toggle" id="motion" aria-pressed="false">
+        Pause cues</button
+      ><a href="README.md">Decisions & full story ↗</a>
+    </footer>
+    <div
+      class="dialog"
+      id="dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="dialog-title"
+      hidden
+    >
+      <div class="dialog-panel">
+        <button class="dialog-close" id="close-dialog">Close ×</button>
+        <p class="eyebrow" id="dialog-kind">Concept</p>
+        <h2 id="dialog-title"></h2>
+        <div class="dialog-content" id="dialog-content"></div>
+      </div>
+    </div>
+    <script>
+      // Standalone discussion board. Scripted examples only; no production app changes.
+      const projects = [
+        {
+          name: 'This little world',
+          kind: 'Current experiment',
+          description:
+            'The site you’re exploring: painted places, a recurring character, and lots of tiny decisions.',
+          action: 'Open the project notes ↗',
+          dialog: 'website',
+        },
+        {
+          name: 'Remote.com',
+          kind: 'Current role · user-confirmed',
+          description:
+            'Senior software engineer. This screen can introduce the work and Glen’s contribution using material suitable for public sharing.',
+          action: 'About the role ↗',
+          dialog: 'remote',
+        },
+        {
+          name: 'Staypal',
+          kind: 'Exploration · readiness to confirm',
+          description:
+            'A hosting idea that could become a product, useful tools, or a route into custom automation work.',
+          action: 'Explore the possible paths ↗',
+          dialog: 'staypal',
+        },
+      ];
+      const panels = {
+        video: {
+          kind: 'Interaction concept · no video selected',
+          title: 'The non-pixel version.',
+          body: '<p>The finished interaction opens Glen’s chosen calisthenics clip here, with a link to the full Instagram profile.</p><div class="clip-placeholder">Real clip goes here once selected.<br>No video is connected to this sketch.</div><p>Play after activation. Close to return to the same place in the scene.</p><a href="https://www.instagram.com/glen.padua/" target="_blank" rel="noopener noreferrer">Glen on Instagram ↗</a>',
+        },
+        travel: {
+          kind: 'Personal story · content to choose',
+          title: 'A note from the road.',
+          body: '<p>This object could reveal a short real memory, photograph, or travel post. The story and place should come from Glen.</p><p>For the final coast, we can replace the second exercise pose with a quieter moment: different clothes, a bag, and a football.</p>',
+        },
+        remote: {
+          kind: 'Public professional context',
+          title: 'Remote. Yes, remotely.',
+          body: '<p>Glen is a senior engineer at Remote.com, with over ten years of software experience overall.</p><p>The final screen can explain selected contributions alongside an illustrative team-chat, code, and AI workflow. This sketch contains no private Slack content, internal code, or invented results.</p><a href="https://remote.com" target="_blank" rel="noopener noreferrer">Remote.com ↗</a>',
+        },
+        ai: {
+          kind: 'AI guide · scripted concept',
+          title: 'I’m the AI one.',
+          body: '<p>What would you like to know?</p><p><strong>Visitor:</strong> What’s Staypal?</p><p><strong>Example reply:</strong> It’s Glen’s hosting project idea. He’s exploring whether the useful next step is a product, a small tool, or custom automation work for hosts. Its current readiness still needs confirming.</p><p class="muted">Future: type a question, receive a grounded reply, ask a follow-up. No model, microphone, or chat storage is connected here.</p>',
+        },
+        deck: {
+          kind: 'A nod to the original site',
+          title: 'Still have a few cards.',
+          body: '<p>The old skills page makes a deck of cards do the browsing. That same idea now informs the room: the monitor is the portfolio and the books lead to the stories.</p><a href="https://glenpadua.com/skills" target="_blank" rel="noopener noreferrer">The original deck ↗</a>',
+        },
+        website: {
+          kind: 'Existing experiment · proposed project presentation',
+          title: 'Making this little world.',
+          body: '<p>The actual site studies give us material: arm motion that needed fixing, the bar’s depth order, the smaller beach sprite, and incoming waves.</p><p>A project detail or interactive essay could let readers compare those iterations and inspect the decisions. A finished before/after viewer is not built here.</p><a href="README.md">Read the storyboard ↗</a>',
+        },
+        staypal: {
+          kind: 'Illustrative opportunity · not a product launch',
+          title: 'There might be something here.',
+          body: '<p>A useful host tool could help with one concrete question: income and costs, repetitive admin, or guest-message handling.</p><p>After using it, a host might try a product if it is ready, or discuss custom work around their existing systems. Neither path is committed. The tool should be useful before asking for contact details.</p>',
+        },
+        lottery: {
+          kind: 'Existing essay · 2020',
+          title: 'The Lottery of Birth',
+          body: '<p>An existing personal story. A future treatment could use illustrated chapters, actual photographs, and optional contextual notes while keeping Glen’s words and reading order intact.</p><a href="https://glenpadua.com/blog/lottery-of-birth" target="_blank" rel="noopener noreferrer">Read the original ↗</a>',
+        },
+        bone: {
+          kind: 'Existing essay · 2020',
+          title: 'Bone to be Wild',
+          body: '<p>An existing story with episode-like framing, humour, and a change of perspective. The visual treatment should give that rhythm space rather than add an interaction to every paragraph.</p><a href="https://glenpadua.com/blog/bone-to-be-wild" target="_blank" rel="noopener noreferrer">Read the original ↗</a>',
+        },
+        job: {
+          kind: 'Existing essay · 2022',
+          title: 'Do you have an ideal dream job?',
+          body: '<p>A possible interactive treatment: explore the four factors in the original essay—time, money, health, and happiness. Let a reader reflect on the tradeoffs without presenting a made-up scientific score.</p><p>The original remains a 2022 account; its location and opinions should not silently become current biography.</p><a href="https://glenpadua.com/blog/do-you-have-an-ideal-dream-job" target="_blank" rel="noopener noreferrer">Read the original ↗</a>',
+        },
+      };
+      let selectedProject = 0,
+        lastTrigger = null;
+      const dialog = document.querySelector('#dialog');
+      function showView(name, push = true) {
+        if (!['home', 'work', 'stories', 'direction'].includes(name))
+          name = 'home';
+        document
+          .querySelectorAll('[data-view]')
+          .forEach(el => (el.hidden = el.dataset.view !== name));
+        document
+          .querySelectorAll('[data-tab]')
+          .forEach(el =>
+            el.setAttribute('aria-pressed', String(el.dataset.tab === name)),
+          );
+        if (push) {
+          history.pushState(null, '', '#' + name);
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+      }
+      function updateProject() {
+        const p = projects[selectedProject];
+        document.querySelector('#project-name').textContent = p.name;
+        document.querySelector('#project-kind').textContent = p.kind;
+        document.querySelector('#project-description').textContent =
+          p.description;
+        document.querySelector('#project-open').textContent = p.action;
+        document.querySelector('#project-count').textContent =
+          String(selectedProject + 1).padStart(2, '0') + ' / 03';
+      }
+      function openPanel(key, trigger) {
+        const p = panels[key];
+        if (!p) return;
+        lastTrigger = trigger;
+        document.querySelector('#dialog-kind').textContent = p.kind;
+        document.querySelector('#dialog-title').textContent = p.title;
+        document.querySelector('#dialog-content').innerHTML = p.body;
+        dialog.hidden = false;
+        document.querySelector('main').inert = true;
+        document.querySelector('.masthead').inert = true;
+        document.body.style.overflow = 'hidden';
+        document.querySelector('#close-dialog').focus();
+      }
+      function closePanel() {
+        dialog.hidden = true;
+        document.querySelector('main').inert = false;
+        document.querySelector('.masthead').inert = false;
+        document.body.style.overflow = '';
+        lastTrigger?.focus();
+      }
+      document.querySelectorAll('[data-tab],[data-nav]').forEach(el =>
+        el.addEventListener('click', e => {
+          e.preventDefault();
+          showView(el.dataset.tab || el.dataset.nav);
+        }),
+      );
+      document
+        .querySelectorAll('[data-dialog]')
+        .forEach(el =>
+          el.addEventListener('click', () => openPanel(el.dataset.dialog, el)),
+        );
+      document.querySelector('#previous').addEventListener('click', () => {
+        selectedProject =
+          (selectedProject + projects.length - 1) % projects.length;
+        updateProject();
+      });
+      document.querySelector('#next').addEventListener('click', () => {
+        selectedProject = (selectedProject + 1) % projects.length;
+        updateProject();
+      });
+      document
+        .querySelector('#project-open')
+        .addEventListener('click', e =>
+          openPanel(projects[selectedProject].dialog, e.currentTarget),
+        );
+      document
+        .querySelector('#close-dialog')
+        .addEventListener('click', closePanel);
+      dialog.addEventListener('click', e => {
+        if (e.target === dialog) closePanel();
+      });
+      dialog.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+          closePanel();
+          return;
+        }
+        if (e.key === 'Tab') {
+          const controls = [...dialog.querySelectorAll('button,a[href]')];
+          const first = controls[0],
+            last = controls[controls.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      });
+      document.querySelector('#football').addEventListener('click', e => {
+        e.currentTarget.classList.remove('kick');
+        requestAnimationFrame(() => e.currentTarget.classList.add('kick'));
+      });
+      document
+        .querySelector('#football')
+        .addEventListener('animationend', e =>
+          e.currentTarget.classList.remove('kick'),
+        );
+      document.querySelector('#motion').addEventListener('click', e => {
+        const paused = document.body.classList.toggle('paused');
+        e.currentTarget.setAttribute('aria-pressed', String(paused));
+        e.currentTarget.textContent = paused ? 'Resume cues' : 'Pause cues';
+      });
+      window.addEventListener('popstate', () =>
+        showView(location.hash.slice(1), false),
+      );
+      showView(location.hash.slice(1), false);
+    </script>
+  </body>
+</html>

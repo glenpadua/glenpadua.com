@@ -1,0 +1,486 @@
+/* Immersive room mock. Geometry is separate from copy and disclosure content. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+button:focus-visible {
+  outline: 3px solid #ac4b28;
+  outline-offset: 5px;
+}
+button.cue {
+  border: 0;
+  background: none;
+  padding: 0;
+  font-family: var(--sans);
+  cursor: pointer;
+}
+body:not([data-page='home']) .site-header {
+  padding: 20px 4%;
+  color: #263b33;
+}
+body:not([data-page='home']) .site-header .signature,
+body:not([data-page='home']) .site-header nav {
+  background: #f6ecd8ed;
+  border-radius: 3px;
+  padding: 7px 15px;
+  box-shadow: 0 2px 15px #1b272915;
+}
+body:not([data-page='home']) .site-header nav {
+  gap: 25px;
+}
+body:not([data-page='home']) .site-header nav a {
+  padding: 4px 0;
+  min-height: 30px;
+}
+.room-page {
+  height: 100svh;
+  min-height: 560px;
+  overflow: hidden;
+}
+.immersive-room {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background: #907855;
+}
+.room-stage {
+  position: absolute;
+  width: max(100vw, 150svh);
+  height: max(66.6667vw, 100svh);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  container-type: inline-size;
+}
+.room-stage .work-art,
+.room-stage .writing-art {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: -1;
+}
+.room-stage .cue {
+  left: var(--x);
+  top: var(--y);
+}
+.monitor-button {
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font-family: var(--sans);
+  cursor: pointer;
+}
+.monitor-content {
+  top: 19%;
+  height: 24%;
+  padding: 1.2% 1.7%;
+}
+.monitor-content .screen-top {
+  font-size: 0.65cqw;
+  padding-bottom: 0.5cqw;
+}
+.monitor-content .screen-content {
+  padding-top: 1.1cqw;
+}
+.monitor-content .eyebrow {
+  font-size: 0.7cqw;
+}
+.monitor-title {
+  display: block;
+  font: 3cqw/1.2 var(--serif);
+  letter-spacing: -0.04em;
+  margin: 0.4cqw 0 0.7cqw;
+}
+.monitor-content .screen-joke {
+  display: block;
+  font-size: 1cqw;
+}
+.monitor-indicator {
+  position: absolute;
+  right: 5%;
+  bottom: 12%;
+  font-size: 1.6cqw;
+}
+.laptop-profile {
+  position: absolute;
+  left: 15.8%;
+  top: 47.3%;
+  width: 13.3%;
+  height: 13.2%;
+  transform: rotate(-7deg);
+  border: 1px solid #6b7787;
+  background: #253346;
+  color: #e8edf0;
+  padding: 1%;
+  text-align: left;
+  font-family: var(--sans);
+  cursor: pointer;
+  box-shadow: 0 0 8px #20293d;
+}
+.laptop-profile span,
+.laptop-profile strong {
+  display: block;
+}
+.slack-bar {
+  font-size: 0.63cqw;
+  border-bottom: 1px solid #566176;
+  padding-bottom: 0.35cqw;
+}
+.slack-person {
+  font-size: 0.69cqw;
+  margin-top: 0.65cqw;
+  color: #acd5bd;
+}
+.laptop-profile strong {
+  font-size: 0.84cqw;
+  line-height: 1.2;
+  margin: 0.3cqw 0;
+}
+.slack-status {
+  font-size: 0.6cqw;
+  color: #bec8d6;
+}
+.work-room .cue {
+  font-size: 10px;
+}
+.work-room .cue-label {
+  font-size: 10px;
+}
+.writing-room .paper-spread {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  display: block;
+}
+.writing-room .article-paper {
+  padding: 1.9% 2%;
+}
+.writing-room .article-paper h2 {
+  font-size: 2.35cqw;
+}
+.writing-room .paper-meta {
+  font-size: 0.67cqw;
+}
+.writing-room .paper-bottom {
+  font-size: 0.75cqw;
+}
+.writing-room .cue {
+  flex-direction: column;
+  gap: 4px;
+}
+.writing-room .paper-1,
+.writing-room .paper-2 {
+  top: 12%;
+  height: 32%;
+}
+.detail-dialog {
+  width: min(620px, calc(100vw - 32px));
+  max-height: calc(100svh - 48px);
+  padding: 48px;
+  border: 1px solid #d6c6a6;
+  border-radius: 8px;
+  color: var(--ink);
+  background: #f7efdc;
+  box-shadow: 0 25px 100px #16242f55;
+  overflow: auto;
+}
+.detail-dialog::backdrop {
+  background: #14282b80;
+  backdrop-filter: blur(5px);
+}
+.dialog-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #b5b19a;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  font-size: 25px;
+  cursor: pointer;
+}
+.detail-dialog h2 {
+  font-size: 42px;
+  margin: 18px 0 24px;
+}
+.dialog-body > p:not(.eyebrow),
+.detail-projects article > p:not(.eyebrow) {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 15px 0;
+}
+.detail-link {
+  display: inline-block;
+  border-bottom: 1px solid currentColor;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 6px 0;
+}
+.detail-projects article {
+  border-top: 1px solid #cdc3a9;
+  padding: 22px 0;
+}
+.detail-projects h3 {
+  font: 28px var(--serif);
+  margin: 8px 0;
+}
+.detail-state {
+  color: var(--muted);
+  font-size: 12px;
+}
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+@media (max-width: 760px) {
+  body:not([data-page='home']) .site-header {
+    padding: 17px 4%;
+    gap: 10px;
+  }
+  body:not([data-page='home']) .site-header .signature {
+    font-size: 21px;
+    padding: 8px 10px;
+  }
+  body:not([data-page='home']) .site-header nav {
+    gap: 16px;
+    padding: 7px 10px;
+  }
+  .room-page {
+    min-height: 700px;
+  }
+  .work-room .room-stage {
+    width: 100%;
+    height: 100%;
+  }
+  .work-room .work-art {
+    object-fit: cover;
+  }
+  .monitor-content {
+    left: 22%;
+    top: 23%;
+    width: 61%;
+    height: 23%;
+    padding: 2% 3%;
+  }
+  .monitor-content .screen-top {
+    font-size: 1.4cqw;
+  }
+  .monitor-content .screen-content {
+    padding-top: 2cqw;
+  }
+  .monitor-content .eyebrow {
+    display: block;
+    font-size: 1.5cqw;
+  }
+  .monitor-title {
+    font-size: 5.5cqw;
+    margin: 2cqw 0;
+  }
+  .monitor-content .screen-joke {
+    font-size: 2.4cqw;
+  }
+  .monitor-indicator {
+    font-size: 4cqw;
+  }
+  .laptop-profile {
+    left: 5%;
+    top: 49%;
+    width: 25%;
+    height: 13%;
+    padding: 2%;
+  }
+  .slack-bar {
+    font-size: 1.5cqw;
+  }
+  .slack-person {
+    font-size: 1.6cqw;
+    margin-top: 2cqw;
+  }
+  .laptop-profile strong {
+    font-size: 2cqw;
+  }
+  .slack-status {
+    font-size: 1.5cqw;
+  }
+  .work-room .cue:nth-last-child(4) {
+    left: 16%;
+    top: 65%;
+  }
+  .work-room .cue:nth-last-child(3) {
+    left: 75%;
+    top: 43%;
+  }
+  .work-room .cue:nth-last-child(2) {
+    left: 88%;
+    top: 55%;
+  }
+  .work-room .cue:last-child {
+    left: 83%;
+    top: 79%;
+  }
+  .work-room .cue {
+    flex-direction: column;
+    gap: 3px;
+  }
+  .work-room .cue-label {
+    font-size: 8px;
+  }
+  .work-room .cue-dot {
+    width: 25px;
+    height: 25px;
+  }
+  .writing-room .room-stage {
+    width: 100%;
+    height: 100%;
+  }
+  .writing-room .writing-art {
+    object-fit: cover;
+    object-position: center bottom;
+  }
+  .writing-room .paper-spread {
+    position: absolute;
+    inset: 100px 7% 25%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 15px;
+  }
+  .writing-room .article-paper {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 13px 12px;
+    transform: rotate(calc(var(--r) * 0.4));
+    min-height: 0;
+  }
+  .writing-room .article-paper h2 {
+    font-size: clamp(18px, 4.7vw, 27px);
+    margin: 12px 0;
+  }
+  .writing-room .paper-meta {
+    font-size: 7px;
+  }
+  .writing-room .paper-art {
+    min-height: 20px;
+  }
+  .writing-room .paper-bottom {
+    font-size: 8px;
+  }
+  .writing-room .paper-arrow {
+    width: 19px;
+    height: 19px;
+    font-size: 11px;
+  }
+  .writing-room .cue {
+    top: auto;
+    bottom: 12%;
+    left: 82%;
+    transform: translateX(-50%);
+  }
+  .writing-room .cue.planned {
+    bottom: 4%;
+  }
+  .writing-room .cue-label {
+    font-size: 9px;
+  }
+  .detail-dialog {
+    padding: 48px 25px 28px;
+  }
+  .detail-dialog h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 760px) {
+  .work-room {
+    background: #8e817b;
+  }
+  .work-room .room-stage {
+    width: max(100vw, 56.67svh);
+    height: max(150vw, 85svh);
+    top: auto;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  .work-room .room-stage:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    height: 12%;
+    background: linear-gradient(#8e817b, transparent);
+    pointer-events: none;
+  }
+  .work-room .work-art {
+    object-fit: fill;
+  }
+  .work-room .monitor-content {
+    left: 24%;
+    top: 31%;
+    width: 52%;
+    height: 14%;
+  }
+  .work-room .monitor-content .screen-top {
+    font-size: 1.2cqw;
+  }
+  .work-room .monitor-content .eyebrow {
+    font-size: 1.25cqw;
+  }
+  .work-room .monitor-title {
+    font-size: 4.1cqw;
+    margin: 1cqw 0;
+  }
+  .work-room .monitor-content .screen-joke {
+    font-size: 1.8cqw;
+  }
+  .work-room .laptop-profile {
+    left: 7%;
+    top: 48%;
+    width: 15%;
+    height: 7.5%;
+  }
+  .work-room .slack-bar {
+    font-size: 1cqw;
+  }
+  .work-room .slack-person {
+    font-size: 1cqw;
+    margin-top: 0.6cqw;
+  }
+  .work-room .laptop-profile strong {
+    font-size: 1.15cqw;
+  }
+  .work-room .slack-status {
+    display: none;
+  }
+  .work-room .cue:nth-last-child(4) {
+    left: 17%;
+    top: 60%;
+  }
+  .work-room .cue:nth-last-child(3) {
+    left: 67%;
+    top: 45%;
+  }
+  .work-room .cue:nth-last-child(2) {
+    left: 85%;
+    top: 53%;
+  }
+  .work-room .cue:last-child {
+    left: 85%;
+    top: 67%;
+  }
+}

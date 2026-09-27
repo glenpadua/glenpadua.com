@@ -2,7 +2,7 @@
 
 Website direction · Glen Padua · 26 September 2026
 
-This is the creative and strategic direction for the next glenpadua.com. It records intent, not a finished design or an implementation prescription. The first scene will help establish the visual language before the whole site is planned and built.
+This is the creative and strategic direction for the next glenpadua.com. It records intent, not a finished design or an implementation prescription. The original first-scene experiment has since grown into a three-scene preview with separate Work and Stories rooms. [Current creative direction](docs/website-direction.md) records the decisions made since this manifesto; [the architecture guide](docs/website-architecture.md) describes implementation.
 
 ## Why I am rebuilding
 
@@ -84,9 +84,9 @@ Performance, accessibility, and responsiveness are qualities of the finished des
 
 Choose technology by what the experience needs and what testing demonstrates. Three.js, layered artwork, sprites, CSS, canvas, and other approaches remain available. This manifesto commits to an experience and a quality standard; the renderer is still an open decision.
 
-## Prove one scene, then design the world
+## Original approach: prove one scene, then design the world
 
-The next step is one working scene based on the lakeside calisthenics reference. It is a test of how much can be achieved in a focused first pass and where careful refinement makes the difference.
+The original next step was one working scene based on the lakeside calisthenics reference. It is a test of how much can be achieved in a focused first pass and where careful refinement makes the difference.
 
 That scene should combine the landscape, a recognizable animated character performing one convincing exercise, restrained depth and environmental motion, and a real content area introducing me with a useful next action. Start with one exercise loop; additional activities can follow once the character and movement hold together.
 
@@ -102,7 +102,7 @@ Record what the first pass achieved, what remains approximate, and what needs ne
 
 Once that base feels right, plan the broader experience: content hierarchy, scene concepts, visual references, character states, transitions, responsive compositions, and the path from discovering work to making contact. Then design and build the full site with those decisions in place.
 
-The final scene list, navigation model, renderer, asset workflow, and consulting copy remain open. This document should guide those choices without pretending they have already been made.
+The preview now has an agreed scene list and navigation model, recorded in the current direction. Renderer experiments, animation refinement and consulting copy continue to evolve. This manifesto supplies the quality standard for those decisions.
 
 ## What success looks like
 

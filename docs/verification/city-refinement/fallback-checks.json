@@ -1,0 +1,25 @@
+{
+  "failedArtwork": {
+    "static": 1,
+    "lampVisible": false
+  },
+  "failedUnlit": {
+    "lampVisible": false,
+    "originalLoaded": true
+  },
+  "nojs": {
+    "title": "Nothing urgent.\nFor a change.",
+    "fallbacks": 1,
+    "work": true,
+    "stories": true
+  },
+  "canvasUnavailable": {
+    "cloudReady": null,
+    "backgroundLoaded": true
+  },
+  "deepLink": {
+    "visible": "visible",
+    "scroll": 1688,
+    "titleFont": "\"Diorama Lora\", Georgia, \"Times New Roman\", serif"
+  }
+}

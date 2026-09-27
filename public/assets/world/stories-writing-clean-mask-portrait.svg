@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1600" viewBox="0 0 800 1600">
+  <defs><filter id="edge" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2"/></filter></defs>
+  <path d="M 436 1282 L 480 1241 L 528 1240 L 589 1272 L 617 1334 L 652 1389 L 707 1445 L 717 1495 L 619 1521 L 590 1443 L 554 1418 L 494 1395 L 479 1368 L 462 1343 L 445 1316 Z" fill="white" stroke="white" stroke-width="12" stroke-linejoin="round" filter="url(#edge)"/>
+</svg>

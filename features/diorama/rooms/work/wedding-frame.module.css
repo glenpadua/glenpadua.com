@@ -1,0 +1,118 @@
+/* Replaces the pinned landscape above the lamp in each original painting. */
+.frame {
+  position: absolute;
+  left: 16.08%;
+  top: 13.67%;
+  width: 7.23%;
+  height: 9.77%;
+  border-radius: 0.08cqw;
+  background: #988875;
+  box-shadow: 0.08cqw 0.12cqw 0.18cqw #542c3429;
+}
+
+.frame::after {
+  content: '';
+  position: absolute;
+  top: -0.22cqw;
+  left: calc(50% - 0.13cqw);
+  width: 0.26cqw;
+  height: 0.5cqw;
+  border-radius: 50%;
+  background: #9c8063;
+  box-shadow: 0.04cqw 0.08cqw 0.08cqw #513c3159;
+  pointer-events: none;
+}
+
+.picture {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #ede1c4;
+}
+
+.portrait {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Printed artwork receives the room's subdued, warm ambient light. */
+  filter: brightness(0.78) saturate(0.68) contrast(0.88) sepia(0.12);
+  transform: scale(1.035);
+  animation: weddingPortraitDrift 14s ease-in-out infinite alternate;
+}
+
+.monogram {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font: italic 500 1.5cqw var(--world-heading-font);
+  color: #6b4c36;
+}
+
+:global(.world) .frame .link {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  border-radius: 2px;
+}
+
+.link :global(.world-cue-dot) {
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+}
+
+.link :global(.world-cue-label) {
+  left: 0;
+  top: calc(100% + 7px);
+  --cue-label-x: 0%;
+}
+
+@keyframes weddingPortraitDrift {
+  from {
+    transform: scale(1.035) translateX(-0.35%);
+  }
+  to {
+    transform: scale(1.075) translateX(0.35%);
+  }
+}
+
+@media (max-width: 760px) {
+  .frame {
+    left: 16%;
+    top: 11.94%;
+    width: 11.25%;
+    height: 5.5%;
+  }
+
+  .monogram {
+    font-size: 2.4cqw;
+  }
+}
+
+/* Follow the painted wall position as the room crops. At the viewport edge,
+   constrain the frame to the wall space left of the monitor, without a jump
+   to a different height or a separate tablet composition. */
+@media (min-width: 761px) {
+  .frame {
+    left: max(16.08%, calc(50% - 50vw));
+    width: min(7.23%, max(44px, calc(50vw - 19.2cqw - 12px)));
+    height: auto;
+    aspect-ratio: 1.11;
+  }
+
+  .picture {
+    position: absolute;
+    inset: 0;
+    width: auto;
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait {
+    animation: none;
+  }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+  <defs>
+    <linearGradient id="wrist" x1="0" y1="735" x2="0" y2="766" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="edge" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.5"/></filter>
+  </defs>
+  <path d="M575 719 L581 691 L598 679 L616 676 L623 664 Q634 658 642 667 L646 681 L659 681 L673 693 L674 718 L656 735 L628 746 L600 761 L582 780 L564 768 Z" fill="url(#wrist)" filter="url(#edge)"/>
+</svg>

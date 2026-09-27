@@ -1,0 +1,102 @@
+[
+  {
+    "ms": 9,
+    "file": "00.jpg",
+    "opacity": "0"
+  },
+  {
+    "ms": 242,
+    "file": "01.jpg",
+    "opacity": "0"
+  },
+  {
+    "ms": 442,
+    "file": "02.jpg",
+    "opacity": "0"
+  },
+  {
+    "ms": 648,
+    "file": "03.jpg",
+    "opacity": "0"
+  },
+  {
+    "ms": 851,
+    "file": "04.jpg",
+    "opacity": "1"
+  },
+  {
+    "ms": 1052,
+    "file": "05.jpg",
+    "opacity": "1"
+  },
+  {
+    "ms": 1256,
+    "file": "06.jpg",
+    "opacity": "0"
+  },
+  {
+    "ms": 1460,
+    "file": "07.jpg",
+    "opacity": "0"
+  },
+  {
+    "ms": 1660,
+    "file": "08.jpg",
+    "opacity": "0"
+  },
+  {
+    "ms": 1865,
+    "file": "09.jpg",
+    "opacity": "1"
+  },
+  {
+    "ms": 2064,
+    "file": "10.jpg",
+    "opacity": "1"
+  },
+  {
+    "ms": 2264,
+    "file": "11.jpg",
+    "opacity": "0"
+  },
+  {
+    "ms": 2461,
+    "file": "12.jpg",
+    "opacity": "0"
+  },
+  {
+    "ms": 2667,
+    "file": "13.jpg",
+    "opacity": "0"
+  },
+  {
+    "ms": 2874,
+    "file": "14.jpg",
+    "opacity": "0"
+  },
+  {
+    "ms": 3074,
+    "file": "15.jpg",
+    "opacity": "0"
+  },
+  {
+    "ms": 3277,
+    "file": "16.jpg",
+    "opacity": "0"
+  },
+  {
+    "ms": 3481,
+    "file": "17.jpg",
+    "opacity": "1"
+  },
+  {
+    "ms": 3683,
+    "file": "18.jpg",
+    "opacity": "1"
+  },
+  {
+    "ms": 3885,
+    "file": "19.jpg",
+    "opacity": "0"
+  }
+]

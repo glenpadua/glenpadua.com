@@ -1,0 +1,211 @@
+{
+  "errors": [],
+  "movingChanged": true,
+  "pausedStopped": true,
+  "inactiveStopped": true,
+  "reducedStopped": true,
+  "keyboardOff": "false",
+  "keyboardOn": "true",
+  "repeatedToggle": "false",
+  "lightAfterReturn": "false",
+  "stories": "http://127.0.0.1:3102/preview/diorama/stories",
+  "work": "http://127.0.0.1:3102/preview/diorama/work",
+  "viewports": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "overflow": false,
+      "cues": [
+        {
+          "label": "Stories",
+          "rect": {
+            "x": 122.109375,
+            "y": 674.578125,
+            "width": 44,
+            "height": 44,
+            "top": 674.578125,
+            "right": 166.109375,
+            "bottom": 718.578125,
+            "left": 122.109375
+          }
+        },
+        {
+          "label": "Work",
+          "rect": {
+            "x": 314.5625,
+            "y": 669.109375,
+            "width": 44,
+            "height": 44,
+            "top": 669.109375,
+            "right": 358.5625,
+            "bottom": 713.109375,
+            "left": 314.5625
+          }
+        },
+        {
+          "label": "Turn the terrace lantern off",
+          "rect": {
+            "x": 64.78125,
+            "y": 729.171875,
+            "width": 44,
+            "height": 44,
+            "top": 729.171875,
+            "right": 108.78125,
+            "bottom": 773.171875,
+            "left": 64.78125
+          }
+        }
+      ]
+    },
+    {
+      "viewport": [
+        320,
+        740
+      ],
+      "overflow": false,
+      "cues": [
+        {
+          "label": "Stories",
+          "rect": {
+            "x": 96.234375,
+            "y": 597.03125,
+            "width": 44,
+            "height": 44,
+            "top": 597.03125,
+            "right": 140.234375,
+            "bottom": 641.03125,
+            "left": 96.234375
+          }
+        },
+        {
+          "label": "Work",
+          "rect": {
+            "x": 254.15625,
+            "y": 592.546875,
+            "width": 44,
+            "height": 44,
+            "top": 592.546875,
+            "right": 298.15625,
+            "bottom": 636.546875,
+            "left": 254.15625
+          }
+        },
+        {
+          "label": "Turn the terrace lantern off",
+          "rect": {
+            "x": 49.203125,
+            "y": 641.828125,
+            "width": 44,
+            "height": 44,
+            "top": 641.828125,
+            "right": 93.203125,
+            "bottom": 685.828125,
+            "left": 49.203125
+          }
+        }
+      ]
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "overflow": false,
+      "cues": [
+        {
+          "label": "Stories",
+          "rect": {
+            "x": 277.515625,
+            "y": 746,
+            "width": 44,
+            "height": 44,
+            "top": 746,
+            "right": 321.515625,
+            "bottom": 790,
+            "left": 277.515625
+          }
+        },
+        {
+          "label": "Work",
+          "rect": {
+            "x": 646.15625,
+            "y": 735.75,
+            "width": 44,
+            "height": 44,
+            "top": 735.75,
+            "right": 690.15625,
+            "bottom": 779.75,
+            "left": 646.15625
+          }
+        },
+        {
+          "label": "Turn the terrace lantern off",
+          "rect": {
+            "x": 170,
+            "y": 827.90625,
+            "width": 44,
+            "height": 44,
+            "top": 827.90625,
+            "right": 214,
+            "bottom": 871.90625,
+            "left": 170
+          }
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "cues": [
+        {
+          "label": "Stories",
+          "rect": {
+            "x": 867.59375,
+            "y": 484.65625,
+            "width": 44,
+            "height": 44,
+            "top": 484.65625,
+            "right": 911.59375,
+            "bottom": 528.65625,
+            "left": 867.59375
+          }
+        },
+        {
+          "label": "Work",
+          "rect": {
+            "x": 1174.796875,
+            "y": 476.125,
+            "width": 44,
+            "height": 44,
+            "top": 476.125,
+            "right": 1218.796875,
+            "bottom": 520.125,
+            "left": 1174.796875
+          }
+        },
+        {
+          "label": "Turn the terrace lantern off",
+          "rect": {
+            "x": 778,
+            "y": 552.921875,
+            "width": 44,
+            "height": 44,
+            "top": 552.921875,
+            "right": 822,
+            "bottom": 596.921875,
+            "left": 778
+          }
+        }
+      ]
+    }
+  ],
+  "fallbackResult": {
+    "static": 0,
+    "lampVisible": false
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "date": "2026-09-27",
+  "generator": "Built-in image generation",
+  "preparation": "scripts/prepare-diorama-motion.mjs",
+  "anatomy": "Glen's anatomical LEFT prosthesis remains viewer-right when front-facing. No mirroring or procedural limb deformation.",
+  "records": [
+    {
+      "asset": "public/assets/world/pullup-motion-v2.webp",
+      "original": "/Users/glen/.codex/generated_images/01a0df7a-c5ab-7c32-a9ce-6c1d06419986/exec-172538bb-5d58-4f48-a86e-c7949bfdd8b6.png",
+      "reference": "public/assets/world/lake-character.webp",
+      "processing": "Four poses registered to one fixed apparatus; inner bar crop retained for finger/face occlusion.",
+      "prompt": "Production sprite sheet: exactly FOUR equal square frames in a 2 by 2 grid. Transparent background, no haze, no colored backing, no scene, no labels. Reference image supplies Glen's exact identity/style/clothes/prosthesis and green exercise bar. Draw Glen doing a REAL strict PULL-UP with that complete green apparatus in each frame. Make the bar taller than the reference so there is room for full hanging extension. IMPORTANT ALL FOUR FRAMES: same stationary apparatus, same scale and viewpoint, same grip positions; bar horizontally across each square at 40% height, poles left/right reaching94%height, hands at x34% and66% on the bar. Apparatus is exactly identical in every frame. Every body pose is complete with coherent anatomy, no cut-off parts.\nFRAME1 upper-left: DEAD HANG. Both arms reach straight UP vertically to the bar. Glen's ENTIRE HEAD is BELOW the bar, no hair above bar, shoulders below head, feet near bottom. \nFRAME2 upper-right: QUARTER PULL-UP. Same hands glued to bar, elbows bend, head and whole body rise somewhat; bar still above his eyes.\nFRAME3 lower-left: HALF PULL-UP. Hands fixed, elbows bend further, head and whole body higher; bar now across lower face, clearly IN FRONT OF face but BEHIND gripping fingers.\nFRAME4 lower-right: TOP PULL-UP. Chin clearly ABOVE the bar, entire head ABOVE the bar, shoulders near bar, elbows bent downward, feet lifted higher. Whole torso/legs have risen; head/body proportions constant.\nGlen's anatomical LEFT leg is the mechanical prosthesis on VIEWER RIGHT, unchanged across allframes; natural leg on viewerleft. Same sage tank/dark shorts/tan shoes, original friendly chibi game-art appearance. Legs hang together and do not kick. No mirroring, no growth of limbs, no ghosted previous poses. This must read as ascending through one actual pull-up, NOT standing and waving arms or flexing biceps. Leave generous blank transparent space above the first frame head as needed so all bodies fit inside their fixed frames."
+    },
+    {
+      "asset": "public/assets/world/football-motion-v2.webp",
+      "original": "/Users/glen/.codex/generated_images/01a0df7a-c5ab-7c32-a9ce-6c1d06419986/exec-e6aeb046-04a1-4434-b9d3-1ebc88a653eb.png",
+      "reference": "public/assets/world/beach-character.webp",
+      "processing": "Three poses registered at natural shoe; 3:1 atlas; no mirrored or warped limbs.",
+      "prompt": "Animation production: THREE frames in ONE horizontal strip, three equal square cells, total aspect ratio3:1, transparent background. Input is identity/style reference, not a pose to copy three times. Draw a CLEAR FOOTBALL SOLE-ROLL with substantially different LEFT knee/foot/ball positions in the three frames. Glen's anatomical LEFT leg is prosthetic, viewer RIGHT, no mirroring. Plant his natural right shoe on viewer left at exactly the same spot in all three frames. Same head/torso/hips registration, no zoom, same hair/sunglasses/shirtless darkshorts/chibi art. \nFrame1: left prosthetic knee bent, left shoe resting on TOP of ball close beside him (ball center at66%width,88%height).\nFrame2: left knee extends outward toward viewer right and rolls ball 10% of cellwidth farther right (center76%width,88%height). Rigid mechanical shin moves as one solid piece, foot stays flat on ball top.\nFrame3: ball halfway back (center71%width,88%height), left knee correspondingly halfway bent.\nAll balls SAME size, all bottoms same ground line; planted natural right shoe and shadow do not move. Clear 50-pixel ball travel in512px cell, not imperceptible. Whole anatomy coherent, real connected joints, no stretch. Hands move slightly for balance. Keep all feet/ball within their cells. Blank transparent pixels around each character, no colored backdrop, text, grid, scenery or borders."
+    },
+    {
+      "asset": "public/assets/world/typing-desktop-v2.webp",
+      "original": "/Users/glen/.codex/generated_images/01a0df7a-c5ab-7c32-a9ce-6c1d06419986/exec-ab130d0d-a1ea-4137-98f0-f6dff36dc71d.png",
+      "reference": "docs/mock/assets/work-arsenal.png",
+      "processing": "Resize and WebP encoding; CSS reveals only fingers.",
+      "prompt": "Use case: precise-object-edit. This is one alternate animation frame for the exact supplied workstation painting, 1536x1024. Keep EVERY object, outline, viewpoint, camera, image registration, head, torso, sleeves, chair, monitor, laptop, lamp, scarf and room in exactly the same pixel positions. Change ONLY the fingers and upper part of both hands on the keyboard: Glen is mid-typing, left index and middle fingers lightly lifted about one key height while the right fingertips press nearby keys. Palms/wrists stay planted at exactly the original keyboard contact points. Relaxed anatomically correct complete hands with five fingers, no ghosted previous fingers. This will alternate with the original frame. Keep forearms and wrist outlines unchanged, same skin tone, line style, shadows and room lighting. NO text or new objects, no restyling. Match original canvas ratio exactly."
+    },
+    {
+      "asset": "public/assets/world/typing-portrait-v2.webp",
+      "original": "/Users/glen/.codex/generated_images/01a0df7a-c5ab-7c32-a9ce-6c1d06419986/exec-a6907452-58f1-4e7a-b477-08dc22b1a9a8.png",
+      "reference": "public/assets/world/work-portrait-v1.webp",
+      "processing": "Resize and WebP encoding; CSS reveals only fingers.",
+      "prompt": "Use case: precise-object-edit. Exact alternate animation frame of the supplied portrait workstation illustration. Keep the image composition, dimensions, registration, every object, head, torso, chair, keyboard, background and all outlines in exactly the same positions. Change ONLY fingers of Glen's two hands typing on the keyboard. Left index/middle fingers rise by one key height while right fingertips press adjacent keys. Keep both wrists and palms on their original contact points, sleeves/forearms unchanged. Five fingers, coherent hands, modest movement, no duplicates. Match original style, colors, light and 1:2 ratio exactly. Do not add or remove any object or text."
+    },
+    {
+      "asset": "public/assets/world/writing-desktop-v2.webp",
+      "original": "/Users/glen/.codex/generated_images/01a0df7a-c5ab-7c32-a9ce-6c1d06419986/exec-f606d73c-1199-4fe2-9624-eac437b78d16.png",
+      "reference": "docs/mock/assets/writing.png",
+      "processing": "Resize and WebP encoding; CSS crop covers old and new pen.",
+      "prompt": "Use case: precise-object-edit. Make one precise alternate animation frame of the supplied overhead writing-desk painting. Keep the entire scene pixel-registered, same exact 1536x1024 canvas, same desk, left hand, page position, crown/hair, sleeves, lamp, plants, coffee and papers. Change ONLY Glen's RIGHT writing hand and the pen as he makes a small natural writing stroke: move the pen tip roughly 20px to the RIGHT along the current handwritten line, very slightly upwards (3px), with a coherent complete hand following it; the wrist and lower forearm remain approximately fixed, only fingers/hand pivot naturally. Keep the pen's nib touching the paper, the paper held still by his left hand. Never add fingers, ghost outlines or new objects. Preserve the exact original palette/style/lighting and character anatomy. This will alternate with the supplied frame as a subtle writing action."
+    },
+    {
+      "asset": "public/assets/world/writing-portrait-v2.webp",
+      "original": "/Users/glen/.codex/generated_images/01a0df7a-c5ab-7c32-a9ce-6c1d06419986/exec-1644c245-8bbc-431d-b03d-07708c6bdb79.png",
+      "reference": "public/assets/world/writing-portrait-v1.webp",
+      "processing": "Resize and WebP encoding; CSS crop covers old and new pen.",
+      "prompt": "Use case: precise-object-edit. Make one alternate animation frame of this exact portrait overhead writing desk. Keep the 1:2 canvas, every object, all outlines/registration, paper position, left hand, crown, sleeves, wood grain, lamp and coffee IDENTICAL. Edit only Glen's RIGHT writing hand and pen at bottom: he draws a small writing stroke, nib moves approximately 14px RIGHT and 2px up along the current handwritten line. Entire coherent hand follows with a small natural wrist pivot; wrist and forearm remain fixed, nib stays in contact with paper. No duplicate fingers or old pen ghost, no new text or objects. Preserve original simple illustrated texture, colors and lighting. This is a registered animation alternate, not a redesign."
+    },
+    {
+      "asset": "public/assets/world/city-front-off-v2.webp",
+      "original": "/Users/glen/.codex/generated_images/01a0df7a-c5ab-7c32-a9ce-6c1d06419986/exec-85a78514-7e19-4eec-bc73-2ce8f5c3a18b.png",
+      "reference": "public/assets/world/city-front.webp",
+      "processing": "Transparent alternate with lantern glass and floor illumination off.",
+      "prompt": "Use case: lighting-weather. Edit target is a transparent terrace foreground layer. Keep transparent background, exact1536x1024 registration, all people, outlines, props and anatomy identical. Change ONLY the small lantern near x960,y862 and the warm pool of light it casts on nearby tiles and plants: switch the lantern OFF. Dark transparent glass inside its existing metal frame, no yellow flame/glow, nearby plants/tiles now subdued cool dusk illumination. Do not move anything. Do not darken the people or alter faces. Do not add sky/city/background behind transparent pixels. Preserve alpha. This alternate layer will be used for a genuine lantern on/off interaction."
+    }
+  ],
+  "rejected": [
+    {
+      "original": "exec-6f7c9b99-c09b-427b-b1d8-c6843f7f9a52.png",
+      "reason": "Incorrect top pose and haze."
+    },
+    {
+      "original": "exec-79f0d483-967d-4431-ab20-718e03e8a57e.png",
+      "reason": "Insufficient ball movement and incorrect grid ratio."
+    }
+  ]
+}

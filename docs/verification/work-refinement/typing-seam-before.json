@@ -1,0 +1,12 @@
+[
+  {
+    "name": "desktop",
+    "flickering": 7863,
+    "max": 39
+  },
+  {
+    "name": "portrait",
+    "flickering": 8719,
+    "max": 70
+  }
+]

@@ -1,5 +1,6 @@
 'use client';
 
+import { useId } from 'react';
 import Link from 'next/link';
 import { ArrowDown, ArrowUpRight, Waves } from 'lucide-react';
 import { MotionToggle, useSceneMotion } from './scene-motion';
@@ -12,6 +13,7 @@ export function CoastScene({
   standalone?: boolean;
 }): JSX.Element {
   const { root, moving } = useSceneMotion();
+  const waveId = useId();
   const Heading = standalone ? 'h1' : 'h2';
   return (
     <section
@@ -31,6 +33,37 @@ export function CoastScene({
           loading={standalone ? 'eager' : 'lazy'}
         />
         <svg className="sea-motion" viewBox="0 0 1536 1024">
+          <defs>
+            <clipPath id={`${waveId}-shore`}>
+              <path d="M440 600C358 617 106 626 62 640C35 651 169 675 310 692S655 710 716 730S992 754 1081 778C1110 786 1037 786 1049 796C1080 815 1390 831 1560 843V590H440Z" />
+            </clipPath>
+            <linearGradient id={`${waveId}-fade`} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="black" />
+              <stop offset=".3" stopColor="white" />
+            </linearGradient>
+            <mask id={`${waveId}-water`}>
+              <rect
+                x="0"
+                y="590"
+                width="1536"
+                height="270"
+                fill={`url(#${waveId}-fade)`}
+              />
+            </mask>
+          </defs>
+          {/* Move the painted foam itself so the wash keeps the artwork's texture. */}
+          <g className="shore-surge">
+            <g
+              clipPath={`url(#${waveId}-shore)`}
+              mask={`url(#${waveId}-water)`}
+            >
+              <image
+                href="/assets/diorama/coast.webp"
+                width="1536"
+                height="1024"
+              />
+            </g>
+          </g>
           <g
             className="sea-glints"
             fill="none"
@@ -43,11 +76,11 @@ export function CoastScene({
           <g fill="none" stroke="#fffef0" strokeLinecap="round">
             <path
               className="shore-wave shore-wave-one"
-              d="M437 613C290 624 140 637 115 649S333 689 654 710 942 731 1047 756 1320 790 1580 810"
+              d="M435 611C320 625 170 635 116 645S228 673 362 686 665 705 753 724 1005 746 1110 770 1330 804 1560 817"
             />
             <path
               className="shore-wave shore-wave-two"
-              d="M437 613C290 624 140 637 115 649S333 689 654 710 942 731 1047 756 1320 790 1580 810"
+              d="M435 611C320 625 170 635 116 645S228 673 362 686 665 705 753 724 1005 746 1110 770 1330 804 1560 817"
             />
           </g>
         </svg>

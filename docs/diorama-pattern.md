@@ -1,5 +1,7 @@
 # Two scenes, one repeatable pattern
 
+> Current implementation: [architecture and edit guide](website-architecture.md). Current design decisions: [creative direction](website-direction.md). This document retains the earlier study/checkpoint; its old file paths and technology limits are historical.
+
 26 September 2026. Working preview: `/preview/diorama`. Individual studies remain at `/preview/lakeside` and `/preview/coast`. All three are static, `noindex` preview routes; the public homepage is unchanged.
 
 The [manifesto](../MANIFESTO.md) sets the direction. These two chapters test how to carry that direction across different places, exercises, and screen sizes. The [beach reference](references/beach-pushup-reference.png) is the starting art direction for the second chapter; the [lakeside notes](lakeside-scene.md) preserve the first experiment and its rejected approaches.
@@ -9,6 +11,8 @@ The [manifesto](../MANIFESTO.md) sets the direction. These two chapters test how
 The lake gives way to a short, quiet passage, then the coast. Painted edges fade into the surrounding page, and the coast gradually shifts the palette from sage and ivory to turquoise and sand. Scrolling stays native, reversible, and unrestricted. Chapter links work as ordinary fragment links. There is no forced snapping, pinned scroll tunnel, or input interception.
 
 Both chapters now have independently moving near trees, slow water highlights, birds, and foreground grass. The coast adds two overlapping shoreline washes and a sailboat with separate rocking and drifting rhythms. The distant forest and headland remain painted into the backgrounds. This is layered 2D artwork, not a simulated ocean or independently articulated tree branches.
+
+The beach sprite is roughly 17% smaller than the initial study at each breakpoint. Shoreline motion reuses a clipped, softly masked strip of the background's painted foam: it advances 19 artwork pixels, then retreats over eight seconds, with staggered foam highlights. This preserves the illustration's texture without another asset. The sprite sits above the page-edge fade so its feet remain clear at the smaller size. The same pause and reduced-motion rules apply to the water.
 
 Scroll and mouse parallax add small differences in depth. Background travel is bounded to 36px in either direction; mouse travel is similarly bounded. Animation uses transforms and opacity. Copy remains still and selectable HTML.
 
