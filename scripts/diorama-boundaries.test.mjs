@@ -36,13 +36,12 @@ test('the illustrated feature can move mounts without importing app route intern
   }
 });
 
-test('room and dialog styles cannot leak into the legacy website', () => {
+test('room styles cannot leak into the legacy website', () => {
   for (const file of [
     'styles/rooms.css',
     'styles/motion.css',
     'rooms/work/layout.css',
     'rooms/writing/layout.css',
-    'shared/world-dialog.css',
   ]) {
     postcss.parse(readFileSync(resolve(root, file), 'utf8')).walkRules(rule => {
       if (rule.parent.type === 'atrule' && rule.parent.name === 'keyframes')
@@ -50,7 +49,7 @@ test('room and dialog styles cannot leak into the legacy website', () => {
       for (const selector of rule.selectors) {
         assert.match(
           selector,
-          /\.world(?:[\s),:#.[>+~]|$)|\.world-dialog(?:[\s),:#.[>+~-]|$)/,
+          /\.world(?:[\s),:#.[>+~]|$)/,
           `${file}: unscoped selector ${selector}`,
         );
       }

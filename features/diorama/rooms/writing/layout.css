@@ -183,71 +183,185 @@
   animation: world-steam 5s ease-out infinite;
   pointer-events: none;
 }
-:where(.world-dialog) .archive-search {
-  display: block;
-  font-size: 12px;
-}
-:where(.world-dialog) .archive-search input {
-  display: block;
-  width: 100%;
-  min-height: 46px;
-  padding: 9px 12px;
-  margin-top: 6px;
-  background: #fff7e8;
-  border: 1px solid #b8b49c;
-  border-radius: 3px;
-  font: 15px var(--world-body-font);
-  color: #293e34;
-}
-:where(.world-dialog) .archive-topics {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin: 14px 0;
-}
-:where(.world-dialog) .archive-topics button {
-  border: 1px solid #c2bea6;
-  background: none;
-  border-radius: 22px;
-  min-height: 40px;
-  padding: 0 14px;
-  font-size: 12px;
-}
-:where(.world-dialog) .archive-topics button[aria-pressed='true'] {
-  background: #334f3e;
-  border-color: #334f3e;
-  color: #fff3dc;
-}
-.world-dialog .archive-count {
-  font-size: 11px;
-  margin: 8px 0;
-}
-:where(.world-dialog) .archive-list {
-  list-style: none;
-}
-:where(.world-dialog) .archive-list a {
+/* The archive: index cards that come out of the tray on the right. */
+:where(.world .writing-room) .archive-cards {
+  position: absolute;
+  z-index: 20;
+  right: 10%;
+  top: 17%;
   display: flex;
   flex-direction: column;
+  width: min(30%, 420px);
+  max-height: 64%;
+  padding: 16px 18px 14px;
+  background:
+    linear-gradient(#fbf5e4, #fbf5e4) padding-box,
+    #fbf5e4;
+  color: #33413a;
+  box-shadow:
+    0.5px 1px 0 #4a2c1236,
+    6px 10px 14px #3a200c33,
+    14px 22px 30px #3a200c26;
+  transform: rotate(-1.2deg);
+  transform-origin: 100% 40%;
+  animation: cards-out 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes cards-out {
+  from {
+    opacity: 0;
+    transform: translateX(40px) rotate(3deg);
+  }
+}
+:where(.world .writing-room) .archive-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  /* The red rule of an index card. */
+  border-bottom: 1.5px solid #d98c7d;
+}
+:where(.world .writing-room) .archive-head h2 {
+  margin: 0;
+  font: 500 20px/1.2 var(--world-heading-font);
+}
+:where(.world .writing-room) .archive-head button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: inherit;
+}
+:where(.world .writing-room) .archive-head button:hover {
+  background: #33413a14;
+}
+:where(.world .writing-room) .archive-search input {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  margin-top: 10px;
+  padding: 7px 2px;
+  border: 0;
+  border-bottom: 1px solid #b9c4d2;
+  background: none;
+  color: inherit;
+  font: 15px var(--world-body-font);
+}
+:where(.world .writing-room) .archive-search input:focus {
+  outline: none;
+  border-bottom-color: #33413a;
+}
+:where(.world .writing-room) .archive-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 4px;
+}
+:where(.world .writing-room) .archive-topics button {
+  min-height: 32px;
+  padding: 0 11px;
+  border: 1px solid #c9c2a9;
+  border-radius: 999px;
+  background: none;
+  color: inherit;
+  font-size: 12px;
+}
+:where(.world .writing-room) .archive-topics button[aria-pressed='true'] {
+  border-color: #334f3e;
+  background: #334f3e;
+  color: #fff3dc;
+}
+:where(.world .writing-room) .archive-count {
+  margin: 6px 0 8px;
+  color: #6a7566;
+  font-size: 11px;
+}
+/* Each piece is its own small ruled card in the stack. */
+:where(.world .writing-room) .archive-list {
+  flex: 1;
+  min-height: 0;
+  margin: 0 -4px;
+  padding: 4px;
+  overflow: auto;
+  list-style: none;
+  overscroll-behavior: contain;
+}
+:where(.world .writing-room) .archive-list li + li {
+  margin-top: 7px;
+}
+:where(.world .writing-room) .archive-list li:nth-child(odd) a {
+  transform: rotate(0.5deg);
+}
+:where(.world .writing-room) .archive-list li:nth-child(even) a {
+  transform: rotate(-0.5deg);
+}
+:where(.world .writing-room) .archive-list a {
   position: relative;
-  border-top: 1px solid #cfc7b1;
-  padding: 15px 30px 15px 0;
-  gap: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 9px 30px 10px 12px;
+  background: repeating-linear-gradient(#fffaf0 0 19px, #c9d6e24d 19px 20px);
+  box-shadow:
+    0.5px 1px 0 #4a2c1226,
+    2px 3px 5px #3a200c1f;
+  color: inherit;
+  transition:
+    transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 200ms;
 }
-:where(.world-dialog) .archive-list span {
+:where(.world .writing-room) .archive-list a:hover,
+:where(.world .writing-room) .archive-list a:focus-visible {
+  transform: translateX(-3px) rotate(0deg);
+  box-shadow:
+    0.5px 1px 0 #4a2c1226,
+    5px 7px 10px #3a200c29;
+}
+:where(.world .writing-room) .archive-list span {
+  color: #6a7566;
   font-size: 10px;
-  color: #5d695d;
+  letter-spacing: 0.04em;
 }
-:where(.world-dialog) .archive-list strong {
-  font: 500 23px/1.2 var(--world-heading-font);
+:where(.world .writing-room) .archive-list strong {
+  font: 500 17px/1.25 var(--world-heading-font);
 }
-:where(.world-dialog) .archive-list svg {
+:where(.world .writing-room) .archive-list svg {
   position: absolute;
-  right: 4px;
-  top: 45%;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.6;
 }
-:where(.world-dialog) .archive-list a:hover strong {
+:where(.world .writing-room) .archive-empty {
+  margin: 8px 0;
+  font-size: 13px;
+}
+:where(.world .writing-room) .archive-blog {
+  align-self: flex-start;
+  margin-top: 10px;
+  font-size: 12px;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+@media (max-width: 760px) {
+  :where(.world .writing-room) .archive-cards {
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: 12%;
+    width: calc(100vw - 32px);
+    max-height: 70%;
+    transform: translateX(-50%) rotate(-0.6deg);
+    animation-name: cards-up;
+  }
+  @keyframes cards-up {
+    from {
+      opacity: 0;
+      transform: translate(-50%, 30px) rotate(1deg);
+    }
+  }
 }
 /* Arrival: set down on the desk, a touch of drift as each one lands. */
 @keyframes paper-settle {

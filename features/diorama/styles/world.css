@@ -21,8 +21,7 @@
   --header-ink: #fff2d9;
   --header-shadow: 0 1px 5px #182d2480;
 }
-.world button,
-.world-dialog button {
+.world button {
   font: inherit;
   cursor: pointer;
   color: inherit;
@@ -31,8 +30,7 @@
 .world button {
   -webkit-tap-highlight-color: transparent;
 }
-.world :focus-visible,
-.world-dialog :focus-visible {
+.world :focus-visible {
   outline: 3px solid #bd5b2e;
   outline-offset: 5px;
 }
@@ -40,8 +38,7 @@
   cursor: default;
 }
 .world h1,
-.world h2,
-.world-dialog h2 {
+.world h2 {
   font-family: var(--world-heading-font);
   font-weight: 500;
   letter-spacing: -0.045em;
@@ -121,6 +118,26 @@
 .world-header nav a:hover:after {
   transform: scaleX(1);
 }
+/* Contact: an ordinary link that leaves the site, set apart by a faint rule. */
+.world-header nav .world-nav-hello {
+  gap: 0.3em;
+  padding-left: 22px;
+}
+.world-header nav .world-nav-hello:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 14px;
+  background: currentColor;
+  opacity: 0.35;
+  transform: translateY(-50%);
+}
+.world-header nav .world-nav-hello:after {
+  left: 22px;
+  width: calc(100% - 22px);
+}
 .world-utility {
   position: fixed;
   right: 5.5%;
@@ -138,6 +155,7 @@
     color 450ms,
     text-shadow 450ms;
 }
+.world-utility .world-reveal,
 .world-utility .motion-toggle {
   position: relative;
   display: flex;
@@ -152,6 +170,7 @@
   color: inherit;
   pointer-events: auto;
 }
+.world-utility .world-reveal svg,
 .world-utility .motion-toggle svg {
   width: 17px;
   height: 17px;
@@ -322,6 +341,29 @@
   color: var(--edge-ink);
   filter: drop-shadow(var(--edge-shadow));
 }
+/* At the day's end the arrow turns round and says where it goes. */
+.world .world-wander-back {
+  width: auto;
+  grid-auto-flow: column;
+  gap: 7px;
+  padding: 0 12px;
+  border: 0;
+  background: none;
+  color: var(--edge-ink);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.world .world-wander-back span {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 160ms;
+}
+.world .world-wander-back:hover span,
+.world .world-wander-back:focus-visible span {
+  text-decoration-color: currentColor;
+}
 .world-wander svg {
   animation: wander-down 2.8s ease-in-out infinite;
 }
@@ -359,8 +401,15 @@
     font-size: 23px;
   }
   .world-header nav {
-    gap: 18px;
+    gap: 14px;
     font-size: 12px;
+  }
+  .world-header nav .world-nav-hello {
+    padding-left: 14px;
+  }
+  .world-header nav .world-nav-hello:after {
+    left: 14px;
+    width: calc(100% - 14px);
   }
   .world-art {
     width: var(--mobile-width);
@@ -411,6 +460,11 @@
     min-height: 700px;
   }
 }
+@media (max-width: 420px) {
+  .world-nav-say {
+    display: none;
+  }
+}
 @media (max-width: 360px) {
   .world-header nav {
     gap: 13px;
@@ -454,17 +508,13 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .world *,
-  .world-dialog,
-  .world-dialog-overlay {
+  .world * {
     animation: none !important;
     transition: none !important;
   }
 }
 .world[data-motion='false'] .article-paper,
-.world[data-motion='false'] .monitor-project,
-.world-dialog[data-motion='false'],
-.world-dialog-overlay[data-motion='false'] {
+.world[data-motion='false'] .monitor-project {
   animation: none !important;
 }
 @media (max-width: 760px) {

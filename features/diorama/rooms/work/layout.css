@@ -30,10 +30,6 @@
   border-radius: 2px;
   letter-spacing: 0;
 }
-:where(.world .work-room) .room-remote {
-  left: 24%;
-  top: 66%;
-}
 :where(.world .work-room) .room-notebook {
   left: 79%;
   top: 72%;
@@ -64,12 +60,6 @@
     border: 7px solid #343733;
     border-radius: 7px;
     box-shadow: 0 4px 0 #232e28;
-  }
-  :where(.world .work-room) .room-remote {
-    left: 23%;
-    top: 57%;
-    flex-direction: column;
-    gap: 5px;
   }
   :where(.world .work-room) .room-notebook {
     left: 81%;
@@ -107,10 +97,6 @@
     box-shadow: none;
     padding: 11px 13px;
     background: #fff8e4;
-  }
-  :where(.world .work-room) .room-remote {
-    left: 20%;
-    top: 52%;
   }
   :where(.world .work-room) .room-notebook {
     left: 83%;

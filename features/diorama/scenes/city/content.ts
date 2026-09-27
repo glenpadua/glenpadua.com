@@ -1,5 +1,4 @@
 import type { WorldScene } from '../../model/types';
-import { contactHref } from '../../data/site';
 import { worldRoutes } from '../../lib/routes';
 export const cityScene: WorldScene = {
   id: 'city',
@@ -9,7 +8,6 @@ export const cityScene: WorldScene = {
     'I’ve picked up a few stories along the way. Occasionally, I even finish writing them.',
     'I’m always curious how other people work, and what slows them down. If you’d like to swap notes, I’m up for a chat.',
   ],
-  discovery: { label: 'Say hello', href: contactHref },
   description:
     'Glen sits with his wife, both holding coffee, on a terrace above the city at night. His left leg is a prosthesis. A notebook, satchel and lantern are beside them.',
   sky: '#567faf',
@@ -31,13 +29,6 @@ export const cityScene: WorldScene = {
       href: worldRoutes.writing,
       x: 69.5,
       y: 75,
-    },
-    {
-      id: 'coffee',
-      label: 'Have something in mind? Say hello',
-      href: contactHref,
-      x: 75.5,
-      y: 71,
     },
   ],
 };

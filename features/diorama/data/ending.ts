@@ -14,5 +14,4 @@ export const journeyEnding = {
     { label: 'GitHub', href: socialLinks.github },
     { label: 'Twitter', href: socialLinks.twitter },
   ],
-  again: 'Start the day again',
 } as const;

@@ -1,12 +1,11 @@
 'use client';
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
-import { Archive, ArrowUpRight, Shuffle } from 'lucide-react';
+import { Archive, ArrowRight, Shuffle, X } from 'lucide-react';
 import Link from 'next/link';
 import { worldAsset } from '../../lib/assets';
 import { coverTransition, getArticleCover } from '../../articles/covers';
 import { articleHref } from '../../lib/routes';
 import type { DeskArticle } from './content';
-import { WorldDialog } from '@/features/diorama/shared/world-dialog';
 import { paperBatch } from '@/features/diorama/lib/travel';
 import { InteractionOrb } from '../../shared/interaction-orb';
 import { WritingHand } from './writing-hand';
@@ -58,7 +57,31 @@ export function WritingRoom({
       setGathering(false);
     }, 450);
   };
-  const opener = useRef<HTMLButtonElement>(null);
+  // The archive: index cards that come out of the tray, anchored in the room.
+  const opener = useRef<HTMLElement | null>(null);
+  const cards = useRef<HTMLElement>(null);
+  const search = useRef<HTMLInputElement>(null);
+  // The opener comes from the click itself: Safari doesn't focus clicked buttons.
+  const openArchive = (from: HTMLElement) => {
+    opener.current = from;
+    setArchive(true);
+    requestAnimationFrame(() => search.current?.focus());
+  };
+  const closeArchive = () => {
+    setArchive(false);
+    requestAnimationFrame(() => opener.current?.focus());
+  };
+  useEffect(() => {
+    if (!archive) return;
+    const outside = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (cards.current?.contains(target) || opener.current?.contains(target))
+        return;
+      setArchive(false);
+    };
+    document.addEventListener('pointerdown', outside);
+    return () => document.removeEventListener('pointerdown', outside);
+  }, [archive]);
   const batch = paperBatch(articles, page, 4);
   const categories = ['All', ...new Set(articles.map(a => a.category))];
   const filtered = articles
@@ -135,11 +158,77 @@ export function WritingRoom({
         <span className="desk-coffee-steam" aria-hidden="true" />
         <InteractionOrb
           className="room-paper-shuffle"
-          label="Shuffle the papers"
-          hint="Another handful"
-          disabled={articles.length <= 4}
-          onClick={shuffle}
+          label="Look through the archive tray"
+          hint="The rest of the pile"
+          pressed={archive}
+          onClick={event =>
+            archive ? closeArchive() : openArchive(event.currentTarget)
+          }
         />
+        {archive && (
+          <section
+            ref={cards}
+            className="archive-cards"
+            role="dialog"
+            aria-modal="false"
+            aria-labelledby="archive-title"
+            onKeyDown={event => {
+              if (event.key === 'Escape') closeArchive();
+            }}
+          >
+            <header className="archive-head">
+              <h2 id="archive-title">The rest of the pile</h2>
+              <button onClick={closeArchive} aria-label="Put the cards back">
+                <X size={16} />
+              </button>
+            </header>
+            <label className="archive-search">
+              <span className="sr-only">Find something</span>
+              <input
+                ref={search}
+                type="search"
+                value={query}
+                onChange={event => setQuery(event.target.value)}
+                placeholder="Find something…"
+              />
+            </label>
+            <div className="archive-topics" aria-label="Filter by topic">
+              {categories.map(c => (
+                <button
+                  key={c}
+                  onClick={() => setCategory(c)}
+                  aria-pressed={category === c}
+                >
+                  {c}
+                </button>
+              ))}
+            </div>
+            <p className="archive-count" role="status">
+              {filtered.length} {filtered.length === 1 ? 'piece' : 'pieces'}
+            </p>
+            <ul className="archive-list">
+              {filtered.map(a => (
+                <li key={a.uid}>
+                  <a href={articleHref(a.uid)}>
+                    <span>
+                      {a.category} · {a.date.slice(0, 4)}
+                    </span>
+                    <strong>{a.title}</strong>
+                    <ArrowRight size={16} aria-hidden="true" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+            {!filtered.length && (
+              <p className="archive-empty">
+                No cards in this pile. Try another title or topic.
+              </p>
+            )}
+            <Link prefetch={false} className="archive-blog" href="/blog">
+              Visit the original blog →
+            </Link>
+          </section>
+        )}
         <InteractionOrb
           className="room-pen-rest"
           label={penResting ? 'Resume writing' : 'Let the pen rest'}
@@ -157,9 +246,10 @@ export function WritingRoom({
           {articles.length}
         </span>
         <button
-          ref={opener}
-          onClick={() => setArchive(true)}
-          aria-haspopup="dialog"
+          onClick={event =>
+            archive ? closeArchive() : openArchive(event.currentTarget)
+          }
+          aria-expanded={archive}
         >
           <Archive size={16} /> All writing
         </button>
@@ -169,63 +259,11 @@ export function WritingRoom({
           <p>All writing</p>
           {articles.map(a => (
             <a key={a.uid} href={articleHref(a.uid)}>
-              {a.title} ↗
+              {a.title} →
             </a>
           ))}
         </div>
       </noscript>
-      <WorldDialog
-        open={archive}
-        onOpenChange={value => {
-          setArchive(value);
-          if (!value) requestAnimationFrame(() => opener.current?.focus());
-        }}
-        title="The rest of the pile."
-        eyebrow="Writing / archive"
-      >
-        <label className="archive-search">
-          Find something
-          <input
-            type="search"
-            value={query}
-            onChange={event => setQuery(event.target.value)}
-            placeholder="Search by title"
-          />
-        </label>
-        <div className="archive-topics" aria-label="Filter by topic">
-          {categories.map(c => (
-            <button
-              key={c}
-              onClick={() => setCategory(c)}
-              aria-pressed={category === c}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
-        <p className="archive-count" role="status">
-          {filtered.length} {filtered.length === 1 ? 'piece' : 'pieces'}
-        </p>
-        <ul className="archive-list">
-          {filtered.map(a => (
-            <li key={a.uid}>
-              <a href={articleHref(a.uid)}>
-                <span>
-                  {a.category} · {a.date.slice(0, 4)}
-                </span>
-                <strong>{a.title}</strong>
-                <ArrowUpRight size={18} />
-              </a>
-            </li>
-          ))}
-        </ul>
-        {!filtered.length && (
-          <p>No papers in this pile. Try a different title or topic.</p>
-        )}
-        <Link prefetch={false} className="world-text-link" href="/blog">
-          Visit the original blog ↗
-        </Link>
-      </WorldDialog>
     </main>
   );
 }

@@ -1,21 +1,24 @@
 'use client';
 import Link from 'next/link';
-import { ArrowUp, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { SiGithub, SiInstagram, SiTwitter } from 'react-icons/si';
 import { journeyEnding } from '../data/ending';
 
 const external = (href: string) => /^https?:\/\//.test(href);
+const socialIcons = {
+  Instagram: SiInstagram,
+  GitHub: SiGithub,
+  Twitter: SiTwitter,
+};
 
 /**
  * The day's last words, over the night sky after the city. Server HTML and
- * no-JavaScript visits show it as an ordinary block after the chapters.
+ * no-JavaScript visits show it as an ordinary block after the chapters. The
+ * way back to dawn is the journey's own arrow, turned round.
  */
 export function JourneyEnding({
-  interactive,
-  onRestart,
   onReach,
 }: {
-  interactive: boolean;
-  onRestart: () => void;
   /** Keyboard focus arriving here brings the ending into view. */
   onReach: () => void;
 }): JSX.Element {
@@ -27,36 +30,42 @@ export function JourneyEnding({
     >
       <h2 id="world-ending-title">{journeyEnding.title}</h2>
       <ul className="world-ending-links">
-        {journeyEnding.links.map(({ label, href }) => (
-          <li key={href}>
-            <Link
-              href={href}
-              prefetch={false}
-              target={external(href) ? '_blank' : undefined}
-              rel={external(href) ? 'noopener noreferrer' : undefined}
-            >
-              {label}
-              <ArrowUpRight size={15} aria-hidden="true" />
-            </Link>
-          </li>
-        ))}
+        {journeyEnding.links.map(({ label, href }) => {
+          const leaves = external(href);
+          const Arrow = leaves ? ArrowUpRight : ArrowRight;
+          return (
+            <li key={href}>
+              <Link
+                href={href}
+                prefetch={false}
+                target={leaves ? '_blank' : undefined}
+                rel={leaves ? 'noopener noreferrer' : undefined}
+              >
+                {label}
+                <Arrow size={15} aria-hidden="true" />
+              </Link>
+            </li>
+          );
+        })}
       </ul>
-      <p className="world-ending-social">
-        {journeyEnding.social.map(({ label, href }) => (
-          <a key={href} href={href} target="_blank" rel="noopener noreferrer">
-            {label}
-          </a>
-        ))}
-      </p>
-      <button
-        className="world-ending-again"
-        type="button"
-        onClick={onRestart}
-        hidden={!interactive}
-      >
-        <ArrowUp size={15} aria-hidden="true" />
-        {journeyEnding.again}
-      </button>
+      <ul className="world-ending-social" aria-label="Elsewhere">
+        {journeyEnding.social.map(({ label, href }) => {
+          const Icon = socialIcons[label];
+          return (
+            <li key={href}>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${label} (opens in a new tab)`}
+                title={label}
+              >
+                <Icon aria-hidden="true" />
+              </a>
+            </li>
+          );
+        })}
+      </ul>
     </section>
   );
 }

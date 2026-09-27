@@ -102,7 +102,7 @@ export function ArticlePage({
             </nav>
           )}
           <a className="article-back" href={worldRoutes.writing}>
-            Back to the writing desk <span aria-hidden="true">↗</span>
+            <span aria-hidden="true">←</span> Back to the writing desk
           </a>
         </footer>
       </article>

@@ -31,9 +31,8 @@ export interface WorldScene {
   titleSwaps?: { line: number; phrases: readonly string[] };
   /** Paragraphs wrap naturally; title lines may still be art-directed. */
   body?: readonly string[];
-  discovery?:
-    | { label: string; href: string }
-    | { label: string; title: string; paragraphs: readonly string[] };
+  /** An optional quiet link under the words. Information lives in the scene, not in dialogs. */
+  discovery?: { label: string; href: string };
   description: string;
   sky: string;
   /** Position in the shared day: 0 dawn, .45 noon, 1 night. */

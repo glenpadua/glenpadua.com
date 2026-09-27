@@ -79,8 +79,7 @@
     U+2215, U+FEFF, U+FFFD;
 }
 
-.world,
-.world-dialog {
+.world {
   --world-heading-font: 'Diorama Lora', Georgia, 'Times New Roman', serif;
   --world-body-font: 'Diorama Nunito Sans', 'Trebuchet MS', Arial, sans-serif;
 }

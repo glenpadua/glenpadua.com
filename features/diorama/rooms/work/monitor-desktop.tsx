@@ -172,7 +172,7 @@ function FileContents({ file }: { file: DeskFile }): JSX.Element {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {file.link.label} ↗
+          {file.link.label} {/^https?:/.test(file.link.href) ? '↗' : '→'}
         </a>
       )}
     </>
@@ -185,7 +185,7 @@ const notePick = typeof window === 'undefined' ? 0 : Math.random();
 const noSubscription = () => () => {};
 
 /** Glen's local time, shown only once mounted (no server/client mismatch). */
-function ValenciaClock(): JSX.Element {
+export function ValenciaClock(): JSX.Element {
   const [time, setTime] = useState('');
   useEffect(() => {
     const format = new Intl.DateTimeFormat('en-GB', {

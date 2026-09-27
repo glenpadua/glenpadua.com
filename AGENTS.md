@@ -14,7 +14,7 @@ Read `/Users/glen/.codex/RTK.md` for this host's shell conventions. Prefix shell
 
 - The new experience lives in `features/diorama/`, mounted at `/preview/diorama`. Keep `app/` entries thin. Features must not import preview route internals.
 - Own scene-specific copy, effects, composition and styles under `features/diorama/scenes/<scene>/`. Shared controls, motion policy, art fallback and dialogs live in `shared/`; use `InteractionOrb` for object discovery.
-- Shared styles use the `.world`/`.world-dialog` boundary; scene styles must affect only their scene. Keep painting-space geometry and asset choices with the scene. Keep readable text and interactive elements in HTML.
+- Shared styles use the `.world` boundary (there are no modal dialogs; information lives inside scenes); scene styles must affect only their scene. Keep painting-space geometry and asset choices with the scene. Keep readable text and interactive elements in HTML.
 - Homepage sky is shared across chapters. Set each scene's `skyTime` in its content; coordinate changes to `shared/journey-sky.*` and `lib/sky-time.ts`. Painted horizon masks stay scene-owned.
 - Consult `docs/website-architecture.md` before extracting a shared renderer. Three.js is allowed as a measured enhancement; its fallback, pause, lifecycle cleanup and style match are part of the feature.
 - The public `/`, `/work`, `/skills`, `/blog` and `/blog/[uid]` remain intact until promotion is requested. Preview metadata stays `noindex`.

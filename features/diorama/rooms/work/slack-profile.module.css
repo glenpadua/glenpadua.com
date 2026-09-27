@@ -258,3 +258,198 @@
     font-size: 1.1cqw;
   }
 }
+
+/* Leaned in: the same workspace, straightened and brought forward. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 59;
+  border: 0;
+  background: #1a221ecc;
+  cursor: zoom-out;
+}
+.window {
+  position: fixed;
+  z-index: 60;
+  left: 50%;
+  top: 50%;
+  width: min(760px, calc(100vw - 32px));
+  height: min(470px, calc(100svh - 120px));
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border: 8px solid #2f2f33;
+  border-radius: 12px;
+  background: #f2efea;
+  color: #252329;
+  box-shadow: 0 30px 80px #0e161266;
+  font: 400 14px/1.45 var(--world-body-font);
+  view-transition-name: slack-window;
+}
+.windowBody {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+.window .workspace {
+  grid-column: 1 / -1;
+  gap: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+.window .workspace b {
+  font-size: 15px;
+}
+.window .workspace svg {
+  width: 16px;
+  height: 16px;
+}
+/* Where Slack's search would be: a quiet way out to the real company. */
+.window .workspace .visit {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: auto;
+  color: inherit;
+  font-size: 12px;
+  opacity: 0.6;
+  transition: opacity 160ms;
+}
+.window .workspace .visit svg {
+  width: 13px;
+  height: 13px;
+}
+.window .workspace .visit:hover,
+.window .workspace .visit:focus-visible {
+  opacity: 1;
+}
+.window .sidebar {
+  width: auto;
+  gap: 8px;
+  padding: 14px 0;
+  font-size: 14px;
+}
+.window .sidebar > span {
+  gap: 7px;
+  padding: 0 14px;
+}
+.window .sidebar svg {
+  width: 15px;
+  height: 15px;
+}
+.window .sidebar .section,
+.window .sidebar .channels {
+  margin-top: 8px;
+  font-size: 12px;
+}
+.window .sidebar .selected {
+  padding-block: 5px;
+}
+.window .selected > i {
+  width: 7px;
+  height: 7px;
+}
+.window .selected small {
+  font-size: 11px;
+}
+.channel {
+  color: #d9c9da;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: #fbfaf8;
+}
+.cardBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px 8px 18px;
+  border-bottom: 1px solid #e3dde1;
+  font-weight: 700;
+}
+.cardBar button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: inherit;
+}
+.cardBar button:hover,
+.cardBar button:focus-visible {
+  background: #ece6ea;
+}
+.cardBody {
+  overflow: auto;
+  padding: 18px 20px 20px;
+}
+.bigAvatar {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #c9d6ca;
+  color: #385641;
+  font-size: 24px;
+  font-weight: 700;
+}
+.cardBody h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  font-family: var(--world-body-font);
+  letter-spacing: -0.01em;
+}
+.title {
+  margin: 2px 0 6px;
+  color: #3d3a40;
+}
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 14px;
+  color: #675d6a;
+  font-size: 13px;
+}
+.status i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2f9e6b;
+}
+.fields {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+.fields div {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 10px;
+}
+.fields dt {
+  color: #7a707d;
+  font-size: 13px;
+}
+.fields dd {
+  margin: 0;
+}
+@media (max-width: 760px) {
+  .window {
+    height: calc(100svh - 96px);
+  }
+  .windowBody {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .window .sidebar {
+    display: none;
+  }
+}

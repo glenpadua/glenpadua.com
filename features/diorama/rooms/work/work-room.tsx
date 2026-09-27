@@ -1,12 +1,10 @@
 'use client';
 
-import { useCallback, useRef, useState } from 'react';
-import Link from 'next/link';
+import { useCallback, useState } from 'react';
 import { worldAsset } from '../../lib/assets';
-import { articleHref, worldRoutes } from '../../lib/routes';
+import { worldRoutes } from '../../lib/routes';
 import { weddingWebsite, type DeskFile } from './content';
 import { DesktopFallback, MonitorDesktop } from './monitor-desktop';
-import { WorldDialog } from '@/features/diorama/shared/world-dialog';
 import { InteractionOrb } from '../../shared/interaction-orb';
 import { TypingHands } from './typing-hands';
 import { SlackProfile } from './slack-profile';
@@ -21,21 +19,9 @@ export function WorkRoom({
   files: readonly DeskFile[];
   notes: readonly string[];
 }): JSX.Element {
-  const [panel, setPanel] = useState<'remote' | null>(null);
   const [light, setLight] = useState(true);
   const [screenAsleep, setScreenAsleep] = useState(false);
   const goIdle = useCallback(() => setScreenAsleep(true), []);
-  const opener = useRef<HTMLElement | null>(null);
-  const open = (name: typeof panel) => {
-    opener.current = document.activeElement as HTMLElement;
-    setPanel(name);
-  };
-  const close = (value: boolean) => {
-    if (!value) {
-      setPanel(null);
-      requestAnimationFrame(() => opener.current?.focus());
-    }
-  };
   return (
     <main
       id="world-main"
@@ -94,7 +80,7 @@ export function WorkRoom({
               </svg>
               <p>Gone for a walk.</p>
               <button onClick={() => setScreenAsleep(false)}>
-                Back to the desk ↗
+                Back to the desk
               </button>
             </div>
           }
@@ -110,14 +96,7 @@ export function WorkRoom({
           pressed={screenAsleep}
           onClick={() => setScreenAsleep(value => !value)}
         />
-        <SlackProfile onOpen={() => open('remote')} />
-        <InteractionOrb
-          className="room-remote"
-          label="About my work at Remote.com"
-          hint="The day job"
-          onClick={() => open('remote')}
-          hasPopup="dialog"
-        />
+        <SlackProfile />
         <InteractionOrb
           className="room-notebook"
           label="Writing"
@@ -142,40 +121,6 @@ export function WorkRoom({
           <a href={weddingWebsite.href}>Our wedding website — built by me ↗</a>
         </div>
       </noscript>
-      <WorldDialog
-        open={panel !== null}
-        onOpenChange={close}
-        title="The day job."
-        eyebrow="Remote.com · Senior engineer"
-      >
-        {panel === 'remote' && (
-          <>
-            <p>
-              I’m a senior engineer at Remote.com. I’ve been building software
-              for over ten years, with a startup I co-founded along the way.
-            </p>
-            <p>
-              I like getting close to the actual problem: what the business
-              needs, what’s getting in people’s way, and what’s worth building.
-            </p>
-            <a
-              className="world-text-link"
-              href="https://remote.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit Remote.com ↗
-            </a>
-            <Link
-              prefetch={false}
-              className="world-text-link"
-              href={articleHref('do-you-have-an-ideal-dream-job')}
-            >
-              My take on work and life ↗
-            </Link>
-          </>
-        )}
-      </WorldDialog>
     </main>
   );
 }

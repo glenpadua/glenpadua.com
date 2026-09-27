@@ -51,9 +51,10 @@ for (let y = top; y <= bottom && headTop === bottom; y++)
       headTop = y;
       break;
     }
-// Alpha follows the painting's own anti-aliasing: pure screen cream shows
-// the desktop, the hair outline hides it, and edge pixels blend in between.
-// Nothing is grown, so no painted cream halo or edge line is uncovered.
+// Alpha follows distance from the screen cream. The hair has a dark painted
+// outline, so blended edge pixels (cream half-mixed with that outline) are
+// covered too: left showing, they read as a pale line against the dark
+// desktop. The outline and the brown hair stay in front.
 const screenCream = [254, 246, 225];
 const creaminess = (x, y) => {
   const [r, g, b] = rgb(x, y);
@@ -62,7 +63,7 @@ const creaminess = (x, y) => {
     g - screenCream[1],
     b - screenCream[2],
   );
-  return Math.max(0, Math.min(1, (60 - d) / 50));
+  return Math.max(0, Math.min(1, (220 - d) / 70));
 };
 // Where the head crosses the screen's bottom edge, it stays in front of the
 // few padding rows below too.

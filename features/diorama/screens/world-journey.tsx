@@ -6,7 +6,7 @@ import {
   useSyncExternalStore,
   type CSSProperties,
 } from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, ArrowUp } from 'lucide-react';
 import type { WorldScene } from '../model/types';
 import { useMotionPolicy } from '@/features/diorama/shared/scene-motion';
 import {
@@ -291,7 +291,6 @@ function PopulatedJourney({
           </section>
         ))}
         <JourneyEnding
-          interactive={ready}
           onReach={() => {
             const element = root.current;
             if (!element || ended) return;
@@ -300,13 +299,6 @@ function PopulatedJourney({
                 element.offsetTop + element.offsetHeight - window.innerHeight,
               behavior: 'instant',
             });
-          }}
-          onRestart={() => {
-            window.scrollTo({
-              top: 0,
-              behavior: enabled ? 'smooth' : 'instant',
-            });
-            root.current?.focus({ preventScroll: true });
           }}
         />
         {current < scenes.length - 1 ? (
@@ -317,16 +309,30 @@ function PopulatedJourney({
           >
             <ArrowDown size={26} strokeWidth={1.35} aria-hidden="true" />
           </a>
+        ) : !ended ? (
+          <a
+            className="world-wander"
+            href="#end"
+            aria-label="Continue to the end of the day"
+          >
+            <ArrowDown size={26} strokeWidth={1.35} aria-hidden="true" />
+          </a>
         ) : (
-          !ended && (
-            <a
-              className="world-wander"
-              href="#end"
-              aria-label="Continue to the end of the day"
-            >
-              <ArrowDown size={26} strokeWidth={1.35} aria-hidden="true" />
-            </a>
-          )
+          // At the day's end the same arrow turns round: back to dawn.
+          <button
+            className="world-wander world-wander-back"
+            type="button"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: enabled ? 'smooth' : 'instant',
+              });
+              root.current?.focus({ preventScroll: true });
+            }}
+          >
+            <ArrowUp size={22} strokeWidth={1.35} aria-hidden="true" />
+            <span>Back to dawn</span>
+          </button>
         )}
       </div>
       {[...scenes.map(scene => scene.id), 'end'].map((id, i) => (

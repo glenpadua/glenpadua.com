@@ -56,6 +56,8 @@
 }
 
 .city-cup-steam {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
   stroke: #fff4d6;
   stroke-width: 2;
   stroke-linecap: round;
@@ -149,6 +151,26 @@
   }
   72% {
     transform: rotate(0.5deg);
+  }
+}
+/* A sip: one fuller puff of steam from both cups, then back to the drift. */
+.city-coffee[data-puff='true'] .city-cup-steam {
+  animation:
+    city-coffee-puff 1.9s ease-out 1,
+    city-coffee-rise 5.2s ease-in-out 1.9s infinite;
+}
+@keyframes city-coffee-puff {
+  0% {
+    opacity: 0.2;
+    transform: translate(0, 2px) scale(1);
+  }
+  35% {
+    opacity: 0.8;
+    transform: translate(-3px, -9px) scale(1.25);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translate(-5px, -16px) scale(1.4);
   }
 }
 @keyframes city-coffee-rise {

@@ -10,6 +10,7 @@ import { CitySkyline, CityTerrace } from './atmosphere';
 export function CityScene(props: SceneProps): JSX.Element {
   const [lantern, setLantern] = useState(true);
   const [lightReady, setLightReady] = useState(false);
+  const [sips, setSips] = useState(0);
   const { enabled } = useMotionPolicy();
   const moving = enabled && props.active;
   return (
@@ -41,23 +42,32 @@ export function CityScene(props: SceneProps): JSX.Element {
                   onError={() => setLightReady(false)}
                 />
               )}
-              <CityTerrace moving={moving} />
+              <CityTerrace moving={moving} puff={sips} />
             </>
           );
       }}
       controls={
-        <InteractionOrb
-          className="cue-lantern"
-          label={
-            lantern
-              ? 'Turn the terrace lantern off'
-              : 'Light the terrace lantern'
-          }
-          hint={lantern ? 'Lights out' : 'A little warmth'}
-          pressed={!lantern}
-          disabled={!lightReady}
-          onClick={() => setLantern(value => !value)}
-        />
+        <>
+          <InteractionOrb
+            className="cue-coffee"
+            label="Take a sip of coffee"
+            hint="Take a sip"
+            style={{ left: '75.5%', top: '71%' }}
+            onClick={() => setSips(count => count + 1)}
+          />
+          <InteractionOrb
+            className="cue-lantern"
+            label={
+              lantern
+                ? 'Turn the terrace lantern off'
+                : 'Light the terrace lantern'
+            }
+            hint={lantern ? 'Lights out' : 'A little warmth'}
+            pressed={!lantern}
+            disabled={!lightReady}
+            onClick={() => setLantern(value => !value)}
+          />
+        </>
       }
     />
   );

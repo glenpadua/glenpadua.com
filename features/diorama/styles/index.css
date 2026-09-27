@@ -1,6 +1,5 @@
 @import './world.css';
 @import './rooms.css';
-@import '../shared/world-dialog.css';
 @import '../rooms/work/layout.css';
 @import '../rooms/writing/layout.css';
 @import './motion.css';

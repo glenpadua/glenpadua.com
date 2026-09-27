@@ -38,18 +38,6 @@
 .world .world-discovery:is(:hover, :focus-visible) .world-cue-mark {
   transform: scale(1.18);
 }
-.world .world-discovery-fallback {
-  max-width: 43ch;
-  max-height: 35svh;
-  overflow: auto;
-  background: #fbf4e2;
-  color: #293e34;
-  padding: 12px;
-}
-.world .world-discovery-fallback summary {
-  min-height: 44px;
-  cursor: pointer;
-}
 @media (max-width: 760px) {
   .world .world-copy h1,
   .world .world-copy h2 {
