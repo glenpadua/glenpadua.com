@@ -59,3 +59,9 @@ Map texture:
 - Pause was exercised live. OS reduced-motion switching, browser-background switching, image-failure injection and a physical phone were not tested; those code paths were reviewed. No measured 60fps/mobile performance claim is made.
 
 Screenshots in this folder: globe-spin-start.png, globe-spin-middle.png, globe-spin-end.png, globe-drag.png, globe-phone-drag.png, globe-phone-paused-first.png, globe-phone-paused-later.png, globe-tablet.png, globe-desktop-final.png. The two paused screenshot crops compared exactly. These changes are local; no commit or deployment is claimed by this chat.
+
+## Places, 27 September 2026
+
+Glen supplied the places. Lived (`livedPlaces` in `rooms/work/content.ts`, his order, notes kept close to his words): Coimbatore, Bangalore, Kochi, Bali, Goa, Lisbon, Valencia. Visited (`visitedPlaces`, small dots, listed for screen readers only): Hanoi, Da Nang, Bangkok, Paris, Annecy, Berlin, Dresden, Prague, Amsterdam, Barcelona.
+
+Pins are markers, not targets (about 4 px at display size). Every gesture ends on a named place: a tap spins one extra turn and lands on the next lived place; a drag or flick coasts and then eases onto the nearest one (`nearestPlace`); arrow keys step; paused or reduced motion jumps without the spin. A paper slip names the place at rest and hides while moving; on phones it lies on the desk below the globe instead of over Glen's head. Projection mirrors the renderer (`projectPlace`, tested); headless Chrome confirmed pin positions against the painted map (Cape Town, New York, South India, Iberia) and each tour stop's tag at 1440×900 and 390×844.

@@ -1,4 +1,5 @@
 import { worldRoutes } from '../../lib/routes';
+import type { GlobePlace } from './globe-motion';
 
 export const weddingWebsite = {
   href: 'https://fenimeetsfiltercoffee.vercel.app/',
@@ -64,4 +65,44 @@ export const deskProjects: readonly DeskProject[] = [
       'The work is still exploratory. A useful tool, a product, custom work—the shape is open. No launched-business victory lap yet.',
     ],
   },
+];
+
+/** Places Glen has lived, in his order; a tap on the globe tours them. */
+export const livedPlaces: readonly GlobePlace[] = [
+  {
+    name: 'Coimbatore',
+    lat: 11.02,
+    lon: 76.96,
+    note: 'Hometown. School, college, everything.',
+  },
+  {
+    name: 'Bangalore',
+    lat: 12.97,
+    lon: 77.59,
+    note: 'Eight years. Most of my working life.',
+  },
+  { name: 'Kochi', lat: 9.93, lon: 76.27, note: 'Lived here for two years.' },
+  { name: 'Bali', lat: -8.65, lon: 115.22, note: 'A two-month stay.' },
+  {
+    name: 'Goa',
+    lat: 15.49,
+    lon: 73.83,
+    note: 'My wife’s home, and my second.',
+  },
+  { name: 'Lisbon', lat: 38.72, lon: -9.14, note: 'Lived here for a month.' },
+  { name: 'Valencia', lat: 39.47, lon: -0.38, note: 'Home, for now.' },
+];
+
+/** Places visited: quieter pins, named for screen readers only. */
+export const visitedPlaces: readonly GlobePlace[] = [
+  { name: 'Hanoi', lat: 21.03, lon: 105.85 },
+  { name: 'Da Nang', lat: 16.05, lon: 108.2 },
+  { name: 'Bangkok', lat: 13.76, lon: 100.5 },
+  { name: 'Paris', lat: 48.86, lon: 2.35 },
+  { name: 'Annecy', lat: 45.9, lon: 6.13 },
+  { name: 'Berlin', lat: 52.52, lon: 13.4 },
+  { name: 'Dresden', lat: 51.05, lon: 13.74 },
+  { name: 'Prague', lat: 50.08, lon: 14.44 },
+  { name: 'Amsterdam', lat: 52.37, lon: 4.9 },
+  { name: 'Barcelona', lat: 41.39, lon: 2.17 },
 ];

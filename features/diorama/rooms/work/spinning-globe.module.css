@@ -41,6 +41,47 @@
   cursor: grabbing;
 }
 
+/* A small paper tag beside the globe naming the place facing you. */
+.tag {
+  position: absolute;
+  right: calc(100% + 6px);
+  top: 16%;
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  padding: 5px 9px 6px;
+  background: #f2e7cf;
+  color: #3a4038;
+  font-size: 11px;
+  line-height: 1.25;
+  /* A slip of paper: notes wrap rather than stretching across the room. */
+  width: max-content;
+  max-width: 11.5em;
+  box-shadow:
+    0.5px 1px 0 #4a2c1236,
+    3px 5px 8px #3a200c33;
+  transform: rotate(-4deg) translateY(4px);
+  transform-origin: 100% 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 260ms ease-out,
+    transform 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.tag[data-shown='true'] {
+  opacity: 1;
+  transform: rotate(-4deg);
+}
+.tag strong {
+  font-family: var(--world-heading-font);
+  font-weight: 500;
+  font-size: 13px;
+}
+.tag span {
+  color: #6a6556;
+  font-size: 10px;
+}
+
 .control :global(.world-cue-mark) {
   position: absolute;
   right: 0;
@@ -55,6 +96,12 @@
 }
 
 @media (max-width: 760px) {
+  /* Beside the globe is Glen's head on phones; lay the slip on the desk. */
+  .tag {
+    top: calc(100% - 4px);
+    right: -2px;
+    transform-origin: 100% 0;
+  }
   .globe {
     width: 11%;
     left: min(91%, calc(50% + 50vw - 11cqw - 12px));

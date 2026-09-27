@@ -12,16 +12,25 @@ import { useMotionPolicy } from '../../shared/scene-motion';
 import {
   advanceGlobe,
   dragRotation,
+  facingAngle,
+  facingPlace,
+  landingEase,
+  nearestPlace,
   releaseVelocity,
   wrapAngle,
 } from './globe-motion';
+import { livedPlaces as globePlaces, visitedPlaces } from './content';
 import { createGlobeRenderer } from './globe-renderer';
 import styles from './spinning-globe.module.css';
 
 export function SpinningGlobe(): JSX.Element {
   const root = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
-  const draw = useRef<((angle: number) => void) | null>(null);
+  const draw = useRef<((angle: number, current?: number) => void) | null>(null);
+  // The place facing the viewer once the globe rests, shown on a paper tag.
+  const [place, setPlace] = useState(-1);
+  const placeRef = useRef(-1);
+  const visited = useRef(-1);
   const angle = useRef(0);
   const velocity = useRef(0);
   const frame = useRef(0);
@@ -43,7 +52,51 @@ export function SpinningGlobe(): JSX.Element {
     frame.current = 0;
     velocity.current = 0;
   };
-  const paint = () => draw.current?.(angle.current);
+  const paint = () => draw.current?.(angle.current, placeRef.current);
+  const showPlace = (index: number) => {
+    placeRef.current = index;
+    setPlace(index);
+    paint();
+  };
+  const settle = () => {
+    const index = facingPlace(angle.current, globePlaces);
+    if (index >= 0) visited.current = index;
+    showPlace(index);
+  };
+  // Turn to a place and name it. Paused or reduced motion turns at once.
+  const travelTo = (index: number, travel: number, duration: number) => {
+    visited.current = index;
+    const target = facingAngle(globePlaces[index].lon);
+    if (!canCoastRef.current) {
+      angle.current = target;
+      return settle();
+    }
+    showPlace(-1);
+    const from = angle.current;
+    const started = performance.now();
+    const tick = (now: number) => {
+      frame.current = 0;
+      if (!canCoastRef.current) return settle();
+      const t = (now - started) / duration;
+      angle.current = wrapAngle(from + travel * landingEase(t));
+      if (t < 1) {
+        paint();
+        frame.current = requestAnimationFrame(tick);
+      } else {
+        angle.current = target;
+        settle();
+      }
+    };
+    frame.current = requestAnimationFrame(tick);
+  };
+  // However it was turned, the globe comes to rest on the nearest place.
+  const snap = () => {
+    if (!globePlaces.length) return settle();
+    const index = nearestPlace(angle.current, globePlaces);
+    const offset = facingAngle(globePlaces[index].lon) - angle.current;
+    const travel = Math.atan2(Math.sin(offset), Math.cos(offset));
+    travelTo(index, travel, 280 + Math.abs(travel) * 500);
+  };
   const coast = () => {
     if (!canCoastRef.current || !draw.current || frame.current) return;
     lastFrame.current = performance.now();
@@ -60,20 +113,26 @@ export function SpinningGlobe(): JSX.Element {
       lastFrame.current = now;
       paint();
       if (next.velocity !== 0) frame.current = requestAnimationFrame(tick);
+      else snap();
     };
     frame.current = requestAnimationFrame(tick);
   };
+  // A spin travels one extra turn and lands on the next place.
   const spin = (direction = 1) => {
     stop();
     if (!draw.current) return;
-    if (canCoastRef.current) {
-      velocity.current = direction * 3;
-      coast();
-    } else {
-      // Direct input still works when paused/reduced, without automatic motion.
+    if (!globePlaces.length) {
       angle.current = wrapAngle(angle.current + (direction * Math.PI) / 4);
-      paint();
+      return paint();
     }
+    const count = globePlaces.length;
+    const index = (((visited.current + direction) % count) + count) % count;
+    const target = facingAngle(globePlaces[index].lon);
+    const from = angle.current;
+    const travel =
+      (direction > 0 ? wrapAngle(target - from) : -wrapAngle(from - target)) +
+      direction * Math.PI * 2;
+    travelTo(index, travel, 1500);
   };
 
   useEffect(() => {
@@ -106,6 +165,8 @@ export function SpinningGlobe(): JSX.Element {
         draw.current = createGlobeRenderer(
           canvas.current,
           context.getImageData(0, 0, source.width, source.height),
+          globePlaces,
+          visitedPlaces,
         );
         draw.current?.(angle.current);
         setReady(Boolean(draw.current));
@@ -125,6 +186,7 @@ export function SpinningGlobe(): JSX.Element {
   const down = (event: PointerEvent<HTMLDivElement>) => {
     if (!ready || !event.isPrimary || event.button !== 0) return;
     stop();
+    if (placeRef.current >= 0) showPlace(-1);
     event.currentTarget.setPointerCapture(event.pointerId);
     drag.current = {
       id: event.pointerId,
@@ -155,8 +217,12 @@ export function SpinningGlobe(): JSX.Element {
     if (event.currentTarget.hasPointerCapture(event.pointerId))
       event.currentTarget.releasePointerCapture(event.pointerId);
     if (gesture.distance < 4) spin();
-    else if (event.timeStamp - gesture.time < 120) coast();
-    else stop();
+    else if (event.timeStamp - gesture.time < 120 && canCoastRef.current)
+      coast();
+    else {
+      stop();
+      snap();
+    }
   };
   const cancel = () => {
     drag.current = null;
@@ -170,7 +236,7 @@ export function SpinningGlobe(): JSX.Element {
       event.preventDefault();
       stop();
       angle.current = 0;
-      paint();
+      settle();
     }
   };
 
@@ -201,9 +267,22 @@ export function SpinningGlobe(): JSX.Element {
         hidden={!ready}
         aria-hidden="true"
       />
+      <p className={styles.tag} data-shown={place >= 0} aria-live="polite">
+        {place >= 0 && (
+          <>
+            <strong>{globePlaces[place].name}</strong>
+            {globePlaces[place].note && <span>{globePlaces[place].note}</span>}
+          </>
+        )}
+      </p>
+      <p className="sr-only">
+        Pinned places Glen has lived:{' '}
+        {globePlaces.map(place => place.name).join(', ')}. Also visited:{' '}
+        {visitedPlaces.map(place => place.name).join(', ')}.
+      </p>
       <InteractionOrb
         className={styles.control}
-        label="Spin the globe. Drag, or use the left and right arrow keys."
+        label="Spin the globe to the next place. Drag to turn it; it settles on the nearest place. Left and right arrow keys step between places."
         hint="Give it a spin"
         disabled={!ready}
         onClick={event => {
