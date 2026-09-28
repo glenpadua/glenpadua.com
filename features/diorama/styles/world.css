@@ -225,6 +225,7 @@ body {
   height: 17px;
   filter: drop-shadow(var(--edge-shadow));
 }
+.world-utility .world-reveal span,
 .world-utility .motion-toggle span {
   position: absolute;
   left: 50%;
@@ -235,6 +236,8 @@ body {
   pointer-events: none;
   transition: opacity 160ms;
 }
+.world-utility .world-reveal:hover span,
+.world-utility .world-reveal:focus-visible span,
 .world-utility .motion-toggle:hover span,
 .world-utility .motion-toggle:focus-visible span {
   opacity: 1;
@@ -539,6 +542,7 @@ html:has(.world-journey) {
     font-size: 10px;
     min-height: 44px;
   }
+  .world-utility .world-reveal span,
   .world-utility .motion-toggle span {
     left: 0;
     transform: none;

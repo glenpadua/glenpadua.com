@@ -38,26 +38,105 @@ export function WorldShell({ children }: { children: ReactNode }): JSX.Element {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [showAll]);
-  // The first time each page is seen in a visit, show everything once.
+  // When someone lingers on a scene (or room) for a moment, show what can be
+  // touched there, once per scene per visit. Arrival is too early: people are
+  // reading the words, not looking at the painting yet.
   useEffect(() => {
-    const key = `world-arrival:${path}`;
-    try {
-      if (sessionStorage.getItem(key)) return;
-    } catch {
-      /* Storage is optional; the hint may repeat. */
-    }
-    // Marked as shown only when it actually runs (a cancelled mount, or
-    // leaving within a second, doesn't use it up).
-    const timer = setTimeout(() => {
-      try {
-        sessionStorage.setItem(key, 'shown');
-      } catch {
-        /* Storage is optional. */
-      }
-      showAll();
-    }, 1400);
-    return () => clearTimeout(timer);
+    let timer: ReturnType<typeof setTimeout>;
+    const place = () =>
+      `world-linger:${path}:${
+        document.querySelector<HTMLElement>('.world-journey')?.dataset.scene ??
+        ''
+      }`;
+    const settle = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        const key = place();
+        try {
+          if (sessionStorage.getItem(key)) return;
+          sessionStorage.setItem(key, 'shown');
+        } catch {
+          /* Storage is optional; the hint may repeat. */
+        }
+        showAll();
+      }, 2600);
+    };
+    settle();
+    window.addEventListener('scroll', settle, { passive: true });
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', settle);
+    };
   }, [path, showAll]);
+  // Objects notice you: as a pointer comes near something that can be
+  // touched, it warms (`--near`, 0–1). A touch anywhere warms what is near
+  // the finger for a moment. Nothing appears or moves under the pointer.
+  useEffect(() => {
+    let frame = 0;
+    let at: { x: number; y: number } | null = null;
+    const warmed = new Set<HTMLElement>();
+    let fade: ReturnType<typeof setTimeout>;
+    const reach = (touch: boolean) => (touch ? 170 : 150);
+    const warm = (touch: boolean) => {
+      frame = 0;
+      if (!at) return;
+      const cues = document.querySelectorAll<HTMLElement>('.world .world-cue');
+      for (const cue of cues) {
+        if (cue.closest('[inert]')) continue;
+        const r = cue.getBoundingClientRect();
+        const d = Math.hypot(
+          at.x - (r.left + r.width / 2),
+          at.y - (r.top + r.height / 2),
+        );
+        const near = Math.max(0, 1 - d / reach(touch));
+        if (near > 0) {
+          cue.style.setProperty('--near', near.toFixed(2));
+          cue.dataset.near = 'true';
+          warmed.add(cue);
+        } else if (warmed.has(cue)) {
+          cue.style.removeProperty('--near');
+          delete cue.dataset.near;
+          warmed.delete(cue);
+        }
+      }
+    };
+    const cool = () => {
+      for (const cue of warmed) {
+        cue.style.removeProperty('--near');
+        delete cue.dataset.near;
+      }
+      warmed.clear();
+    };
+    const move = (event: PointerEvent) => {
+      if (event.pointerType !== 'mouse') return;
+      at = { x: event.clientX, y: event.clientY };
+      if (!frame) frame = requestAnimationFrame(() => warm(false));
+    };
+    const touch = (event: PointerEvent) => {
+      if (event.pointerType === 'mouse') return;
+      at = { x: event.clientX, y: event.clientY };
+      warm(true);
+      clearTimeout(fade);
+      fade = setTimeout(cool, 1100);
+    };
+    const leave = () => {
+      at = null;
+      cool();
+    };
+    document.addEventListener('pointermove', move, { passive: true });
+    document.addEventListener('pointerdown', touch, { passive: true });
+    document.documentElement.addEventListener('pointerleave', leave);
+    window.addEventListener('scroll', cool, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      clearTimeout(fade);
+      cool();
+      document.removeEventListener('pointermove', move);
+      document.removeEventListener('pointerdown', touch);
+      document.documentElement.removeEventListener('pointerleave', leave);
+      window.removeEventListener('scroll', cool);
+    };
+  }, [path]);
   // Now and then one object catches the light, so the scene stays clean but
   // still hints at what can be touched.
   useEffect(() => {
@@ -173,10 +252,11 @@ export function WorldShell({ children }: { children: ReactNode }): JSX.Element {
           className="world-reveal"
           type="button"
           onClick={showAll}
-          aria-label="Show what you can interact with"
-          title="Show what you can interact with (?)"
+          aria-label="Show things to touch"
+          title="Show things to touch (?)"
         >
           <Eye size={17} strokeWidth={1.6} aria-hidden="true" />
+          <span aria-hidden="true">Things to touch</span>
         </button>
         <MotionToggle />
       </div>

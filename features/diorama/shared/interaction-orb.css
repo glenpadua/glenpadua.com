@@ -135,3 +135,43 @@
     transform: scale(1.15);
   }
 }
+
+/*
+ * Objects notice you (`--near` 0–1, set by WorldShell as a pointer or finger
+ * comes close): a soft pool of warm light blooms on the painting around the
+ * object, and its mark surfaces with it. Light, not chrome: nothing moves
+ * under the pointer, and nothing becomes tappable that wasn't already.
+ */
+.world .world-cue::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 124px;
+  height: 124px;
+  margin: -62px 0 0 -62px;
+  border-radius: 50%;
+  /* A ring of light with a clear centre, so it never veils a character. */
+  background: radial-gradient(
+    closest-side,
+    #ffe7ad00 22%,
+    #fff1c894 36%,
+    #ffe7ad33 58%,
+    #ffe7ad00 100%
+  );
+  opacity: var(--near, 0);
+  transform: scale(calc(0.7 + var(--near, 0) * 0.3));
+  transition:
+    opacity 380ms ease-out,
+    transform 380ms var(--world-ease);
+  pointer-events: none;
+  z-index: -1;
+}
+.world .world-cue[data-near='true'] .world-cue-mark {
+  opacity: max(var(--mark-rest, 0), calc(var(--near) * 0.9));
+}
+@media (hover: none) {
+  .world .world-cue {
+    --mark-rest: 0.5;
+  }
+}
