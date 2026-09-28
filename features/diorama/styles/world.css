@@ -344,6 +344,20 @@
   height: 1px;
   pointer-events: none;
 }
+/* Swiping: a flick settles on a scene at rest rather than mid-handover, and
+   the day ends at night without a pale rubber-band flash beyond it. A mouse
+   wheel keeps free scrolling. */
+@media (pointer: coarse) {
+  html:has(.world-journey.is-ready) {
+    scroll-snap-type: y proximity;
+  }
+  .is-ready .world-stop {
+    scroll-snap-align: start;
+  }
+}
+html:has(.world-journey) {
+  overscroll-behavior-y: none;
+}
 .world-wander {
   position: fixed;
   bottom: 23px;
@@ -358,6 +372,24 @@
   filter: drop-shadow(var(--edge-shadow));
 }
 /* At the day's end the arrow turns round and says where it goes. */
+/* At dawn the arrow carries an invitation, which arrives after a moment. */
+.world .world-wander[data-invite='true'] {
+  width: auto;
+  grid-auto-flow: column;
+  gap: 7px;
+  padding: 0 12px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.world .world-wander[data-invite='true'] span {
+  animation: wander-invite 700ms var(--world-ease) 1.2s both;
+}
+@keyframes wander-invite {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+}
 .world .world-wander-back {
   width: auto;
   grid-auto-flow: column;

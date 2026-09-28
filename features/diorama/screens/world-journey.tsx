@@ -43,6 +43,8 @@ function PopulatedJourney({
   const [current, setCurrent] = useState(0);
   const [loadedThrough, setLoadedThrough] = useState(0);
   const [ended, setEnded] = useState(false);
+  // Still at the very start: the arrow invites the visitor into the day.
+  const [dawn, setDawn] = useState(true);
 
   useEffect(() => {
     const element = root.current;
@@ -131,6 +133,8 @@ function PopulatedJourney({
         -element.getBoundingClientRect().top / travel,
         scenes.length,
       );
+      const atDawn = -element.getBoundingClientRect().top < 24;
+      setDawn(previous => (previous === atDawn ? previous : atDawn));
       const endingPose = enabled ? ending : Math.round(ending);
       setEnded(previous =>
         previous === endingPose >= 0.4 ? previous : !previous,
@@ -301,21 +305,37 @@ function PopulatedJourney({
             });
           }}
         />
-        {current < scenes.length - 1 ? (
+        {!ended ? (
           <a
             className="world-wander"
-            href={`#${scenes[current + 1].id}${ready ? '' : '-scene'}`}
-            aria-label={`Continue to ${scenes[current + 1].name}`}
+            data-invite={dawn && current === 0}
+            href={
+              current < scenes.length - 1
+                ? `#${scenes[current + 1].id}${ready ? '' : '-scene'}`
+                : '#end'
+            }
+            aria-label={
+              dawn && current === 0
+                ? undefined
+                : current < scenes.length - 1
+                  ? `Continue to ${scenes[current + 1].name}`
+                  : 'Continue to the end of the day'
+            }
+            onClick={event => {
+              // Glide through the handover rather than jumping past it.
+              const stop = document.getElementById(
+                current < scenes.length - 1 ? scenes[current + 1].id : 'end',
+              );
+              if (!ready || !stop) return;
+              event.preventDefault();
+              stop.scrollIntoView({
+                behavior: enabled ? 'smooth' : 'instant',
+                block: 'start',
+              });
+            }}
           >
             <ArrowDown size={26} strokeWidth={1.35} aria-hidden="true" />
-          </a>
-        ) : !ended ? (
-          <a
-            className="world-wander"
-            href="#end"
-            aria-label="Continue to the end of the day"
-          >
-            <ArrowDown size={26} strokeWidth={1.35} aria-hidden="true" />
+            {dawn && current === 0 && <span>Spend a day with me</span>}
           </a>
         ) : (
           // At the day's end the same arrow turns round: back to dawn.
