@@ -9,10 +9,8 @@ import { LakeCharacter } from './character';
 import { LakeGrass, LakeLife, LakeSeeds } from './lake-life';
 import { LakeWater } from './lake-water';
 import { InteractionOrb } from '../../shared/interaction-orb';
-import { useMotionPolicy } from '../../shared/scene-motion';
 
 export function LakeScene(props: SceneProps): JSX.Element {
-  const { enabled } = useMotionPolicy();
   // Each cheer restarts a short burst of reps from the same pull-up frames.
   const [cheers, setCheers] = useState(0);
   // The opening scene's landscape (an SVG image) and horizon mask (CSS) are
@@ -61,27 +59,15 @@ export function LakeScene(props: SceneProps): JSX.Element {
       }
       atmosphere={<LakeSeeds />}
       controls={
-        <>
-          {/* The bar keeps its joke but stays in the scene: a tap is a cheer,
-              and he does a few more reps. */}
-          <InteractionOrb
-            className="cue-exercise"
-            style={{ left: '83.5%', top: '61%' }}
-            label="Skipping leg day since 2008. Cheer me on"
-            hint="Skipping leg day since 2008."
-            onClick={() => setCheers(count => count + 1)}
-          />
-          {/* A reaction only makes sense while he is moving. */}
-          {enabled && props.active && (
-            <InteractionOrb
-              className="lake-cheer"
-              label="Cheer me on"
-              hint="Cheer me on"
-              marker={<span className="lake-cheer-target" />}
-              onClick={() => setCheers(count => count + 1)}
-            />
-          )}
-        </>
+        // The one thing to touch at the lake: the bar keeps its joke, and a
+        // tap is a cheer, so he does a few more reps (while motion is on).
+        <InteractionOrb
+          className="cue-exercise"
+          style={{ left: '83.5%', top: '61%' }}
+          label="Skipping leg day since 2008. Cheer him on for a few more reps"
+          hint="Skipping leg day since 2008."
+          onClick={() => setCheers(count => count + 1)}
+        />
       }
     />
   );
