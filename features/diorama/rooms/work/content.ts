@@ -123,7 +123,7 @@ export const deskFiles: readonly DeskFile[] = [
       {
         when: '2022–',
         what: 'Remote.com',
-        detail: 'Senior engineer, Global Payroll.',
+        detail: 'Senior engineer, now on the AI team.',
       },
       {
         when: '2021–22',
