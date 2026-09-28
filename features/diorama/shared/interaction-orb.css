@@ -86,6 +86,31 @@
   opacity: 1;
   animation: cue-reveal 0.8s ease-in-out infinite alternate;
 }
+/*
+ * Touch screens have no hover to find the marks, and iOS Safari cancels a tap
+ * while something tappable is becoming visible (it takes the tap for a hover).
+ * So on touch the marks rest softly visible, and glints and “show me” only
+ * brighten them: nothing goes from hidden to shown under a finger.
+ */
+@media (hover: none) {
+  .world .world-cue .world-cue-mark {
+    opacity: 0.5;
+  }
+  .world .world-cue[data-glint='true'] .world-cue-mark {
+    animation-name: cue-glint-touch;
+  }
+}
+@keyframes cue-glint-touch {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.2) rotate(8deg);
+  }
+}
 @keyframes cue-glint {
   0% {
     opacity: 0;

@@ -30,10 +30,18 @@ function TitleSwap({
   const done = useRef(false);
   useEffect(() => {
     if (!running || done.current) return;
-    let timer: ReturnType<typeof setTimeout>;
+    let frame = 0;
     let current = line;
+    // Paced by animation frames, not a chain of timers: iOS Safari treats a
+    // tap during timer-driven page changes as a hover and swallows its click,
+    // so the header and scroll arrow would ignore taps while this types.
     const after = (ms: number, next: () => void) => {
-      timer = setTimeout(next, ms);
+      const start = performance.now();
+      const tick = (now: number) => {
+        if (now - start >= ms) next();
+        else frame = requestAnimationFrame(tick);
+      };
+      frame = requestAnimationFrame(tick);
     };
     const retype = (target: string, then: () => void) => {
       const keep = commonPrefix(current, target);
@@ -66,7 +74,7 @@ function TitleSwap({
       step(0);
     });
     return () => {
-      clearTimeout(timer);
+      cancelAnimationFrame(frame);
       // Interrupted (scrolled away or paused): show the authored words.
       if (!done.current) {
         setText(line);

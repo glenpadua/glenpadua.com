@@ -1,5 +1,38 @@
 @import './typography.css';
 
+/*
+ * Safari on iOS 26 paints the strip behind its floating toolbar itself, tinted
+ * with the page's background colour. Match that colour to the ground at the
+ * bottom of whatever is on screen, so the painting seems to carry on beneath.
+ */
+html {
+  --ground: #d7e9e9;
+  background-color: var(--ground);
+}
+html:has(.world-journey[data-scene='lake']) {
+  --ground: #6b8567;
+}
+html:has(.world-journey[data-scene='beach']) {
+  --ground: #e8bb88;
+}
+html:has(.world-journey[data-scene='city']) {
+  --ground: #7f6b69;
+}
+html:has(.work-room) {
+  --ground: #6c4b41;
+}
+html:has(.writing-room) {
+  --ground: #4d3e2c;
+}
+html:has(.reading-article) {
+  --ground: #f8f0dd;
+}
+html:has(.world-lost) {
+  --ground: #efe5cf;
+}
+body {
+  background-color: var(--ground);
+}
 .world {
   /* Mobile browsers' toolbars (Safari's glass bar, Chrome's URL bar) sit over
      the page. Scenes fill the large viewport so the painting runs beneath
@@ -17,7 +50,7 @@
   font-family: var(--world-body-font);
   letter-spacing: 0;
   line-height: 1.5;
-  background: #d7e9e9;
+  background: var(--ground);
   min-height: 100lvh;
 }
 .world[data-room='work'],
@@ -250,6 +283,22 @@
   transform: translateX(-50%);
   isolation: isolate;
 }
+/* Below the painting, where a collapsing toolbar reveals a little more page:
+   the ground carries on in the colour Safari tints its toolbar with. */
+.world-journey.is-ready .world-art::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: var(--toolbar);
+  background: var(--ground);
+}
+/* In the live journey the painting rests on the visible bottom edge, just
+   above the browser's toolbar. */
+.world-journey.is-ready .world-art {
+  bottom: var(--toolbar);
+}
 .world-layer {
   position: absolute;
   pointer-events: none;
@@ -317,13 +366,18 @@
 .is-ready.world-journey {
   height: calc((var(--scene-count) + var(--epilogue, 0)) * 100svh);
 }
+/* Fixed rather than sticky: a scene taller than Safari's visible area must not
+   slide up at the end of the journey as its toolbar changes size. */
 .is-ready .world-viewport {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   height: 100lvh;
   min-height: 0;
   overflow: hidden;
-  background: #d7e9e9;
+  /* Safari tints its collapsed toolbar from this fixed layer's colour. */
+  background: var(--ground);
 }
 .is-ready .world-scene {
   position: absolute;
@@ -344,17 +398,7 @@
   height: 1px;
   pointer-events: none;
 }
-/* Swiping: a flick settles on a scene at rest rather than mid-handover, and
-   the day ends at night without a pale rubber-band flash beyond it. A mouse
-   wheel keeps free scrolling. */
-@media (pointer: coarse) {
-  html:has(.world-journey.is-ready) {
-    scroll-snap-type: y proximity;
-  }
-  .is-ready .world-stop {
-    scroll-snap-align: start;
-  }
-}
+/* The day ends at night, without a rubber-band flash beyond it. */
 html:has(.world-journey) {
   overscroll-behavior-y: none;
 }
@@ -464,7 +508,7 @@ html:has(.world-journey) {
     width: var(--mobile-width);
     left: max(var(--mobile-left), calc(100% - var(--mobile-width)));
     transform: none;
-    bottom: 3%;
+    bottom: 0;
   }
   .world-copy {
     left: 7%;
@@ -555,7 +599,7 @@ html:has(.world-journey) {
     font-size: 12px;
   }
   .world-art {
-    bottom: 3%;
+    bottom: 0;
     width: calc(var(--mobile-width) * 0.88);
     left: max(
       calc(var(--mobile-left) * 0.88 + 6%),

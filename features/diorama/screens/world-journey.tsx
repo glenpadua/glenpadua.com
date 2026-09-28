@@ -1,5 +1,6 @@
 'use client';
 import {
+  type PointerEvent as ReactPointerEvent,
   useEffect,
   useRef,
   useState,
@@ -45,6 +46,62 @@ function PopulatedJourney({
   const [ended, setEnded] = useState(false);
   // Still at the very start: the arrow invites the visitor into the day.
   const [dawn, setDawn] = useState(true);
+  /*
+   * The arrow and "Back to dawn" share one spot, and iOS can deliver a tap's
+   * click late (or twice) after a glide has begun. Until the glide settles,
+   * and for a moment after the day ends, that stray click must not count.
+   */
+  const settledAt = useRef(0);
+  /*
+   * iOS Safari withholds a tap's click while anything on the page is changing,
+   * so on touch the arrow acts on the lifted finger itself (a short, still
+   * press); the click that may follow is then held off above.
+   */
+  const pressedAt = useRef<{ x: number; y: number; t: number } | null>(null);
+  // Glide through the handover rather than jumping past it, to the next
+  // scene's resting point in the same terms as the scroll handler.
+  const glide = () => {
+    const element = root.current;
+    if (!ready || !element || tapsHeld(settledAt)) return;
+    holdTaps(settledAt, enabled ? 900 : 300);
+    const next =
+      current < scenes.length - 1 ? chapterStop(current + 1, scenes.length) : 1;
+    window.scrollTo({
+      top:
+        element.getBoundingClientRect().top +
+        window.scrollY +
+        next * journeyTravel(element),
+      behavior: enabled ? 'smooth' : 'instant',
+    });
+  };
+  const backToDawn = () => {
+    if (tapsHeld(settledAt)) return;
+    holdTaps(settledAt, enabled ? 900 : 300);
+    window.scrollTo({ top: 0, behavior: enabled ? 'smooth' : 'instant' });
+    root.current?.focus({ preventScroll: true });
+  };
+  // A tap would otherwise move focus to the journey, and iOS may scroll the
+  // newly focused element into view: back to dawn, mid-glide.
+  const keepFocus = (event: { preventDefault: () => void }) =>
+    event.preventDefault();
+  const pressArrow = (event: ReactPointerEvent) => {
+    pressedAt.current =
+      event.pointerType === 'touch'
+        ? { x: event.clientX, y: event.clientY, t: performance.now() }
+        : null;
+  };
+  const liftArrow = (event: ReactPointerEvent) => {
+    const press = pressedAt.current;
+    pressedAt.current = null;
+    if (event.pointerType !== 'touch' || !press) return;
+    const still =
+      Math.hypot(event.clientX - press.x, event.clientY - press.y) < 12 &&
+      performance.now() - press.t < 700;
+    if (still) (ended ? backToDawn : glide)();
+  };
+  useEffect(() => {
+    if (ended) holdTaps(settledAt, 700);
+  }, [ended]);
 
   useEffect(() => {
     const element = root.current;
@@ -69,7 +126,7 @@ function PopulatedJourney({
         if (index < 0) return;
         // Hydration replaces stacked scenes with one sticky viewport. The
         // browser's earlier anchor jump no longer describes this geometry.
-        const travel = Math.max(0, element.offsetHeight - window.innerHeight);
+        const travel = journeyTravel(element);
         const top = element.getBoundingClientRect().top + window.scrollY;
         const stop = fragment === 'end' ? 1 : chapterStop(index, scenes.length);
         window.scrollTo({ top: top + stop * travel, behavior: 'instant' });
@@ -128,7 +185,7 @@ function PopulatedJourney({
           };
         }
       }
-      const travel = Math.max(1, element.offsetHeight - window.innerHeight);
+      const travel = Math.max(1, journeyTravel(element));
       const { progress, ending } = journeyPosition(
         -element.getBoundingClientRect().top / travel,
         scenes.length,
@@ -322,17 +379,13 @@ function PopulatedJourney({
                   : 'Continue to the end of the day'
             }
             onClick={event => {
-              // Glide through the handover rather than jumping past it.
-              const stop = document.getElementById(
-                current < scenes.length - 1 ? scenes[current + 1].id : 'end',
-              );
-              if (!ready || !stop) return;
+              if (!ready) return;
               event.preventDefault();
-              stop.scrollIntoView({
-                behavior: enabled ? 'smooth' : 'instant',
-                block: 'start',
-              });
+              glide();
             }}
+            onPointerDown={pressArrow}
+            onMouseDown={keepFocus}
+            onPointerUp={liftArrow}
           >
             <ArrowDown size={26} strokeWidth={1.35} aria-hidden="true" />
             {dawn && current === 0 && <span>Spend a day with me</span>}
@@ -342,13 +395,10 @@ function PopulatedJourney({
           <button
             className="world-wander world-wander-back"
             type="button"
-            onClick={() => {
-              window.scrollTo({
-                top: 0,
-                behavior: enabled ? 'smooth' : 'instant',
-              });
-              root.current?.focus({ preventScroll: true });
-            }}
+            onClick={backToDawn}
+            onPointerDown={pressArrow}
+            onMouseDown={keepFocus}
+            onPointerUp={liftArrow}
           >
             <ArrowUp size={22} strokeWidth={1.35} aria-hidden="true" />
             <span>Back to dawn</span>
@@ -361,7 +411,7 @@ function PopulatedJourney({
           id={id}
           key={id}
           style={{
-            top: `calc((100% - 100svh) * ${chapterStop(i, scenes.length)})`,
+            top: `calc((100% - 100lvh) * ${chapterStop(i, scenes.length)})`,
           }}
           aria-hidden="true"
         />
@@ -371,6 +421,30 @@ function PopulatedJourney({
 }
 
 /** Empty scene lists remain a valid editing state. */
+type Clock = { current: number };
+/** Ignore arrow taps for `ms` from now (see `settledAt`). */
+function holdTaps(until: Clock, ms: number): void {
+  until.current = Math.max(until.current, performance.now() + ms);
+}
+function tapsHeld(until: Clock): boolean {
+  return performance.now() < until.current;
+}
+
+/**
+ * How far the journey scrolls from dawn to the day's end. Measured against the
+ * fixed scene viewport (the large viewport), not `innerHeight`: on phones that
+ * changes mid-swipe as the browser's toolbar shrinks and grows, which made
+ * scenes lurch. With the toolbar showing, the last few pixels of scroll simply
+ * rest at the end.
+ */
+function journeyTravel(element: HTMLElement): number {
+  const viewport = element.querySelector<HTMLElement>('.world-viewport');
+  return Math.max(
+    0,
+    element.offsetHeight - (viewport?.offsetHeight ?? window.innerHeight),
+  );
+}
+
 export function WorldJourney({
   scenes,
 }: {

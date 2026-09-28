@@ -92,6 +92,10 @@
   mask: url('/assets/world/sky-cloud-painted-v1.webp') center / 100% 100%
     no-repeat;
   animation: sky-cloud-drift 65s ease-in-out infinite alternate;
+  /* Keep each masked cloud on its own layer: Safari otherwise re-rasterises
+     the mask as it drifts and recolours, and can flash a blank frame. */
+  will-change: transform;
+  backface-visibility: hidden;
 }
 .world .cloud-0 {
   left: 15%;
