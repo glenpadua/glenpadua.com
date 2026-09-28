@@ -56,6 +56,11 @@ export function ArticlePage({
           style={
             {
               '--cover-position': cover.position,
+              // The desk paper's picture (usually already downloaded) sits
+              // behind the full cover, so the arriving morph always lands on
+              // a painting, and the sharper image simply settles over it.
+              '--cover-thumbnail': `url("${cover.thumbnailSrc}")`,
+              '--cover-thumbnail-position': cover.thumbnailPosition,
               ...coverTransition(article.uid),
             } as CSSProperties
           }

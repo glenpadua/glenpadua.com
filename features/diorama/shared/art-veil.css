@@ -1,0 +1,59 @@
+/*
+ * The art veil (shared/art-veil.tsx): a blurred miniature of a painting over
+ * its stage until everything on the stage is ready, then one soft dissolve.
+ * Only when JavaScript runs (`html.art-gate`); a lift after 4.5s is built in,
+ * so a stalled image can never hold a scene hidden.
+ */
+.world .art-veil {
+  display: none;
+}
+.art-gate .world .art-veil {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  background: var(--veil) center / 100% 100% no-repeat;
+  filter: blur(14px) saturate(1.1);
+  opacity: 1;
+  animation: art-veil-lift 700ms ease 4.5s forwards;
+}
+@media (max-width: 760px) {
+  .art-gate .world .art-veil {
+    background-image: var(--veil-portrait);
+  }
+}
+/* On client navigation, stay clear for a moment: most paintings are ready. */
+.art-gate .world .art-veil[data-late]:not([data-painted]) {
+  opacity: 0;
+  animation:
+    art-veil-show 250ms ease 160ms forwards,
+    art-veil-lift 700ms ease 4.5s forwards;
+}
+@keyframes art-veil-show {
+  to {
+    opacity: 1;
+  }
+}
+.art-gate .world .art-veil[data-painted] {
+  opacity: 0;
+  animation: none;
+  transition: opacity 650ms ease;
+}
+.art-gate .world .art-veil[data-painted='instant'] {
+  transition: none;
+}
+@keyframes art-veil-lift {
+  to {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .art-gate .world .art-veil[data-painted] {
+    transition-duration: 200ms;
+  }
+}
+/* Papers wait under the veil to be dealt, rather than dealing unseen. */
+.world .writing-room:has(.art-veil:not([data-painted])) .article-paper {
+  animation-play-state: paused;
+}

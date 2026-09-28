@@ -11,6 +11,8 @@ import { SlackProfile } from './slack-profile';
 import { WeddingFrame } from './wedding-frame';
 import { CoffeeSteam } from './coffee-steam';
 import { SpinningGlobe } from './spinning-globe';
+import { ArtVeil } from '../../shared/art-veil';
+import { artPlaceholders } from '../../data/placeholders';
 
 export function WorkRoom({
   files,
@@ -108,6 +110,10 @@ export function WorkRoom({
           hint={light ? 'Lights down' : 'Lights up'}
           pressed={!light}
           onClick={() => setLight(v => !v)}
+        />
+        <ArtVeil
+          src={artPlaceholders.work}
+          portrait={artPlaceholders['work-portrait']}
         />
       </div>
       <noscript>

@@ -4,6 +4,8 @@ import { worldAsset } from '../lib/assets';
 import type { WorldLayer } from '../model/types';
 import type { SceneProps } from '../model/scene-runtime';
 import { InteractionOrb } from './interaction-orb';
+import { ArtVeil } from './art-veil';
+import { artPlaceholders } from '../data/placeholders';
 
 interface ArtworkProps extends SceneProps {
   renderLayer?: (layer: WorldLayer, onError: () => void) => ReactNode;
@@ -117,6 +119,12 @@ export function SceneArtwork({
         {controls}
       </div>
       {response}
+      {scene.id in artPlaceholders && (
+        <ArtVeil
+          src={artPlaceholders[scene.id as keyof typeof artPlaceholders]}
+          watchKey={load}
+        />
+      )}
     </div>
   );
 }

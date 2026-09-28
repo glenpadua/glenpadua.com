@@ -153,6 +153,12 @@ Writing-desk handwriting is owned by `rooms/writing/writing-hand.tsx` and `rooms
 
 Do not copy/paste the orb or another scene's renderer into a new local implementation. Request changes to shared APIs through coordination. Use unique files for generated assets/evidence. Workstation/Writing remain intact unless explicitly assigned. Local threads share one checkout: changes appear immediately. A second `next build` or server restart can disrupt another thread; coordinate before either.
 
+## Loading without flashes
+
+Every scene and room paints in one piece. `shared/art-veil.tsx` lays a blurred miniature of the painting (from `data/placeholders.ts`, about 300 bytes each, inlined; regenerate with `node scripts/art-placeholders.mjs` after changing a scene's or room's art) over the stage, and dissolves it once everything on the stage is ready: its `<img>`s, SVG `<image>`s and CSS mask/background images. An inline script does the watching while the page is still parsing, so a first visit doesn't wait for JavaScript; an effect does it after client navigation, where the veil waits 160ms before appearing, so already-downloaded art never flickers through a blur. Veils only exist with JavaScript (`html.art-gate`) and lift themselves after 4.5s regardless. The Writing papers wait under the veil to be dealt.
+
+Supporting this: the lake preloads its SVG landscape and horizon mask with high priority, and the beach waits until the page has loaded before downloading. `WorldShell` fetches the other rooms' opening paintings at low priority 2.5s after a page settles, and immediately when a nav link is hovered, touched or focused; nav links use Next's prefetch. The article cover shows the desk paper's thumbnail behind the full image, so the Writing → article morph always lands on a picture.
+
 ## Paintings and page weight
 
 Large paintings have two copies. The approved full-quality file lives in `art-source/world/`; the site serves an encoded copy under the same name in `public/assets/world/` (lossy WebP at a visually lossless setting, lossless alpha), written by `scripts/encode-art.mjs`. Edit art in `art-source/`, then re-run the script. Geometry scripts and tests (Work screen mask, lake shoreline, writing hand) read the served copies, because that is what visitors see. Article link-preview cards (`<uid>-v1-og.jpg`) come from `scripts/article-og-images.mjs`; `covers.ts` exposes them as `shareSrc`.

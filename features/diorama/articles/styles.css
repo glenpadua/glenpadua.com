@@ -65,7 +65,8 @@
   max-width: 1000px;
   margin: 0 auto 64px;
   aspect-ratio: 2 / 1;
-  background: #dce4d0;
+  background: var(--cover-thumbnail) var(--cover-position, center) / cover
+    no-repeat #dce4d0;
   overflow: hidden;
 }
 .article-cover img {

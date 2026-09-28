@@ -8,6 +8,8 @@ import type { DeskArticle } from './content';
 import { paperBatch } from '@/features/diorama/lib/travel';
 import { InteractionOrb } from '../../shared/interaction-orb';
 import { WritingHand } from './writing-hand';
+import { ArtVeil } from '../../shared/art-veil';
+import { artPlaceholders } from '../../data/placeholders';
 import { useMotionPolicy } from '../../shared/scene-motion';
 import './styles.css';
 
@@ -231,6 +233,10 @@ export function WritingRoom({
           hint={penResting ? 'One more line' : 'A moment to think'}
           pressed={penResting}
           onClick={() => setPenResting(value => !value)}
+        />
+        <ArtVeil
+          src={artPlaceholders.writing}
+          portrait={artPlaceholders['writing-portrait']}
         />
       </div>
       <div className="writing-controls">

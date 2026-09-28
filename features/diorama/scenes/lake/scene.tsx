@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { preload } from 'react-dom';
 import type { SceneProps } from '../../model/scene-runtime';
 import { worldAsset } from '../../lib/assets';
 import { SceneArtwork } from '../../shared/scene-artwork';
@@ -14,6 +15,18 @@ export function LakeScene(props: SceneProps): JSX.Element {
   const { enabled } = useMotionPolicy();
   // Each cheer restarts a short burst of reps from the same pull-up frames.
   const [cheers, setCheers] = useState(0);
+  // The opening scene's landscape (an SVG image) and horizon mask (CSS) are
+  // otherwise found late, after the images the page announces itself.
+  if (props.first) {
+    preload(worldAsset('lake-clearing-v3'), {
+      as: 'image',
+      fetchPriority: 'high',
+    });
+    preload('/assets/world/lake-horizon-mask-v1.webp', {
+      as: 'image',
+      fetchPriority: 'high',
+    });
+  }
   return (
     <SceneArtwork
       {...props}

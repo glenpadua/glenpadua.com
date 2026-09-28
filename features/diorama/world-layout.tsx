@@ -44,6 +44,13 @@ export function WorldLayout({
           transition never starts from a half-streamed document. */}
       <link rel="expect" href="#world-main" blocking="render" />
       <script dangerouslySetInnerHTML={{ __html: arrival }} />
+      {/* With JavaScript, paintings wait under a blurred veil until ready
+          (shared/art-veil.tsx); without it they simply load. */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: "document.documentElement.classList.add('art-gate')",
+        }}
+      />
       {fonts.map(font => (
         <link
           key={font}

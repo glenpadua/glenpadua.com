@@ -4,6 +4,7 @@
 @import '../rooms/writing/layout.css';
 @import './motion.css';
 @import '../shared/interaction-orb.css';
+@import '../shared/art-veil.css';
 @import '../shared/scene-copy.css';
 @import '../shared/scene-wipe.css';
 @import '../shared/page-transitions.css';

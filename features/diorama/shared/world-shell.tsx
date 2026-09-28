@@ -15,18 +15,77 @@ import {
 } from '@/features/diorama/shared/scene-motion';
 import { contactHref } from '../data/site';
 import { worldRoutes } from '../lib/routes';
+import { worldAsset } from '../lib/assets';
+import { weddingWebsite } from '../rooms/work/content';
+
+/*
+ * Each room's opening paintings, as its <img>/<picture> would choose them, so
+ * warming a room fetches exactly the files it will show.
+ */
+const roomArt: Record<string, (portrait: boolean) => HTMLImageElement[]> = {
+  [worldRoutes.work]: portrait => [
+    art(portrait, 'work-globe-room', 'work-globe-room-portrait'),
+    plain(weddingWebsite.portrait),
+  ],
+  [worldRoutes.writing]: portrait => [
+    art(portrait, 'writing', 'writing-portrait-v1'),
+    plain(
+      worldAsset(`stories-writing-clean-${portrait ? 'portrait' : 'desktop'}`),
+    ),
+  ],
+};
+function art(portrait: boolean, name: string, portraitName: string) {
+  if (portrait) return plain(worldAsset(portraitName));
+  const image = new Image();
+  image.fetchPriority = 'low';
+  image.sizes = '100vw';
+  image.srcset = `${worldAsset(`${name}-900`)} 900w, ${worldAsset(name)} 1536w`;
+  return image;
+}
+function plain(src: string) {
+  const image = new Image();
+  image.fetchPriority = 'low';
+  image.src = src;
+  return image;
+}
+const warmed = new Set<string>();
+/** Fetch a room's paintings ahead of a visit (once per page load). */
+function warmRoom(path: string) {
+  if (warmed.has(path) || !roomArt[path]) return;
+  warmed.add(path);
+  roomArt[path](window.matchMedia('(max-width:760px)').matches);
+}
 export function WorldShell({ children }: { children: ReactNode }): JSX.Element {
   const path = usePathname();
   const { enabled } = useMotionPolicy();
   // “Show me”: every interactive object glints for a few seconds.
-  const [reveal, setReveal] = useState(false);
+  // A reveal belongs to the page it was asked on; moving on ends it.
+  const [revealedOn, setRevealedOn] = useState<string | null>(null);
+  const reveal = revealedOn === path;
   const revealTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const showAll = useCallback(() => {
-    setReveal(true);
+    setRevealedOn(path);
     clearTimeout(revealTimer.current);
-    revealTimer.current = setTimeout(() => setReveal(false), 3200);
-  }, []);
+    revealTimer.current = setTimeout(() => setRevealedOn(null), 3200);
+  }, [path]);
   useEffect(() => () => clearTimeout(revealTimer.current), []);
+  // Once this page has settled, fetch the other rooms' paintings quietly, so
+  // walking into a room finds its painting already there.
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+    const warmOthers = () => {
+      timer = setTimeout(() => {
+        for (const room of Object.keys(roomArt))
+          if (room !== path) warmRoom(room);
+      }, 2500);
+    };
+    if (document.readyState === 'complete') warmOthers();
+    else window.addEventListener('load', warmOthers, { once: true });
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('load', warmOthers);
+    };
+  }, [path]);
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       const target = event.target instanceof Element ? event.target : null;
@@ -205,7 +264,6 @@ export function WorldShell({ children }: { children: ReactNode }): JSX.Element {
       </a>
       <header className="world-header">
         <Link
-          prefetch={false}
           className="world-signature"
           href={worldRoutes.home}
           aria-label="Glen Padua — home"
@@ -219,9 +277,12 @@ export function WorldShell({ children }: { children: ReactNode }): JSX.Element {
             ['Writing', worldRoutes.writing],
           ].map(([label, href]) => (
             <Link
-              prefetch={false}
               href={href}
               key={href}
+              // Pointing at or touching a room's link starts its painting.
+              onPointerEnter={() => warmRoom(href)}
+              onPointerDown={() => warmRoom(href)}
+              onFocus={() => warmRoom(href)}
               className={
                 href === worldRoutes.home ? 'world-nav-home' : undefined
               }

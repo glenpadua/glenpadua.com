@@ -209,11 +209,12 @@ function PopulatedJourney({
       element.style.setProperty('--lean', lean.toFixed(3));
       setCurrent(previous => (previous === active ? previous : active));
       // Load a chapter one passage early, so a quick scroll never meets
-      // an unpainted scene behind the wipe.
+      // an unpainted scene behind the wipe. (At rest on the first scene the
+      // next one waits for the page to finish loading; see below.)
       setLoadedThrough(previous =>
         Math.max(
           previous,
-          Math.min(scenes.length - 1, Math.ceil(progress + 0.7)),
+          Math.min(scenes.length - 1, Math.floor(progress + 0.7)),
         ),
       );
       const time = journeyTime(
@@ -281,6 +282,25 @@ function PopulatedJourney({
       window.removeEventListener('resize', resize);
     };
   }, [enabled, ready, scenes]);
+
+  // Once the opening scene has everything it needs, quietly fetch the next
+  // one, so the first paint never shares its bandwidth.
+  useEffect(() => {
+    if (!ready || scenes.length < 2) return;
+    let timer: ReturnType<typeof setTimeout>;
+    const next = () => {
+      timer = setTimeout(
+        () => setLoadedThrough(previous => Math.max(previous, 1)),
+        600,
+      );
+    };
+    if (document.readyState === 'complete') next();
+    else window.addEventListener('load', next, { once: true });
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('load', next);
+    };
+  }, [ready, scenes.length]);
 
   // A single shooting star per session, a little while after night falls.
   const night =
