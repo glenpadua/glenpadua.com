@@ -95,12 +95,11 @@
   position: relative;
   aspect-ratio: 3 / 2;
 }
-.lake-grass-strip {
+/* No scroll lean (--lean) here: re-skewing a screen-sized layer on every
+   scroll frame made the lake flicker in Chromium. It sways on its own. */
+.lake-grass img {
   position: absolute;
   inset: 0;
-  /* Every strip shares one origin, so the meadow leans as one piece. */
-  transform: skewX(calc(var(--lean, 0) * -1.8deg));
-  transform-origin: 50% 100%;
 }
 .world-lake .lake-grass img {
   animation: passing-breeze 9.2s ease-in-out infinite;
@@ -303,6 +302,12 @@
 /* The parent layer carries the ridge-and-pine silhouette from content. */
 .world .world-lake .layer-back > img {
   mask-image: none;
+}
+/* The silhouette is a raster in painting space: stretch it over the painting. */
+.world-lake .layer-back,
+.world-lake .world-static-art {
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
 }
 .world-lake::after {
   content: '';

@@ -26,5 +26,11 @@ export const lakePines = [
 // existing silhouettes; this removes sky without cutting off the pine tops.
 const ridge =
   'M0 324 C80 316 139 318 180 307 S221 302 271 317 C303 308 326 315 342 321 C382 327 406 330 444 346 S495 358 517 357 C554 349 586 331 620 328 S682 338 723 326 S782 309 810 317 S864 320 900 324 L900 600H0Z';
-const maskSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024"><defs><filter id="edge"><feMorphology operator="erode" radius="1.5"/></filter></defs><g filter="url(#edge)"><path transform="scale(1.7066667) translate(0 2)" d="${ridge}" fill="white"/>${lakePines.map(pine => `<path d="${pine.path}" fill="white"/>`).join('')}</g></svg>`;
-export const lakeHorizonMask = `url("data:image/svg+xml,${encodeURIComponent(maskSvg)}")`;
+export const lakeHorizonMaskSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024"><defs><filter id="edge"><feMorphology operator="erode" radius="1.5"/></filter></defs><g filter="url(#edge)"><path transform="scale(1.7066667) translate(0 2)" d="${ridge}" fill="white"/>${lakePines.map(pine => `<path d="${pine.path}" fill="white"/>`).join('')}</g></svg>`;
+/*
+ * The page masks with a pre-rendered copy (scripts/lake-horizon-mask.mjs).
+ * Browsers re-run the SVG's erode filter whenever the painting repaints, and
+ * at retina desktop sizes that took ~300 ms a time: the lake flickered out
+ * while scrolling. Re-run the script after changing the ridge or pines.
+ */
+export const lakeHorizonMask = 'url("/assets/world/lake-horizon-mask-v1.webp")';

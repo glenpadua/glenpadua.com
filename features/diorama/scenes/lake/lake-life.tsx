@@ -72,43 +72,21 @@ export function LakeLife({ onError }: { onError: () => void }): JSX.Element {
 }
 
 /*
- * The meadow sways in five overlapping strips, each on its own timing. Each
- * strip fades in over the one beneath it, and runs on under the next, so two
- * neighbours leaning differently blend rather than meeting at a hard line.
+ * One meadow, swaying as a whole. It was once five feathered strips on
+ * staggered timings; their masks were recomposited at full size every frame
+ * and halved the lake's scroll frame rate.
  */
-const grassFeather = 3;
-const grassStripMask = (start: number) => {
-  const from =
-    start === 0
-      ? '#000 0%'
-      : `transparent ${start - grassFeather}%, #000 ${start + grassFeather}%`;
-  const end = start + 20 + grassFeather;
-  return `linear-gradient(to right, ${from}, #000 ${end}%, transparent ${end}%)`;
-};
-
 export function LakeGrass({ onError }: { onError: () => void }): JSX.Element {
   return (
     <div className="lake-grass" aria-hidden="true">
-      {[0, 20, 40, 60, 80].map((start, i) => (
-        <div
-          className="lake-grass-strip"
-          key={start}
-          style={{
-            maskImage: grassStripMask(start),
-            WebkitMaskImage: grassStripMask(start),
-          }}
-        >
-          <img
-            src={worldAsset('grass')}
-            width={1536}
-            height={1024}
-            alt=""
-            decoding="async"
-            style={{ animationDelay: `${i * 0.5}s` }}
-            onError={onError}
-          />
-        </div>
-      ))}
+      <img
+        src={worldAsset('grass')}
+        width={1536}
+        height={1024}
+        alt=""
+        decoding="async"
+        onError={onError}
+      />
     </div>
   );
 }
