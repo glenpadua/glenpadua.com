@@ -71,6 +71,21 @@ export function LakeLife({ onError }: { onError: () => void }): JSX.Element {
   );
 }
 
+/*
+ * The meadow sways in five overlapping strips, each on its own timing. Each
+ * strip fades in over the one beneath it, and runs on under the next, so two
+ * neighbours leaning differently blend rather than meeting at a hard line.
+ */
+const grassFeather = 3;
+const grassStripMask = (start: number) => {
+  const from =
+    start === 0
+      ? '#000 0%'
+      : `transparent ${start - grassFeather}%, #000 ${start + grassFeather}%`;
+  const end = start + 20 + grassFeather;
+  return `linear-gradient(to right, ${from}, #000 ${end}%, transparent ${end}%)`;
+};
+
 export function LakeGrass({ onError }: { onError: () => void }): JSX.Element {
   return (
     <div className="lake-grass" aria-hidden="true">
@@ -78,7 +93,10 @@ export function LakeGrass({ onError }: { onError: () => void }): JSX.Element {
         <div
           className="lake-grass-strip"
           key={start}
-          style={{ clipPath: `inset(0 ${80 - start}% 0 ${start}%)` }}
+          style={{
+            maskImage: grassStripMask(start),
+            WebkitMaskImage: grassStripMask(start),
+          }}
         >
           <img
             src={worldAsset('grass')}

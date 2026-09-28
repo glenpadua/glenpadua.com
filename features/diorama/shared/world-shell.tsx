@@ -8,7 +8,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import { Eye } from 'lucide-react';
+import { ArrowUpRight, Eye } from 'lucide-react';
 import {
   MotionToggle,
   useMotionPolicy,
@@ -157,8 +157,13 @@ export function WorldShell({ children }: { children: ReactNode }): JSX.Element {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="world-nav-say">Say </span>hello{' '}
-            <span aria-hidden="true">↗</span>
+            <span className="world-nav-say">Say </span>hello
+            <ArrowUpRight
+              className="world-nav-leave"
+              size={14}
+              strokeWidth={2}
+              aria-hidden="true"
+            />
           </a>
         </nav>
       </header>

@@ -182,7 +182,7 @@ function FileContents({ file }: { file: DeskFile }): JSX.Element {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {file.link.label} {/^https?:/.test(file.link.href) ? '↗' : '→'}
+          {file.link.label} {/^https?:/.test(file.link.href) ? '↗\uFE0E' : '→'}
         </a>
       )}
     </>

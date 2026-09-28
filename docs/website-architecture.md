@@ -72,6 +72,8 @@ Each scene owns `content.ts`, `scene.tsx` and `styles.css`, plus its character/e
 
 For a new chapter, create a unique id and its content, add it to `data/scenes.ts`, and supply a `<id>-static.webp` fallback plus declared assets. A data-only scene works with the default renderer. For custom effects, add its component to `scenes/registry.tsx` and import its stylesheet in `styles/index.css`. Unique ids are required. The empty scene list has an intentional fallback; a single scene works without a transition.
 
+Scenes and rooms fill the large viewport (`100lvh`), so on phones the painting runs beneath Safari's glass toolbar and Chrome's URL bar instead of leaving a band of page background. `--toolbar` (on `.world`, `100lvh - 100svh`, zero on desktop) lifts in-room controls that must stay tappable, such as the Writing buttons. Use `svh` only for sizes that must fit the visible area, and `lvh` for anything that paints the background.
+
 All positions refer to the same painting stage, so artwork and controls share coordinates. Scene-only selectors stay scoped to their scene or uniquely named effect classes. Shared CSS pause/reduced-motion rules apply to all scene effects; do not override them locally. Review mobile overrides whenever the artwork changes.
 
 ## Room styles and feature boundaries

@@ -10,7 +10,7 @@ export function BeachSocialPhone(): JSX.Element {
       className="beach-social-phone"
       href={socialLinks.twitter}
       label="Glen on Twitter (opens in a new tab)"
-      hint="Twitter ↗"
+      hint={'Twitter ↗\uFE0E'}
       marker={
         <>
           <svg

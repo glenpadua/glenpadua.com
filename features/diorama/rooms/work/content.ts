@@ -4,7 +4,7 @@ import { contactHref } from '../../data/site';
 export const weddingWebsite = {
   href: 'https://fenimeetsfiltercoffee.vercel.app/',
   label: 'Our wedding website, built by Glen (opens in a new tab)',
-  hint: 'Our wedding · built by me ↗',
+  hint: 'Our wedding · built by me ↗\uFE0E',
   portrait: '/assets/world/work-wedding-portrait-v2.webp',
   description:
     'An illustrated wedding portrait of Glen and Millusha kissing outside a white church.',

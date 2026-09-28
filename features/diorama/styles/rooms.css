@@ -1,5 +1,5 @@
 :where(.world) .world-room {
-  height: 100svh;
+  height: 100lvh;
   min-height: 600px;
   position: relative;
   overflow: hidden;
@@ -8,8 +8,8 @@
 }
 :where(.world) .room-art-stage {
   position: absolute;
-  width: max(100vw, 150svh);
-  height: max(66.6667vw, 100svh);
+  width: max(100vw, 150lvh);
+  height: max(66.6667vw, 100lvh);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

@@ -35,7 +35,7 @@ export function BeachScene(props: SceneProps): JSX.Element {
             className="beach-github"
             href={socialLinks.github}
             label="Glen on GitHub (opens in a new tab)"
-            hint="GitHub ↗"
+            hint={'GitHub ↗\uFE0E'}
             marker={
               <SiGithub className="beach-github-sticker" aria-hidden="true" />
             }

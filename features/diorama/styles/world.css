@@ -1,6 +1,10 @@
 @import './typography.css';
 
 .world {
+  /* Mobile browsers' toolbars (Safari's glass bar, Chrome's URL bar) sit over
+     the page. Scenes fill the large viewport so the painting runs beneath
+     them; controls that must stay tappable lift by this much. Zero on desktop. */
+  --toolbar: calc(100lvh - 100svh);
   --world-ink: #283e34;
   --world-paper: #f8f0dd;
   --world-rule: #cfc6ae;
@@ -14,7 +18,7 @@
   letter-spacing: 0;
   line-height: 1.5;
   background: #d7e9e9;
-  min-height: 100svh;
+  min-height: 100lvh;
 }
 .world[data-room='work'],
 .world[data-room='writing'] {
@@ -123,6 +127,18 @@
   gap: 0.3em;
   padding-left: 22px;
 }
+/* Leaves the site: a small, quiet arrow that nudges on hover. */
+.world-header nav .world-nav-leave {
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition:
+    transform 160ms var(--world-ease),
+    opacity 160ms;
+}
+.world-header nav .world-nav-hello:is(:hover, :focus-visible) .world-nav-leave {
+  opacity: 1;
+  transform: translate(1px, -1px);
+}
 .world-header nav .world-nav-hello:before {
   content: '';
   position: absolute;
@@ -213,7 +229,7 @@
 }
 .world-scene {
   position: relative;
-  height: 100svh;
+  height: 100lvh;
   min-height: 650px;
   overflow: hidden;
   isolation: isolate;
@@ -304,7 +320,7 @@
 .is-ready .world-viewport {
   position: sticky;
   top: 0;
-  height: 100svh;
+  height: 100lvh;
   min-height: 0;
   overflow: hidden;
   background: #d7e9e9;
@@ -411,9 +427,10 @@
     left: 14px;
     width: calc(100% - 14px);
   }
+  /* Never let the painting's right edge stop short of the screen's. */
   .world-art {
     width: var(--mobile-width);
-    left: var(--mobile-left);
+    left: max(var(--mobile-left), calc(100% - var(--mobile-width)));
     transform: none;
     bottom: 3%;
   }
@@ -508,7 +525,10 @@
   .world-art {
     bottom: 3%;
     width: calc(var(--mobile-width) * 0.88);
-    left: calc(var(--mobile-left) * 0.88 + 6%);
+    left: max(
+      calc(var(--mobile-left) * 0.88 + 6%),
+      calc(100% - var(--mobile-width) * 0.88)
+    );
   }
 }
 /* Landscape phones: a compact header, and scene words that start below it. */

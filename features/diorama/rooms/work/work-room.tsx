@@ -118,7 +118,9 @@ export function WorkRoom({
             Senior engineer at <a href="https://remote.com">Remote.com</a>. 10+
             years building software; cofounder of Zephony.
           </p>
-          <a href={weddingWebsite.href}>Our wedding website — built by me ↗</a>
+          <a href={weddingWebsite.href}>
+            Our wedding website — built by me {'↗\uFE0E'}
+          </a>
         </div>
       </noscript>
     </main>

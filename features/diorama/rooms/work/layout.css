@@ -44,8 +44,8 @@
    desktop fills its painted screen, behind the laptop lid. */
 @media (max-width: 760px) {
   :where(.world) .work-room .room-art-stage {
-    width: max(100vw, 50svh);
-    height: max(200vw, 100svh);
+    width: max(100vw, 50lvh);
+    height: max(200vw, 100lvh);
   }
   :where(.world .work-room) .desk-monitor {
     left: var(--portrait-screen-left);

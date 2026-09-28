@@ -169,7 +169,7 @@
 :where(.world .writing-room) .writing-controls {
   position: absolute;
   left: 5.5%;
-  bottom: 83px;
+  bottom: calc(83px + var(--toolbar, 0px));
   z-index: 10;
   display: flex;
   align-items: center;
@@ -377,7 +377,7 @@
     right: auto;
     left: 50%;
     top: auto;
-    bottom: 12%;
+    bottom: calc(12% + var(--toolbar, 0px));
     width: calc(100vw - 32px);
     max-height: 70%;
     transform: translateX(-50%) rotate(-0.6deg);
@@ -455,8 +455,8 @@
    clear of the archive tray, which starts at 89% of the painting's width. */
 @media (max-width: 760px) {
   :where(.world) .writing-room .room-art-stage {
-    width: max(100vw, 50svh);
-    height: max(200vw, 100svh);
+    width: max(100vw, 50lvh);
+    height: max(200vw, 100lvh);
   }
   :where(.world .writing-room) .paper-spread {
     inset: 15% auto 30% 50%;
@@ -503,7 +503,7 @@
   :where(.world .writing-room) .writing-controls {
     left: 5%;
     right: 5%;
-    bottom: 69px;
+    bottom: calc(69px + var(--toolbar, 0px));
     gap: 7px;
     justify-content: space-between;
     padding: 2px 7px;
