@@ -6,6 +6,7 @@ import { InteractionOrb } from '../../shared/interaction-orb';
 import { useMotionPolicy } from '../../shared/scene-motion';
 import { worldAsset } from '../../lib/assets';
 import { CitySkyline, CityTerrace } from './atmosphere';
+import { CityNightBackdrop } from './night-backdrop';
 
 export function CityScene(props: SceneProps): JSX.Element {
   const [lantern, setLantern] = useState(true);
@@ -26,7 +27,13 @@ export function CityScene(props: SceneProps): JSX.Element {
       }
       lantern={lantern}
       afterLayer={layer => {
-        if (layer.id === 'back') return <CitySkyline moving={moving} />;
+        if (layer.id === 'back')
+          return (
+            <>
+              <CityNightBackdrop load={props.load} active={props.active} />
+              <CitySkyline moving={moving} />
+            </>
+          );
         if (layer.id === 'terrace')
           return (
             <>

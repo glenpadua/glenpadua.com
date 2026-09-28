@@ -78,22 +78,30 @@
 .world .journey-cloud-bank {
   position: absolute;
   inset: 0;
-  color: var(--sky-cloud-ink);
   opacity: var(--sky-cloud-opacity);
 }
 .world .journey-cloud {
   position: absolute;
   width: 32%;
+  aspect-ratio: 960 / 110;
+  background: linear-gradient(
+    var(--sky-cloud-ink) 15%,
+    var(--sky-cloud-shade) 76%,
+    var(--sky-cloud-rim)
+  );
+  mask: url('/assets/world/sky-cloud-painted-v1.webp') center / 100% 100%
+    no-repeat;
   animation: sky-cloud-drift 65s ease-in-out infinite alternate;
 }
 .world .cloud-0 {
-  left: -5%;
-  top: 8%;
+  left: 15%;
+  top: 14%;
 }
 .world .cloud-1 {
   left: 60%;
   top: 31%;
   width: 38%;
+  scale: -1 0.85;
   animation-delay: -25s;
   animation-duration: 83s;
 }
@@ -267,4 +275,19 @@
     left: 58%;
     width: 100px;
   }
+}
+
+/* End of the day: deepen the same sky without changing the cloud artwork. */
+.world .sky-continuous::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#060d1c, #111d32 60%, #23324a);
+  opacity: var(--ending, 0);
+}
+.world .journey-stars .star-after-dark {
+  scale: var(--ending, 0);
+}
+.world .sky-continuous .journey-cloud-bank {
+  opacity: calc(var(--sky-cloud-opacity) * (1 - var(--ending, 0) * 0.7));
 }

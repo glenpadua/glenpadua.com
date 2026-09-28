@@ -46,7 +46,14 @@ test('sky colour and celestial positions are continuous across all palette stops
   let previous = skyStyle(0);
   for (let i = 1; i <= 1000; i++) {
     const current = skyStyle(i / 1000);
-    for (const key of ['--sky-top', '--sky-middle', '--sky-horizon']) {
+    for (const key of [
+      '--sky-top',
+      '--sky-middle',
+      '--sky-horizon',
+      '--sky-cloud-ink',
+      '--sky-cloud-shade',
+      '--sky-cloud-rim',
+    ]) {
       const a = previous[key].match(/\d+/g).map(Number),
         b = current[key].match(/\d+/g).map(Number);
       assert.ok(a.every((value, j) => Math.abs(value - b[j]) <= 2));

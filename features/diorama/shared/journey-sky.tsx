@@ -29,9 +29,10 @@ export function JourneySky({
         />
       </svg>
       <div className="journey-stars">
-        {Array.from({ length: 32 }, (_, i) => (
+        {Array.from({ length: fallback ? 32 : 88 }, (_, i) => (
           <i
             key={i}
+            className={i >= 32 ? 'star-after-dark' : undefined}
             style={
               {
                 left: `${(i * 37 + 9) % 100}%`,
@@ -47,23 +48,7 @@ export function JourneySky({
       {!fallback && <span className="journey-meteor" />}
       <div className="journey-cloud-bank">
         {[0, 1, 2].map(i => (
-          <svg
-            key={i}
-            className={`journey-cloud cloud-${i}`}
-            viewBox="0 0 420 80"
-          >
-            <path
-              d="M3 60q23-13 48-8 9-23 40-20 19-27 52-18 33-5 46 22 31-14 51 8 37-15 62 6 54-8 115 17-85 5-129 1-67 6-116 0-82 7-169-8Z"
-              fill="currentColor"
-            />
-            <path
-              d="M25 65q70 8 131 4t108 3 132-3"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="3"
-              opacity=".4"
-            />
-          </svg>
+          <span key={i} className={`journey-cloud cloud-${i}`} />
         ))}
       </div>
       <div className="journey-birds">

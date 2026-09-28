@@ -70,8 +70,10 @@ export function skyStyle(
     '--sky-moon-y': `${mix(74, 19, moonTravel)}cqh`,
     '--sky-moon-y-portrait': `${mix(78, 40, moonTravel)}cqh`,
     '--sky-moon-opacity': ease((t - 0.64) / 0.1),
-    '--sky-cloud-ink': colour('#fff0d8', '#929eaf', night),
-    '--sky-cloud-opacity': mix(0.64, 0.22, night),
+    '--sky-cloud-ink': colour('#fff0d8', '#8384a5', night),
+    '--sky-cloud-shade': colour('#ddded1', '#737994', night),
+    '--sky-cloud-rim': colour('#fff2d4', '#c79394', night),
+    '--sky-cloud-opacity': mix(0.64, 0.5, night),
     '--sky-star-motion': t > 0.67 ? 'running' : 'paused',
     '--sky-bird-motion': t < 0.88 ? 'running' : 'paused',
   };

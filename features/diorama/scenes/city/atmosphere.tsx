@@ -1,4 +1,5 @@
 import { useEffect, useState, type CSSProperties } from 'react';
+import { cityLightStop } from './nightfall';
 
 // Painting coordinates, attached to the layer that owns the illustrated object.
 // Sparse strokes extend the painted reflections without warping the skyline.
@@ -80,6 +81,7 @@ export function CitySkyline({ moving }: { moving: boolean }): JSX.Element {
             style={
               {
                 '--city-delay': `${-i * 0.73}s`,
+                '--lights-out': cityLightStop(x, y),
                 '--city-period': `${4.8 + (i % 4) * 0.7}s`,
               } as CSSProperties
             }
@@ -95,9 +97,19 @@ export function CitySkyline({ moving }: { moving: boolean }): JSX.Element {
             width={width}
             height={height}
             data-lit={lit[i]}
-            style={{ '--lights-on': duskArrival(x) } as CSSProperties}
+            style={
+              {
+                '--lights-on': duskArrival(x),
+                '--lights-out': cityLightStop(x, y),
+              } as CSSProperties
+            }
           />
         ))}
+      </g>
+      <g className="city-last-lights" fill="#edc887">
+        <rect x="1017" y="679" width="10" height="14" />
+        <rect x="593" y="568" width="3" height="4" />
+        <rect x="1340" y="565" width="5" height="8" />
       </g>
     </svg>
   );
@@ -117,8 +129,10 @@ export function CityTerrace({
       aria-hidden="true"
       data-moving={moving}
     >
-      <span className="city-lantern-halo" />
-      <span className="city-lantern-flame" />
+      <div className="city-lantern-light">
+        <span className="city-lantern-halo" />
+        <span className="city-lantern-flame" />
+      </div>
       <svg
         key={puff}
         className="city-coffee"

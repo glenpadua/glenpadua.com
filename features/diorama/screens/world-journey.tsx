@@ -131,11 +131,11 @@ function PopulatedJourney({
         -element.getBoundingClientRect().top / travel,
         scenes.length,
       );
-      setEnded(previous => (previous === ending > 0.5 ? previous : !previous));
-      element.style.setProperty(
-        '--ending',
-        (enabled ? ending : Math.round(ending)).toFixed(3),
+      const endingPose = enabled ? ending : Math.round(ending);
+      setEnded(previous =>
+        previous === endingPose >= 0.4 ? previous : !previous,
       );
+      element.style.setProperty('--ending', endingPose.toFixed(3));
       const active = clamp(Math.floor(progress + 0.18), 0, scenes.length - 1);
       const now = performance.now();
       const speed = (window.scrollY - lastY) / Math.max(1, now - lastTime);

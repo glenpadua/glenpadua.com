@@ -8,14 +8,15 @@
 }
 .world .is-ready .world-ending {
   position: absolute;
-  top: 16%;
+  top: 18%;
   /* Keeps small links legible where they cross the lit skyline. */
   text-shadow: 0 1px 8px #151f38;
   left: 9%;
   max-width: min(49%, 540px);
   padding: 0;
   background: none;
-  opacity: var(--ending, 0);
+  /* Let the city copy clear before these aligned words appear. */
+  opacity: clamp(0, (var(--ending, 0) - 0.3) / 0.1, 1);
   pointer-events: none;
 }
 .world .is-ready[data-ended='true'] .world-ending {
@@ -78,9 +79,17 @@
 }
 @media (max-width: 760px) {
   .world .is-ready .world-ending {
-    top: 120px;
+    top: 104px;
     left: 7%;
     right: 6%;
     max-width: none;
+  }
+  .world .world-ending h2 {
+    font-size: clamp(28px, 7.5vw, 40px);
+  }
+}
+@media (max-width: 760px) and (max-height: 700px) {
+  .world .is-ready .world-ending {
+    top: 88px;
   }
 }
