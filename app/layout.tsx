@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
-  icons: { icon: '/assets/favicon.ico' },
 };
 
 export const viewport: Viewport = {
