@@ -61,16 +61,27 @@ export function LakeScene(props: SceneProps): JSX.Element {
       }
       atmosphere={<LakeSeeds />}
       controls={
-        // A reaction only makes sense while he is moving.
-        enabled && props.active ? (
+        <>
+          {/* The bar keeps its joke but stays in the scene: a tap is a cheer,
+              and he does a few more reps. */}
           <InteractionOrb
-            className="lake-cheer"
-            label="Cheer me on"
-            hint="Cheer me on"
-            marker={<span className="lake-cheer-target" />}
+            className="cue-exercise"
+            style={{ left: '83.5%', top: '61%' }}
+            label="Skipping leg day since 2008. Cheer me on"
+            hint="Skipping leg day since 2008."
             onClick={() => setCheers(count => count + 1)}
           />
-        ) : undefined
+          {/* A reaction only makes sense while he is moving. */}
+          {enabled && props.active && (
+            <InteractionOrb
+              className="lake-cheer"
+              label="Cheer me on"
+              hint="Cheer me on"
+              marker={<span className="lake-cheer-target" />}
+              onClick={() => setCheers(count => count + 1)}
+            />
+          )}
+        </>
       }
     />
   );

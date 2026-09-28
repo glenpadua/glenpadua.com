@@ -1,5 +1,4 @@
 import type { WorldScene } from '../../model/types';
-import { articleHref } from '../../lib/routes';
 import { lakeHorizonMask } from './horizon';
 export const lakeScene: WorldScene = {
   id: 'lake',
@@ -38,14 +37,7 @@ export const lakeScene: WorldScene = {
     },
     { id: 'grass', asset: 'grass' },
   ],
-  hotspots: [
-    {
-      id: 'exercise',
-      label: 'Skipping leg day since 2008. Read ‘The Lottery of Birth’',
-      hint: 'Skipping leg day since 2008.',
-      href: articleHref('lottery-of-birth'),
-      x: 83.5,
-      y: 61,
-    },
-  ],
+  // The bar is a control in scene.tsx, not a link: the opening scene keeps
+  // visitors in the day rather than sending them off to an article.
+  hotspots: [],
 };

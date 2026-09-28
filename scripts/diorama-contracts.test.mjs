@@ -198,7 +198,12 @@ test('built pages have semantic copy, real destinations, search metadata and sta
     assert.match(html, /href="\/writing"/);
   }
   assert.match(home, /Skipping leg day/);
-  assert.match(home, /href="\/blog\/lottery-of-birth"/);
+  // The opening scene keeps visitors in the day: no links out of the lake.
+  const lake = home.slice(
+    home.indexOf('world-scene world-lake'),
+    home.indexOf('world-scene world-beach'),
+  );
+  assert.doesNotMatch(lake, /href="\/blog\//);
   assert.match(home, /"@type":"Person"/);
   assert.match(home, /I’m Glen, a software engineer\./);
   assert.match(work, /Senior engineer/);
