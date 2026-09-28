@@ -420,21 +420,31 @@ html:has(.world-journey) {
 }
 /* At the day's end the arrow turns round and says where it goes. */
 /* At dawn the arrow carries an invitation, which arrives after a moment. */
-.world .world-wander[data-invite='true'] {
-  width: auto;
-  grid-auto-flow: column;
-  gap: 7px;
-  padding: 0 12px;
+/* At dawn a line of invitation sits centred just above the arrow: it arrives
+   after a moment and leaves once the day begins. The arrow itself never moves. */
+.world .world-wander-invite {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% - 6px);
+  translate: -50% 3px;
   font-size: 12px;
+  line-height: 1.4;
   white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 300ms ease,
+    translate 300ms ease;
 }
-.world .world-wander[data-invite='true'] span {
-  animation: wander-invite 700ms var(--world-ease) 1.2s both;
+.world .world-wander[data-invite='true'] .world-wander-invite {
+  opacity: 1;
+  translate: -50% 0;
+  animation: wander-invite 700ms var(--world-ease) 1s both;
 }
 @keyframes wander-invite {
   from {
     opacity: 0;
-    transform: translateY(3px);
+    translate: -50% 3px;
   }
 }
 .world .world-wander-back {

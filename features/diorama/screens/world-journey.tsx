@@ -408,7 +408,14 @@ function PopulatedJourney({
             onPointerUp={liftArrow}
           >
             <ArrowDown size={26} strokeWidth={1.35} aria-hidden="true" />
-            {dawn && current === 0 && <span>Spend a day with me</span>}
+            {/* Always present and centred above the arrow, so the arrow never
+                moves; it fades in at dawn and away once the day begins. */}
+            <span
+              className="world-wander-invite"
+              aria-hidden={!(dawn && current === 0)}
+            >
+              Spend a day with me
+            </span>
           </a>
         ) : (
           // At the day's end the same arrow turns round: back to dawn.
