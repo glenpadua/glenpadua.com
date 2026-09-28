@@ -64,12 +64,26 @@
     opacity: 0;
   }
 }
+/*
+ * The page itself: the old page stays solid underneath and the new one fades
+ * in over it. Browsers blend a page crossfade by adding light, so any uneven
+ * timing brightens then darkens the frame (a flash between the dark desk and
+ * the cream article). A normal blend over an opaque page never dips.
+ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+}
 ::view-transition-old(root) {
-  animation-duration: 180ms;
+  animation: none;
 }
 ::view-transition-new(root) {
-  animation-duration: 260ms;
-  animation-delay: 80ms;
+  animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both page-in;
+}
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
 }
 ::view-transition {
   pointer-events: none;

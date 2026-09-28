@@ -141,7 +141,11 @@ export function WritingRoom({
                   <time dateTime={a.date}>{a.date.slice(0, 4)}</time>
                 </div>
                 <h2>{a.title}</h2>
-                <div className="paper-picture" style={coverTransition(a.uid)}>
+                <div
+                  className="paper-picture"
+                  data-cover={a.uid}
+                  style={coverTransition(a.uid)}
+                >
                   <img
                     src={cover.thumbnailSrc}
                     style={{ objectPosition: cover.thumbnailPosition }}

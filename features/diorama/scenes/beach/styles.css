@@ -146,6 +146,17 @@
   max-width: min(48%, 530px);
   top: 13%;
 }
+/* Desktop: the words sit in the open sky over the sea, on the same right
+   margin as the header, clear of the noon sun that rises over the middle. */
+@media (min-width: 761px) and (min-aspect-ratio: 5/4) {
+  .world-beach .world-copy {
+    left: auto;
+    right: 5.5%;
+    width: min(40%, 560px);
+    max-width: none;
+    top: 16%;
+  }
+}
 .world-beach .world-copy h2 {
   font-size: clamp(30px, 3.3vw, 47px);
   line-height: 1.2;

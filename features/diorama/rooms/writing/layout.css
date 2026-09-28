@@ -448,7 +448,7 @@
 }
 
 /* Paused: papers simply appear. */
-:where(.world[data-motion='false'] .writing-room) .article-paper {
+:where(.world[data-still='true'] .writing-room) .article-paper {
   animation: none;
 }
 /* Phones show the portrait painting (1:2) and deal the papers as a 2×2,

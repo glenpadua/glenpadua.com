@@ -57,7 +57,7 @@ function warmRoom(path: string) {
 }
 export function WorldShell({ children }: { children: ReactNode }): JSX.Element {
   const path = usePathname();
-  const { enabled } = useMotionPolicy();
+  const { enabled, paused } = useMotionPolicy();
   // “Show me”: every interactive object glints for a few seconds.
   // A reveal belongs to the page it was asked on; moving on ends it.
   const [revealedOn, setRevealedOn] = useState<string | null>(null);
@@ -257,6 +257,10 @@ export function WorldShell({ children }: { children: ReactNode }): JSX.Element {
       className="world"
       data-room={room}
       data-motion={enabled}
+      // One-off choreography (the papers' deal) answers only to Pause (reduced
+      // motion is handled in CSS): a hidden tab or a back-forward cache
+      // restore must not cancel and replay it.
+      data-still={paused}
       data-reveal={reveal}
     >
       <a className="world-skip" href="#world-main">

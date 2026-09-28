@@ -637,8 +637,7 @@ html:has(.world-journey) {
     transition: none !important;
   }
 }
-.world[data-motion='false'] .article-paper,
-.world[data-motion='false'] .monitor-project {
+.world[data-still='true'] .article-paper {
   animation: none !important;
 }
 @media (max-width: 760px) {

@@ -23,8 +23,11 @@
     background-image: var(--veil-portrait);
   }
 }
-/* On client navigation, stay clear for a moment: most paintings are ready. */
-.art-gate .world .art-veil[data-late]:not([data-painted]) {
+/* Arriving from another page of the site (client navigation, or a full load
+   from an article: `art-arrive`), stay clear for a moment: the painting is
+   almost always ready, and a view transition must not land on a blur. */
+.art-gate .world .art-veil[data-late]:not([data-painted]),
+.art-gate.art-arrive .world .art-veil:not([data-painted]) {
   opacity: 0;
   animation:
     art-veil-show 250ms ease 160ms forwards,
