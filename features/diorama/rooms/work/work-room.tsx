@@ -11,6 +11,7 @@ import { SlackProfile } from './slack-profile';
 import { WeddingFrame } from './wedding-frame';
 import { CoffeeSteam } from './coffee-steam';
 import { SpinningGlobe } from './spinning-globe';
+import { ScreenSaver } from './screen-saver';
 import { ArtVeil } from '../../shared/art-veil';
 import { artPlaceholders } from '../../data/placeholders';
 
@@ -65,26 +66,7 @@ export function WorkRoom({
           dark={!light}
           onIdle={goIdle}
           saver={
-            <div className="screen-saver">
-              <svg viewBox="0 0 100 70" aria-hidden="true">
-                <circle cx="50" cy="35" r="19" fill="#54765d" />
-                <g className="screen-saver-orbit">
-                  <circle cx="82" cy="35" r="3" fill="#ca9b63" />
-                  <ellipse
-                    cx="50"
-                    cy="35"
-                    rx="33"
-                    ry="25"
-                    fill="none"
-                    stroke="#54765d4d"
-                  />
-                </g>
-              </svg>
-              <p>Gone for a walk.</p>
-              <button onClick={() => setScreenAsleep(false)}>
-                Back to the desk
-              </button>
-            </div>
+            <ScreenSaver dark={!light} onWake={() => setScreenAsleep(false)} />
           }
         />
         <InteractionOrb

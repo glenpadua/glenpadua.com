@@ -83,33 +83,6 @@
   left: 71.6%;
   top: 44.6%;
 }
-:where(.world .work-room) .screen-saver {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-content: center;
-  gap: 12px;
-  text-align: center;
-  color: #293e34;
-  background: #fff8e4;
-}
-:where(.world .work-room) .screen-saver svg {
-  width: 85px;
-  margin: auto;
-}
-:where(.world .work-room) .screen-saver p {
-  font-size: 12px;
-}
-:where(.world .work-room) .screen-saver button {
-  border: 0;
-  background: transparent;
-  min-height: 44px;
-  text-decoration: underline;
-}
-:where(.world .work-room) .screen-saver-orbit {
-  transform-origin: 50% 50%;
-  animation: saver-orbit 28s linear infinite;
-}
 :where(.world .work-room) .room-window-glow {
   position: absolute;
   left: 83%;
@@ -119,11 +92,6 @@
   pointer-events: none;
   background: radial-gradient(ellipse at 60% 50%, #ffc58422, transparent 67%);
   animation: world-glimmer 13s ease-in-out infinite alternate;
-}
-@keyframes saver-orbit {
-  to {
-    transform: rotate(360deg);
-  }
 }
 @media (max-width: 760px) {
   .world .room-screen-mode .world-cue-label,

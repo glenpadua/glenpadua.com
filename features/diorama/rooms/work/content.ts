@@ -35,8 +35,12 @@ export interface DeskFile {
   /** A dated list instead of blocks (career). */
   timeline?: readonly { when: string; what: string; detail: string }[];
   paragraphs?: readonly string[];
+  /** Crumpled old projects, shown as a grid of icons (trash). */
+  scraps?: readonly { name: string; icon: ScrapIcon }[];
   link?: { label: string; href: string };
 }
+
+export type ScrapIcon = 'chart' | 'piggy' | 'siren' | 'shapes' | 'file';
 
 /** Sticky notes on the desktop; one is picked at random per visit. */
 export const deskNotes: readonly string[] = [
@@ -163,9 +167,14 @@ export const deskFiles: readonly DeskFile[] = [
     name: 'Trash',
     icon: 'trash',
     title: 'Trash',
-    paragraphs: [
-      'Networthy, Piggy, Content Cop, Uncommon UI and a few others.',
-      'Built them, learned something, moved on. Not everything needs to be kept.',
+    paragraphs: ['Dead ideas, kept for sentimental reasons.'],
+    scraps: [
+      { name: 'Networthy', icon: 'chart' },
+      { name: 'Piggy', icon: 'piggy' },
+      { name: 'Content Cop', icon: 'siren' },
+      { name: 'Uncommon UI', icon: 'shapes' },
+      { name: 'side-project (2)', icon: 'file' },
+      { name: 'side-project (3)', icon: 'file' },
     ],
   },
 ];
@@ -177,6 +186,106 @@ export const deskToasts: readonly string[] = [
   'Millusha: dinner’s ready.',
   'You have 43 tabs open. Surely not.',
   'Backup complete. Probably.',
+];
+
+/*
+ * The laptop's Slack channels. Each click on a channel shows its next
+ * conversation, round and round. DRAFT COPY for Glen to review; everyone
+ * except Glen is made up, so no real colleague is quoted.
+ */
+export interface SlackMessage {
+  from: string;
+  text: string;
+}
+export interface SlackChannel {
+  name: string;
+  conversations: readonly (readonly SlackMessage[])[];
+}
+
+export const slackChannels: readonly SlackChannel[] = [
+  {
+    name: 'dev-team-ai',
+    conversations: [
+      [
+        { from: 'Glen', text: 'Eval run finished. 47 out of 50.' },
+        { from: 'Priya', text: 'And the other three?' },
+        {
+          from: 'Glen',
+          text: 'I read them. The model was right and my expected answers were wrong.',
+        },
+        { from: 'Priya', text: 'So 50 out of 50 and you get a 47.' },
+      ],
+      [
+        { from: 'Tomás', text: 'Who added “please” to the system prompt?' },
+        { from: 'Glen', text: 'Me. Scores went up two points.' },
+        { from: 'Tomás', text: 'I hate that this works.' },
+      ],
+      [
+        { from: 'Glen', text: 'Hot take: most AI bugs are data bugs.' },
+        { from: 'Priya', text: 'Most bugs are data bugs.' },
+        { from: 'Glen', text: 'Even hotter take, noted.' },
+      ],
+    ],
+  },
+  {
+    name: 'random',
+    conversations: [
+      [
+        { from: 'Maya', text: 'Is anyone else’s cat attending this standup?' },
+        { from: 'Glen', text: 'No cat here. The plants are listening though.' },
+        { from: 'Maya', text: 'Silent stakeholders.' },
+      ],
+      [
+        { from: 'Glen', text: 'Valencia is 31°C today. In September.' },
+        { from: 'Jonas', text: 'Berlin is 12 and raining. Sideways.' },
+        { from: 'Glen', text: 'Let’s never compare weather again.' },
+      ],
+      [
+        { from: 'Jonas', text: 'Share your desk setup, go.' },
+        {
+          from: 'Glen',
+          text: 'Monitor, laptop, globe, Arsenal scarf. Essentials.',
+        },
+      ],
+    ],
+  },
+  {
+    name: 's-anime',
+    conversations: [
+      [
+        { from: 'Glen', text: 'Finished Frieren. I am not okay.' },
+        { from: 'Kenji', text: 'Nobody is. Welcome.' },
+      ],
+      [
+        { from: 'Kenji', text: 'One Piece: start from episode 1 or skip?' },
+        { from: 'Glen', text: 'Start from 1. Clear your calendar. For years.' },
+      ],
+      [
+        { from: 'Glen', text: 'Rewatching Haikyuu for motivation.' },
+        { from: 'Kenji', text: 'For work?' },
+        { from: 'Glen', text: 'For pull-ups.' },
+      ],
+    ],
+  },
+  {
+    name: 's-football',
+    conversations: [
+      [
+        { from: 'Glen', text: '2–0 up at 80 minutes.' },
+        { from: 'Sam', text: 'Relax, it’s done.' },
+        { from: 'Glen', text: 'I support Arsenal. It is never done.' },
+      ],
+      [
+        { from: 'Sam', text: 'Title this year?' },
+        { from: 'Glen', text: 'Ask me in May. From behind a cushion.' },
+      ],
+      [
+        { from: 'Glen', text: 'Moving meetings for the North London derby.' },
+        { from: 'Sam', text: 'Is that allowed?' },
+        { from: 'Glen', text: 'It’s in my calendar as “focus time”.' },
+      ],
+    ],
+  },
 ];
 
 /** Places Glen has lived, in his order; a tap on the globe tours them. */

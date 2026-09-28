@@ -1,0 +1,103 @@
+/* The desk screen's saver: a bouncing signature over quiet paper. */
+.saver {
+  position: absolute;
+  inset: 0;
+  container-type: size;
+  overflow: hidden;
+  background: #fff8e4;
+  color: #293e34;
+  font-size: clamp(9px, 2.1cqw, 14px);
+  transition: background-color 450ms ease;
+}
+.saver[data-dark='true'] {
+  background: #161c19;
+  color: #e9e3cf;
+}
+/* The signature bounces below the away message, never across it. */
+.field {
+  position: absolute;
+  inset: 17cqh 0 0;
+}
+.mark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font: italic 500 clamp(15px, 5.2cqw, 40px) / 1.2 var(--world-heading-font);
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  transition: color 200ms ease;
+  will-change: transform;
+}
+.saver[data-dark='true'] .mark {
+  filter: brightness(1.45) saturate(0.9);
+}
+/* Motion off: the signature simply rests in the middle. */
+.saver[data-still='true'] .mark {
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+.mark[data-cheer='true'] {
+  animation: corner-pop 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.cheer {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  translate: -50% -50%;
+  padding: 0.3em 0.9em;
+  border-radius: 999px;
+  background: #f6e7a8;
+  color: #4a4127;
+  font-weight: 700;
+  animation: cheer 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+/* At the top: Glen's painted head covers the bottom of the screen. */
+.away {
+  position: absolute;
+  inset: 4cqh 0 auto;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 0.2em;
+  text-align: center;
+}
+.away p {
+  margin: 0;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+.count {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.8;
+}
+.away button {
+  min-height: 44px;
+  padding: 0 0.8em;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@keyframes corner-pop {
+  40% {
+    scale: 1.25;
+  }
+}
+@keyframes cheer {
+  0% {
+    opacity: 0;
+    scale: 0.6;
+  }
+  15%,
+  80% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}

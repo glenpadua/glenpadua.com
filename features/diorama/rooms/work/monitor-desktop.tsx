@@ -11,9 +11,24 @@ import {
   type ReactNode,
 } from 'react';
 import { createPortal, flushSync } from 'react-dom';
-import { Maximize2, Minimize2, X } from 'lucide-react';
+import {
+  ChartLine,
+  File as FileIcon,
+  Maximize2,
+  Minimize2,
+  PiggyBank,
+  Shapes,
+  Siren,
+  X,
+  type LucideIcon,
+} from 'lucide-react';
 import { useMotionPolicy } from '../../shared/scene-motion';
-import { deskToasts, type DeskFile, type DeskIcon } from './content';
+import {
+  deskToasts,
+  type DeskFile,
+  type DeskIcon,
+  type ScrapIcon,
+} from './content';
 import { DeskWallpaper } from './desk-wallpaper';
 import styles from './monitor-desktop.module.css';
 import {
@@ -143,6 +158,14 @@ const glyphs: Record<DeskIcon, ReactNode> = {
   ),
 };
 
+const scrapIcons: Record<ScrapIcon, LucideIcon> = {
+  chart: ChartLine,
+  piggy: PiggyBank,
+  siren: Siren,
+  shapes: Shapes,
+  file: FileIcon,
+};
+
 function Glyph({ icon }: { icon: DeskIcon }): JSX.Element {
   return (
     <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
@@ -175,6 +198,24 @@ function FileContents({ file }: { file: DeskFile }): JSX.Element {
       {file.paragraphs?.map(text => (
         <p key={text}>{text}</p>
       ))}
+      {file.scraps && (
+        <ul className={styles.scraps}>
+          {file.scraps.map((scrap, i) => {
+            const Icon = scrapIcons[scrap.icon];
+            return (
+              <li
+                key={scrap.name}
+                style={
+                  { '--tilt': `${(((i * 7) % 5) - 2) * 3}deg` } as CSSProperties
+                }
+              >
+                <Icon aria-hidden="true" />
+                <span>{scrap.name}</span>
+              </li>
+            );
+          })}
+        </ul>
+      )}
       {file.link && (
         <a
           className={styles.link}
@@ -624,13 +665,13 @@ export function MonitorDesktop({
                   aria-expanded={systemMenu}
                   onClick={toggleSystemMenu}
                 >
-                  <i /> Glen’s desk
+                  <i /> Glen’s desktop
                 </button>
                 {systemMenu && (
                   <div
                     className={`${styles.menu} ${styles.systemMenu}`}
                     role="menu"
-                    aria-label="Glen’s desk"
+                    aria-label="Glen’s desktop"
                   >
                     <button ref={systemFirst} role="menuitem" onClick={restart}>
                       Restart

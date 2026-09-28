@@ -38,7 +38,7 @@
   background: #fbf3dde6;
   font-size: 0.86em;
 }
-/* “Glen's desk” is the system menu, like the corner of any menu bar. */
+/* “Glen's desktop” is the system menu, like the corner of any menu bar. */
 .system {
   display: flex;
   align-items: center;
@@ -261,6 +261,37 @@
   color: #3c5a45;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+/* Trash: old projects lying about as crumpled, slightly tilted icons. */
+.scraps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6.2em, 1fr));
+  gap: 0.9em 0.4em;
+  margin: 0.9em 0 0;
+  padding: 0;
+  list-style: none;
+}
+.scraps li {
+  display: grid;
+  justify-items: center;
+  gap: 0.35em;
+  text-align: center;
+  font-size: 0.86em;
+  line-height: 1.2;
+  opacity: 0.82;
+  transform: rotate(var(--tilt));
+}
+.scraps svg {
+  width: 3em;
+  height: 3em;
+  padding: 0.55em;
+  border-radius: 8px;
+  background: #54765d17;
+  color: #54765d;
+  stroke-width: 1.6;
+}
+.scraps li:nth-child(n + 5) {
+  opacity: 0.5;
 }
 
 /* Glen's (or the visitor's) little cursor. */
@@ -555,6 +586,10 @@
   color: #cfe0cf;
 }
 .monitor[data-dark='true'] .link {
+  color: #cfe0cf;
+}
+.monitor[data-dark='true'] .scraps svg {
+  background: #9cc0a51f;
   color: #cfe0cf;
 }
 .monitor[data-dark='true'] .boot {
