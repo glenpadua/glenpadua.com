@@ -310,6 +310,10 @@
   cursor: zoom-out;
 }
 @media (max-width: 760px) {
+  /* The phone screen is small: keep labels at a readable size. */
+  .screen {
+    font-size: clamp(10px, min(3.4cqw, 6cqh), 13px);
+  }
   .icons {
     left: 50%;
     transform: translateX(-50%);

@@ -1,23 +1,39 @@
 # Website architecture and edit guide
 
-Updated 27 September 2026. This is the current implementation map. Historical v1/v2 reports describe their own checkpoints; use this guide for paths and ownership today.
+Updated 28 September 2026. This is the current implementation map. Historical v1/v2 reports describe their own checkpoints; use this guide for paths and ownership today.
 
-## Two websites, one repository
+## Routes and the archive
 
-The existing public pages still live in `app/`. The illustrated experience is a route-independent feature mounted by thin entries under `app/preview/diorama/`. Its layout supplies motion policy, navigation and scoped styles; the preview route supplies `noindex` metadata. Existing `/preview/lakeside` and `/preview/coast` are earlier studies, not the main development targets.
+The illustrated site is the website. It is a route-independent feature (`features/diorama/`) mounted by thin entries in `app/`:
 
-Keep the loading boundary scoped to `app/blog/loading.tsx`. A root `app/loading.tsx` caused the built scenic pages to be parked inside a hidden React streaming container, requiring JavaScript to reveal otherwise complete static content. The generated-HTML contracts check the ancestors of each preview page's main content to guard against this regression.
+| URL                           | Entry                             | Notes                                                                              |
+| ----------------------------- | --------------------------------- | ---------------------------------------------------------------------------------- |
+| `/`                           | `app/page.tsx`                    | The day's journey; also emits the `Person` JSON-LD                                 |
+| `/work`                       | `app/work/page.tsx`               | Work room                                                                          |
+| `/writing`                    | `app/writing/page.tsx`            | Writing room (revalidates hourly from Prismic)                                     |
+| `/blog/<uid>`                 | `app/blog/[uid]/page.tsx`         | Article reader, `BlogPosting` JSON-LD; `app/blog/layout.tsx` adds Prismic previews |
+| not found                     | `app/not-found.tsx`               | `screens/lost-page.tsx`                                                            |
+| `/robots.txt`, `/sitemap.xml` | `app/robots.ts`, `app/sitemap.ts` | Sitemap lists the rooms and every article                                          |
+
+`app/layout.tsx` wraps every page in `WorldLayout` and sets site-wide metadata from `data/site.ts`. Page metadata comes from `lib/metadata.ts` (`pageMetadata`), which sets the canonical URL and the Open Graph/Twitter card on every page. `app/globals.css` is the only global stylesheet: a vendored copy of Tailwind v3's preflight (so the site keeps the base it was designed on, without a Tailwind build), a zero margin/padding reset, and `.sr-only`.
+
+`next.config.mjs` keeps old addresses working: `/preview/diorama/*` → the same path at the root, other `/preview/*` studies → `/`, `/blog` → `/writing`, `/skills` → `/work`, `/story/<uid>` → `/blog/<uid>`. Every `/blog/<uid>` article kept its URL.
+
+The previous website, its data and assets, and the early `/preview/lakeside` and `/preview/coast` studies are in `archive/legacy-site/` (see its README). The archive is excluded from builds, linting and type-checking. Do not import from it.
+
+Do not add a root `app/loading.tsx`. It parked the built scenic pages inside a hidden React streaming container, requiring JavaScript to reveal otherwise complete static content. The generated-HTML contracts check the ancestors of each page's main content to guard against this regression.
 
 ```text
 features/diorama/
   world-layout.tsx          reusable experience layout
   screens/world-journey.tsx native scroll, active chapter, nearby loading
+  screens/lost-page.tsx     the not-found page
   data/scenes.ts            chapter order
-  data/site.ts              shared contact destination
+  data/site.ts              site identity, share image, contact and socials
   articles/                reading layout, cover registry and article CMS adapter
   model/                   scene content and runtime contracts
-  lib/                     route map, asset paths, pure choreography
-  shared/                  orb, motion policy, layer/fallback renderer, dialog, sky
+  lib/                     route map, page metadata, asset paths, pure choreography
+  shared/                  orb, motion policy, layer/fallback renderer, sky, shell
   scenes/
     lake/                  copy, composition, character, foliage, water shader
     beach/                 copy, composition, character, sea/boat effects
@@ -29,8 +45,6 @@ features/diorama/
 ```
 
 Each scene owns `content.ts`, `scene.tsx` and `styles.css`, plus its character/effect modules. The beach and city agents can improve their scenes without editing the journey, lake, or each other. Assets remain at stable `/assets/world/` URLs; add new assets with scene-specific names, preserving approved source artwork and manifests.
-
-`data/diorama.ts` and `app/preview/_components/scene-motion.tsx` are compatibility exports for earlier consumers. They contain no separate configuration or state implementation. New code imports feature-owned modules directly.
 
 ## What to edit
 
@@ -48,7 +62,7 @@ Each scene owns `content.ts`, `scene.tsx` and `styles.css`, plus its character/e
 | Matching Writing thumbnails and article covers                           | `articles/covers.ts`, `getArticleCover(uid)`                 |
 | Writing-desk handwriting and its painting-space masks                    | `rooms/writing/writing-hand.tsx`, `rooms/writing/styles.css` |
 | CMS refresh/mapping                                                      | `rooms/writing/load-articles.ts` (server only)               |
-| Mount URLs / contact                                                     | `lib/routes.ts` / `data/site.ts`                             |
+| Mount URLs / contact, site title and share image                         | `lib/routes.ts` / `data/site.ts`                             |
 
 ## Scene contract
 
@@ -79,6 +93,8 @@ The approved Lora/Nunito Sans pairing is recorded in [current direction](website
 `shared/journey-sky.tsx` and its stylesheet own the persistent sky, sun, moon, drifting clouds, birds and stars. `lib/sky-time.ts` owns palette stops and reversible interpolation. Each scene's `content.ts` sets `skyTime`: 0 is dawn, .45 midday and 1 night. The journey interpolates adjacent scene times, so scenes can be reordered or added without fixed chapter indices in the sky renderer. The existing scroll/resize frame updates CSS variables; there is no separate sky render loop or added engine.
 
 Scene-owned styles mask the upper painted sky into the shared background. Keep these masks with their scene geometry. Beach masks the entire background layer because its water canvas samples the complete painting; masking only the image would leave a second sky over the shared one. No source artwork is rewritten. City skyline lights/reflections remain local; its former separate clouds/stars were replaced by the shared sky.
+
+The drifting clouds share `sky-cloud-painted-v1.webp`, a small transparent painted mask, with daylight/night ink, shade and rim colours supplied by `sky-time.ts`. Keep their edges and texture consistent with the clouds retained in the city painting; avoid smooth SVG bubble silhouettes. They use the existing transform animation and motion policy, without another render loop. See [cloud verification and asset provenance](verification/clouds-2026-09-27/README.md).
 
 Lake uses a painting-space ridge/pine mask from `scenes/lake/horizon.ts`; its existing animated pines share those same paths. Optional `WorldLayer.mask` applies the silhouette to the whole layer and static fallback. Optional `WorldScene.sunrise` anchors the initial sun centre to a percentage position in the background painting. The journey projects this into viewport coordinates on initialization/resize using the scaled background width and the resting art stage, independent of image load and scroll travel. Sun/moon arcs stay in `sky-time.ts`, with separate portrait heights; the lake's morning tint stays in its scene stylesheet.
 
@@ -129,15 +145,11 @@ Writing-desk handwriting is owned by `rooms/writing/writing-hand.tsx` and `rooms
 
 Do not copy/paste the orb or another scene's renderer into a new local implementation. Request changes to shared APIs through coordination. Use unique files for generated assets/evidence. Workstation/Writing remain intact unless explicitly assigned. Local threads share one checkout: changes appear immediately. A second `next build` or server restart can disrupt another thread; coordinate before either.
 
-## Promoting the experience later
+## Paintings and page weight
 
-Promotion is a separate requested step; this refactor does not switch the public site. See [the current readiness review](site-readiness.md) for the remaining launch work.
+Large paintings have two copies. The approved full-quality file lives in `art-source/world/`; the site serves an encoded copy under the same name in `public/assets/world/` (lossy WebP at a visually lossless setting, lossless alpha), written by `scripts/encode-art.mjs`. Edit art in `art-source/`, then re-run the script. Geometry scripts and tests (Work screen mask, lake shoreline, writing hand) read the served copies, because that is what visitors see. Article link-preview cards (`<uid>-v1-og.jpg`) come from `scripts/article-og-images.mjs`; `covers.ts` exposes them as `shareSrc`.
 
-1. Change the single mount in `lib/routes.ts` from `/preview/diorama` to an empty string. Its helper maps that to `/`, `/work`, `/writing` and the `/blog` article prefix. `articleHref` and legacy article-link resolution live in that same module.
-2. Compose `WorldLayout` and the existing feature screens in the public route entries, or a shared route-group layout. Keep the old pages recoverable in Git. Avoid wrapping article pages in a scenic viewport.
-3. Preserve `/blog` and every `/blog/[uid]`; retain `/skills` or add a deliberate redirect. Decide whether Writing replaces the blog index or complements it. The server article adapter and original URLs do not change.
-4. Keep preview routes `noindex`; set public titles, descriptions, canonical URLs, sitemap and social metadata for the new public entries. If keeping both mounts live, replace the single deployment mount with an explicit route context; do not silently let preview links escape to public pages.
-5. Verify direct navigation, back/forward, fragments, article URLs, external links, no-JavaScript content, reduced motion, keyboard operation and mobile layouts. Measure assets/runtime and review animation on representative hardware before claiming performance.
+Heavy code stays lazy: the lake and beach water renderers import three.js on demand, and Prismic's preview toolbar only loads under `/blog`. Measured on a local production build (28 September 2026, cache disabled): Work ≈ 0.66 MB, Writing ≈ 0.8 MB, an article ≈ 0.4 MB, and the whole homepage journey ≈ 1.7 MB after scrolling to the end; LCP under 350 ms locally. Re-measure after adding paintings.
 
 ## Verification
 

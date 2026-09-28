@@ -58,7 +58,7 @@ test('unavailable WebGL leaves the underlying painting as the fallback', async t
 });
 
 test('built no-JavaScript beach keeps seated art and a usable GitHub sticker', () => {
-  const html = fs.readFileSync('.next/server/app/preview/diorama.html', 'utf8');
+  const html = fs.readFileSync('.next/server/app/index.html', 'utf8');
   const still = [...html.matchAll(/<noscript>([\s\S]*?)<\/noscript>/g)]
     .map(match => match[1])
     .find(markup => markup.includes('beach-still'));

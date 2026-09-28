@@ -1,16 +1,11 @@
-import { SiteLayout } from '@/app/components/layout/site-layout';
-import { PageTitle } from '@/app/components/layout/page-title';
+import type { Metadata } from 'next';
+import { LostPage } from '@/features/diorama/screens/lost-page';
 
-export const metadata = {
-  title: 'Not Found',
+export const metadata: Metadata = {
+  title: 'Page not found',
+  robots: { index: false },
 };
 
 export default function NotFound(): JSX.Element {
-  return (
-    <SiteLayout>
-      <div style={{ marginTop: '40px', textAlign: 'center' }}>
-        <PageTitle>Page Not Found</PageTitle>
-      </div>
-    </SiteLayout>
-  );
+  return <LostPage />;
 }

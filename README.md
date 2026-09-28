@@ -1,52 +1,54 @@
 # glenpadua.com
 
-Personal website built with Next.js App Router, TypeScript, Prismic, Tailwind CSS, and shadcn UI primitives.
+Glen Padua's website: an illustrated day. A lake at dawn, a beach at noon and a
+city at night on the homepage, with a Work desk and a Writing desk as rooms, and
+the articles in a quiet reader. Built with the Next.js App Router, TypeScript and
+scoped CSS; articles come from Prismic.
 
-## The illustrated website
+| Page          | What it is                                                  |
+| ------------- | ----------------------------------------------------------- |
+| `/`           | The day, scroll by scroll, ending in the night sky          |
+| `/work`       | Glen's desk: a small working desktop, Slack, a globe        |
+| `/writing`    | The writing desk: papers to shuffle and an archive of cards |
+| `/blog/<uid>` | Each article, at the same address it has always had         |
 
-The current development preview is `/preview/diorama`, with immersive Work and Writing rooms at `/preview/diorama/work` and `/preview/diorama/writing`. The existing public website is preserved. The implementation lives in `features/diorama/`; preview routes only mount it.
+## Where things are
 
-- [Manifesto](MANIFESTO.md): why this website exists and the standard it should meet.
-- [Current creative direction](docs/website-direction.md): approved scenes, character details, voice, motion and interactions.
-- [Architecture and edit guide](docs/website-architecture.md): where to change things, parallel scene ownership, and eventual public-site promotion.
-- [Readiness review](docs/site-readiness.md): what remains before replacing the public website, and what can wait.
+- `features/diorama/`: the whole site (scenes, rooms, articles, shared shell). `app/` only mounts it.
+- `art-source/world/`: approved full-quality paintings; `public/assets/world/` serves encoded copies.
+- `archive/legacy-site/`: the previous website, for reference only (not built).
+
+Read these before changing things:
+
+- [Manifesto](MANIFESTO.md): why the site exists and the standard it should meet.
+- [Current creative direction](docs/website-direction.md): scenes, characters, voice, motion and interactions.
+- [Architecture and edit guide](docs/website-architecture.md): routes, ownership, where to change what, performance.
+- [Shared art style](docs/art-style.md): for any new or changed artwork.
 - [AGENTS.md](AGENTS.md): concise instructions for coding agents.
 
-Start the application with `rtk proxy npm run dev -- --hostname 127.0.0.1 --port 3100`, then open [the local preview](http://127.0.0.1:3100/preview/diorama). Check whether that port already has a server before starting another. A running production server needs a coordinated rebuild/restart to show source changes.
+## Develop
 
-The [static mock](docs/mock/README.md) and [storyboard](docs/storyboard/README.md) preserve design studies. `/preview/lakeside` and `/preview/coast` are earlier animation experiments. Use the current direction and architecture guide for new implementation work. Historical [v1](docs/diorama-v1.md) and [motion v2](docs/diorama-motion-v2.md) reports record earlier verification, not current release guarantees.
+Node.js 20.9+ runs the app; the focused tests need Node.js 24+.
 
-## Stack
-
-- Next.js 16 (App Router)
-- React 18 + TypeScript (strict mode)
-- Prismic (`@prismicio/client`, `@prismicio/next`, `@prismicio/react`)
-- Tailwind CSS 3
-- shadcn UI primitives (Radix + utility components)
-
-## Requirements
-
-- Node.js `>=20.9.0` for the application; Node.js 24+ for the focused test suites
-- npm
+```sh
+npm install
+npm run dev -- --hostname 127.0.0.1 --port 3100
+```
 
 ## Scripts
 
-- `npm run dev` - start local dev server
-- `npm run build` - create production build
-- `npm run start` - run production server
-- `npm run typecheck` - run TypeScript checks
-- `npm run lint` - run ESLint
-- `npm run format` - check Prettier formatting
-- `npm run check` - typecheck + lint + build
-- `npm run test:diorama` - all focused tests; run after building on Node.js 24+
+- `npm run dev`: local dev server
+- `npm run build` / `npm run start`: production build and server
+- `npm run typecheck`, `npm run lint`, `npm run format`
+- `npm run check`: typecheck, lint and build
+- `npm run test:diorama`: every focused test (run after a build; several read the built HTML)
+- `node scripts/encode-art.mjs`: re-encode paintings after editing `art-source/`
+- `node scripts/article-og-images.mjs`: regenerate article link-preview cards
 
-## Prismic Preview Routes
+## Content
 
-- `/api/preview`
-- `/api/exit-preview`
-
-## Notes
-
-- Routes live in `app/`. The illustrated experience is feature-owned under `features/diorama`; legacy pages retain route-local components.
-- Core routes are preserved: `/`, `/skills`, `/work`, `/blog`, `/blog/[uid]`.
-- The public site uses Tailwind and `app/components/ui/*`; the illustrated experience uses scoped CSS, shared orbs/dialogs, and scene-owned effects.
+Articles live in Prismic (repository in `sm.json`). New posts appear on the
+Writing desk within an hour; `/api/preview` and `/api/exit-preview` support
+Prismic's draft previews. Featured-paper notes and the order of the desk are in
+`features/diorama/rooms/writing/content.ts`; Work desk files in
+`features/diorama/rooms/work/content.ts`.

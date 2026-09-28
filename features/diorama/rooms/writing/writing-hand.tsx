@@ -52,11 +52,11 @@ export function WritingHand(): JSX.Element | null {
 
   return (
     <div
-      className="stories-writing-composite"
+      className="writing-hand-composite"
       data-ready={ready}
       aria-hidden="true"
     >
-      <picture className="stories-writing-clean">
+      <picture className="writing-hand-clean">
         <source
           media="(max-width:760px)"
           srcSet={worldAsset('stories-writing-clean-portrait')}
@@ -70,8 +70,8 @@ export function WritingHand(): JSX.Element | null {
           onError={() => setFailed(true)}
         />
       </picture>
-      <div className="stories-writing-motion">
-        <picture className="stories-writing-cutout">
+      <div className="writing-hand-motion">
+        <picture className="writing-hand-cutout">
           <source
             media="(max-width:760px)"
             srcSet={worldAsset('writing-portrait-v1')}
@@ -86,7 +86,7 @@ export function WritingHand(): JSX.Element | null {
           />
         </picture>
       </div>
-      <picture className="stories-writing-cuff">
+      <picture className="writing-hand-cuff">
         <source
           media="(max-width:760px)"
           srcSet={worldAsset('writing-portrait-v1')}

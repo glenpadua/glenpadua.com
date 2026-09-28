@@ -1,34 +1,44 @@
-import { SiteLayout } from '@/app/components/layout/site-layout';
-import { PageTitle } from '@/app/components/layout/page-title';
-import { AboutCard } from '@/app/_components/about-card';
-import { aboutCards } from '@/data/about-cards';
+import { WorldJourney } from '@/features/diorama/screens/world-journey';
+import { worldScenes } from '@/features/diorama/data/scenes';
+import { pageMetadata } from '@/features/diorama/lib/metadata';
+import { site, socialLinks } from '@/features/diorama/data/site';
 
-export const metadata = {
-  title: 'Home',
+export const metadata = pageMetadata({
+  title: site.title,
+  absoluteTitle: true,
+  description: site.description,
+  path: '/',
+});
+
+// Who this is, for search engines: plain facts only.
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  url: site.url,
+  image: `${site.url}${site.image.url}`,
+  jobTitle: 'Senior Engineer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Remote',
+    url: 'https://remote.com',
+  },
+  sameAs: [
+    socialLinks.github,
+    socialLinks.twitter,
+    socialLinks.instagram,
+    'https://www.linkedin.com/in/glen-padua/',
+  ],
 };
 
-export default function Page(): JSX.Element {
+export default function Home(): JSX.Element {
   return (
-    <SiteLayout>
-      <div className="mt-[30px] w-full text-center">
-        <PageTitle>
-          Hello I&apos;m Glen!
-          <span role="img" aria-label="hand-wave">
-            👋
-          </span>
-        </PageTitle>
-
-        <section className="mt-5 flex w-full flex-wrap justify-center">
-          {aboutCards.map(item => (
-            <div
-              key={item.id}
-              className="my-5 w-full max-w-[300px] min-[600px]:mx-5 lg:max-w-[350px]"
-            >
-              <AboutCard {...item} />
-            </div>
-          ))}
-        </section>
-      </div>
-    </SiteLayout>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }}
+      />
+      <WorldJourney scenes={worldScenes} />
+    </>
   );
 }

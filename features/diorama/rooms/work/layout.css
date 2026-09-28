@@ -40,63 +40,20 @@
   flex-direction: column;
   gap: 6px;
 }
-@media (max-width: 760px) {
-  :where(.world) .work-room .room-art-stage {
-    width: max(100vw, 66.6667svh);
-    height: max(150vw, 100svh);
-    top: auto;
-    bottom: 0;
-    transform: translateX(-50%);
-  }
-  :where(.world .work-room) .desk-monitor {
-    left: 50%;
-    mask-image: none;
-    transform: translateX(-50%);
-    top: 18%;
-    width: calc(100vw - 44px);
-    height: 26%;
-    min-height: 197px;
-    padding: 13px 15px;
-    border: 7px solid #343733;
-    border-radius: 7px;
-    box-shadow: 0 4px 0 #232e28;
-  }
-  :where(.world .work-room) .room-notebook {
-    left: 81%;
-    top: 65%;
-    flex-direction: column;
-    gap: 5px;
-  }
-  :where(.world .work-room) .room-lamp {
-    left: 25%;
-    top: 15%;
-  }
-  :where(.world .work-room) .room-lamp .world-cue-label {
-    display: none;
-  }
-}
+/* Phones show the portrait painting: the stage keeps its 1:2 shape, and the
+   desktop fills its painted screen, behind the laptop lid. */
 @media (max-width: 760px) {
   :where(.world) .work-room .room-art-stage {
     width: max(100vw, 50svh);
     height: max(200vw, 100svh);
-    left: 50%;
-    top: 50%;
-    bottom: auto;
-    transform: translate(-50%, -50%);
   }
   :where(.world .work-room) .desk-monitor {
-    left: 8%;
-    top: 18.4%;
-    transform: none;
-    width: 84%;
-    height: 23%;
-    min-height: 0;
-    mask-image: none;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
+    left: var(--portrait-screen-left);
+    top: var(--portrait-screen-top);
+    width: var(--portrait-screen-width);
+    height: var(--portrait-screen-height);
+    mask-image: var(--portrait-screen-mask);
     padding: 11px 13px;
-    background: #fff8e4;
   }
   :where(.world .work-room) .room-notebook {
     left: 83%;
@@ -105,6 +62,9 @@
   :where(.world .work-room) .room-lamp {
     left: 16%;
     top: 15%;
+  }
+  :where(.world .work-room) .room-lamp .world-cue-label {
+    display: none;
   }
 }
 @media (min-width: 761px) and (max-aspect-ratio: 5/4) {

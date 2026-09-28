@@ -1,22 +1,22 @@
-import { Suspense } from 'react';
 import type { ReactNode } from 'react';
-import type { Metadata } from 'next';
-import { PrismicPreview } from '@prismicio/next';
-import { AnalyticsTracker } from '@/app/components/analytics/analytics-tracker';
-import { repositoryName } from '@/lib/prismic';
+import type { Metadata, Viewport } from 'next';
+import { WorldLayout } from '@/features/diorama/world-layout';
+import { site } from '@/features/diorama/data/site';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Glen Padua',
-    template: '%s | Glen Padua',
-  },
-  description:
-    'Everything you need to know about me. Built with Next.js and Prismic.',
-  icons: {
-    icon: '/assets/favicon.ico',
-    shortcut: '/assets/favicon.ico',
-  },
+  metadataBase: new URL(site.url),
+  title: { default: site.title, template: `%s — ${site.name}` },
+  description: site.description,
+  applicationName: site.name,
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  icons: { icon: '/assets/favicon.ico' },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#2f4a3e',
+  colorScheme: 'light',
 };
 
 export default function RootLayout({
@@ -24,12 +24,8 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>): JSX.Element {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-[#f2f4f8] text-foreground antialiased">
-        <Suspense fallback={null}>
-          <AnalyticsTracker />
-        </Suspense>
-        {children}
-        <PrismicPreview repositoryName={repositoryName} />
+      <body>
+        <WorldLayout>{children}</WorldLayout>
       </body>
     </html>
   );

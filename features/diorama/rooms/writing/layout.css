@@ -7,6 +7,15 @@
   position: absolute;
   inset: 0;
 }
+/* Wide screens crop the painting's top and bottom evenly, which would slide
+   the top papers under the header. Draw the spread in a little, anchored low
+   so the lower papers keep their places above the writing hand. */
+@media (min-width: 761px) and (min-aspect-ratio: 8/5) {
+  :where(.world .writing-room) .paper-spread {
+    transform: scale(0.9);
+    transform-origin: 50% 76%;
+  }
+}
 :where(.world .writing-room) .article-paper {
   position: absolute;
   display: flex;
@@ -96,6 +105,31 @@
   height: 28%;
   --rotation: 5deg;
 }
+/* Portrait tablets keep the landscape painting, of which only the centre
+   shows. Deal the papers as a loose 2×2 inside that visible column. */
+@media (min-width: 761px) and (max-aspect-ratio: 1/1) {
+  :where(.world .writing-room) .paper-spread {
+    inset: 14% auto 31% calc(50% - 38vw);
+    width: 76vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4svh 3vw;
+  }
+  :where(.world .writing-room) .article-paper {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 18px 20px;
+  }
+  :where(.world .writing-room) .archive-cards {
+    right: calc(50% - 50vw + 24px);
+    width: min(60vw, 420px);
+  }
+}
 :where(.world .writing-room) .paper-meta {
   display: flex;
   justify-content: space-between;
@@ -128,7 +162,7 @@
   opacity: 0.85;
 }
 :where(.world .writing-room) .paper-note {
-  font-size: clamp(9px, 0.7cqw, 12px);
+  font-size: clamp(10px, 0.7cqw, 12px);
   margin-top: 0.4cqw;
   line-height: 1.4;
 }
@@ -145,7 +179,7 @@
     0 1px 2px #342313,
     var(--edge-shadow);
   padding: 2px 0;
-  font-size: 11px;
+  font-size: 12px;
 }
 :where(.world .writing-room) .writing-controls button {
   display: flex;
@@ -155,7 +189,7 @@
   padding: 0 5px;
   border: 0;
   background: none;
-  font-size: 11px;
+  font-size: 12px;
 }
 :where(.world .writing-room) .writing-controls button:hover {
   text-decoration: underline;
@@ -169,7 +203,7 @@
   filter: drop-shadow(var(--edge-shadow));
 }
 :where(.world .writing-room) .writing-page {
-  font-size: 10px;
+  font-size: 11px;
   color: inherit;
 }
 :where(.world .writing-room) .desk-coffee-steam {
@@ -338,13 +372,6 @@
   margin: 8px 0;
   font-size: 13px;
 }
-:where(.world .writing-room) .archive-blog {
-  align-self: flex-start;
-  margin-top: 10px;
-  font-size: 12px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
 @media (max-width: 760px) {
   :where(.world .writing-room) .archive-cards {
     right: auto;
@@ -424,24 +451,21 @@
 :where(.world[data-motion='false'] .writing-room) .article-paper {
   animation: none;
 }
+/* Phones show the portrait painting (1:2) and deal the papers as a 2×2,
+   clear of the archive tray, which starts at 89% of the painting's width. */
 @media (max-width: 760px) {
   :where(.world) .writing-room .room-art-stage {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transform: none;
-  }
-  :where(.world) .writing-room .room-art {
-    object-fit: cover;
-    object-position: 50% bottom;
+    width: max(100vw, 50svh);
+    height: max(200vw, 100svh);
   }
   :where(.world .writing-room) .paper-spread {
-    inset: 115px 7% 29%;
+    inset: 15% auto 30% 50%;
+    width: min(calc(100vw - 48px), 74cqw);
+    transform: translateX(-50%);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 21px 17px;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px 16px;
   }
   :where(.world .writing-room) .article-paper {
     position: relative;
@@ -449,6 +473,7 @@
     top: auto;
     width: 100%;
     height: 100%;
+    min-height: 0;
     padding: 14px 12px;
     --rotation: 3deg;
   }
@@ -465,7 +490,7 @@
     line-height: 1.06;
   }
   :where(.world .writing-room) .paper-meta {
-    font-size: 8px;
+    font-size: 10px;
     padding-bottom: 7px;
     letter-spacing: 0.05em;
   }
@@ -484,22 +509,18 @@
     padding: 2px 7px;
   }
   :where(.world .writing-room) .writing-controls button {
-    font-size: 10px;
+    font-size: 12px;
     gap: 6px;
     min-height: 42px;
   }
   :where(.world .writing-room) .writing-page {
-    font-size: 9px;
+    font-size: 11px;
   }
   :where(.world .writing-room) .writing-controls svg {
     width: 14px;
   }
 }
 @media (max-width: 360px) {
-  :where(.world .writing-room) .paper-spread {
-    inset: 105px 7% 28%;
-    gap: 18px 15px;
-  }
   :where(.world .writing-room) .article-paper {
     padding: 12px 10px;
   }
@@ -507,14 +528,14 @@
     font-size: 19px;
   }
   :where(.world .writing-room) .writing-controls button {
-    font-size: 9px;
+    font-size: 11px;
     gap: 4px;
   }
   :where(.world .writing-room) .writing-controls {
     gap: 3px;
   }
   :where(.world .writing-room) .writing-page {
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -523,44 +544,13 @@
     transition: none !important;
   }
 }
-@media (max-width: 760px) {
-  :where(.world) .writing-room .room-art-stage {
-    width: max(100vw, 50svh);
-    height: max(200vw, 100svh);
-    left: 50%;
-    top: 50%;
-    bottom: auto;
-    transform: translate(-50%, -50%);
-  }
-  :where(.world .writing-room) .paper-spread {
-    inset: 15% 8% 30%;
-    gap: 20px 16px;
-    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-  }
-  :where(.world) .writing-room .room-art {
-    object-fit: fill;
-  }
-  :where(.world .writing-room) .article-paper {
-    min-height: 0;
-  }
-}
-@media (max-width: 760px) {
-  :where(.world .writing-room) .paper-spread {
-    left: 50%;
-    right: auto;
-    /* The portrait tray begins at 89% of the painting's width. */
-    /* Keep sheets clear of the portrait painting's archive tray. */
-    width: min(calc(100vw - 48px), 74cqw);
-    transform: translateX(-50%);
-  }
-}
 .world .room-paper-shuffle .world-cue-label {
   left: auto;
   right: 0;
   --cue-label-x: 0%;
 }
 .world .room-paper-shuffle {
-  left: 95%;
+  left: min(95%, calc(50% + 50vw - 28px));
   top: 60%;
 }
 .world .room-pen-rest {

@@ -16,16 +16,26 @@ import { useMotionPolicy } from '../../shared/scene-motion';
 import { deskToasts, type DeskFile, type DeskIcon } from './content';
 import { DeskWallpaper } from './desk-wallpaper';
 import styles from './monitor-desktop.module.css';
-import { workScreen, workScreenMask } from './screen-mask';
+import {
+  workScreen,
+  workScreenMask,
+  workScreenPortrait,
+  workScreenPortraitMask,
+} from './screen-mask';
 
-// The painted screen's measured box and head mask, as custom properties so
-// the room's layout rules decide where they apply (not on phones).
+// The painted screen's measured box and mask in each painting, as custom
+// properties so the room's layout decides which painting is showing.
 const screenVars = {
   '--screen-left': `${workScreen.left}%`,
   '--screen-top': `${workScreen.top}%`,
   '--screen-width': `${workScreen.width}%`,
   '--screen-height': `${workScreen.height}%`,
   '--screen-mask': workScreenMask,
+  '--portrait-screen-left': `${workScreenPortrait.left}%`,
+  '--portrait-screen-top': `${workScreenPortrait.top}%`,
+  '--portrait-screen-width': `${workScreenPortrait.width}%`,
+  '--portrait-screen-height': `${workScreenPortrait.height}%`,
+  '--portrait-screen-mask': workScreenPortraitMask,
 } as CSSProperties;
 
 interface OpenWindow {

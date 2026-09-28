@@ -1,72 +1,59 @@
-import { cache } from 'react';
 import type { Metadata } from 'next';
-import * as prismicH from '@prismicio/helpers';
 import { notFound } from 'next/navigation';
-import { SiteLayout } from '@/app/components/layout/site-layout';
-import { BlogPostPage } from '@/app/blog/_components/blog-post-page';
-import { createClient } from '@/lib/prismic';
-import type { BlogPostDocument } from '@/types/content';
+import { ArticlePage } from '@/features/diorama/articles/article-page';
+import { getArticleCover } from '@/features/diorama/articles/covers';
+import {
+  loadArticle,
+  loadArticleIndex,
+} from '@/features/diorama/articles/load-articles';
+import { pageMetadata } from '@/features/diorama/lib/metadata';
+import { articleHref } from '@/features/diorama/lib/routes';
+import { site } from '@/features/diorama/data/site';
 
-const getPost = cache(async (uid: string): Promise<BlogPostDocument | null> => {
-  const client = createClient();
-
-  try {
-    return (await client.getByUID('post', uid)) as unknown as BlogPostDocument;
-  } catch {
-    return null;
-  }
-});
+export const revalidate = 3600;
+type Props = { params: Promise<{ uid: string }> };
 
 export async function generateStaticParams(): Promise<Array<{ uid: string }>> {
-  const client = createClient();
-  const posts = (await client.getAllByType(
-    'post',
-  )) as unknown as BlogPostDocument[];
-
-  return posts
-    .filter(post => Boolean(post.uid))
-    .map(post => ({ uid: post.uid as string }));
+  return (await loadArticleIndex()).map(({ uid }) => ({ uid }));
 }
 
-interface MetadataProps {
-  params: Promise<{ uid: string }>;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const article = await loadArticle((await params).uid);
+  if (!article) return { title: 'Page not found' };
+  const cover = getArticleCover(article.uid);
+  return pageMetadata({
+    title: article.title,
+    description: article.description || site.description,
+    path: articleHref(article.uid),
+    image: { url: cover.shareSrc, width: 1200, height: 630, alt: cover.alt },
+    openGraph: {
+      type: 'article',
+      publishedTime: article.date,
+      authors: [site.url],
+    },
+  });
 }
 
-export async function generateMetadata({
-  params,
-}: MetadataProps): Promise<Metadata> {
-  const resolvedParams = await params;
-  const post = await getPost(resolvedParams.uid);
-
-  if (!post) {
-    return {
-      title: 'Post Not Found',
-    };
-  }
-
-  return {
-    title: prismicH.asText(post.data?.title as never) || 'Blog',
-    description: prismicH.asText((post.data?.preview ?? null) as never) || '',
+export default async function Page({ params }: Props): Promise<JSX.Element> {
+  const article = await loadArticle((await params).uid);
+  if (!article) notFound();
+  const posting = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.title,
+    description: article.description || undefined,
+    datePublished: article.date,
+    image: `${site.url}${getArticleCover(article.uid).shareSrc}`,
+    url: `${site.url}${articleHref(article.uid)}`,
+    author: { '@type': 'Person', name: site.name, url: site.url },
   };
-}
-
-interface BlogPostRouteProps {
-  params: Promise<{ uid: string }>;
-}
-
-export default async function Page({
-  params,
-}: BlogPostRouteProps): Promise<JSX.Element> {
-  const resolvedParams = await params;
-  const post = await getPost(resolvedParams.uid);
-
-  if (!post) {
-    notFound();
-  }
-
   return (
-    <SiteLayout>
-      <BlogPostPage post={post} />
-    </SiteLayout>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(posting) }}
+      />
+      <ArticlePage article={article} articles={await loadArticleIndex()} />
+    </>
   );
 }

@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Archive, ArrowRight, Shuffle, X } from 'lucide-react';
-import Link from 'next/link';
 import { worldAsset } from '../../lib/assets';
 import { coverTransition, getArticleCover } from '../../articles/covers';
 import { articleHref } from '../../lib/routes';
@@ -224,9 +223,6 @@ export function WritingRoom({
                 No cards in this pile. Try another title or topic.
               </p>
             )}
-            <Link prefetch={false} className="archive-blog" href="/blog">
-              Visit the original blog →
-            </Link>
           </section>
         )}
         <InteractionOrb

@@ -143,6 +143,9 @@ export function WorldShell({ children }: { children: ReactNode }): JSX.Element {
               prefetch={false}
               href={href}
               key={href}
+              className={
+                href === worldRoutes.home ? 'world-nav-home' : undefined
+              }
               aria-current={path === href ? 'page' : undefined}
             >
               {label}

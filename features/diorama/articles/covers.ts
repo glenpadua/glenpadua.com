@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 export interface ArticleCover {
   src: string;
   thumbnailSrc: string;
+  /** 1200×630 JPEG for link previews (scripts/article-og-images.mjs). */
+  shareSrc: string;
   width: number;
   height: number;
   position: string;
@@ -35,6 +37,7 @@ const cover = (
 ): ArticleCover => ({
   src: `/assets/world/articles/${uid}-v1.webp`,
   thumbnailSrc: `/assets/world/articles/${uid}-v1-600.webp`,
+  shareSrc: `/assets/world/articles/${uid}-v1-og.jpg`,
   width: 1536,
   height: 768,
   position: '50% 50%',
@@ -83,6 +86,7 @@ export const articleCovers: Readonly<Record<string, ArticleCover>> = {
 export const defaultArticleCover: ArticleCover = {
   src: '/assets/world/writing.webp',
   thumbnailSrc: '/assets/world/writing-900.webp',
+  shareSrc: '/assets/world/og-lake-v1.jpg',
   width: 1536,
   height: 1024,
   position: '50% 50%',

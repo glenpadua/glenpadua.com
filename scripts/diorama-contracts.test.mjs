@@ -47,12 +47,9 @@ function ancestorsBeforeMain(html) {
   return stack;
 }
 
-test('static preview content is not hidden behind a JavaScript-only loading reveal', () => {
-  for (const route of ['diorama', 'diorama/work', 'diorama/writing']) {
-    const html = fs.readFileSync(
-      `.next/server/app/preview/${route}.html`,
-      'utf8',
-    );
+test('static page content is not hidden behind a JavaScript-only loading reveal', () => {
+  for (const route of ['index', 'work', 'writing']) {
+    const html = fs.readFileSync(`.next/server/app/${route}.html`, 'utf8');
     assert.match(html, /<main id="world-main"/);
     for (const ancestor of ancestorsBeforeMain(html)) {
       assert.doesNotMatch(
@@ -64,7 +61,7 @@ test('static preview content is not hidden behind a JavaScript-only loading reve
   }
 });
 
-test('the same experience can mount at preview or public URLs', () => {
+test('the same experience can mount under a prefix or at the root', () => {
   assert.deepEqual(createWorldRoutes('/preview/diorama/'), {
     home: '/preview/diorama',
     work: '/preview/diorama/work',
@@ -181,28 +178,28 @@ test('paper batches cover any archive size exactly once before wrapping', () => 
   }
 });
 
-test('built preview HTML has semantic copy, real destinations, noindex and static fallbacks', () => {
-  const home = fs.readFileSync('.next/server/app/preview/diorama.html', 'utf8');
-  const work = fs.readFileSync(
-    '.next/server/app/preview/diorama/work.html',
-    'utf8',
-  );
-  const writing = fs.readFileSync(
-    '.next/server/app/preview/diorama/writing.html',
-    'utf8',
-  );
+test('built pages have semantic copy, real destinations, search metadata and static fallbacks', () => {
+  const home = fs.readFileSync('.next/server/app/index.html', 'utf8');
+  const work = fs.readFileSync('.next/server/app/work.html', 'utf8');
+  const writing = fs.readFileSync('.next/server/app/writing.html', 'utf8');
   for (const html of [home, work, writing]) {
     for (const [img] of html.matchAll(/<img\b[^>]*>/gi)) {
       assert.match(img, /\ssrc="[^"]+"/, `empty image placeholder: ${img}`);
     }
-    assert.match(html, /<meta name="robots" content="noindex, nofollow"/);
+    assert.doesNotMatch(html, /<meta name="robots"/);
+    assert.match(html, /<link rel="canonical" href="https:\/\/glenpadua\.com/);
+    assert.match(
+      html,
+      /<meta property="og:image" content="https:\/\/glenpadua\.com\//,
+    );
     assert.match(html, /<h1/);
     assert.match(html, /<noscript>/);
-    assert.match(html, /href="\/preview\/diorama\/work"/);
-    assert.match(html, /href="\/preview\/diorama\/writing"/);
+    assert.match(html, /href="\/work"/);
+    assert.match(html, /href="\/writing"/);
   }
   assert.match(home, /Skipping leg day/);
-  assert.match(home, /href="\/preview\/diorama\/blog\/lottery-of-birth"/);
+  assert.match(home, /href="\/blog\/lottery-of-birth"/);
+  assert.match(home, /"@type":"Person"/);
   assert.match(home, /I’m Glen, a software engineer\./);
   assert.match(work, /Senior engineer/);
   assert.match(work, /Purrfect Plate/);
@@ -216,5 +213,5 @@ test('built preview HTML has semantic copy, real destinations, noindex and stati
     'back-to-school',
     'free-space-npkill',
   ])
-    assert.match(writing, new RegExp(`href="/preview/diorama/blog/${uid}"`));
+    assert.match(writing, new RegExp(`href="/blog/${uid}"`));
 });

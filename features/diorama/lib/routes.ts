@@ -8,7 +8,8 @@ export function createWorldRoutes(base: string) {
     blog: `${prefix}/blog`,
   };
 }
-export const worldRoutes = createWorldRoutes('/preview/diorama');
+/** The site is mounted at the root: /, /work, /writing and /blog/<uid>. */
+export const worldRoutes = createWorldRoutes('');
 
 /** Article links follow the same mount as the rest of the experience. */
 export function articleHref(uid: string): string {

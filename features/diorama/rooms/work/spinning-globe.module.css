@@ -102,10 +102,11 @@
     right: -2px;
     transform-origin: 100% 0;
   }
+  /* On the clear stretch of desk between the mug and the books. */
   .globe {
     width: 11%;
-    left: min(91%, calc(50% + 50vw - 11cqw - 12px));
-    top: 43.5%;
+    left: 79.6%;
+    top: 43.6%;
   }
 }
 

@@ -12,12 +12,13 @@ Read `/Users/glen/.codex/RTK.md` for this host's shell conventions. Prefix shell
 
 ## Boundaries
 
-- The new experience lives in `features/diorama/`, mounted at `/preview/diorama`. Keep `app/` entries thin. Features must not import preview route internals.
+- The website lives in `features/diorama/`, mounted at the root (`/`, `/work`, `/writing`, `/blog/<uid>`). Keep `app/` entries thin; features must not import from `app/`. The previous website is in `archive/legacy-site/`: reference only, never imported or built.
 - Own scene-specific copy, effects, composition and styles under `features/diorama/scenes/<scene>/`. Shared controls, motion policy, art fallback and dialogs live in `shared/`; use `InteractionOrb` for object discovery.
 - Shared styles use the `.world` boundary (there are no modal dialogs; information lives inside scenes); scene styles must affect only their scene. Keep painting-space geometry and asset choices with the scene. Keep readable text and interactive elements in HTML.
 - Homepage sky is shared across chapters. Set each scene's `skyTime` in its content; coordinate changes to `shared/journey-sky.*` and `lib/sky-time.ts`. Painted horizon masks stay scene-owned.
 - Consult `docs/website-architecture.md` before extracting a shared renderer. Three.js is allowed as a measured enhancement; its fallback, pause, lifecycle cleanup and style match are part of the feature.
-- The public `/`, `/work`, `/skills`, `/blog` and `/blog/[uid]` remain intact until promotion is requested. Preview metadata stays `noindex`.
+- Every public page sets its metadata with `pageMetadata` (canonical URL and share card). Keep old URLs working through `next.config.mjs` redirects; never change an article's `/blog/<uid>`.
+- Large paintings: edit the full-quality file in `art-source/world/` and run `node scripts/encode-art.mjs`; never hand-compress the copies in `public/`.
 
 ## Concurrent work
 

@@ -466,6 +466,10 @@
   }
 }
 @media (max-width: 360px) {
+  /* The signature already leads home; the rest of the nav keeps its room. */
+  .world-header nav .world-nav-home {
+    display: none;
+  }
   .world-header nav {
     gap: 13px;
     font-size: 11px;
@@ -507,6 +511,26 @@
     left: calc(var(--mobile-left) * 0.88 + 6%);
   }
 }
+/* Landscape phones: a compact header, and scene words that start below it. */
+@media (min-width: 761px) and (max-height: 520px) {
+  .world-header {
+    padding-block: 14px;
+  }
+  .world-signature {
+    font-size: 24px;
+  }
+  .world .world-scene .world-copy {
+    top: 76px;
+  }
+  .world .world-scene .world-copy :is(h1, h2) {
+    font-size: 30px;
+    margin: 0 0 10px;
+  }
+  .world .world-scene .world-description {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .world * {
     animation: none !important;
@@ -526,6 +550,62 @@
   }
 }
 
+/* Not found: a note on a quiet desk, with ways back into the day. */
+.world:has(.world-lost) {
+  background: #efe5cf;
+}
+/* Nothing here moves or hides: no pause or reveal controls. */
+.world:has(.world-lost) .world-utility {
+  display: none;
+}
+.world-lost {
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  padding: 110px 6% 90px;
+}
+.world-lost-note {
+  width: min(100%, 460px);
+  padding: 34px 36px 30px;
+  background: #fbf5e4;
+  box-shadow:
+    0 1px 0 #d9ccaf,
+    0 18px 40px -22px #4a3a2366;
+  transform: rotate(-0.8deg);
+}
+.world-lost-code {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: #8a7a5c;
+}
+.world-lost h1 {
+  margin: 10px 0 14px;
+  text-wrap: balance;
+  font-size: clamp(30px, 6vw, 40px);
+}
+.world-lost p {
+  line-height: 1.7;
+}
+.world-lost ul {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+.world-lost a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+.world-lost a svg {
+  transition: transform 160ms var(--world-ease);
+}
+.world-lost a:is(:hover, :focus-visible) svg {
+  transform: translateX(3px);
+}
 .world-empty {
   min-height: 100svh;
   padding: 25svh 9%;

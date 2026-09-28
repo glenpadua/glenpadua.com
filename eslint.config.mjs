@@ -12,6 +12,8 @@ const config = [
       'coverage/**',
       'docs/mock/**',
       'docs/storyboard/**',
+      // The previous website, kept for reference; not built or linted.
+      'archive/**',
     ],
   },
   ...nextVitals,
