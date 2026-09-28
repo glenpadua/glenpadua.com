@@ -214,14 +214,6 @@
   --cue-label-x: 0%;
 }
 
-.world-beach .beach-social-phone .world-cue-mark {
-  position: absolute;
-  right: 0;
-  top: 8px;
-  width: 10px;
-  height: 10px;
-}
-
 @media (max-width: 760px) {
   .world-beach .beach-social-phone {
     left: 30%;

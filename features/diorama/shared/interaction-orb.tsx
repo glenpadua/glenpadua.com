@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { DiscoveryMark } from './discovery-mark';
+import { CueLight } from './cue-light';
 import type {
   AriaAttributes,
   CSSProperties,
@@ -34,7 +34,7 @@ type OrbProps = OrbBase &
       }
   );
 
-/** One discovery control: anchored glint, real link/button, label on hover or focus. */
+/** One discovery control: a ring of light, real link/button, label on hover or focus. */
 export function InteractionOrb(props: OrbProps): JSX.Element {
   const shared = {
     className: `world-cue ${props.className ?? ''}`,
@@ -43,7 +43,7 @@ export function InteractionOrb(props: OrbProps): JSX.Element {
   };
   const contents = (
     <>
-      {props.marker ?? <DiscoveryMark />}
+      {props.marker ?? <CueLight />}
       <span className="world-cue-label" aria-hidden="true">
         {props.hint ?? props.label}
       </span>

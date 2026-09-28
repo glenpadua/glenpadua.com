@@ -58,12 +58,6 @@
   border-radius: 2px;
 }
 
-.link :global(.world-cue-mark) {
-  position: absolute;
-  right: -3px;
-  bottom: -3px;
-}
-
 .link :global(.world-cue-label) {
   left: 0;
   top: calc(100% + 7px);

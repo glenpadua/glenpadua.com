@@ -17,14 +17,6 @@
   border-radius: 50%;
   gap: 0;
 }
-.world .world-cue-mark {
-  display: block;
-  width: 20px;
-  height: 20px;
-  color: #354b3f;
-  filter: drop-shadow(0 1px 1px #14291e40);
-  transition: transform 180ms var(--world-ease);
-}
 .world .world-cue-label {
   background: #fbf4e2f2;
   color: #293e34;
@@ -50,13 +42,6 @@
   opacity: 1;
   transform: translate(var(--cue-label-x), 0);
 }
-.world .world-cue:hover .world-cue-mark,
-.world .world-cue:focus-visible .world-cue-mark {
-  transform: scale(1.18);
-}
-.world .world-cue[aria-pressed='true'] .world-cue-mark {
-  fill: #e2ad65;
-}
 @media (hover: none) {
   .world .world-cue:focus .world-cue-label {
     opacity: 1;
@@ -64,114 +49,85 @@
 }
 
 /*
- * Hints instead of permanent marks: glints stay hidden until hover or focus,
- * one object at a time catches the light now and then (`data-glint`), and
- * “show me” (the eye control or `?`) reveals everything briefly
- * (`data-reveal`). Object-shaped markers are always visible.
+ * The light. A ring with a clear centre, so it never veils a character, sized
+ * to the object (at least 124px). Dark at rest on screens with a pointer;
+ * it brightens as the pointer comes near (`--near` 0–1, set by WorldShell),
+ * on hover and keyboard focus, when one object catches the light now and
+ * then (`data-glint`), and for everything when someone lingers or asks
+ * (`data-reveal`). Object-shaped markers (sticker, phone) carry their own.
  */
-.world .world-cue .world-cue-mark {
-  opacity: 0;
-  transition:
-    opacity 200ms ease,
-    transform 180ms var(--world-ease);
-}
-.world .world-cue:hover .world-cue-mark,
-.world .world-cue:focus-visible .world-cue-mark {
-  opacity: 1;
-}
-.world .world-cue[data-glint='true'] .world-cue-mark {
-  animation: cue-glint 1.8s ease-in-out;
-}
-.world[data-reveal='true'] .world-cue .world-cue-mark {
-  opacity: 1;
-  animation: cue-reveal 0.8s ease-in-out infinite alternate;
-}
-/*
- * Touch screens have no hover to find the marks, and iOS Safari cancels a tap
- * while something tappable is becoming visible (it takes the tap for a hover).
- * So on touch the marks rest softly visible, and glints and “show me” only
- * brighten them: nothing goes from hidden to shown under a finger.
- */
-@media (hover: none) {
-  .world .world-cue .world-cue-mark {
-    opacity: 0.5;
-  }
-  .world .world-cue[data-glint='true'] .world-cue-mark {
-    animation-name: cue-glint-touch;
-  }
-}
-@keyframes cue-glint-touch {
-  0%,
-  100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  40% {
-    opacity: 1;
-    transform: scale(1.2) rotate(8deg);
-  }
-}
-@keyframes cue-glint {
-  0% {
-    opacity: 0;
-    transform: scale(0.55) rotate(-25deg);
-  }
-  40% {
-    opacity: 1;
-    transform: scale(1.15) rotate(0deg);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.85) rotate(12deg);
-  }
-}
-@keyframes cue-reveal {
-  from {
-    opacity: 0.6;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1.15);
-  }
-}
-
-/*
- * Objects notice you (`--near` 0–1, set by WorldShell as a pointer or finger
- * comes close): a soft pool of warm light blooms on the painting around the
- * object, and its mark surfaces with it. Light, not chrome: nothing moves
- * under the pointer, and nothing becomes tappable that wasn't already.
- */
-.world .world-cue::before {
-  content: '';
+.world .world-cue-light {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 124px;
-  height: 124px;
-  margin: -62px 0 0 -62px;
+  width: max(124px, 130%);
+  aspect-ratio: 1;
   border-radius: 50%;
-  /* A ring of light with a clear centre, so it never veils a character. */
+  translate: -50% -50%;
+  /* A thin bright edge in a soft glow; the faint dark rim (drop-shadow)
+     keeps it readable on the lamp and other light areas. */
   background: radial-gradient(
     closest-side,
-    #ffe7ad00 22%,
-    #fff1c894 36%,
-    #ffe7ad33 58%,
-    #ffe7ad00 100%
+    #ffe7ad00 29%,
+    #fff6dcf2 33%,
+    #fff0cc8c 36.5%,
+    #ffe7ad2e 50%,
+    #ffe7ad00 74%
   );
-  opacity: var(--near, 0);
-  transform: scale(calc(0.7 + var(--near, 0) * 0.3));
+  filter: drop-shadow(0 0 1.2px #46301a73);
+  opacity: max(var(--light-rest, 0), var(--near, 0));
+  scale: calc(0.7 + max(var(--light-rest, 0), var(--near, 0)) * 0.3);
   transition:
     opacity 380ms ease-out,
-    transform 380ms var(--world-ease);
+    scale 380ms var(--world-ease);
   pointer-events: none;
   z-index: -1;
 }
-.world .world-cue[data-near='true'] .world-cue-mark {
-  opacity: max(var(--mark-rest, 0), calc(var(--near) * 0.9));
+.world .world-cue:is(:hover, :focus-visible) .world-cue-light {
+  opacity: 1;
+  scale: 1;
 }
+/* A toggle that is on keeps a little of its light, warmer. */
+.world .world-cue[aria-pressed='true'] {
+  --light-rest: 0.45;
+}
+.world .world-cue[aria-pressed='true'] .world-cue-light {
+  filter: drop-shadow(0 0 1.2px #46301a73) hue-rotate(-12deg) saturate(1.4);
+}
+.world .world-cue[data-glint='true'] .world-cue-light {
+  animation: cue-light-catch 1.8s ease-in-out;
+}
+.world[data-reveal='true'] .world-cue .world-cue-light {
+  animation: cue-light-breathe 0.9s ease-in-out infinite alternate;
+}
+/*
+ * Touch screens have no pointer to come near, and iOS Safari cancels a tap
+ * while something tappable is becoming visible. So on touch every light rests
+ * faintly lit; touching nearby, glints and “show me” only brighten it.
+ */
 @media (hover: none) {
   .world .world-cue {
-    --mark-rest: 0.5;
+    --light-rest: 0.24;
+  }
+}
+@keyframes cue-light-catch {
+  0%,
+  100% {
+    opacity: max(var(--light-rest, 0), var(--near, 0));
+    scale: 0.8;
+  }
+  45% {
+    opacity: 0.9;
+    scale: 1.05;
+  }
+}
+@keyframes cue-light-breathe {
+  from {
+    opacity: 0.55;
+    scale: 0.9;
+  }
+  to {
+    opacity: 1;
+    scale: 1.05;
   }
 }

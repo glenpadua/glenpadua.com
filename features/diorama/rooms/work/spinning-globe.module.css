@@ -82,12 +82,6 @@
   font-size: 10px;
 }
 
-.control :global(.world-cue-mark) {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-
 .control :global(.world-cue-label) {
   left: auto;
   right: 0;

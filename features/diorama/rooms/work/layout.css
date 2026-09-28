@@ -110,9 +110,6 @@
   transform-origin: 50% 50%;
   animation: saver-orbit 28s linear infinite;
 }
-.world .room-screen-mode .world-cue-mark {
-  color: #665034;
-}
 :where(.world .work-room) .room-window-glow {
   position: absolute;
   left: 83%;

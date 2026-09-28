@@ -1,7 +1,7 @@
 import { SiTwitter } from 'react-icons/si';
 import { socialLinks } from '../../data/site';
 import { InteractionOrb } from '../../shared/interaction-orb';
-import { DiscoveryMark } from '../../shared/discovery-mark';
+import { CueLight } from '../../shared/cue-light';
 
 /** Decorative feed silhouettes, not invented posts or a third-party embed. */
 export function BeachSocialPhone(): JSX.Element {
@@ -60,7 +60,7 @@ export function BeachSocialPhone(): JSX.Element {
               strokeLinecap="round"
             />
           </svg>
-          <DiscoveryMark />
+          <CueLight />
         </>
       }
     />
