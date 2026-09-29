@@ -2,12 +2,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { worldAsset } from '../../lib/assets';
 import type { CharacterProps } from '../../model/scene-runtime';
-import { beachWorkStateAt, TYPING_PATCH_CLIP } from './typing';
+import { beachWorkStateAt, TYPING_PATCH, TYPING_PATCH_STYLE } from './typing';
 import { STRETCH_BOUNDS, STRETCH_SIZE, STRETCH_STYLE } from './stretch';
 
 const poses = [
   'beach-typing-focused',
-  'beach-typing-focused-tap',
+  'beach-typing-tap-crop-v1',
   'beach-stretch-gather-v1',
   'beach-stretch-clasp-v1',
   'beach-stretch-extend-v1',
@@ -98,12 +98,24 @@ export function BeachCharacter({
                   maskSize: '100% 100%',
                 }
               : frame === 1
-                ? { clipPath: TYPING_PATCH_CLIP }
+                ? TYPING_PATCH_STYLE
                 : STRETCH_STYLE
           }
           src={worldAsset(asset)}
-          width={frame >= 2 ? STRETCH_BOUNDS.width : STRETCH_SIZE}
-          height={frame >= 2 ? STRETCH_BOUNDS.height : STRETCH_SIZE}
+          width={
+            frame === 1
+              ? TYPING_PATCH.right - TYPING_PATCH.left
+              : frame >= 2
+                ? STRETCH_BOUNDS.width
+                : STRETCH_SIZE
+          }
+          height={
+            frame === 1
+              ? TYPING_PATCH.bottom - TYPING_PATCH.top
+              : frame >= 2
+                ? STRETCH_BOUNDS.height
+                : STRETCH_SIZE
+          }
           alt=""
           onLoad={event => imageReady(event.currentTarget)}
           onError={onError}

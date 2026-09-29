@@ -15,7 +15,7 @@ const routes: prismic.ClientConfig['routes'] = [
 export function createClient(
   config: prismic.ClientConfig = {},
 ): prismic.Client {
-  const client = prismic.createClient(endpoint, {
+  const client = prismic.createClient(repositoryName, {
     routes,
     fetchOptions:
       process.env.NODE_ENV === 'production'

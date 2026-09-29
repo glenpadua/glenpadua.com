@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { worldAsset } from '../../lib/assets';
 import type { CharacterProps } from '../../model/scene-runtime';
 import { useMotionPolicy } from '../../shared/scene-motion';
-import { advancePullup, pullupPose } from './pullup-routine';
+import { advancePullup, pullupPose, pullupWait } from './pullup-routine';
 /** Coherent complete poses; anatomical left stays left. */
 export function LakeCharacter({
   load,
@@ -31,20 +31,17 @@ export function LakeCharacter({
   useEffect(() => {
     if (play !== lastCheer.current) {
       lastCheer.current = play;
-      if (enabled) clock.current.cheers = 3;
+      if (enabled && active) clock.current.cheers = 3;
     }
-  }, [play, enabled]);
-  useEffect(() => {
     const image = sprite.current;
     if (!image || !ready || !active || !enabled) return;
     let request = 0;
-    let previous: number | undefined;
+    let timer: ReturnType<typeof setTimeout>;
+    let previous = performance.now();
+    let wait = 0;
     let lastTransform = '';
     const tick = (now: number) => {
-      clock.current = advancePullup(
-        clock.current,
-        previous === undefined ? 0 : now - previous,
-      );
+      clock.current = advancePullup(clock.current, now - previous, wait);
       previous = now;
       const pose = pullupPose(clock.current.elapsed);
       const x = (pose.frame % 5) * -20;
@@ -56,11 +53,22 @@ export function LakeCharacter({
         image.dataset.frame = String(pose.frame);
         lastTransform = transform;
       }
-      request = requestAnimationFrame(tick);
+      const next = pullupWait(clock.current);
+      wait = next ?? 0;
+      if (next === null) request = requestAnimationFrame(tick);
+      else timer = setTimeout(() => tick(performance.now()), Math.max(1, next));
     };
-    request = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(request);
-  }, [ready, active, enabled]);
+    tick(previous);
+    return () => {
+      cancelAnimationFrame(request);
+      clearTimeout(timer);
+      clock.current = advancePullup(
+        clock.current,
+        performance.now() - previous,
+        wait,
+      );
+    };
+  }, [ready, active, enabled, play]);
   return (
     <div
       className="character-action character-lake"

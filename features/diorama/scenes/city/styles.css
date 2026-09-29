@@ -114,6 +114,7 @@
   position: absolute;
   inset: 0;
   opacity: 0;
+  z-index: 1;
   /* Preserve original faces and props while changing only the lamp and pool. */
   mask-image: radial-gradient(
     ellipse 18% 25% at 62% 87%,
@@ -153,25 +154,77 @@
     transform: rotate(0.5deg);
   }
 }
-/* A sip: one fuller puff of steam from both cups, then back to the drift. */
-.city-coffee[data-puff='true'] .city-cup-steam {
-  animation:
-    city-coffee-puff 1.9s ease-out 1,
-    city-coffee-rise 5.2s ease-in-out 1.9s infinite;
+.world-city .city-couple {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
 }
-@keyframes city-coffee-puff {
-  0% {
-    opacity: 0.2;
-    transform: translate(0, 2px) scale(1);
-  }
-  35% {
-    opacity: 0.8;
-    transform: translate(-3px, -9px) scale(1.25);
-  }
-  100% {
-    opacity: 0.3;
-    transform: translate(-5px, -16px) scale(1.4);
-  }
+.world-city .city-couple-backdrop {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.world-city .city-couple-window {
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  contain: paint;
+}
+.world-city .city-couple-sheet {
+  width: 500%;
+  height: 200%;
+  max-width: none;
+}
+.world-city .city-couple-moving,
+.world-city .city-couple-listener {
+  position: absolute;
+  inset: 0;
+}
+.world-city .city-couple-listener {
+  display: none;
+}
+/* Reuse the exact same decoded neutral pixels for the person listening during
+   a sip. The split lies between the two bodies, not across a moving limb. */
+.world-city
+  .city-couple:is([data-frame='6'], [data-frame='7'])
+  .city-couple-moving,
+.world-city
+  .city-couple:is([data-frame='8'], [data-frame='9'])
+  .city-couple-listener {
+  clip-path: inset(0 48.4375% 0 0);
+}
+.world-city
+  .city-couple:is([data-frame='8'], [data-frame='9'])
+  .city-couple-moving,
+.world-city
+  .city-couple:is([data-frame='6'], [data-frame='7'])
+  .city-couple-listener {
+  clip-path: inset(0 0 0 51.5625%);
+}
+.world-city
+  .city-couple:is(
+    [data-frame='6'],
+    [data-frame='7'],
+    [data-frame='8'],
+    [data-frame='9']
+  )
+  .city-couple-listener {
+  display: block;
+}
+.world-city .city-couple .city-coffee {
+  z-index: 3;
+}
+.world-city .city-couple[data-frame='6'] .city-steam-position-glen {
+  transform: translate(-3px, -24px);
+}
+.world-city .city-couple[data-frame='7'] .city-steam-position-glen {
+  transform: translate(-5px, -72px);
+}
+.world-city .city-couple[data-frame='8'] .city-steam-position-companion {
+  transform: translate(-4px, -43px);
+}
+.world-city .city-couple[data-frame='9'] .city-steam-position-companion {
+  transform: translate(-5px, -61px);
 }
 @keyframes city-coffee-rise {
   0%,

@@ -1,0 +1,296 @@
+[
+  {
+    "ms": 119,
+    "frame": "0",
+    "phase": "pullup",
+    "transform": "translate(0%, 0%)",
+    "file": "lake-0.jpg"
+  },
+  {
+    "ms": 348,
+    "frame": "1",
+    "phase": "pullup",
+    "transform": "translate(-20%, 0%)",
+    "file": "lake-1.jpg"
+  },
+  {
+    "ms": 546,
+    "frame": "2",
+    "phase": "pullup",
+    "transform": "translate(-40%, 0%)",
+    "file": "lake-2.jpg"
+  },
+  {
+    "ms": 631,
+    "frame": "3",
+    "phase": "pullup",
+    "transform": "translate(-60%, 0%)",
+    "file": "lake-3.jpg"
+  },
+  {
+    "ms": 1115,
+    "frame": "2",
+    "phase": "pullup",
+    "transform": "translate(-40%, 0%)",
+    "file": "lake-4.jpg"
+  },
+  {
+    "ms": 1246,
+    "frame": "1",
+    "phase": "pullup",
+    "transform": "translate(-20%, 0%)",
+    "file": "lake-5.jpg"
+  },
+  {
+    "ms": 1400,
+    "frame": "0",
+    "phase": "pullup",
+    "transform": "translate(0%, 0%)",
+    "file": "lake-6.jpg"
+  },
+  {
+    "ms": 2624,
+    "frame": "1",
+    "phase": "pullup",
+    "transform": "translate(-20%, 0%)",
+    "file": "lake-7.jpg"
+  },
+  {
+    "ms": 2829,
+    "frame": "2",
+    "phase": "pullup",
+    "transform": "translate(-40%, 0%)",
+    "file": "lake-8.jpg"
+  },
+  {
+    "ms": 2961,
+    "frame": "3",
+    "phase": "pullup",
+    "transform": "translate(-60%, 0%)",
+    "file": "lake-9.jpg"
+  },
+  {
+    "ms": 3418,
+    "frame": "2",
+    "phase": "pullup",
+    "transform": "translate(-40%, 0%)",
+    "file": "lake-10.jpg"
+  },
+  {
+    "ms": 3621,
+    "frame": "1",
+    "phase": "pullup",
+    "transform": "translate(-20%, 0%)",
+    "file": "lake-11.jpg"
+  },
+  {
+    "ms": 3749,
+    "frame": "0",
+    "phase": "pullup",
+    "transform": "translate(0%, 0%)",
+    "file": "lake-12.jpg"
+  },
+  {
+    "ms": 4273,
+    "frame": "4",
+    "phase": "release",
+    "transform": "translate(-80%, 0%)",
+    "file": "lake-13.jpg"
+  },
+  {
+    "ms": 4400,
+    "frame": "5",
+    "phase": "land",
+    "transform": "translate(0%, -50%)",
+    "file": "lake-14.jpg"
+  },
+  {
+    "ms": 4630,
+    "frame": "6",
+    "phase": "rest",
+    "transform": "translate(-20%, -50%)",
+    "file": "lake-15.jpg"
+  },
+  {
+    "ms": 5329,
+    "frame": "7",
+    "phase": "shake",
+    "transform": "translate(-40%, -50%)",
+    "file": "lake-16.jpg"
+  },
+  {
+    "ms": 5376,
+    "frame": "6",
+    "phase": "shake",
+    "transform": "translate(-20%, -50%)",
+    "file": "lake-17.jpg"
+  },
+  {
+    "ms": 5579,
+    "frame": "7",
+    "phase": "shake",
+    "transform": "translate(-40%, -50%)",
+    "file": "lake-18.jpg"
+  },
+  {
+    "ms": 5670,
+    "frame": "6",
+    "phase": "shake",
+    "transform": "translate(-20%, -50%)",
+    "file": "lake-19.jpg"
+  },
+  {
+    "ms": 5781,
+    "frame": "7",
+    "phase": "shake",
+    "transform": "translate(-40%, -50%)",
+    "file": "lake-20.jpg"
+  },
+  {
+    "ms": 5880,
+    "frame": "6",
+    "phase": "shake",
+    "transform": "translate(-20%, -50%)",
+    "file": "lake-21.jpg"
+  },
+  {
+    "ms": 6060,
+    "frame": "7",
+    "phase": "shake",
+    "transform": "translate(-40%, -50%)",
+    "file": "lake-22.jpg"
+  },
+  {
+    "ms": 6130,
+    "frame": "6",
+    "phase": "shake",
+    "transform": "translate(-20%, -50%)",
+    "file": "lake-23.jpg"
+  },
+  {
+    "ms": 7082,
+    "frame": "8",
+    "phase": "prepare",
+    "transform": "translate(-60%, -50%)",
+    "file": "lake-24.jpg"
+  },
+  {
+    "ms": 7385,
+    "frame": "9",
+    "phase": "jump",
+    "transform": "translate(-80%, -48.078%)",
+    "file": "lake-25.jpg"
+  },
+  {
+    "ms": 7690,
+    "frame": "0",
+    "phase": "pullup",
+    "transform": "translate(0%, 0%)",
+    "file": "lake-26.jpg"
+  },
+  {
+    "ms": 8366,
+    "frame": "1",
+    "phase": "pullup",
+    "transform": "translate(-20%, 0%)",
+    "file": "lake-27.jpg"
+  },
+  {
+    "ms": 8499,
+    "frame": "2",
+    "phase": "pullup",
+    "transform": "translate(-40%, 0%)",
+    "file": "lake-28.jpg"
+  },
+  {
+    "ms": 8679,
+    "frame": "3",
+    "phase": "pullup",
+    "transform": "translate(-60%, 0%)",
+    "file": "lake-29.jpg"
+  },
+  {
+    "ms": 9079,
+    "frame": "2",
+    "phase": "pullup",
+    "transform": "translate(-40%, 0%)",
+    "file": "lake-30.jpg"
+  },
+  {
+    "ms": 9297,
+    "frame": "1",
+    "phase": "pullup",
+    "transform": "translate(-20%, 0%)",
+    "file": "lake-31.jpg"
+  },
+  {
+    "ms": 9436,
+    "frame": "0",
+    "phase": "pullup",
+    "transform": "translate(0%, 0%)",
+    "file": "lake-32.jpg"
+  },
+  {
+    "ms": 10703,
+    "frame": "1",
+    "phase": "pullup",
+    "transform": "translate(-20%, 0%)",
+    "file": "lake-33.jpg"
+  },
+  {
+    "ms": 10875,
+    "frame": "2",
+    "phase": "pullup",
+    "transform": "translate(-40%, 0%)",
+    "file": "lake-34.jpg"
+  },
+  {
+    "ms": 10937,
+    "frame": "3",
+    "phase": "pullup",
+    "transform": "translate(-60%, 0%)",
+    "file": "lake-35.jpg"
+  },
+  {
+    "ms": 11394,
+    "frame": "2",
+    "phase": "pullup",
+    "transform": "translate(-40%, 0%)",
+    "file": "lake-36.jpg"
+  },
+  {
+    "ms": 11616,
+    "frame": "1",
+    "phase": "pullup",
+    "transform": "translate(-20%, 0%)",
+    "file": "lake-37.jpg"
+  },
+  {
+    "ms": 11772,
+    "frame": "0",
+    "phase": "pullup",
+    "transform": "translate(0%, 0%)",
+    "file": "lake-38.jpg"
+  },
+  {
+    "ms": 13007,
+    "frame": "1",
+    "phase": "pullup",
+    "transform": "translate(-20%, 0%)",
+    "file": "lake-39.jpg"
+  },
+  {
+    "ms": 13127,
+    "frame": "2",
+    "phase": "pullup",
+    "transform": "translate(-40%, 0%)",
+    "file": "lake-40.jpg"
+  },
+  {
+    "ms": 13285,
+    "frame": "3",
+    "phase": "pullup",
+    "transform": "translate(-60%, 0%)",
+    "file": "lake-41.jpg"
+  }
+]

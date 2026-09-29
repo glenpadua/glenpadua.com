@@ -96,3 +96,35 @@ test('the typing overlay stays inside solid hand and keyboard pixels', async () 
       );
   }
 });
+
+test('the small served keyboard patch preserves the approved crop and opaque coverage', async () => {
+  const { default: sharp } = await import('sharp');
+  const { left, top, right, bottom } = TYPING_PATCH;
+  const crop = { left, top, width: right - left, height: bottom - top };
+  const source = await sharp(
+    'public/assets/world/beach-typing-focused-tap.webp',
+  )
+    .extract(crop)
+    .ensureAlpha()
+    .raw()
+    .toBuffer();
+  const image = sharp('public/assets/world/beach-typing-tap-crop-v1.webp');
+  const metadata = await image.metadata();
+  assert.equal(metadata.width, crop.width);
+  assert.equal(metadata.height, crop.height);
+  const served = await image.ensureAlpha().raw().toBuffer();
+  let squaredError = 0;
+  for (let i = 0; i < served.length; i++) {
+    if (i % 4 === 3)
+      assert.equal(served[i], source[i], 'Alpha coverage stays exact');
+    else squaredError += (served[i] - source[i]) ** 2;
+  }
+  assert.ok(
+    Math.sqrt(squaredError / ((served.length / 4) * 3)) < 7,
+    'Encoded RGB stays close to the approved pixels',
+  );
+  assert.ok(
+    fs.statSync('public/assets/world/beach-typing-tap-crop-v1.webp').size <
+      8000,
+  );
+});

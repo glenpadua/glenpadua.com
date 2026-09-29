@@ -7,6 +7,7 @@ import { useMotionPolicy } from '../../shared/scene-motion';
 import { worldAsset } from '../../lib/assets';
 import { CitySkyline, CityTerrace } from './atmosphere';
 import { CityNightBackdrop } from './night-backdrop';
+import { CityCouple } from './couple';
 
 export function CityScene(props: SceneProps): JSX.Element {
   const [lantern, setLantern] = useState(true);
@@ -26,6 +27,16 @@ export function CityScene(props: SceneProps): JSX.Element {
         />
       }
       lantern={lantern}
+      renderLayer={(layer, onError) =>
+        layer.id === 'terrace' ? (
+          <CityCouple
+            load={props.load}
+            moving={moving}
+            play={sips}
+            onError={onError}
+          />
+        ) : undefined
+      }
       afterLayer={layer => {
         if (layer.id === 'back')
           return (
@@ -40,7 +51,7 @@ export function CityScene(props: SceneProps): JSX.Element {
               {props.load && (
                 <img
                   className="city-terrace-unlit"
-                  src={worldAsset('city-front-off-glasses-v1')}
+                  src={worldAsset('city-couple-backdrop-off-v1')}
                   alt=""
                   width={1536}
                   height={1024}
@@ -49,7 +60,7 @@ export function CityScene(props: SceneProps): JSX.Element {
                   onError={() => setLightReady(false)}
                 />
               )}
-              <CityTerrace moving={moving} puff={sips} />
+              <CityTerrace moving={moving} />
             </>
           );
       }}

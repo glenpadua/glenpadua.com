@@ -1,0 +1,67 @@
+[
+  {
+    "ms": 5146,
+    "frame": "2",
+    "phase": "laugh"
+  },
+  {
+    "ms": 5581,
+    "frame": "4",
+    "phase": "laugh"
+  },
+  {
+    "ms": 5893,
+    "frame": "2",
+    "phase": "laugh"
+  },
+  {
+    "ms": 6196,
+    "frame": "5",
+    "phase": "laugh"
+  },
+  {
+    "ms": 6378,
+    "frame": "2",
+    "phase": "laugh"
+  },
+  {
+    "ms": 6558,
+    "frame": "5",
+    "phase": "laugh"
+  },
+  {
+    "ms": 6997,
+    "frame": "2",
+    "phase": "laugh"
+  },
+  {
+    "ms": 8063,
+    "frame": "1",
+    "phase": "laugh"
+  },
+  {
+    "ms": 8419,
+    "frame": "0",
+    "phase": "idle"
+  },
+  {
+    "ms": 13501,
+    "frame": "8",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 13806,
+    "frame": "9",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 14894,
+    "frame": "8",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 15227,
+    "frame": "0",
+    "phase": "idle"
+  }
+]

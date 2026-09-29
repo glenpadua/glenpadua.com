@@ -1,0 +1,197 @@
+[
+  {
+    "ms": 21,
+    "frame": "6",
+    "phase": "glen-sip"
+  },
+  {
+    "ms": 135,
+    "frame": "6",
+    "phase": "glen-sip"
+  },
+  {
+    "ms": 251,
+    "frame": "7",
+    "phase": "glen-sip"
+  },
+  {
+    "ms": 527,
+    "frame": "7",
+    "phase": "glen-sip"
+  },
+  {
+    "ms": 641,
+    "frame": "7",
+    "phase": "glen-sip"
+  },
+  {
+    "ms": 757,
+    "frame": "7",
+    "phase": "glen-sip"
+  },
+  {
+    "ms": 873,
+    "frame": "7",
+    "phase": "glen-sip"
+  },
+  {
+    "ms": 986,
+    "frame": "7",
+    "phase": "glen-sip"
+  },
+  {
+    "ms": 1100,
+    "frame": "7",
+    "phase": "glen-sip"
+  },
+  {
+    "ms": 1212,
+    "frame": "7",
+    "phase": "glen-sip"
+  },
+  {
+    "ms": 1321,
+    "frame": "6",
+    "phase": "glen-sip"
+  },
+  {
+    "ms": 1441,
+    "frame": "6",
+    "phase": "glen-sip"
+  },
+  {
+    "ms": 1556,
+    "frame": "6",
+    "phase": "glen-sip"
+  },
+  {
+    "ms": 1671,
+    "frame": "0",
+    "phase": "idle"
+  },
+  {
+    "ms": 1799,
+    "frame": "0",
+    "phase": "idle"
+  },
+  {
+    "ms": 1910,
+    "frame": "0",
+    "phase": "idle"
+  },
+  {
+    "ms": 2023,
+    "frame": "8",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 2141,
+    "frame": "8",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 2262,
+    "frame": "8",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 2610,
+    "frame": "9",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 2737,
+    "frame": "9",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 2848,
+    "frame": "9",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 2962,
+    "frame": "9",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 3072,
+    "frame": "9",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 3185,
+    "frame": "9",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 3299,
+    "frame": "9",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 3407,
+    "frame": "9",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 3519,
+    "frame": "8",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 3633,
+    "frame": "8",
+    "phase": "companion-sip"
+  },
+  {
+    "ms": 3742,
+    "frame": "0",
+    "phase": "idle"
+  },
+  {
+    "ms": 3856,
+    "frame": "0",
+    "phase": "idle"
+  },
+  {
+    "ms": 3970,
+    "frame": "0",
+    "phase": "idle"
+  },
+  {
+    "ms": 4084,
+    "frame": "0",
+    "phase": "idle"
+  },
+  {
+    "ms": 4197,
+    "frame": "0",
+    "phase": "idle"
+  },
+  {
+    "ms": 4309,
+    "frame": "0",
+    "phase": "idle"
+  },
+  {
+    "ms": 4421,
+    "frame": "0",
+    "phase": "idle"
+  },
+  {
+    "ms": 4531,
+    "frame": "0",
+    "phase": "idle"
+  },
+  {
+    "ms": 4643,
+    "frame": "0",
+    "phase": "idle"
+  },
+  {
+    "ms": 4754,
+    "frame": "0",
+    "phase": "idle"
+  }
+]

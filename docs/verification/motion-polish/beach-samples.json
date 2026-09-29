@@ -1,0 +1,86 @@
+[
+  {
+    "ms": 342,
+    "frame": "2",
+    "phase": "stretch",
+    "file": "beach-0.jpg"
+  },
+  {
+    "ms": 657,
+    "frame": "0",
+    "phase": "settle",
+    "file": "beach-1.jpg"
+  },
+  {
+    "ms": 1273,
+    "frame": "1",
+    "phase": "typing",
+    "file": "beach-2.jpg"
+  },
+  {
+    "ms": 1940,
+    "frame": "0",
+    "phase": "typing",
+    "file": "beach-3.jpg"
+  },
+  {
+    "ms": 5069,
+    "frame": "1",
+    "phase": "typing",
+    "file": "beach-4.jpg"
+  },
+  {
+    "ms": 5782,
+    "frame": "0",
+    "phase": "typing",
+    "file": "beach-5.jpg"
+  },
+  {
+    "ms": 8736,
+    "frame": "2",
+    "phase": "stretch",
+    "file": "beach-6.jpg"
+  },
+  {
+    "ms": 9106,
+    "frame": "4",
+    "phase": "stretch",
+    "file": "beach-7.jpg"
+  },
+  {
+    "ms": 9436,
+    "frame": "5",
+    "phase": "stretch",
+    "file": "beach-8.jpg"
+  },
+  {
+    "ms": 10764,
+    "frame": "3",
+    "phase": "stretch",
+    "file": "beach-9.jpg"
+  },
+  {
+    "ms": 11071,
+    "frame": "2",
+    "phase": "stretch",
+    "file": "beach-10.jpg"
+  },
+  {
+    "ms": 11365,
+    "frame": "0",
+    "phase": "settle",
+    "file": "beach-11.jpg"
+  },
+  {
+    "ms": 12325,
+    "frame": "1",
+    "phase": "typing",
+    "file": "beach-12.jpg"
+  },
+  {
+    "ms": 12700,
+    "frame": "0",
+    "phase": "typing",
+    "file": "beach-13.jpg"
+  }
+]

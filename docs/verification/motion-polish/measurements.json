@@ -1,0 +1,13 @@
+{
+  "durationMs": 10330,
+  "oldCallbacksAt60Hz": 620,
+  "newScheduledCallbacksAt60Hz": 61,
+  "keyboardBefore": {
+    "bytes": 120320,
+    "pixels": 810000
+  },
+  "keyboardAfter": {
+    "bytes": 2672,
+    "pixels": 7260
+  }
+}

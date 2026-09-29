@@ -86,6 +86,8 @@ export function ArtVeil({
         }
       />
       <script
+        // Parsing runs the first-load reveal; the effect handles client navigation.
+        type={typeof window === 'undefined' ? 'text/javascript' : 'text/plain'}
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: `(${watch})(document.currentScript.previousElementSibling)`,

@@ -115,14 +115,7 @@ export function CitySkyline({ moving }: { moving: boolean }): JSX.Element {
   );
 }
 
-export function CityTerrace({
-  moving,
-  puff = 0,
-}: {
-  moving: boolean;
-  /** Increments to send one bigger puff of steam from both cups. */
-  puff?: number;
-}): JSX.Element {
+export function CityTerrace({ moving }: { moving: boolean }): JSX.Element {
   return (
     <div
       className="city-terrace-atmosphere"
@@ -133,22 +126,6 @@ export function CityTerrace({
         <span className="city-lantern-halo" />
         <span className="city-lantern-flame" />
       </div>
-      <svg
-        key={puff}
-        className="city-coffee"
-        viewBox="0 0 1536 1024"
-        fill="none"
-        data-puff={puff > 0}
-      >
-        <g className="city-cup-steam city-cup-steam-glen">
-          <path d="M1190 710c-7-9 7-14 1-23s-3-13 0-18" />
-          <path d="M1197 707c5-7-5-11-2-19" />
-        </g>
-        <g className="city-cup-steam city-cup-steam-companion">
-          <path d="M1294 712c-6-8 7-13 1-22s-3-12 0-17" />
-          <path d="M1301 709c5-7-5-12-2-19" />
-        </g>
-      </svg>
       <svg className="city-breeze" viewBox="0 0 1536 1024">
         <g className="city-sprig city-sprig-near">
           <path

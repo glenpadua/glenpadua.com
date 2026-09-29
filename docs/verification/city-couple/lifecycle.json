@@ -1,0 +1,30 @@
+{
+  "inactive": {
+    "before": {
+      "frame": "0",
+      "moving": "false",
+      "phase": "idle",
+      "transform": "translate(0%, 0%)"
+    },
+    "after": {
+      "frame": "0",
+      "moving": "false",
+      "phase": "idle",
+      "transform": "translate(0%, 0%)"
+    }
+  },
+  "pausedDuringSip": {
+    "before": {
+      "frame": "9",
+      "moving": "false",
+      "phase": "companion-sip",
+      "transform": "translate(-80%, -50%)"
+    },
+    "after": {
+      "frame": "9",
+      "moving": "false",
+      "phase": "companion-sip",
+      "transform": "translate(-80%, -50%)"
+    }
+  }
+}

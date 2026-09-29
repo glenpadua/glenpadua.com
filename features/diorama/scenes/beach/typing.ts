@@ -69,3 +69,10 @@ export const TYPING_PATCH = {
   size: 900,
 } as const;
 export const TYPING_PATCH_CLIP = `inset(${(TYPING_PATCH.top / TYPING_PATCH.size) * 100}% ${(1 - TYPING_PATCH.right / TYPING_PATCH.size) * 100}% ${(1 - TYPING_PATCH.bottom / TYPING_PATCH.size) * 100}% ${(TYPING_PATCH.left / TYPING_PATCH.size) * 100}%)`;
+
+export const TYPING_PATCH_STYLE = {
+  left: `${(TYPING_PATCH.left / TYPING_PATCH.size) * 100}%`,
+  top: `${(TYPING_PATCH.top / TYPING_PATCH.size) * 100}%`,
+  width: `${((TYPING_PATCH.right - TYPING_PATCH.left) / TYPING_PATCH.size) * 100}%`,
+  height: `${((TYPING_PATCH.bottom - TYPING_PATCH.top) / TYPING_PATCH.size) * 100}%`,
+};

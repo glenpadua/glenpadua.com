@@ -56,24 +56,56 @@ export function pullupPose(elapsed: number) {
         beat.phase === 'release' ? progress ** 2 : 1 - (1 - progress) ** 2;
       const y =
         (beat.fromY ?? 0) + ((beat.toY ?? 0) - (beat.fromY ?? 0)) * travel;
-      return { frame: beat.frame, phase: beat.phase, rep: beat.rep, y };
+      return {
+        frame: beat.frame,
+        phase: beat.phase,
+        rep: beat.rep,
+        y,
+        untilNextMs: beat.duration - time,
+        travelling: beat.fromY !== undefined,
+      };
     }
     time -= beat.duration;
   }
-  return { frame: 0, phase: 'pullup' as const, rep: 1, y: 0 };
+  return {
+    frame: 0,
+    phase: 'pullup' as const,
+    rep: 1,
+    y: 0,
+    untilNextMs: rep[0].duration,
+    travelling: false,
+  };
 }
 
 export type PullupClock = { elapsed: number; cheers: number };
 
 /** A cheer quickens three reps, waiting through a recovery if necessary.
  * It never resets the pose or teleports a grounded character onto the bar. */
-export function advancePullup(clock: PullupClock, delta: number): PullupClock {
-  const before = pullupPose(clock.elapsed);
-  const speed = clock.cheers > 0 && before.phase === 'pullup' ? 2.5 : 1;
-  // Resume from the same pose after suspension, rather than catching up.
-  const elapsed =
-    (clock.elapsed + Math.max(0, Math.min(delta, 50)) * speed) % pullupDuration;
-  const after = pullupPose(elapsed);
-  const completedRep = before.phase === 'pullup' && before.rep !== after.rep;
-  return { elapsed, cheers: Math.max(0, clock.cheers - Number(completedRep)) };
+export function pullupWait(clock: PullupClock): number | null {
+  const pose = pullupPose(clock.elapsed);
+  if (pose.travelling) return null;
+  const speed = clock.cheers > 0 && pose.phase === 'pullup' ? 2.5 : 1;
+  return pose.untilNextMs / speed;
+}
+
+export function advancePullup(
+  clock: PullupClock,
+  delta: number,
+  scheduledWait = 0,
+): PullupClock {
+  let { elapsed, cheers } = clock;
+  // Held drawings sleep until their next beat. Unexpected stalls still cannot
+  // skip an entire recovery; only the scheduled wait plus one frame is consumed.
+  let remaining = Math.max(0, Math.min(delta, scheduledWait + 50));
+  while (remaining > 0) {
+    const before = pullupPose(elapsed);
+    const speed = cheers > 0 && before.phase === 'pullup' ? 2.5 : 1;
+    const step = Math.min(remaining, before.untilNextMs / speed);
+    elapsed = (elapsed + step * speed) % pullupDuration;
+    const after = pullupPose(elapsed);
+    if (before.phase === 'pullup' && before.rep !== after.rep)
+      cheers = Math.max(0, cheers - 1);
+    remaining -= step;
+  }
+  return { elapsed, cheers };
 }

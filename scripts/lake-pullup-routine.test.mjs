@@ -5,6 +5,7 @@ import {
   pullupDuration,
   pullupPose,
   pullupRoutine,
+  pullupWait,
 } from '../features/diorama/scenes/lake/pullup-routine.ts';
 
 const releaseAt = pullupRoutine
@@ -77,6 +78,41 @@ test('pausing preserves a mid-jump pose and a delayed frame cannot skip the reco
   const clock = { elapsed: pullupDuration - 150, cheers: 0 };
   assert.deepEqual(advancePullup(clock, 0), clock);
   assert.deepEqual(advancePullup(clock, 60_000), advancePullup(clock, 50));
+});
+
+test('held poses sleep to the next beat while the drop and hop remain continuous', () => {
+  let clock = { elapsed: 0, cheers: 0 };
+  let callbacks = 0;
+  let elapsed = 0;
+  while (elapsed < pullupDuration - 0.01) {
+    const wait = pullupWait(clock);
+    const delta = Math.min(wait ?? 1000 / 60, pullupDuration - elapsed);
+    assert.ok(delta > 0);
+    clock = advancePullup(clock, delta, wait ?? 0);
+    elapsed += delta;
+    callbacks++;
+    assert.ok(
+      callbacks < 100,
+      'Held drawings must not poll at display refresh rate',
+    );
+  }
+  assert.ok(clock.elapsed < 0.01 || pullupDuration - clock.elapsed < 0.01);
+  assert.equal(pullupWait({ elapsed: 100, cheers: 0 }), 600);
+  assert.equal(pullupWait({ elapsed: 100, cheers: 3 }), 240);
+  assert.equal(pullupWait({ elapsed: pullupDuration - 150, cheers: 0 }), null);
+});
+
+test('a timed beat counts completed cheers exactly and caps unexpected stalls', () => {
+  const clock = { elapsed: 2200, cheers: 3 };
+  const wait = pullupWait(clock);
+  assert.equal(wait, 48);
+  const next = advancePullup(clock, wait, wait);
+  assert.equal(next.elapsed, 2320);
+  assert.equal(next.cheers, 2);
+  assert.deepEqual(
+    advancePullup(clock, 60_000, wait),
+    advancePullup(clock, wait + 50, wait),
+  );
 });
 
 test('all ten served poses contain one connected figure with no detached pixels', async () => {
