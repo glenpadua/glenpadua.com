@@ -1,0 +1,15 @@
+{
+  "tool": "built-in image_gen",
+  "style": "docs/art-style.md — illustrated-world-v1",
+  "cleanPlate": {
+    "reference": "public/assets/world/beach-typing-focused.webp",
+    "prompt": "Use case: precise-object-edit / clean background plate. Edit this exact square 900x900 sprite. REMOVE Glen and his laptop completely, including all hair, head, torso, arms, hands, shorts, legs and shoes. Keep ONLY the existing beach umbrella, wooden pole and sand patch, at precisely the same original coordinates and scale. Reconstruct the small section of muted sage green underside of the umbrella that was hidden by his hair; extend the existing painted green panel naturally with exactly matching colour, texture and outline. Keep the umbrella shape, edge contour, segment boundaries, pole, sand and their colors exactly as the original, no restyling or repositioning. Where Glen was against empty air, leave genuine alpha transparency, not a painted backdrop. It is a clean background plate behind an animated character, so absolutely no trace, silhouette, fragment or shadow outline of the removed character. Keep the original sand's ambient shadow texture, no new dark blob. Shared style docs/art-style.md illustrated-world-v1. Exact full square composition, no crop/padding change. Actual alpha transparency outside the remaining umbrella, pole and sand."
+  },
+  "cutouts": {
+    "references": [
+      "art-source/world/beach-stretch-poses-v1.png",
+      "art-source/world/beach-stretch-poses-v2.png"
+    ],
+    "prompt": "Use case: background-extraction. Create a precisely arranged 2x2 atlas of FOUR isolated seated Glen character cutouts from these existing sprite atlases. DO NOT redesign or change the poses or expression. Top-left: ONLY the first pose of image 1, hands gathered at chest, gaze downward. Top-right: ONLY first pose of image 2, clasped hands at chest and head gently lifted. Bottom-left: ONLY second pose of image 2, halfway forward clasped-hand stretch and head naturally tilted up. Bottom-right: ONLY third pose of image 2, full forward clasped-hand stretch with satisfied small smile. In EACH cell keep the original square composition coordinates exactly: the character, entire laptop, shorts, anatomical LEFT prosthetic leg on viewer-right, normal other leg and both shoes have the same pixel positions and scale as in the corresponding original square cell. Most of the TOP THIRD of each square cell remains empty transparent space. REMOVE the umbrella, wooden pole, sand, all shadows and background completely from all four cells. Crisp faithful head/hair silhouette; no green/cream umbrella fragments, color fringe, stray dots, floating fragments, ghost limbs or character shadows. DO NOT invent hair, change head shape, mirror or recenter the character. These are cutouts of already-approved drawings. Actual clean alpha transparency everywhere except Glen and his laptop. Output exactly 2 equal square columns by 2 equal square rows, no borders or labels, intended full size 1800x1800 with 900x900 cells. Shared style docs/art-style.md illustrated-world-v1; preserve original rendering."
+  }
+}

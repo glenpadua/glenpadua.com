@@ -1,0 +1,62 @@
+[
+  {
+    "frame": "gather",
+    "component": {
+      "id": 1,
+      "count": 120523,
+      "left": 143,
+      "top": 162,
+      "width": 458,
+      "height": 531
+    },
+    "error": 6094818,
+    "scale": 1,
+    "dx": 15,
+    "dy": 3
+  },
+  {
+    "frame": "clasp",
+    "component": {
+      "id": 2,
+      "count": 117222,
+      "left": 766,
+      "top": 162,
+      "width": 465,
+      "height": 530
+    },
+    "error": 6317369,
+    "scale": 1,
+    "dx": 6,
+    "dy": 3
+  },
+  {
+    "frame": "extend",
+    "component": {
+      "id": 7,
+      "count": 115592,
+      "left": 147,
+      "top": 731,
+      "width": 461,
+      "height": 514
+    },
+    "error": 6057315,
+    "scale": 1,
+    "dx": 0,
+    "dy": 0
+  },
+  {
+    "frame": "hold",
+    "component": {
+      "id": 8,
+      "count": 117499,
+      "left": 764,
+      "top": 733,
+      "width": 465,
+      "height": 512
+    },
+    "error": 6400010,
+    "scale": 1,
+    "dx": -3,
+    "dy": 3
+  }
+]

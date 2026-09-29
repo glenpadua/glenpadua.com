@@ -4,14 +4,13 @@ import { preload } from 'react-dom';
 import type { SceneProps } from '../../model/scene-runtime';
 import { worldAsset } from '../../lib/assets';
 import { SceneArtwork } from '../../shared/scene-artwork';
-import { lakeHorizonMask } from './horizon';
 import { LakeCharacter } from './character';
 import { LakeGrass, LakeLife, LakeSeeds } from './lake-life';
 import { LakeWater } from './lake-water';
 import { InteractionOrb } from '../../shared/interaction-orb';
 
 export function LakeScene(props: SceneProps): JSX.Element {
-  // Each cheer restarts a short burst of reps from the same pull-up frames.
+  // Each cheer quickens three reps without interrupting a landing or recovery.
   const [cheers, setCheers] = useState(0);
   // The opening scene's landscape (an SVG image) and horizon mask (CSS) are
   // otherwise found late, after the images the page announces itself.
@@ -29,9 +28,10 @@ export function LakeScene(props: SceneProps): JSX.Element {
     <SceneArtwork
       {...props}
       fallback={
+        // The still includes Glen above the ridge: a landscape-only horizon
+        // mask would clip his head. Keep the complete painting on failure.
         <img
           className="world-static-art"
-          style={{ maskImage: lakeHorizonMask }}
           src={worldAsset('lake-static-glasses-v1')}
           alt=""
           loading={props.first ? 'eager' : 'lazy'}
@@ -45,6 +45,7 @@ export function LakeScene(props: SceneProps): JSX.Element {
             load={props.load}
             onError={onError}
             priority={props.first}
+            active={props.active}
             play={cheers}
           />
         ) : undefined

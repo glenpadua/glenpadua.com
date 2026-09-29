@@ -215,9 +215,6 @@
 .character-lake {
   aspect-ratio: 5/6;
 }
-.character-lake .character-sheet {
-  animation: pullup-cycle 5.8s steps(1, end) infinite;
-}
 .pullup-apparatus {
   position: absolute;
   inset: 0;
@@ -229,63 +226,6 @@
   width: 21% !important;
   left: 66% !important;
 }
-/* A cheer: three quick reps, then back into his usual rhythm. */
-.character-lake .character-sheet.action-requested {
-  animation:
-    pullup-burst 0.84s steps(1, end) 3,
-    pullup-cycle 5.8s steps(1, end) 2.52s infinite;
-}
-@keyframes pullup-burst {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  12% {
-    transform: translate(-50%, 0);
-  }
-  24% {
-    transform: translate(0, -50%);
-  }
-  36%,
-  52% {
-    transform: translate(-50%, -50%);
-  }
-  64% {
-    transform: translate(0, -50%);
-  }
-  76% {
-    transform: translate(-50%, 0);
-  }
-  88% {
-    transform: translate(0, 0);
-  }
-}
-@keyframes pullup-cycle {
-  0%,
-  17%,
-  100% {
-    transform: translate(0, 0);
-  }
-  20% {
-    transform: translate(-50%, 0);
-  }
-  23% {
-    transform: translate(0, -50%);
-  }
-  26%,
-  36% {
-    transform: translate(-50%, -50%);
-  }
-  40% {
-    transform: translate(0, -50%);
-  }
-  44% {
-    transform: translate(-50%, 0);
-  }
-  48% {
-    transform: translate(0, 0);
-  }
-}
 @media (max-width: 760px) {
   .world-lake .layer-character {
     width: 23% !important;
@@ -295,7 +235,7 @@
 }
 
 .character-lake .character-sheet {
-  width: 200%;
+  width: 500%;
   height: 200%;
 }
 

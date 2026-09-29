@@ -1,8 +1,18 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { worldAsset } from '../../lib/assets';
 import type { CharacterProps } from '../../model/scene-runtime';
-import { typingStateAt, TYPING_PATCH_CLIP } from './typing';
+import { beachWorkStateAt, TYPING_PATCH_CLIP } from './typing';
+import { STRETCH_BOUNDS, STRETCH_SIZE, STRETCH_STYLE } from './stretch';
+
+const poses = [
+  'beach-typing-focused',
+  'beach-typing-focused-tap',
+  'beach-stretch-gather-v1',
+  'beach-stretch-clasp-v1',
+  'beach-stretch-extend-v1',
+  'beach-stretch-hold-v1',
+] as const;
 
 export function BeachCharacter({
   load,
@@ -11,15 +21,33 @@ export function BeachCharacter({
 }: CharacterProps & { moving: boolean }): JSX.Element | null {
   const root = useRef<HTMLDivElement>(null);
   const elapsed = useRef(0);
+  const loaded = useRef(new Set<string>());
+  const [ready, setReady] = useState(false);
+  const imageReady = useCallback(
+    (image: HTMLImageElement | null) => {
+      if (!image?.complete) return;
+      // A cached error can precede React attaching the onError listener.
+      if (!image.naturalWidth) {
+        onError();
+        return;
+      }
+      loaded.current.add(image.src);
+      if (loaded.current.size === poses.length + 2) setReady(true);
+    },
+    [onError],
+  );
   useEffect(() => {
-    if (!moving || !load) return;
+    if (!moving || !load || !ready) return;
     const started = performance.now();
     let timer: ReturnType<typeof setTimeout>;
     const update = () => {
-      const state = typingStateAt(
+      const state = beachWorkStateAt(
         elapsed.current + performance.now() - started,
       );
-      if (root.current) root.current.dataset.frame = String(state.frame);
+      if (root.current) {
+        root.current.dataset.frame = String(state.frame);
+        root.current.dataset.phase = state.phase;
+      }
       timer = setTimeout(update, Math.max(1, state.untilNextMs));
     };
     update();
@@ -27,7 +55,7 @@ export function BeachCharacter({
       clearTimeout(timer);
       elapsed.current += performance.now() - started;
     };
-  }, [moving, load]);
+  }, [moving, load, ready]);
 
   if (!load) return null;
   return (
@@ -35,20 +63,49 @@ export function BeachCharacter({
       ref={root}
       className="character-beach beach-laptop"
       data-frame="0"
+      data-phase="typing"
       data-moving={moving}
       aria-hidden="true"
     >
-      {[0, 1].map(frame => (
+      <img
+        hidden
+        style={{ display: 'none' }}
+        ref={imageReady}
+        src={worldAsset('beach-typing-mask-v1')}
+        alt=""
+        onLoad={event => imageReady(event.currentTarget)}
+        onError={onError}
+      />
+      <img
+        ref={imageReady}
+        className="beach-stretch-backdrop"
+        src={worldAsset('beach-stretch-backdrop-v1')}
+        width="900"
+        height="900"
+        alt=""
+        onLoad={event => imageReady(event.currentTarget)}
+        onError={onError}
+      />
+      {poses.map((asset, frame) => (
         <img
           key={frame}
+          ref={imageReady}
           className={`beach-typing-frame frame-${frame}`}
-          style={frame === 1 ? { clipPath: TYPING_PATCH_CLIP } : undefined}
-          src={worldAsset(
-            frame === 0 ? 'beach-typing-focused' : 'beach-typing-focused-tap',
-          )}
-          width="900"
-          height="900"
+          style={
+            frame === 0
+              ? {
+                  maskImage: `url(${worldAsset('beach-typing-mask-v1')})`,
+                  maskSize: '100% 100%',
+                }
+              : frame === 1
+                ? { clipPath: TYPING_PATCH_CLIP }
+                : STRETCH_STYLE
+          }
+          src={worldAsset(asset)}
+          width={frame >= 2 ? STRETCH_BOUNDS.width : STRETCH_SIZE}
+          height={frame >= 2 ? STRETCH_BOUNDS.height : STRETCH_SIZE}
           alt=""
+          onLoad={event => imageReady(event.currentTarget)}
           onError={onError}
         />
       ))}

@@ -1,0 +1,482 @@
+[
+  {
+    "ms": 0,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 275,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 521,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 823,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 1064,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 1331,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 1634,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 1860,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 2141,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 2445,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 2693,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 2952,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 3195,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 3459,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 3763,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 4067,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 4309,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 4576,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 4885,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 5128,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 5387,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 5688,
+    "frame": "2",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 5929,
+    "frame": "3",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 6200,
+    "frame": "5",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 6504,
+    "frame": "5",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 6745,
+    "frame": "5",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 7012,
+    "frame": "5",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 7319,
+    "frame": "5",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 7562,
+    "frame": "5",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 7828,
+    "frame": "4",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 8131,
+    "frame": "2",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 8376,
+    "frame": "0",
+    "moving": "true",
+    "phase": "settle"
+  },
+  {
+    "ms": 8637,
+    "frame": "0",
+    "moving": "true",
+    "phase": "settle"
+  },
+  {
+    "ms": 8944,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 9162,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 9395,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 9609,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 9861,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 10170,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 10394,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 10675,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 10978,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 11228,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 11487,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 11790,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 12030,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 12297,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 12590,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 12830,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 13107,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 13369,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 13610,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 13920,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 14224,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 14463,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 14734,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 15037,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 15278,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 15540,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 15786,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 16043,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 16354,
+    "frame": "2",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 16659,
+    "frame": "4",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 16895,
+    "frame": "5",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 17157,
+    "frame": "5",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 17473,
+    "frame": "5",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 17713,
+    "frame": "5",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 17981,
+    "frame": "5",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 18237,
+    "frame": "5",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 18490,
+    "frame": "4",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 18796,
+    "frame": "2",
+    "moving": "true",
+    "phase": "stretch"
+  },
+  {
+    "ms": 19008,
+    "frame": "0",
+    "moving": "true",
+    "phase": "settle"
+  },
+  {
+    "ms": 19299,
+    "frame": "0",
+    "moving": "true",
+    "phase": "settle"
+  },
+  {
+    "ms": 19552,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 19790,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 20113,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 20339,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 20622,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 20923,
+    "frame": "1",
+    "moving": "true",
+    "phase": "typing"
+  },
+  {
+    "ms": 21159,
+    "frame": "0",
+    "moving": "true",
+    "phase": "typing"
+  }
+]
