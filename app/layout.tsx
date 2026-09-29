@@ -21,8 +21,10 @@ export const viewport: Viewport = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>): JSX.Element {
+  // WorldLayout's pre-paint scripts add art-gate/art-arrive to this element.
+  // Accept those root attributes while still checking descendants for mismatches.
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         <WorldLayout>{children}</WorldLayout>
       </body>
