@@ -117,7 +117,7 @@ The journey also sets `--lean` (−1 to 1) from smoothed scroll speed and keeps 
 
 ## Scene copy
 
-`shared/scene-copy.tsx` renders scene-owned words with semantic headings, naturally wrapping paragraphs and an optional `discovery`, a quiet real link; its copy stays in `scenes/<name>/content.ts`. Disclosure dialogs were removed: information belongs inside the scene. `eyebrow` is optional; the homepage no longer supplies it. Common copy/link styling lives in `shared/scene-copy.css`; each scene owns heading scale and placement.
+`shared/scene-copy.tsx` renders scene-owned words with semantic headings, naturally wrapping paragraphs and an optional `discovery`, a quiet real link; its copy stays in `scenes/<name>/content.ts`. Disclosure dialogs were removed: information belongs inside the scene. `eyebrow` is optional; the homepage no longer supplies it. Common copy/link styling lives in `shared/scene-copy.css`; each scene owns heading scale and placement. A scene can set `titleSwaps.correctFirst` to type the authored line on arrival, erase it with a soft CSS mask and a small illustrated eraser, then type the first alternative in its place before the remaining phrases cycle. `titleSwaps.cycles` controls the number of complete passes (default one); Lake plays two, including the eraser on each pass. Word-local masks preserve the correction when text wraps; the cleared edge holds while the eraser rubs backward, so erased letters do not reappear. The shared motion policy cancels the sequence on pause or inactivity and restores the authored heading; the accessible name remains stable throughout.
 
 ## Page transitions
 

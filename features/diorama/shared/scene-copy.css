@@ -67,3 +67,104 @@
     opacity: 0;
   }
 }
+
+/* Erase real HTML words independently so a wrapped title keeps its rhythm. */
+.world .world-copy .world-title-erased-word {
+  position: relative;
+  display: inline-block;
+  white-space: pre;
+}
+.world .world-title-ink {
+  display: inline-block;
+  mask-image: linear-gradient(
+    90deg,
+    transparent calc(50% - 4px),
+    #000 calc(50% + 4px)
+  );
+  mask-size: calc(200% + 16px) 100%;
+  mask-repeat: no-repeat;
+  mask-position: 100% 0;
+  animation: world-title-erase linear both;
+}
+.world .world-title-eraser {
+  position: absolute;
+  left: -8px;
+  top: 0.1em;
+  width: calc(100% + 16px);
+  height: 0.86em;
+  pointer-events: none;
+  opacity: 0;
+  animation: world-title-eraser linear both;
+}
+.world .world-title-eraser::after {
+  content: '';
+  position: absolute;
+  left: -0.21em;
+  width: 0.44em;
+  height: 100%;
+  border: 1px solid currentColor;
+  border-radius: 0.07em 0.07em 0.1em 0.08em;
+  background: linear-gradient(#c99789 0 34%, #ede3cd 34%);
+  box-shadow: inset -0.04em 0 #31473b20;
+  transform: rotate(14deg);
+}
+.world .world-title-ink,
+.world .world-title-eraser {
+  animation-duration: calc(var(--erase-span) * 1800ms);
+  animation-delay: calc(var(--erase-start) * 1800ms);
+}
+/* The wipe holds while the eraser rubs back over already cleared letters. */
+@keyframes world-title-erase {
+  0% {
+    mask-position: 100% 0;
+  }
+  18%,
+  28% {
+    mask-position: 82% 0;
+  }
+  46%,
+  56% {
+    mask-position: 55% 0;
+  }
+  76%,
+  84% {
+    mask-position: 24% 0;
+  }
+  100% {
+    mask-position: 0% 0;
+  }
+}
+@keyframes world-title-eraser {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  4% {
+    opacity: 1;
+  }
+  18% {
+    transform: translate(18%, -0.035em);
+  }
+  28% {
+    transform: translate(12%, 0.045em);
+  }
+  46% {
+    transform: translate(45%, -0.02em);
+  }
+  56% {
+    transform: translate(38%, 0.03em);
+  }
+  76% {
+    transform: translate(76%, -0.04em);
+  }
+  84% {
+    transform: translate(70%, 0.02em);
+  }
+  96% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(100%, 0);
+  }
+}

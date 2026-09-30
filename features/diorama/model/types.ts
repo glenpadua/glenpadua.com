@@ -28,7 +28,14 @@ export interface WorldScene {
    * One title line retyped through lighthearted alternatives on arrival,
    * then back to itself. The authored line stays the settled heading.
    */
-  titleSwaps?: { line: number; phrases: readonly string[] };
+  titleSwaps?: {
+    line: number;
+    phrases: readonly string[];
+    /** Type the authored line, then erase it before the first alternative. */
+    correctFirst?: boolean;
+    /** Number of complete passes before settling on the authored line. */
+    cycles?: number;
+  };
   /** Paragraphs wrap naturally; title lines may still be art-directed. */
   body?: readonly string[];
   /** An optional quiet link under the words. Information lives in the scene, not in dialogs. */

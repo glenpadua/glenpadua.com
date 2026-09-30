@@ -197,7 +197,10 @@ test('built pages have semantic copy, real destinations, search metadata and sta
     assert.match(html, /href="\/work"/);
     assert.match(html, /href="\/writing"/);
   }
-  assert.match(home, /Skipping leg day/);
+  assert.match(
+    home,
+    /<button[^>]*aria-label="Cheer me on! Do a few faster pull-ups"/,
+  );
   // The opening scene keeps visitors in the day: no links out of the lake.
   const lake = home.slice(
     home.indexOf('world-scene world-lake'),
@@ -206,6 +209,12 @@ test('built pages have semantic copy, real destinations, search metadata and sta
   assert.doesNotMatch(lake, /href="\/blog\//);
   assert.match(home, /"@type":"Person"/);
   assert.match(home, /I’m Glen, a software engineer\./);
+  const openingHeading = home.match(
+    /<h1\b[^>]*id="lake-title"[\s\S]*?<\/h1>/,
+  )?.[0];
+  assert.ok(openingHeading, 'the opening heading must exist before hydration');
+  assert.match(openingHeading, />a software engineer\.</);
+  assert.doesNotMatch(openingHeading, /data-correction=|world-title-caret/);
   assert.match(work, /Senior engineer/);
   assert.match(work, /Purrfect Plate/);
   for (const uid of [

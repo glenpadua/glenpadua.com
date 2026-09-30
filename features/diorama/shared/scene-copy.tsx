@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import type { WorldScene } from '../model/types';
 import { DiscoveryMark } from './discovery-mark';
 import { useMotionPolicy } from './scene-motion';
@@ -12,26 +12,32 @@ const commonPrefix = (a: string, b: string) => {
 };
 
 /**
- * Retypes a title line through its alternatives once, like someone at the
+ * Retypes a title line through its alternatives, like someone at the
  * keyboard, then settles back on the authored words. Visual only: the
  * heading's accessible name and text stay the authored line.
  */
 function TitleSwap({
   line,
   phrases,
+  correctFirst = false,
+  cycles = 1,
   running,
 }: {
   line: string;
   phrases: readonly string[];
+  correctFirst?: boolean;
+  cycles?: number;
   running: boolean;
 }): JSX.Element {
   const [text, setText] = useState(line);
   const [typing, setTyping] = useState(false);
+  const [correction, setCorrection] = useState<'none' | 'erase'>('none');
   const done = useRef(false);
   useEffect(() => {
     if (!running || done.current) return;
     let frame = 0;
     let current = line;
+    let completedCycles = 0;
     // Paced by animation frames, not a chain of timers: iOS Safari treats a
     // tap during timer-driven page changes as a hover and swallows its click,
     // so the header and scroll arrow would ignore taps while this types.
@@ -62,30 +68,98 @@ function TitleSwap({
     const queue = [...phrases, line];
     const step = (i: number) => {
       if (i >= queue.length) {
+        setTyping(false);
+        completedCycles++;
+        if (completedCycles < cycles) {
+          if (correctFirst) correct();
+          else
+            after(1700, () => {
+              setTyping(true);
+              step(0);
+            });
+          return;
+        }
         done.current = true;
-        return setTyping(false);
+        return;
       }
       retype(queue[i], () =>
         after(i < queue.length - 1 ? 1700 : 0, () => step(i + 1)),
       );
     };
-    after(1400, () => {
+    const replaceCorrection = () => {
+      setCorrection('none');
+      current = '';
+      setText(current);
       setTyping(true);
       step(0);
-    });
+    };
+    const correct = () => {
+      setTyping(false);
+      after(1050, () => {
+        if (!phrases.length) {
+          done.current = true;
+          return;
+        }
+        setCorrection('erase');
+        // Leave a brief blank beat after the eraser finishes its pass.
+        after(2300, replaceCorrection);
+      });
+    };
+    if (correctFirst) {
+      after(0, () => {
+        current = '';
+        setText(current);
+        setTyping(true);
+        after(180, () => retype(line, correct));
+      });
+    } else {
+      after(1400, () => {
+        setTyping(true);
+        step(0);
+      });
+    }
     return () => {
       cancelAnimationFrame(frame);
       // Interrupted (scrolled away or paused): show the authored words.
       if (!done.current) {
         setText(line);
         setTyping(false);
+        setCorrection('none');
       }
     };
-  }, [line, phrases, running]);
+  }, [line, phrases, correctFirst, cycles, running]);
   return (
-    <span aria-hidden="true">
-      {text || '\u00a0'}
-      {typing && <i className="world-title-caret" />}
+    <span
+      aria-hidden="true"
+      className="world-title-line"
+      data-correction={correction === 'none' ? undefined : correction}
+    >
+      {correction === 'erase' ? (
+        text.split(/(?<=\s)/).map((word, index, words) => {
+          const start = words.slice(0, index).join('').length / text.length;
+          const span = word.length / text.length;
+          return (
+            <span
+              className="world-title-erased-word"
+              key={index}
+              style={
+                {
+                  '--erase-start': start,
+                  '--erase-span': span,
+                } as CSSProperties
+              }
+            >
+              <span className="world-title-ink">{word}</span>
+              <i className="world-title-eraser" />
+            </span>
+          );
+        })
+      ) : (
+        <>
+          {text || '\u00a0'}
+          {typing && <i className="world-title-caret" />}
+        </>
+      )}
     </span>
   );
 }
@@ -118,6 +192,8 @@ export function SceneCopy({
               key={line}
               line={line}
               phrases={scene.titleSwaps.phrases}
+              correctFirst={scene.titleSwaps.correctFirst}
+              cycles={scene.titleSwaps.cycles}
               running={interactive && active && enabled}
             />
           ) : (

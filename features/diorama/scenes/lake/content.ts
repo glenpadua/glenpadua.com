@@ -7,11 +7,12 @@ export const lakeScene: WorldScene = {
   // The second line retypes itself through these, then settles back.
   titleSwaps: {
     line: 1,
+    correctFirst: true,
+    cycles: 2,
     phrases: [
-      'a maker of things.',
       'a human in the loop.',
-      'a fixer of workflows.',
-      'an AI meat proxy.',
+      'always building something.',
+      'a serial leg-day skipper.',
     ],
   },
   body: ['I’ve been building things for the internet for over ten years.'],

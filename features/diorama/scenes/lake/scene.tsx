@@ -60,13 +60,12 @@ export function LakeScene(props: SceneProps): JSX.Element {
       }
       atmosphere={<LakeSeeds />}
       controls={
-        // The one thing to touch at the lake: the bar keeps its joke, and a
-        // tap is a cheer, so he does a few more reps (while motion is on).
+        // A cheer quickens a few reps while scene motion is on.
         <InteractionOrb
           className="cue-exercise"
           style={{ left: '83.5%', top: '61%' }}
-          label="Skipping leg day since 2008. Cheer him on for a few more reps"
-          hint="Skipping leg day since 2008."
+          label="Cheer me on! Do a few faster pull-ups"
+          hint="Cheer me on!"
           onClick={() => setCheers(count => count + 1)}
         />
       }
