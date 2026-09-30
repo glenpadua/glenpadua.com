@@ -4,19 +4,21 @@
   inset: 0;
   container-type: size;
   overflow: hidden;
-  background: #fff8e4;
+  --saver-paper: #fff8e4;
+  background: var(--saver-paper);
   color: #293e34;
   font-size: clamp(9px, 2.1cqw, 14px);
   transition: background-color 450ms ease;
 }
 .saver[data-dark='true'] {
-  background: #161c19;
+  --saver-paper: #161c19;
   color: #e9e3cf;
 }
-/* The signature bounces below the away message, never across it. */
+/* The whole monitor glass is the playing field. The away controls are an
+   overlay, not an invisible wall for the signature. */
 .field {
   position: absolute;
-  inset: 17cqh 0 0;
+  inset: 0;
 }
 .mark {
   position: absolute;
@@ -31,12 +33,7 @@
 .saver[data-dark='true'] .mark {
   filter: brightness(1.45) saturate(0.9);
 }
-/* Motion off: the signature simply rests in the middle. */
-.saver[data-still='true'] .mark {
-  left: 50%;
-  top: 40%;
-  transform: translate(-50%, -50%);
-}
+/* Pausing retains the position written by the motion controller. */
 .mark[data-cheer='true'] {
   animation: corner-pop 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -55,12 +52,19 @@
 /* At the top: Glen's painted head covers the bottom of the screen. */
 .away {
   position: absolute;
-  inset: 4cqh 0 auto;
+  top: 4cqh;
+  left: 50%;
+  translate: -50% 0;
+  width: max-content;
+  max-width: 100%;
+  padding: 0 0.4em;
   z-index: 1;
   display: grid;
   justify-items: center;
   gap: 0.2em;
   text-align: center;
+  /* A small readable overlay; the signature can travel behind the controls. */
+  background: var(--saver-paper);
 }
 .away p {
   margin: 0;

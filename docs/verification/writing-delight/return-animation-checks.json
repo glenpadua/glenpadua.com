@@ -1,0 +1,32 @@
+{
+  "backAnimationCheck": {
+    "animations": [
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none"
+    ],
+    "restored": "true"
+  },
+  "looseReturn": {
+    "animations": [
+      "none",
+      "none",
+      "none",
+      "none"
+    ],
+    "restored": "true"
+  },
+  "chroniclesLinkReturn": [
+    "none",
+    "none",
+    "none",
+    "none",
+    "none",
+    "none"
+  ],
+  "deliberateOpen": "chronicle-fan",
+  "initialServerState": "settled"
+}

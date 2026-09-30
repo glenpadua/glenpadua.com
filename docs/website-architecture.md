@@ -48,21 +48,22 @@ Each scene owns `content.ts`, `scene.tsx` and `styles.css`, plus its character/e
 
 ## What to edit
 
-| Task                                                                     | Owner                                                        |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------ |
-| Add/remove/reorder homepage chapters                                     | `features/diorama/data/scenes.ts`                            |
-| Change one scene's words, layers, hotspot locations or phone composition | `scenes/<name>/content.ts` and `styles.css`                  |
-| Character movement, water, lighting, scene-specific interaction state    | `scenes/<name>/scene.tsx` and adjacent modules               |
-| Every interaction orb's appearance and behavior                          | `shared/interaction-orb.tsx` and `interaction-orb.css`       |
-| Pause, reduced motion, tab visibility                                    | `shared/scene-motion.tsx`                                    |
-| Scroll transitions and nearby asset loading                              | `screens/world-journey.tsx`, `lib/travel.ts`                 |
-| Default layer images, static fallback, image failure handling            | `shared/scene-artwork.tsx`                                   |
-| Project content/order                                                    | `rooms/work/content.ts`                                      |
-| Featured article notes/order and outage fallback                         | `rooms/writing/content.ts`                                   |
-| Matching Writing thumbnails and article covers                           | `articles/covers.ts`, `getArticleCover(uid)`                 |
-| Writing-desk handwriting and its painting-space masks                    | `rooms/writing/writing-hand.tsx`, `rooms/writing/styles.css` |
-| CMS refresh/mapping                                                      | `rooms/writing/load-articles.ts` (server only)               |
-| Mount URLs / contact, site title and share image                         | `lib/routes.ts` / `data/site.ts`                             |
+| Task                                                                     | Owner                                                                           |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| Add/remove/reorder homepage chapters                                     | `features/diorama/data/scenes.ts`                                               |
+| Change one scene's words, layers, hotspot locations or phone composition | `scenes/<name>/content.ts` and `styles.css`                                     |
+| Character movement, water, lighting, scene-specific interaction state    | `scenes/<name>/scene.tsx` and adjacent modules                                  |
+| Every interaction orb's appearance and behavior                          | `shared/interaction-orb.tsx` and `interaction-orb.css`                          |
+| Pause, reduced motion, tab visibility                                    | `shared/scene-motion.tsx`                                                       |
+| Scroll transitions and nearby asset loading                              | `screens/world-journey.tsx`, `lib/travel.ts`                                    |
+| Default layer images, static fallback, image failure handling            | `shared/scene-artwork.tsx`                                                      |
+| Project content/order                                                    | `rooms/work/content.ts`                                                         |
+| Featured article notes/order and outage fallback                         | `rooms/writing/content.ts`                                                      |
+| Matching Writing thumbnails and article covers                           | `articles/covers.ts`, `getArticleCover(uid)`                                    |
+| Writing desk objects, optional session memory, collection and postcard   | `rooms/writing/desk-objects.css`, `desk-state.ts`, `chronicles.*`, `postcard.*` |
+| Writing-desk handwriting and its painting-space masks                    | `rooms/writing/writing-hand.tsx`, `rooms/writing/styles.css`                    |
+| CMS refresh/mapping                                                      | `rooms/writing/load-articles.ts` (server only)                                  |
+| Mount URLs / contact, site title and share image                         | `lib/routes.ts` / `data/site.ts`                                                |
 
 ## Scene contract
 
@@ -136,7 +137,9 @@ Keep runtime business content in TypeScript or Prismic. JSON under docs is asset
 
 ## Rooms without dialogs
 
-The Work laptop (`rooms/work/slack-profile.tsx`) is a button that leans in to a straightened Slack window, portalled to `.world` with a view transition: channels in the sidebar, a profile with role, status and Valencia clock, and a quiet remote.com link where Slack's search would be. Each channel button shows one short conversation (`slackChannels` in `content.ts`, draft copy with made-up teammates), advancing to the next on every click from a random start; the DM entry returns to the profile. Escape, the close button or the backdrop return focus to the laptop. The Writing archive tray and the “All writing” button bring out index cards anchored in the room (`section.archive-cards`, non-modal), with search, topic chips and a link to the original blog; Escape or a click elsewhere puts them back and returns focus to whichever control opened them. In the city, the coffee cup is a small action (a sip and a puff of steam) rather than a contact link; contact lives in the header and at the day's end.
+The Work screensaver's collision model lives in `rooms/work/screen-saver-motion.ts`. Its field fills the whole monitor; the away message and wake button sit above it as a small readable overlay. Motion advances to each wall contact before using the rest of a frame, and counts a corner only when both edges meet within half a CSS pixel. Missing layout bounds cannot score hits. Keep the normalized position across pause/resume, and keep celebration expiry independent of the motion effect. Regression checks and browser evidence live in `scripts/work-screensaver.test.mjs` and `docs/verification/work-screensaver/`.
+
+The Work laptop (`rooms/work/slack-profile.tsx`) is a button that leans in to a straightened Slack window, portalled to `.world` with a view transition: channels in the sidebar, a profile with role, status and Valencia clock, and a quiet remote.com link where Slack's search would be. Each channel button shows one short conversation (`slackChannels` in `content.ts`, draft copy with made-up teammates), advancing to the next on every click from a random start; the DM entry returns to the profile. Escape, the close button or the backdrop return focus to the laptop. The Writing archive tray brings out index cards anchored in the room (`section.archive-cards`, non-modal), with search, paper divider topics and ordinary article links; Escape or a click elsewhere puts them back and returns focus to whichever control opened them. In the city, the coffee cup is a small action (a sip and a puff of steam) rather than a contact link; contact lives in the header and at the day's end.
 
 The header's contact is a plain “Say hello ↗” link after a faint divider (“hello ↗” on very narrow phones), not a button.
 
@@ -150,7 +153,9 @@ City's glances, conversation, laughter and independent coffee sips live in `scen
 
 Work owns the interactive globe in `rooms/work/spinning-globe.tsx`, `spinning-globe.module.css`, `globe-renderer.ts` and `globe-motion.ts`. It uses a bounded 160×160 Canvas2D surface over an illustrated fallback, shared `InteractionOrb` controls, and motion-policy-aware momentum with no idle animation loop. Keep its projection, map texture, room artwork and responsive placement local to Work. Its assets use the `work-globe*` prefix; verification and provenance live in `docs/verification/work-refinement/globe.md`, with focused physics checks in `scripts/work-globe.test.mjs`.
 
-Writing-desk handwriting is owned by `rooms/writing/writing-hand.tsx` and `rooms/writing/styles.css`; its assets keep the historical `stories-writing-*` prefix. The unused shared `RoomHands` prototype has been removed. One opaque hand cut from the approved artwork rotates over a fixed cleaned background, with the original cuff above it. Desktop/portrait masks and cleaned backgrounds use the `public/assets/world/stories-writing-*` prefix. Keep these assets and motion geometry together; preserve the original painting fallback while assets load or fail. Verification lives in `docs/verification/stories-refinement/`.
+Writing-desk handwriting is owned by `rooms/writing/writing-hand.tsx` and `rooms/writing/styles.css`; its assets keep the historical `stories-writing-*` prefix. The unused shared `RoomHands` prototype has been removed. One opaque hand cut from the approved artwork rotates over a fixed cleaned background, with the original cuff above it. Desktop/portrait masks and cleaned backgrounds use the `public/assets/world/stories-writing-*` prefix. Keep these assets and motion geometry together; preserve the original painting fallback while assets load or fail. The 11-second routine includes short strokes, a hesitation and a thinking pause. Asking the pen to rest finishes its current stroke, then settles. The shared motion policy and a hand-area observer pause it when hidden, offscreen or explicitly paused. Verification lives in `docs/verification/stories-refinement/` and `docs/verification/writing-delight/`.
+
+Writing uses its portrait composition at widths at most 520px or aspect ratios at most 13:10. The painting, hand masks, placeholder and scene objects use that same breakpoint. The compact desk removes empty middle wood using two overlapping slices of the original painting: the lamp/cup stay at the top, while the full-height painting and hand composite stay aligned at the bottom. `--desk-art-height` keeps lower object targets in the original painting coordinates; `--desk-height` controls the shorter room. The placeholder uses the same slices. Loose papers have a capped 620px spread and independent height so tablet windows do not inflate them. Some short viewports still scroll. On the wide desk, the painted lower binder clip opens the Chronicles and the painted tray opens the archive; compact layouts have a small illustrated manuscript stack using the first chapter's existing cover. “More pages” is a paper stack, tucked away while the compact collection is open. Session memory keeps the current spread or collection, lamp state and last-opened article; unavailable storage does not block reading. Server and initial client output are settled; returning from an article never replays the loose-paper arrival or Chronicles fan. Confirmed first visits and explicit object interactions may animate. The postcard quotes the published dream-job essay and uses a locally masked cleanup plate, with the original painting retained underneath.
 
 - Lakeside thread: `scenes/lake/`, lake assets, lake tests and verification.
 - Beach thread: `scenes/beach/`, beach assets, beach tests and verification.

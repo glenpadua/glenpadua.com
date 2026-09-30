@@ -1,12 +1,11 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { useMotionPolicy } from '../../shared/scene-motion';
+import { advanceSaver } from './screen-saver-motion';
 import styles from './screen-saver.module.css';
 
 // The site's accents, in the order the signature cycles through them.
 const inks = ['#54765d', '#c46a3f', '#b8873f', '#3f7f86', '#7a5a86'];
-// How close to a corner still counts as hitting it, in pixels.
-const CORNER = 7;
 
 /**
  * The desk screen's saver: the signature drifts and bounces off the edges,
@@ -27,6 +26,13 @@ export function ScreenSaver({
   const [ink, setInk] = useState(0);
   const [corners, setCorners] = useState(0);
   const [cheer, setCheer] = useState(false);
+  // Celebration expiry is independent of the motion loop: pausing or hiding
+  // the tab must not cancel the only timer that puts the message away.
+  useEffect(() => {
+    if (!corners) return;
+    const timer = setTimeout(() => setCheer(false), 2400);
+    return () => clearTimeout(timer);
+  }, [corners]);
 
   useEffect(() => {
     const box = field.current;
@@ -49,44 +55,24 @@ export function ScreenSaver({
     resize();
     let last = performance.now();
     let frame = 0;
-    let cheerTimer: ReturnType<typeof setTimeout>;
     const step = (now: number) => {
       const dt = Math.min(now - last, 50) / 1000;
       last = now;
-      let px = x * w + dx * speed * dt;
-      let py = y * h + dy * speed * dt;
-      let hitX = false;
-      let hitY = false;
-      if (px <= 0 || px >= w) {
-        dx = px <= 0 ? 1 : -1;
-        px = Math.min(Math.max(px, 0), w);
-        hitX = true;
-      }
-      if (py <= 0 || py >= h) {
-        dy = py <= 0 ? 1 : -1;
-        py = Math.min(Math.max(py, 0), h);
-        hitY = true;
-      }
-      if (hitX || hitY) {
-        setInk(i => (i + 1) % inks.length);
-        const nearX = px <= CORNER || px >= w - CORNER;
-        const nearY = py <= CORNER || py >= h - CORNER;
-        if (nearX && nearY) {
-          setCorners(n => n + 1);
+      const next = advanceSaver({ x, y, dx, dy }, w, h, speed, dt);
+      if (next.bounces) {
+        setInk(i => (i + next.bounces) % inks.length);
+        if (next.corners) {
+          setCorners(n => n + next.corners);
           setCheer(true);
-          clearTimeout(cheerTimer);
-          cheerTimer = setTimeout(() => setCheer(false), 2400);
         }
       }
-      x = w > 0 ? px / w : 0;
-      y = h > 0 ? py / h : 0;
-      logo.style.transform = `translate(${px}px, ${py}px)`;
+      ({ x, y, dx, dy } = next.position);
+      logo.style.transform = `translate(${x * w}px, ${y * h}px)`;
       frame = requestAnimationFrame(step);
     };
     if (enabled) frame = requestAnimationFrame(step);
     return () => {
       cancelAnimationFrame(frame);
-      clearTimeout(cheerTimer);
       observer.disconnect();
       position.current = { x, y, dx, dy };
     };

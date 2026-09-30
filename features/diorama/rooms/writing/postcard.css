@@ -1,0 +1,154 @@
+.world .writing-postcard-clean {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mask: url('/assets/world/writing-postcard-clean-mask.svg') 0 0 / 100% 100%;
+  visibility: hidden;
+}
+@supports (mask-image: url('')) {
+  .world .writing-postcard-clean[data-ready='true'] {
+    visibility: visible;
+  }
+}
+.world .writing-postcard-turn {
+  left: 6.83594%;
+  top: 50.29297%;
+  width: 13.671875%;
+  height: 22.46094%;
+  border-radius: 0;
+}
+.world .writing-postcard-front {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.world .postcard-desktop-front {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.world .postcard-phone-front {
+  display: none;
+}
+.world .writing-postcard-turn .world-cue-label {
+  left: 15%;
+  --cue-label-x: 0%;
+}
+.world .writing-postcard-back {
+  position: absolute;
+  z-index: 12;
+  left: max(3%, calc(50% - 50vw + 28px));
+  top: 40%;
+  width: 300px;
+  padding: 18px 22px 20px;
+  color: #435344;
+  background: #f1e7ce;
+  box-shadow:
+    2px 3px 0 #c5b28e,
+    8px 14px 25px #3a240c44;
+  transform: rotate(-6deg);
+  animation: writing-postcard-flip 400ms var(--world-ease);
+  transform-origin: 0 50%;
+}
+.world .writing-postcard-back header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #b8a882;
+}
+.world .writing-postcard-back header span {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+.world .writing-postcard-back button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: 0;
+  color: inherit;
+}
+.world .writing-postcard-back blockquote {
+  margin: 15px 0 0;
+  font: italic 21px/1.5 var(--world-heading-font);
+}
+.world .postcard-signature {
+  font: italic 19px/1.5 var(--world-heading-font);
+  margin: 10px 0 16px;
+}
+.world .writing-postcard-back a {
+  font-size: 12px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@keyframes writing-postcard-flip {
+  from {
+    opacity: 0;
+    transform: perspective(700px) rotateY(-85deg) rotate(-12deg);
+  }
+}
+@media (max-width: 520px), (max-aspect-ratio: 13/10) {
+  .world .writing-postcard-clean,
+  .world .postcard-desktop-front {
+    display: none;
+  }
+  .world .writing-postcard-turn {
+    left: 71%;
+    top: clamp(94px, 16cqw, 160px);
+    width: clamp(65px, 18vw, 130px);
+    height: clamp(46px, 13vw, 94px);
+  }
+  .world .postcard-phone-front {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px solid #eee3c9;
+    transform: rotate(-9deg);
+    box-shadow: 2px 3px 4px #3a240c44;
+  }
+  .world .writing-postcard-back {
+    left: max(calc(50% - 210px), calc(50% - 50vw + 30px));
+    top: 23%;
+    width: min(420px, calc(100vw - 60px));
+    transform: rotate(-3deg);
+  }
+  .world .writing-postcard-back blockquote {
+    font-size: 20px;
+  }
+  .world .writing-postcard-turn .world-cue-label {
+    left: auto;
+    right: 0;
+    --cue-label-x: 0%;
+  }
+}
+
+.world .postcard-is-open {
+  visibility: hidden;
+}
+.world[data-still='true'] .writing-postcard-back,
+.world[data-still='true'] .chronicles-sheets li {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .world .writing-postcard-back,
+  .world .chronicles-sheets li {
+    animation: none;
+  }
+}
+
+@media (min-aspect-ratio: 13/10) and (min-width: 521px) and (max-width: 900px) {
+  .world .writing-postcard-back {
+    top: 16%;
+    width: min(360px, 65vw);
+    padding: 12px 18px;
+  }
+  .world .writing-postcard-back blockquote {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}

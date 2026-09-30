@@ -3,7 +3,7 @@
   opacity: 1;
 }
 
-@media (min-width: 761px) {
+@media (min-width: 521px) and (min-aspect-ratio: 13/10) {
   .writing-room .article-paper h2 {
     font-size: clamp(22px, 1.8cqw, 31px);
     margin: 0.55cqw 0;
@@ -56,38 +56,67 @@
   filter: drop-shadow(-4px 8px 2px #3c291b42);
 }
 .writing-hand-composite[data-ready='true'] .writing-hand-motion {
-  animation: writing-hand-stroke 5.4s ease-in-out infinite;
+  animation: writing-hand-stroke 11s ease-in-out infinite;
 }
-.writing-room[data-pen-resting='true'] .writing-hand-motion {
-  animation-play-state: paused;
+/* Writing, a small hesitation, another phrase, then a lifted thinking pause.
+   The cuff stays fixed and motion is limited to the approved hand mask. */
+.writing-hand-motion[data-resting='true'] {
+  animation: writing-hand-finish 480ms ease-out forwards !important;
+}
+.writing-hand-composite[data-moving='false'] .writing-hand-motion {
+  animation-play-state: paused !important;
 }
 @keyframes writing-hand-stroke {
   0%,
-  12%,
+  4%,
   100% {
     transform: rotate(0deg);
   }
-  22% {
+  10% {
     transform: rotate(-0.9deg);
   }
-  30% {
-    transform: rotate(0.25deg);
-  }
-  42% {
-    transform: rotate(-1.25deg);
-  }
-  51% {
-    transform: rotate(-0.15deg);
-  }
-  61% {
-    transform: rotate(-0.85deg);
-  }
-  72%,
-  88% {
+  15% {
     transform: rotate(0.2deg);
   }
+  21%,
+  26% {
+    transform: rotate(-0.7deg);
+  }
+  32% {
+    transform: rotate(0.1deg);
+  }
+  38% {
+    transform: rotate(-1.1deg);
+  }
+  44% {
+    transform: rotate(-0.1deg);
+  }
+  51% {
+    transform: rotate(-0.85deg);
+  }
+  57% {
+    transform: rotate(0.1deg);
+  }
+  64%,
+  86% {
+    transform: translateY(-0.08%) rotate(0.3deg);
+  }
+  94% {
+    transform: rotate(0deg);
+  }
 }
-@media (max-width: 760px) {
+@keyframes writing-hand-finish {
+  from {
+    transform: var(--writing-finish-from, rotate(0deg));
+  }
+  65% {
+    transform: rotate(-0.45deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@media (max-width: 520px), (max-aspect-ratio: 13/10) {
   .writing-hand-clean {
     mask-image: url('/assets/world/stories-writing-clean-mask-portrait.svg');
   }
@@ -105,5 +134,35 @@
 @media (prefers-reduced-motion: reduce) {
   .writing-hand-composite {
     display: none;
+  }
+}
+
+.writing-hand-activity-area {
+  position: absolute;
+  left: 55%;
+  top: 74%;
+  width: 25%;
+  height: 24%;
+  pointer-events: none;
+}
+
+/* Keep the loading miniature registered to this room's aspect-based artwork. */
+.art-gate .world .writing-room .art-veil {
+  background-image: var(--veil);
+}
+@media (max-width: 520px), (max-aspect-ratio: 13/10) {
+  .art-gate .world .writing-room .art-veil {
+    background-image: var(--veil-portrait);
+    background-size: 100% var(--desk-art-height);
+    background-position: center bottom;
+  }
+  .art-gate .world .writing-room .art-veil::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: calc(var(--desk-art-height) * 0.18);
+    background: var(--veil-portrait) center top / 100% var(--desk-art-height)
+      no-repeat;
+    mask-image: linear-gradient(#000 calc(100% - 24px), transparent);
   }
 }

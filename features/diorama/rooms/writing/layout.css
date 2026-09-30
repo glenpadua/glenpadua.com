@@ -2,10 +2,18 @@
    Hand masks and cover typography remain in styles.css. */
 :where(.world) .writing-room {
   background: #ad7841;
+  min-height: max(450px, 60vw);
+}
+:where(.world .writing-room) .room-art-stage {
+  width: max(100vw, 150lvh, 675px);
+  height: max(66.6667vw, 100lvh, 450px);
 }
 :where(.world .writing-room) .paper-spread {
   position: absolute;
   inset: 0;
+}
+.world .writing-desk-top {
+  display: none;
 }
 /* Wide screens crop the painting's top and bottom evenly, which would slide
    the top papers under the header. Draw the spread in a little, anchored low
@@ -105,31 +113,6 @@
   height: 28%;
   --rotation: 5deg;
 }
-/* Portrait tablets keep the landscape painting, of which only the centre
-   shows. Deal the papers as a loose 2×2 inside that visible column. */
-@media (min-width: 761px) and (max-aspect-ratio: 1/1) {
-  :where(.world .writing-room) .paper-spread {
-    inset: 14% auto 31% calc(50% - 38vw);
-    width: 76vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 4svh 3vw;
-  }
-  :where(.world .writing-room) .article-paper {
-    position: relative;
-    left: auto;
-    top: auto;
-    width: 100%;
-    height: 100%;
-    min-height: 0;
-    padding: 18px 20px;
-  }
-  :where(.world .writing-room) .archive-cards {
-    right: calc(50% - 50vw + 24px);
-    width: min(60vw, 420px);
-  }
-}
 :where(.world .writing-room) .paper-meta {
   display: flex;
   justify-content: space-between;
@@ -165,46 +148,6 @@
   font-size: clamp(10px, 0.7cqw, 12px);
   margin-top: 0.4cqw;
   line-height: 1.4;
-}
-:where(.world .writing-room) .writing-controls {
-  position: absolute;
-  left: 5.5%;
-  bottom: calc(83px + var(--toolbar, 0px));
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  color: var(--edge-ink);
-  text-shadow:
-    0 1px 2px #342313,
-    var(--edge-shadow);
-  padding: 2px 0;
-  font-size: 12px;
-}
-:where(.world .writing-room) .writing-controls button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 0 5px;
-  border: 0;
-  background: none;
-  font-size: 12px;
-}
-:where(.world .writing-room) .writing-controls button:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-:where(.world .writing-room) .writing-controls button:focus-visible {
-  outline-color: var(--edge-ink);
-  box-shadow: 0 0 0 7px #34231380;
-}
-:where(.world .writing-room) .writing-controls svg {
-  filter: drop-shadow(var(--edge-shadow));
-}
-:where(.world .writing-room) .writing-page {
-  font-size: 11px;
-  color: inherit;
 }
 :where(.world .writing-room) .desk-coffee-steam {
   position: absolute;
@@ -261,8 +204,8 @@
 :where(.world .writing-room) .archive-head button {
   display: grid;
   place-items: center;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border: 0;
   border-radius: 50%;
   background: none;
@@ -294,10 +237,11 @@
   margin: 10px 0 4px;
 }
 :where(.world .writing-room) .archive-topics button {
-  min-height: 32px;
-  padding: 0 11px;
+  min-height: 44px;
+  padding: 0 12px;
   border: 1px solid #c9c2a9;
-  border-radius: 999px;
+  border-bottom: 3px solid #b7ab8c;
+  border-radius: 5px 5px 0 0;
   background: none;
   color: inherit;
   font-size: 12px;
@@ -372,14 +316,13 @@
   margin: 8px 0;
   font-size: 13px;
 }
-@media (max-width: 760px) {
+@media (max-width: 520px), (max-aspect-ratio: 13/10) {
   :where(.world .writing-room) .archive-cards {
     right: auto;
     left: 50%;
-    top: auto;
-    bottom: calc(12% + var(--toolbar, 0px));
-    width: calc(100vw - 32px);
-    max-height: 70%;
+    top: clamp(150px, 26cqw, 260px);
+    width: min(420px, calc(100vw - 32px));
+    max-height: min(520px, calc(100svh - 140px));
     transform: translateX(-50%) rotate(-0.6deg);
     animation-name: cards-up;
   }
@@ -416,7 +359,9 @@
   animation-delay: calc(var(--paper-order) * 30ms);
   pointer-events: none;
 }
-:where(.world .writing-room) .paper-spread[data-dealt='pile'] .article-paper {
+:where(.world .writing-room)
+  .paper-spread[data-dealt='pile'][data-gathering='false']
+  .article-paper {
   animation-name: paper-from-pile;
   animation-duration: 640ms;
   animation-delay: calc(var(--paper-order) * 70ms);
@@ -448,24 +393,48 @@
 }
 
 /* Paused: papers simply appear. */
-:where(.world[data-still='true'] .writing-room) .article-paper {
+:where(.world[data-still='true'] .writing-room) .article-paper,
+:where(.world[data-still='true'] .writing-room) .archive-cards {
   animation: none;
 }
-/* Phones show the portrait painting (1:2) and deal the papers as a 2×2,
-   clear of the archive tray, which starts at 89% of the painting's width. */
-@media (max-width: 760px) {
+/* Trim only empty wood from the portrait painting's middle. The top is an
+   unscaled slice; the original painting and hand layers stay aligned at the
+   bottom. Props retain their proportions as the desk gets less tall. */
+@media (max-width: 520px), (max-aspect-ratio: 13/10) {
+  :where(.world) .writing-room {
+    --desk-art-height: max(200vw, 100lvh);
+    --desk-height: min(var(--desk-art-height), max(100lvh, 130vw, 780px));
+    height: var(--desk-height);
+  }
   :where(.world) .writing-room .room-art-stage {
     width: max(100vw, 50lvh);
-    height: max(200vw, 100lvh);
+    height: var(--desk-height);
+  }
+  .world .writing-room .room-art,
+  .world .writing-room .writing-hand-composite {
+    top: auto;
+    bottom: 0;
+    height: var(--desk-art-height);
+  }
+  .world .writing-desk-top {
+    display: block;
+    position: absolute;
+    inset: 0 0 auto;
+    height: calc(var(--desk-art-height) * 0.18);
+    background: url('/assets/world/writing-portrait-v1.webp') center top / 100%
+      var(--desk-art-height) no-repeat;
+    mask-image: linear-gradient(#000 calc(100% - 24px), transparent);
+    pointer-events: none;
   }
   :where(.world .writing-room) .paper-spread {
-    inset: 15% auto 30% 50%;
-    width: min(calc(100vw - 48px), 74cqw);
+    inset: clamp(150px, 26cqw, 260px) auto auto 50%;
+    width: min(calc(100vw - 52px), 74cqw, 620px);
+    height: clamp(390px, 66cqw, 440px);
     transform: translateX(-50%);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 20px 16px;
+    gap: 24px 20px;
   }
   :where(.world .writing-room) .article-paper {
     position: relative;
@@ -474,19 +443,19 @@
     width: 100%;
     height: 100%;
     min-height: 0;
-    padding: 14px 12px;
-    --rotation: 3deg;
+    padding: 12px;
+    --rotation: 2deg;
   }
   :where(.world .writing-room) .paper-2,
   :where(.world .writing-room) .paper-3 {
-    --rotation: -4deg;
+    --rotation: -3deg;
   }
   :where(.world .writing-room) .paper-4 {
-    --rotation: 4deg;
+    --rotation: 3deg;
   }
   :where(.world .writing-room) .article-paper h2 {
-    font-size: clamp(20px, 5.3vw, 31px);
-    margin: 12px 0;
+    font-size: clamp(17px, 3.5vw, 25px);
+    margin: 8px 0;
     line-height: 1.06;
   }
   :where(.world .writing-room) .paper-meta {
@@ -498,26 +467,11 @@
     display: none;
   }
   :where(.world .writing-room) .paper-picture {
-    margin-bottom: 5px;
+    margin-bottom: 0;
   }
-  :where(.world .writing-room) .writing-controls {
-    left: 5%;
-    right: 5%;
-    bottom: calc(69px + var(--toolbar, 0px));
-    gap: 7px;
-    justify-content: space-between;
-    padding: 2px 7px;
-  }
-  :where(.world .writing-room) .writing-controls button {
-    font-size: 12px;
-    gap: 6px;
-    min-height: 42px;
-  }
-  :where(.world .writing-room) .writing-page {
-    font-size: 11px;
-  }
-  :where(.world .writing-room) .writing-controls svg {
-    width: 14px;
+  .world .writing-room .desk-coffee-steam {
+    top: calc(var(--desk-art-height) * 0.06);
+    height: calc(var(--desk-art-height) * 0.09);
   }
 }
 @media (max-width: 360px) {
@@ -525,17 +479,7 @@
     padding: 12px 10px;
   }
   :where(.world .writing-room) .article-paper h2 {
-    font-size: 19px;
-  }
-  :where(.world .writing-room) .writing-controls button {
-    font-size: 11px;
-    gap: 4px;
-  }
-  :where(.world .writing-room) .writing-controls {
-    gap: 3px;
-  }
-  :where(.world .writing-room) .writing-page {
-    font-size: 10px;
+    font-size: 17px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -544,31 +488,18 @@
     transition: none !important;
   }
 }
-.world .room-paper-shuffle .world-cue-label {
-  left: auto;
-  right: 0;
-  --cue-label-x: 0%;
-}
-.world .room-paper-shuffle {
-  left: min(95%, calc(50% + 50vw - 28px));
-  top: 60%;
-}
 .world .room-pen-rest {
   left: 65%;
   top: 84%;
 }
-@media (max-width: 760px) {
+@media (max-width: 520px), (max-aspect-ratio: 13/10) {
   .world .room-pen-rest .world-cue-label {
     top: auto;
     bottom: 100%;
   }
-  .world .room-paper-shuffle {
-    left: min(94%, calc(50% + 50vw - 24px));
-    top: 65%;
-  }
   .world .room-pen-rest {
     left: 71%;
-    top: 84%;
+    top: calc(100% - var(--desk-art-height) * 0.16);
   }
 }
 
@@ -583,5 +514,28 @@
   100% {
     opacity: 0;
     transform: translateY(-10px) scaleX(1.3);
+  }
+}
+
+/* Small landscape windows still use the complete overhead desk. Give long
+   titles room instead of allowing captions to spill out of shallow sheets. */
+@media (min-aspect-ratio: 13/10) and (min-width: 521px) and (max-width: 900px) {
+  .world .writing-room .article-paper h2 {
+    font-size: clamp(18px, 2.3vw, 21px);
+    margin: 6px 0;
+  }
+  .world .writing-room .paper-note {
+    display: none;
+  }
+  .world .writing-room .paper-meta {
+    font-size: 9px;
+  }
+}
+
+@media (min-aspect-ratio: 13/10) and (min-width: 521px) and (max-width: 900px) {
+  .world .writing-room .archive-cards {
+    width: min(360px, 60vw);
+    top: 15%;
+    max-height: 76%;
   }
 }

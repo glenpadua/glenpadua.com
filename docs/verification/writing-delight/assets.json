@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-30",
+  "generator": "Built-in imagegen",
+  "style": "../../../docs/art-style.md#shared-style-definition",
+  "reference": "art-source/world/writing.webp",
+  "source": "art-source/world/writing-postcard-clean-desktop.webp",
+  "served": "public/assets/world/writing-postcard-clean-desktop.webp",
+  "generatedSource": "/Users/glen/.codex/generated_images/01a0f101-fe29-7d60-9e92-abbe31b13305/exec-1a2f62ae-c127-471e-8a51-d3640afefe05.png",
+  "usage": "Only the postcard area is displayed through writing-postcard-clean-mask.svg. The original approved painting remains the fallback. The original postcard is displayed through an SVG clip; the compact postcard uses the approved dream-job article thumbnail.",
+  "processing": "Full-resolution lossless WebP source; served copy produced by node scripts/encode-art.mjs. No generated changes outside the masked postcard region are displayed.",
+  "prompt": "Use case: precise-object-edit. Edit target: supplied 1536x1024 overhead writing-desk painting. Project visual definition: docs/art-style.md revision illustrated-world-v1, supplied image is the exact composition. Remove ONLY the beach postcard photograph on the LEFT edge (approximately x=0..200,y=405..620), including its white paper border and its cast shadow. Continue the adjacent golden wooden desk grain seamlessly through the removed postcard area. Keep the two metal binder clips above and below it, the lamp, cup, plants, desk grain outside this very small region, all hands, hair, writing paper and tray exactly unchanged. Do not add any object. Same framing and full 1536x1024 landscape canvas; no zoom, crop, lighting change, or stylistic reinterpretation. This is a clean background plate for an animated postcard; the original printed postcard will be overlaid in code."
+}

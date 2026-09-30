@@ -1,0 +1,1234 @@
+[
+  {
+    "h": 740,
+    "objects": [
+      {
+        "h": 46,
+        "label": "Turn over the postcard",
+        "visibleWidth": 65,
+        "w": 65,
+        "withinScene": true,
+        "x": 205,
+        "y": 58
+      },
+      {
+        "h": 48,
+        "label": "Dim desk lamp",
+        "visibleWidth": 48,
+        "w": 48,
+        "withinScene": true,
+        "x": 3,
+        "y": 57
+      },
+      {
+        "h": 44,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 96,
+        "w": 96,
+        "withinScene": true,
+        "x": 68,
+        "y": 56
+      },
+      {
+        "h": 64,
+        "label": "Shuffle the papers",
+        "visibleWidth": 100,
+        "w": 100,
+        "withinScene": true,
+        "x": 10,
+        "y": 530
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 275,
+        "y": 508
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 216,
+        "y": 600
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 301,
+        "left": 19,
+        "right": 157,
+        "top": 108
+      },
+      {
+        "bottom": 302,
+        "left": 161,
+        "right": 303,
+        "top": 107
+      },
+      {
+        "bottom": 508,
+        "left": 17,
+        "right": 159,
+        "top": 313
+      },
+      {
+        "bottom": 508,
+        "left": 161,
+        "right": 303,
+        "top": 313
+      }
+    ],
+    "sceneHeight": 740,
+    "w": 320
+  },
+  {
+    "h": 667,
+    "objects": [
+      {
+        "h": 49,
+        "label": "Turn over the postcard",
+        "visibleWidth": 68,
+        "w": 68,
+        "withinScene": true,
+        "x": 233,
+        "y": 58
+      },
+      {
+        "h": 48,
+        "label": "Dim desk lamp",
+        "visibleWidth": 48,
+        "w": 48,
+        "withinScene": true,
+        "x": 29,
+        "y": 59
+      },
+      {
+        "h": 45,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 98,
+        "w": 98,
+        "withinScene": true,
+        "x": 94,
+        "y": 56
+      },
+      {
+        "h": 64,
+        "label": "Shuffle the papers",
+        "visibleWidth": 100,
+        "w": 100,
+        "withinScene": true,
+        "x": 36,
+        "y": 538
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 327,
+        "y": 516
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 244,
+        "y": 608
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 305,
+        "left": 44,
+        "right": 184,
+        "top": 109
+      },
+      {
+        "bottom": 306,
+        "left": 189,
+        "right": 333,
+        "top": 108
+      },
+      {
+        "bottom": 514,
+        "left": 42,
+        "right": 186,
+        "top": 317
+      },
+      {
+        "bottom": 514,
+        "left": 189,
+        "right": 333,
+        "top": 317
+      }
+    ],
+    "sceneHeight": 750,
+    "w": 375
+  },
+  {
+    "h": 844,
+    "objects": [
+      {
+        "h": 51,
+        "label": "Turn over the postcard",
+        "visibleWidth": 70,
+        "w": 70,
+        "withinScene": true,
+        "x": 249,
+        "y": 67
+      },
+      {
+        "h": 48,
+        "label": "Dim desk lamp",
+        "visibleWidth": 48,
+        "w": 48,
+        "withinScene": true,
+        "x": 19,
+        "y": 69
+      },
+      {
+        "h": 47,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 101,
+        "w": 101,
+        "withinScene": true,
+        "x": 94,
+        "y": 65
+      },
+      {
+        "h": 64,
+        "label": "Shuffle the papers",
+        "visibleWidth": 100,
+        "w": 100,
+        "withinScene": true,
+        "x": 31,
+        "y": 609
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 345,
+        "y": 584
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 262,
+        "y": 687
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 344,
+        "left": 33,
+        "right": 192,
+        "top": 123
+      },
+      {
+        "bottom": 345,
+        "left": 196,
+        "right": 358,
+        "top": 122
+      },
+      {
+        "bottom": 579,
+        "left": 32,
+        "right": 194,
+        "top": 355
+      },
+      {
+        "bottom": 579,
+        "left": 196,
+        "right": 358,
+        "top": 355
+      }
+    ],
+    "sceneHeight": 844,
+    "w": 390
+  },
+  {
+    "h": 932,
+    "objects": [
+      {
+        "h": 56,
+        "label": "Turn over the postcard",
+        "visibleWidth": 77,
+        "w": 77,
+        "withinScene": true,
+        "x": 274,
+        "y": 75
+      },
+      {
+        "h": 48,
+        "label": "Dim desk lamp",
+        "visibleWidth": 48,
+        "w": 48,
+        "withinScene": true,
+        "x": 23,
+        "y": 79
+      },
+      {
+        "h": 52,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 112,
+        "w": 112,
+        "withinScene": true,
+        "x": 103,
+        "y": 72
+      },
+      {
+        "h": 64,
+        "label": "Shuffle the papers",
+        "visibleWidth": 100,
+        "w": 100,
+        "withinScene": true,
+        "x": 39,
+        "y": 676
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 385,
+        "y": 648
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 291,
+        "y": 761
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 381,
+        "left": 36,
+        "right": 213,
+        "top": 136
+      },
+      {
+        "bottom": 382,
+        "left": 215,
+        "right": 395,
+        "top": 134
+      },
+      {
+        "bottom": 639,
+        "left": 35,
+        "right": 215,
+        "top": 391
+      },
+      {
+        "bottom": 639,
+        "left": 215,
+        "right": 395,
+        "top": 391
+      }
+    ],
+    "sceneHeight": 932,
+    "w": 430
+  },
+  {
+    "h": 900,
+    "objects": [
+      {
+        "h": 78,
+        "label": "Turn over the postcard",
+        "visibleWidth": 108,
+        "w": 108,
+        "withinScene": true,
+        "x": 372,
+        "y": 93
+      },
+      {
+        "h": 48,
+        "label": "Dim desk lamp",
+        "visibleWidth": 48,
+        "w": 48,
+        "withinScene": true,
+        "x": 60,
+        "y": 108
+      },
+      {
+        "h": 72,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 156,
+        "w": 156,
+        "withinScene": true,
+        "x": 150,
+        "y": 90
+      },
+      {
+        "h": 64,
+        "label": "Shuffle the papers",
+        "visibleWidth": 100,
+        "w": 100,
+        "withinScene": true,
+        "x": 88,
+        "y": 880
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 536,
+        "y": 844
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 404,
+        "y": 986
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 493,
+        "left": 70,
+        "right": 300,
+        "top": 175
+      },
+      {
+        "bottom": 495,
+        "left": 298,
+        "right": 532,
+        "top": 173
+      },
+      {
+        "bottom": 823,
+        "left": 68,
+        "right": 302,
+        "top": 501
+      },
+      {
+        "bottom": 823,
+        "left": 298,
+        "right": 532,
+        "top": 501
+      }
+    ],
+    "sceneHeight": 1200,
+    "w": 600
+  },
+  {
+    "h": 1000,
+    "objects": [
+      {
+        "h": 94,
+        "label": "Turn over the postcard",
+        "visibleWidth": 130,
+        "w": 130,
+        "withinScene": true,
+        "x": 475,
+        "y": 120
+      },
+      {
+        "h": 48,
+        "label": "Dim desk lamp",
+        "visibleWidth": 48,
+        "w": 48,
+        "withinScene": true,
+        "x": 82,
+        "y": 143
+      },
+      {
+        "h": 80,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 180,
+        "w": 180,
+        "withinScene": true,
+        "x": 199,
+        "y": 120
+      },
+      {
+        "h": 64,
+        "label": "Shuffle the papers",
+        "visibleWidth": 100,
+        "w": 100,
+        "withinScene": true,
+        "x": 125,
+        "y": 1123
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 685,
+        "y": 1078
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 518,
+        "y": 1255
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 628,
+        "left": 89,
+        "right": 382,
+        "top": 221
+      },
+      {
+        "bottom": 630,
+        "left": 375,
+        "right": 675,
+        "top": 219
+      },
+      {
+        "bottom": 1043,
+        "left": 85,
+        "right": 385,
+        "top": 632
+      },
+      {
+        "bottom": 1043,
+        "left": 375,
+        "right": 675,
+        "top": 632
+      }
+    ],
+    "sceneHeight": 1520,
+    "w": 760
+  },
+  {
+    "h": 1024,
+    "objects": [
+      {
+        "h": 94,
+        "label": "Turn over the postcard",
+        "visibleWidth": 130,
+        "w": 130,
+        "withinScene": true,
+        "x": 480,
+        "y": 122
+      },
+      {
+        "h": 48,
+        "label": "Dim desk lamp",
+        "visibleWidth": 48,
+        "w": 48,
+        "withinScene": true,
+        "x": 84,
+        "y": 145
+      },
+      {
+        "h": 80,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 180,
+        "w": 180,
+        "withinScene": true,
+        "x": 202,
+        "y": 121
+      },
+      {
+        "h": 64,
+        "label": "Shuffle the papers",
+        "visibleWidth": 100,
+        "w": 100,
+        "withinScene": true,
+        "x": 127,
+        "y": 1135
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 692,
+        "y": 1089
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 523,
+        "y": 1268
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 634,
+        "left": 90,
+        "right": 386,
+        "top": 223
+      },
+      {
+        "bottom": 637,
+        "left": 378,
+        "right": 682,
+        "top": 221
+      },
+      {
+        "bottom": 1054,
+        "left": 86,
+        "right": 390,
+        "top": 638
+      },
+      {
+        "bottom": 1054,
+        "left": 378,
+        "right": 682,
+        "top": 638
+      }
+    ],
+    "sceneHeight": 1536,
+    "w": 768
+  },
+  {
+    "h": 1180,
+    "objects": [
+      {
+        "h": 94,
+        "label": "Turn over the postcard",
+        "visibleWidth": 130,
+        "w": 130,
+        "withinScene": true,
+        "x": 517,
+        "y": 133
+      },
+      {
+        "h": 48,
+        "label": "Dim desk lamp",
+        "visibleWidth": 48,
+        "w": 48,
+        "withinScene": true,
+        "x": 91,
+        "y": 156
+      },
+      {
+        "h": 80,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 180,
+        "w": 180,
+        "withinScene": true,
+        "x": 222,
+        "y": 132
+      },
+      {
+        "h": 64,
+        "label": "Shuffle the papers",
+        "visibleWidth": 100,
+        "w": 100,
+        "withinScene": true,
+        "x": 139,
+        "y": 1214
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 741,
+        "y": 1165
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 560,
+        "y": 1356
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 678,
+        "left": 96,
+        "right": 413,
+        "top": 239
+      },
+      {
+        "bottom": 680,
+        "left": 404,
+        "right": 728,
+        "top": 236
+      },
+      {
+        "bottom": 1125,
+        "left": 92,
+        "right": 416,
+        "top": 681
+      },
+      {
+        "bottom": 1125,
+        "left": 404,
+        "right": 728,
+        "top": 681
+      }
+    ],
+    "sceneHeight": 1640,
+    "w": 820
+  },
+  {
+    "h": 768,
+    "objects": [
+      {
+        "h": 172,
+        "label": "Turn over the postcard",
+        "visibleWidth": 94,
+        "w": 158,
+        "withinScene": true,
+        "x": -64,
+        "y": 300
+      },
+      {
+        "h": 64,
+        "label": "Dim desk lamp",
+        "visibleWidth": 60,
+        "w": 64,
+        "withinScene": true,
+        "x": -4,
+        "y": 106
+      },
+      {
+        "h": 64,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 64,
+        "w": 64,
+        "withinScene": true,
+        "x": 25,
+        "y": 452
+      },
+      {
+        "h": 80,
+        "label": "Shuffle the papers",
+        "visibleWidth": 112,
+        "w": 112,
+        "withinScene": true,
+        "x": 894,
+        "y": 582
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 962,
+        "y": 398
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 663,
+        "y": 623
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 332,
+        "left": 252,
+        "right": 541,
+        "top": 122
+      },
+      {
+        "bottom": 319,
+        "left": 573,
+        "right": 877,
+        "top": 96
+      },
+      {
+        "bottom": 564,
+        "left": 147,
+        "right": 428,
+        "top": 335
+      },
+      {
+        "bottom": 555,
+        "left": 665,
+        "right": 924,
+        "top": 320
+      }
+    ],
+    "sceneHeight": 768,
+    "w": 1024
+  },
+  {
+    "h": 800,
+    "objects": [
+      {
+        "h": 192,
+        "label": "Turn over the postcard",
+        "visibleWidth": 175,
+        "w": 175,
+        "withinScene": true,
+        "x": 0,
+        "y": 307
+      },
+      {
+        "h": 64,
+        "label": "Dim desk lamp",
+        "visibleWidth": 64,
+        "w": 64,
+        "withinScene": true,
+        "x": 70,
+        "y": 95
+      },
+      {
+        "h": 64,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 64,
+        "w": 64,
+        "withinScene": true,
+        "x": 102,
+        "y": 479
+      },
+      {
+        "h": 80,
+        "label": "Shuffle the papers",
+        "visibleWidth": 112,
+        "w": 112,
+        "withinScene": true,
+        "x": 1070,
+        "y": 625
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 1143,
+        "y": 419
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 810,
+        "y": 668
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 370,
+        "left": 380,
+        "right": 669,
+        "top": 159
+      },
+      {
+        "bottom": 358,
+        "left": 701,
+        "right": 1005,
+        "top": 134
+      },
+      {
+        "bottom": 602,
+        "left": 274,
+        "right": 556,
+        "top": 373
+      },
+      {
+        "bottom": 594,
+        "left": 792,
+        "right": 1052,
+        "top": 358
+      }
+    ],
+    "sceneHeight": 800,
+    "w": 1280
+  },
+  {
+    "h": 900,
+    "objects": [
+      {
+        "h": 216,
+        "label": "Turn over the postcard",
+        "visibleWidth": 197,
+        "w": 197,
+        "withinScene": true,
+        "x": 0,
+        "y": 345
+      },
+      {
+        "h": 64,
+        "label": "Dim desk lamp",
+        "visibleWidth": 64,
+        "w": 64,
+        "withinScene": true,
+        "x": 83,
+        "y": 111
+      },
+      {
+        "h": 64,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 64,
+        "w": 64,
+        "withinScene": true,
+        "x": 119,
+        "y": 543
+      },
+      {
+        "h": 80,
+        "label": "Shuffle the papers",
+        "visibleWidth": 112,
+        "w": 112,
+        "withinScene": true,
+        "x": 1211,
+        "y": 708
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 1288,
+        "y": 476
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 914,
+        "y": 754
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 416,
+        "left": 428,
+        "right": 753,
+        "top": 179
+      },
+      {
+        "bottom": 402,
+        "left": 789,
+        "right": 1131,
+        "top": 150
+      },
+      {
+        "bottom": 678,
+        "left": 309,
+        "right": 626,
+        "top": 419
+      },
+      {
+        "bottom": 668,
+        "left": 891,
+        "right": 1184,
+        "top": 403
+      }
+    ],
+    "sceneHeight": 900,
+    "w": 1440
+  },
+  {
+    "h": 1080,
+    "objects": [
+      {
+        "h": 287,
+        "label": "Turn over the postcard",
+        "visibleWidth": 263,
+        "w": 263,
+        "withinScene": true,
+        "x": 0,
+        "y": 436
+      },
+      {
+        "h": 64,
+        "label": "Dim desk lamp",
+        "visibleWidth": 64,
+        "w": 64,
+        "withinScene": true,
+        "x": 122,
+        "y": 134
+      },
+      {
+        "h": 64,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 64,
+        "w": 64,
+        "withinScene": true,
+        "x": 170,
+        "y": 710
+      },
+      {
+        "h": 80,
+        "label": "Shuffle the papers",
+        "visibleWidth": 112,
+        "w": 112,
+        "withinScene": true,
+        "x": 1634,
+        "y": 933
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 1725,
+        "y": 621
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 1226,
+        "y": 989
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 531,
+        "left": 570,
+        "right": 1004,
+        "top": 215
+      },
+      {
+        "bottom": 512,
+        "left": 1051,
+        "right": 1508,
+        "top": 176
+      },
+      {
+        "bottom": 879,
+        "left": 412,
+        "right": 835,
+        "top": 535
+      },
+      {
+        "bottom": 866,
+        "left": 1189,
+        "right": 1578,
+        "top": 513
+      }
+    ],
+    "sceneHeight": 1152,
+    "w": 1920
+  },
+  {
+    "h": 390,
+    "objects": [
+      {
+        "h": 126,
+        "label": "Turn over the postcard",
+        "visibleWidth": 115,
+        "w": 115,
+        "withinScene": true,
+        "x": 0,
+        "y": 192
+      },
+      {
+        "h": 64,
+        "label": "Dim desk lamp",
+        "visibleWidth": 64,
+        "w": 64,
+        "withinScene": true,
+        "x": 36,
+        "y": 41
+      },
+      {
+        "h": 64,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 64,
+        "w": 64,
+        "withinScene": true,
+        "x": 57,
+        "y": 294
+      },
+      {
+        "h": 80,
+        "label": "Shuffle the papers",
+        "visibleWidth": 112,
+        "w": 112,
+        "withinScene": true,
+        "x": 687,
+        "y": 388
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 746,
+        "y": 255
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 527,
+        "y": 422
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 234,
+        "left": 251,
+        "right": 441,
+        "top": 95
+      },
+      {
+        "bottom": 225,
+        "left": 462,
+        "right": 663,
+        "top": 77
+      },
+      {
+        "bottom": 387,
+        "left": 181,
+        "right": 367,
+        "top": 235
+      },
+      {
+        "bottom": 381,
+        "left": 522,
+        "right": 694,
+        "top": 226
+      }
+    ],
+    "sceneHeight": 506.3984375,
+    "w": 844
+  },
+  {
+    "h": 375,
+    "objects": [
+      {
+        "h": 101,
+        "label": "Turn over the postcard",
+        "visibleWidth": 88,
+        "w": 92,
+        "withinScene": true,
+        "x": -4,
+        "y": 176
+      },
+      {
+        "h": 64,
+        "label": "Dim desk lamp",
+        "visibleWidth": 64,
+        "w": 64,
+        "withinScene": true,
+        "x": 18,
+        "y": 49
+      },
+      {
+        "h": 64,
+        "label": "Chronicles of an Amputee, in chapter order",
+        "visibleWidth": 64,
+        "w": 64,
+        "withinScene": true,
+        "x": 35,
+        "y": 252
+      },
+      {
+        "h": 80,
+        "label": "Shuffle the papers",
+        "visibleWidth": 112,
+        "w": 112,
+        "withinScene": true,
+        "x": 534,
+        "y": 325
+      },
+      {
+        "h": 64,
+        "label": "All writing",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 588,
+        "y": 220
+      },
+      {
+        "h": 44,
+        "label": "Let the pen rest",
+        "visibleWidth": 44,
+        "w": 44,
+        "withinScene": true,
+        "x": 413,
+        "y": 356
+      }
+    ],
+    "overflow": false,
+    "papers": [
+      {
+        "bottom": 195,
+        "left": 181,
+        "right": 351,
+        "top": 71
+      },
+      {
+        "bottom": 187,
+        "left": 369,
+        "right": 548,
+        "top": 56
+      },
+      {
+        "bottom": 331,
+        "left": 119,
+        "right": 284,
+        "top": 196
+      },
+      {
+        "bottom": 325,
+        "left": 423,
+        "right": 575,
+        "top": 188
+      }
+    ],
+    "sceneHeight": 450,
+    "w": 667
+  }
+]

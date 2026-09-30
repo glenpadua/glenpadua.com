@@ -1,14 +1,47 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useMotionPolicy } from '../../shared/scene-motion';
 import { worldAsset } from '../../lib/assets';
 
 /** One opaque hand and its shadow move over a fixed, hand-free background. */
-export function WritingHand(): JSX.Element | null {
+export function WritingHand({
+  resting,
+}: {
+  resting: boolean;
+}): JSX.Element | null {
+  const motion = useRef<HTMLDivElement>(null);
+  const activity = useRef<HTMLSpanElement>(null);
+  const [onScreen, setOnScreen] = useState(false);
+  useEffect(() => {
+    if (!activity.current) return;
+    const observer = new IntersectionObserver(([entry]) =>
+      setOnScreen(entry.isIntersecting),
+    );
+    observer.observe(activity.current);
+    return () => observer.disconnect();
+  }, []);
+  const { enabled } = useMotionPolicy();
+  useEffect(() => {
+    const hand = motion.current;
+    if (!hand) return;
+    // Finish the current stroke from its exact pose before settling the pen.
+    if (resting) {
+      hand.style.setProperty(
+        '--writing-finish-from',
+        getComputedStyle(hand).transform,
+      );
+      hand.dataset.resting = 'true';
+    } else {
+      hand.dataset.resting = 'false';
+    }
+  }, [resting]);
   const [failed, setFailed] = useState(false);
   const [ready, setReady] = useState(false);
   useEffect(() => {
-    const portrait = window.matchMedia('(max-width:760px)');
+    const portrait = window.matchMedia(
+      '(max-width:520px), (max-aspect-ratio:13/10)',
+    );
     let version = 0;
     const load = () => {
       const current = ++version;
@@ -54,11 +87,13 @@ export function WritingHand(): JSX.Element | null {
     <div
       className="writing-hand-composite"
       data-ready={ready}
+      data-moving={enabled && onScreen}
       aria-hidden="true"
     >
+      <span ref={activity} className="writing-hand-activity-area" />
       <picture className="writing-hand-clean">
         <source
-          media="(max-width:760px)"
+          media="(max-width:520px), (max-aspect-ratio:13/10)"
           srcSet={worldAsset('stories-writing-clean-portrait')}
         />
         <img
@@ -70,10 +105,10 @@ export function WritingHand(): JSX.Element | null {
           onError={() => setFailed(true)}
         />
       </picture>
-      <div className="writing-hand-motion">
+      <div ref={motion} className="writing-hand-motion">
         <picture className="writing-hand-cutout">
           <source
-            media="(max-width:760px)"
+            media="(max-width:520px), (max-aspect-ratio:13/10)"
             srcSet={worldAsset('writing-portrait-v1')}
           />
           <img
@@ -88,7 +123,7 @@ export function WritingHand(): JSX.Element | null {
       </div>
       <picture className="writing-hand-cuff">
         <source
-          media="(max-width:760px)"
+          media="(max-width:520px), (max-aspect-ratio:13/10)"
           srcSet={worldAsset('writing-portrait-v1')}
         />
         <img src={worldAsset('writing')} width={1536} height={1024} alt="" />
