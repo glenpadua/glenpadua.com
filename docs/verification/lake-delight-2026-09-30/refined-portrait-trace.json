@@ -1,0 +1,5379 @@
+{
+  "trace": [
+    {
+      "ms": 93,
+      "body": null,
+      "glance": "",
+      "opacity": "",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": null
+    },
+    {
+      "ms": 197,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 296,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 394,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 501,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 599,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 693,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 788,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 882,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 978,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 1072,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 1168,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 1263,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 1358,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 1453,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 1553,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 1646,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 1741,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 1838,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 1932,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 2027,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 2122,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 2216,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 2310,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 2403,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 2503,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 2598,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 2693,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 2788,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 2882,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 2976,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 3069,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 3164,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 3258,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 3352,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 3450,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 3548,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 3644,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 3739,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 3834,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 3933,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 4032,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 4127,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 4221,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 4317,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 4413,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 4510,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 4605,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 4698,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 4793,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 4888,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 4983,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 5077,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 5171,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 5267,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 5366,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 5462,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 5555,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 5648,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 5742,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 5838,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 5933,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 6032,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 6126,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 6222,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 6316,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 6415,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 6510,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 6604,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 6701,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 6795,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 6888,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 6984,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 7081,
+      "body": "release",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 7177,
+      "body": "release",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 7273,
+      "body": "land",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 7372,
+      "body": "land",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 7467,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 7561,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 7656,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 7747,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 7842,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 7938,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 8036,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 8131,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 8228,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 8321,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 8417,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 8520,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 8614,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 8708,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 8803,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 8900,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 8998,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 9094,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 9189,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 9282,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 9377,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 9470,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 9564,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 9663,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 9757,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 9851,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 9948,
+      "body": "prepare",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 10042,
+      "body": "prepare",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 10138,
+      "body": "prepare",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 10235,
+      "body": "jump",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 10330,
+      "body": "jump",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 10426,
+      "body": "jump",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 10520,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 10615,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 10716,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 10811,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 10906,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 11000,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 11095,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 11189,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 11283,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 11382,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 11481,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 11578,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 11673,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 11768,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 11864,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 11960,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 12054,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 12148,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 12248,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 12344,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 12443,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 12538,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 12632,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 12726,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 12820,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 12913,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 13006,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 13099,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 13196,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 13289,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 13382,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 13479,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 13575,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 13670,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 13764,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 13861,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 13959,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 14054,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 14149,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 14246,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 14338,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 14434,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 14532,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 14628,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 14722,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 14815,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 14916,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 15018,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 15111,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 15204,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 15299,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 15396,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 15493,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 15589,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 15684,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 15779,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 15876,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 15970,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 16065,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 16163,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 16260,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 16356,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 16449,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 16547,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 16641,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 16735,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 16830,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 16926,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 17021,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 17114,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 17214,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 17311,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 17405,
+      "body": "release",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 17498,
+      "body": "release",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 17595,
+      "body": "land",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 17691,
+      "body": "land",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 17785,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 17881,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 17979,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 18073,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 18166,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 18262,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 18362,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 18458,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 18552,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 18649,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 18744,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 18839,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 18933,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 19032,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 19128,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 19222,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 19317,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 19411,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 19509,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 19605,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 19701,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 19797,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 19893,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 19990,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 20085,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 20180,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 20275,
+      "body": "prepare",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 20370,
+      "body": "prepare",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 20468,
+      "body": "prepare",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 20563,
+      "body": "jump",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 20655,
+      "body": "jump",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 20748,
+      "body": "jump",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 20845,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 20945,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 21046,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 21141,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 21236,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 21330,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 21429,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 21528,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 21622,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 21715,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 21812,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 21907,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 22006,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 22100,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 22201,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 22296,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 22391,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 22486,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 22581,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 22680,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 22776,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 22869,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 22964,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 23059,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 23156,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 23252,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 23346,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 23443,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 23540,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 23634,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 23730,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 23827,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 23922,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 24018,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 24117,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 24215,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 24310,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 24408,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 24500,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 24599,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 24692,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 24787,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 24883,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 24980,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 25074,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 25169,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 25263,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 25360,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 25457,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 25552,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 25650,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 25746,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 25839,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 25931,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 26025,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 26118,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 26221,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 26317,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 26412,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 26505,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 26599,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 26695,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 26790,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 26886,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 26985,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 27080,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 27176,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 27271,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 27364,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 27462,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 27556,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 27650,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 27745,
+      "body": "release",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 27840,
+      "body": "release",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 27935,
+      "body": "land",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 28032,
+      "body": "land",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 28127,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 28222,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 28317,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 28414,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 28511,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 28607,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 28703,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 28797,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 28897,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 28996,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 29090,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 29184,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 29280,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 29378,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 29474,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 29570,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 29665,
+      "body": "shake",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 29762,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": -24.874954223632812,
+        "y": 554.7255249023438
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 29854,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": -10.662368774414062,
+        "y": 556.3543701171875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 29952,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 5.8537139892578125,
+        "y": 558.2342529296875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 30347,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 65.49064636230469,
+        "y": 565.0709228515625
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 30444,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 78.56272888183594,
+        "y": 566.6275024414062
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 30539,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 89.41921997070312,
+        "y": 567.9533081054688
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 30632,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 101.57264709472656,
+        "y": 569.4841918945312
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 32796,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 199.41207885742188,
+        "y": 587.2070922851562
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 32889,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 202.48065185546875,
+        "y": 588.2686157226562
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 32986,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 205.58905029296875,
+        "y": 589.4991455078125
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 33078,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 208.0148773193359,
+        "y": 590.6463623046875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 33174,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.10943603515625,
+        "width": 25.109375,
+        "x": 209.6307373046875,
+        "y": 591.5924682617188
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 33269,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 210.9322967529297,
+        "y": 592.627197265625
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 33364,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "arriving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.59945678710935,
+        "y": 593.5753173828125
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 33460,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 33554,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 33650,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 33745,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 33839,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 33963,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 34055,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 34149,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 34244,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 34338,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 34434,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 34531,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 34626,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 34721,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 34814,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 34909,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 35002,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 35097,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 35192,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 35287,
+      "body": "rest",
+      "glance": "1",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 35381,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 35474,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 35568,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 35664,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 35758,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "perched",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 35851,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 212.2177734375,
+        "y": 593.1076049804688
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 35945,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 216.37237548828125,
+        "y": 589.53125
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 36037,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 221.23448181152344,
+        "y": 586.5559692382812
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 36133,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 228.087646484375,
+        "y": 583.0888671875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 36228,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 235.769775390625,
+        "y": 579.7552490234375
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 36321,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 242.844482421875,
+        "y": 577.0304565429688
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 36414,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109390258789062,
+        "x": 252.03160095214844,
+        "y": 573.8633422851562
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 36508,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 262.0242919921875,
+        "y": 570.8031005859375
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 36604,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 270.70159912109375,
+        "y": 568.4210205078125
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 36699,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 281.36871337890625,
+        "y": 565.8004760742188
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 36794,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 292.86199951171875,
+        "y": 563.3189697265625
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 36889,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 302.8280029296875,
+        "y": 561.4296264648438
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 36981,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 315.0661926269531,
+        "y": 559.4180908203125
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 37077,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 327.4889831542969,
+        "y": 557.7008056640625
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 37259,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 351.999755859375,
+        "y": 555.1932373046875
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 37353,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 363.2012634277344,
+        "y": 554.4077758789062
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 37449,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 377.54595947265625,
+        "y": 553.7080688476562
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 37545,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "1",
+      "phase": "leaving",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 391.6849670410156,
+        "y": 553.3358764648438
+      },
+      "visits": "0"
+    },
+    {
+      "ms": 37639,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 37732,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 37826,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 37920,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 38016,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 38111,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 38209,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 38304,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 38396,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 38491,
+      "body": "rest",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 38584,
+      "body": "prepare",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 38679,
+      "body": "prepare",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 38772,
+      "body": "jump",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 38867,
+      "body": "jump",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 38961,
+      "body": "jump",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    },
+    {
+      "ms": 39055,
+      "body": "pullup",
+      "glance": "0",
+      "opacity": "0",
+      "phase": "away",
+      "rect": {
+        "height": 25.109375,
+        "width": 25.109375,
+        "x": 211.6953125,
+        "y": 594.0546875
+      },
+      "visits": "1"
+    }
+  ],
+  "pause": {
+    "before": {
+      "bird": "opacity: 1; transform: translate(-109.396%, -43.818%);",
+      "body": "transform: translate(-20%, -50%);",
+      "sprite": "transform: translate(-33.3333%, -50%);"
+    },
+    "after": {
+      "bird": "opacity: 1; transform: translate(-109.396%, -43.818%);",
+      "body": "transform: translate(-20%, -50%);",
+      "sprite": "transform: translate(-33.3333%, -50%);"
+    },
+    "same": true
+  }
+}

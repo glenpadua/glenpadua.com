@@ -8,14 +8,18 @@ export const lakeScene: WorldScene = {
   titleSwaps: {
     line: 1,
     correctFirst: true,
-    cycles: 2,
+    cycles: 1,
+    holdMs: 2600,
     phrases: [
       'a human in the loop.',
       'always building something.',
       'a serial leg-day skipper.',
     ],
   },
-  body: ['I’ve been building things for the internet for over ten years.'],
+  body: [
+    'I’ve been building things for the internet for over ten years.',
+    'Here you’ll find my work, experiments, and the occasional change of mind.',
+  ],
   description:
     'Glen holds a pull-up by a green mountain lake, in a sage exercise tank and dark shorts. His left leg is a prosthesis.',
   sky: '#d7e9e9',

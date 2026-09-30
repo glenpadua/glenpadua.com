@@ -1,0 +1,234 @@
+[
+  {
+    "ms": 0,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 217,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 429,
+    "bird": "away",
+    "bodyFrame": "2",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 643,
+    "bird": "away",
+    "bodyFrame": "3",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 852,
+    "bird": "away",
+    "bodyFrame": "3",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 1065,
+    "bird": "away",
+    "bodyFrame": "2",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 1278,
+    "bird": "away",
+    "bodyFrame": "1",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 1487,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 1700,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 1915,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 2128,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 2334,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 2545,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 2756,
+    "bird": "away",
+    "bodyFrame": "2",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 2965,
+    "bird": "away",
+    "bodyFrame": "3",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 3176,
+    "bird": "away",
+    "bodyFrame": "3",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 3389,
+    "bird": "away",
+    "bodyFrame": "2",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 3599,
+    "bird": "away",
+    "bodyFrame": "1",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 3812,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 4023,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 4231,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 4444,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 4651,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 4863,
+    "bird": "away",
+    "bodyFrame": "0",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 5071,
+    "bird": "away",
+    "bodyFrame": "2",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 5282,
+    "bird": "away",
+    "bodyFrame": "3",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 5494,
+    "bird": "away",
+    "bodyFrame": "3",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 5707,
+    "bird": "away",
+    "bodyFrame": "2",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  },
+  {
+    "ms": 5917,
+    "bird": "away",
+    "bodyFrame": "1",
+    "stoneControl": false,
+    "stoneDisplay": "display: none;",
+    "visits": "0"
+  }
+]

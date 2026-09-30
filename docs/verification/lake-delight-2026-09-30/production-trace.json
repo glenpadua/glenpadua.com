@@ -1,0 +1,5506 @@
+[
+  {
+    "ms": 12,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 108,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 215,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 314,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 416,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 517,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 619,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 720,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 824,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 929,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 1034,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 1140,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 1246,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 1343,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 1448,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 1551,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 1656,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 1763,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 1869,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 1978,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 2076,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 2181,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 2283,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 2386,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 2494,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 2592,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 2693,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 2793,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 2894,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 2993,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 3095,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 3194,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 3299,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 3399,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 3498,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 3597,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 3694,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 3793,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 3893,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 3996,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 4102,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 4203,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 4307,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 4408,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 4509,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 4611,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 4713,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 4812,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 4914,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 5013,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 5112,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 5212,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 5311,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 5411,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 5509,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 5611,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 5710,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 5812,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 5912,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 6012,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 6111,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 6209,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 6310,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 6412,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 6510,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 6609,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, 0.062%);",
+    "bodyPhase": "release",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 6710,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, 0.815%);",
+    "bodyPhase": "release",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 6814,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, -50%);",
+    "bodyPhase": "land",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 6913,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, -50%);",
+    "bodyPhase": "land",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 7012,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 7114,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 7213,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 7314,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 7412,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 7508,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 7614,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 7711,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 7810,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 7907,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 8012,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 8109,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 8207,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 8305,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 8406,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 8508,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 8611,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 8713,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 8811,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 8912,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 9010,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 9112,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 9211,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 9312,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 9411,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 9510,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, -50%);",
+    "bodyPhase": "prepare",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 9608,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, -50%);",
+    "bodyPhase": "prepare",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 9708,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, -48.379%);",
+    "bodyPhase": "jump",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 9811,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, -49.475%);",
+    "bodyPhase": "jump",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 9911,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, -49.969%);",
+    "bodyPhase": "jump",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 10009,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 10111,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 10209,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 10312,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 10411,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 10510,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 10611,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 10709,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 10813,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 10912,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 11011,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 11111,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 11212,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 11315,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 11416,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 11514,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 11612,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 11710,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 11812,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 11912,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 12010,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 12114,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 12214,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 12313,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 12410,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 12509,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 12611,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 12711,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 12810,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 12909,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 13009,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 13111,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 13211,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 13309,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 13407,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 13509,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 13612,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 13710,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 13810,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 13911,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 14010,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 14110,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 14210,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 14309,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 14408,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 14509,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 14609,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 14710,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 14809,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 14910,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 15010,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 15111,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 15211,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 15315,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 15412,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 15511,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 15612,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 15710,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 15812,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 15912,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 16009,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 16114,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 16215,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 16314,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 16413,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 16512,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 16612,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 16710,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 16810,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 16907,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, 0.002%);",
+    "bodyPhase": "release",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 17008,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, 0.496%);",
+    "bodyPhase": "release",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 17113,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, -50%);",
+    "bodyPhase": "land",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 17212,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, -50%);",
+    "bodyPhase": "land",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 17309,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 17412,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 17509,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 17608,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 17710,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 17813,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 17912,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 18011,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 18110,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 18210,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 18313,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 18414,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 18511,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 18611,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 18709,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 18812,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 18912,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 19010,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 19111,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 19209,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 19312,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 19413,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 19511,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 19613,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 19712,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 19816,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, -50%);",
+    "bodyPhase": "prepare",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 19915,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, -50%);",
+    "bodyPhase": "prepare",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 20014,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, -47.934%);",
+    "bodyPhase": "jump",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 20117,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, -49.211%);",
+    "bodyPhase": "jump",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 20219,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, -49.885%);",
+    "bodyPhase": "jump",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 20323,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 20422,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 20522,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 20625,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 20724,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 20824,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 20925,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 21026,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 21127,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 21225,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 21324,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 21426,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 21526,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 21629,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 21728,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 21828,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 21926,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 22027,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 22127,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 22227,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 22325,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 22424,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 22525,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 22628,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 22727,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 22833,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 22936,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 23038,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 23142,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 23245,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 23343,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 23443,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 23544,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 23644,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 23743,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 23842,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 23945,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 24047,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 24149,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 24255,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 24357,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 24458,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 24559,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 24659,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 24760,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 24860,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 24962,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 25064,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 25166,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 25267,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 25368,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 25468,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 25568,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 25668,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 25774,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 25875,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 25978,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 26079,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 26177,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 26274,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 26381,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 26484,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 26584,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 26684,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 26783,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 26883,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 26985,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 27083,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 27183,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 27284,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, 0.083%);",
+    "bodyPhase": "release",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 27386,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, 1.091%);",
+    "bodyPhase": "release",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 27488,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, -50%);",
+    "bodyPhase": "land",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 27589,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 27690,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 27794,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 27894,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 27996,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 28097,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 28196,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 28295,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 28393,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 28492,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 28593,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 28692,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 28793,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 28893,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 28993,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-40%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 29093,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 29193,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "shake",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 29299,
+    "bird": "arriving",
+    "birdSprite": "transform: translate(-33.3333%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 29398,
+    "bird": "arriving",
+    "birdSprite": "transform: translate(-66.6667%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 29497,
+    "bird": "arriving",
+    "birdSprite": "transform: translate(0%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 29600,
+    "bird": "arriving",
+    "birdSprite": "transform: translate(-33.3333%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 29699,
+    "bird": "arriving",
+    "birdSprite": "transform: translate(-66.6667%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 29799,
+    "bird": "arriving",
+    "birdSprite": "transform: translate(0%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 29901,
+    "bird": "arriving",
+    "birdSprite": "transform: translate(-66.6667%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 30000,
+    "bird": "arriving",
+    "birdSprite": "transform: translate(0%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 30105,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 30205,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 30306,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 30406,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 30510,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 1;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 30924,
+    "bird": "perched",
+    "birdSprite": "transform: translate(-33.3333%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 1;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 31030,
+    "bird": "perched",
+    "birdSprite": "transform: translate(-33.3333%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 1;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 31129,
+    "bird": "perched",
+    "birdSprite": "transform: translate(-33.3333%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 1;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.713251;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 31226,
+    "bird": "perched",
+    "birdSprite": "transform: translate(-33.3333%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 1;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.625546;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 31324,
+    "bird": "perched",
+    "birdSprite": "transform: translate(-33.3333%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 1;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.542487;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 31428,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 1;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.46116;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 31529,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 1;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.383555;",
+      "opacity: 0.711849;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 31630,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 1;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.309427;",
+      "opacity: 0.625546;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 31730,
+    "bird": "perched",
+    "birdSprite": "transform: translate(-66.6667%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 1;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.239205;",
+      "opacity: 0.541911;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 31828,
+    "bird": "perched",
+    "birdSprite": "transform: translate(-66.6667%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 1;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.173415;",
+      "opacity: 0.461081;",
+      "opacity: 0.711762;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 31987,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 1;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.077438;",
+      "opacity: 0.335026;",
+      "opacity: 0.570951;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 32087,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.029251;",
+      "opacity: 0.26261;",
+      "opacity: 0.488277;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 32187,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0.19612;",
+      "opacity: 0.410571;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 32287,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0.133736;",
+      "opacity: 0.335173;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 32386,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0.0772281;",
+      "opacity: 0.263097;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 32489,
+    "bird": "perched",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0.0289578;",
+      "opacity: 0.194821;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 32590,
+    "bird": "leaving",
+    "birdSprite": "transform: translate(0%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0.132606;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 32693,
+    "bird": "leaving",
+    "birdSprite": "transform: translate(-66.6667%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0.077543;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 32793,
+    "bird": "leaving",
+    "birdSprite": "transform: translate(0%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0.0289578;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 32893,
+    "bird": "leaving",
+    "birdSprite": "transform: translate(-33.3333%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 32994,
+    "bird": "leaving",
+    "birdSprite": "transform: translate(-66.6667%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 33095,
+    "bird": "leaving",
+    "birdSprite": "transform: translate(0%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 33195,
+    "bird": "leaving",
+    "birdSprite": "transform: translate(-33.3333%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 33292,
+    "bird": "leaving",
+    "birdSprite": "transform: translate(0%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 33393,
+    "bird": "leaving",
+    "birdSprite": "transform: translate(-33.3333%, -50%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "0"
+  },
+  {
+    "ms": 33492,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 33592,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 33691,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 33791,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 33894,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 33995,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 34094,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 34195,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-20%, -50%);",
+    "bodyPhase": "rest",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 34296,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, -50%);",
+    "bodyPhase": "prepare",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 34394,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, -50%);",
+    "bodyPhase": "prepare",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 34495,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, -50%);",
+    "bodyPhase": "prepare",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 34593,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, -48.692%);",
+    "bodyPhase": "jump",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 34692,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, -49.634%);",
+    "bodyPhase": "jump",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 34793,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(-80%, -49.998%);",
+    "bodyPhase": "jump",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  },
+  {
+    "ms": 34891,
+    "bird": "away",
+    "birdSprite": "transform: translate(0%, 0%);",
+    "body": "transform: translate(0%, 0%);",
+    "bodyPhase": "pullup",
+    "glance": "opacity: 0;",
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stoneControl": true,
+    "visits": "1"
+  }
+]

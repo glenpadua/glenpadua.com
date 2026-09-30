@@ -1,0 +1,262 @@
+[
+  {
+    "ms": 8,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(808.187076894906 716.4587218856718) rotate(5.750667979003429) scale(0.8770442308315883)"
+  },
+  {
+    "ms": 110,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(822.7643076641385 725.1162887317553) rotate(-3.145479252751814) scale(0.8447769231392768)"
+  },
+  {
+    "ms": 209,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.701882;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(837.8419199707032 720.8076987846288) rotate(-0.5026613464379661) scale(0.8067525000810623)"
+  },
+  {
+    "ms": 309,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.615789;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(853.217279970704 707.3935480164904) rotate(8.877636977977925) scale(0.7642100000810599)"
+  },
+  {
+    "ms": 409,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.532474;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(868.577279970704 703.4975479983711) rotate(8.358394293658854) scale(0.7217100000810599)"
+  },
+  {
+    "ms": 508,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.45207;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(883.9372799707039 709.1015479802519) rotate(-1.7433739092389304) scale(0.6792100000810598)"
+  },
+  {
+    "ms": 611,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.37462;",
+      "opacity: 0.701533;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(899.3433599707022 706.6858498010295) rotate(1.8193057896472098) scale(0.628776666774753)"
+  },
+  {
+    "ms": 710,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.300139;",
+      "opacity: 0.614603;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(914.8723199707031 698.9042951172214) rotate(9.962074568452117) scale(0.5714866667747498)"
+  },
+  {
+    "ms": 811,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.231202;",
+      "opacity: 0.532228;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(930.0633599707022 700.0831831004534) rotate(0.15502947242323728) scale(0.5154433334414197)"
+  },
+  {
+    "ms": 910,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.166243;",
+      "opacity: 0.45207;",
+      "opacity: 0.701795;"
+    ],
+    "stone": "translate(936.96 705.3146666603091) rotate(-8) scale(0.49)"
+  },
+  {
+    "ms": 1059,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.078542;",
+      "opacity: 0.336572;",
+      "opacity: 0.572699;"
+    ],
+    "stone": "translate(936.96 706.488) rotate(-8) scale(0.49)"
+  },
+  {
+    "ms": 1159,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0.031194;",
+      "opacity: 0.265815;",
+      "opacity: 0.491973;"
+    ],
+    "stone": "translate(936.96 706.488) rotate(-8) scale(0.49)"
+  },
+  {
+    "ms": 1261,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0.198204;",
+      "opacity: 0.413041;"
+    ],
+    "stone": "translate(936.96 706.488) rotate(-8) scale(0.49)"
+  },
+  {
+    "ms": 1361,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0.134868;",
+      "opacity: 0.336572;"
+    ],
+    "stone": "translate(936.96 706.488) rotate(-8) scale(0.49)"
+  },
+  {
+    "ms": 1462,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0.078542;",
+      "opacity: 0.264839;"
+    ],
+    "stone": "translate(936.96 706.488) rotate(-8) scale(0.49)"
+  },
+  {
+    "ms": 1559,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0.0305573;",
+      "opacity: 0.197292;"
+    ],
+    "stone": "translate(936.96 706.488) rotate(-8) scale(0.49)"
+  },
+  {
+    "ms": 1658,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0.135406;"
+    ],
+    "stone": "translate(936.96 706.488) rotate(-8) scale(0.49)"
+  },
+  {
+    "ms": 1758,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0.0784893;"
+    ],
+    "stone": "translate(936.96 706.488) rotate(-8) scale(0.49)"
+  },
+  {
+    "ms": 1858,
+    "mode": "skipping",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0.0305573;"
+    ],
+    "stone": "translate(936.96 706.488) rotate(-8) scale(0.49)"
+  },
+  {
+    "ms": 1955,
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(752.64 768) rotate(0) scale(1)"
+  },
+  {
+    "ms": 2051,
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(752.64 768) rotate(0) scale(1)"
+  },
+  {
+    "ms": 2152,
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(752.64 768) rotate(0) scale(1)"
+  },
+  {
+    "ms": 2253,
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(752.64 768) rotate(0) scale(1)"
+  },
+  {
+    "ms": 2352,
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(752.64 768) rotate(0) scale(1)"
+  },
+  {
+    "ms": 2453,
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(752.64 768) rotate(0) scale(1)"
+  },
+  {
+    "ms": 2553,
+    "mode": "idle",
+    "rings": [
+      "opacity: 0;",
+      "opacity: 0;",
+      "opacity: 0;"
+    ],
+    "stone": "translate(752.64 768) rotate(0) scale(1)"
+  }
+]

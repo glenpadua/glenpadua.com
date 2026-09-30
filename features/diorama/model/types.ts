@@ -35,6 +35,8 @@ export interface WorldScene {
     correctFirst?: boolean;
     /** Number of complete passes before settling on the authored line. */
     cycles?: number;
+    /** Reading time for each completed phrase, including the first correction. */
+    holdMs?: number;
   };
   /** Paragraphs wrap naturally; title lines may still be art-directed. */
   body?: readonly string[];

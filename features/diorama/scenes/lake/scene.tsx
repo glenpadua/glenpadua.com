@@ -8,6 +8,7 @@ import { LakeCharacter } from './character';
 import { LakeGrass, LakeLife, LakeSeeds } from './lake-life';
 import { LakeWater } from './lake-water';
 import { InteractionOrb } from '../../shared/interaction-orb';
+import { LakeStoneSkip } from './stone-skip';
 
 export function LakeScene(props: SceneProps): JSX.Element {
   // Each cheer quickens three reps without interrupting a landing or recovery.
@@ -60,14 +61,17 @@ export function LakeScene(props: SceneProps): JSX.Element {
       }
       atmosphere={<LakeSeeds />}
       controls={
-        // A cheer quickens a few reps while scene motion is on.
-        <InteractionOrb
-          className="cue-exercise"
-          style={{ left: '83.5%', top: '61%' }}
-          label="Cheer me on! Do a few faster pull-ups"
-          hint="Cheer me on!"
-          onClick={() => setCheers(count => count + 1)}
-        />
+        <>
+          <LakeStoneSkip active={props.active} />
+          {/* A cheer quickens a few reps while scene motion is on. */}
+          <InteractionOrb
+            className="cue-exercise"
+            style={{ left: '83.5%', top: '61%' }}
+            label="Cheer me on! Do a few faster pull-ups"
+            hint="Cheer me on!"
+            onClick={() => setCheers(count => count + 1)}
+          />
+        </>
       }
     />
   );

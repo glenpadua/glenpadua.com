@@ -1,0 +1,394 @@
+[
+  {
+    "ms": 69,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": " "
+  },
+  {
+    "ms": 265,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a"
+  },
+  {
+    "ms": 459,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a so"
+  },
+  {
+    "ms": 652,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a sof"
+  },
+  {
+    "ms": 844,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a softw"
+  },
+  {
+    "ms": 1035,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a softwar"
+  },
+  {
+    "ms": 1227,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a software "
+  },
+  {
+    "ms": 1421,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a software en"
+  },
+  {
+    "ms": 1617,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a software engi"
+  },
+  {
+    "ms": 1812,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a software engine"
+  },
+  {
+    "ms": 2008,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a software engineer"
+  },
+  {
+    "ms": 2204,
+    "caret": false,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a software engineer."
+  },
+  {
+    "ms": 4916,
+    "caret": false,
+    "correction": "erase",
+    "name": "I’m Glen, a software engineer.",
+    "text": "a software engineer."
+  },
+  {
+    "ms": 7241,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a "
+  },
+  {
+    "ms": 7434,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a hu"
+  },
+  {
+    "ms": 7630,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a human"
+  },
+  {
+    "ms": 7826,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a human i"
+  },
+  {
+    "ms": 8015,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a human in "
+  },
+  {
+    "ms": 8207,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a human in the"
+  },
+  {
+    "ms": 8401,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a human in the l"
+  },
+  {
+    "ms": 8595,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a human in the loo"
+  },
+  {
+    "ms": 8795,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a human in the loop."
+  },
+  {
+    "ms": 11627,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a human in the "
+  },
+  {
+    "ms": 11829,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a human i"
+  },
+  {
+    "ms": 12017,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a h"
+  },
+  {
+    "ms": 12205,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "al"
+  },
+  {
+    "ms": 12398,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "alway"
+  },
+  {
+    "ms": 12592,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always "
+  },
+  {
+    "ms": 12802,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always bu"
+  },
+  {
+    "ms": 12996,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always buil"
+  },
+  {
+    "ms": 13186,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always buildi"
+  },
+  {
+    "ms": 13378,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always building"
+  },
+  {
+    "ms": 13569,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always building s"
+  },
+  {
+    "ms": 13764,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always building som"
+  },
+  {
+    "ms": 13956,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always building someth"
+  },
+  {
+    "ms": 14147,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always building somethin"
+  },
+  {
+    "ms": 14339,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always building something."
+  },
+  {
+    "ms": 17036,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always building somethin"
+  },
+  {
+    "ms": 17233,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always building so"
+  },
+  {
+    "ms": 17424,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always buildi"
+  },
+  {
+    "ms": 17616,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "always b"
+  },
+  {
+    "ms": 17808,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "al"
+  },
+  {
+    "ms": 18000,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a s"
+  },
+  {
+    "ms": 18194,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a ser"
+  },
+  {
+    "ms": 18389,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a seria"
+  },
+  {
+    "ms": 18587,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a serial "
+  },
+  {
+    "ms": 18787,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a serial le"
+  },
+  {
+    "ms": 18989,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a serial leg-"
+  },
+  {
+    "ms": 19181,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a serial leg-day"
+  },
+  {
+    "ms": 19369,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a serial leg-day s"
+  },
+  {
+    "ms": 19579,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a serial leg-day ski"
+  },
+  {
+    "ms": 19771,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a serial leg-day skipp"
+  },
+  {
+    "ms": 19967,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a serial leg-day skipper"
+  },
+  {
+    "ms": 20158,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a serial leg-day skipper."
+  },
+  {
+    "ms": 22786,
+    "caret": true,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a serial leg-day skippe"
+  },
+  {
+    "ms": 25599,
+    "caret": false,
+    "correction": null,
+    "name": "I’m Glen, a software engineer.",
+    "text": "a software engineer."
+  }
+]

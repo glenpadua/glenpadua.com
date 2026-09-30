@@ -21,12 +21,14 @@ function TitleSwap({
   phrases,
   correctFirst = false,
   cycles = 1,
+  holdMs,
   running,
 }: {
   line: string;
   phrases: readonly string[];
   correctFirst?: boolean;
   cycles?: number;
+  holdMs?: number;
   running: boolean;
 }): JSX.Element {
   const [text, setText] = useState(line);
@@ -73,7 +75,7 @@ function TitleSwap({
         if (completedCycles < cycles) {
           if (correctFirst) correct();
           else
-            after(1700, () => {
+            after(holdMs ?? 1700, () => {
               setTyping(true);
               step(0);
             });
@@ -83,7 +85,7 @@ function TitleSwap({
         return;
       }
       retype(queue[i], () =>
-        after(i < queue.length - 1 ? 1700 : 0, () => step(i + 1)),
+        after(i < queue.length - 1 ? (holdMs ?? 1700) : 0, () => step(i + 1)),
       );
     };
     const replaceCorrection = () => {
@@ -95,7 +97,7 @@ function TitleSwap({
     };
     const correct = () => {
       setTyping(false);
-      after(1050, () => {
+      after(holdMs ?? 1050, () => {
         if (!phrases.length) {
           done.current = true;
           return;
@@ -127,7 +129,7 @@ function TitleSwap({
         setCorrection('none');
       }
     };
-  }, [line, phrases, correctFirst, cycles, running]);
+  }, [line, phrases, correctFirst, cycles, holdMs, running]);
   return (
     <span
       aria-hidden="true"
@@ -194,6 +196,7 @@ export function SceneCopy({
               phrases={scene.titleSwaps.phrases}
               correctFirst={scene.titleSwaps.correctFirst}
               cycles={scene.titleSwaps.cycles}
+              holdMs={scene.titleSwaps.holdMs}
               running={interactive && active && enabled}
             />
           ) : (

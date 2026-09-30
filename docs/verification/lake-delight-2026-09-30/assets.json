@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-30",
+  "style": "illustrated-world-v1",
+  "styleDefinition": "docs/art-style.md",
+  "generator": "built-in image_gen",
+  "reference": "docs/mock/assets/lake.png",
+  "assets": [
+    {
+      "name": "lake-bird-v1.webp",
+      "source": "art-source/world/lake-bird-generated-v1.png",
+      "dimensions": [384, 256],
+      "registration": "six 128px cells; same scale; feet y=110",
+      "prompt": "Use case: style-transfer. Asset type: transparent 3-column by 2-row animation sprite sheet for a tiny visitor in Glen's lake scene. Primary style reference: /Users/glen/Documents/Code/glenpadua.com/docs/mock/assets/lake.png, as defined by docs/art-style.md revision illustrated-world-v1. Derive one small, charming songbird that belongs in this simple 2D illustrated world. Muted sage-blue wings, cream belly, tiny warm ochre beak, one dark eye, delicate dark feet, faint paper grain and restrained outline. Broad shapes and sparse detail, no realistic feathers. Every cell is the SAME bird at the SAME scale, facing RIGHT, whole body visible, generous transparent spacing; no scenery, bar, labels or grid. Exact sheet 3 columns by 2 rows, six poses in reading order: 1 perched at rest, feet level; 2 perched with a curious small head tilt towards the right; 3 perched with head returned, tiny blink; 4 flying with wings raised; 5 flying with wings halfway; 6 flying with wings down. Keep body center and feet registration consistent; wings may change silhouette. Genuine transparent background. No shadows detached from the bird, no decorative marks, no text, no photorealism."
+    },
+    {
+      "name": "lake-skipping-stone-v1.webp",
+      "source": "art-source/world/lake-skipping-stone-generated-v1.png",
+      "dimensions": [192, 84],
+      "prompt": "Use case: style-transfer. Asset type: one transparent cutout of a small flat skipping pebble for Glen's lake scene. Style reference: /Users/glen/Documents/Code/glenpadua.com/docs/mock/assets/lake.png, per docs/art-style.md revision illustrated-world-v1. One understated irregular flat grey-sage oval pebble, viewed slightly from above, rounded worn edge, pale warm edge highlight, faint paper grain and quiet painted shading. Broad simple 2D shapes. Width about twice height, composed centrally with plenty of transparent space. It must read as a little stone in the grass beside the water, not a shiny button or jewel. No scenery, no glow, no letters, no extra objects. Genuine transparency."
+    },
+    {
+      "name": "lake-bird-glance-v1.webp",
+      "source": "art-source/world/lake-bird-glance-generated-v1.png",
+      "reference": "art-source/world/lake-rest-reference-v1.png",
+      "referencePreparation": "original atlas frame 6, cropped to 600x720 and flattened on #f8f0dd for generation; runtime body remains the original atlas",
+      "dimensions": [154, 148],
+      "registration": "head only at (226,266) in original 600x720 figure; existing body remains untouched",
+      "prompt": "Use case: precise-object-edit. Edit target: the supplied resting Glen figure. Change ONLY the head expression and very slight head orientation: he glances UP and to the viewer's LEFT at a little bird perched on a bar above him, with a small amused smile and slight curious head tilt. Keep the same hair shape, glasses, rounded face, drawing style and original head size. Keep head inside its original upper-body footprint, avoid profile view, use just a small tilt and redirected pupils. Preserve every other pixel and proportion: sage tank, bare arms, hands at sides, dark shorts, shoes, anatomical LEFT prosthesis on viewer-right, full body stance and location. Do not mirror, enlarge, restyle or move body. No bird, no bar, no background. Return the same composition as a transparent figure, no text. Shared art reference is docs/art-style.md illustrated-world-v1; the supplied image is the identity authority."
+    },
+    {
+      "name": "lake-skipping-pebble-v2.webp",
+      "source": "art-source/world/lake-skipping-pebble-generated-v2.png",
+      "editTarget": "art-source/world/lake-skipping-stone-generated-v1.png",
+      "reference": "docs/mock/assets/lake.png",
+      "generator": "built-in image_gen",
+      "dimensions": [192, 81],
+      "displaySize": [22, 9.28125],
+      "prompt": "Use case: precise-object-edit. Asset type: small transparent lakeside pebble for the homepage. Edit target is image 1, the existing flat skipping stone. Image 2 is the scene and primary style reference; follow docs/art-style.md, revision illustrated-world-v1. Refine only the pebble so it blends naturally with this muted dawn meadow: a flatter little worn pebble with a softer warm grey-sage colour, a very quiet cream highlight, faint paper grain and broad simple shapes. Reduce the heavy dark rim, hard black underside and contrasting mottled patches; no shine, glossy bevel, dramatic shadow or photographic stone detail. Keep a gentle irregular oval silhouette, viewed slightly from above. Width around 2.5 times height. The final on-page size will be about 22 painting pixels wide, so keep it simple and legible at that tiny size. Keep a real alpha-transparent background and generous blank padding. One pebble only; no grass, no scenery, no letters, no extra props. Preserve its quiet illustrated character rather than making it a button or jewel."
+    }
+  ],
+  "preparation": "scripts/prepare-lake-delight.mjs",
+  "encoding": "scripts/encode-art.mjs"
+}

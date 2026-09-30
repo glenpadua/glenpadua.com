@@ -1,0 +1,572 @@
+{
+  "trace": [
+    {
+      "ms": 0,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 76,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 151,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 226,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 301,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 378,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.708873",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 452,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.636789",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 530,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.58054",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 604,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.511928",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 678,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.458468",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 752,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.39506",
+        "0.725101",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 828,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.343514",
+        "0.665443",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 902,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.283104",
+        "0.594448",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 978,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.236825",
+        "0.539035",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 1052,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.181998",
+        "0.471804",
+        "0.723606"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 1127,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.140443",
+        "0.419231",
+        "0.665357"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 1201,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.0934311",
+        "0.357121",
+        "0.595876"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 1276,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.0578212",
+        "0.3069",
+        "0.539035"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 1351,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.0208871",
+        "0.248301",
+        "0.471725"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 1427,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0.000393839",
+        "0.203501",
+        "0.419308"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 1501,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0.150642",
+        "0.355926"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 1575,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0.111167",
+        "0.306973"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 1650,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0.0670582",
+        "0.249469"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 1725,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0.0346403",
+        "0.203501"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 1801,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0.00442066",
+        "0.151377"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 1876,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0",
+        "0.111167"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 1951,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0",
+        "0.0661964"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 2027,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0",
+        "0.0346403"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 2103,
+      "focused": "Skip a pebble",
+      "mode": "skipping",
+      "rings": [
+        "0",
+        "0",
+        "0.00412483"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 2190,
+      "focused": "Skip a pebble",
+      "mode": "idle",
+      "rings": [
+        "0",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 2266,
+      "focused": "Skip a pebble",
+      "mode": "idle",
+      "rings": [
+        "0",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 2342,
+      "focused": "Skip a pebble",
+      "mode": "idle",
+      "rings": [
+        "0",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 2418,
+      "focused": "Skip a pebble",
+      "mode": "idle",
+      "rings": [
+        "0",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 2492,
+      "focused": "Skip a pebble",
+      "mode": "idle",
+      "rings": [
+        "0",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    },
+    {
+      "ms": 2568,
+      "focused": "Skip a pebble",
+      "mode": "idle",
+      "rings": [
+        "0",
+        "0",
+        "0"
+      ],
+      "target": {
+        "height": 44,
+        "width": 44,
+        "x": 35.8203125,
+        "y": 637.21875
+      }
+    }
+  ],
+  "still": {
+    "mode": "still",
+    "rings": [
+      "0.5",
+      "0.5",
+      "0.5"
+    ]
+  }
+}

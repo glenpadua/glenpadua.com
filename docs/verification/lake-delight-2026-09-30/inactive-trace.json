@@ -1,0 +1,18 @@
+{
+  "before": {
+    "bird": "opacity: 0; transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, -50%);",
+    "disabled": true,
+    "mode": "skipping",
+    "scrollY": 844,
+    "stone": "translate(842.2502399707049 715.9883230294267) rotate(2.9651813774509357) scale(0.7945550000810573)"
+  },
+  "after": {
+    "bird": "opacity: 0; transform: translate(0%, 0%);",
+    "body": "transform: translate(-60%, -50%);",
+    "disabled": true,
+    "mode": "skipping",
+    "scrollY": 844,
+    "stone": "translate(842.2502399707049 715.9883230294267) rotate(2.9651813774509357) scale(0.7945550000810573)"
+  }
+}
