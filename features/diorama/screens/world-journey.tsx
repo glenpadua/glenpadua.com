@@ -22,6 +22,7 @@ import { SceneCopy } from '../shared/scene-copy';
 import { JourneySky } from '../shared/journey-sky';
 import { JourneyEnding } from '../shared/journey-ending';
 import { journeyTime, skyStyle } from '../lib/sky-time';
+import { artViewport, type ArtViewport } from '../lib/art-viewport';
 
 const subscribeHydration = () => () => {};
 const clientReady = () => true;
@@ -102,6 +103,38 @@ function PopulatedJourney({
   useEffect(() => {
     if (ended) holdTaps(settledAt, 700);
   }, [ended]);
+
+  useEffect(() => {
+    const element = root.current;
+    const viewport = window.visualViewport;
+    const stage = element?.querySelector<HTMLElement>('.world-viewport');
+    if (!ready || !element || !viewport || !stage) return;
+    let previous: ArtViewport | undefined;
+    let frame = 0;
+    const measure = () => {
+      frame = 0;
+      const next = artViewport(
+        previous,
+        stage.getBoundingClientRect(),
+        viewport,
+      );
+      if (!next) return;
+      previous = next;
+      element.style.setProperty('--art-inset', `${next.inset}px`);
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(measure);
+    };
+    measure();
+    viewport.addEventListener('resize', schedule);
+    window.addEventListener('resize', schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      viewport.removeEventListener('resize', schedule);
+      window.removeEventListener('resize', schedule);
+      element.style.removeProperty('--art-inset');
+    };
+  }, [ready]);
 
   useEffect(() => {
     const element = root.current;

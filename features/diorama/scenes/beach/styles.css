@@ -96,7 +96,8 @@
   height: auto;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 760px) and (min-height: 521px),
+  (max-width: 760px) and (orientation: portrait) {
   .world-beach {
     --sky: #ccebf0 !important;
   }

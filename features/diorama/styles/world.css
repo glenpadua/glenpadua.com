@@ -294,13 +294,13 @@ body {
   top: 100%;
   left: 0;
   right: 0;
-  height: var(--toolbar);
+  height: max(var(--toolbar), var(--art-inset, 0px));
   background: var(--ground);
 }
 /* In the live journey the painting rests on the visible bottom edge, just
    above the browser's toolbar. */
 .world-journey.is-ready .world-art {
-  bottom: var(--toolbar);
+  bottom: max(var(--toolbar), var(--art-inset, 0px));
 }
 .world-layer {
   position: absolute;
@@ -622,12 +622,17 @@ html:has(.world-journey) {
   }
 }
 /* Landscape phones: a compact header, and scene words that start below it. */
-@media (min-width: 761px) and (max-height: 520px) {
+@media (orientation: landscape) and (max-height: 520px) {
   .world-header {
     padding-block: 14px;
   }
   .world-signature {
     font-size: 24px;
+  }
+  .world .world-scene .world-art {
+    width: max(100%, 150svh);
+    left: 50%;
+    transform: translateX(-50%);
   }
   .world .world-scene .world-copy {
     top: 76px;
